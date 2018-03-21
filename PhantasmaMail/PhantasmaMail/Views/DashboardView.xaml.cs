@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace PhantasmaMail.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class DashboardView : ContentPage
+	public partial class DashboardView : BaseContentPage
 	{
 		public DashboardView ()
 		{

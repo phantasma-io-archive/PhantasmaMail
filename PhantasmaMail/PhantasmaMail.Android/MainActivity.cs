@@ -14,10 +14,11 @@ namespace PhantasmaMail.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
+			
 
-            global::Xamarin.Forms.Forms.Init(this, bundle);
+			global::Xamarin.Forms.Forms.Init(this, bundle);
 			UserDialogs.Init(this);
-
+			Rg.Plugins.Popup.Popup.Init(this, bundle);
 
 			LoadApplication(new App());
 			XFGloss.Droid.Library.Init(this, bundle);

@@ -8,7 +8,7 @@ using Xamarin.Forms.Platform.Android.AppCompat;
 using AView = Android.Views.View;
 
 
-[assembly: ExportRenderer(typeof(CustomNavigationPage), typeof(CustomNavigationPageRenderer))]
+//[assembly: ExportRenderer(typeof(CustomNavigationPage), typeof(CustomNavigationPageRenderer))]
 namespace PhantasmaMail.Droid.Renderers
 {
 	public class CustomNavigationPageRenderer : NavigationPageRenderer

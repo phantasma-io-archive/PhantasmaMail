@@ -2,6 +2,7 @@
 <ContentPage
     x:Class="PhantasmaMail.Views.MenuView"
     xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:views="clr-namespace:PhantasmaMail.Views;assembly=PhantasmaMail"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title=" ">
     <ContentPage.Content>
