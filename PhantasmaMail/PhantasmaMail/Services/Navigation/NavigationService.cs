@@ -1,5 +1,7 @@
 ﻿using PhantasmaMail.Services.Authentication;
+using PhantasmaMail.ViewModels;
 using PhantasmaMail.ViewModels.Base;
+using PhantasmaMail.Views;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -17,9 +19,10 @@ namespace PhantasmaMail.Services.Navigation
 			get { return Application.Current; }
 		}
 
-		public NavigationService(IAuthenticationService authenticationService)
+		//public NavigationService(IAuthenticationService authenticationService)
+		public NavigationService()
 		{
-			_authenticationService = authenticationService;
+			_authenticationService = null;
 			_mappings = new Dictionary<Type, Type>();
 
 			CreatePageViewModelMappings();
@@ -27,14 +30,15 @@ namespace PhantasmaMail.Services.Navigation
 
 		public async Task InitializeAsync()
 		{
-			if (await _authenticationService.UserIsAuthenticatedAndValidAsync())
-			{
-				//await NavigateToAsync<MainViewModel>();
-			}
-			else
-			{
-				//await NavigateToAsync<LoginViewModel>();
-			}
+			//if (await _authenticationService.UserIsAuthenticatedAndValidAsync())
+			//{
+			//	//await NavigateToAsync<MainViewModel>();
+			//}
+			//else
+			//{
+			//	//await NavigateToAsync<LoginViewModel>();
+			//}
+			await NavigateToAsync<MainViewModel>();
 		}
 
 		public Task NavigateToAsync<TViewModel>() where TViewModel : ViewModelBase
@@ -59,80 +63,79 @@ namespace PhantasmaMail.Services.Navigation
 
 		public async Task NavigateBackAsync()
 		{
-			//if (CurrentApplication.MainPage is MainView)
-			//{
-			//	var mainPage = CurrentApplication.MainPage as MainView;
-			//	await mainPage.Detail.Navigation.PopAsync();
-			//}
-			//else if (CurrentApplication.MainPage != null)
-			//{
-			//	await CurrentApplication.MainPage.Navigation.PopAsync();
-			//}
+			if (CurrentApplication.MainPage is MainView)
+			{
+				var mainPage = CurrentApplication.MainPage as MainView;
+				await mainPage.Detail.Navigation.PopAsync();
+			}
+			else if (CurrentApplication.MainPage != null)
+			{
+				await CurrentApplication.MainPage.Navigation.PopAsync();
+			}
 		}
 
 		public virtual Task RemoveLastFromBackStackAsync()
 		{
-			return Task.Delay(1);
-			//var mainPage = CurrentApplication.MainPage as MainView;
+			var mainPage = CurrentApplication.MainPage as MainView;
 
-			//if (mainPage != null)
-			//{
-			//	mainPage.Detail.Navigation.RemovePage(
-			//		mainPage.Detail.Navigation.NavigationStack[mainPage.Detail.Navigation.NavigationStack.Count - 2]);
-			//}
+			if (mainPage != null)
+			{
+				mainPage.Detail.Navigation.RemovePage(
+					mainPage.Detail.Navigation.NavigationStack[mainPage.Detail.Navigation.NavigationStack.Count - 2]);
+			}
 
-			//return Task.FromResult(true);
+			return Task.FromResult(true);
 		}
 
 		protected virtual async Task InternalNavigateToAsync(Type viewModelType, object parameter)
 		{
-			//Page page = CreateAndBindPage(viewModelType, parameter);
+			Page page = CreateAndBindPage(viewModelType, parameter);
 
-			//if (page is MainView)
-			//{
-			//	CurrentApplication.MainPage = page;
-			//}
-			//else if (page is LoginView)
-			//{
-			//	CurrentApplication.MainPage = new CustomNavigationPage(page);
-			//}
-			//else if (CurrentApplication.MainPage is MainView)
-			//{
-			//	var mainPage = CurrentApplication.MainPage as MainView;
-			//	var navigationPage = mainPage.Detail as CustomNavigationPage;
+			if (page is MainView)
+			{
+				CurrentApplication.MainPage = page;
+			}
+			else if (page is LoginView)
+			{
+				CurrentApplication.MainPage = new CustomNavigationPage(page);
+			}
+			else if (CurrentApplication.MainPage is MainView)
+			{
+				var mainPage = CurrentApplication.MainPage as MainView;
+				var navigationPage = mainPage.Detail as CustomNavigationPage;
 
-			//	if (navigationPage != null)
-			//	{
-			//		var currentPage = navigationPage.CurrentPage;
+				if (navigationPage != null)
+				{
+					var currentPage = navigationPage.CurrentPage;
 
-			//		if (currentPage.GetType() != page.GetType())
-			//		{
-			//			await navigationPage.PushAsync(page);
-			//		}
-			//	}
-			//	else
-			//	{
-			//		navigationPage = new CustomNavigationPage(page);
-			//		mainPage.Detail = navigationPage;
-			//	}
+					if (currentPage.GetType() != page.GetType())
+					{
+						await navigationPage.PushAsync(page);
+					}
+				}
+				else
+				{
+					navigationPage = new CustomNavigationPage(page);
+					mainPage.Detail = navigationPage;
+				}
 
-			//	mainPage.IsPresented = false;
-			//}
-			//else
-			//{
-			//	var navigationPage = CurrentApplication.MainPage as CustomNavigationPage;
+				mainPage.IsPresented = false;
+			}
+			else
+			{
+				var navigationPage = CurrentApplication.MainPage as CustomNavigationPage;
 
-			//	if (navigationPage != null)
-			//	{
-			//		await navigationPage.PushAsync(page);
-			//	}
-			//	else
-			//	{
-			//		CurrentApplication.MainPage = new CustomNavigationPage(page);
-			//	}
-			//}
+				if (navigationPage != null)
+				{
+					await navigationPage.PushAsync(page);
+				}
+				else
+				{
+					CurrentApplication.MainPage = new CustomNavigationPage(page);
+				}
+			}
 
-			//await (page.BindingContext as ViewModelBase).InitializeAsync(parameter);
+			await (page.BindingContext as ViewModelBase).InitializeAsync(parameter);
 		}
 
 		protected Type GetPageTypeForViewModel(Type viewModelType)
@@ -163,7 +166,9 @@ namespace PhantasmaMail.Services.Navigation
 
 		private void CreatePageViewModelMappings()
 		{
-			//_mappings.Add(typeof(ViewModel), typeof(View));
+			_mappings.Add(typeof(ExtendedSplashViewModel), typeof(ExtendedSplashView));
+			_mappings.Add(typeof(MainViewModel), typeof(MainView));
+			_mappings.Add(typeof(DashboardViewModel), typeof(DashboardView));
 		}
 	}
 }

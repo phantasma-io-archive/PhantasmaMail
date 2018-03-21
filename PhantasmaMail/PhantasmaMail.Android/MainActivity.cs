@@ -20,7 +20,8 @@ namespace PhantasmaMail.Droid
 
 
 			LoadApplication(new App());
-        }
+			XFGloss.Droid.Library.Init(this, bundle);
+		}
     }
 }
 

@@ -1,8 +1,5 @@
 ﻿using PhantasmaMail.ViewModels.Base;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -26,36 +23,32 @@ namespace PhantasmaMail.ViewModels
 			}
 		}
 
+		public MenuViewModel()
+		{
+			MenuItems = new ObservableCollection<Models.UI.MenuItem>();
+			InitMenuItems();
+		}
+
 		public ICommand MenuItemSelectedCommand => new Command<Models.UI.MenuItem>(OnSelectMenuItem);
 
 		private void InitMenuItems()
 		{
 			MenuItems.Add(new Models.UI.MenuItem
 			{
-				Title = "Home",
+				Title = "Dashboard",
 				MenuItemType = Models.UI.MenuItemType.Inbox,
-				//ViewModelType = typeof(InboxViewModel),
+				ViewModelType = typeof(DashboardViewModel),
 				IsEnabled = true
 			});
 
 			MenuItems.Add(new Models.UI.MenuItem
 			{
-				Title = "Book a room",
+				Title = "Login",
 				MenuItemType = Models.UI.MenuItemType.About,
-				//ViewModelType = typeof(AboutViewModel),
+				ViewModelType = typeof(LoginViewModel),
 				IsEnabled = true
-			});
-
-			MenuItems.Add(new Models.UI.MenuItem
-			{
-				Title = "Logout",
-				MenuItemType = Models.UI.MenuItemType.Logout,
-				//ViewModelType = typeof(LoginViewModel),
-				IsEnabled = true,
-				AfterNavigationAction = RemoveUserCredentials
 			});
 		}
-
 
 		private async void OnSelectMenuItem(Models.UI.MenuItem item)
 		{

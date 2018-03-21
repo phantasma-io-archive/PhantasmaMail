@@ -64,6 +64,2126 @@ namespace PhantasmaMail.Droid
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextColor = global::PhantasmaMail.Droid.Resource.Styleable.ProgressWheel_ahTextColor;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::PhantasmaMail.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::PhantasmaMail.Droid.Resource.Attribute.actionBarSize;
+			global::XFGloss.Droid.Resource.Animation.abc_fade_in = global::PhantasmaMail.Droid.Resource.Animation.abc_fade_in;
+			global::XFGloss.Droid.Resource.Animation.abc_fade_out = global::PhantasmaMail.Droid.Resource.Animation.abc_fade_out;
+			global::XFGloss.Droid.Resource.Animation.abc_grow_fade_in_from_bottom = global::PhantasmaMail.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
+			global::XFGloss.Droid.Resource.Animation.abc_popup_enter = global::PhantasmaMail.Droid.Resource.Animation.abc_popup_enter;
+			global::XFGloss.Droid.Resource.Animation.abc_popup_exit = global::PhantasmaMail.Droid.Resource.Animation.abc_popup_exit;
+			global::XFGloss.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom = global::PhantasmaMail.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom;
+			global::XFGloss.Droid.Resource.Animation.abc_slide_in_bottom = global::PhantasmaMail.Droid.Resource.Animation.abc_slide_in_bottom;
+			global::XFGloss.Droid.Resource.Animation.abc_slide_in_top = global::PhantasmaMail.Droid.Resource.Animation.abc_slide_in_top;
+			global::XFGloss.Droid.Resource.Animation.abc_slide_out_bottom = global::PhantasmaMail.Droid.Resource.Animation.abc_slide_out_bottom;
+			global::XFGloss.Droid.Resource.Animation.abc_slide_out_top = global::PhantasmaMail.Droid.Resource.Animation.abc_slide_out_top;
+			global::XFGloss.Droid.Resource.Animation.design_bottom_sheet_slide_in = global::PhantasmaMail.Droid.Resource.Animation.design_bottom_sheet_slide_in;
+			global::XFGloss.Droid.Resource.Animation.design_bottom_sheet_slide_out = global::PhantasmaMail.Droid.Resource.Animation.design_bottom_sheet_slide_out;
+			global::XFGloss.Droid.Resource.Animation.design_fab_in = global::PhantasmaMail.Droid.Resource.Animation.design_fab_in;
+			global::XFGloss.Droid.Resource.Animation.design_fab_out = global::PhantasmaMail.Droid.Resource.Animation.design_fab_out;
+			global::XFGloss.Droid.Resource.Animation.design_snackbar_in = global::PhantasmaMail.Droid.Resource.Animation.design_snackbar_in;
+			global::XFGloss.Droid.Resource.Animation.design_snackbar_out = global::PhantasmaMail.Droid.Resource.Animation.design_snackbar_out;
+			global::XFGloss.Droid.Resource.Animator.design_appbar_state_list_animator = global::PhantasmaMail.Droid.Resource.Animator.design_appbar_state_list_animator;
+			global::XFGloss.Droid.Resource.Attribute.actionBarDivider = global::PhantasmaMail.Droid.Resource.Attribute.actionBarDivider;
+			global::XFGloss.Droid.Resource.Attribute.actionBarItemBackground = global::PhantasmaMail.Droid.Resource.Attribute.actionBarItemBackground;
+			global::XFGloss.Droid.Resource.Attribute.actionBarPopupTheme = global::PhantasmaMail.Droid.Resource.Attribute.actionBarPopupTheme;
+			global::XFGloss.Droid.Resource.Attribute.actionBarSize = global::PhantasmaMail.Droid.Resource.Attribute.actionBarSize;
+			global::XFGloss.Droid.Resource.Attribute.actionBarSplitStyle = global::PhantasmaMail.Droid.Resource.Attribute.actionBarSplitStyle;
+			global::XFGloss.Droid.Resource.Attribute.actionBarStyle = global::PhantasmaMail.Droid.Resource.Attribute.actionBarStyle;
+			global::XFGloss.Droid.Resource.Attribute.actionBarTabBarStyle = global::PhantasmaMail.Droid.Resource.Attribute.actionBarTabBarStyle;
+			global::XFGloss.Droid.Resource.Attribute.actionBarTabStyle = global::PhantasmaMail.Droid.Resource.Attribute.actionBarTabStyle;
+			global::XFGloss.Droid.Resource.Attribute.actionBarTabTextStyle = global::PhantasmaMail.Droid.Resource.Attribute.actionBarTabTextStyle;
+			global::XFGloss.Droid.Resource.Attribute.actionBarTheme = global::PhantasmaMail.Droid.Resource.Attribute.actionBarTheme;
+			global::XFGloss.Droid.Resource.Attribute.actionBarWidgetTheme = global::PhantasmaMail.Droid.Resource.Attribute.actionBarWidgetTheme;
+			global::XFGloss.Droid.Resource.Attribute.actionButtonStyle = global::PhantasmaMail.Droid.Resource.Attribute.actionButtonStyle;
+			global::XFGloss.Droid.Resource.Attribute.actionDropDownStyle = global::PhantasmaMail.Droid.Resource.Attribute.actionDropDownStyle;
+			global::XFGloss.Droid.Resource.Attribute.actionLayout = global::PhantasmaMail.Droid.Resource.Attribute.actionLayout;
+			global::XFGloss.Droid.Resource.Attribute.actionMenuTextAppearance = global::PhantasmaMail.Droid.Resource.Attribute.actionMenuTextAppearance;
+			global::XFGloss.Droid.Resource.Attribute.actionMenuTextColor = global::PhantasmaMail.Droid.Resource.Attribute.actionMenuTextColor;
+			global::XFGloss.Droid.Resource.Attribute.actionModeBackground = global::PhantasmaMail.Droid.Resource.Attribute.actionModeBackground;
+			global::XFGloss.Droid.Resource.Attribute.actionModeCloseButtonStyle = global::PhantasmaMail.Droid.Resource.Attribute.actionModeCloseButtonStyle;
+			global::XFGloss.Droid.Resource.Attribute.actionModeCloseDrawable = global::PhantasmaMail.Droid.Resource.Attribute.actionModeCloseDrawable;
+			global::XFGloss.Droid.Resource.Attribute.actionModeCopyDrawable = global::PhantasmaMail.Droid.Resource.Attribute.actionModeCopyDrawable;
+			global::XFGloss.Droid.Resource.Attribute.actionModeCutDrawable = global::PhantasmaMail.Droid.Resource.Attribute.actionModeCutDrawable;
+			global::XFGloss.Droid.Resource.Attribute.actionModeFindDrawable = global::PhantasmaMail.Droid.Resource.Attribute.actionModeFindDrawable;
+			global::XFGloss.Droid.Resource.Attribute.actionModePasteDrawable = global::PhantasmaMail.Droid.Resource.Attribute.actionModePasteDrawable;
+			global::XFGloss.Droid.Resource.Attribute.actionModePopupWindowStyle = global::PhantasmaMail.Droid.Resource.Attribute.actionModePopupWindowStyle;
+			global::XFGloss.Droid.Resource.Attribute.actionModeSelectAllDrawable = global::PhantasmaMail.Droid.Resource.Attribute.actionModeSelectAllDrawable;
+			global::XFGloss.Droid.Resource.Attribute.actionModeShareDrawable = global::PhantasmaMail.Droid.Resource.Attribute.actionModeShareDrawable;
+			global::XFGloss.Droid.Resource.Attribute.actionModeSplitBackground = global::PhantasmaMail.Droid.Resource.Attribute.actionModeSplitBackground;
+			global::XFGloss.Droid.Resource.Attribute.actionModeStyle = global::PhantasmaMail.Droid.Resource.Attribute.actionModeStyle;
+			global::XFGloss.Droid.Resource.Attribute.actionModeWebSearchDrawable = global::PhantasmaMail.Droid.Resource.Attribute.actionModeWebSearchDrawable;
+			global::XFGloss.Droid.Resource.Attribute.actionOverflowButtonStyle = global::PhantasmaMail.Droid.Resource.Attribute.actionOverflowButtonStyle;
+			global::XFGloss.Droid.Resource.Attribute.actionOverflowMenuStyle = global::PhantasmaMail.Droid.Resource.Attribute.actionOverflowMenuStyle;
+			global::XFGloss.Droid.Resource.Attribute.actionProviderClass = global::PhantasmaMail.Droid.Resource.Attribute.actionProviderClass;
+			global::XFGloss.Droid.Resource.Attribute.actionViewClass = global::PhantasmaMail.Droid.Resource.Attribute.actionViewClass;
+			global::XFGloss.Droid.Resource.Attribute.activityChooserViewStyle = global::PhantasmaMail.Droid.Resource.Attribute.activityChooserViewStyle;
+			global::XFGloss.Droid.Resource.Attribute.alertDialogButtonGroupStyle = global::PhantasmaMail.Droid.Resource.Attribute.alertDialogButtonGroupStyle;
+			global::XFGloss.Droid.Resource.Attribute.alertDialogCenterButtons = global::PhantasmaMail.Droid.Resource.Attribute.alertDialogCenterButtons;
+			global::XFGloss.Droid.Resource.Attribute.alertDialogStyle = global::PhantasmaMail.Droid.Resource.Attribute.alertDialogStyle;
+			global::XFGloss.Droid.Resource.Attribute.alertDialogTheme = global::PhantasmaMail.Droid.Resource.Attribute.alertDialogTheme;
+			global::XFGloss.Droid.Resource.Attribute.allowStacking = global::PhantasmaMail.Droid.Resource.Attribute.allowStacking;
+			global::XFGloss.Droid.Resource.Attribute.alpha = global::PhantasmaMail.Droid.Resource.Attribute.alpha;
+			global::XFGloss.Droid.Resource.Attribute.arrowHeadLength = global::PhantasmaMail.Droid.Resource.Attribute.arrowHeadLength;
+			global::XFGloss.Droid.Resource.Attribute.arrowShaftLength = global::PhantasmaMail.Droid.Resource.Attribute.arrowShaftLength;
+			global::XFGloss.Droid.Resource.Attribute.autoCompleteTextViewStyle = global::PhantasmaMail.Droid.Resource.Attribute.autoCompleteTextViewStyle;
+			global::XFGloss.Droid.Resource.Attribute.background = global::PhantasmaMail.Droid.Resource.Attribute.background;
+			global::XFGloss.Droid.Resource.Attribute.backgroundSplit = global::PhantasmaMail.Droid.Resource.Attribute.backgroundSplit;
+			global::XFGloss.Droid.Resource.Attribute.backgroundStacked = global::PhantasmaMail.Droid.Resource.Attribute.backgroundStacked;
+			global::XFGloss.Droid.Resource.Attribute.backgroundTint = global::PhantasmaMail.Droid.Resource.Attribute.backgroundTint;
+			global::XFGloss.Droid.Resource.Attribute.backgroundTintMode = global::PhantasmaMail.Droid.Resource.Attribute.backgroundTintMode;
+			global::XFGloss.Droid.Resource.Attribute.barLength = global::PhantasmaMail.Droid.Resource.Attribute.barLength;
+			global::XFGloss.Droid.Resource.Attribute.behavior_autoHide = global::PhantasmaMail.Droid.Resource.Attribute.behavior_autoHide;
+			global::XFGloss.Droid.Resource.Attribute.behavior_hideable = global::PhantasmaMail.Droid.Resource.Attribute.behavior_hideable;
+			global::XFGloss.Droid.Resource.Attribute.behavior_overlapTop = global::PhantasmaMail.Droid.Resource.Attribute.behavior_overlapTop;
+			global::XFGloss.Droid.Resource.Attribute.behavior_peekHeight = global::PhantasmaMail.Droid.Resource.Attribute.behavior_peekHeight;
+			global::XFGloss.Droid.Resource.Attribute.behavior_skipCollapsed = global::PhantasmaMail.Droid.Resource.Attribute.behavior_skipCollapsed;
+			global::XFGloss.Droid.Resource.Attribute.borderWidth = global::PhantasmaMail.Droid.Resource.Attribute.borderWidth;
+			global::XFGloss.Droid.Resource.Attribute.borderlessButtonStyle = global::PhantasmaMail.Droid.Resource.Attribute.borderlessButtonStyle;
+			global::XFGloss.Droid.Resource.Attribute.bottomSheetDialogTheme = global::PhantasmaMail.Droid.Resource.Attribute.bottomSheetDialogTheme;
+			global::XFGloss.Droid.Resource.Attribute.bottomSheetStyle = global::PhantasmaMail.Droid.Resource.Attribute.bottomSheetStyle;
+			global::XFGloss.Droid.Resource.Attribute.buttonBarButtonStyle = global::PhantasmaMail.Droid.Resource.Attribute.buttonBarButtonStyle;
+			global::XFGloss.Droid.Resource.Attribute.buttonBarNegativeButtonStyle = global::PhantasmaMail.Droid.Resource.Attribute.buttonBarNegativeButtonStyle;
+			global::XFGloss.Droid.Resource.Attribute.buttonBarNeutralButtonStyle = global::PhantasmaMail.Droid.Resource.Attribute.buttonBarNeutralButtonStyle;
+			global::XFGloss.Droid.Resource.Attribute.buttonBarPositiveButtonStyle = global::PhantasmaMail.Droid.Resource.Attribute.buttonBarPositiveButtonStyle;
+			global::XFGloss.Droid.Resource.Attribute.buttonBarStyle = global::PhantasmaMail.Droid.Resource.Attribute.buttonBarStyle;
+			global::XFGloss.Droid.Resource.Attribute.buttonGravity = global::PhantasmaMail.Droid.Resource.Attribute.buttonGravity;
+			global::XFGloss.Droid.Resource.Attribute.buttonPanelSideLayout = global::PhantasmaMail.Droid.Resource.Attribute.buttonPanelSideLayout;
+			global::XFGloss.Droid.Resource.Attribute.buttonStyle = global::PhantasmaMail.Droid.Resource.Attribute.buttonStyle;
+			global::XFGloss.Droid.Resource.Attribute.buttonStyleSmall = global::PhantasmaMail.Droid.Resource.Attribute.buttonStyleSmall;
+			global::XFGloss.Droid.Resource.Attribute.buttonTint = global::PhantasmaMail.Droid.Resource.Attribute.buttonTint;
+			global::XFGloss.Droid.Resource.Attribute.buttonTintMode = global::PhantasmaMail.Droid.Resource.Attribute.buttonTintMode;
+			global::XFGloss.Droid.Resource.Attribute.cardBackgroundColor = global::PhantasmaMail.Droid.Resource.Attribute.cardBackgroundColor;
+			global::XFGloss.Droid.Resource.Attribute.cardCornerRadius = global::PhantasmaMail.Droid.Resource.Attribute.cardCornerRadius;
+			global::XFGloss.Droid.Resource.Attribute.cardElevation = global::PhantasmaMail.Droid.Resource.Attribute.cardElevation;
+			global::XFGloss.Droid.Resource.Attribute.cardMaxElevation = global::PhantasmaMail.Droid.Resource.Attribute.cardMaxElevation;
+			global::XFGloss.Droid.Resource.Attribute.cardPreventCornerOverlap = global::PhantasmaMail.Droid.Resource.Attribute.cardPreventCornerOverlap;
+			global::XFGloss.Droid.Resource.Attribute.cardUseCompatPadding = global::PhantasmaMail.Droid.Resource.Attribute.cardUseCompatPadding;
+			global::XFGloss.Droid.Resource.Attribute.checkboxStyle = global::PhantasmaMail.Droid.Resource.Attribute.checkboxStyle;
+			global::XFGloss.Droid.Resource.Attribute.checkedTextViewStyle = global::PhantasmaMail.Droid.Resource.Attribute.checkedTextViewStyle;
+			global::XFGloss.Droid.Resource.Attribute.closeIcon = global::PhantasmaMail.Droid.Resource.Attribute.closeIcon;
+			global::XFGloss.Droid.Resource.Attribute.closeItemLayout = global::PhantasmaMail.Droid.Resource.Attribute.closeItemLayout;
+			global::XFGloss.Droid.Resource.Attribute.collapseContentDescription = global::PhantasmaMail.Droid.Resource.Attribute.collapseContentDescription;
+			global::XFGloss.Droid.Resource.Attribute.collapseIcon = global::PhantasmaMail.Droid.Resource.Attribute.collapseIcon;
+			global::XFGloss.Droid.Resource.Attribute.collapsedTitleGravity = global::PhantasmaMail.Droid.Resource.Attribute.collapsedTitleGravity;
+			global::XFGloss.Droid.Resource.Attribute.collapsedTitleTextAppearance = global::PhantasmaMail.Droid.Resource.Attribute.collapsedTitleTextAppearance;
+			global::XFGloss.Droid.Resource.Attribute.color = global::PhantasmaMail.Droid.Resource.Attribute.color;
+			global::XFGloss.Droid.Resource.Attribute.colorAccent = global::PhantasmaMail.Droid.Resource.Attribute.colorAccent;
+			global::XFGloss.Droid.Resource.Attribute.colorBackgroundFloating = global::PhantasmaMail.Droid.Resource.Attribute.colorBackgroundFloating;
+			global::XFGloss.Droid.Resource.Attribute.colorButtonNormal = global::PhantasmaMail.Droid.Resource.Attribute.colorButtonNormal;
+			global::XFGloss.Droid.Resource.Attribute.colorControlActivated = global::PhantasmaMail.Droid.Resource.Attribute.colorControlActivated;
+			global::XFGloss.Droid.Resource.Attribute.colorControlHighlight = global::PhantasmaMail.Droid.Resource.Attribute.colorControlHighlight;
+			global::XFGloss.Droid.Resource.Attribute.colorControlNormal = global::PhantasmaMail.Droid.Resource.Attribute.colorControlNormal;
+			global::XFGloss.Droid.Resource.Attribute.colorPrimary = global::PhantasmaMail.Droid.Resource.Attribute.colorPrimary;
+			global::XFGloss.Droid.Resource.Attribute.colorPrimaryDark = global::PhantasmaMail.Droid.Resource.Attribute.colorPrimaryDark;
+			global::XFGloss.Droid.Resource.Attribute.colorSwitchThumbNormal = global::PhantasmaMail.Droid.Resource.Attribute.colorSwitchThumbNormal;
+			global::XFGloss.Droid.Resource.Attribute.commitIcon = global::PhantasmaMail.Droid.Resource.Attribute.commitIcon;
+			global::XFGloss.Droid.Resource.Attribute.contentInsetEnd = global::PhantasmaMail.Droid.Resource.Attribute.contentInsetEnd;
+			global::XFGloss.Droid.Resource.Attribute.contentInsetEndWithActions = global::PhantasmaMail.Droid.Resource.Attribute.contentInsetEndWithActions;
+			global::XFGloss.Droid.Resource.Attribute.contentInsetLeft = global::PhantasmaMail.Droid.Resource.Attribute.contentInsetLeft;
+			global::XFGloss.Droid.Resource.Attribute.contentInsetRight = global::PhantasmaMail.Droid.Resource.Attribute.contentInsetRight;
+			global::XFGloss.Droid.Resource.Attribute.contentInsetStart = global::PhantasmaMail.Droid.Resource.Attribute.contentInsetStart;
+			global::XFGloss.Droid.Resource.Attribute.contentInsetStartWithNavigation = global::PhantasmaMail.Droid.Resource.Attribute.contentInsetStartWithNavigation;
+			global::XFGloss.Droid.Resource.Attribute.contentPadding = global::PhantasmaMail.Droid.Resource.Attribute.contentPadding;
+			global::XFGloss.Droid.Resource.Attribute.contentPaddingBottom = global::PhantasmaMail.Droid.Resource.Attribute.contentPaddingBottom;
+			global::XFGloss.Droid.Resource.Attribute.contentPaddingLeft = global::PhantasmaMail.Droid.Resource.Attribute.contentPaddingLeft;
+			global::XFGloss.Droid.Resource.Attribute.contentPaddingRight = global::PhantasmaMail.Droid.Resource.Attribute.contentPaddingRight;
+			global::XFGloss.Droid.Resource.Attribute.contentPaddingTop = global::PhantasmaMail.Droid.Resource.Attribute.contentPaddingTop;
+			global::XFGloss.Droid.Resource.Attribute.contentScrim = global::PhantasmaMail.Droid.Resource.Attribute.contentScrim;
+			global::XFGloss.Droid.Resource.Attribute.controlBackground = global::PhantasmaMail.Droid.Resource.Attribute.controlBackground;
+			global::XFGloss.Droid.Resource.Attribute.counterEnabled = global::PhantasmaMail.Droid.Resource.Attribute.counterEnabled;
+			global::XFGloss.Droid.Resource.Attribute.counterMaxLength = global::PhantasmaMail.Droid.Resource.Attribute.counterMaxLength;
+			global::XFGloss.Droid.Resource.Attribute.counterOverflowTextAppearance = global::PhantasmaMail.Droid.Resource.Attribute.counterOverflowTextAppearance;
+			global::XFGloss.Droid.Resource.Attribute.counterTextAppearance = global::PhantasmaMail.Droid.Resource.Attribute.counterTextAppearance;
+			global::XFGloss.Droid.Resource.Attribute.customNavigationLayout = global::PhantasmaMail.Droid.Resource.Attribute.customNavigationLayout;
+			global::XFGloss.Droid.Resource.Attribute.defaultQueryHint = global::PhantasmaMail.Droid.Resource.Attribute.defaultQueryHint;
+			global::XFGloss.Droid.Resource.Attribute.dialogPreferredPadding = global::PhantasmaMail.Droid.Resource.Attribute.dialogPreferredPadding;
+			global::XFGloss.Droid.Resource.Attribute.dialogTheme = global::PhantasmaMail.Droid.Resource.Attribute.dialogTheme;
+			global::XFGloss.Droid.Resource.Attribute.displayOptions = global::PhantasmaMail.Droid.Resource.Attribute.displayOptions;
+			global::XFGloss.Droid.Resource.Attribute.divider = global::PhantasmaMail.Droid.Resource.Attribute.divider;
+			global::XFGloss.Droid.Resource.Attribute.dividerHorizontal = global::PhantasmaMail.Droid.Resource.Attribute.dividerHorizontal;
+			global::XFGloss.Droid.Resource.Attribute.dividerPadding = global::PhantasmaMail.Droid.Resource.Attribute.dividerPadding;
+			global::XFGloss.Droid.Resource.Attribute.dividerVertical = global::PhantasmaMail.Droid.Resource.Attribute.dividerVertical;
+			global::XFGloss.Droid.Resource.Attribute.drawableSize = global::PhantasmaMail.Droid.Resource.Attribute.drawableSize;
+			global::XFGloss.Droid.Resource.Attribute.drawerArrowStyle = global::PhantasmaMail.Droid.Resource.Attribute.drawerArrowStyle;
+			global::XFGloss.Droid.Resource.Attribute.dropDownListViewStyle = global::PhantasmaMail.Droid.Resource.Attribute.dropDownListViewStyle;
+			global::XFGloss.Droid.Resource.Attribute.dropdownListPreferredItemHeight = global::PhantasmaMail.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
+			global::XFGloss.Droid.Resource.Attribute.editTextBackground = global::PhantasmaMail.Droid.Resource.Attribute.editTextBackground;
+			global::XFGloss.Droid.Resource.Attribute.editTextColor = global::PhantasmaMail.Droid.Resource.Attribute.editTextColor;
+			global::XFGloss.Droid.Resource.Attribute.editTextStyle = global::PhantasmaMail.Droid.Resource.Attribute.editTextStyle;
+			global::XFGloss.Droid.Resource.Attribute.elevation = global::PhantasmaMail.Droid.Resource.Attribute.elevation;
+			global::XFGloss.Droid.Resource.Attribute.errorEnabled = global::PhantasmaMail.Droid.Resource.Attribute.errorEnabled;
+			global::XFGloss.Droid.Resource.Attribute.errorTextAppearance = global::PhantasmaMail.Droid.Resource.Attribute.errorTextAppearance;
+			global::XFGloss.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable = global::PhantasmaMail.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable;
+			global::XFGloss.Droid.Resource.Attribute.expanded = global::PhantasmaMail.Droid.Resource.Attribute.expanded;
+			global::XFGloss.Droid.Resource.Attribute.expandedTitleGravity = global::PhantasmaMail.Droid.Resource.Attribute.expandedTitleGravity;
+			global::XFGloss.Droid.Resource.Attribute.expandedTitleMargin = global::PhantasmaMail.Droid.Resource.Attribute.expandedTitleMargin;
+			global::XFGloss.Droid.Resource.Attribute.expandedTitleMarginBottom = global::PhantasmaMail.Droid.Resource.Attribute.expandedTitleMarginBottom;
+			global::XFGloss.Droid.Resource.Attribute.expandedTitleMarginEnd = global::PhantasmaMail.Droid.Resource.Attribute.expandedTitleMarginEnd;
+			global::XFGloss.Droid.Resource.Attribute.expandedTitleMarginStart = global::PhantasmaMail.Droid.Resource.Attribute.expandedTitleMarginStart;
+			global::XFGloss.Droid.Resource.Attribute.expandedTitleMarginTop = global::PhantasmaMail.Droid.Resource.Attribute.expandedTitleMarginTop;
+			global::XFGloss.Droid.Resource.Attribute.expandedTitleTextAppearance = global::PhantasmaMail.Droid.Resource.Attribute.expandedTitleTextAppearance;
+			global::XFGloss.Droid.Resource.Attribute.externalRouteEnabledDrawable = global::PhantasmaMail.Droid.Resource.Attribute.externalRouteEnabledDrawable;
+			global::XFGloss.Droid.Resource.Attribute.fabSize = global::PhantasmaMail.Droid.Resource.Attribute.fabSize;
+			global::XFGloss.Droid.Resource.Attribute.foregroundInsidePadding = global::PhantasmaMail.Droid.Resource.Attribute.foregroundInsidePadding;
+			global::XFGloss.Droid.Resource.Attribute.gapBetweenBars = global::PhantasmaMail.Droid.Resource.Attribute.gapBetweenBars;
+			global::XFGloss.Droid.Resource.Attribute.goIcon = global::PhantasmaMail.Droid.Resource.Attribute.goIcon;
+			global::XFGloss.Droid.Resource.Attribute.headerLayout = global::PhantasmaMail.Droid.Resource.Attribute.headerLayout;
+			global::XFGloss.Droid.Resource.Attribute.height = global::PhantasmaMail.Droid.Resource.Attribute.height;
+			global::XFGloss.Droid.Resource.Attribute.hideOnContentScroll = global::PhantasmaMail.Droid.Resource.Attribute.hideOnContentScroll;
+			global::XFGloss.Droid.Resource.Attribute.hintAnimationEnabled = global::PhantasmaMail.Droid.Resource.Attribute.hintAnimationEnabled;
+			global::XFGloss.Droid.Resource.Attribute.hintEnabled = global::PhantasmaMail.Droid.Resource.Attribute.hintEnabled;
+			global::XFGloss.Droid.Resource.Attribute.hintTextAppearance = global::PhantasmaMail.Droid.Resource.Attribute.hintTextAppearance;
+			global::XFGloss.Droid.Resource.Attribute.homeAsUpIndicator = global::PhantasmaMail.Droid.Resource.Attribute.homeAsUpIndicator;
+			global::XFGloss.Droid.Resource.Attribute.homeLayout = global::PhantasmaMail.Droid.Resource.Attribute.homeLayout;
+			global::XFGloss.Droid.Resource.Attribute.icon = global::PhantasmaMail.Droid.Resource.Attribute.icon;
+			global::XFGloss.Droid.Resource.Attribute.iconifiedByDefault = global::PhantasmaMail.Droid.Resource.Attribute.iconifiedByDefault;
+			global::XFGloss.Droid.Resource.Attribute.imageButtonStyle = global::PhantasmaMail.Droid.Resource.Attribute.imageButtonStyle;
+			global::XFGloss.Droid.Resource.Attribute.indeterminateProgressStyle = global::PhantasmaMail.Droid.Resource.Attribute.indeterminateProgressStyle;
+			global::XFGloss.Droid.Resource.Attribute.initialActivityCount = global::PhantasmaMail.Droid.Resource.Attribute.initialActivityCount;
+			global::XFGloss.Droid.Resource.Attribute.insetForeground = global::PhantasmaMail.Droid.Resource.Attribute.insetForeground;
+			global::XFGloss.Droid.Resource.Attribute.isLightTheme = global::PhantasmaMail.Droid.Resource.Attribute.isLightTheme;
+			global::XFGloss.Droid.Resource.Attribute.itemBackground = global::PhantasmaMail.Droid.Resource.Attribute.itemBackground;
+			global::XFGloss.Droid.Resource.Attribute.itemIconTint = global::PhantasmaMail.Droid.Resource.Attribute.itemIconTint;
+			global::XFGloss.Droid.Resource.Attribute.itemPadding = global::PhantasmaMail.Droid.Resource.Attribute.itemPadding;
+			global::XFGloss.Droid.Resource.Attribute.itemTextAppearance = global::PhantasmaMail.Droid.Resource.Attribute.itemTextAppearance;
+			global::XFGloss.Droid.Resource.Attribute.itemTextColor = global::PhantasmaMail.Droid.Resource.Attribute.itemTextColor;
+			global::XFGloss.Droid.Resource.Attribute.keylines = global::PhantasmaMail.Droid.Resource.Attribute.keylines;
+			global::XFGloss.Droid.Resource.Attribute.layout = global::PhantasmaMail.Droid.Resource.Attribute.layout;
+			global::XFGloss.Droid.Resource.Attribute.layoutManager = global::PhantasmaMail.Droid.Resource.Attribute.layoutManager;
+			global::XFGloss.Droid.Resource.Attribute.layout_anchor = global::PhantasmaMail.Droid.Resource.Attribute.layout_anchor;
+			global::XFGloss.Droid.Resource.Attribute.layout_anchorGravity = global::PhantasmaMail.Droid.Resource.Attribute.layout_anchorGravity;
+			global::XFGloss.Droid.Resource.Attribute.layout_behavior = global::PhantasmaMail.Droid.Resource.Attribute.layout_behavior;
+			global::XFGloss.Droid.Resource.Attribute.layout_collapseMode = global::PhantasmaMail.Droid.Resource.Attribute.layout_collapseMode;
+			global::XFGloss.Droid.Resource.Attribute.layout_collapseParallaxMultiplier = global::PhantasmaMail.Droid.Resource.Attribute.layout_collapseParallaxMultiplier;
+			global::XFGloss.Droid.Resource.Attribute.layout_dodgeInsetEdges = global::PhantasmaMail.Droid.Resource.Attribute.layout_dodgeInsetEdges;
+			global::XFGloss.Droid.Resource.Attribute.layout_insetEdge = global::PhantasmaMail.Droid.Resource.Attribute.layout_insetEdge;
+			global::XFGloss.Droid.Resource.Attribute.layout_keyline = global::PhantasmaMail.Droid.Resource.Attribute.layout_keyline;
+			global::XFGloss.Droid.Resource.Attribute.layout_scrollFlags = global::PhantasmaMail.Droid.Resource.Attribute.layout_scrollFlags;
+			global::XFGloss.Droid.Resource.Attribute.layout_scrollInterpolator = global::PhantasmaMail.Droid.Resource.Attribute.layout_scrollInterpolator;
+			global::XFGloss.Droid.Resource.Attribute.listChoiceBackgroundIndicator = global::PhantasmaMail.Droid.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::XFGloss.Droid.Resource.Attribute.listDividerAlertDialog = global::PhantasmaMail.Droid.Resource.Attribute.listDividerAlertDialog;
+			global::XFGloss.Droid.Resource.Attribute.listItemLayout = global::PhantasmaMail.Droid.Resource.Attribute.listItemLayout;
+			global::XFGloss.Droid.Resource.Attribute.listLayout = global::PhantasmaMail.Droid.Resource.Attribute.listLayout;
+			global::XFGloss.Droid.Resource.Attribute.listMenuViewStyle = global::PhantasmaMail.Droid.Resource.Attribute.listMenuViewStyle;
+			global::XFGloss.Droid.Resource.Attribute.listPopupWindowStyle = global::PhantasmaMail.Droid.Resource.Attribute.listPopupWindowStyle;
+			global::XFGloss.Droid.Resource.Attribute.listPreferredItemHeight = global::PhantasmaMail.Droid.Resource.Attribute.listPreferredItemHeight;
+			global::XFGloss.Droid.Resource.Attribute.listPreferredItemHeightLarge = global::PhantasmaMail.Droid.Resource.Attribute.listPreferredItemHeightLarge;
+			global::XFGloss.Droid.Resource.Attribute.listPreferredItemHeightSmall = global::PhantasmaMail.Droid.Resource.Attribute.listPreferredItemHeightSmall;
+			global::XFGloss.Droid.Resource.Attribute.listPreferredItemPaddingLeft = global::PhantasmaMail.Droid.Resource.Attribute.listPreferredItemPaddingLeft;
+			global::XFGloss.Droid.Resource.Attribute.listPreferredItemPaddingRight = global::PhantasmaMail.Droid.Resource.Attribute.listPreferredItemPaddingRight;
+			global::XFGloss.Droid.Resource.Attribute.logo = global::PhantasmaMail.Droid.Resource.Attribute.logo;
+			global::XFGloss.Droid.Resource.Attribute.logoDescription = global::PhantasmaMail.Droid.Resource.Attribute.logoDescription;
+			global::XFGloss.Droid.Resource.Attribute.maxActionInlineWidth = global::PhantasmaMail.Droid.Resource.Attribute.maxActionInlineWidth;
+			global::XFGloss.Droid.Resource.Attribute.maxButtonHeight = global::PhantasmaMail.Droid.Resource.Attribute.maxButtonHeight;
+			global::XFGloss.Droid.Resource.Attribute.measureWithLargestChild = global::PhantasmaMail.Droid.Resource.Attribute.measureWithLargestChild;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteAudioTrackDrawable = global::PhantasmaMail.Droid.Resource.Attribute.mediaRouteAudioTrackDrawable;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteButtonStyle = global::PhantasmaMail.Droid.Resource.Attribute.mediaRouteButtonStyle;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteCloseDrawable = global::PhantasmaMail.Droid.Resource.Attribute.mediaRouteCloseDrawable;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteControlPanelThemeOverlay = global::PhantasmaMail.Droid.Resource.Attribute.mediaRouteControlPanelThemeOverlay;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteDefaultIconDrawable = global::PhantasmaMail.Droid.Resource.Attribute.mediaRouteDefaultIconDrawable;
+			global::XFGloss.Droid.Resource.Attribute.mediaRoutePauseDrawable = global::PhantasmaMail.Droid.Resource.Attribute.mediaRoutePauseDrawable;
+			global::XFGloss.Droid.Resource.Attribute.mediaRoutePlayDrawable = global::PhantasmaMail.Droid.Resource.Attribute.mediaRoutePlayDrawable;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteSpeakerGroupIconDrawable = global::PhantasmaMail.Droid.Resource.Attribute.mediaRouteSpeakerGroupIconDrawable;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteSpeakerIconDrawable = global::PhantasmaMail.Droid.Resource.Attribute.mediaRouteSpeakerIconDrawable;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteStopDrawable = global::PhantasmaMail.Droid.Resource.Attribute.mediaRouteStopDrawable;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteTheme = global::PhantasmaMail.Droid.Resource.Attribute.mediaRouteTheme;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteTvIconDrawable = global::PhantasmaMail.Droid.Resource.Attribute.mediaRouteTvIconDrawable;
+			global::XFGloss.Droid.Resource.Attribute.menu = global::PhantasmaMail.Droid.Resource.Attribute.menu;
+			global::XFGloss.Droid.Resource.Attribute.multiChoiceItemLayout = global::PhantasmaMail.Droid.Resource.Attribute.multiChoiceItemLayout;
+			global::XFGloss.Droid.Resource.Attribute.navigationContentDescription = global::PhantasmaMail.Droid.Resource.Attribute.navigationContentDescription;
+			global::XFGloss.Droid.Resource.Attribute.navigationIcon = global::PhantasmaMail.Droid.Resource.Attribute.navigationIcon;
+			global::XFGloss.Droid.Resource.Attribute.navigationMode = global::PhantasmaMail.Droid.Resource.Attribute.navigationMode;
+			global::XFGloss.Droid.Resource.Attribute.overlapAnchor = global::PhantasmaMail.Droid.Resource.Attribute.overlapAnchor;
+			global::XFGloss.Droid.Resource.Attribute.paddingBottomNoButtons = global::PhantasmaMail.Droid.Resource.Attribute.paddingBottomNoButtons;
+			global::XFGloss.Droid.Resource.Attribute.paddingEnd = global::PhantasmaMail.Droid.Resource.Attribute.paddingEnd;
+			global::XFGloss.Droid.Resource.Attribute.paddingStart = global::PhantasmaMail.Droid.Resource.Attribute.paddingStart;
+			global::XFGloss.Droid.Resource.Attribute.paddingTopNoTitle = global::PhantasmaMail.Droid.Resource.Attribute.paddingTopNoTitle;
+			global::XFGloss.Droid.Resource.Attribute.panelBackground = global::PhantasmaMail.Droid.Resource.Attribute.panelBackground;
+			global::XFGloss.Droid.Resource.Attribute.panelMenuListTheme = global::PhantasmaMail.Droid.Resource.Attribute.panelMenuListTheme;
+			global::XFGloss.Droid.Resource.Attribute.panelMenuListWidth = global::PhantasmaMail.Droid.Resource.Attribute.panelMenuListWidth;
+			global::XFGloss.Droid.Resource.Attribute.passwordToggleContentDescription = global::PhantasmaMail.Droid.Resource.Attribute.passwordToggleContentDescription;
+			global::XFGloss.Droid.Resource.Attribute.passwordToggleDrawable = global::PhantasmaMail.Droid.Resource.Attribute.passwordToggleDrawable;
+			global::XFGloss.Droid.Resource.Attribute.passwordToggleEnabled = global::PhantasmaMail.Droid.Resource.Attribute.passwordToggleEnabled;
+			global::XFGloss.Droid.Resource.Attribute.passwordToggleTint = global::PhantasmaMail.Droid.Resource.Attribute.passwordToggleTint;
+			global::XFGloss.Droid.Resource.Attribute.passwordToggleTintMode = global::PhantasmaMail.Droid.Resource.Attribute.passwordToggleTintMode;
+			global::XFGloss.Droid.Resource.Attribute.popupMenuStyle = global::PhantasmaMail.Droid.Resource.Attribute.popupMenuStyle;
+			global::XFGloss.Droid.Resource.Attribute.popupTheme = global::PhantasmaMail.Droid.Resource.Attribute.popupTheme;
+			global::XFGloss.Droid.Resource.Attribute.popupWindowStyle = global::PhantasmaMail.Droid.Resource.Attribute.popupWindowStyle;
+			global::XFGloss.Droid.Resource.Attribute.preserveIconSpacing = global::PhantasmaMail.Droid.Resource.Attribute.preserveIconSpacing;
+			global::XFGloss.Droid.Resource.Attribute.pressedTranslationZ = global::PhantasmaMail.Droid.Resource.Attribute.pressedTranslationZ;
+			global::XFGloss.Droid.Resource.Attribute.progressBarPadding = global::PhantasmaMail.Droid.Resource.Attribute.progressBarPadding;
+			global::XFGloss.Droid.Resource.Attribute.progressBarStyle = global::PhantasmaMail.Droid.Resource.Attribute.progressBarStyle;
+			global::XFGloss.Droid.Resource.Attribute.queryBackground = global::PhantasmaMail.Droid.Resource.Attribute.queryBackground;
+			global::XFGloss.Droid.Resource.Attribute.queryHint = global::PhantasmaMail.Droid.Resource.Attribute.queryHint;
+			global::XFGloss.Droid.Resource.Attribute.radioButtonStyle = global::PhantasmaMail.Droid.Resource.Attribute.radioButtonStyle;
+			global::XFGloss.Droid.Resource.Attribute.ratingBarStyle = global::PhantasmaMail.Droid.Resource.Attribute.ratingBarStyle;
+			global::XFGloss.Droid.Resource.Attribute.ratingBarStyleIndicator = global::PhantasmaMail.Droid.Resource.Attribute.ratingBarStyleIndicator;
+			global::XFGloss.Droid.Resource.Attribute.ratingBarStyleSmall = global::PhantasmaMail.Droid.Resource.Attribute.ratingBarStyleSmall;
+			global::XFGloss.Droid.Resource.Attribute.reverseLayout = global::PhantasmaMail.Droid.Resource.Attribute.reverseLayout;
+			global::XFGloss.Droid.Resource.Attribute.rippleColor = global::PhantasmaMail.Droid.Resource.Attribute.rippleColor;
+			global::XFGloss.Droid.Resource.Attribute.scrimAnimationDuration = global::PhantasmaMail.Droid.Resource.Attribute.scrimAnimationDuration;
+			global::XFGloss.Droid.Resource.Attribute.scrimVisibleHeightTrigger = global::PhantasmaMail.Droid.Resource.Attribute.scrimVisibleHeightTrigger;
+			global::XFGloss.Droid.Resource.Attribute.searchHintIcon = global::PhantasmaMail.Droid.Resource.Attribute.searchHintIcon;
+			global::XFGloss.Droid.Resource.Attribute.searchIcon = global::PhantasmaMail.Droid.Resource.Attribute.searchIcon;
+			global::XFGloss.Droid.Resource.Attribute.searchViewStyle = global::PhantasmaMail.Droid.Resource.Attribute.searchViewStyle;
+			global::XFGloss.Droid.Resource.Attribute.seekBarStyle = global::PhantasmaMail.Droid.Resource.Attribute.seekBarStyle;
+			global::XFGloss.Droid.Resource.Attribute.selectableItemBackground = global::PhantasmaMail.Droid.Resource.Attribute.selectableItemBackground;
+			global::XFGloss.Droid.Resource.Attribute.selectableItemBackgroundBorderless = global::PhantasmaMail.Droid.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::XFGloss.Droid.Resource.Attribute.showAsAction = global::PhantasmaMail.Droid.Resource.Attribute.showAsAction;
+			global::XFGloss.Droid.Resource.Attribute.showDividers = global::PhantasmaMail.Droid.Resource.Attribute.showDividers;
+			global::XFGloss.Droid.Resource.Attribute.showText = global::PhantasmaMail.Droid.Resource.Attribute.showText;
+			global::XFGloss.Droid.Resource.Attribute.showTitle = global::PhantasmaMail.Droid.Resource.Attribute.showTitle;
+			global::XFGloss.Droid.Resource.Attribute.singleChoiceItemLayout = global::PhantasmaMail.Droid.Resource.Attribute.singleChoiceItemLayout;
+			global::XFGloss.Droid.Resource.Attribute.spanCount = global::PhantasmaMail.Droid.Resource.Attribute.spanCount;
+			global::XFGloss.Droid.Resource.Attribute.spinBars = global::PhantasmaMail.Droid.Resource.Attribute.spinBars;
+			global::XFGloss.Droid.Resource.Attribute.spinnerDropDownItemStyle = global::PhantasmaMail.Droid.Resource.Attribute.spinnerDropDownItemStyle;
+			global::XFGloss.Droid.Resource.Attribute.spinnerStyle = global::PhantasmaMail.Droid.Resource.Attribute.spinnerStyle;
+			global::XFGloss.Droid.Resource.Attribute.splitTrack = global::PhantasmaMail.Droid.Resource.Attribute.splitTrack;
+			global::XFGloss.Droid.Resource.Attribute.srcCompat = global::PhantasmaMail.Droid.Resource.Attribute.srcCompat;
+			global::XFGloss.Droid.Resource.Attribute.stackFromEnd = global::PhantasmaMail.Droid.Resource.Attribute.stackFromEnd;
+			global::XFGloss.Droid.Resource.Attribute.state_above_anchor = global::PhantasmaMail.Droid.Resource.Attribute.state_above_anchor;
+			global::XFGloss.Droid.Resource.Attribute.state_collapsed = global::PhantasmaMail.Droid.Resource.Attribute.state_collapsed;
+			global::XFGloss.Droid.Resource.Attribute.state_collapsible = global::PhantasmaMail.Droid.Resource.Attribute.state_collapsible;
+			global::XFGloss.Droid.Resource.Attribute.statusBarBackground = global::PhantasmaMail.Droid.Resource.Attribute.statusBarBackground;
+			global::XFGloss.Droid.Resource.Attribute.statusBarScrim = global::PhantasmaMail.Droid.Resource.Attribute.statusBarScrim;
+			global::XFGloss.Droid.Resource.Attribute.subMenuArrow = global::PhantasmaMail.Droid.Resource.Attribute.subMenuArrow;
+			global::XFGloss.Droid.Resource.Attribute.submitBackground = global::PhantasmaMail.Droid.Resource.Attribute.submitBackground;
+			global::XFGloss.Droid.Resource.Attribute.subtitle = global::PhantasmaMail.Droid.Resource.Attribute.subtitle;
+			global::XFGloss.Droid.Resource.Attribute.subtitleTextAppearance = global::PhantasmaMail.Droid.Resource.Attribute.subtitleTextAppearance;
+			global::XFGloss.Droid.Resource.Attribute.subtitleTextColor = global::PhantasmaMail.Droid.Resource.Attribute.subtitleTextColor;
+			global::XFGloss.Droid.Resource.Attribute.subtitleTextStyle = global::PhantasmaMail.Droid.Resource.Attribute.subtitleTextStyle;
+			global::XFGloss.Droid.Resource.Attribute.suggestionRowLayout = global::PhantasmaMail.Droid.Resource.Attribute.suggestionRowLayout;
+			global::XFGloss.Droid.Resource.Attribute.switchMinWidth = global::PhantasmaMail.Droid.Resource.Attribute.switchMinWidth;
+			global::XFGloss.Droid.Resource.Attribute.switchPadding = global::PhantasmaMail.Droid.Resource.Attribute.switchPadding;
+			global::XFGloss.Droid.Resource.Attribute.switchStyle = global::PhantasmaMail.Droid.Resource.Attribute.switchStyle;
+			global::XFGloss.Droid.Resource.Attribute.switchTextAppearance = global::PhantasmaMail.Droid.Resource.Attribute.switchTextAppearance;
+			global::XFGloss.Droid.Resource.Attribute.tabBackground = global::PhantasmaMail.Droid.Resource.Attribute.tabBackground;
+			global::XFGloss.Droid.Resource.Attribute.tabContentStart = global::PhantasmaMail.Droid.Resource.Attribute.tabContentStart;
+			global::XFGloss.Droid.Resource.Attribute.tabGravity = global::PhantasmaMail.Droid.Resource.Attribute.tabGravity;
+			global::XFGloss.Droid.Resource.Attribute.tabIndicatorColor = global::PhantasmaMail.Droid.Resource.Attribute.tabIndicatorColor;
+			global::XFGloss.Droid.Resource.Attribute.tabIndicatorHeight = global::PhantasmaMail.Droid.Resource.Attribute.tabIndicatorHeight;
+			global::XFGloss.Droid.Resource.Attribute.tabMaxWidth = global::PhantasmaMail.Droid.Resource.Attribute.tabMaxWidth;
+			global::XFGloss.Droid.Resource.Attribute.tabMinWidth = global::PhantasmaMail.Droid.Resource.Attribute.tabMinWidth;
+			global::XFGloss.Droid.Resource.Attribute.tabMode = global::PhantasmaMail.Droid.Resource.Attribute.tabMode;
+			global::XFGloss.Droid.Resource.Attribute.tabPadding = global::PhantasmaMail.Droid.Resource.Attribute.tabPadding;
+			global::XFGloss.Droid.Resource.Attribute.tabPaddingBottom = global::PhantasmaMail.Droid.Resource.Attribute.tabPaddingBottom;
+			global::XFGloss.Droid.Resource.Attribute.tabPaddingEnd = global::PhantasmaMail.Droid.Resource.Attribute.tabPaddingEnd;
+			global::XFGloss.Droid.Resource.Attribute.tabPaddingStart = global::PhantasmaMail.Droid.Resource.Attribute.tabPaddingStart;
+			global::XFGloss.Droid.Resource.Attribute.tabPaddingTop = global::PhantasmaMail.Droid.Resource.Attribute.tabPaddingTop;
+			global::XFGloss.Droid.Resource.Attribute.tabSelectedTextColor = global::PhantasmaMail.Droid.Resource.Attribute.tabSelectedTextColor;
+			global::XFGloss.Droid.Resource.Attribute.tabTextAppearance = global::PhantasmaMail.Droid.Resource.Attribute.tabTextAppearance;
+			global::XFGloss.Droid.Resource.Attribute.tabTextColor = global::PhantasmaMail.Droid.Resource.Attribute.tabTextColor;
+			global::XFGloss.Droid.Resource.Attribute.textAllCaps = global::PhantasmaMail.Droid.Resource.Attribute.textAllCaps;
+			global::XFGloss.Droid.Resource.Attribute.textAppearanceLargePopupMenu = global::PhantasmaMail.Droid.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::XFGloss.Droid.Resource.Attribute.textAppearanceListItem = global::PhantasmaMail.Droid.Resource.Attribute.textAppearanceListItem;
+			global::XFGloss.Droid.Resource.Attribute.textAppearanceListItemSecondary = global::PhantasmaMail.Droid.Resource.Attribute.textAppearanceListItemSecondary;
+			global::XFGloss.Droid.Resource.Attribute.textAppearanceListItemSmall = global::PhantasmaMail.Droid.Resource.Attribute.textAppearanceListItemSmall;
+			global::XFGloss.Droid.Resource.Attribute.textAppearancePopupMenuHeader = global::PhantasmaMail.Droid.Resource.Attribute.textAppearancePopupMenuHeader;
+			global::XFGloss.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle = global::PhantasmaMail.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle;
+			global::XFGloss.Droid.Resource.Attribute.textAppearanceSearchResultTitle = global::PhantasmaMail.Droid.Resource.Attribute.textAppearanceSearchResultTitle;
+			global::XFGloss.Droid.Resource.Attribute.textAppearanceSmallPopupMenu = global::PhantasmaMail.Droid.Resource.Attribute.textAppearanceSmallPopupMenu;
+			global::XFGloss.Droid.Resource.Attribute.textColorAlertDialogListItem = global::PhantasmaMail.Droid.Resource.Attribute.textColorAlertDialogListItem;
+			global::XFGloss.Droid.Resource.Attribute.textColorError = global::PhantasmaMail.Droid.Resource.Attribute.textColorError;
+			global::XFGloss.Droid.Resource.Attribute.textColorSearchUrl = global::PhantasmaMail.Droid.Resource.Attribute.textColorSearchUrl;
+			global::XFGloss.Droid.Resource.Attribute.theme = global::PhantasmaMail.Droid.Resource.Attribute.theme;
+			global::XFGloss.Droid.Resource.Attribute.thickness = global::PhantasmaMail.Droid.Resource.Attribute.thickness;
+			global::XFGloss.Droid.Resource.Attribute.thumbTextPadding = global::PhantasmaMail.Droid.Resource.Attribute.thumbTextPadding;
+			global::XFGloss.Droid.Resource.Attribute.thumbTint = global::PhantasmaMail.Droid.Resource.Attribute.thumbTint;
+			global::XFGloss.Droid.Resource.Attribute.thumbTintMode = global::PhantasmaMail.Droid.Resource.Attribute.thumbTintMode;
+			global::XFGloss.Droid.Resource.Attribute.tickMark = global::PhantasmaMail.Droid.Resource.Attribute.tickMark;
+			global::XFGloss.Droid.Resource.Attribute.tickMarkTint = global::PhantasmaMail.Droid.Resource.Attribute.tickMarkTint;
+			global::XFGloss.Droid.Resource.Attribute.tickMarkTintMode = global::PhantasmaMail.Droid.Resource.Attribute.tickMarkTintMode;
+			global::XFGloss.Droid.Resource.Attribute.tint = global::PhantasmaMail.Droid.Resource.Attribute.tint;
+			global::XFGloss.Droid.Resource.Attribute.tintMode = global::PhantasmaMail.Droid.Resource.Attribute.tintMode;
+			global::XFGloss.Droid.Resource.Attribute.title = global::PhantasmaMail.Droid.Resource.Attribute.title;
+			global::XFGloss.Droid.Resource.Attribute.titleEnabled = global::PhantasmaMail.Droid.Resource.Attribute.titleEnabled;
+			global::XFGloss.Droid.Resource.Attribute.titleMargin = global::PhantasmaMail.Droid.Resource.Attribute.titleMargin;
+			global::XFGloss.Droid.Resource.Attribute.titleMarginBottom = global::PhantasmaMail.Droid.Resource.Attribute.titleMarginBottom;
+			global::XFGloss.Droid.Resource.Attribute.titleMarginEnd = global::PhantasmaMail.Droid.Resource.Attribute.titleMarginEnd;
+			global::XFGloss.Droid.Resource.Attribute.titleMarginStart = global::PhantasmaMail.Droid.Resource.Attribute.titleMarginStart;
+			global::XFGloss.Droid.Resource.Attribute.titleMarginTop = global::PhantasmaMail.Droid.Resource.Attribute.titleMarginTop;
+			global::XFGloss.Droid.Resource.Attribute.titleMargins = global::PhantasmaMail.Droid.Resource.Attribute.titleMargins;
+			global::XFGloss.Droid.Resource.Attribute.titleTextAppearance = global::PhantasmaMail.Droid.Resource.Attribute.titleTextAppearance;
+			global::XFGloss.Droid.Resource.Attribute.titleTextColor = global::PhantasmaMail.Droid.Resource.Attribute.titleTextColor;
+			global::XFGloss.Droid.Resource.Attribute.titleTextStyle = global::PhantasmaMail.Droid.Resource.Attribute.titleTextStyle;
+			global::XFGloss.Droid.Resource.Attribute.toolbarId = global::PhantasmaMail.Droid.Resource.Attribute.toolbarId;
+			global::XFGloss.Droid.Resource.Attribute.toolbarNavigationButtonStyle = global::PhantasmaMail.Droid.Resource.Attribute.toolbarNavigationButtonStyle;
+			global::XFGloss.Droid.Resource.Attribute.toolbarStyle = global::PhantasmaMail.Droid.Resource.Attribute.toolbarStyle;
+			global::XFGloss.Droid.Resource.Attribute.track = global::PhantasmaMail.Droid.Resource.Attribute.track;
+			global::XFGloss.Droid.Resource.Attribute.trackTint = global::PhantasmaMail.Droid.Resource.Attribute.trackTint;
+			global::XFGloss.Droid.Resource.Attribute.trackTintMode = global::PhantasmaMail.Droid.Resource.Attribute.trackTintMode;
+			global::XFGloss.Droid.Resource.Attribute.useCompatPadding = global::PhantasmaMail.Droid.Resource.Attribute.useCompatPadding;
+			global::XFGloss.Droid.Resource.Attribute.voiceIcon = global::PhantasmaMail.Droid.Resource.Attribute.voiceIcon;
+			global::XFGloss.Droid.Resource.Attribute.windowActionBar = global::PhantasmaMail.Droid.Resource.Attribute.windowActionBar;
+			global::XFGloss.Droid.Resource.Attribute.windowActionBarOverlay = global::PhantasmaMail.Droid.Resource.Attribute.windowActionBarOverlay;
+			global::XFGloss.Droid.Resource.Attribute.windowActionModeOverlay = global::PhantasmaMail.Droid.Resource.Attribute.windowActionModeOverlay;
+			global::XFGloss.Droid.Resource.Attribute.windowFixedHeightMajor = global::PhantasmaMail.Droid.Resource.Attribute.windowFixedHeightMajor;
+			global::XFGloss.Droid.Resource.Attribute.windowFixedHeightMinor = global::PhantasmaMail.Droid.Resource.Attribute.windowFixedHeightMinor;
+			global::XFGloss.Droid.Resource.Attribute.windowFixedWidthMajor = global::PhantasmaMail.Droid.Resource.Attribute.windowFixedWidthMajor;
+			global::XFGloss.Droid.Resource.Attribute.windowFixedWidthMinor = global::PhantasmaMail.Droid.Resource.Attribute.windowFixedWidthMinor;
+			global::XFGloss.Droid.Resource.Attribute.windowMinWidthMajor = global::PhantasmaMail.Droid.Resource.Attribute.windowMinWidthMajor;
+			global::XFGloss.Droid.Resource.Attribute.windowMinWidthMinor = global::PhantasmaMail.Droid.Resource.Attribute.windowMinWidthMinor;
+			global::XFGloss.Droid.Resource.Attribute.windowNoTitle = global::PhantasmaMail.Droid.Resource.Attribute.windowNoTitle;
+			global::XFGloss.Droid.Resource.Boolean.abc_action_bar_embed_tabs = global::PhantasmaMail.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::XFGloss.Droid.Resource.Boolean.abc_allow_stacked_button_bar = global::PhantasmaMail.Droid.Resource.Boolean.abc_allow_stacked_button_bar;
+			global::XFGloss.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::PhantasmaMail.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps;
+			global::XFGloss.Droid.Resource.Boolean.abc_config_closeDialogWhenTouchOutside = global::PhantasmaMail.Droid.Resource.Boolean.abc_config_closeDialogWhenTouchOutside;
+			global::XFGloss.Droid.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent = global::PhantasmaMail.Droid.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent;
+			global::XFGloss.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark = global::PhantasmaMail.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark;
+			global::XFGloss.Droid.Resource.Color.abc_background_cache_hint_selector_material_light = global::PhantasmaMail.Droid.Resource.Color.abc_background_cache_hint_selector_material_light;
+			global::XFGloss.Droid.Resource.Color.abc_btn_colored_borderless_text_material = global::PhantasmaMail.Droid.Resource.Color.abc_btn_colored_borderless_text_material;
+			global::XFGloss.Droid.Resource.Color.abc_btn_colored_text_material = global::PhantasmaMail.Droid.Resource.Color.abc_btn_colored_text_material;
+			global::XFGloss.Droid.Resource.Color.abc_color_highlight_material = global::PhantasmaMail.Droid.Resource.Color.abc_color_highlight_material;
+			global::XFGloss.Droid.Resource.Color.abc_hint_foreground_material_dark = global::PhantasmaMail.Droid.Resource.Color.abc_hint_foreground_material_dark;
+			global::XFGloss.Droid.Resource.Color.abc_hint_foreground_material_light = global::PhantasmaMail.Droid.Resource.Color.abc_hint_foreground_material_light;
+			global::XFGloss.Droid.Resource.Color.abc_input_method_navigation_guard = global::PhantasmaMail.Droid.Resource.Color.abc_input_method_navigation_guard;
+			global::XFGloss.Droid.Resource.Color.abc_primary_text_disable_only_material_dark = global::PhantasmaMail.Droid.Resource.Color.abc_primary_text_disable_only_material_dark;
+			global::XFGloss.Droid.Resource.Color.abc_primary_text_disable_only_material_light = global::PhantasmaMail.Droid.Resource.Color.abc_primary_text_disable_only_material_light;
+			global::XFGloss.Droid.Resource.Color.abc_primary_text_material_dark = global::PhantasmaMail.Droid.Resource.Color.abc_primary_text_material_dark;
+			global::XFGloss.Droid.Resource.Color.abc_primary_text_material_light = global::PhantasmaMail.Droid.Resource.Color.abc_primary_text_material_light;
+			global::XFGloss.Droid.Resource.Color.abc_search_url_text = global::PhantasmaMail.Droid.Resource.Color.abc_search_url_text;
+			global::XFGloss.Droid.Resource.Color.abc_search_url_text_normal = global::PhantasmaMail.Droid.Resource.Color.abc_search_url_text_normal;
+			global::XFGloss.Droid.Resource.Color.abc_search_url_text_pressed = global::PhantasmaMail.Droid.Resource.Color.abc_search_url_text_pressed;
+			global::XFGloss.Droid.Resource.Color.abc_search_url_text_selected = global::PhantasmaMail.Droid.Resource.Color.abc_search_url_text_selected;
+			global::XFGloss.Droid.Resource.Color.abc_secondary_text_material_dark = global::PhantasmaMail.Droid.Resource.Color.abc_secondary_text_material_dark;
+			global::XFGloss.Droid.Resource.Color.abc_secondary_text_material_light = global::PhantasmaMail.Droid.Resource.Color.abc_secondary_text_material_light;
+			global::XFGloss.Droid.Resource.Color.abc_tint_btn_checkable = global::PhantasmaMail.Droid.Resource.Color.abc_tint_btn_checkable;
+			global::XFGloss.Droid.Resource.Color.abc_tint_default = global::PhantasmaMail.Droid.Resource.Color.abc_tint_default;
+			global::XFGloss.Droid.Resource.Color.abc_tint_edittext = global::PhantasmaMail.Droid.Resource.Color.abc_tint_edittext;
+			global::XFGloss.Droid.Resource.Color.abc_tint_seek_thumb = global::PhantasmaMail.Droid.Resource.Color.abc_tint_seek_thumb;
+			global::XFGloss.Droid.Resource.Color.abc_tint_spinner = global::PhantasmaMail.Droid.Resource.Color.abc_tint_spinner;
+			global::XFGloss.Droid.Resource.Color.abc_tint_switch_thumb = global::PhantasmaMail.Droid.Resource.Color.abc_tint_switch_thumb;
+			global::XFGloss.Droid.Resource.Color.abc_tint_switch_track = global::PhantasmaMail.Droid.Resource.Color.abc_tint_switch_track;
+			global::XFGloss.Droid.Resource.Color.accent_material_dark = global::PhantasmaMail.Droid.Resource.Color.accent_material_dark;
+			global::XFGloss.Droid.Resource.Color.accent_material_light = global::PhantasmaMail.Droid.Resource.Color.accent_material_light;
+			global::XFGloss.Droid.Resource.Color.background_floating_material_dark = global::PhantasmaMail.Droid.Resource.Color.background_floating_material_dark;
+			global::XFGloss.Droid.Resource.Color.background_floating_material_light = global::PhantasmaMail.Droid.Resource.Color.background_floating_material_light;
+			global::XFGloss.Droid.Resource.Color.background_material_dark = global::PhantasmaMail.Droid.Resource.Color.background_material_dark;
+			global::XFGloss.Droid.Resource.Color.background_material_light = global::PhantasmaMail.Droid.Resource.Color.background_material_light;
+			global::XFGloss.Droid.Resource.Color.bright_foreground_disabled_material_dark = global::PhantasmaMail.Droid.Resource.Color.bright_foreground_disabled_material_dark;
+			global::XFGloss.Droid.Resource.Color.bright_foreground_disabled_material_light = global::PhantasmaMail.Droid.Resource.Color.bright_foreground_disabled_material_light;
+			global::XFGloss.Droid.Resource.Color.bright_foreground_inverse_material_dark = global::PhantasmaMail.Droid.Resource.Color.bright_foreground_inverse_material_dark;
+			global::XFGloss.Droid.Resource.Color.bright_foreground_inverse_material_light = global::PhantasmaMail.Droid.Resource.Color.bright_foreground_inverse_material_light;
+			global::XFGloss.Droid.Resource.Color.bright_foreground_material_dark = global::PhantasmaMail.Droid.Resource.Color.bright_foreground_material_dark;
+			global::XFGloss.Droid.Resource.Color.bright_foreground_material_light = global::PhantasmaMail.Droid.Resource.Color.bright_foreground_material_light;
+			global::XFGloss.Droid.Resource.Color.button_material_dark = global::PhantasmaMail.Droid.Resource.Color.button_material_dark;
+			global::XFGloss.Droid.Resource.Color.button_material_light = global::PhantasmaMail.Droid.Resource.Color.button_material_light;
+			global::XFGloss.Droid.Resource.Color.cardview_dark_background = global::PhantasmaMail.Droid.Resource.Color.cardview_dark_background;
+			global::XFGloss.Droid.Resource.Color.cardview_light_background = global::PhantasmaMail.Droid.Resource.Color.cardview_light_background;
+			global::XFGloss.Droid.Resource.Color.cardview_shadow_end_color = global::PhantasmaMail.Droid.Resource.Color.cardview_shadow_end_color;
+			global::XFGloss.Droid.Resource.Color.cardview_shadow_start_color = global::PhantasmaMail.Droid.Resource.Color.cardview_shadow_start_color;
+			global::XFGloss.Droid.Resource.Color.design_bottom_navigation_shadow_color = global::PhantasmaMail.Droid.Resource.Color.design_bottom_navigation_shadow_color;
+			global::XFGloss.Droid.Resource.Color.design_error = global::PhantasmaMail.Droid.Resource.Color.design_error;
+			global::XFGloss.Droid.Resource.Color.design_fab_shadow_end_color = global::PhantasmaMail.Droid.Resource.Color.design_fab_shadow_end_color;
+			global::XFGloss.Droid.Resource.Color.design_fab_shadow_mid_color = global::PhantasmaMail.Droid.Resource.Color.design_fab_shadow_mid_color;
+			global::XFGloss.Droid.Resource.Color.design_fab_shadow_start_color = global::PhantasmaMail.Droid.Resource.Color.design_fab_shadow_start_color;
+			global::XFGloss.Droid.Resource.Color.design_fab_stroke_end_inner_color = global::PhantasmaMail.Droid.Resource.Color.design_fab_stroke_end_inner_color;
+			global::XFGloss.Droid.Resource.Color.design_fab_stroke_end_outer_color = global::PhantasmaMail.Droid.Resource.Color.design_fab_stroke_end_outer_color;
+			global::XFGloss.Droid.Resource.Color.design_fab_stroke_top_inner_color = global::PhantasmaMail.Droid.Resource.Color.design_fab_stroke_top_inner_color;
+			global::XFGloss.Droid.Resource.Color.design_fab_stroke_top_outer_color = global::PhantasmaMail.Droid.Resource.Color.design_fab_stroke_top_outer_color;
+			global::XFGloss.Droid.Resource.Color.design_snackbar_background_color = global::PhantasmaMail.Droid.Resource.Color.design_snackbar_background_color;
+			global::XFGloss.Droid.Resource.Color.design_textinput_error_color_dark = global::PhantasmaMail.Droid.Resource.Color.design_textinput_error_color_dark;
+			global::XFGloss.Droid.Resource.Color.design_textinput_error_color_light = global::PhantasmaMail.Droid.Resource.Color.design_textinput_error_color_light;
+			global::XFGloss.Droid.Resource.Color.design_tint_password_toggle = global::PhantasmaMail.Droid.Resource.Color.design_tint_password_toggle;
+			global::XFGloss.Droid.Resource.Color.dim_foreground_disabled_material_dark = global::PhantasmaMail.Droid.Resource.Color.dim_foreground_disabled_material_dark;
+			global::XFGloss.Droid.Resource.Color.dim_foreground_disabled_material_light = global::PhantasmaMail.Droid.Resource.Color.dim_foreground_disabled_material_light;
+			global::XFGloss.Droid.Resource.Color.dim_foreground_material_dark = global::PhantasmaMail.Droid.Resource.Color.dim_foreground_material_dark;
+			global::XFGloss.Droid.Resource.Color.dim_foreground_material_light = global::PhantasmaMail.Droid.Resource.Color.dim_foreground_material_light;
+			global::XFGloss.Droid.Resource.Color.foreground_material_dark = global::PhantasmaMail.Droid.Resource.Color.foreground_material_dark;
+			global::XFGloss.Droid.Resource.Color.foreground_material_light = global::PhantasmaMail.Droid.Resource.Color.foreground_material_light;
+			global::XFGloss.Droid.Resource.Color.highlighted_text_material_dark = global::PhantasmaMail.Droid.Resource.Color.highlighted_text_material_dark;
+			global::XFGloss.Droid.Resource.Color.highlighted_text_material_light = global::PhantasmaMail.Droid.Resource.Color.highlighted_text_material_light;
+			global::XFGloss.Droid.Resource.Color.material_blue_grey_800 = global::PhantasmaMail.Droid.Resource.Color.material_blue_grey_800;
+			global::XFGloss.Droid.Resource.Color.material_blue_grey_900 = global::PhantasmaMail.Droid.Resource.Color.material_blue_grey_900;
+			global::XFGloss.Droid.Resource.Color.material_blue_grey_950 = global::PhantasmaMail.Droid.Resource.Color.material_blue_grey_950;
+			global::XFGloss.Droid.Resource.Color.material_deep_teal_200 = global::PhantasmaMail.Droid.Resource.Color.material_deep_teal_200;
+			global::XFGloss.Droid.Resource.Color.material_deep_teal_500 = global::PhantasmaMail.Droid.Resource.Color.material_deep_teal_500;
+			global::XFGloss.Droid.Resource.Color.material_grey_100 = global::PhantasmaMail.Droid.Resource.Color.material_grey_100;
+			global::XFGloss.Droid.Resource.Color.material_grey_300 = global::PhantasmaMail.Droid.Resource.Color.material_grey_300;
+			global::XFGloss.Droid.Resource.Color.material_grey_50 = global::PhantasmaMail.Droid.Resource.Color.material_grey_50;
+			global::XFGloss.Droid.Resource.Color.material_grey_600 = global::PhantasmaMail.Droid.Resource.Color.material_grey_600;
+			global::XFGloss.Droid.Resource.Color.material_grey_800 = global::PhantasmaMail.Droid.Resource.Color.material_grey_800;
+			global::XFGloss.Droid.Resource.Color.material_grey_850 = global::PhantasmaMail.Droid.Resource.Color.material_grey_850;
+			global::XFGloss.Droid.Resource.Color.material_grey_900 = global::PhantasmaMail.Droid.Resource.Color.material_grey_900;
+			global::XFGloss.Droid.Resource.Color.notification_action_color_filter = global::PhantasmaMail.Droid.Resource.Color.notification_action_color_filter;
+			global::XFGloss.Droid.Resource.Color.notification_icon_bg_color = global::PhantasmaMail.Droid.Resource.Color.notification_icon_bg_color;
+			global::XFGloss.Droid.Resource.Color.notification_material_background_media_default_color = global::PhantasmaMail.Droid.Resource.Color.notification_material_background_media_default_color;
+			global::XFGloss.Droid.Resource.Color.primary_dark_material_dark = global::PhantasmaMail.Droid.Resource.Color.primary_dark_material_dark;
+			global::XFGloss.Droid.Resource.Color.primary_dark_material_light = global::PhantasmaMail.Droid.Resource.Color.primary_dark_material_light;
+			global::XFGloss.Droid.Resource.Color.primary_material_dark = global::PhantasmaMail.Droid.Resource.Color.primary_material_dark;
+			global::XFGloss.Droid.Resource.Color.primary_material_light = global::PhantasmaMail.Droid.Resource.Color.primary_material_light;
+			global::XFGloss.Droid.Resource.Color.primary_text_default_material_dark = global::PhantasmaMail.Droid.Resource.Color.primary_text_default_material_dark;
+			global::XFGloss.Droid.Resource.Color.primary_text_default_material_light = global::PhantasmaMail.Droid.Resource.Color.primary_text_default_material_light;
+			global::XFGloss.Droid.Resource.Color.primary_text_disabled_material_dark = global::PhantasmaMail.Droid.Resource.Color.primary_text_disabled_material_dark;
+			global::XFGloss.Droid.Resource.Color.primary_text_disabled_material_light = global::PhantasmaMail.Droid.Resource.Color.primary_text_disabled_material_light;
+			global::XFGloss.Droid.Resource.Color.ripple_material_dark = global::PhantasmaMail.Droid.Resource.Color.ripple_material_dark;
+			global::XFGloss.Droid.Resource.Color.ripple_material_light = global::PhantasmaMail.Droid.Resource.Color.ripple_material_light;
+			global::XFGloss.Droid.Resource.Color.secondary_text_default_material_dark = global::PhantasmaMail.Droid.Resource.Color.secondary_text_default_material_dark;
+			global::XFGloss.Droid.Resource.Color.secondary_text_default_material_light = global::PhantasmaMail.Droid.Resource.Color.secondary_text_default_material_light;
+			global::XFGloss.Droid.Resource.Color.secondary_text_disabled_material_dark = global::PhantasmaMail.Droid.Resource.Color.secondary_text_disabled_material_dark;
+			global::XFGloss.Droid.Resource.Color.secondary_text_disabled_material_light = global::PhantasmaMail.Droid.Resource.Color.secondary_text_disabled_material_light;
+			global::XFGloss.Droid.Resource.Color.switch_thumb_disabled_material_dark = global::PhantasmaMail.Droid.Resource.Color.switch_thumb_disabled_material_dark;
+			global::XFGloss.Droid.Resource.Color.switch_thumb_disabled_material_light = global::PhantasmaMail.Droid.Resource.Color.switch_thumb_disabled_material_light;
+			global::XFGloss.Droid.Resource.Color.switch_thumb_material_dark = global::PhantasmaMail.Droid.Resource.Color.switch_thumb_material_dark;
+			global::XFGloss.Droid.Resource.Color.switch_thumb_material_light = global::PhantasmaMail.Droid.Resource.Color.switch_thumb_material_light;
+			global::XFGloss.Droid.Resource.Color.switch_thumb_normal_material_dark = global::PhantasmaMail.Droid.Resource.Color.switch_thumb_normal_material_dark;
+			global::XFGloss.Droid.Resource.Color.switch_thumb_normal_material_light = global::PhantasmaMail.Droid.Resource.Color.switch_thumb_normal_material_light;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_content_inset_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_action_bar_content_inset_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_content_inset_with_nav = global::PhantasmaMail.Droid.Resource.Dimension.abc_action_bar_content_inset_with_nav;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_default_height_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_action_bar_default_height_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_elevation_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_action_bar_elevation_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_progress_bar_size = global::PhantasmaMail.Droid.Resource.Dimension.abc_action_bar_progress_bar_size;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_stacked_max_height = global::PhantasmaMail.Droid.Resource.Dimension.abc_action_bar_stacked_max_height;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::PhantasmaMail.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_button_min_height_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_action_button_min_height_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_button_min_width_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_action_button_min_width_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height = global::PhantasmaMail.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height;
+			global::XFGloss.Droid.Resource.Dimension.abc_button_inset_horizontal_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_button_inset_horizontal_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_button_inset_vertical_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_button_inset_vertical_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_button_padding_horizontal_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_button_padding_horizontal_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_button_padding_vertical_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_button_padding_vertical_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_cascading_menus_min_smallest_width = global::PhantasmaMail.Droid.Resource.Dimension.abc_cascading_menus_min_smallest_width;
+			global::XFGloss.Droid.Resource.Dimension.abc_config_prefDialogWidth = global::PhantasmaMail.Droid.Resource.Dimension.abc_config_prefDialogWidth;
+			global::XFGloss.Droid.Resource.Dimension.abc_control_corner_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_control_corner_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_control_inset_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_control_inset_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_control_padding_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_control_padding_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_dialog_fixed_height_major = global::PhantasmaMail.Droid.Resource.Dimension.abc_dialog_fixed_height_major;
+			global::XFGloss.Droid.Resource.Dimension.abc_dialog_fixed_height_minor = global::PhantasmaMail.Droid.Resource.Dimension.abc_dialog_fixed_height_minor;
+			global::XFGloss.Droid.Resource.Dimension.abc_dialog_fixed_width_major = global::PhantasmaMail.Droid.Resource.Dimension.abc_dialog_fixed_width_major;
+			global::XFGloss.Droid.Resource.Dimension.abc_dialog_fixed_width_minor = global::PhantasmaMail.Droid.Resource.Dimension.abc_dialog_fixed_width_minor;
+			global::XFGloss.Droid.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons = global::PhantasmaMail.Droid.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons;
+			global::XFGloss.Droid.Resource.Dimension.abc_dialog_list_padding_top_no_title = global::PhantasmaMail.Droid.Resource.Dimension.abc_dialog_list_padding_top_no_title;
+			global::XFGloss.Droid.Resource.Dimension.abc_dialog_min_width_major = global::PhantasmaMail.Droid.Resource.Dimension.abc_dialog_min_width_major;
+			global::XFGloss.Droid.Resource.Dimension.abc_dialog_min_width_minor = global::PhantasmaMail.Droid.Resource.Dimension.abc_dialog_min_width_minor;
+			global::XFGloss.Droid.Resource.Dimension.abc_dialog_padding_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_dialog_padding_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_dialog_padding_top_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_dialog_padding_top_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_dialog_title_divider_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_dialog_title_divider_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_disabled_alpha_material_dark = global::PhantasmaMail.Droid.Resource.Dimension.abc_disabled_alpha_material_dark;
+			global::XFGloss.Droid.Resource.Dimension.abc_disabled_alpha_material_light = global::PhantasmaMail.Droid.Resource.Dimension.abc_disabled_alpha_material_light;
+			global::XFGloss.Droid.Resource.Dimension.abc_dropdownitem_icon_width = global::PhantasmaMail.Droid.Resource.Dimension.abc_dropdownitem_icon_width;
+			global::XFGloss.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left = global::PhantasmaMail.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left;
+			global::XFGloss.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right = global::PhantasmaMail.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right;
+			global::XFGloss.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_edit_text_inset_top_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_edit_text_inset_top_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_floating_window_z = global::PhantasmaMail.Droid.Resource.Dimension.abc_floating_window_z;
+			global::XFGloss.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_panel_menu_list_width = global::PhantasmaMail.Droid.Resource.Dimension.abc_panel_menu_list_width;
+			global::XFGloss.Droid.Resource.Dimension.abc_progress_bar_height_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_progress_bar_height_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_search_view_preferred_height = global::PhantasmaMail.Droid.Resource.Dimension.abc_search_view_preferred_height;
+			global::XFGloss.Droid.Resource.Dimension.abc_search_view_preferred_width = global::PhantasmaMail.Droid.Resource.Dimension.abc_search_view_preferred_width;
+			global::XFGloss.Droid.Resource.Dimension.abc_seekbar_track_background_height_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_seekbar_track_background_height_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_select_dialog_padding_start_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_select_dialog_padding_start_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_switch_padding = global::PhantasmaMail.Droid.Resource.Dimension.abc_switch_padding;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_body_1_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_text_size_body_1_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_body_2_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_text_size_body_2_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_button_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_text_size_button_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_caption_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_text_size_caption_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_display_1_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_text_size_display_1_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_display_2_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_text_size_display_2_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_display_3_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_text_size_display_3_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_display_4_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_text_size_display_4_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_headline_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_text_size_headline_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_large_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_text_size_large_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_medium_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_text_size_medium_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_menu_header_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_text_size_menu_header_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_menu_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_text_size_menu_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_small_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_text_size_small_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_subhead_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_text_size_subhead_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::PhantasmaMail.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_title_material = global::PhantasmaMail.Droid.Resource.Dimension.abc_text_size_title_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_title_material_toolbar = global::PhantasmaMail.Droid.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::XFGloss.Droid.Resource.Dimension.cardview_compat_inset_shadow = global::PhantasmaMail.Droid.Resource.Dimension.cardview_compat_inset_shadow;
+			global::XFGloss.Droid.Resource.Dimension.cardview_default_elevation = global::PhantasmaMail.Droid.Resource.Dimension.cardview_default_elevation;
+			global::XFGloss.Droid.Resource.Dimension.cardview_default_radius = global::PhantasmaMail.Droid.Resource.Dimension.cardview_default_radius;
+			global::XFGloss.Droid.Resource.Dimension.design_appbar_elevation = global::PhantasmaMail.Droid.Resource.Dimension.design_appbar_elevation;
+			global::XFGloss.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width = global::PhantasmaMail.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width;
+			global::XFGloss.Droid.Resource.Dimension.design_bottom_navigation_active_text_size = global::PhantasmaMail.Droid.Resource.Dimension.design_bottom_navigation_active_text_size;
+			global::XFGloss.Droid.Resource.Dimension.design_bottom_navigation_elevation = global::PhantasmaMail.Droid.Resource.Dimension.design_bottom_navigation_elevation;
+			global::XFGloss.Droid.Resource.Dimension.design_bottom_navigation_height = global::PhantasmaMail.Droid.Resource.Dimension.design_bottom_navigation_height;
+			global::XFGloss.Droid.Resource.Dimension.design_bottom_navigation_item_max_width = global::PhantasmaMail.Droid.Resource.Dimension.design_bottom_navigation_item_max_width;
+			global::XFGloss.Droid.Resource.Dimension.design_bottom_navigation_item_min_width = global::PhantasmaMail.Droid.Resource.Dimension.design_bottom_navigation_item_min_width;
+			global::XFGloss.Droid.Resource.Dimension.design_bottom_navigation_margin = global::PhantasmaMail.Droid.Resource.Dimension.design_bottom_navigation_margin;
+			global::XFGloss.Droid.Resource.Dimension.design_bottom_navigation_shadow_height = global::PhantasmaMail.Droid.Resource.Dimension.design_bottom_navigation_shadow_height;
+			global::XFGloss.Droid.Resource.Dimension.design_bottom_navigation_text_size = global::PhantasmaMail.Droid.Resource.Dimension.design_bottom_navigation_text_size;
+			global::XFGloss.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation = global::PhantasmaMail.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation;
+			global::XFGloss.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min = global::PhantasmaMail.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min;
+			global::XFGloss.Droid.Resource.Dimension.design_fab_border_width = global::PhantasmaMail.Droid.Resource.Dimension.design_fab_border_width;
+			global::XFGloss.Droid.Resource.Dimension.design_fab_elevation = global::PhantasmaMail.Droid.Resource.Dimension.design_fab_elevation;
+			global::XFGloss.Droid.Resource.Dimension.design_fab_image_size = global::PhantasmaMail.Droid.Resource.Dimension.design_fab_image_size;
+			global::XFGloss.Droid.Resource.Dimension.design_fab_size_mini = global::PhantasmaMail.Droid.Resource.Dimension.design_fab_size_mini;
+			global::XFGloss.Droid.Resource.Dimension.design_fab_size_normal = global::PhantasmaMail.Droid.Resource.Dimension.design_fab_size_normal;
+			global::XFGloss.Droid.Resource.Dimension.design_fab_translation_z_pressed = global::PhantasmaMail.Droid.Resource.Dimension.design_fab_translation_z_pressed;
+			global::XFGloss.Droid.Resource.Dimension.design_navigation_elevation = global::PhantasmaMail.Droid.Resource.Dimension.design_navigation_elevation;
+			global::XFGloss.Droid.Resource.Dimension.design_navigation_icon_padding = global::PhantasmaMail.Droid.Resource.Dimension.design_navigation_icon_padding;
+			global::XFGloss.Droid.Resource.Dimension.design_navigation_icon_size = global::PhantasmaMail.Droid.Resource.Dimension.design_navigation_icon_size;
+			global::XFGloss.Droid.Resource.Dimension.design_navigation_max_width = global::PhantasmaMail.Droid.Resource.Dimension.design_navigation_max_width;
+			global::XFGloss.Droid.Resource.Dimension.design_navigation_padding_bottom = global::PhantasmaMail.Droid.Resource.Dimension.design_navigation_padding_bottom;
+			global::XFGloss.Droid.Resource.Dimension.design_navigation_separator_vertical_padding = global::PhantasmaMail.Droid.Resource.Dimension.design_navigation_separator_vertical_padding;
+			global::XFGloss.Droid.Resource.Dimension.design_snackbar_action_inline_max_width = global::PhantasmaMail.Droid.Resource.Dimension.design_snackbar_action_inline_max_width;
+			global::XFGloss.Droid.Resource.Dimension.design_snackbar_background_corner_radius = global::PhantasmaMail.Droid.Resource.Dimension.design_snackbar_background_corner_radius;
+			global::XFGloss.Droid.Resource.Dimension.design_snackbar_elevation = global::PhantasmaMail.Droid.Resource.Dimension.design_snackbar_elevation;
+			global::XFGloss.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal = global::PhantasmaMail.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal;
+			global::XFGloss.Droid.Resource.Dimension.design_snackbar_max_width = global::PhantasmaMail.Droid.Resource.Dimension.design_snackbar_max_width;
+			global::XFGloss.Droid.Resource.Dimension.design_snackbar_min_width = global::PhantasmaMail.Droid.Resource.Dimension.design_snackbar_min_width;
+			global::XFGloss.Droid.Resource.Dimension.design_snackbar_padding_horizontal = global::PhantasmaMail.Droid.Resource.Dimension.design_snackbar_padding_horizontal;
+			global::XFGloss.Droid.Resource.Dimension.design_snackbar_padding_vertical = global::PhantasmaMail.Droid.Resource.Dimension.design_snackbar_padding_vertical;
+			global::XFGloss.Droid.Resource.Dimension.design_snackbar_padding_vertical_2lines = global::PhantasmaMail.Droid.Resource.Dimension.design_snackbar_padding_vertical_2lines;
+			global::XFGloss.Droid.Resource.Dimension.design_snackbar_text_size = global::PhantasmaMail.Droid.Resource.Dimension.design_snackbar_text_size;
+			global::XFGloss.Droid.Resource.Dimension.design_tab_max_width = global::PhantasmaMail.Droid.Resource.Dimension.design_tab_max_width;
+			global::XFGloss.Droid.Resource.Dimension.design_tab_scrollable_min_width = global::PhantasmaMail.Droid.Resource.Dimension.design_tab_scrollable_min_width;
+			global::XFGloss.Droid.Resource.Dimension.design_tab_text_size = global::PhantasmaMail.Droid.Resource.Dimension.design_tab_text_size;
+			global::XFGloss.Droid.Resource.Dimension.design_tab_text_size_2line = global::PhantasmaMail.Droid.Resource.Dimension.design_tab_text_size_2line;
+			global::XFGloss.Droid.Resource.Dimension.disabled_alpha_material_dark = global::PhantasmaMail.Droid.Resource.Dimension.disabled_alpha_material_dark;
+			global::XFGloss.Droid.Resource.Dimension.disabled_alpha_material_light = global::PhantasmaMail.Droid.Resource.Dimension.disabled_alpha_material_light;
+			global::XFGloss.Droid.Resource.Dimension.highlight_alpha_material_colored = global::PhantasmaMail.Droid.Resource.Dimension.highlight_alpha_material_colored;
+			global::XFGloss.Droid.Resource.Dimension.highlight_alpha_material_dark = global::PhantasmaMail.Droid.Resource.Dimension.highlight_alpha_material_dark;
+			global::XFGloss.Droid.Resource.Dimension.highlight_alpha_material_light = global::PhantasmaMail.Droid.Resource.Dimension.highlight_alpha_material_light;
+			global::XFGloss.Droid.Resource.Dimension.hint_alpha_material_dark = global::PhantasmaMail.Droid.Resource.Dimension.hint_alpha_material_dark;
+			global::XFGloss.Droid.Resource.Dimension.hint_alpha_material_light = global::PhantasmaMail.Droid.Resource.Dimension.hint_alpha_material_light;
+			global::XFGloss.Droid.Resource.Dimension.hint_pressed_alpha_material_dark = global::PhantasmaMail.Droid.Resource.Dimension.hint_pressed_alpha_material_dark;
+			global::XFGloss.Droid.Resource.Dimension.hint_pressed_alpha_material_light = global::PhantasmaMail.Droid.Resource.Dimension.hint_pressed_alpha_material_light;
+			global::XFGloss.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::PhantasmaMail.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
+			global::XFGloss.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::PhantasmaMail.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
+			global::XFGloss.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::PhantasmaMail.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::XFGloss.Droid.Resource.Dimension.mr_controller_volume_group_list_item_height = global::PhantasmaMail.Droid.Resource.Dimension.mr_controller_volume_group_list_item_height;
+			global::XFGloss.Droid.Resource.Dimension.mr_controller_volume_group_list_item_icon_size = global::PhantasmaMail.Droid.Resource.Dimension.mr_controller_volume_group_list_item_icon_size;
+			global::XFGloss.Droid.Resource.Dimension.mr_controller_volume_group_list_max_height = global::PhantasmaMail.Droid.Resource.Dimension.mr_controller_volume_group_list_max_height;
+			global::XFGloss.Droid.Resource.Dimension.mr_controller_volume_group_list_padding_top = global::PhantasmaMail.Droid.Resource.Dimension.mr_controller_volume_group_list_padding_top;
+			global::XFGloss.Droid.Resource.Dimension.mr_dialog_fixed_width_major = global::PhantasmaMail.Droid.Resource.Dimension.mr_dialog_fixed_width_major;
+			global::XFGloss.Droid.Resource.Dimension.mr_dialog_fixed_width_minor = global::PhantasmaMail.Droid.Resource.Dimension.mr_dialog_fixed_width_minor;
+			global::XFGloss.Droid.Resource.Dimension.notification_action_icon_size = global::PhantasmaMail.Droid.Resource.Dimension.notification_action_icon_size;
+			global::XFGloss.Droid.Resource.Dimension.notification_action_text_size = global::PhantasmaMail.Droid.Resource.Dimension.notification_action_text_size;
+			global::XFGloss.Droid.Resource.Dimension.notification_big_circle_margin = global::PhantasmaMail.Droid.Resource.Dimension.notification_big_circle_margin;
+			global::XFGloss.Droid.Resource.Dimension.notification_content_margin_start = global::PhantasmaMail.Droid.Resource.Dimension.notification_content_margin_start;
+			global::XFGloss.Droid.Resource.Dimension.notification_large_icon_height = global::PhantasmaMail.Droid.Resource.Dimension.notification_large_icon_height;
+			global::XFGloss.Droid.Resource.Dimension.notification_large_icon_width = global::PhantasmaMail.Droid.Resource.Dimension.notification_large_icon_width;
+			global::XFGloss.Droid.Resource.Dimension.notification_main_column_padding_top = global::PhantasmaMail.Droid.Resource.Dimension.notification_main_column_padding_top;
+			global::XFGloss.Droid.Resource.Dimension.notification_media_narrow_margin = global::PhantasmaMail.Droid.Resource.Dimension.notification_media_narrow_margin;
+			global::XFGloss.Droid.Resource.Dimension.notification_right_icon_size = global::PhantasmaMail.Droid.Resource.Dimension.notification_right_icon_size;
+			global::XFGloss.Droid.Resource.Dimension.notification_right_side_padding_top = global::PhantasmaMail.Droid.Resource.Dimension.notification_right_side_padding_top;
+			global::XFGloss.Droid.Resource.Dimension.notification_small_icon_background_padding = global::PhantasmaMail.Droid.Resource.Dimension.notification_small_icon_background_padding;
+			global::XFGloss.Droid.Resource.Dimension.notification_small_icon_size_as_large = global::PhantasmaMail.Droid.Resource.Dimension.notification_small_icon_size_as_large;
+			global::XFGloss.Droid.Resource.Dimension.notification_subtext_size = global::PhantasmaMail.Droid.Resource.Dimension.notification_subtext_size;
+			global::XFGloss.Droid.Resource.Dimension.notification_top_pad = global::PhantasmaMail.Droid.Resource.Dimension.notification_top_pad;
+			global::XFGloss.Droid.Resource.Dimension.notification_top_pad_large_text = global::PhantasmaMail.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::XFGloss.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::PhantasmaMail.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_action_bar_item_background_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_action_bar_item_background_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_btn_borderless_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_btn_borderless_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_btn_check_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_btn_check_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::PhantasmaMail.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
+			global::XFGloss.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::PhantasmaMail.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
+			global::XFGloss.Droid.Resource.Drawable.abc_btn_colored_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_btn_colored_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_btn_default_mtrl_shape = global::PhantasmaMail.Droid.Resource.Drawable.abc_btn_default_mtrl_shape;
+			global::XFGloss.Droid.Resource.Drawable.abc_btn_radio_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_btn_radio_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::PhantasmaMail.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
+			global::XFGloss.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::PhantasmaMail.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
+			global::XFGloss.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::PhantasmaMail.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
+			global::XFGloss.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::PhantasmaMail.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
+			global::XFGloss.Droid.Resource.Drawable.abc_cab_background_internal_bg = global::PhantasmaMail.Droid.Resource.Drawable.abc_cab_background_internal_bg;
+			global::XFGloss.Droid.Resource.Drawable.abc_cab_background_top_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_cab_background_top_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::PhantasmaMail.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_control_background_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_control_background_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_dialog_material_background = global::PhantasmaMail.Droid.Resource.Drawable.abc_dialog_material_background;
+			global::XFGloss.Droid.Resource.Drawable.abc_edit_text_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_edit_text_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_ab_back_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_ic_ab_back_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp = global::PhantasmaMail.Droid.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_clear_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_ic_clear_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::PhantasmaMail.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_go_search_api_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_ic_go_search_api_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::PhantasmaMail.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::PhantasmaMail.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_menu_overflow_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_ic_menu_overflow_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::PhantasmaMail.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::PhantasmaMail.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::PhantasmaMail.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_search_api_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_ic_search_api_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_star_black_16dp = global::PhantasmaMail.Droid.Resource.Drawable.abc_ic_star_black_16dp;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_star_black_36dp = global::PhantasmaMail.Droid.Resource.Drawable.abc_ic_star_black_36dp;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_star_black_48dp = global::PhantasmaMail.Droid.Resource.Drawable.abc_ic_star_black_48dp;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_star_half_black_16dp = global::PhantasmaMail.Droid.Resource.Drawable.abc_ic_star_half_black_16dp;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_star_half_black_36dp = global::PhantasmaMail.Droid.Resource.Drawable.abc_ic_star_half_black_36dp;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_star_half_black_48dp = global::PhantasmaMail.Droid.Resource.Drawable.abc_ic_star_half_black_48dp;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_voice_search_api_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_ic_voice_search_api_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_item_background_holo_dark = global::PhantasmaMail.Droid.Resource.Drawable.abc_item_background_holo_dark;
+			global::XFGloss.Droid.Resource.Drawable.abc_item_background_holo_light = global::PhantasmaMail.Droid.Resource.Drawable.abc_item_background_holo_light;
+			global::XFGloss.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha = global::PhantasmaMail.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_list_focused_holo = global::PhantasmaMail.Droid.Resource.Drawable.abc_list_focused_holo;
+			global::XFGloss.Droid.Resource.Drawable.abc_list_longpressed_holo = global::PhantasmaMail.Droid.Resource.Drawable.abc_list_longpressed_holo;
+			global::XFGloss.Droid.Resource.Drawable.abc_list_pressed_holo_dark = global::PhantasmaMail.Droid.Resource.Drawable.abc_list_pressed_holo_dark;
+			global::XFGloss.Droid.Resource.Drawable.abc_list_pressed_holo_light = global::PhantasmaMail.Droid.Resource.Drawable.abc_list_pressed_holo_light;
+			global::XFGloss.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::PhantasmaMail.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
+			global::XFGloss.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::PhantasmaMail.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light;
+			global::XFGloss.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::PhantasmaMail.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark;
+			global::XFGloss.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light = global::PhantasmaMail.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light;
+			global::XFGloss.Droid.Resource.Drawable.abc_list_selector_holo_dark = global::PhantasmaMail.Droid.Resource.Drawable.abc_list_selector_holo_dark;
+			global::XFGloss.Droid.Resource.Drawable.abc_list_selector_holo_light = global::PhantasmaMail.Droid.Resource.Drawable.abc_list_selector_holo_light;
+			global::XFGloss.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::PhantasmaMail.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
+			global::XFGloss.Droid.Resource.Drawable.abc_popup_background_mtrl_mult = global::PhantasmaMail.Droid.Resource.Drawable.abc_popup_background_mtrl_mult;
+			global::XFGloss.Droid.Resource.Drawable.abc_ratingbar_indicator_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_ratingbar_indicator_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_ratingbar_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_ratingbar_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_ratingbar_small_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_ratingbar_small_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha = global::PhantasmaMail.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000 = global::PhantasmaMail.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000;
+			global::XFGloss.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005 = global::PhantasmaMail.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005;
+			global::XFGloss.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha = global::PhantasmaMail.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha = global::PhantasmaMail.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_seekbar_thumb_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_seekbar_thumb_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_seekbar_tick_mark_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_seekbar_tick_mark_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_seekbar_track_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_seekbar_track_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::PhantasmaMail.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_spinner_textfield_background_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_switch_thumb_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_switch_thumb_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha = global::PhantasmaMail.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_tab_indicator_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_tab_indicator_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::PhantasmaMail.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_text_cursor_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_text_cursor_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_dark = global::PhantasmaMail.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_dark;
+			global::XFGloss.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_light = global::PhantasmaMail.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_light;
+			global::XFGloss.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark = global::PhantasmaMail.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark;
+			global::XFGloss.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_light = global::PhantasmaMail.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_light;
+			global::XFGloss.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_dark = global::PhantasmaMail.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_dark;
+			global::XFGloss.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_light = global::PhantasmaMail.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_light;
+			global::XFGloss.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::PhantasmaMail.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::PhantasmaMail.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::PhantasmaMail.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::PhantasmaMail.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_textfield_search_material = global::PhantasmaMail.Droid.Resource.Drawable.abc_textfield_search_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_vector_test = global::PhantasmaMail.Droid.Resource.Drawable.abc_vector_test;
+			global::XFGloss.Droid.Resource.Drawable.avd_hide_password = global::PhantasmaMail.Droid.Resource.Drawable.avd_hide_password;
+			global::XFGloss.Droid.Resource.Drawable.avd_hide_password_1 = global::PhantasmaMail.Droid.Resource.Drawable.avd_hide_password_1;
+			global::XFGloss.Droid.Resource.Drawable.avd_hide_password_2 = global::PhantasmaMail.Droid.Resource.Drawable.avd_hide_password_2;
+			global::XFGloss.Droid.Resource.Drawable.avd_hide_password_3 = global::PhantasmaMail.Droid.Resource.Drawable.avd_hide_password_3;
+			global::XFGloss.Droid.Resource.Drawable.avd_show_password = global::PhantasmaMail.Droid.Resource.Drawable.avd_show_password;
+			global::XFGloss.Droid.Resource.Drawable.avd_show_password_1 = global::PhantasmaMail.Droid.Resource.Drawable.avd_show_password_1;
+			global::XFGloss.Droid.Resource.Drawable.avd_show_password_2 = global::PhantasmaMail.Droid.Resource.Drawable.avd_show_password_2;
+			global::XFGloss.Droid.Resource.Drawable.avd_show_password_3 = global::PhantasmaMail.Droid.Resource.Drawable.avd_show_password_3;
+			global::XFGloss.Droid.Resource.Drawable.design_bottom_navigation_item_background = global::PhantasmaMail.Droid.Resource.Drawable.design_bottom_navigation_item_background;
+			global::XFGloss.Droid.Resource.Drawable.design_fab_background = global::PhantasmaMail.Droid.Resource.Drawable.design_fab_background;
+			global::XFGloss.Droid.Resource.Drawable.design_ic_visibility = global::PhantasmaMail.Droid.Resource.Drawable.design_ic_visibility;
+			global::XFGloss.Droid.Resource.Drawable.design_ic_visibility_off = global::PhantasmaMail.Droid.Resource.Drawable.design_ic_visibility_off;
+			global::XFGloss.Droid.Resource.Drawable.design_password_eye = global::PhantasmaMail.Droid.Resource.Drawable.design_password_eye;
+			global::XFGloss.Droid.Resource.Drawable.design_snackbar_background = global::PhantasmaMail.Droid.Resource.Drawable.design_snackbar_background;
+			global::XFGloss.Droid.Resource.Drawable.ic_audiotrack_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_audiotrack_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_audiotrack_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_audiotrack_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_dialog_close_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_dialog_close_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_dialog_close_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_dialog_close_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_collapse_00 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_collapse_00;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_collapse_01 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_collapse_01;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_collapse_02 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_collapse_02;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_collapse_03 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_collapse_03;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_collapse_04 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_collapse_04;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_collapse_05 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_collapse_05;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_collapse_06 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_collapse_06;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_collapse_07 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_collapse_07;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_collapse_08 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_collapse_08;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_collapse_09 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_collapse_09;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_collapse_10 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_collapse_10;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_collapse_11 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_collapse_11;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_collapse_12 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_collapse_12;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_collapse_13 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_collapse_13;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_collapse_14 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_collapse_14;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_collapse_15 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_collapse_15;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_expand_00 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_expand_00;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_expand_01 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_expand_01;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_expand_02 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_expand_02;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_expand_03 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_expand_03;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_expand_04 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_expand_04;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_expand_05 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_expand_05;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_expand_06 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_expand_06;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_expand_07 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_expand_07;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_expand_08 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_expand_08;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_expand_09 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_expand_09;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_expand_10 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_expand_10;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_expand_11 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_expand_11;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_expand_12 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_expand_12;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_expand_13 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_expand_13;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_expand_14 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_expand_14;
+			global::XFGloss.Droid.Resource.Drawable.ic_group_expand_15 = global::PhantasmaMail.Droid.Resource.Drawable.ic_group_expand_15;
+			global::XFGloss.Droid.Resource.Drawable.ic_media_pause_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_media_pause_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_media_pause_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_media_pause_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_media_play_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_media_play_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_media_play_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_media_play_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_media_stop_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_media_stop_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_media_stop_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_media_stop_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_00_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_00_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_00_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_00_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_01_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_01_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_01_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_01_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_02_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_02_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_02_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_02_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_03_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_03_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_03_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_03_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_04_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_04_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_04_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_04_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_05_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_05_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_05_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_05_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_06_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_06_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_06_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_06_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_07_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_07_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_07_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_07_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_08_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_08_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_08_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_08_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_09_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_09_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_09_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_09_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_10_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_10_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_10_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_10_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_11_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_11_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_11_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_11_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_12_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_12_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_12_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_12_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_13_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_13_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_13_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_13_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_14_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_14_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_14_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_14_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_15_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_15_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_15_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_15_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_16_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_16_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_16_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_16_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_17_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_17_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_17_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_17_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_18_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_18_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_18_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_18_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_19_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_19_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_19_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_19_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_20_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_20_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_20_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_20_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_21_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_21_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_21_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_21_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_22_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_22_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connected_22_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connected_22_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_00_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_00_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_00_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_00_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_01_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_01_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_01_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_01_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_02_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_02_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_02_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_02_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_03_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_03_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_03_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_03_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_04_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_04_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_04_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_04_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_05_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_05_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_05_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_05_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_06_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_06_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_06_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_06_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_07_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_07_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_07_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_07_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_08_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_08_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_08_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_08_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_09_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_09_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_09_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_09_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_10_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_10_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_10_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_10_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_11_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_11_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_11_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_11_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_12_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_12_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_12_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_12_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_13_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_13_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_13_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_13_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_14_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_14_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_14_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_14_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_15_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_15_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_15_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_15_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_16_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_16_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_16_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_16_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_17_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_17_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_17_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_17_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_18_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_18_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_18_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_18_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_19_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_19_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_19_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_19_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_20_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_20_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_20_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_20_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_21_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_21_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_21_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_21_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_22_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_22_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_connecting_22_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_connecting_22_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_disabled_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_disabled_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_disabled_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_disabled_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_disconnected_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_disconnected_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_disconnected_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_disconnected_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_mr_button_grey = global::PhantasmaMail.Droid.Resource.Drawable.ic_mr_button_grey;
+			global::XFGloss.Droid.Resource.Drawable.ic_vol_type_speaker_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_vol_type_speaker_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_vol_type_speaker_group_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_vol_type_speaker_group_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_vol_type_speaker_group_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_vol_type_speaker_group_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_vol_type_speaker_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_vol_type_speaker_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_vol_type_tv_dark = global::PhantasmaMail.Droid.Resource.Drawable.ic_vol_type_tv_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_vol_type_tv_light = global::PhantasmaMail.Droid.Resource.Drawable.ic_vol_type_tv_light;
+			global::XFGloss.Droid.Resource.Drawable.mr_button_connected_dark = global::PhantasmaMail.Droid.Resource.Drawable.mr_button_connected_dark;
+			global::XFGloss.Droid.Resource.Drawable.mr_button_connected_light = global::PhantasmaMail.Droid.Resource.Drawable.mr_button_connected_light;
+			global::XFGloss.Droid.Resource.Drawable.mr_button_connecting_dark = global::PhantasmaMail.Droid.Resource.Drawable.mr_button_connecting_dark;
+			global::XFGloss.Droid.Resource.Drawable.mr_button_connecting_light = global::PhantasmaMail.Droid.Resource.Drawable.mr_button_connecting_light;
+			global::XFGloss.Droid.Resource.Drawable.mr_button_dark = global::PhantasmaMail.Droid.Resource.Drawable.mr_button_dark;
+			global::XFGloss.Droid.Resource.Drawable.mr_button_light = global::PhantasmaMail.Droid.Resource.Drawable.mr_button_light;
+			global::XFGloss.Droid.Resource.Drawable.mr_dialog_close_dark = global::PhantasmaMail.Droid.Resource.Drawable.mr_dialog_close_dark;
+			global::XFGloss.Droid.Resource.Drawable.mr_dialog_close_light = global::PhantasmaMail.Droid.Resource.Drawable.mr_dialog_close_light;
+			global::XFGloss.Droid.Resource.Drawable.mr_dialog_material_background_dark = global::PhantasmaMail.Droid.Resource.Drawable.mr_dialog_material_background_dark;
+			global::XFGloss.Droid.Resource.Drawable.mr_dialog_material_background_light = global::PhantasmaMail.Droid.Resource.Drawable.mr_dialog_material_background_light;
+			global::XFGloss.Droid.Resource.Drawable.mr_group_collapse = global::PhantasmaMail.Droid.Resource.Drawable.mr_group_collapse;
+			global::XFGloss.Droid.Resource.Drawable.mr_group_expand = global::PhantasmaMail.Droid.Resource.Drawable.mr_group_expand;
+			global::XFGloss.Droid.Resource.Drawable.mr_media_pause_dark = global::PhantasmaMail.Droid.Resource.Drawable.mr_media_pause_dark;
+			global::XFGloss.Droid.Resource.Drawable.mr_media_pause_light = global::PhantasmaMail.Droid.Resource.Drawable.mr_media_pause_light;
+			global::XFGloss.Droid.Resource.Drawable.mr_media_play_dark = global::PhantasmaMail.Droid.Resource.Drawable.mr_media_play_dark;
+			global::XFGloss.Droid.Resource.Drawable.mr_media_play_light = global::PhantasmaMail.Droid.Resource.Drawable.mr_media_play_light;
+			global::XFGloss.Droid.Resource.Drawable.mr_media_stop_dark = global::PhantasmaMail.Droid.Resource.Drawable.mr_media_stop_dark;
+			global::XFGloss.Droid.Resource.Drawable.mr_media_stop_light = global::PhantasmaMail.Droid.Resource.Drawable.mr_media_stop_light;
+			global::XFGloss.Droid.Resource.Drawable.mr_vol_type_audiotrack_dark = global::PhantasmaMail.Droid.Resource.Drawable.mr_vol_type_audiotrack_dark;
+			global::XFGloss.Droid.Resource.Drawable.mr_vol_type_audiotrack_light = global::PhantasmaMail.Droid.Resource.Drawable.mr_vol_type_audiotrack_light;
+			global::XFGloss.Droid.Resource.Drawable.navigation_empty_icon = global::PhantasmaMail.Droid.Resource.Drawable.navigation_empty_icon;
+			global::XFGloss.Droid.Resource.Drawable.notification_action_background = global::PhantasmaMail.Droid.Resource.Drawable.notification_action_background;
+			global::XFGloss.Droid.Resource.Drawable.notification_bg = global::PhantasmaMail.Droid.Resource.Drawable.notification_bg;
+			global::XFGloss.Droid.Resource.Drawable.notification_bg_low = global::PhantasmaMail.Droid.Resource.Drawable.notification_bg_low;
+			global::XFGloss.Droid.Resource.Drawable.notification_bg_low_normal = global::PhantasmaMail.Droid.Resource.Drawable.notification_bg_low_normal;
+			global::XFGloss.Droid.Resource.Drawable.notification_bg_low_pressed = global::PhantasmaMail.Droid.Resource.Drawable.notification_bg_low_pressed;
+			global::XFGloss.Droid.Resource.Drawable.notification_bg_normal = global::PhantasmaMail.Droid.Resource.Drawable.notification_bg_normal;
+			global::XFGloss.Droid.Resource.Drawable.notification_bg_normal_pressed = global::PhantasmaMail.Droid.Resource.Drawable.notification_bg_normal_pressed;
+			global::XFGloss.Droid.Resource.Drawable.notification_icon_background = global::PhantasmaMail.Droid.Resource.Drawable.notification_icon_background;
+			global::XFGloss.Droid.Resource.Drawable.notification_template_icon_bg = global::PhantasmaMail.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::XFGloss.Droid.Resource.Drawable.notification_template_icon_low_bg = global::PhantasmaMail.Droid.Resource.Drawable.notification_template_icon_low_bg;
+			global::XFGloss.Droid.Resource.Drawable.notification_tile_bg = global::PhantasmaMail.Droid.Resource.Drawable.notification_tile_bg;
+			global::XFGloss.Droid.Resource.Drawable.notify_panel_notification_icon_bg = global::PhantasmaMail.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::XFGloss.Droid.Resource.Id.action0 = global::PhantasmaMail.Droid.Resource.Id.action0;
+			global::XFGloss.Droid.Resource.Id.action_bar = global::PhantasmaMail.Droid.Resource.Id.action_bar;
+			global::XFGloss.Droid.Resource.Id.action_bar_activity_content = global::PhantasmaMail.Droid.Resource.Id.action_bar_activity_content;
+			global::XFGloss.Droid.Resource.Id.action_bar_container = global::PhantasmaMail.Droid.Resource.Id.action_bar_container;
+			global::XFGloss.Droid.Resource.Id.action_bar_root = global::PhantasmaMail.Droid.Resource.Id.action_bar_root;
+			global::XFGloss.Droid.Resource.Id.action_bar_spinner = global::PhantasmaMail.Droid.Resource.Id.action_bar_spinner;
+			global::XFGloss.Droid.Resource.Id.action_bar_subtitle = global::PhantasmaMail.Droid.Resource.Id.action_bar_subtitle;
+			global::XFGloss.Droid.Resource.Id.action_bar_title = global::PhantasmaMail.Droid.Resource.Id.action_bar_title;
+			global::XFGloss.Droid.Resource.Id.action_container = global::PhantasmaMail.Droid.Resource.Id.action_container;
+			global::XFGloss.Droid.Resource.Id.action_context_bar = global::PhantasmaMail.Droid.Resource.Id.action_context_bar;
+			global::XFGloss.Droid.Resource.Id.action_divider = global::PhantasmaMail.Droid.Resource.Id.action_divider;
+			global::XFGloss.Droid.Resource.Id.action_image = global::PhantasmaMail.Droid.Resource.Id.action_image;
+			global::XFGloss.Droid.Resource.Id.action_menu_divider = global::PhantasmaMail.Droid.Resource.Id.action_menu_divider;
+			global::XFGloss.Droid.Resource.Id.action_menu_presenter = global::PhantasmaMail.Droid.Resource.Id.action_menu_presenter;
+			global::XFGloss.Droid.Resource.Id.action_mode_bar = global::PhantasmaMail.Droid.Resource.Id.action_mode_bar;
+			global::XFGloss.Droid.Resource.Id.action_mode_bar_stub = global::PhantasmaMail.Droid.Resource.Id.action_mode_bar_stub;
+			global::XFGloss.Droid.Resource.Id.action_mode_close_button = global::PhantasmaMail.Droid.Resource.Id.action_mode_close_button;
+			global::XFGloss.Droid.Resource.Id.action_text = global::PhantasmaMail.Droid.Resource.Id.action_text;
+			global::XFGloss.Droid.Resource.Id.actions = global::PhantasmaMail.Droid.Resource.Id.actions;
+			global::XFGloss.Droid.Resource.Id.activity_chooser_view_content = global::PhantasmaMail.Droid.Resource.Id.activity_chooser_view_content;
+			global::XFGloss.Droid.Resource.Id.add = global::PhantasmaMail.Droid.Resource.Id.add;
+			global::XFGloss.Droid.Resource.Id.alertTitle = global::PhantasmaMail.Droid.Resource.Id.alertTitle;
+			global::XFGloss.Droid.Resource.Id.all = global::PhantasmaMail.Droid.Resource.Id.all;
+			global::XFGloss.Droid.Resource.Id.always = global::PhantasmaMail.Droid.Resource.Id.always;
+			global::XFGloss.Droid.Resource.Id.auto = global::PhantasmaMail.Droid.Resource.Id.auto;
+			global::XFGloss.Droid.Resource.Id.beginning = global::PhantasmaMail.Droid.Resource.Id.beginning;
+			global::XFGloss.Droid.Resource.Id.bottom = global::PhantasmaMail.Droid.Resource.Id.bottom;
+			global::XFGloss.Droid.Resource.Id.buttonPanel = global::PhantasmaMail.Droid.Resource.Id.buttonPanel;
+			global::XFGloss.Droid.Resource.Id.cancel_action = global::PhantasmaMail.Droid.Resource.Id.cancel_action;
+			global::XFGloss.Droid.Resource.Id.center = global::PhantasmaMail.Droid.Resource.Id.center;
+			global::XFGloss.Droid.Resource.Id.center_horizontal = global::PhantasmaMail.Droid.Resource.Id.center_horizontal;
+			global::XFGloss.Droid.Resource.Id.center_vertical = global::PhantasmaMail.Droid.Resource.Id.center_vertical;
+			global::XFGloss.Droid.Resource.Id.checkbox = global::PhantasmaMail.Droid.Resource.Id.checkbox;
+			global::XFGloss.Droid.Resource.Id.chronometer = global::PhantasmaMail.Droid.Resource.Id.chronometer;
+			global::XFGloss.Droid.Resource.Id.clip_horizontal = global::PhantasmaMail.Droid.Resource.Id.clip_horizontal;
+			global::XFGloss.Droid.Resource.Id.clip_vertical = global::PhantasmaMail.Droid.Resource.Id.clip_vertical;
+			global::XFGloss.Droid.Resource.Id.collapseActionView = global::PhantasmaMail.Droid.Resource.Id.collapseActionView;
+			global::XFGloss.Droid.Resource.Id.container = global::PhantasmaMail.Droid.Resource.Id.container;
+			global::XFGloss.Droid.Resource.Id.contentPanel = global::PhantasmaMail.Droid.Resource.Id.contentPanel;
+			global::XFGloss.Droid.Resource.Id.coordinator = global::PhantasmaMail.Droid.Resource.Id.coordinator;
+			global::XFGloss.Droid.Resource.Id.custom = global::PhantasmaMail.Droid.Resource.Id.custom;
+			global::XFGloss.Droid.Resource.Id.customPanel = global::PhantasmaMail.Droid.Resource.Id.customPanel;
+			global::XFGloss.Droid.Resource.Id.decor_content_parent = global::PhantasmaMail.Droid.Resource.Id.decor_content_parent;
+			global::XFGloss.Droid.Resource.Id.default_activity_button = global::PhantasmaMail.Droid.Resource.Id.default_activity_button;
+			global::XFGloss.Droid.Resource.Id.design_bottom_sheet = global::PhantasmaMail.Droid.Resource.Id.design_bottom_sheet;
+			global::XFGloss.Droid.Resource.Id.design_menu_item_action_area = global::PhantasmaMail.Droid.Resource.Id.design_menu_item_action_area;
+			global::XFGloss.Droid.Resource.Id.design_menu_item_action_area_stub = global::PhantasmaMail.Droid.Resource.Id.design_menu_item_action_area_stub;
+			global::XFGloss.Droid.Resource.Id.design_menu_item_text = global::PhantasmaMail.Droid.Resource.Id.design_menu_item_text;
+			global::XFGloss.Droid.Resource.Id.design_navigation_view = global::PhantasmaMail.Droid.Resource.Id.design_navigation_view;
+			global::XFGloss.Droid.Resource.Id.disableHome = global::PhantasmaMail.Droid.Resource.Id.disableHome;
+			global::XFGloss.Droid.Resource.Id.edit_query = global::PhantasmaMail.Droid.Resource.Id.edit_query;
+			global::XFGloss.Droid.Resource.Id.end = global::PhantasmaMail.Droid.Resource.Id.end;
+			global::XFGloss.Droid.Resource.Id.end_padder = global::PhantasmaMail.Droid.Resource.Id.end_padder;
+			global::XFGloss.Droid.Resource.Id.enterAlways = global::PhantasmaMail.Droid.Resource.Id.enterAlways;
+			global::XFGloss.Droid.Resource.Id.enterAlwaysCollapsed = global::PhantasmaMail.Droid.Resource.Id.enterAlwaysCollapsed;
+			global::XFGloss.Droid.Resource.Id.exitUntilCollapsed = global::PhantasmaMail.Droid.Resource.Id.exitUntilCollapsed;
+			global::XFGloss.Droid.Resource.Id.expand_activities_button = global::PhantasmaMail.Droid.Resource.Id.expand_activities_button;
+			global::XFGloss.Droid.Resource.Id.expanded_menu = global::PhantasmaMail.Droid.Resource.Id.expanded_menu;
+			global::XFGloss.Droid.Resource.Id.fill = global::PhantasmaMail.Droid.Resource.Id.fill;
+			global::XFGloss.Droid.Resource.Id.fill_horizontal = global::PhantasmaMail.Droid.Resource.Id.fill_horizontal;
+			global::XFGloss.Droid.Resource.Id.fill_vertical = global::PhantasmaMail.Droid.Resource.Id.fill_vertical;
+			global::XFGloss.Droid.Resource.Id.@fixed = global::PhantasmaMail.Droid.Resource.Id.@fixed;
+			global::XFGloss.Droid.Resource.Id.home = global::PhantasmaMail.Droid.Resource.Id.home;
+			global::XFGloss.Droid.Resource.Id.homeAsUp = global::PhantasmaMail.Droid.Resource.Id.homeAsUp;
+			global::XFGloss.Droid.Resource.Id.icon = global::PhantasmaMail.Droid.Resource.Id.icon;
+			global::XFGloss.Droid.Resource.Id.icon_group = global::PhantasmaMail.Droid.Resource.Id.icon_group;
+			global::XFGloss.Droid.Resource.Id.ifRoom = global::PhantasmaMail.Droid.Resource.Id.ifRoom;
+			global::XFGloss.Droid.Resource.Id.image = global::PhantasmaMail.Droid.Resource.Id.image;
+			global::XFGloss.Droid.Resource.Id.info = global::PhantasmaMail.Droid.Resource.Id.info;
+			global::XFGloss.Droid.Resource.Id.item_touch_helper_previous_elevation = global::PhantasmaMail.Droid.Resource.Id.item_touch_helper_previous_elevation;
+			global::XFGloss.Droid.Resource.Id.largeLabel = global::PhantasmaMail.Droid.Resource.Id.largeLabel;
+			global::XFGloss.Droid.Resource.Id.left = global::PhantasmaMail.Droid.Resource.Id.left;
+			global::XFGloss.Droid.Resource.Id.line1 = global::PhantasmaMail.Droid.Resource.Id.line1;
+			global::XFGloss.Droid.Resource.Id.line3 = global::PhantasmaMail.Droid.Resource.Id.line3;
+			global::XFGloss.Droid.Resource.Id.listMode = global::PhantasmaMail.Droid.Resource.Id.listMode;
+			global::XFGloss.Droid.Resource.Id.list_item = global::PhantasmaMail.Droid.Resource.Id.list_item;
+			global::XFGloss.Droid.Resource.Id.masked = global::PhantasmaMail.Droid.Resource.Id.masked;
+			global::XFGloss.Droid.Resource.Id.media_actions = global::PhantasmaMail.Droid.Resource.Id.media_actions;
+			global::XFGloss.Droid.Resource.Id.middle = global::PhantasmaMail.Droid.Resource.Id.middle;
+			global::XFGloss.Droid.Resource.Id.mini = global::PhantasmaMail.Droid.Resource.Id.mini;
+			global::XFGloss.Droid.Resource.Id.mr_art = global::PhantasmaMail.Droid.Resource.Id.mr_art;
+			global::XFGloss.Droid.Resource.Id.mr_chooser_list = global::PhantasmaMail.Droid.Resource.Id.mr_chooser_list;
+			global::XFGloss.Droid.Resource.Id.mr_chooser_route_desc = global::PhantasmaMail.Droid.Resource.Id.mr_chooser_route_desc;
+			global::XFGloss.Droid.Resource.Id.mr_chooser_route_icon = global::PhantasmaMail.Droid.Resource.Id.mr_chooser_route_icon;
+			global::XFGloss.Droid.Resource.Id.mr_chooser_route_name = global::PhantasmaMail.Droid.Resource.Id.mr_chooser_route_name;
+			global::XFGloss.Droid.Resource.Id.mr_chooser_title = global::PhantasmaMail.Droid.Resource.Id.mr_chooser_title;
+			global::XFGloss.Droid.Resource.Id.mr_close = global::PhantasmaMail.Droid.Resource.Id.mr_close;
+			global::XFGloss.Droid.Resource.Id.mr_control_divider = global::PhantasmaMail.Droid.Resource.Id.mr_control_divider;
+			global::XFGloss.Droid.Resource.Id.mr_control_playback_ctrl = global::PhantasmaMail.Droid.Resource.Id.mr_control_playback_ctrl;
+			global::XFGloss.Droid.Resource.Id.mr_control_subtitle = global::PhantasmaMail.Droid.Resource.Id.mr_control_subtitle;
+			global::XFGloss.Droid.Resource.Id.mr_control_title = global::PhantasmaMail.Droid.Resource.Id.mr_control_title;
+			global::XFGloss.Droid.Resource.Id.mr_control_title_container = global::PhantasmaMail.Droid.Resource.Id.mr_control_title_container;
+			global::XFGloss.Droid.Resource.Id.mr_custom_control = global::PhantasmaMail.Droid.Resource.Id.mr_custom_control;
+			global::XFGloss.Droid.Resource.Id.mr_default_control = global::PhantasmaMail.Droid.Resource.Id.mr_default_control;
+			global::XFGloss.Droid.Resource.Id.mr_dialog_area = global::PhantasmaMail.Droid.Resource.Id.mr_dialog_area;
+			global::XFGloss.Droid.Resource.Id.mr_expandable_area = global::PhantasmaMail.Droid.Resource.Id.mr_expandable_area;
+			global::XFGloss.Droid.Resource.Id.mr_group_expand_collapse = global::PhantasmaMail.Droid.Resource.Id.mr_group_expand_collapse;
+			global::XFGloss.Droid.Resource.Id.mr_media_main_control = global::PhantasmaMail.Droid.Resource.Id.mr_media_main_control;
+			global::XFGloss.Droid.Resource.Id.mr_name = global::PhantasmaMail.Droid.Resource.Id.mr_name;
+			global::XFGloss.Droid.Resource.Id.mr_playback_control = global::PhantasmaMail.Droid.Resource.Id.mr_playback_control;
+			global::XFGloss.Droid.Resource.Id.mr_title_bar = global::PhantasmaMail.Droid.Resource.Id.mr_title_bar;
+			global::XFGloss.Droid.Resource.Id.mr_volume_control = global::PhantasmaMail.Droid.Resource.Id.mr_volume_control;
+			global::XFGloss.Droid.Resource.Id.mr_volume_group_list = global::PhantasmaMail.Droid.Resource.Id.mr_volume_group_list;
+			global::XFGloss.Droid.Resource.Id.mr_volume_item_icon = global::PhantasmaMail.Droid.Resource.Id.mr_volume_item_icon;
+			global::XFGloss.Droid.Resource.Id.mr_volume_slider = global::PhantasmaMail.Droid.Resource.Id.mr_volume_slider;
+			global::XFGloss.Droid.Resource.Id.multiply = global::PhantasmaMail.Droid.Resource.Id.multiply;
+			global::XFGloss.Droid.Resource.Id.navigation_header_container = global::PhantasmaMail.Droid.Resource.Id.navigation_header_container;
+			global::XFGloss.Droid.Resource.Id.never = global::PhantasmaMail.Droid.Resource.Id.never;
+			global::XFGloss.Droid.Resource.Id.none = global::PhantasmaMail.Droid.Resource.Id.none;
+			global::XFGloss.Droid.Resource.Id.normal = global::PhantasmaMail.Droid.Resource.Id.normal;
+			global::XFGloss.Droid.Resource.Id.notification_background = global::PhantasmaMail.Droid.Resource.Id.notification_background;
+			global::XFGloss.Droid.Resource.Id.notification_main_column = global::PhantasmaMail.Droid.Resource.Id.notification_main_column;
+			global::XFGloss.Droid.Resource.Id.notification_main_column_container = global::PhantasmaMail.Droid.Resource.Id.notification_main_column_container;
+			global::XFGloss.Droid.Resource.Id.parallax = global::PhantasmaMail.Droid.Resource.Id.parallax;
+			global::XFGloss.Droid.Resource.Id.parentPanel = global::PhantasmaMail.Droid.Resource.Id.parentPanel;
+			global::XFGloss.Droid.Resource.Id.pin = global::PhantasmaMail.Droid.Resource.Id.pin;
+			global::XFGloss.Droid.Resource.Id.progress_circular = global::PhantasmaMail.Droid.Resource.Id.progress_circular;
+			global::XFGloss.Droid.Resource.Id.progress_horizontal = global::PhantasmaMail.Droid.Resource.Id.progress_horizontal;
+			global::XFGloss.Droid.Resource.Id.radio = global::PhantasmaMail.Droid.Resource.Id.radio;
+			global::XFGloss.Droid.Resource.Id.right = global::PhantasmaMail.Droid.Resource.Id.right;
+			global::XFGloss.Droid.Resource.Id.right_icon = global::PhantasmaMail.Droid.Resource.Id.right_icon;
+			global::XFGloss.Droid.Resource.Id.right_side = global::PhantasmaMail.Droid.Resource.Id.right_side;
+			global::XFGloss.Droid.Resource.Id.screen = global::PhantasmaMail.Droid.Resource.Id.screen;
+			global::XFGloss.Droid.Resource.Id.scroll = global::PhantasmaMail.Droid.Resource.Id.scroll;
+			global::XFGloss.Droid.Resource.Id.scrollIndicatorDown = global::PhantasmaMail.Droid.Resource.Id.scrollIndicatorDown;
+			global::XFGloss.Droid.Resource.Id.scrollIndicatorUp = global::PhantasmaMail.Droid.Resource.Id.scrollIndicatorUp;
+			global::XFGloss.Droid.Resource.Id.scrollView = global::PhantasmaMail.Droid.Resource.Id.scrollView;
+			global::XFGloss.Droid.Resource.Id.scrollable = global::PhantasmaMail.Droid.Resource.Id.scrollable;
+			global::XFGloss.Droid.Resource.Id.search_badge = global::PhantasmaMail.Droid.Resource.Id.search_badge;
+			global::XFGloss.Droid.Resource.Id.search_bar = global::PhantasmaMail.Droid.Resource.Id.search_bar;
+			global::XFGloss.Droid.Resource.Id.search_button = global::PhantasmaMail.Droid.Resource.Id.search_button;
+			global::XFGloss.Droid.Resource.Id.search_close_btn = global::PhantasmaMail.Droid.Resource.Id.search_close_btn;
+			global::XFGloss.Droid.Resource.Id.search_edit_frame = global::PhantasmaMail.Droid.Resource.Id.search_edit_frame;
+			global::XFGloss.Droid.Resource.Id.search_go_btn = global::PhantasmaMail.Droid.Resource.Id.search_go_btn;
+			global::XFGloss.Droid.Resource.Id.search_mag_icon = global::PhantasmaMail.Droid.Resource.Id.search_mag_icon;
+			global::XFGloss.Droid.Resource.Id.search_plate = global::PhantasmaMail.Droid.Resource.Id.search_plate;
+			global::XFGloss.Droid.Resource.Id.search_src_text = global::PhantasmaMail.Droid.Resource.Id.search_src_text;
+			global::XFGloss.Droid.Resource.Id.search_voice_btn = global::PhantasmaMail.Droid.Resource.Id.search_voice_btn;
+			global::XFGloss.Droid.Resource.Id.select_dialog_listview = global::PhantasmaMail.Droid.Resource.Id.select_dialog_listview;
+			global::XFGloss.Droid.Resource.Id.shortcut = global::PhantasmaMail.Droid.Resource.Id.shortcut;
+			global::XFGloss.Droid.Resource.Id.showCustom = global::PhantasmaMail.Droid.Resource.Id.showCustom;
+			global::XFGloss.Droid.Resource.Id.showHome = global::PhantasmaMail.Droid.Resource.Id.showHome;
+			global::XFGloss.Droid.Resource.Id.showTitle = global::PhantasmaMail.Droid.Resource.Id.showTitle;
+			global::XFGloss.Droid.Resource.Id.smallLabel = global::PhantasmaMail.Droid.Resource.Id.smallLabel;
+			global::XFGloss.Droid.Resource.Id.snackbar_action = global::PhantasmaMail.Droid.Resource.Id.snackbar_action;
+			global::XFGloss.Droid.Resource.Id.snackbar_text = global::PhantasmaMail.Droid.Resource.Id.snackbar_text;
+			global::XFGloss.Droid.Resource.Id.snap = global::PhantasmaMail.Droid.Resource.Id.snap;
+			global::XFGloss.Droid.Resource.Id.spacer = global::PhantasmaMail.Droid.Resource.Id.spacer;
+			global::XFGloss.Droid.Resource.Id.split_action_bar = global::PhantasmaMail.Droid.Resource.Id.split_action_bar;
+			global::XFGloss.Droid.Resource.Id.src_atop = global::PhantasmaMail.Droid.Resource.Id.src_atop;
+			global::XFGloss.Droid.Resource.Id.src_in = global::PhantasmaMail.Droid.Resource.Id.src_in;
+			global::XFGloss.Droid.Resource.Id.src_over = global::PhantasmaMail.Droid.Resource.Id.src_over;
+			global::XFGloss.Droid.Resource.Id.start = global::PhantasmaMail.Droid.Resource.Id.start;
+			global::XFGloss.Droid.Resource.Id.status_bar_latest_event_content = global::PhantasmaMail.Droid.Resource.Id.status_bar_latest_event_content;
+			global::XFGloss.Droid.Resource.Id.submenuarrow = global::PhantasmaMail.Droid.Resource.Id.submenuarrow;
+			global::XFGloss.Droid.Resource.Id.submit_area = global::PhantasmaMail.Droid.Resource.Id.submit_area;
+			global::XFGloss.Droid.Resource.Id.tabMode = global::PhantasmaMail.Droid.Resource.Id.tabMode;
+			global::XFGloss.Droid.Resource.Id.text = global::PhantasmaMail.Droid.Resource.Id.text;
+			global::XFGloss.Droid.Resource.Id.text2 = global::PhantasmaMail.Droid.Resource.Id.text2;
+			global::XFGloss.Droid.Resource.Id.textSpacerNoButtons = global::PhantasmaMail.Droid.Resource.Id.textSpacerNoButtons;
+			global::XFGloss.Droid.Resource.Id.textSpacerNoTitle = global::PhantasmaMail.Droid.Resource.Id.textSpacerNoTitle;
+			global::XFGloss.Droid.Resource.Id.text_input_password_toggle = global::PhantasmaMail.Droid.Resource.Id.text_input_password_toggle;
+			global::XFGloss.Droid.Resource.Id.textinput_counter = global::PhantasmaMail.Droid.Resource.Id.textinput_counter;
+			global::XFGloss.Droid.Resource.Id.textinput_error = global::PhantasmaMail.Droid.Resource.Id.textinput_error;
+			global::XFGloss.Droid.Resource.Id.time = global::PhantasmaMail.Droid.Resource.Id.time;
+			global::XFGloss.Droid.Resource.Id.title = global::PhantasmaMail.Droid.Resource.Id.title;
+			global::XFGloss.Droid.Resource.Id.titleDividerNoCustom = global::PhantasmaMail.Droid.Resource.Id.titleDividerNoCustom;
+			global::XFGloss.Droid.Resource.Id.title_template = global::PhantasmaMail.Droid.Resource.Id.title_template;
+			global::XFGloss.Droid.Resource.Id.top = global::PhantasmaMail.Droid.Resource.Id.top;
+			global::XFGloss.Droid.Resource.Id.topPanel = global::PhantasmaMail.Droid.Resource.Id.topPanel;
+			global::XFGloss.Droid.Resource.Id.touch_outside = global::PhantasmaMail.Droid.Resource.Id.touch_outside;
+			global::XFGloss.Droid.Resource.Id.transition_current_scene = global::PhantasmaMail.Droid.Resource.Id.transition_current_scene;
+			global::XFGloss.Droid.Resource.Id.transition_scene_layoutid_cache = global::PhantasmaMail.Droid.Resource.Id.transition_scene_layoutid_cache;
+			global::XFGloss.Droid.Resource.Id.up = global::PhantasmaMail.Droid.Resource.Id.up;
+			global::XFGloss.Droid.Resource.Id.useLogo = global::PhantasmaMail.Droid.Resource.Id.useLogo;
+			global::XFGloss.Droid.Resource.Id.view_offset_helper = global::PhantasmaMail.Droid.Resource.Id.view_offset_helper;
+			global::XFGloss.Droid.Resource.Id.visible = global::PhantasmaMail.Droid.Resource.Id.visible;
+			global::XFGloss.Droid.Resource.Id.volume_item_container = global::PhantasmaMail.Droid.Resource.Id.volume_item_container;
+			global::XFGloss.Droid.Resource.Id.withText = global::PhantasmaMail.Droid.Resource.Id.withText;
+			global::XFGloss.Droid.Resource.Id.wrap_content = global::PhantasmaMail.Droid.Resource.Id.wrap_content;
+			global::XFGloss.Droid.Resource.Integer.abc_config_activityDefaultDur = global::PhantasmaMail.Droid.Resource.Integer.abc_config_activityDefaultDur;
+			global::XFGloss.Droid.Resource.Integer.abc_config_activityShortDur = global::PhantasmaMail.Droid.Resource.Integer.abc_config_activityShortDur;
+			global::XFGloss.Droid.Resource.Integer.app_bar_elevation_anim_duration = global::PhantasmaMail.Droid.Resource.Integer.app_bar_elevation_anim_duration;
+			global::XFGloss.Droid.Resource.Integer.bottom_sheet_slide_duration = global::PhantasmaMail.Droid.Resource.Integer.bottom_sheet_slide_duration;
+			global::XFGloss.Droid.Resource.Integer.cancel_button_image_alpha = global::PhantasmaMail.Droid.Resource.Integer.cancel_button_image_alpha;
+			global::XFGloss.Droid.Resource.Integer.design_snackbar_text_max_lines = global::PhantasmaMail.Droid.Resource.Integer.design_snackbar_text_max_lines;
+			global::XFGloss.Droid.Resource.Integer.hide_password_duration = global::PhantasmaMail.Droid.Resource.Integer.hide_password_duration;
+			global::XFGloss.Droid.Resource.Integer.mr_controller_volume_group_list_animation_duration_ms = global::PhantasmaMail.Droid.Resource.Integer.mr_controller_volume_group_list_animation_duration_ms;
+			global::XFGloss.Droid.Resource.Integer.mr_controller_volume_group_list_fade_in_duration_ms = global::PhantasmaMail.Droid.Resource.Integer.mr_controller_volume_group_list_fade_in_duration_ms;
+			global::XFGloss.Droid.Resource.Integer.mr_controller_volume_group_list_fade_out_duration_ms = global::PhantasmaMail.Droid.Resource.Integer.mr_controller_volume_group_list_fade_out_duration_ms;
+			global::XFGloss.Droid.Resource.Integer.show_password_duration = global::PhantasmaMail.Droid.Resource.Integer.show_password_duration;
+			global::XFGloss.Droid.Resource.Integer.status_bar_notification_info_maxnum = global::PhantasmaMail.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::XFGloss.Droid.Resource.Interpolator.mr_fast_out_slow_in = global::PhantasmaMail.Droid.Resource.Interpolator.mr_fast_out_slow_in;
+			global::XFGloss.Droid.Resource.Interpolator.mr_linear_out_slow_in = global::PhantasmaMail.Droid.Resource.Interpolator.mr_linear_out_slow_in;
+			global::XFGloss.Droid.Resource.Layout.abc_action_bar_title_item = global::PhantasmaMail.Droid.Resource.Layout.abc_action_bar_title_item;
+			global::XFGloss.Droid.Resource.Layout.abc_action_bar_up_container = global::PhantasmaMail.Droid.Resource.Layout.abc_action_bar_up_container;
+			global::XFGloss.Droid.Resource.Layout.abc_action_bar_view_list_nav_layout = global::PhantasmaMail.Droid.Resource.Layout.abc_action_bar_view_list_nav_layout;
+			global::XFGloss.Droid.Resource.Layout.abc_action_menu_item_layout = global::PhantasmaMail.Droid.Resource.Layout.abc_action_menu_item_layout;
+			global::XFGloss.Droid.Resource.Layout.abc_action_menu_layout = global::PhantasmaMail.Droid.Resource.Layout.abc_action_menu_layout;
+			global::XFGloss.Droid.Resource.Layout.abc_action_mode_bar = global::PhantasmaMail.Droid.Resource.Layout.abc_action_mode_bar;
+			global::XFGloss.Droid.Resource.Layout.abc_action_mode_close_item_material = global::PhantasmaMail.Droid.Resource.Layout.abc_action_mode_close_item_material;
+			global::XFGloss.Droid.Resource.Layout.abc_activity_chooser_view = global::PhantasmaMail.Droid.Resource.Layout.abc_activity_chooser_view;
+			global::XFGloss.Droid.Resource.Layout.abc_activity_chooser_view_list_item = global::PhantasmaMail.Droid.Resource.Layout.abc_activity_chooser_view_list_item;
+			global::XFGloss.Droid.Resource.Layout.abc_alert_dialog_button_bar_material = global::PhantasmaMail.Droid.Resource.Layout.abc_alert_dialog_button_bar_material;
+			global::XFGloss.Droid.Resource.Layout.abc_alert_dialog_material = global::PhantasmaMail.Droid.Resource.Layout.abc_alert_dialog_material;
+			global::XFGloss.Droid.Resource.Layout.abc_alert_dialog_title_material = global::PhantasmaMail.Droid.Resource.Layout.abc_alert_dialog_title_material;
+			global::XFGloss.Droid.Resource.Layout.abc_dialog_title_material = global::PhantasmaMail.Droid.Resource.Layout.abc_dialog_title_material;
+			global::XFGloss.Droid.Resource.Layout.abc_expanded_menu_layout = global::PhantasmaMail.Droid.Resource.Layout.abc_expanded_menu_layout;
+			global::XFGloss.Droid.Resource.Layout.abc_list_menu_item_checkbox = global::PhantasmaMail.Droid.Resource.Layout.abc_list_menu_item_checkbox;
+			global::XFGloss.Droid.Resource.Layout.abc_list_menu_item_icon = global::PhantasmaMail.Droid.Resource.Layout.abc_list_menu_item_icon;
+			global::XFGloss.Droid.Resource.Layout.abc_list_menu_item_layout = global::PhantasmaMail.Droid.Resource.Layout.abc_list_menu_item_layout;
+			global::XFGloss.Droid.Resource.Layout.abc_list_menu_item_radio = global::PhantasmaMail.Droid.Resource.Layout.abc_list_menu_item_radio;
+			global::XFGloss.Droid.Resource.Layout.abc_popup_menu_header_item_layout = global::PhantasmaMail.Droid.Resource.Layout.abc_popup_menu_header_item_layout;
+			global::XFGloss.Droid.Resource.Layout.abc_popup_menu_item_layout = global::PhantasmaMail.Droid.Resource.Layout.abc_popup_menu_item_layout;
+			global::XFGloss.Droid.Resource.Layout.abc_screen_content_include = global::PhantasmaMail.Droid.Resource.Layout.abc_screen_content_include;
+			global::XFGloss.Droid.Resource.Layout.abc_screen_simple = global::PhantasmaMail.Droid.Resource.Layout.abc_screen_simple;
+			global::XFGloss.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode = global::PhantasmaMail.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode;
+			global::XFGloss.Droid.Resource.Layout.abc_screen_toolbar = global::PhantasmaMail.Droid.Resource.Layout.abc_screen_toolbar;
+			global::XFGloss.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line = global::PhantasmaMail.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line;
+			global::XFGloss.Droid.Resource.Layout.abc_search_view = global::PhantasmaMail.Droid.Resource.Layout.abc_search_view;
+			global::XFGloss.Droid.Resource.Layout.abc_select_dialog_material = global::PhantasmaMail.Droid.Resource.Layout.abc_select_dialog_material;
+			global::XFGloss.Droid.Resource.Layout.design_bottom_navigation_item = global::PhantasmaMail.Droid.Resource.Layout.design_bottom_navigation_item;
+			global::XFGloss.Droid.Resource.Layout.design_bottom_sheet_dialog = global::PhantasmaMail.Droid.Resource.Layout.design_bottom_sheet_dialog;
+			global::XFGloss.Droid.Resource.Layout.design_layout_snackbar = global::PhantasmaMail.Droid.Resource.Layout.design_layout_snackbar;
+			global::XFGloss.Droid.Resource.Layout.design_layout_snackbar_include = global::PhantasmaMail.Droid.Resource.Layout.design_layout_snackbar_include;
+			global::XFGloss.Droid.Resource.Layout.design_layout_tab_icon = global::PhantasmaMail.Droid.Resource.Layout.design_layout_tab_icon;
+			global::XFGloss.Droid.Resource.Layout.design_layout_tab_text = global::PhantasmaMail.Droid.Resource.Layout.design_layout_tab_text;
+			global::XFGloss.Droid.Resource.Layout.design_menu_item_action_area = global::PhantasmaMail.Droid.Resource.Layout.design_menu_item_action_area;
+			global::XFGloss.Droid.Resource.Layout.design_navigation_item = global::PhantasmaMail.Droid.Resource.Layout.design_navigation_item;
+			global::XFGloss.Droid.Resource.Layout.design_navigation_item_header = global::PhantasmaMail.Droid.Resource.Layout.design_navigation_item_header;
+			global::XFGloss.Droid.Resource.Layout.design_navigation_item_separator = global::PhantasmaMail.Droid.Resource.Layout.design_navigation_item_separator;
+			global::XFGloss.Droid.Resource.Layout.design_navigation_item_subheader = global::PhantasmaMail.Droid.Resource.Layout.design_navigation_item_subheader;
+			global::XFGloss.Droid.Resource.Layout.design_navigation_menu = global::PhantasmaMail.Droid.Resource.Layout.design_navigation_menu;
+			global::XFGloss.Droid.Resource.Layout.design_navigation_menu_item = global::PhantasmaMail.Droid.Resource.Layout.design_navigation_menu_item;
+			global::XFGloss.Droid.Resource.Layout.design_text_input_password_icon = global::PhantasmaMail.Droid.Resource.Layout.design_text_input_password_icon;
+			global::XFGloss.Droid.Resource.Layout.mr_chooser_dialog = global::PhantasmaMail.Droid.Resource.Layout.mr_chooser_dialog;
+			global::XFGloss.Droid.Resource.Layout.mr_chooser_list_item = global::PhantasmaMail.Droid.Resource.Layout.mr_chooser_list_item;
+			global::XFGloss.Droid.Resource.Layout.mr_controller_material_dialog_b = global::PhantasmaMail.Droid.Resource.Layout.mr_controller_material_dialog_b;
+			global::XFGloss.Droid.Resource.Layout.mr_controller_volume_item = global::PhantasmaMail.Droid.Resource.Layout.mr_controller_volume_item;
+			global::XFGloss.Droid.Resource.Layout.mr_playback_control = global::PhantasmaMail.Droid.Resource.Layout.mr_playback_control;
+			global::XFGloss.Droid.Resource.Layout.mr_volume_control = global::PhantasmaMail.Droid.Resource.Layout.mr_volume_control;
+			global::XFGloss.Droid.Resource.Layout.notification_action = global::PhantasmaMail.Droid.Resource.Layout.notification_action;
+			global::XFGloss.Droid.Resource.Layout.notification_action_tombstone = global::PhantasmaMail.Droid.Resource.Layout.notification_action_tombstone;
+			global::XFGloss.Droid.Resource.Layout.notification_media_action = global::PhantasmaMail.Droid.Resource.Layout.notification_media_action;
+			global::XFGloss.Droid.Resource.Layout.notification_media_cancel_action = global::PhantasmaMail.Droid.Resource.Layout.notification_media_cancel_action;
+			global::XFGloss.Droid.Resource.Layout.notification_template_big_media = global::PhantasmaMail.Droid.Resource.Layout.notification_template_big_media;
+			global::XFGloss.Droid.Resource.Layout.notification_template_big_media_custom = global::PhantasmaMail.Droid.Resource.Layout.notification_template_big_media_custom;
+			global::XFGloss.Droid.Resource.Layout.notification_template_big_media_narrow = global::PhantasmaMail.Droid.Resource.Layout.notification_template_big_media_narrow;
+			global::XFGloss.Droid.Resource.Layout.notification_template_big_media_narrow_custom = global::PhantasmaMail.Droid.Resource.Layout.notification_template_big_media_narrow_custom;
+			global::XFGloss.Droid.Resource.Layout.notification_template_custom_big = global::PhantasmaMail.Droid.Resource.Layout.notification_template_custom_big;
+			global::XFGloss.Droid.Resource.Layout.notification_template_icon_group = global::PhantasmaMail.Droid.Resource.Layout.notification_template_icon_group;
+			global::XFGloss.Droid.Resource.Layout.notification_template_lines_media = global::PhantasmaMail.Droid.Resource.Layout.notification_template_lines_media;
+			global::XFGloss.Droid.Resource.Layout.notification_template_media = global::PhantasmaMail.Droid.Resource.Layout.notification_template_media;
+			global::XFGloss.Droid.Resource.Layout.notification_template_media_custom = global::PhantasmaMail.Droid.Resource.Layout.notification_template_media_custom;
+			global::XFGloss.Droid.Resource.Layout.notification_template_part_chronometer = global::PhantasmaMail.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::XFGloss.Droid.Resource.Layout.notification_template_part_time = global::PhantasmaMail.Droid.Resource.Layout.notification_template_part_time;
+			global::XFGloss.Droid.Resource.Layout.select_dialog_item_material = global::PhantasmaMail.Droid.Resource.Layout.select_dialog_item_material;
+			global::XFGloss.Droid.Resource.Layout.select_dialog_multichoice_material = global::PhantasmaMail.Droid.Resource.Layout.select_dialog_multichoice_material;
+			global::XFGloss.Droid.Resource.Layout.select_dialog_singlechoice_material = global::PhantasmaMail.Droid.Resource.Layout.select_dialog_singlechoice_material;
+			global::XFGloss.Droid.Resource.Layout.support_simple_spinner_dropdown_item = global::PhantasmaMail.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::XFGloss.Droid.Resource.String.abc_action_bar_home_description = global::PhantasmaMail.Droid.Resource.String.abc_action_bar_home_description;
+			global::XFGloss.Droid.Resource.String.abc_action_bar_home_description_format = global::PhantasmaMail.Droid.Resource.String.abc_action_bar_home_description_format;
+			global::XFGloss.Droid.Resource.String.abc_action_bar_home_subtitle_description_format = global::PhantasmaMail.Droid.Resource.String.abc_action_bar_home_subtitle_description_format;
+			global::XFGloss.Droid.Resource.String.abc_action_bar_up_description = global::PhantasmaMail.Droid.Resource.String.abc_action_bar_up_description;
+			global::XFGloss.Droid.Resource.String.abc_action_menu_overflow_description = global::PhantasmaMail.Droid.Resource.String.abc_action_menu_overflow_description;
+			global::XFGloss.Droid.Resource.String.abc_action_mode_done = global::PhantasmaMail.Droid.Resource.String.abc_action_mode_done;
+			global::XFGloss.Droid.Resource.String.abc_activity_chooser_view_see_all = global::PhantasmaMail.Droid.Resource.String.abc_activity_chooser_view_see_all;
+			global::XFGloss.Droid.Resource.String.abc_activitychooserview_choose_application = global::PhantasmaMail.Droid.Resource.String.abc_activitychooserview_choose_application;
+			global::XFGloss.Droid.Resource.String.abc_capital_off = global::PhantasmaMail.Droid.Resource.String.abc_capital_off;
+			global::XFGloss.Droid.Resource.String.abc_capital_on = global::PhantasmaMail.Droid.Resource.String.abc_capital_on;
+			global::XFGloss.Droid.Resource.String.abc_font_family_body_1_material = global::PhantasmaMail.Droid.Resource.String.abc_font_family_body_1_material;
+			global::XFGloss.Droid.Resource.String.abc_font_family_body_2_material = global::PhantasmaMail.Droid.Resource.String.abc_font_family_body_2_material;
+			global::XFGloss.Droid.Resource.String.abc_font_family_button_material = global::PhantasmaMail.Droid.Resource.String.abc_font_family_button_material;
+			global::XFGloss.Droid.Resource.String.abc_font_family_caption_material = global::PhantasmaMail.Droid.Resource.String.abc_font_family_caption_material;
+			global::XFGloss.Droid.Resource.String.abc_font_family_display_1_material = global::PhantasmaMail.Droid.Resource.String.abc_font_family_display_1_material;
+			global::XFGloss.Droid.Resource.String.abc_font_family_display_2_material = global::PhantasmaMail.Droid.Resource.String.abc_font_family_display_2_material;
+			global::XFGloss.Droid.Resource.String.abc_font_family_display_3_material = global::PhantasmaMail.Droid.Resource.String.abc_font_family_display_3_material;
+			global::XFGloss.Droid.Resource.String.abc_font_family_display_4_material = global::PhantasmaMail.Droid.Resource.String.abc_font_family_display_4_material;
+			global::XFGloss.Droid.Resource.String.abc_font_family_headline_material = global::PhantasmaMail.Droid.Resource.String.abc_font_family_headline_material;
+			global::XFGloss.Droid.Resource.String.abc_font_family_menu_material = global::PhantasmaMail.Droid.Resource.String.abc_font_family_menu_material;
+			global::XFGloss.Droid.Resource.String.abc_font_family_subhead_material = global::PhantasmaMail.Droid.Resource.String.abc_font_family_subhead_material;
+			global::XFGloss.Droid.Resource.String.abc_font_family_title_material = global::PhantasmaMail.Droid.Resource.String.abc_font_family_title_material;
+			global::XFGloss.Droid.Resource.String.abc_search_hint = global::PhantasmaMail.Droid.Resource.String.abc_search_hint;
+			global::XFGloss.Droid.Resource.String.abc_searchview_description_clear = global::PhantasmaMail.Droid.Resource.String.abc_searchview_description_clear;
+			global::XFGloss.Droid.Resource.String.abc_searchview_description_query = global::PhantasmaMail.Droid.Resource.String.abc_searchview_description_query;
+			global::XFGloss.Droid.Resource.String.abc_searchview_description_search = global::PhantasmaMail.Droid.Resource.String.abc_searchview_description_search;
+			global::XFGloss.Droid.Resource.String.abc_searchview_description_submit = global::PhantasmaMail.Droid.Resource.String.abc_searchview_description_submit;
+			global::XFGloss.Droid.Resource.String.abc_searchview_description_voice = global::PhantasmaMail.Droid.Resource.String.abc_searchview_description_voice;
+			global::XFGloss.Droid.Resource.String.abc_shareactionprovider_share_with = global::PhantasmaMail.Droid.Resource.String.abc_shareactionprovider_share_with;
+			global::XFGloss.Droid.Resource.String.abc_shareactionprovider_share_with_application = global::PhantasmaMail.Droid.Resource.String.abc_shareactionprovider_share_with_application;
+			global::XFGloss.Droid.Resource.String.abc_toolbar_collapse_description = global::PhantasmaMail.Droid.Resource.String.abc_toolbar_collapse_description;
+			global::XFGloss.Droid.Resource.String.appbar_scrolling_view_behavior = global::PhantasmaMail.Droid.Resource.String.appbar_scrolling_view_behavior;
+			global::XFGloss.Droid.Resource.String.bottom_sheet_behavior = global::PhantasmaMail.Droid.Resource.String.bottom_sheet_behavior;
+			global::XFGloss.Droid.Resource.String.character_counter_pattern = global::PhantasmaMail.Droid.Resource.String.character_counter_pattern;
+			global::XFGloss.Droid.Resource.String.library_name = global::PhantasmaMail.Droid.Resource.String.library_name;
+			global::XFGloss.Droid.Resource.String.mr_button_content_description = global::PhantasmaMail.Droid.Resource.String.mr_button_content_description;
+			global::XFGloss.Droid.Resource.String.mr_cast_button_connected = global::PhantasmaMail.Droid.Resource.String.mr_cast_button_connected;
+			global::XFGloss.Droid.Resource.String.mr_cast_button_connecting = global::PhantasmaMail.Droid.Resource.String.mr_cast_button_connecting;
+			global::XFGloss.Droid.Resource.String.mr_cast_button_disconnected = global::PhantasmaMail.Droid.Resource.String.mr_cast_button_disconnected;
+			global::XFGloss.Droid.Resource.String.mr_chooser_searching = global::PhantasmaMail.Droid.Resource.String.mr_chooser_searching;
+			global::XFGloss.Droid.Resource.String.mr_chooser_title = global::PhantasmaMail.Droid.Resource.String.mr_chooser_title;
+			global::XFGloss.Droid.Resource.String.mr_controller_album_art = global::PhantasmaMail.Droid.Resource.String.mr_controller_album_art;
+			global::XFGloss.Droid.Resource.String.mr_controller_casting_screen = global::PhantasmaMail.Droid.Resource.String.mr_controller_casting_screen;
+			global::XFGloss.Droid.Resource.String.mr_controller_close_description = global::PhantasmaMail.Droid.Resource.String.mr_controller_close_description;
+			global::XFGloss.Droid.Resource.String.mr_controller_collapse_group = global::PhantasmaMail.Droid.Resource.String.mr_controller_collapse_group;
+			global::XFGloss.Droid.Resource.String.mr_controller_disconnect = global::PhantasmaMail.Droid.Resource.String.mr_controller_disconnect;
+			global::XFGloss.Droid.Resource.String.mr_controller_expand_group = global::PhantasmaMail.Droid.Resource.String.mr_controller_expand_group;
+			global::XFGloss.Droid.Resource.String.mr_controller_no_info_available = global::PhantasmaMail.Droid.Resource.String.mr_controller_no_info_available;
+			global::XFGloss.Droid.Resource.String.mr_controller_no_media_selected = global::PhantasmaMail.Droid.Resource.String.mr_controller_no_media_selected;
+			global::XFGloss.Droid.Resource.String.mr_controller_pause = global::PhantasmaMail.Droid.Resource.String.mr_controller_pause;
+			global::XFGloss.Droid.Resource.String.mr_controller_play = global::PhantasmaMail.Droid.Resource.String.mr_controller_play;
+			global::XFGloss.Droid.Resource.String.mr_controller_stop = global::PhantasmaMail.Droid.Resource.String.mr_controller_stop;
+			global::XFGloss.Droid.Resource.String.mr_controller_stop_casting = global::PhantasmaMail.Droid.Resource.String.mr_controller_stop_casting;
+			global::XFGloss.Droid.Resource.String.mr_controller_volume_slider = global::PhantasmaMail.Droid.Resource.String.mr_controller_volume_slider;
+			global::XFGloss.Droid.Resource.String.mr_system_route_name = global::PhantasmaMail.Droid.Resource.String.mr_system_route_name;
+			global::XFGloss.Droid.Resource.String.mr_user_route_category_name = global::PhantasmaMail.Droid.Resource.String.mr_user_route_category_name;
+			global::XFGloss.Droid.Resource.String.password_toggle_content_description = global::PhantasmaMail.Droid.Resource.String.password_toggle_content_description;
+			global::XFGloss.Droid.Resource.String.path_password_eye = global::PhantasmaMail.Droid.Resource.String.path_password_eye;
+			global::XFGloss.Droid.Resource.String.path_password_eye_mask_strike_through = global::PhantasmaMail.Droid.Resource.String.path_password_eye_mask_strike_through;
+			global::XFGloss.Droid.Resource.String.path_password_eye_mask_visible = global::PhantasmaMail.Droid.Resource.String.path_password_eye_mask_visible;
+			global::XFGloss.Droid.Resource.String.path_password_strike_through = global::PhantasmaMail.Droid.Resource.String.path_password_strike_through;
+			global::XFGloss.Droid.Resource.String.search_menu_title = global::PhantasmaMail.Droid.Resource.String.search_menu_title;
+			global::XFGloss.Droid.Resource.String.status_bar_notification_info_overflow = global::PhantasmaMail.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::XFGloss.Droid.Resource.Style.AlertDialog_AppCompat = global::PhantasmaMail.Droid.Resource.Style.AlertDialog_AppCompat;
+			global::XFGloss.Droid.Resource.Style.AlertDialog_AppCompat_Light = global::PhantasmaMail.Droid.Resource.Style.AlertDialog_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Animation_AppCompat_Dialog = global::PhantasmaMail.Droid.Resource.Style.Animation_AppCompat_Dialog;
+			global::XFGloss.Droid.Resource.Style.Animation_AppCompat_DropDownUp = global::PhantasmaMail.Droid.Resource.Style.Animation_AppCompat_DropDownUp;
+			global::XFGloss.Droid.Resource.Style.Animation_Design_BottomSheetDialog = global::PhantasmaMail.Droid.Resource.Style.Animation_Design_BottomSheetDialog;
+			global::XFGloss.Droid.Resource.Style.Base_AlertDialog_AppCompat = global::PhantasmaMail.Droid.Resource.Style.Base_AlertDialog_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light = global::PhantasmaMail.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Base_Animation_AppCompat_Dialog = global::PhantasmaMail.Droid.Resource.Style.Base_Animation_AppCompat_Dialog;
+			global::XFGloss.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::PhantasmaMail.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp;
+			global::XFGloss.Droid.Resource.Style.Base_CardView = global::PhantasmaMail.Droid.Resource.Style.Base_CardView;
+			global::XFGloss.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat = global::PhantasmaMail.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::PhantasmaMail.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::PhantasmaMail.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat = global::PhantasmaMail.Droid.Resource.Style.Base_Theme_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::PhantasmaMail.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_Dialog = global::PhantasmaMail.Droid.Resource.Style.Base_Theme_AppCompat_Dialog;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::PhantasmaMail.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::PhantasmaMail.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::PhantasmaMail.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::PhantasmaMail.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_Light = global::PhantasmaMail.Droid.Resource.Style.Base_Theme_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::PhantasmaMail.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::PhantasmaMail.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::PhantasmaMail.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::PhantasmaMail.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::PhantasmaMail.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::PhantasmaMail.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
+			global::XFGloss.Droid.Resource.Style.Base_ThemeOverlay_AppCompat = global::PhantasmaMail.Droid.Resource.Style.Base_ThemeOverlay_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::PhantasmaMail.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
+			global::XFGloss.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::PhantasmaMail.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
+			global::XFGloss.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::PhantasmaMail.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::XFGloss.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog = global::PhantasmaMail.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog;
+			global::XFGloss.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert = global::PhantasmaMail.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert;
+			global::XFGloss.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::PhantasmaMail.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Base_V11_Theme_AppCompat_Dialog = global::PhantasmaMail.Droid.Resource.Style.Base_V11_Theme_AppCompat_Dialog;
+			global::XFGloss.Droid.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog = global::PhantasmaMail.Droid.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog;
+			global::XFGloss.Droid.Resource.Style.Base_V11_ThemeOverlay_AppCompat_Dialog = global::PhantasmaMail.Droid.Resource.Style.Base_V11_ThemeOverlay_AppCompat_Dialog;
+			global::XFGloss.Droid.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView = global::PhantasmaMail.Droid.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView;
+			global::XFGloss.Droid.Resource.Style.Base_V12_Widget_AppCompat_EditText = global::PhantasmaMail.Droid.Resource.Style.Base_V12_Widget_AppCompat_EditText;
+			global::XFGloss.Droid.Resource.Style.Base_V21_Theme_AppCompat = global::PhantasmaMail.Droid.Resource.Style.Base_V21_Theme_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::PhantasmaMail.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
+			global::XFGloss.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light = global::PhantasmaMail.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::PhantasmaMail.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::XFGloss.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::PhantasmaMail.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
+			global::XFGloss.Droid.Resource.Style.Base_V22_Theme_AppCompat = global::PhantasmaMail.Droid.Resource.Style.Base_V22_Theme_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light = global::PhantasmaMail.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Base_V23_Theme_AppCompat = global::PhantasmaMail.Droid.Resource.Style.Base_V23_Theme_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light = global::PhantasmaMail.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Base_V7_Theme_AppCompat = global::PhantasmaMail.Droid.Resource.Style.Base_V7_Theme_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::PhantasmaMail.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
+			global::XFGloss.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light = global::PhantasmaMail.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::PhantasmaMail.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
+			global::XFGloss.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog = global::PhantasmaMail.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog;
+			global::XFGloss.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::PhantasmaMail.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
+			global::XFGloss.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::PhantasmaMail.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Button = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_Button;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_EditText = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_EditText;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ListMenuView = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_ListMenuView;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ListView = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_ListView;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_SearchView = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_SearchView;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Spinner = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_Spinner;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_Design_AppBarLayout = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_Design_AppBarLayout;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_Design_TabLayout = global::PhantasmaMail.Droid.Resource.Style.Base_Widget_Design_TabLayout;
+			global::XFGloss.Droid.Resource.Style.CardView = global::PhantasmaMail.Droid.Resource.Style.CardView;
+			global::XFGloss.Droid.Resource.Style.CardView_Dark = global::PhantasmaMail.Droid.Resource.Style.CardView_Dark;
+			global::XFGloss.Droid.Resource.Style.CardView_Light = global::PhantasmaMail.Droid.Resource.Style.CardView_Light;
+			global::XFGloss.Droid.Resource.Style.Platform_AppCompat = global::PhantasmaMail.Droid.Resource.Style.Platform_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Platform_AppCompat_Light = global::PhantasmaMail.Droid.Resource.Style.Platform_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat = global::PhantasmaMail.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::PhantasmaMail.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
+			global::XFGloss.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::PhantasmaMail.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Platform_V11_AppCompat = global::PhantasmaMail.Droid.Resource.Style.Platform_V11_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Platform_V11_AppCompat_Light = global::PhantasmaMail.Droid.Resource.Style.Platform_V11_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Platform_V14_AppCompat = global::PhantasmaMail.Droid.Resource.Style.Platform_V14_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Platform_V14_AppCompat_Light = global::PhantasmaMail.Droid.Resource.Style.Platform_V14_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Platform_V21_AppCompat = global::PhantasmaMail.Droid.Resource.Style.Platform_V21_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Platform_V21_AppCompat_Light = global::PhantasmaMail.Droid.Resource.Style.Platform_V21_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Platform_V25_AppCompat = global::PhantasmaMail.Droid.Resource.Style.Platform_V25_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Platform_V25_AppCompat_Light = global::PhantasmaMail.Droid.Resource.Style.Platform_V25_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner = global::PhantasmaMail.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner;
+			global::XFGloss.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::PhantasmaMail.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
+			global::XFGloss.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::PhantasmaMail.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
+			global::XFGloss.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::PhantasmaMail.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
+			global::XFGloss.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::PhantasmaMail.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
+			global::XFGloss.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::PhantasmaMail.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
+			global::XFGloss.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::PhantasmaMail.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
+			global::XFGloss.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::PhantasmaMail.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
+			global::XFGloss.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::PhantasmaMail.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
+			global::XFGloss.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::PhantasmaMail.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
+			global::XFGloss.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::PhantasmaMail.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
+			global::XFGloss.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::PhantasmaMail.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
+			global::XFGloss.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::PhantasmaMail.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
+			global::XFGloss.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::PhantasmaMail.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
+			global::XFGloss.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::PhantasmaMail.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Body1 = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Body1;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Body2 = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Body2;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Button = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Button;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Caption = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Caption;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Display1 = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Display1;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Display2 = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Display2;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Display3 = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Display3;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Display4 = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Display4;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Headline = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Headline;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Inverse = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Inverse;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Large = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Large;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Medium = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Medium;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Menu = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Menu;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Notification = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Notification;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Info = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Info;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Info_Media = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Info_Media;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Line2 = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Line2;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Line2_Media = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Line2_Media;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Media = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Media;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Time = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Time;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Time_Media = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Time_Media;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Title = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Title;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Title_Media = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Notification_Title_Media;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Small = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Small;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Subhead = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Subhead;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Title = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Title;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_Design_Counter = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_Design_Counter;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_Design_Counter_Overflow = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_Design_Counter_Overflow;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_Design_Error = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_Design_Error;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_Design_Hint = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_Design_Hint;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_Design_Tab = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_Design_Tab;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_MediaRouter_PrimaryText = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_MediaRouter_PrimaryText;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_MediaRouter_SecondaryText = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_MediaRouter_SecondaryText;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_MediaRouter_Title = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_MediaRouter_Title;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_StatusBar_EventContent = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_StatusBar_EventContent;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Info = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Info;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Line2 = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Line2;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Time = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Time;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Title = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Title;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::PhantasmaMail.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat = global::PhantasmaMail.Droid.Resource.Style.Theme_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_CompactMenu = global::PhantasmaMail.Droid.Resource.Style.Theme_AppCompat_CompactMenu;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_DayNight = global::PhantasmaMail.Droid.Resource.Style.Theme_AppCompat_DayNight;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::PhantasmaMail.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::PhantasmaMail.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::PhantasmaMail.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::PhantasmaMail.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::PhantasmaMail.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::PhantasmaMail.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_Dialog = global::PhantasmaMail.Droid.Resource.Style.Theme_AppCompat_Dialog;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert = global::PhantasmaMail.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::PhantasmaMail.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::PhantasmaMail.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_Light = global::PhantasmaMail.Droid.Resource.Style.Theme_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::PhantasmaMail.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_Light_Dialog = global::PhantasmaMail.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::PhantasmaMail.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::PhantasmaMail.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::PhantasmaMail.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::PhantasmaMail.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_NoActionBar = global::PhantasmaMail.Droid.Resource.Style.Theme_AppCompat_NoActionBar;
+			global::XFGloss.Droid.Resource.Style.Theme_Design = global::PhantasmaMail.Droid.Resource.Style.Theme_Design;
+			global::XFGloss.Droid.Resource.Style.Theme_Design_BottomSheetDialog = global::PhantasmaMail.Droid.Resource.Style.Theme_Design_BottomSheetDialog;
+			global::XFGloss.Droid.Resource.Style.Theme_Design_Light = global::PhantasmaMail.Droid.Resource.Style.Theme_Design_Light;
+			global::XFGloss.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog = global::PhantasmaMail.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog;
+			global::XFGloss.Droid.Resource.Style.Theme_Design_Light_NoActionBar = global::PhantasmaMail.Droid.Resource.Style.Theme_Design_Light_NoActionBar;
+			global::XFGloss.Droid.Resource.Style.Theme_Design_NoActionBar = global::PhantasmaMail.Droid.Resource.Style.Theme_Design_NoActionBar;
+			global::XFGloss.Droid.Resource.Style.Theme_MediaRouter = global::PhantasmaMail.Droid.Resource.Style.Theme_MediaRouter;
+			global::XFGloss.Droid.Resource.Style.Theme_MediaRouter_Light = global::PhantasmaMail.Droid.Resource.Style.Theme_MediaRouter_Light;
+			global::XFGloss.Droid.Resource.Style.Theme_MediaRouter_Light_DarkControlPanel = global::PhantasmaMail.Droid.Resource.Style.Theme_MediaRouter_Light_DarkControlPanel;
+			global::XFGloss.Droid.Resource.Style.Theme_MediaRouter_LightControlPanel = global::PhantasmaMail.Droid.Resource.Style.Theme_MediaRouter_LightControlPanel;
+			global::XFGloss.Droid.Resource.Style.ThemeOverlay_AppCompat = global::PhantasmaMail.Droid.Resource.Style.ThemeOverlay_AppCompat;
+			global::XFGloss.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::PhantasmaMail.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
+			global::XFGloss.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark = global::PhantasmaMail.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
+			global::XFGloss.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::PhantasmaMail.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::XFGloss.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::PhantasmaMail.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog;
+			global::XFGloss.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::PhantasmaMail.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
+			global::XFGloss.Droid.Resource.Style.ThemeOverlay_AppCompat_Light = global::PhantasmaMail.Droid.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.ThemeOverlay_MediaRouter_Dark = global::PhantasmaMail.Droid.Resource.Style.ThemeOverlay_MediaRouter_Dark;
+			global::XFGloss.Droid.Resource.Style.ThemeOverlay_MediaRouter_Light = global::PhantasmaMail.Droid.Resource.Style.ThemeOverlay_MediaRouter_Light;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ActionBar = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_ActionBar;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ActionButton = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_ActionButton;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ActionMode = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_ActionMode;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Button = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Button;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Button_Borderless = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Button_Borderless;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Button_Colored = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Button_Colored;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Button_Small = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Button_Small;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ButtonBar = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_ButtonBar;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_EditText = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_EditText;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ImageButton = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_ImageButton;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_SearchView = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Light_SearchView;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ListMenuView = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_ListMenuView;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ListView = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_ListView;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ListView_Menu = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_ListView_Menu;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_NotificationActionContainer = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_NotificationActionContainer;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_NotificationActionText = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_NotificationActionText;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_PopupMenu = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_PopupMenu;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_PopupWindow = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_PopupWindow;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ProgressBar = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_ProgressBar;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_RatingBar = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_RatingBar;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_SearchView = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_SearchView;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_SeekBar = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_SeekBar;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_SeekBar_Discrete = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_SeekBar_Discrete;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Spinner = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Spinner;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Toolbar = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Toolbar;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::PhantasmaMail.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
+			global::XFGloss.Droid.Resource.Style.Widget_Design_AppBarLayout = global::PhantasmaMail.Droid.Resource.Style.Widget_Design_AppBarLayout;
+			global::XFGloss.Droid.Resource.Style.Widget_Design_BottomNavigationView = global::PhantasmaMail.Droid.Resource.Style.Widget_Design_BottomNavigationView;
+			global::XFGloss.Droid.Resource.Style.Widget_Design_BottomSheet_Modal = global::PhantasmaMail.Droid.Resource.Style.Widget_Design_BottomSheet_Modal;
+			global::XFGloss.Droid.Resource.Style.Widget_Design_CollapsingToolbar = global::PhantasmaMail.Droid.Resource.Style.Widget_Design_CollapsingToolbar;
+			global::XFGloss.Droid.Resource.Style.Widget_Design_CoordinatorLayout = global::PhantasmaMail.Droid.Resource.Style.Widget_Design_CoordinatorLayout;
+			global::XFGloss.Droid.Resource.Style.Widget_Design_FloatingActionButton = global::PhantasmaMail.Droid.Resource.Style.Widget_Design_FloatingActionButton;
+			global::XFGloss.Droid.Resource.Style.Widget_Design_NavigationView = global::PhantasmaMail.Droid.Resource.Style.Widget_Design_NavigationView;
+			global::XFGloss.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout = global::PhantasmaMail.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout;
+			global::XFGloss.Droid.Resource.Style.Widget_Design_Snackbar = global::PhantasmaMail.Droid.Resource.Style.Widget_Design_Snackbar;
+			global::XFGloss.Droid.Resource.Style.Widget_Design_TabLayout = global::PhantasmaMail.Droid.Resource.Style.Widget_Design_TabLayout;
+			global::XFGloss.Droid.Resource.Style.Widget_Design_TextInputLayout = global::PhantasmaMail.Droid.Resource.Style.Widget_Design_TextInputLayout;
+			global::XFGloss.Droid.Resource.Style.Widget_MediaRouter_Light_MediaRouteButton = global::PhantasmaMail.Droid.Resource.Style.Widget_MediaRouter_Light_MediaRouteButton;
+			global::XFGloss.Droid.Resource.Style.Widget_MediaRouter_MediaRouteButton = global::PhantasmaMail.Droid.Resource.Style.Widget_MediaRouter_MediaRouteButton;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_background = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_background;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_backgroundSplit = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_backgroundSplit;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_backgroundStacked = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_backgroundStacked;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_contentInsetEnd = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_contentInsetEnd;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_contentInsetEndWithActions = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_contentInsetEndWithActions;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_contentInsetLeft = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_contentInsetLeft;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_contentInsetRight = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_contentInsetRight;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_contentInsetStart = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_contentInsetStart;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_contentInsetStartWithNavigation = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_contentInsetStartWithNavigation;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_customNavigationLayout = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_customNavigationLayout;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_displayOptions = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_displayOptions;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_divider = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_divider;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_elevation = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_elevation;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_height = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_height;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_hideOnContentScroll = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_hideOnContentScroll;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_homeLayout = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_homeLayout;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_icon = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_icon;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_itemPadding = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_itemPadding;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_logo = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_logo;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_navigationMode = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_navigationMode;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_popupTheme = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_popupTheme;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_progressBarPadding = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_progressBarPadding;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_progressBarStyle = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_progressBarStyle;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_subtitle = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_subtitle;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_subtitleTextStyle = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_subtitleTextStyle;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_title = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_title;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_titleTextStyle = global::PhantasmaMail.Droid.Resource.Styleable.ActionBar_titleTextStyle;
+			global::XFGloss.Droid.Resource.Styleable.ActionBarLayout = global::PhantasmaMail.Droid.Resource.Styleable.ActionBarLayout;
+			global::XFGloss.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::PhantasmaMail.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity;
+			global::XFGloss.Droid.Resource.Styleable.ActionMenuItemView = global::PhantasmaMail.Droid.Resource.Styleable.ActionMenuItemView;
+			global::XFGloss.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth = global::PhantasmaMail.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth;
+			global::XFGloss.Droid.Resource.Styleable.ActionMenuView = global::PhantasmaMail.Droid.Resource.Styleable.ActionMenuView;
+			global::XFGloss.Droid.Resource.Styleable.ActionMode = global::PhantasmaMail.Droid.Resource.Styleable.ActionMode;
+			global::XFGloss.Droid.Resource.Styleable.ActionMode_background = global::PhantasmaMail.Droid.Resource.Styleable.ActionMode_background;
+			global::XFGloss.Droid.Resource.Styleable.ActionMode_backgroundSplit = global::PhantasmaMail.Droid.Resource.Styleable.ActionMode_backgroundSplit;
+			global::XFGloss.Droid.Resource.Styleable.ActionMode_closeItemLayout = global::PhantasmaMail.Droid.Resource.Styleable.ActionMode_closeItemLayout;
+			global::XFGloss.Droid.Resource.Styleable.ActionMode_height = global::PhantasmaMail.Droid.Resource.Styleable.ActionMode_height;
+			global::XFGloss.Droid.Resource.Styleable.ActionMode_subtitleTextStyle = global::PhantasmaMail.Droid.Resource.Styleable.ActionMode_subtitleTextStyle;
+			global::XFGloss.Droid.Resource.Styleable.ActionMode_titleTextStyle = global::PhantasmaMail.Droid.Resource.Styleable.ActionMode_titleTextStyle;
+			global::XFGloss.Droid.Resource.Styleable.ActivityChooserView = global::PhantasmaMail.Droid.Resource.Styleable.ActivityChooserView;
+			global::XFGloss.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::PhantasmaMail.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
+			global::XFGloss.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount = global::PhantasmaMail.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount;
+			global::XFGloss.Droid.Resource.Styleable.AlertDialog = global::PhantasmaMail.Droid.Resource.Styleable.AlertDialog;
+			global::XFGloss.Droid.Resource.Styleable.AlertDialog_android_layout = global::PhantasmaMail.Droid.Resource.Styleable.AlertDialog_android_layout;
+			global::XFGloss.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::PhantasmaMail.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
+			global::XFGloss.Droid.Resource.Styleable.AlertDialog_listItemLayout = global::PhantasmaMail.Droid.Resource.Styleable.AlertDialog_listItemLayout;
+			global::XFGloss.Droid.Resource.Styleable.AlertDialog_listLayout = global::PhantasmaMail.Droid.Resource.Styleable.AlertDialog_listLayout;
+			global::XFGloss.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::PhantasmaMail.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
+			global::XFGloss.Droid.Resource.Styleable.AlertDialog_showTitle = global::PhantasmaMail.Droid.Resource.Styleable.AlertDialog_showTitle;
+			global::XFGloss.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::PhantasmaMail.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
+			global::XFGloss.Droid.Resource.Styleable.AppBarLayout = global::PhantasmaMail.Droid.Resource.Styleable.AppBarLayout;
+			global::XFGloss.Droid.Resource.Styleable.AppBarLayout_android_background = global::PhantasmaMail.Droid.Resource.Styleable.AppBarLayout_android_background;
+			global::XFGloss.Droid.Resource.Styleable.AppBarLayout_elevation = global::PhantasmaMail.Droid.Resource.Styleable.AppBarLayout_elevation;
+			global::XFGloss.Droid.Resource.Styleable.AppBarLayout_expanded = global::PhantasmaMail.Droid.Resource.Styleable.AppBarLayout_expanded;
+			global::XFGloss.Droid.Resource.Styleable.AppBarLayoutStates = global::PhantasmaMail.Droid.Resource.Styleable.AppBarLayoutStates;
+			global::XFGloss.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed = global::PhantasmaMail.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed;
+			global::XFGloss.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible = global::PhantasmaMail.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible;
+			global::XFGloss.Droid.Resource.Styleable.AppBarLayout_Layout = global::PhantasmaMail.Droid.Resource.Styleable.AppBarLayout_Layout;
+			global::XFGloss.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags = global::PhantasmaMail.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags;
+			global::XFGloss.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator = global::PhantasmaMail.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatImageView = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatImageView;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatImageView_android_src = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatImageView_android_src;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatImageView_srcCompat = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatImageView_srcCompat;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatImageView_tint = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatImageView_tint;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatImageView_tintMode = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatImageView_tintMode;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatSeekBar = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatSeekBar;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatSeekBar_android_thumb = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatSeekBar_android_thumb;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatSeekBar_tickMark = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatSeekBar_tickMark;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTint = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTint;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTextHelper = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTextHelper;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableBottom = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableBottom;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableEnd = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableEnd;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableLeft = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableLeft;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableRight = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableRight;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableStart = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableStart;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableTop = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableTop;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTextHelper_android_textAppearance = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTextHelper_android_textAppearance;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTextView = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTextView;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTextView_textAllCaps = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionBarSize = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionBarSize;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_buttonStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_buttonStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_colorAccent = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_colorAccent;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_colorBackgroundFloating = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_colorBackgroundFloating;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_colorPrimary = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_colorPrimary;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_controlBackground = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_controlBackground;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_dialogTheme = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_dialogTheme;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_dividerVertical = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_dividerVertical;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_editTextBackground = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_editTextBackground;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_editTextColor = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_editTextColor;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_editTextStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_editTextStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_panelBackground = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_panelBackground;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_switchStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_switchStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_windowActionBar = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_windowActionBar;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle = global::PhantasmaMail.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::XFGloss.Droid.Resource.Styleable.BottomNavigationView = global::PhantasmaMail.Droid.Resource.Styleable.BottomNavigationView;
+			global::XFGloss.Droid.Resource.Styleable.BottomNavigationView_elevation = global::PhantasmaMail.Droid.Resource.Styleable.BottomNavigationView_elevation;
+			global::XFGloss.Droid.Resource.Styleable.BottomNavigationView_itemBackground = global::PhantasmaMail.Droid.Resource.Styleable.BottomNavigationView_itemBackground;
+			global::XFGloss.Droid.Resource.Styleable.BottomNavigationView_itemIconTint = global::PhantasmaMail.Droid.Resource.Styleable.BottomNavigationView_itemIconTint;
+			global::XFGloss.Droid.Resource.Styleable.BottomNavigationView_itemTextColor = global::PhantasmaMail.Droid.Resource.Styleable.BottomNavigationView_itemTextColor;
+			global::XFGloss.Droid.Resource.Styleable.BottomNavigationView_menu = global::PhantasmaMail.Droid.Resource.Styleable.BottomNavigationView_menu;
+			global::XFGloss.Droid.Resource.Styleable.BottomSheetBehavior_Layout = global::PhantasmaMail.Droid.Resource.Styleable.BottomSheetBehavior_Layout;
+			global::XFGloss.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable = global::PhantasmaMail.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable;
+			global::XFGloss.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight = global::PhantasmaMail.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight;
+			global::XFGloss.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed = global::PhantasmaMail.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed;
+			global::XFGloss.Droid.Resource.Styleable.ButtonBarLayout = global::PhantasmaMail.Droid.Resource.Styleable.ButtonBarLayout;
+			global::XFGloss.Droid.Resource.Styleable.ButtonBarLayout_allowStacking = global::PhantasmaMail.Droid.Resource.Styleable.ButtonBarLayout_allowStacking;
+			global::XFGloss.Droid.Resource.Styleable.CardView = global::PhantasmaMail.Droid.Resource.Styleable.CardView;
+			global::XFGloss.Droid.Resource.Styleable.CardView_android_minHeight = global::PhantasmaMail.Droid.Resource.Styleable.CardView_android_minHeight;
+			global::XFGloss.Droid.Resource.Styleable.CardView_android_minWidth = global::PhantasmaMail.Droid.Resource.Styleable.CardView_android_minWidth;
+			global::XFGloss.Droid.Resource.Styleable.CardView_cardBackgroundColor = global::PhantasmaMail.Droid.Resource.Styleable.CardView_cardBackgroundColor;
+			global::XFGloss.Droid.Resource.Styleable.CardView_cardCornerRadius = global::PhantasmaMail.Droid.Resource.Styleable.CardView_cardCornerRadius;
+			global::XFGloss.Droid.Resource.Styleable.CardView_cardElevation = global::PhantasmaMail.Droid.Resource.Styleable.CardView_cardElevation;
+			global::XFGloss.Droid.Resource.Styleable.CardView_cardMaxElevation = global::PhantasmaMail.Droid.Resource.Styleable.CardView_cardMaxElevation;
+			global::XFGloss.Droid.Resource.Styleable.CardView_cardPreventCornerOverlap = global::PhantasmaMail.Droid.Resource.Styleable.CardView_cardPreventCornerOverlap;
+			global::XFGloss.Droid.Resource.Styleable.CardView_cardUseCompatPadding = global::PhantasmaMail.Droid.Resource.Styleable.CardView_cardUseCompatPadding;
+			global::XFGloss.Droid.Resource.Styleable.CardView_contentPadding = global::PhantasmaMail.Droid.Resource.Styleable.CardView_contentPadding;
+			global::XFGloss.Droid.Resource.Styleable.CardView_contentPaddingBottom = global::PhantasmaMail.Droid.Resource.Styleable.CardView_contentPaddingBottom;
+			global::XFGloss.Droid.Resource.Styleable.CardView_contentPaddingLeft = global::PhantasmaMail.Droid.Resource.Styleable.CardView_contentPaddingLeft;
+			global::XFGloss.Droid.Resource.Styleable.CardView_contentPaddingRight = global::PhantasmaMail.Droid.Resource.Styleable.CardView_contentPaddingRight;
+			global::XFGloss.Droid.Resource.Styleable.CardView_contentPaddingTop = global::PhantasmaMail.Droid.Resource.Styleable.CardView_contentPaddingTop;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout = global::PhantasmaMail.Droid.Resource.Styleable.CollapsingToolbarLayout;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity = global::PhantasmaMail.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance = global::PhantasmaMail.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_contentScrim = global::PhantasmaMail.Droid.Resource.Styleable.CollapsingToolbarLayout_contentScrim;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity = global::PhantasmaMail.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin = global::PhantasmaMail.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom = global::PhantasmaMail.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd = global::PhantasmaMail.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart = global::PhantasmaMail.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop = global::PhantasmaMail.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance = global::PhantasmaMail.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration = global::PhantasmaMail.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger = global::PhantasmaMail.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim = global::PhantasmaMail.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_title = global::PhantasmaMail.Droid.Resource.Styleable.CollapsingToolbarLayout_title;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled = global::PhantasmaMail.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId = global::PhantasmaMail.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout = global::PhantasmaMail.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode = global::PhantasmaMail.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = global::PhantasmaMail.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier;
+			global::XFGloss.Droid.Resource.Styleable.ColorStateListItem = global::PhantasmaMail.Droid.Resource.Styleable.ColorStateListItem;
+			global::XFGloss.Droid.Resource.Styleable.ColorStateListItem_alpha = global::PhantasmaMail.Droid.Resource.Styleable.ColorStateListItem_alpha;
+			global::XFGloss.Droid.Resource.Styleable.ColorStateListItem_android_alpha = global::PhantasmaMail.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::XFGloss.Droid.Resource.Styleable.ColorStateListItem_android_color = global::PhantasmaMail.Droid.Resource.Styleable.ColorStateListItem_android_color;
+			global::XFGloss.Droid.Resource.Styleable.CompoundButton = global::PhantasmaMail.Droid.Resource.Styleable.CompoundButton;
+			global::XFGloss.Droid.Resource.Styleable.CompoundButton_android_button = global::PhantasmaMail.Droid.Resource.Styleable.CompoundButton_android_button;
+			global::XFGloss.Droid.Resource.Styleable.CompoundButton_buttonTint = global::PhantasmaMail.Droid.Resource.Styleable.CompoundButton_buttonTint;
+			global::XFGloss.Droid.Resource.Styleable.CompoundButton_buttonTintMode = global::PhantasmaMail.Droid.Resource.Styleable.CompoundButton_buttonTintMode;
+			global::XFGloss.Droid.Resource.Styleable.CoordinatorLayout = global::PhantasmaMail.Droid.Resource.Styleable.CoordinatorLayout;
+			global::XFGloss.Droid.Resource.Styleable.CoordinatorLayout_keylines = global::PhantasmaMail.Droid.Resource.Styleable.CoordinatorLayout_keylines;
+			global::XFGloss.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::PhantasmaMail.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
+			global::XFGloss.Droid.Resource.Styleable.CoordinatorLayout_Layout = global::PhantasmaMail.Droid.Resource.Styleable.CoordinatorLayout_Layout;
+			global::XFGloss.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::PhantasmaMail.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
+			global::XFGloss.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::PhantasmaMail.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
+			global::XFGloss.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity = global::PhantasmaMail.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity;
+			global::XFGloss.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior = global::PhantasmaMail.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior;
+			global::XFGloss.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::PhantasmaMail.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
+			global::XFGloss.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::PhantasmaMail.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
+			global::XFGloss.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::PhantasmaMail.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
+			global::XFGloss.Droid.Resource.Styleable.DesignTheme = global::PhantasmaMail.Droid.Resource.Styleable.DesignTheme;
+			global::XFGloss.Droid.Resource.Styleable.DesignTheme_bottomSheetDialogTheme = global::PhantasmaMail.Droid.Resource.Styleable.DesignTheme_bottomSheetDialogTheme;
+			global::XFGloss.Droid.Resource.Styleable.DesignTheme_bottomSheetStyle = global::PhantasmaMail.Droid.Resource.Styleable.DesignTheme_bottomSheetStyle;
+			global::XFGloss.Droid.Resource.Styleable.DesignTheme_textColorError = global::PhantasmaMail.Droid.Resource.Styleable.DesignTheme_textColorError;
+			global::XFGloss.Droid.Resource.Styleable.DrawerArrowToggle = global::PhantasmaMail.Droid.Resource.Styleable.DrawerArrowToggle;
+			global::XFGloss.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::PhantasmaMail.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
+			global::XFGloss.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::PhantasmaMail.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
+			global::XFGloss.Droid.Resource.Styleable.DrawerArrowToggle_barLength = global::PhantasmaMail.Droid.Resource.Styleable.DrawerArrowToggle_barLength;
+			global::XFGloss.Droid.Resource.Styleable.DrawerArrowToggle_color = global::PhantasmaMail.Droid.Resource.Styleable.DrawerArrowToggle_color;
+			global::XFGloss.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize = global::PhantasmaMail.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize;
+			global::XFGloss.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::PhantasmaMail.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
+			global::XFGloss.Droid.Resource.Styleable.DrawerArrowToggle_spinBars = global::PhantasmaMail.Droid.Resource.Styleable.DrawerArrowToggle_spinBars;
+			global::XFGloss.Droid.Resource.Styleable.DrawerArrowToggle_thickness = global::PhantasmaMail.Droid.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::XFGloss.Droid.Resource.Styleable.FloatingActionButton = global::PhantasmaMail.Droid.Resource.Styleable.FloatingActionButton;
+			global::XFGloss.Droid.Resource.Styleable.FloatingActionButton_backgroundTint = global::PhantasmaMail.Droid.Resource.Styleable.FloatingActionButton_backgroundTint;
+			global::XFGloss.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::PhantasmaMail.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode;
+			global::XFGloss.Droid.Resource.Styleable.FloatingActionButton_borderWidth = global::PhantasmaMail.Droid.Resource.Styleable.FloatingActionButton_borderWidth;
+			global::XFGloss.Droid.Resource.Styleable.FloatingActionButton_elevation = global::PhantasmaMail.Droid.Resource.Styleable.FloatingActionButton_elevation;
+			global::XFGloss.Droid.Resource.Styleable.FloatingActionButton_fabSize = global::PhantasmaMail.Droid.Resource.Styleable.FloatingActionButton_fabSize;
+			global::XFGloss.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ = global::PhantasmaMail.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ;
+			global::XFGloss.Droid.Resource.Styleable.FloatingActionButton_rippleColor = global::PhantasmaMail.Droid.Resource.Styleable.FloatingActionButton_rippleColor;
+			global::XFGloss.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding = global::PhantasmaMail.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding;
+			global::XFGloss.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout = global::PhantasmaMail.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout;
+			global::XFGloss.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide = global::PhantasmaMail.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide;
+			global::XFGloss.Droid.Resource.Styleable.ForegroundLinearLayout = global::PhantasmaMail.Droid.Resource.Styleable.ForegroundLinearLayout;
+			global::XFGloss.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground = global::PhantasmaMail.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground;
+			global::XFGloss.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity = global::PhantasmaMail.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity;
+			global::XFGloss.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding = global::PhantasmaMail.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat = global::PhantasmaMail.Droid.Resource.Styleable.LinearLayoutCompat;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::PhantasmaMail.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::PhantasmaMail.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity = global::PhantasmaMail.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation = global::PhantasmaMail.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::PhantasmaMail.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_divider = global::PhantasmaMail.Droid.Resource.Styleable.LinearLayoutCompat_divider;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::PhantasmaMail.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::PhantasmaMail.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_showDividers = global::PhantasmaMail.Droid.Resource.Styleable.LinearLayoutCompat_showDividers;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_Layout = global::PhantasmaMail.Droid.Resource.Styleable.LinearLayoutCompat_Layout;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::PhantasmaMail.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::PhantasmaMail.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::PhantasmaMail.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::PhantasmaMail.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
+			global::XFGloss.Droid.Resource.Styleable.ListPopupWindow = global::PhantasmaMail.Droid.Resource.Styleable.ListPopupWindow;
+			global::XFGloss.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::PhantasmaMail.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
+			global::XFGloss.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::PhantasmaMail.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::XFGloss.Droid.Resource.Styleable.MediaRouteButton = global::PhantasmaMail.Droid.Resource.Styleable.MediaRouteButton;
+			global::XFGloss.Droid.Resource.Styleable.MediaRouteButton_android_minHeight = global::PhantasmaMail.Droid.Resource.Styleable.MediaRouteButton_android_minHeight;
+			global::XFGloss.Droid.Resource.Styleable.MediaRouteButton_android_minWidth = global::PhantasmaMail.Droid.Resource.Styleable.MediaRouteButton_android_minWidth;
+			global::XFGloss.Droid.Resource.Styleable.MediaRouteButton_buttonTint = global::PhantasmaMail.Droid.Resource.Styleable.MediaRouteButton_buttonTint;
+			global::XFGloss.Droid.Resource.Styleable.MediaRouteButton_externalRouteEnabledDrawable = global::PhantasmaMail.Droid.Resource.Styleable.MediaRouteButton_externalRouteEnabledDrawable;
+			global::XFGloss.Droid.Resource.Styleable.MenuGroup = global::PhantasmaMail.Droid.Resource.Styleable.MenuGroup;
+			global::XFGloss.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior = global::PhantasmaMail.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior;
+			global::XFGloss.Droid.Resource.Styleable.MenuGroup_android_enabled = global::PhantasmaMail.Droid.Resource.Styleable.MenuGroup_android_enabled;
+			global::XFGloss.Droid.Resource.Styleable.MenuGroup_android_id = global::PhantasmaMail.Droid.Resource.Styleable.MenuGroup_android_id;
+			global::XFGloss.Droid.Resource.Styleable.MenuGroup_android_menuCategory = global::PhantasmaMail.Droid.Resource.Styleable.MenuGroup_android_menuCategory;
+			global::XFGloss.Droid.Resource.Styleable.MenuGroup_android_orderInCategory = global::PhantasmaMail.Droid.Resource.Styleable.MenuGroup_android_orderInCategory;
+			global::XFGloss.Droid.Resource.Styleable.MenuGroup_android_visible = global::PhantasmaMail.Droid.Resource.Styleable.MenuGroup_android_visible;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem = global::PhantasmaMail.Droid.Resource.Styleable.MenuItem;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_actionLayout = global::PhantasmaMail.Droid.Resource.Styleable.MenuItem_actionLayout;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_actionProviderClass = global::PhantasmaMail.Droid.Resource.Styleable.MenuItem_actionProviderClass;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_actionViewClass = global::PhantasmaMail.Droid.Resource.Styleable.MenuItem_actionViewClass;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::PhantasmaMail.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_checkable = global::PhantasmaMail.Droid.Resource.Styleable.MenuItem_android_checkable;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_checked = global::PhantasmaMail.Droid.Resource.Styleable.MenuItem_android_checked;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_enabled = global::PhantasmaMail.Droid.Resource.Styleable.MenuItem_android_enabled;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_icon = global::PhantasmaMail.Droid.Resource.Styleable.MenuItem_android_icon;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_id = global::PhantasmaMail.Droid.Resource.Styleable.MenuItem_android_id;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_menuCategory = global::PhantasmaMail.Droid.Resource.Styleable.MenuItem_android_menuCategory;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_numericShortcut = global::PhantasmaMail.Droid.Resource.Styleable.MenuItem_android_numericShortcut;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_onClick = global::PhantasmaMail.Droid.Resource.Styleable.MenuItem_android_onClick;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_orderInCategory = global::PhantasmaMail.Droid.Resource.Styleable.MenuItem_android_orderInCategory;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_title = global::PhantasmaMail.Droid.Resource.Styleable.MenuItem_android_title;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_titleCondensed = global::PhantasmaMail.Droid.Resource.Styleable.MenuItem_android_titleCondensed;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_visible = global::PhantasmaMail.Droid.Resource.Styleable.MenuItem_android_visible;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_showAsAction = global::PhantasmaMail.Droid.Resource.Styleable.MenuItem_showAsAction;
+			global::XFGloss.Droid.Resource.Styleable.MenuView = global::PhantasmaMail.Droid.Resource.Styleable.MenuView;
+			global::XFGloss.Droid.Resource.Styleable.MenuView_android_headerBackground = global::PhantasmaMail.Droid.Resource.Styleable.MenuView_android_headerBackground;
+			global::XFGloss.Droid.Resource.Styleable.MenuView_android_horizontalDivider = global::PhantasmaMail.Droid.Resource.Styleable.MenuView_android_horizontalDivider;
+			global::XFGloss.Droid.Resource.Styleable.MenuView_android_itemBackground = global::PhantasmaMail.Droid.Resource.Styleable.MenuView_android_itemBackground;
+			global::XFGloss.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::PhantasmaMail.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
+			global::XFGloss.Droid.Resource.Styleable.MenuView_android_itemTextAppearance = global::PhantasmaMail.Droid.Resource.Styleable.MenuView_android_itemTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.MenuView_android_verticalDivider = global::PhantasmaMail.Droid.Resource.Styleable.MenuView_android_verticalDivider;
+			global::XFGloss.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle = global::PhantasmaMail.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle;
+			global::XFGloss.Droid.Resource.Styleable.MenuView_preserveIconSpacing = global::PhantasmaMail.Droid.Resource.Styleable.MenuView_preserveIconSpacing;
+			global::XFGloss.Droid.Resource.Styleable.MenuView_subMenuArrow = global::PhantasmaMail.Droid.Resource.Styleable.MenuView_subMenuArrow;
+			global::XFGloss.Droid.Resource.Styleable.NavigationView = global::PhantasmaMail.Droid.Resource.Styleable.NavigationView;
+			global::XFGloss.Droid.Resource.Styleable.NavigationView_android_background = global::PhantasmaMail.Droid.Resource.Styleable.NavigationView_android_background;
+			global::XFGloss.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows = global::PhantasmaMail.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows;
+			global::XFGloss.Droid.Resource.Styleable.NavigationView_android_maxWidth = global::PhantasmaMail.Droid.Resource.Styleable.NavigationView_android_maxWidth;
+			global::XFGloss.Droid.Resource.Styleable.NavigationView_elevation = global::PhantasmaMail.Droid.Resource.Styleable.NavigationView_elevation;
+			global::XFGloss.Droid.Resource.Styleable.NavigationView_headerLayout = global::PhantasmaMail.Droid.Resource.Styleable.NavigationView_headerLayout;
+			global::XFGloss.Droid.Resource.Styleable.NavigationView_itemBackground = global::PhantasmaMail.Droid.Resource.Styleable.NavigationView_itemBackground;
+			global::XFGloss.Droid.Resource.Styleable.NavigationView_itemIconTint = global::PhantasmaMail.Droid.Resource.Styleable.NavigationView_itemIconTint;
+			global::XFGloss.Droid.Resource.Styleable.NavigationView_itemTextAppearance = global::PhantasmaMail.Droid.Resource.Styleable.NavigationView_itemTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.NavigationView_itemTextColor = global::PhantasmaMail.Droid.Resource.Styleable.NavigationView_itemTextColor;
+			global::XFGloss.Droid.Resource.Styleable.NavigationView_menu = global::PhantasmaMail.Droid.Resource.Styleable.NavigationView_menu;
+			global::XFGloss.Droid.Resource.Styleable.PopupWindow = global::PhantasmaMail.Droid.Resource.Styleable.PopupWindow;
+			global::XFGloss.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle = global::PhantasmaMail.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle;
+			global::XFGloss.Droid.Resource.Styleable.PopupWindow_android_popupBackground = global::PhantasmaMail.Droid.Resource.Styleable.PopupWindow_android_popupBackground;
+			global::XFGloss.Droid.Resource.Styleable.PopupWindow_overlapAnchor = global::PhantasmaMail.Droid.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::XFGloss.Droid.Resource.Styleable.PopupWindowBackgroundState = global::PhantasmaMail.Droid.Resource.Styleable.PopupWindowBackgroundState;
+			global::XFGloss.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::PhantasmaMail.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
+			global::XFGloss.Droid.Resource.Styleable.RecycleListView = global::PhantasmaMail.Droid.Resource.Styleable.RecycleListView;
+			global::XFGloss.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::PhantasmaMail.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
+			global::XFGloss.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::PhantasmaMail.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle;
+			global::XFGloss.Droid.Resource.Styleable.RecyclerView = global::PhantasmaMail.Droid.Resource.Styleable.RecyclerView;
+			global::XFGloss.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability = global::PhantasmaMail.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability;
+			global::XFGloss.Droid.Resource.Styleable.RecyclerView_android_orientation = global::PhantasmaMail.Droid.Resource.Styleable.RecyclerView_android_orientation;
+			global::XFGloss.Droid.Resource.Styleable.RecyclerView_layoutManager = global::PhantasmaMail.Droid.Resource.Styleable.RecyclerView_layoutManager;
+			global::XFGloss.Droid.Resource.Styleable.RecyclerView_reverseLayout = global::PhantasmaMail.Droid.Resource.Styleable.RecyclerView_reverseLayout;
+			global::XFGloss.Droid.Resource.Styleable.RecyclerView_spanCount = global::PhantasmaMail.Droid.Resource.Styleable.RecyclerView_spanCount;
+			global::XFGloss.Droid.Resource.Styleable.RecyclerView_stackFromEnd = global::PhantasmaMail.Droid.Resource.Styleable.RecyclerView_stackFromEnd;
+			global::XFGloss.Droid.Resource.Styleable.ScrimInsetsFrameLayout = global::PhantasmaMail.Droid.Resource.Styleable.ScrimInsetsFrameLayout;
+			global::XFGloss.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground = global::PhantasmaMail.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground;
+			global::XFGloss.Droid.Resource.Styleable.ScrollingViewBehavior_Layout = global::PhantasmaMail.Droid.Resource.Styleable.ScrollingViewBehavior_Layout;
+			global::XFGloss.Droid.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop = global::PhantasmaMail.Droid.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop;
+			global::XFGloss.Droid.Resource.Styleable.SearchView = global::PhantasmaMail.Droid.Resource.Styleable.SearchView;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_android_focusable = global::PhantasmaMail.Droid.Resource.Styleable.SearchView_android_focusable;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_android_imeOptions = global::PhantasmaMail.Droid.Resource.Styleable.SearchView_android_imeOptions;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_android_inputType = global::PhantasmaMail.Droid.Resource.Styleable.SearchView_android_inputType;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_android_maxWidth = global::PhantasmaMail.Droid.Resource.Styleable.SearchView_android_maxWidth;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_closeIcon = global::PhantasmaMail.Droid.Resource.Styleable.SearchView_closeIcon;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_commitIcon = global::PhantasmaMail.Droid.Resource.Styleable.SearchView_commitIcon;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_defaultQueryHint = global::PhantasmaMail.Droid.Resource.Styleable.SearchView_defaultQueryHint;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_goIcon = global::PhantasmaMail.Droid.Resource.Styleable.SearchView_goIcon;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_iconifiedByDefault = global::PhantasmaMail.Droid.Resource.Styleable.SearchView_iconifiedByDefault;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_layout = global::PhantasmaMail.Droid.Resource.Styleable.SearchView_layout;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_queryBackground = global::PhantasmaMail.Droid.Resource.Styleable.SearchView_queryBackground;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_queryHint = global::PhantasmaMail.Droid.Resource.Styleable.SearchView_queryHint;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_searchHintIcon = global::PhantasmaMail.Droid.Resource.Styleable.SearchView_searchHintIcon;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_searchIcon = global::PhantasmaMail.Droid.Resource.Styleable.SearchView_searchIcon;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_submitBackground = global::PhantasmaMail.Droid.Resource.Styleable.SearchView_submitBackground;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_suggestionRowLayout = global::PhantasmaMail.Droid.Resource.Styleable.SearchView_suggestionRowLayout;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_voiceIcon = global::PhantasmaMail.Droid.Resource.Styleable.SearchView_voiceIcon;
+			global::XFGloss.Droid.Resource.Styleable.SnackbarLayout = global::PhantasmaMail.Droid.Resource.Styleable.SnackbarLayout;
+			global::XFGloss.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth = global::PhantasmaMail.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth;
+			global::XFGloss.Droid.Resource.Styleable.SnackbarLayout_elevation = global::PhantasmaMail.Droid.Resource.Styleable.SnackbarLayout_elevation;
+			global::XFGloss.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::PhantasmaMail.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
+			global::XFGloss.Droid.Resource.Styleable.Spinner = global::PhantasmaMail.Droid.Resource.Styleable.Spinner;
+			global::XFGloss.Droid.Resource.Styleable.Spinner_android_dropDownWidth = global::PhantasmaMail.Droid.Resource.Styleable.Spinner_android_dropDownWidth;
+			global::XFGloss.Droid.Resource.Styleable.Spinner_android_entries = global::PhantasmaMail.Droid.Resource.Styleable.Spinner_android_entries;
+			global::XFGloss.Droid.Resource.Styleable.Spinner_android_popupBackground = global::PhantasmaMail.Droid.Resource.Styleable.Spinner_android_popupBackground;
+			global::XFGloss.Droid.Resource.Styleable.Spinner_android_prompt = global::PhantasmaMail.Droid.Resource.Styleable.Spinner_android_prompt;
+			global::XFGloss.Droid.Resource.Styleable.Spinner_popupTheme = global::PhantasmaMail.Droid.Resource.Styleable.Spinner_popupTheme;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat = global::PhantasmaMail.Droid.Resource.Styleable.SwitchCompat;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat_android_textOff = global::PhantasmaMail.Droid.Resource.Styleable.SwitchCompat_android_textOff;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat_android_textOn = global::PhantasmaMail.Droid.Resource.Styleable.SwitchCompat_android_textOn;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat_android_thumb = global::PhantasmaMail.Droid.Resource.Styleable.SwitchCompat_android_thumb;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat_showText = global::PhantasmaMail.Droid.Resource.Styleable.SwitchCompat_showText;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat_splitTrack = global::PhantasmaMail.Droid.Resource.Styleable.SwitchCompat_splitTrack;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat_switchMinWidth = global::PhantasmaMail.Droid.Resource.Styleable.SwitchCompat_switchMinWidth;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat_switchPadding = global::PhantasmaMail.Droid.Resource.Styleable.SwitchCompat_switchPadding;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance = global::PhantasmaMail.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding = global::PhantasmaMail.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat_thumbTint = global::PhantasmaMail.Droid.Resource.Styleable.SwitchCompat_thumbTint;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat_thumbTintMode = global::PhantasmaMail.Droid.Resource.Styleable.SwitchCompat_thumbTintMode;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat_track = global::PhantasmaMail.Droid.Resource.Styleable.SwitchCompat_track;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat_trackTint = global::PhantasmaMail.Droid.Resource.Styleable.SwitchCompat_trackTint;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat_trackTintMode = global::PhantasmaMail.Droid.Resource.Styleable.SwitchCompat_trackTintMode;
+			global::XFGloss.Droid.Resource.Styleable.TabItem = global::PhantasmaMail.Droid.Resource.Styleable.TabItem;
+			global::XFGloss.Droid.Resource.Styleable.TabItem_android_icon = global::PhantasmaMail.Droid.Resource.Styleable.TabItem_android_icon;
+			global::XFGloss.Droid.Resource.Styleable.TabItem_android_layout = global::PhantasmaMail.Droid.Resource.Styleable.TabItem_android_layout;
+			global::XFGloss.Droid.Resource.Styleable.TabItem_android_text = global::PhantasmaMail.Droid.Resource.Styleable.TabItem_android_text;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout = global::PhantasmaMail.Droid.Resource.Styleable.TabLayout;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabBackground = global::PhantasmaMail.Droid.Resource.Styleable.TabLayout_tabBackground;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabContentStart = global::PhantasmaMail.Droid.Resource.Styleable.TabLayout_tabContentStart;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabGravity = global::PhantasmaMail.Droid.Resource.Styleable.TabLayout_tabGravity;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabIndicatorColor = global::PhantasmaMail.Droid.Resource.Styleable.TabLayout_tabIndicatorColor;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabIndicatorHeight = global::PhantasmaMail.Droid.Resource.Styleable.TabLayout_tabIndicatorHeight;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabMaxWidth = global::PhantasmaMail.Droid.Resource.Styleable.TabLayout_tabMaxWidth;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabMinWidth = global::PhantasmaMail.Droid.Resource.Styleable.TabLayout_tabMinWidth;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabMode = global::PhantasmaMail.Droid.Resource.Styleable.TabLayout_tabMode;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabPadding = global::PhantasmaMail.Droid.Resource.Styleable.TabLayout_tabPadding;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabPaddingBottom = global::PhantasmaMail.Droid.Resource.Styleable.TabLayout_tabPaddingBottom;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabPaddingEnd = global::PhantasmaMail.Droid.Resource.Styleable.TabLayout_tabPaddingEnd;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabPaddingStart = global::PhantasmaMail.Droid.Resource.Styleable.TabLayout_tabPaddingStart;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabPaddingTop = global::PhantasmaMail.Droid.Resource.Styleable.TabLayout_tabPaddingTop;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabSelectedTextColor = global::PhantasmaMail.Droid.Resource.Styleable.TabLayout_tabSelectedTextColor;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabTextAppearance = global::PhantasmaMail.Droid.Resource.Styleable.TabLayout_tabTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabTextColor = global::PhantasmaMail.Droid.Resource.Styleable.TabLayout_tabTextColor;
+			global::XFGloss.Droid.Resource.Styleable.TextAppearance = global::PhantasmaMail.Droid.Resource.Styleable.TextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.TextAppearance_android_shadowColor = global::PhantasmaMail.Droid.Resource.Styleable.TextAppearance_android_shadowColor;
+			global::XFGloss.Droid.Resource.Styleable.TextAppearance_android_shadowDx = global::PhantasmaMail.Droid.Resource.Styleable.TextAppearance_android_shadowDx;
+			global::XFGloss.Droid.Resource.Styleable.TextAppearance_android_shadowDy = global::PhantasmaMail.Droid.Resource.Styleable.TextAppearance_android_shadowDy;
+			global::XFGloss.Droid.Resource.Styleable.TextAppearance_android_shadowRadius = global::PhantasmaMail.Droid.Resource.Styleable.TextAppearance_android_shadowRadius;
+			global::XFGloss.Droid.Resource.Styleable.TextAppearance_android_textColor = global::PhantasmaMail.Droid.Resource.Styleable.TextAppearance_android_textColor;
+			global::XFGloss.Droid.Resource.Styleable.TextAppearance_android_textColorHint = global::PhantasmaMail.Droid.Resource.Styleable.TextAppearance_android_textColorHint;
+			global::XFGloss.Droid.Resource.Styleable.TextAppearance_android_textSize = global::PhantasmaMail.Droid.Resource.Styleable.TextAppearance_android_textSize;
+			global::XFGloss.Droid.Resource.Styleable.TextAppearance_android_textStyle = global::PhantasmaMail.Droid.Resource.Styleable.TextAppearance_android_textStyle;
+			global::XFGloss.Droid.Resource.Styleable.TextAppearance_android_typeface = global::PhantasmaMail.Droid.Resource.Styleable.TextAppearance_android_typeface;
+			global::XFGloss.Droid.Resource.Styleable.TextAppearance_textAllCaps = global::PhantasmaMail.Droid.Resource.Styleable.TextAppearance_textAllCaps;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout = global::PhantasmaMail.Droid.Resource.Styleable.TextInputLayout;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_android_hint = global::PhantasmaMail.Droid.Resource.Styleable.TextInputLayout_android_hint;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_android_textColorHint = global::PhantasmaMail.Droid.Resource.Styleable.TextInputLayout_android_textColorHint;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_counterEnabled = global::PhantasmaMail.Droid.Resource.Styleable.TextInputLayout_counterEnabled;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_counterMaxLength = global::PhantasmaMail.Droid.Resource.Styleable.TextInputLayout_counterMaxLength;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance = global::PhantasmaMail.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance = global::PhantasmaMail.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_errorEnabled = global::PhantasmaMail.Droid.Resource.Styleable.TextInputLayout_errorEnabled;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance = global::PhantasmaMail.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled = global::PhantasmaMail.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_hintEnabled = global::PhantasmaMail.Droid.Resource.Styleable.TextInputLayout_hintEnabled;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance = global::PhantasmaMail.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription = global::PhantasmaMail.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable = global::PhantasmaMail.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled = global::PhantasmaMail.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint = global::PhantasmaMail.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode = global::PhantasmaMail.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_android_gravity = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_android_gravity;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_android_minHeight = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_android_minHeight;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_buttonGravity = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_buttonGravity;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_collapseContentDescription = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_collapseContentDescription;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_collapseIcon = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_collapseIcon;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_contentInsetEnd = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_contentInsetEnd;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_contentInsetEndWithActions = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_contentInsetEndWithActions;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_contentInsetLeft = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_contentInsetLeft;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_contentInsetRight = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_contentInsetRight;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_contentInsetStart = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_contentInsetStart;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_contentInsetStartWithNavigation = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_contentInsetStartWithNavigation;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_logo = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_logo;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_logoDescription = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_logoDescription;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_maxButtonHeight = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_navigationContentDescription = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_navigationContentDescription;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_navigationIcon = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_navigationIcon;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_popupTheme = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_popupTheme;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_subtitle = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_subtitle;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_subtitleTextColor = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_subtitleTextColor;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_title = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_title;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_titleMargin = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_titleMargin;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_titleMarginBottom = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_titleMarginBottom;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_titleMarginEnd = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_titleMarginEnd;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_titleMarginStart = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_titleMarginStart;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_titleMarginTop = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_titleMarginTop;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_titleMargins = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_titleMargins;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_titleTextAppearance = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_titleTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_titleTextColor = global::PhantasmaMail.Droid.Resource.Styleable.Toolbar_titleTextColor;
+			global::XFGloss.Droid.Resource.Styleable.View = global::PhantasmaMail.Droid.Resource.Styleable.View;
+			global::XFGloss.Droid.Resource.Styleable.View_android_focusable = global::PhantasmaMail.Droid.Resource.Styleable.View_android_focusable;
+			global::XFGloss.Droid.Resource.Styleable.View_android_theme = global::PhantasmaMail.Droid.Resource.Styleable.View_android_theme;
+			global::XFGloss.Droid.Resource.Styleable.View_paddingEnd = global::PhantasmaMail.Droid.Resource.Styleable.View_paddingEnd;
+			global::XFGloss.Droid.Resource.Styleable.View_paddingStart = global::PhantasmaMail.Droid.Resource.Styleable.View_paddingStart;
+			global::XFGloss.Droid.Resource.Styleable.View_theme = global::PhantasmaMail.Droid.Resource.Styleable.View_theme;
+			global::XFGloss.Droid.Resource.Styleable.ViewBackgroundHelper = global::PhantasmaMail.Droid.Resource.Styleable.ViewBackgroundHelper;
+			global::XFGloss.Droid.Resource.Styleable.ViewBackgroundHelper_android_background = global::PhantasmaMail.Droid.Resource.Styleable.ViewBackgroundHelper_android_background;
+			global::XFGloss.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::PhantasmaMail.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
+			global::XFGloss.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::PhantasmaMail.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::XFGloss.Droid.Resource.Styleable.ViewStubCompat = global::PhantasmaMail.Droid.Resource.Styleable.ViewStubCompat;
+			global::XFGloss.Droid.Resource.Styleable.ViewStubCompat_android_id = global::PhantasmaMail.Droid.Resource.Styleable.ViewStubCompat_android_id;
+			global::XFGloss.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId = global::PhantasmaMail.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
+			global::XFGloss.Droid.Resource.Styleable.ViewStubCompat_android_layout = global::PhantasmaMail.Droid.Resource.Styleable.ViewStubCompat_android_layout;
 		}
 		
 		public partial class Animation
@@ -1556,449 +3676,449 @@ namespace PhantasmaMail.Droid
 		public partial class Dimension
 		{
 			
-			// aapt resource value: 0x7f070018
-			public const int abc_action_bar_content_inset_material = 2131165208;
+			// aapt resource value: 0x7f080018
+			public const int abc_action_bar_content_inset_material = 2131230744;
 			
-			// aapt resource value: 0x7f070019
-			public const int abc_action_bar_content_inset_with_nav = 2131165209;
+			// aapt resource value: 0x7f080019
+			public const int abc_action_bar_content_inset_with_nav = 2131230745;
 			
-			// aapt resource value: 0x7f07000d
-			public const int abc_action_bar_default_height_material = 2131165197;
+			// aapt resource value: 0x7f08000d
+			public const int abc_action_bar_default_height_material = 2131230733;
 			
-			// aapt resource value: 0x7f07001a
-			public const int abc_action_bar_default_padding_end_material = 2131165210;
+			// aapt resource value: 0x7f08001a
+			public const int abc_action_bar_default_padding_end_material = 2131230746;
 			
-			// aapt resource value: 0x7f07001b
-			public const int abc_action_bar_default_padding_start_material = 2131165211;
+			// aapt resource value: 0x7f08001b
+			public const int abc_action_bar_default_padding_start_material = 2131230747;
 			
-			// aapt resource value: 0x7f070021
-			public const int abc_action_bar_elevation_material = 2131165217;
+			// aapt resource value: 0x7f080021
+			public const int abc_action_bar_elevation_material = 2131230753;
 			
-			// aapt resource value: 0x7f070022
-			public const int abc_action_bar_icon_vertical_padding_material = 2131165218;
+			// aapt resource value: 0x7f080022
+			public const int abc_action_bar_icon_vertical_padding_material = 2131230754;
 			
-			// aapt resource value: 0x7f070023
-			public const int abc_action_bar_overflow_padding_end_material = 2131165219;
+			// aapt resource value: 0x7f080023
+			public const int abc_action_bar_overflow_padding_end_material = 2131230755;
 			
-			// aapt resource value: 0x7f070024
-			public const int abc_action_bar_overflow_padding_start_material = 2131165220;
+			// aapt resource value: 0x7f080024
+			public const int abc_action_bar_overflow_padding_start_material = 2131230756;
 			
-			// aapt resource value: 0x7f07000e
-			public const int abc_action_bar_progress_bar_size = 2131165198;
+			// aapt resource value: 0x7f08000e
+			public const int abc_action_bar_progress_bar_size = 2131230734;
 			
-			// aapt resource value: 0x7f070025
-			public const int abc_action_bar_stacked_max_height = 2131165221;
+			// aapt resource value: 0x7f080025
+			public const int abc_action_bar_stacked_max_height = 2131230757;
 			
-			// aapt resource value: 0x7f070026
-			public const int abc_action_bar_stacked_tab_max_width = 2131165222;
+			// aapt resource value: 0x7f080026
+			public const int abc_action_bar_stacked_tab_max_width = 2131230758;
 			
-			// aapt resource value: 0x7f070027
-			public const int abc_action_bar_subtitle_bottom_margin_material = 2131165223;
+			// aapt resource value: 0x7f080027
+			public const int abc_action_bar_subtitle_bottom_margin_material = 2131230759;
 			
-			// aapt resource value: 0x7f070028
-			public const int abc_action_bar_subtitle_top_margin_material = 2131165224;
+			// aapt resource value: 0x7f080028
+			public const int abc_action_bar_subtitle_top_margin_material = 2131230760;
 			
-			// aapt resource value: 0x7f070029
-			public const int abc_action_button_min_height_material = 2131165225;
+			// aapt resource value: 0x7f080029
+			public const int abc_action_button_min_height_material = 2131230761;
 			
-			// aapt resource value: 0x7f07002a
-			public const int abc_action_button_min_width_material = 2131165226;
+			// aapt resource value: 0x7f08002a
+			public const int abc_action_button_min_width_material = 2131230762;
 			
-			// aapt resource value: 0x7f07002b
-			public const int abc_action_button_min_width_overflow_material = 2131165227;
+			// aapt resource value: 0x7f08002b
+			public const int abc_action_button_min_width_overflow_material = 2131230763;
 			
-			// aapt resource value: 0x7f07000c
-			public const int abc_alert_dialog_button_bar_height = 2131165196;
+			// aapt resource value: 0x7f08000c
+			public const int abc_alert_dialog_button_bar_height = 2131230732;
 			
-			// aapt resource value: 0x7f07002c
-			public const int abc_button_inset_horizontal_material = 2131165228;
+			// aapt resource value: 0x7f08002c
+			public const int abc_button_inset_horizontal_material = 2131230764;
 			
-			// aapt resource value: 0x7f07002d
-			public const int abc_button_inset_vertical_material = 2131165229;
+			// aapt resource value: 0x7f08002d
+			public const int abc_button_inset_vertical_material = 2131230765;
 			
-			// aapt resource value: 0x7f07002e
-			public const int abc_button_padding_horizontal_material = 2131165230;
+			// aapt resource value: 0x7f08002e
+			public const int abc_button_padding_horizontal_material = 2131230766;
 			
-			// aapt resource value: 0x7f07002f
-			public const int abc_button_padding_vertical_material = 2131165231;
+			// aapt resource value: 0x7f08002f
+			public const int abc_button_padding_vertical_material = 2131230767;
 			
-			// aapt resource value: 0x7f070030
-			public const int abc_cascading_menus_min_smallest_width = 2131165232;
+			// aapt resource value: 0x7f080030
+			public const int abc_cascading_menus_min_smallest_width = 2131230768;
 			
-			// aapt resource value: 0x7f070011
-			public const int abc_config_prefDialogWidth = 2131165201;
+			// aapt resource value: 0x7f080011
+			public const int abc_config_prefDialogWidth = 2131230737;
 			
-			// aapt resource value: 0x7f070031
-			public const int abc_control_corner_material = 2131165233;
+			// aapt resource value: 0x7f080031
+			public const int abc_control_corner_material = 2131230769;
 			
-			// aapt resource value: 0x7f070032
-			public const int abc_control_inset_material = 2131165234;
+			// aapt resource value: 0x7f080032
+			public const int abc_control_inset_material = 2131230770;
 			
-			// aapt resource value: 0x7f070033
-			public const int abc_control_padding_material = 2131165235;
+			// aapt resource value: 0x7f080033
+			public const int abc_control_padding_material = 2131230771;
 			
-			// aapt resource value: 0x7f070012
-			public const int abc_dialog_fixed_height_major = 2131165202;
+			// aapt resource value: 0x7f080012
+			public const int abc_dialog_fixed_height_major = 2131230738;
 			
-			// aapt resource value: 0x7f070013
-			public const int abc_dialog_fixed_height_minor = 2131165203;
+			// aapt resource value: 0x7f080013
+			public const int abc_dialog_fixed_height_minor = 2131230739;
 			
-			// aapt resource value: 0x7f070014
-			public const int abc_dialog_fixed_width_major = 2131165204;
+			// aapt resource value: 0x7f080014
+			public const int abc_dialog_fixed_width_major = 2131230740;
 			
-			// aapt resource value: 0x7f070015
-			public const int abc_dialog_fixed_width_minor = 2131165205;
+			// aapt resource value: 0x7f080015
+			public const int abc_dialog_fixed_width_minor = 2131230741;
 			
-			// aapt resource value: 0x7f070034
-			public const int abc_dialog_list_padding_bottom_no_buttons = 2131165236;
+			// aapt resource value: 0x7f080034
+			public const int abc_dialog_list_padding_bottom_no_buttons = 2131230772;
 			
-			// aapt resource value: 0x7f070035
-			public const int abc_dialog_list_padding_top_no_title = 2131165237;
+			// aapt resource value: 0x7f080035
+			public const int abc_dialog_list_padding_top_no_title = 2131230773;
 			
-			// aapt resource value: 0x7f070016
-			public const int abc_dialog_min_width_major = 2131165206;
+			// aapt resource value: 0x7f080016
+			public const int abc_dialog_min_width_major = 2131230742;
 			
-			// aapt resource value: 0x7f070017
-			public const int abc_dialog_min_width_minor = 2131165207;
+			// aapt resource value: 0x7f080017
+			public const int abc_dialog_min_width_minor = 2131230743;
 			
-			// aapt resource value: 0x7f070036
-			public const int abc_dialog_padding_material = 2131165238;
+			// aapt resource value: 0x7f080036
+			public const int abc_dialog_padding_material = 2131230774;
 			
-			// aapt resource value: 0x7f070037
-			public const int abc_dialog_padding_top_material = 2131165239;
+			// aapt resource value: 0x7f080037
+			public const int abc_dialog_padding_top_material = 2131230775;
 			
-			// aapt resource value: 0x7f070038
-			public const int abc_dialog_title_divider_material = 2131165240;
+			// aapt resource value: 0x7f080038
+			public const int abc_dialog_title_divider_material = 2131230776;
 			
-			// aapt resource value: 0x7f070039
-			public const int abc_disabled_alpha_material_dark = 2131165241;
+			// aapt resource value: 0x7f080039
+			public const int abc_disabled_alpha_material_dark = 2131230777;
 			
-			// aapt resource value: 0x7f07003a
-			public const int abc_disabled_alpha_material_light = 2131165242;
+			// aapt resource value: 0x7f08003a
+			public const int abc_disabled_alpha_material_light = 2131230778;
 			
-			// aapt resource value: 0x7f07003b
-			public const int abc_dropdownitem_icon_width = 2131165243;
+			// aapt resource value: 0x7f08003b
+			public const int abc_dropdownitem_icon_width = 2131230779;
 			
-			// aapt resource value: 0x7f07003c
-			public const int abc_dropdownitem_text_padding_left = 2131165244;
+			// aapt resource value: 0x7f08003c
+			public const int abc_dropdownitem_text_padding_left = 2131230780;
 			
-			// aapt resource value: 0x7f07003d
-			public const int abc_dropdownitem_text_padding_right = 2131165245;
+			// aapt resource value: 0x7f08003d
+			public const int abc_dropdownitem_text_padding_right = 2131230781;
 			
-			// aapt resource value: 0x7f07003e
-			public const int abc_edit_text_inset_bottom_material = 2131165246;
+			// aapt resource value: 0x7f08003e
+			public const int abc_edit_text_inset_bottom_material = 2131230782;
 			
-			// aapt resource value: 0x7f07003f
-			public const int abc_edit_text_inset_horizontal_material = 2131165247;
+			// aapt resource value: 0x7f08003f
+			public const int abc_edit_text_inset_horizontal_material = 2131230783;
 			
-			// aapt resource value: 0x7f070040
-			public const int abc_edit_text_inset_top_material = 2131165248;
+			// aapt resource value: 0x7f080040
+			public const int abc_edit_text_inset_top_material = 2131230784;
 			
-			// aapt resource value: 0x7f070041
-			public const int abc_floating_window_z = 2131165249;
+			// aapt resource value: 0x7f080041
+			public const int abc_floating_window_z = 2131230785;
 			
-			// aapt resource value: 0x7f070042
-			public const int abc_list_item_padding_horizontal_material = 2131165250;
+			// aapt resource value: 0x7f080042
+			public const int abc_list_item_padding_horizontal_material = 2131230786;
 			
-			// aapt resource value: 0x7f070043
-			public const int abc_panel_menu_list_width = 2131165251;
+			// aapt resource value: 0x7f080043
+			public const int abc_panel_menu_list_width = 2131230787;
 			
-			// aapt resource value: 0x7f070044
-			public const int abc_progress_bar_height_material = 2131165252;
+			// aapt resource value: 0x7f080044
+			public const int abc_progress_bar_height_material = 2131230788;
 			
-			// aapt resource value: 0x7f070045
-			public const int abc_search_view_preferred_height = 2131165253;
+			// aapt resource value: 0x7f080045
+			public const int abc_search_view_preferred_height = 2131230789;
 			
-			// aapt resource value: 0x7f070046
-			public const int abc_search_view_preferred_width = 2131165254;
+			// aapt resource value: 0x7f080046
+			public const int abc_search_view_preferred_width = 2131230790;
 			
-			// aapt resource value: 0x7f070047
-			public const int abc_seekbar_track_background_height_material = 2131165255;
+			// aapt resource value: 0x7f080047
+			public const int abc_seekbar_track_background_height_material = 2131230791;
 			
-			// aapt resource value: 0x7f070048
-			public const int abc_seekbar_track_progress_height_material = 2131165256;
+			// aapt resource value: 0x7f080048
+			public const int abc_seekbar_track_progress_height_material = 2131230792;
 			
-			// aapt resource value: 0x7f070049
-			public const int abc_select_dialog_padding_start_material = 2131165257;
+			// aapt resource value: 0x7f080049
+			public const int abc_select_dialog_padding_start_material = 2131230793;
 			
-			// aapt resource value: 0x7f07001d
-			public const int abc_switch_padding = 2131165213;
+			// aapt resource value: 0x7f08001d
+			public const int abc_switch_padding = 2131230749;
 			
-			// aapt resource value: 0x7f07004a
-			public const int abc_text_size_body_1_material = 2131165258;
+			// aapt resource value: 0x7f08004a
+			public const int abc_text_size_body_1_material = 2131230794;
 			
-			// aapt resource value: 0x7f07004b
-			public const int abc_text_size_body_2_material = 2131165259;
+			// aapt resource value: 0x7f08004b
+			public const int abc_text_size_body_2_material = 2131230795;
 			
-			// aapt resource value: 0x7f07004c
-			public const int abc_text_size_button_material = 2131165260;
+			// aapt resource value: 0x7f08004c
+			public const int abc_text_size_button_material = 2131230796;
 			
-			// aapt resource value: 0x7f07004d
-			public const int abc_text_size_caption_material = 2131165261;
+			// aapt resource value: 0x7f08004d
+			public const int abc_text_size_caption_material = 2131230797;
 			
-			// aapt resource value: 0x7f07004e
-			public const int abc_text_size_display_1_material = 2131165262;
+			// aapt resource value: 0x7f08004e
+			public const int abc_text_size_display_1_material = 2131230798;
 			
-			// aapt resource value: 0x7f07004f
-			public const int abc_text_size_display_2_material = 2131165263;
+			// aapt resource value: 0x7f08004f
+			public const int abc_text_size_display_2_material = 2131230799;
 			
-			// aapt resource value: 0x7f070050
-			public const int abc_text_size_display_3_material = 2131165264;
+			// aapt resource value: 0x7f080050
+			public const int abc_text_size_display_3_material = 2131230800;
 			
-			// aapt resource value: 0x7f070051
-			public const int abc_text_size_display_4_material = 2131165265;
+			// aapt resource value: 0x7f080051
+			public const int abc_text_size_display_4_material = 2131230801;
 			
-			// aapt resource value: 0x7f070052
-			public const int abc_text_size_headline_material = 2131165266;
+			// aapt resource value: 0x7f080052
+			public const int abc_text_size_headline_material = 2131230802;
 			
-			// aapt resource value: 0x7f070053
-			public const int abc_text_size_large_material = 2131165267;
+			// aapt resource value: 0x7f080053
+			public const int abc_text_size_large_material = 2131230803;
 			
-			// aapt resource value: 0x7f070054
-			public const int abc_text_size_medium_material = 2131165268;
+			// aapt resource value: 0x7f080054
+			public const int abc_text_size_medium_material = 2131230804;
 			
-			// aapt resource value: 0x7f070055
-			public const int abc_text_size_menu_header_material = 2131165269;
+			// aapt resource value: 0x7f080055
+			public const int abc_text_size_menu_header_material = 2131230805;
 			
-			// aapt resource value: 0x7f070056
-			public const int abc_text_size_menu_material = 2131165270;
+			// aapt resource value: 0x7f080056
+			public const int abc_text_size_menu_material = 2131230806;
 			
-			// aapt resource value: 0x7f070057
-			public const int abc_text_size_small_material = 2131165271;
+			// aapt resource value: 0x7f080057
+			public const int abc_text_size_small_material = 2131230807;
 			
-			// aapt resource value: 0x7f070058
-			public const int abc_text_size_subhead_material = 2131165272;
+			// aapt resource value: 0x7f080058
+			public const int abc_text_size_subhead_material = 2131230808;
 			
-			// aapt resource value: 0x7f07000f
-			public const int abc_text_size_subtitle_material_toolbar = 2131165199;
+			// aapt resource value: 0x7f08000f
+			public const int abc_text_size_subtitle_material_toolbar = 2131230735;
 			
-			// aapt resource value: 0x7f070059
-			public const int abc_text_size_title_material = 2131165273;
+			// aapt resource value: 0x7f080059
+			public const int abc_text_size_title_material = 2131230809;
 			
-			// aapt resource value: 0x7f070010
-			public const int abc_text_size_title_material_toolbar = 2131165200;
+			// aapt resource value: 0x7f080010
+			public const int abc_text_size_title_material_toolbar = 2131230736;
 			
-			// aapt resource value: 0x7f070009
-			public const int cardview_compat_inset_shadow = 2131165193;
+			// aapt resource value: 0x7f080009
+			public const int cardview_compat_inset_shadow = 2131230729;
 			
-			// aapt resource value: 0x7f07000a
-			public const int cardview_default_elevation = 2131165194;
+			// aapt resource value: 0x7f08000a
+			public const int cardview_default_elevation = 2131230730;
 			
-			// aapt resource value: 0x7f07000b
-			public const int cardview_default_radius = 2131165195;
+			// aapt resource value: 0x7f08000b
+			public const int cardview_default_radius = 2131230731;
 			
-			// aapt resource value: 0x7f070076
-			public const int design_appbar_elevation = 2131165302;
+			// aapt resource value: 0x7f080076
+			public const int design_appbar_elevation = 2131230838;
 			
-			// aapt resource value: 0x7f070077
-			public const int design_bottom_navigation_active_item_max_width = 2131165303;
+			// aapt resource value: 0x7f080077
+			public const int design_bottom_navigation_active_item_max_width = 2131230839;
 			
-			// aapt resource value: 0x7f070078
-			public const int design_bottom_navigation_active_text_size = 2131165304;
+			// aapt resource value: 0x7f080078
+			public const int design_bottom_navigation_active_text_size = 2131230840;
 			
-			// aapt resource value: 0x7f070079
-			public const int design_bottom_navigation_elevation = 2131165305;
+			// aapt resource value: 0x7f080079
+			public const int design_bottom_navigation_elevation = 2131230841;
 			
-			// aapt resource value: 0x7f07007a
-			public const int design_bottom_navigation_height = 2131165306;
+			// aapt resource value: 0x7f08007a
+			public const int design_bottom_navigation_height = 2131230842;
 			
-			// aapt resource value: 0x7f07007b
-			public const int design_bottom_navigation_item_max_width = 2131165307;
+			// aapt resource value: 0x7f08007b
+			public const int design_bottom_navigation_item_max_width = 2131230843;
 			
-			// aapt resource value: 0x7f07007c
-			public const int design_bottom_navigation_item_min_width = 2131165308;
+			// aapt resource value: 0x7f08007c
+			public const int design_bottom_navigation_item_min_width = 2131230844;
 			
-			// aapt resource value: 0x7f07007d
-			public const int design_bottom_navigation_margin = 2131165309;
+			// aapt resource value: 0x7f08007d
+			public const int design_bottom_navigation_margin = 2131230845;
 			
-			// aapt resource value: 0x7f07007e
-			public const int design_bottom_navigation_shadow_height = 2131165310;
+			// aapt resource value: 0x7f08007e
+			public const int design_bottom_navigation_shadow_height = 2131230846;
 			
-			// aapt resource value: 0x7f07007f
-			public const int design_bottom_navigation_text_size = 2131165311;
+			// aapt resource value: 0x7f08007f
+			public const int design_bottom_navigation_text_size = 2131230847;
 			
-			// aapt resource value: 0x7f070080
-			public const int design_bottom_sheet_modal_elevation = 2131165312;
+			// aapt resource value: 0x7f080080
+			public const int design_bottom_sheet_modal_elevation = 2131230848;
 			
-			// aapt resource value: 0x7f070081
-			public const int design_bottom_sheet_peek_height_min = 2131165313;
+			// aapt resource value: 0x7f080081
+			public const int design_bottom_sheet_peek_height_min = 2131230849;
 			
-			// aapt resource value: 0x7f070082
-			public const int design_fab_border_width = 2131165314;
+			// aapt resource value: 0x7f080082
+			public const int design_fab_border_width = 2131230850;
 			
-			// aapt resource value: 0x7f070083
-			public const int design_fab_elevation = 2131165315;
+			// aapt resource value: 0x7f080083
+			public const int design_fab_elevation = 2131230851;
 			
-			// aapt resource value: 0x7f070084
-			public const int design_fab_image_size = 2131165316;
+			// aapt resource value: 0x7f080084
+			public const int design_fab_image_size = 2131230852;
 			
-			// aapt resource value: 0x7f070085
-			public const int design_fab_size_mini = 2131165317;
+			// aapt resource value: 0x7f080085
+			public const int design_fab_size_mini = 2131230853;
 			
-			// aapt resource value: 0x7f070086
-			public const int design_fab_size_normal = 2131165318;
+			// aapt resource value: 0x7f080086
+			public const int design_fab_size_normal = 2131230854;
 			
-			// aapt resource value: 0x7f070087
-			public const int design_fab_translation_z_pressed = 2131165319;
+			// aapt resource value: 0x7f080087
+			public const int design_fab_translation_z_pressed = 2131230855;
 			
-			// aapt resource value: 0x7f070088
-			public const int design_navigation_elevation = 2131165320;
+			// aapt resource value: 0x7f080088
+			public const int design_navigation_elevation = 2131230856;
 			
-			// aapt resource value: 0x7f070089
-			public const int design_navigation_icon_padding = 2131165321;
+			// aapt resource value: 0x7f080089
+			public const int design_navigation_icon_padding = 2131230857;
 			
-			// aapt resource value: 0x7f07008a
-			public const int design_navigation_icon_size = 2131165322;
+			// aapt resource value: 0x7f08008a
+			public const int design_navigation_icon_size = 2131230858;
 			
-			// aapt resource value: 0x7f07006e
-			public const int design_navigation_max_width = 2131165294;
+			// aapt resource value: 0x7f08006e
+			public const int design_navigation_max_width = 2131230830;
 			
-			// aapt resource value: 0x7f07008b
-			public const int design_navigation_padding_bottom = 2131165323;
+			// aapt resource value: 0x7f08008b
+			public const int design_navigation_padding_bottom = 2131230859;
 			
-			// aapt resource value: 0x7f07008c
-			public const int design_navigation_separator_vertical_padding = 2131165324;
+			// aapt resource value: 0x7f08008c
+			public const int design_navigation_separator_vertical_padding = 2131230860;
 			
-			// aapt resource value: 0x7f07006f
-			public const int design_snackbar_action_inline_max_width = 2131165295;
+			// aapt resource value: 0x7f08006f
+			public const int design_snackbar_action_inline_max_width = 2131230831;
 			
-			// aapt resource value: 0x7f070070
-			public const int design_snackbar_background_corner_radius = 2131165296;
+			// aapt resource value: 0x7f080070
+			public const int design_snackbar_background_corner_radius = 2131230832;
 			
-			// aapt resource value: 0x7f07008d
-			public const int design_snackbar_elevation = 2131165325;
+			// aapt resource value: 0x7f08008d
+			public const int design_snackbar_elevation = 2131230861;
 			
-			// aapt resource value: 0x7f070071
-			public const int design_snackbar_extra_spacing_horizontal = 2131165297;
+			// aapt resource value: 0x7f080071
+			public const int design_snackbar_extra_spacing_horizontal = 2131230833;
 			
-			// aapt resource value: 0x7f070072
-			public const int design_snackbar_max_width = 2131165298;
+			// aapt resource value: 0x7f080072
+			public const int design_snackbar_max_width = 2131230834;
 			
-			// aapt resource value: 0x7f070073
-			public const int design_snackbar_min_width = 2131165299;
+			// aapt resource value: 0x7f080073
+			public const int design_snackbar_min_width = 2131230835;
 			
-			// aapt resource value: 0x7f07008e
-			public const int design_snackbar_padding_horizontal = 2131165326;
+			// aapt resource value: 0x7f08008e
+			public const int design_snackbar_padding_horizontal = 2131230862;
 			
-			// aapt resource value: 0x7f07008f
-			public const int design_snackbar_padding_vertical = 2131165327;
+			// aapt resource value: 0x7f08008f
+			public const int design_snackbar_padding_vertical = 2131230863;
 			
-			// aapt resource value: 0x7f070074
-			public const int design_snackbar_padding_vertical_2lines = 2131165300;
+			// aapt resource value: 0x7f080074
+			public const int design_snackbar_padding_vertical_2lines = 2131230836;
 			
-			// aapt resource value: 0x7f070090
-			public const int design_snackbar_text_size = 2131165328;
+			// aapt resource value: 0x7f080090
+			public const int design_snackbar_text_size = 2131230864;
 			
-			// aapt resource value: 0x7f070091
-			public const int design_tab_max_width = 2131165329;
+			// aapt resource value: 0x7f080091
+			public const int design_tab_max_width = 2131230865;
 			
-			// aapt resource value: 0x7f070075
-			public const int design_tab_scrollable_min_width = 2131165301;
+			// aapt resource value: 0x7f080075
+			public const int design_tab_scrollable_min_width = 2131230837;
 			
-			// aapt resource value: 0x7f070092
-			public const int design_tab_text_size = 2131165330;
+			// aapt resource value: 0x7f080092
+			public const int design_tab_text_size = 2131230866;
 			
-			// aapt resource value: 0x7f070093
-			public const int design_tab_text_size_2line = 2131165331;
+			// aapt resource value: 0x7f080093
+			public const int design_tab_text_size_2line = 2131230867;
 			
-			// aapt resource value: 0x7f07005a
-			public const int disabled_alpha_material_dark = 2131165274;
+			// aapt resource value: 0x7f08005a
+			public const int disabled_alpha_material_dark = 2131230810;
 			
-			// aapt resource value: 0x7f07005b
-			public const int disabled_alpha_material_light = 2131165275;
+			// aapt resource value: 0x7f08005b
+			public const int disabled_alpha_material_light = 2131230811;
 			
-			// aapt resource value: 0x7f07005c
-			public const int highlight_alpha_material_colored = 2131165276;
+			// aapt resource value: 0x7f08005c
+			public const int highlight_alpha_material_colored = 2131230812;
 			
-			// aapt resource value: 0x7f07005d
-			public const int highlight_alpha_material_dark = 2131165277;
+			// aapt resource value: 0x7f08005d
+			public const int highlight_alpha_material_dark = 2131230813;
 			
-			// aapt resource value: 0x7f07005e
-			public const int highlight_alpha_material_light = 2131165278;
+			// aapt resource value: 0x7f08005e
+			public const int highlight_alpha_material_light = 2131230814;
 			
-			// aapt resource value: 0x7f07005f
-			public const int hint_alpha_material_dark = 2131165279;
+			// aapt resource value: 0x7f08005f
+			public const int hint_alpha_material_dark = 2131230815;
 			
-			// aapt resource value: 0x7f070060
-			public const int hint_alpha_material_light = 2131165280;
+			// aapt resource value: 0x7f080060
+			public const int hint_alpha_material_light = 2131230816;
 			
-			// aapt resource value: 0x7f070061
-			public const int hint_pressed_alpha_material_dark = 2131165281;
+			// aapt resource value: 0x7f080061
+			public const int hint_pressed_alpha_material_dark = 2131230817;
 			
-			// aapt resource value: 0x7f070062
-			public const int hint_pressed_alpha_material_light = 2131165282;
+			// aapt resource value: 0x7f080062
+			public const int hint_pressed_alpha_material_light = 2131230818;
 			
-			// aapt resource value: 0x7f070000
-			public const int item_touch_helper_max_drag_scroll_per_frame = 2131165184;
+			// aapt resource value: 0x7f080000
+			public const int item_touch_helper_max_drag_scroll_per_frame = 2131230720;
 			
-			// aapt resource value: 0x7f070001
-			public const int item_touch_helper_swipe_escape_max_velocity = 2131165185;
+			// aapt resource value: 0x7f080001
+			public const int item_touch_helper_swipe_escape_max_velocity = 2131230721;
 			
-			// aapt resource value: 0x7f070002
-			public const int item_touch_helper_swipe_escape_velocity = 2131165186;
+			// aapt resource value: 0x7f080002
+			public const int item_touch_helper_swipe_escape_velocity = 2131230722;
 			
-			// aapt resource value: 0x7f070003
-			public const int mr_controller_volume_group_list_item_height = 2131165187;
+			// aapt resource value: 0x7f080003
+			public const int mr_controller_volume_group_list_item_height = 2131230723;
 			
-			// aapt resource value: 0x7f070004
-			public const int mr_controller_volume_group_list_item_icon_size = 2131165188;
+			// aapt resource value: 0x7f080004
+			public const int mr_controller_volume_group_list_item_icon_size = 2131230724;
 			
-			// aapt resource value: 0x7f070005
-			public const int mr_controller_volume_group_list_max_height = 2131165189;
+			// aapt resource value: 0x7f080005
+			public const int mr_controller_volume_group_list_max_height = 2131230725;
 			
-			// aapt resource value: 0x7f070008
-			public const int mr_controller_volume_group_list_padding_top = 2131165192;
+			// aapt resource value: 0x7f080008
+			public const int mr_controller_volume_group_list_padding_top = 2131230728;
 			
-			// aapt resource value: 0x7f070006
-			public const int mr_dialog_fixed_width_major = 2131165190;
+			// aapt resource value: 0x7f080006
+			public const int mr_dialog_fixed_width_major = 2131230726;
 			
-			// aapt resource value: 0x7f070007
-			public const int mr_dialog_fixed_width_minor = 2131165191;
+			// aapt resource value: 0x7f080007
+			public const int mr_dialog_fixed_width_minor = 2131230727;
 			
-			// aapt resource value: 0x7f070063
-			public const int notification_action_icon_size = 2131165283;
+			// aapt resource value: 0x7f080063
+			public const int notification_action_icon_size = 2131230819;
 			
-			// aapt resource value: 0x7f070064
-			public const int notification_action_text_size = 2131165284;
+			// aapt resource value: 0x7f080064
+			public const int notification_action_text_size = 2131230820;
 			
-			// aapt resource value: 0x7f070065
-			public const int notification_big_circle_margin = 2131165285;
+			// aapt resource value: 0x7f080065
+			public const int notification_big_circle_margin = 2131230821;
 			
-			// aapt resource value: 0x7f07001e
-			public const int notification_content_margin_start = 2131165214;
+			// aapt resource value: 0x7f08001e
+			public const int notification_content_margin_start = 2131230750;
 			
-			// aapt resource value: 0x7f070066
-			public const int notification_large_icon_height = 2131165286;
+			// aapt resource value: 0x7f080066
+			public const int notification_large_icon_height = 2131230822;
 			
-			// aapt resource value: 0x7f070067
-			public const int notification_large_icon_width = 2131165287;
+			// aapt resource value: 0x7f080067
+			public const int notification_large_icon_width = 2131230823;
 			
-			// aapt resource value: 0x7f07001f
-			public const int notification_main_column_padding_top = 2131165215;
+			// aapt resource value: 0x7f08001f
+			public const int notification_main_column_padding_top = 2131230751;
 			
-			// aapt resource value: 0x7f070020
-			public const int notification_media_narrow_margin = 2131165216;
+			// aapt resource value: 0x7f080020
+			public const int notification_media_narrow_margin = 2131230752;
 			
-			// aapt resource value: 0x7f070068
-			public const int notification_right_icon_size = 2131165288;
+			// aapt resource value: 0x7f080068
+			public const int notification_right_icon_size = 2131230824;
 			
-			// aapt resource value: 0x7f07001c
-			public const int notification_right_side_padding_top = 2131165212;
+			// aapt resource value: 0x7f08001c
+			public const int notification_right_side_padding_top = 2131230748;
 			
-			// aapt resource value: 0x7f070069
-			public const int notification_small_icon_background_padding = 2131165289;
+			// aapt resource value: 0x7f080069
+			public const int notification_small_icon_background_padding = 2131230825;
 			
-			// aapt resource value: 0x7f07006a
-			public const int notification_small_icon_size_as_large = 2131165290;
+			// aapt resource value: 0x7f08006a
+			public const int notification_small_icon_size_as_large = 2131230826;
 			
-			// aapt resource value: 0x7f07006b
-			public const int notification_subtext_size = 2131165291;
+			// aapt resource value: 0x7f08006b
+			public const int notification_subtext_size = 2131230827;
 			
-			// aapt resource value: 0x7f07006c
-			public const int notification_top_pad = 2131165292;
+			// aapt resource value: 0x7f08006c
+			public const int notification_top_pad = 2131230828;
 			
-			// aapt resource value: 0x7f07006d
-			public const int notification_top_pad_large_text = 2131165293;
+			// aapt resource value: 0x7f08006d
+			public const int notification_top_pad_large_text = 2131230829;
 			
 			static Dimension()
 			{
@@ -2869,563 +4989,563 @@ namespace PhantasmaMail.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0800a2
-			public const int action0 = 2131230882;
+			// aapt resource value: 0x7f0900a2
+			public const int action0 = 2131296418;
 			
-			// aapt resource value: 0x7f080064
-			public const int action_bar = 2131230820;
+			// aapt resource value: 0x7f090064
+			public const int action_bar = 2131296356;
 			
-			// aapt resource value: 0x7f080001
-			public const int action_bar_activity_content = 2131230721;
+			// aapt resource value: 0x7f090001
+			public const int action_bar_activity_content = 2131296257;
 			
-			// aapt resource value: 0x7f080063
-			public const int action_bar_container = 2131230819;
+			// aapt resource value: 0x7f090063
+			public const int action_bar_container = 2131296355;
 			
-			// aapt resource value: 0x7f08005f
-			public const int action_bar_root = 2131230815;
+			// aapt resource value: 0x7f09005f
+			public const int action_bar_root = 2131296351;
 			
-			// aapt resource value: 0x7f080002
-			public const int action_bar_spinner = 2131230722;
+			// aapt resource value: 0x7f090002
+			public const int action_bar_spinner = 2131296258;
 			
-			// aapt resource value: 0x7f080042
-			public const int action_bar_subtitle = 2131230786;
+			// aapt resource value: 0x7f090042
+			public const int action_bar_subtitle = 2131296322;
 			
-			// aapt resource value: 0x7f080041
-			public const int action_bar_title = 2131230785;
+			// aapt resource value: 0x7f090041
+			public const int action_bar_title = 2131296321;
 			
-			// aapt resource value: 0x7f08009f
-			public const int action_container = 2131230879;
+			// aapt resource value: 0x7f09009f
+			public const int action_container = 2131296415;
 			
-			// aapt resource value: 0x7f080065
-			public const int action_context_bar = 2131230821;
+			// aapt resource value: 0x7f090065
+			public const int action_context_bar = 2131296357;
 			
-			// aapt resource value: 0x7f0800a6
-			public const int action_divider = 2131230886;
+			// aapt resource value: 0x7f0900a6
+			public const int action_divider = 2131296422;
 			
-			// aapt resource value: 0x7f0800a0
-			public const int action_image = 2131230880;
+			// aapt resource value: 0x7f0900a0
+			public const int action_image = 2131296416;
 			
-			// aapt resource value: 0x7f080003
-			public const int action_menu_divider = 2131230723;
+			// aapt resource value: 0x7f090003
+			public const int action_menu_divider = 2131296259;
 			
-			// aapt resource value: 0x7f080004
-			public const int action_menu_presenter = 2131230724;
+			// aapt resource value: 0x7f090004
+			public const int action_menu_presenter = 2131296260;
 			
-			// aapt resource value: 0x7f080061
-			public const int action_mode_bar = 2131230817;
+			// aapt resource value: 0x7f090061
+			public const int action_mode_bar = 2131296353;
 			
-			// aapt resource value: 0x7f080060
-			public const int action_mode_bar_stub = 2131230816;
+			// aapt resource value: 0x7f090060
+			public const int action_mode_bar_stub = 2131296352;
 			
-			// aapt resource value: 0x7f080043
-			public const int action_mode_close_button = 2131230787;
+			// aapt resource value: 0x7f090043
+			public const int action_mode_close_button = 2131296323;
 			
-			// aapt resource value: 0x7f0800a1
-			public const int action_text = 2131230881;
+			// aapt resource value: 0x7f0900a1
+			public const int action_text = 2131296417;
 			
-			// aapt resource value: 0x7f0800af
-			public const int actions = 2131230895;
+			// aapt resource value: 0x7f0900af
+			public const int actions = 2131296431;
 			
-			// aapt resource value: 0x7f080044
-			public const int activity_chooser_view_content = 2131230788;
+			// aapt resource value: 0x7f090044
+			public const int activity_chooser_view_content = 2131296324;
 			
-			// aapt resource value: 0x7f08001e
-			public const int add = 2131230750;
+			// aapt resource value: 0x7f09001e
+			public const int add = 2131296286;
 			
-			// aapt resource value: 0x7f080058
-			public const int alertTitle = 2131230808;
+			// aapt resource value: 0x7f090058
+			public const int alertTitle = 2131296344;
 			
-			// aapt resource value: 0x7f08003d
-			public const int all = 2131230781;
+			// aapt resource value: 0x7f09003d
+			public const int all = 2131296317;
 			
-			// aapt resource value: 0x7f080023
-			public const int always = 2131230755;
+			// aapt resource value: 0x7f090023
+			public const int always = 2131296291;
 			
-			// aapt resource value: 0x7f08002f
-			public const int auto = 2131230767;
+			// aapt resource value: 0x7f09002f
+			public const int auto = 2131296303;
 			
-			// aapt resource value: 0x7f080020
-			public const int beginning = 2131230752;
+			// aapt resource value: 0x7f090020
+			public const int beginning = 2131296288;
 			
-			// aapt resource value: 0x7f080028
-			public const int bottom = 2131230760;
+			// aapt resource value: 0x7f090028
+			public const int bottom = 2131296296;
 			
-			// aapt resource value: 0x7f08004b
-			public const int buttonPanel = 2131230795;
+			// aapt resource value: 0x7f09004b
+			public const int buttonPanel = 2131296331;
 			
-			// aapt resource value: 0x7f0800a3
-			public const int cancel_action = 2131230883;
+			// aapt resource value: 0x7f0900a3
+			public const int cancel_action = 2131296419;
 			
-			// aapt resource value: 0x7f080030
-			public const int center = 2131230768;
+			// aapt resource value: 0x7f090030
+			public const int center = 2131296304;
 			
-			// aapt resource value: 0x7f080031
-			public const int center_horizontal = 2131230769;
+			// aapt resource value: 0x7f090031
+			public const int center_horizontal = 2131296305;
 			
-			// aapt resource value: 0x7f080032
-			public const int center_vertical = 2131230770;
+			// aapt resource value: 0x7f090032
+			public const int center_vertical = 2131296306;
 			
-			// aapt resource value: 0x7f08005b
-			public const int checkbox = 2131230811;
+			// aapt resource value: 0x7f09005b
+			public const int checkbox = 2131296347;
 			
-			// aapt resource value: 0x7f0800ab
-			public const int chronometer = 2131230891;
+			// aapt resource value: 0x7f0900ab
+			public const int chronometer = 2131296427;
 			
-			// aapt resource value: 0x7f080039
-			public const int clip_horizontal = 2131230777;
+			// aapt resource value: 0x7f090039
+			public const int clip_horizontal = 2131296313;
 			
-			// aapt resource value: 0x7f08003a
-			public const int clip_vertical = 2131230778;
+			// aapt resource value: 0x7f09003a
+			public const int clip_vertical = 2131296314;
 			
-			// aapt resource value: 0x7f080024
-			public const int collapseActionView = 2131230756;
+			// aapt resource value: 0x7f090024
+			public const int collapseActionView = 2131296292;
 			
-			// aapt resource value: 0x7f080075
-			public const int container = 2131230837;
+			// aapt resource value: 0x7f090075
+			public const int container = 2131296373;
 			
-			// aapt resource value: 0x7f08004e
-			public const int contentPanel = 2131230798;
+			// aapt resource value: 0x7f09004e
+			public const int contentPanel = 2131296334;
 			
-			// aapt resource value: 0x7f080076
-			public const int coordinator = 2131230838;
+			// aapt resource value: 0x7f090076
+			public const int coordinator = 2131296374;
 			
-			// aapt resource value: 0x7f080055
-			public const int custom = 2131230805;
+			// aapt resource value: 0x7f090055
+			public const int custom = 2131296341;
 			
-			// aapt resource value: 0x7f080054
-			public const int customPanel = 2131230804;
+			// aapt resource value: 0x7f090054
+			public const int customPanel = 2131296340;
 			
-			// aapt resource value: 0x7f080062
-			public const int decor_content_parent = 2131230818;
+			// aapt resource value: 0x7f090062
+			public const int decor_content_parent = 2131296354;
 			
-			// aapt resource value: 0x7f080047
-			public const int default_activity_button = 2131230791;
+			// aapt resource value: 0x7f090047
+			public const int default_activity_button = 2131296327;
 			
-			// aapt resource value: 0x7f080078
-			public const int design_bottom_sheet = 2131230840;
+			// aapt resource value: 0x7f090078
+			public const int design_bottom_sheet = 2131296376;
 			
-			// aapt resource value: 0x7f08007f
-			public const int design_menu_item_action_area = 2131230847;
+			// aapt resource value: 0x7f09007f
+			public const int design_menu_item_action_area = 2131296383;
 			
-			// aapt resource value: 0x7f08007e
-			public const int design_menu_item_action_area_stub = 2131230846;
+			// aapt resource value: 0x7f09007e
+			public const int design_menu_item_action_area_stub = 2131296382;
 			
-			// aapt resource value: 0x7f08007d
-			public const int design_menu_item_text = 2131230845;
+			// aapt resource value: 0x7f09007d
+			public const int design_menu_item_text = 2131296381;
 			
-			// aapt resource value: 0x7f08007c
-			public const int design_navigation_view = 2131230844;
+			// aapt resource value: 0x7f09007c
+			public const int design_navigation_view = 2131296380;
 			
-			// aapt resource value: 0x7f080012
-			public const int disableHome = 2131230738;
+			// aapt resource value: 0x7f090012
+			public const int disableHome = 2131296274;
 			
-			// aapt resource value: 0x7f080066
-			public const int edit_query = 2131230822;
+			// aapt resource value: 0x7f090066
+			public const int edit_query = 2131296358;
 			
-			// aapt resource value: 0x7f080021
-			public const int end = 2131230753;
+			// aapt resource value: 0x7f090021
+			public const int end = 2131296289;
 			
-			// aapt resource value: 0x7f0800b5
-			public const int end_padder = 2131230901;
+			// aapt resource value: 0x7f0900b5
+			public const int end_padder = 2131296437;
 			
-			// aapt resource value: 0x7f08002a
-			public const int enterAlways = 2131230762;
+			// aapt resource value: 0x7f09002a
+			public const int enterAlways = 2131296298;
 			
-			// aapt resource value: 0x7f08002b
-			public const int enterAlwaysCollapsed = 2131230763;
+			// aapt resource value: 0x7f09002b
+			public const int enterAlwaysCollapsed = 2131296299;
 			
-			// aapt resource value: 0x7f08002c
-			public const int exitUntilCollapsed = 2131230764;
+			// aapt resource value: 0x7f09002c
+			public const int exitUntilCollapsed = 2131296300;
 			
-			// aapt resource value: 0x7f080045
-			public const int expand_activities_button = 2131230789;
+			// aapt resource value: 0x7f090045
+			public const int expand_activities_button = 2131296325;
 			
-			// aapt resource value: 0x7f08005a
-			public const int expanded_menu = 2131230810;
+			// aapt resource value: 0x7f09005a
+			public const int expanded_menu = 2131296346;
 			
-			// aapt resource value: 0x7f08003b
-			public const int fill = 2131230779;
+			// aapt resource value: 0x7f09003b
+			public const int fill = 2131296315;
 			
-			// aapt resource value: 0x7f08003c
-			public const int fill_horizontal = 2131230780;
+			// aapt resource value: 0x7f09003c
+			public const int fill_horizontal = 2131296316;
 			
-			// aapt resource value: 0x7f080033
-			public const int fill_vertical = 2131230771;
+			// aapt resource value: 0x7f090033
+			public const int fill_vertical = 2131296307;
 			
-			// aapt resource value: 0x7f08003f
-			public const int @fixed = 2131230783;
+			// aapt resource value: 0x7f09003f
+			public const int @fixed = 2131296319;
 			
-			// aapt resource value: 0x7f080005
-			public const int home = 2131230725;
+			// aapt resource value: 0x7f090005
+			public const int home = 2131296261;
 			
-			// aapt resource value: 0x7f080013
-			public const int homeAsUp = 2131230739;
+			// aapt resource value: 0x7f090013
+			public const int homeAsUp = 2131296275;
 			
-			// aapt resource value: 0x7f080049
-			public const int icon = 2131230793;
+			// aapt resource value: 0x7f090049
+			public const int icon = 2131296329;
 			
-			// aapt resource value: 0x7f0800b0
-			public const int icon_group = 2131230896;
+			// aapt resource value: 0x7f0900b0
+			public const int icon_group = 2131296432;
 			
-			// aapt resource value: 0x7f080025
-			public const int ifRoom = 2131230757;
+			// aapt resource value: 0x7f090025
+			public const int ifRoom = 2131296293;
 			
-			// aapt resource value: 0x7f080046
-			public const int image = 2131230790;
+			// aapt resource value: 0x7f090046
+			public const int image = 2131296326;
 			
-			// aapt resource value: 0x7f0800ac
-			public const int info = 2131230892;
+			// aapt resource value: 0x7f0900ac
+			public const int info = 2131296428;
 			
-			// aapt resource value: 0x7f080000
-			public const int item_touch_helper_previous_elevation = 2131230720;
+			// aapt resource value: 0x7f090000
+			public const int item_touch_helper_previous_elevation = 2131296256;
 			
-			// aapt resource value: 0x7f080074
-			public const int largeLabel = 2131230836;
+			// aapt resource value: 0x7f090074
+			public const int largeLabel = 2131296372;
 			
-			// aapt resource value: 0x7f080034
-			public const int left = 2131230772;
+			// aapt resource value: 0x7f090034
+			public const int left = 2131296308;
 			
-			// aapt resource value: 0x7f0800b1
-			public const int line1 = 2131230897;
+			// aapt resource value: 0x7f0900b1
+			public const int line1 = 2131296433;
 			
-			// aapt resource value: 0x7f0800b3
-			public const int line3 = 2131230899;
+			// aapt resource value: 0x7f0900b3
+			public const int line3 = 2131296435;
 			
-			// aapt resource value: 0x7f08000f
-			public const int listMode = 2131230735;
+			// aapt resource value: 0x7f09000f
+			public const int listMode = 2131296271;
 			
-			// aapt resource value: 0x7f080048
-			public const int list_item = 2131230792;
+			// aapt resource value: 0x7f090048
+			public const int list_item = 2131296328;
 			
-			// aapt resource value: 0x7f080083
-			public const int loadingImage = 2131230851;
+			// aapt resource value: 0x7f090083
+			public const int loadingImage = 2131296387;
 			
-			// aapt resource value: 0x7f080081
-			public const int loadingProgressBar = 2131230849;
+			// aapt resource value: 0x7f090081
+			public const int loadingProgressBar = 2131296385;
 			
-			// aapt resource value: 0x7f080084
-			public const int loadingProgressWheel = 2131230852;
+			// aapt resource value: 0x7f090084
+			public const int loadingProgressWheel = 2131296388;
 			
-			// aapt resource value: 0x7f0800b9
-			public const int masked = 2131230905;
+			// aapt resource value: 0x7f0900b9
+			public const int masked = 2131296441;
 			
-			// aapt resource value: 0x7f0800a5
-			public const int media_actions = 2131230885;
+			// aapt resource value: 0x7f0900a5
+			public const int media_actions = 2131296421;
 			
-			// aapt resource value: 0x7f080022
-			public const int middle = 2131230754;
+			// aapt resource value: 0x7f090022
+			public const int middle = 2131296290;
 			
-			// aapt resource value: 0x7f08003e
-			public const int mini = 2131230782;
+			// aapt resource value: 0x7f09003e
+			public const int mini = 2131296318;
 			
-			// aapt resource value: 0x7f080091
-			public const int mr_art = 2131230865;
+			// aapt resource value: 0x7f090091
+			public const int mr_art = 2131296401;
 			
-			// aapt resource value: 0x7f080086
-			public const int mr_chooser_list = 2131230854;
+			// aapt resource value: 0x7f090086
+			public const int mr_chooser_list = 2131296390;
 			
-			// aapt resource value: 0x7f080089
-			public const int mr_chooser_route_desc = 2131230857;
+			// aapt resource value: 0x7f090089
+			public const int mr_chooser_route_desc = 2131296393;
 			
-			// aapt resource value: 0x7f080087
-			public const int mr_chooser_route_icon = 2131230855;
+			// aapt resource value: 0x7f090087
+			public const int mr_chooser_route_icon = 2131296391;
 			
-			// aapt resource value: 0x7f080088
-			public const int mr_chooser_route_name = 2131230856;
+			// aapt resource value: 0x7f090088
+			public const int mr_chooser_route_name = 2131296392;
 			
-			// aapt resource value: 0x7f080085
-			public const int mr_chooser_title = 2131230853;
+			// aapt resource value: 0x7f090085
+			public const int mr_chooser_title = 2131296389;
 			
-			// aapt resource value: 0x7f08008e
-			public const int mr_close = 2131230862;
+			// aapt resource value: 0x7f09008e
+			public const int mr_close = 2131296398;
 			
-			// aapt resource value: 0x7f080094
-			public const int mr_control_divider = 2131230868;
+			// aapt resource value: 0x7f090094
+			public const int mr_control_divider = 2131296404;
 			
-			// aapt resource value: 0x7f08009a
-			public const int mr_control_playback_ctrl = 2131230874;
+			// aapt resource value: 0x7f09009a
+			public const int mr_control_playback_ctrl = 2131296410;
 			
-			// aapt resource value: 0x7f08009d
-			public const int mr_control_subtitle = 2131230877;
+			// aapt resource value: 0x7f09009d
+			public const int mr_control_subtitle = 2131296413;
 			
-			// aapt resource value: 0x7f08009c
-			public const int mr_control_title = 2131230876;
+			// aapt resource value: 0x7f09009c
+			public const int mr_control_title = 2131296412;
 			
-			// aapt resource value: 0x7f08009b
-			public const int mr_control_title_container = 2131230875;
+			// aapt resource value: 0x7f09009b
+			public const int mr_control_title_container = 2131296411;
 			
-			// aapt resource value: 0x7f08008f
-			public const int mr_custom_control = 2131230863;
+			// aapt resource value: 0x7f09008f
+			public const int mr_custom_control = 2131296399;
 			
-			// aapt resource value: 0x7f080090
-			public const int mr_default_control = 2131230864;
+			// aapt resource value: 0x7f090090
+			public const int mr_default_control = 2131296400;
 			
-			// aapt resource value: 0x7f08008b
-			public const int mr_dialog_area = 2131230859;
+			// aapt resource value: 0x7f09008b
+			public const int mr_dialog_area = 2131296395;
 			
-			// aapt resource value: 0x7f08008a
-			public const int mr_expandable_area = 2131230858;
+			// aapt resource value: 0x7f09008a
+			public const int mr_expandable_area = 2131296394;
 			
-			// aapt resource value: 0x7f08009e
-			public const int mr_group_expand_collapse = 2131230878;
+			// aapt resource value: 0x7f09009e
+			public const int mr_group_expand_collapse = 2131296414;
 			
-			// aapt resource value: 0x7f080092
-			public const int mr_media_main_control = 2131230866;
+			// aapt resource value: 0x7f090092
+			public const int mr_media_main_control = 2131296402;
 			
-			// aapt resource value: 0x7f08008d
-			public const int mr_name = 2131230861;
+			// aapt resource value: 0x7f09008d
+			public const int mr_name = 2131296397;
 			
-			// aapt resource value: 0x7f080093
-			public const int mr_playback_control = 2131230867;
+			// aapt resource value: 0x7f090093
+			public const int mr_playback_control = 2131296403;
 			
-			// aapt resource value: 0x7f08008c
-			public const int mr_title_bar = 2131230860;
+			// aapt resource value: 0x7f09008c
+			public const int mr_title_bar = 2131296396;
 			
-			// aapt resource value: 0x7f080095
-			public const int mr_volume_control = 2131230869;
+			// aapt resource value: 0x7f090095
+			public const int mr_volume_control = 2131296405;
 			
-			// aapt resource value: 0x7f080096
-			public const int mr_volume_group_list = 2131230870;
+			// aapt resource value: 0x7f090096
+			public const int mr_volume_group_list = 2131296406;
 			
-			// aapt resource value: 0x7f080098
-			public const int mr_volume_item_icon = 2131230872;
+			// aapt resource value: 0x7f090098
+			public const int mr_volume_item_icon = 2131296408;
 			
-			// aapt resource value: 0x7f080099
-			public const int mr_volume_slider = 2131230873;
+			// aapt resource value: 0x7f090099
+			public const int mr_volume_slider = 2131296409;
 			
-			// aapt resource value: 0x7f080019
-			public const int multiply = 2131230745;
+			// aapt resource value: 0x7f090019
+			public const int multiply = 2131296281;
 			
-			// aapt resource value: 0x7f08007b
-			public const int navigation_header_container = 2131230843;
+			// aapt resource value: 0x7f09007b
+			public const int navigation_header_container = 2131296379;
 			
-			// aapt resource value: 0x7f080026
-			public const int never = 2131230758;
+			// aapt resource value: 0x7f090026
+			public const int never = 2131296294;
 			
-			// aapt resource value: 0x7f080014
-			public const int none = 2131230740;
+			// aapt resource value: 0x7f090014
+			public const int none = 2131296276;
 			
-			// aapt resource value: 0x7f080010
-			public const int normal = 2131230736;
+			// aapt resource value: 0x7f090010
+			public const int normal = 2131296272;
 			
-			// aapt resource value: 0x7f0800ae
-			public const int notification_background = 2131230894;
+			// aapt resource value: 0x7f0900ae
+			public const int notification_background = 2131296430;
 			
-			// aapt resource value: 0x7f0800a8
-			public const int notification_main_column = 2131230888;
+			// aapt resource value: 0x7f0900a8
+			public const int notification_main_column = 2131296424;
 			
-			// aapt resource value: 0x7f0800a7
-			public const int notification_main_column_container = 2131230887;
+			// aapt resource value: 0x7f0900a7
+			public const int notification_main_column_container = 2131296423;
 			
-			// aapt resource value: 0x7f080037
-			public const int parallax = 2131230775;
+			// aapt resource value: 0x7f090037
+			public const int parallax = 2131296311;
 			
-			// aapt resource value: 0x7f08004d
-			public const int parentPanel = 2131230797;
+			// aapt resource value: 0x7f09004d
+			public const int parentPanel = 2131296333;
 			
-			// aapt resource value: 0x7f080038
-			public const int pin = 2131230776;
+			// aapt resource value: 0x7f090038
+			public const int pin = 2131296312;
 			
-			// aapt resource value: 0x7f080006
-			public const int progress_circular = 2131230726;
+			// aapt resource value: 0x7f090006
+			public const int progress_circular = 2131296262;
 			
-			// aapt resource value: 0x7f080007
-			public const int progress_horizontal = 2131230727;
+			// aapt resource value: 0x7f090007
+			public const int progress_horizontal = 2131296263;
 			
-			// aapt resource value: 0x7f08005d
-			public const int radio = 2131230813;
+			// aapt resource value: 0x7f09005d
+			public const int radio = 2131296349;
 			
-			// aapt resource value: 0x7f080035
-			public const int right = 2131230773;
+			// aapt resource value: 0x7f090035
+			public const int right = 2131296309;
 			
-			// aapt resource value: 0x7f0800ad
-			public const int right_icon = 2131230893;
+			// aapt resource value: 0x7f0900ad
+			public const int right_icon = 2131296429;
 			
-			// aapt resource value: 0x7f0800a9
-			public const int right_side = 2131230889;
+			// aapt resource value: 0x7f0900a9
+			public const int right_side = 2131296425;
 			
-			// aapt resource value: 0x7f08001a
-			public const int screen = 2131230746;
+			// aapt resource value: 0x7f09001a
+			public const int screen = 2131296282;
 			
-			// aapt resource value: 0x7f08002d
-			public const int scroll = 2131230765;
+			// aapt resource value: 0x7f09002d
+			public const int scroll = 2131296301;
 			
-			// aapt resource value: 0x7f080053
-			public const int scrollIndicatorDown = 2131230803;
+			// aapt resource value: 0x7f090053
+			public const int scrollIndicatorDown = 2131296339;
 			
-			// aapt resource value: 0x7f08004f
-			public const int scrollIndicatorUp = 2131230799;
+			// aapt resource value: 0x7f09004f
+			public const int scrollIndicatorUp = 2131296335;
 			
-			// aapt resource value: 0x7f080050
-			public const int scrollView = 2131230800;
+			// aapt resource value: 0x7f090050
+			public const int scrollView = 2131296336;
 			
-			// aapt resource value: 0x7f080040
-			public const int scrollable = 2131230784;
+			// aapt resource value: 0x7f090040
+			public const int scrollable = 2131296320;
 			
-			// aapt resource value: 0x7f080068
-			public const int search_badge = 2131230824;
+			// aapt resource value: 0x7f090068
+			public const int search_badge = 2131296360;
 			
-			// aapt resource value: 0x7f080067
-			public const int search_bar = 2131230823;
+			// aapt resource value: 0x7f090067
+			public const int search_bar = 2131296359;
 			
-			// aapt resource value: 0x7f080069
-			public const int search_button = 2131230825;
+			// aapt resource value: 0x7f090069
+			public const int search_button = 2131296361;
 			
-			// aapt resource value: 0x7f08006e
-			public const int search_close_btn = 2131230830;
+			// aapt resource value: 0x7f09006e
+			public const int search_close_btn = 2131296366;
 			
-			// aapt resource value: 0x7f08006a
-			public const int search_edit_frame = 2131230826;
+			// aapt resource value: 0x7f09006a
+			public const int search_edit_frame = 2131296362;
 			
-			// aapt resource value: 0x7f080070
-			public const int search_go_btn = 2131230832;
+			// aapt resource value: 0x7f090070
+			public const int search_go_btn = 2131296368;
 			
-			// aapt resource value: 0x7f08006b
-			public const int search_mag_icon = 2131230827;
+			// aapt resource value: 0x7f09006b
+			public const int search_mag_icon = 2131296363;
 			
-			// aapt resource value: 0x7f08006c
-			public const int search_plate = 2131230828;
+			// aapt resource value: 0x7f09006c
+			public const int search_plate = 2131296364;
 			
-			// aapt resource value: 0x7f08006d
-			public const int search_src_text = 2131230829;
+			// aapt resource value: 0x7f09006d
+			public const int search_src_text = 2131296365;
 			
-			// aapt resource value: 0x7f080071
-			public const int search_voice_btn = 2131230833;
+			// aapt resource value: 0x7f090071
+			public const int search_voice_btn = 2131296369;
 			
-			// aapt resource value: 0x7f080072
-			public const int select_dialog_listview = 2131230834;
+			// aapt resource value: 0x7f090072
+			public const int select_dialog_listview = 2131296370;
 			
-			// aapt resource value: 0x7f08005c
-			public const int shortcut = 2131230812;
+			// aapt resource value: 0x7f09005c
+			public const int shortcut = 2131296348;
 			
-			// aapt resource value: 0x7f080015
-			public const int showCustom = 2131230741;
+			// aapt resource value: 0x7f090015
+			public const int showCustom = 2131296277;
 			
-			// aapt resource value: 0x7f080016
-			public const int showHome = 2131230742;
+			// aapt resource value: 0x7f090016
+			public const int showHome = 2131296278;
 			
-			// aapt resource value: 0x7f080017
-			public const int showTitle = 2131230743;
+			// aapt resource value: 0x7f090017
+			public const int showTitle = 2131296279;
 			
-			// aapt resource value: 0x7f0800b6
-			public const int sliding_tabs = 2131230902;
+			// aapt resource value: 0x7f0900b6
+			public const int sliding_tabs = 2131296438;
 			
-			// aapt resource value: 0x7f080073
-			public const int smallLabel = 2131230835;
+			// aapt resource value: 0x7f090073
+			public const int smallLabel = 2131296371;
 			
-			// aapt resource value: 0x7f08007a
-			public const int snackbar_action = 2131230842;
+			// aapt resource value: 0x7f09007a
+			public const int snackbar_action = 2131296378;
 			
-			// aapt resource value: 0x7f080079
-			public const int snackbar_text = 2131230841;
+			// aapt resource value: 0x7f090079
+			public const int snackbar_text = 2131296377;
 			
-			// aapt resource value: 0x7f08002e
-			public const int snap = 2131230766;
+			// aapt resource value: 0x7f09002e
+			public const int snap = 2131296302;
 			
-			// aapt resource value: 0x7f08004c
-			public const int spacer = 2131230796;
+			// aapt resource value: 0x7f09004c
+			public const int spacer = 2131296332;
 			
-			// aapt resource value: 0x7f080008
-			public const int split_action_bar = 2131230728;
+			// aapt resource value: 0x7f090008
+			public const int split_action_bar = 2131296264;
 			
-			// aapt resource value: 0x7f08001b
-			public const int src_atop = 2131230747;
+			// aapt resource value: 0x7f09001b
+			public const int src_atop = 2131296283;
 			
-			// aapt resource value: 0x7f08001c
-			public const int src_in = 2131230748;
+			// aapt resource value: 0x7f09001c
+			public const int src_in = 2131296284;
 			
-			// aapt resource value: 0x7f08001d
-			public const int src_over = 2131230749;
+			// aapt resource value: 0x7f09001d
+			public const int src_over = 2131296285;
 			
-			// aapt resource value: 0x7f080036
-			public const int start = 2131230774;
+			// aapt resource value: 0x7f090036
+			public const int start = 2131296310;
 			
-			// aapt resource value: 0x7f0800a4
-			public const int status_bar_latest_event_content = 2131230884;
+			// aapt resource value: 0x7f0900a4
+			public const int status_bar_latest_event_content = 2131296420;
 			
-			// aapt resource value: 0x7f08005e
-			public const int submenuarrow = 2131230814;
+			// aapt resource value: 0x7f09005e
+			public const int submenuarrow = 2131296350;
 			
-			// aapt resource value: 0x7f08006f
-			public const int submit_area = 2131230831;
+			// aapt resource value: 0x7f09006f
+			public const int submit_area = 2131296367;
 			
-			// aapt resource value: 0x7f080011
-			public const int tabMode = 2131230737;
+			// aapt resource value: 0x7f090011
+			public const int tabMode = 2131296273;
 			
-			// aapt resource value: 0x7f0800b4
-			public const int text = 2131230900;
+			// aapt resource value: 0x7f0900b4
+			public const int text = 2131296436;
 			
-			// aapt resource value: 0x7f0800b2
-			public const int text2 = 2131230898;
+			// aapt resource value: 0x7f0900b2
+			public const int text2 = 2131296434;
 			
-			// aapt resource value: 0x7f080052
-			public const int textSpacerNoButtons = 2131230802;
+			// aapt resource value: 0x7f090052
+			public const int textSpacerNoButtons = 2131296338;
 			
-			// aapt resource value: 0x7f080051
-			public const int textSpacerNoTitle = 2131230801;
+			// aapt resource value: 0x7f090051
+			public const int textSpacerNoTitle = 2131296337;
 			
-			// aapt resource value: 0x7f080082
-			public const int textViewStatus = 2131230850;
+			// aapt resource value: 0x7f090082
+			public const int textViewStatus = 2131296386;
 			
-			// aapt resource value: 0x7f080080
-			public const int text_input_password_toggle = 2131230848;
+			// aapt resource value: 0x7f090080
+			public const int text_input_password_toggle = 2131296384;
 			
-			// aapt resource value: 0x7f08000c
-			public const int textinput_counter = 2131230732;
+			// aapt resource value: 0x7f09000c
+			public const int textinput_counter = 2131296268;
 			
-			// aapt resource value: 0x7f08000d
-			public const int textinput_error = 2131230733;
+			// aapt resource value: 0x7f09000d
+			public const int textinput_error = 2131296269;
 			
-			// aapt resource value: 0x7f0800aa
-			public const int time = 2131230890;
+			// aapt resource value: 0x7f0900aa
+			public const int time = 2131296426;
 			
-			// aapt resource value: 0x7f08004a
-			public const int title = 2131230794;
+			// aapt resource value: 0x7f09004a
+			public const int title = 2131296330;
 			
-			// aapt resource value: 0x7f080059
-			public const int titleDividerNoCustom = 2131230809;
+			// aapt resource value: 0x7f090059
+			public const int titleDividerNoCustom = 2131296345;
 			
-			// aapt resource value: 0x7f080057
-			public const int title_template = 2131230807;
+			// aapt resource value: 0x7f090057
+			public const int title_template = 2131296343;
 			
-			// aapt resource value: 0x7f0800b7
-			public const int toolbar = 2131230903;
+			// aapt resource value: 0x7f0900b7
+			public const int toolbar = 2131296439;
 			
-			// aapt resource value: 0x7f080029
-			public const int top = 2131230761;
+			// aapt resource value: 0x7f090029
+			public const int top = 2131296297;
 			
-			// aapt resource value: 0x7f080056
-			public const int topPanel = 2131230806;
+			// aapt resource value: 0x7f090056
+			public const int topPanel = 2131296342;
 			
-			// aapt resource value: 0x7f080077
-			public const int touch_outside = 2131230839;
+			// aapt resource value: 0x7f090077
+			public const int touch_outside = 2131296375;
 			
-			// aapt resource value: 0x7f08000a
-			public const int transition_current_scene = 2131230730;
+			// aapt resource value: 0x7f09000a
+			public const int transition_current_scene = 2131296266;
 			
-			// aapt resource value: 0x7f08000b
-			public const int transition_scene_layoutid_cache = 2131230731;
+			// aapt resource value: 0x7f09000b
+			public const int transition_scene_layoutid_cache = 2131296267;
 			
-			// aapt resource value: 0x7f080009
-			public const int up = 2131230729;
+			// aapt resource value: 0x7f090009
+			public const int up = 2131296265;
 			
-			// aapt resource value: 0x7f080018
-			public const int useLogo = 2131230744;
+			// aapt resource value: 0x7f090018
+			public const int useLogo = 2131296280;
 			
-			// aapt resource value: 0x7f08000e
-			public const int view_offset_helper = 2131230734;
+			// aapt resource value: 0x7f09000e
+			public const int view_offset_helper = 2131296270;
 			
-			// aapt resource value: 0x7f0800b8
-			public const int visible = 2131230904;
+			// aapt resource value: 0x7f0900b8
+			public const int visible = 2131296440;
 			
-			// aapt resource value: 0x7f080097
-			public const int volume_item_container = 2131230871;
+			// aapt resource value: 0x7f090097
+			public const int volume_item_container = 2131296407;
 			
-			// aapt resource value: 0x7f080027
-			public const int withText = 2131230759;
+			// aapt resource value: 0x7f090027
+			public const int withText = 2131296295;
 			
-			// aapt resource value: 0x7f08001f
-			public const int wrap_content = 2131230751;
+			// aapt resource value: 0x7f09001f
+			public const int wrap_content = 2131296287;
 			
 			static Id()
 			{
@@ -3734,194 +5854,194 @@ namespace PhantasmaMail.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f090015
-			public const int abc_action_bar_home_description = 2131296277;
+			// aapt resource value: 0x7f070016
+			public const int abc_action_bar_home_description = 2131165206;
 			
-			// aapt resource value: 0x7f090016
-			public const int abc_action_bar_home_description_format = 2131296278;
+			// aapt resource value: 0x7f070017
+			public const int abc_action_bar_home_description_format = 2131165207;
 			
-			// aapt resource value: 0x7f090017
-			public const int abc_action_bar_home_subtitle_description_format = 2131296279;
+			// aapt resource value: 0x7f070018
+			public const int abc_action_bar_home_subtitle_description_format = 2131165208;
 			
-			// aapt resource value: 0x7f090018
-			public const int abc_action_bar_up_description = 2131296280;
+			// aapt resource value: 0x7f070019
+			public const int abc_action_bar_up_description = 2131165209;
 			
-			// aapt resource value: 0x7f090019
-			public const int abc_action_menu_overflow_description = 2131296281;
+			// aapt resource value: 0x7f07001a
+			public const int abc_action_menu_overflow_description = 2131165210;
 			
-			// aapt resource value: 0x7f09001a
-			public const int abc_action_mode_done = 2131296282;
+			// aapt resource value: 0x7f07001b
+			public const int abc_action_mode_done = 2131165211;
 			
-			// aapt resource value: 0x7f09001b
-			public const int abc_activity_chooser_view_see_all = 2131296283;
+			// aapt resource value: 0x7f07001c
+			public const int abc_activity_chooser_view_see_all = 2131165212;
 			
-			// aapt resource value: 0x7f09001c
-			public const int abc_activitychooserview_choose_application = 2131296284;
+			// aapt resource value: 0x7f07001d
+			public const int abc_activitychooserview_choose_application = 2131165213;
 			
-			// aapt resource value: 0x7f09001d
-			public const int abc_capital_off = 2131296285;
+			// aapt resource value: 0x7f07001e
+			public const int abc_capital_off = 2131165214;
 			
-			// aapt resource value: 0x7f09001e
-			public const int abc_capital_on = 2131296286;
+			// aapt resource value: 0x7f07001f
+			public const int abc_capital_on = 2131165215;
 			
-			// aapt resource value: 0x7f09002a
-			public const int abc_font_family_body_1_material = 2131296298;
+			// aapt resource value: 0x7f07002b
+			public const int abc_font_family_body_1_material = 2131165227;
 			
-			// aapt resource value: 0x7f09002b
-			public const int abc_font_family_body_2_material = 2131296299;
+			// aapt resource value: 0x7f07002c
+			public const int abc_font_family_body_2_material = 2131165228;
 			
-			// aapt resource value: 0x7f09002c
-			public const int abc_font_family_button_material = 2131296300;
+			// aapt resource value: 0x7f07002d
+			public const int abc_font_family_button_material = 2131165229;
 			
-			// aapt resource value: 0x7f09002d
-			public const int abc_font_family_caption_material = 2131296301;
+			// aapt resource value: 0x7f07002e
+			public const int abc_font_family_caption_material = 2131165230;
 			
-			// aapt resource value: 0x7f09002e
-			public const int abc_font_family_display_1_material = 2131296302;
+			// aapt resource value: 0x7f07002f
+			public const int abc_font_family_display_1_material = 2131165231;
 			
-			// aapt resource value: 0x7f09002f
-			public const int abc_font_family_display_2_material = 2131296303;
+			// aapt resource value: 0x7f070030
+			public const int abc_font_family_display_2_material = 2131165232;
 			
-			// aapt resource value: 0x7f090030
-			public const int abc_font_family_display_3_material = 2131296304;
+			// aapt resource value: 0x7f070031
+			public const int abc_font_family_display_3_material = 2131165233;
 			
-			// aapt resource value: 0x7f090031
-			public const int abc_font_family_display_4_material = 2131296305;
+			// aapt resource value: 0x7f070032
+			public const int abc_font_family_display_4_material = 2131165234;
 			
-			// aapt resource value: 0x7f090032
-			public const int abc_font_family_headline_material = 2131296306;
+			// aapt resource value: 0x7f070033
+			public const int abc_font_family_headline_material = 2131165235;
 			
-			// aapt resource value: 0x7f090033
-			public const int abc_font_family_menu_material = 2131296307;
+			// aapt resource value: 0x7f070034
+			public const int abc_font_family_menu_material = 2131165236;
 			
-			// aapt resource value: 0x7f090034
-			public const int abc_font_family_subhead_material = 2131296308;
+			// aapt resource value: 0x7f070035
+			public const int abc_font_family_subhead_material = 2131165237;
 			
-			// aapt resource value: 0x7f090035
-			public const int abc_font_family_title_material = 2131296309;
+			// aapt resource value: 0x7f070036
+			public const int abc_font_family_title_material = 2131165238;
 			
-			// aapt resource value: 0x7f09001f
-			public const int abc_search_hint = 2131296287;
+			// aapt resource value: 0x7f070020
+			public const int abc_search_hint = 2131165216;
 			
-			// aapt resource value: 0x7f090020
-			public const int abc_searchview_description_clear = 2131296288;
+			// aapt resource value: 0x7f070021
+			public const int abc_searchview_description_clear = 2131165217;
 			
-			// aapt resource value: 0x7f090021
-			public const int abc_searchview_description_query = 2131296289;
+			// aapt resource value: 0x7f070022
+			public const int abc_searchview_description_query = 2131165218;
 			
-			// aapt resource value: 0x7f090022
-			public const int abc_searchview_description_search = 2131296290;
+			// aapt resource value: 0x7f070023
+			public const int abc_searchview_description_search = 2131165219;
 			
-			// aapt resource value: 0x7f090023
-			public const int abc_searchview_description_submit = 2131296291;
+			// aapt resource value: 0x7f070024
+			public const int abc_searchview_description_submit = 2131165220;
 			
-			// aapt resource value: 0x7f090024
-			public const int abc_searchview_description_voice = 2131296292;
+			// aapt resource value: 0x7f070025
+			public const int abc_searchview_description_voice = 2131165221;
 			
-			// aapt resource value: 0x7f090025
-			public const int abc_shareactionprovider_share_with = 2131296293;
+			// aapt resource value: 0x7f070026
+			public const int abc_shareactionprovider_share_with = 2131165222;
 			
-			// aapt resource value: 0x7f090026
-			public const int abc_shareactionprovider_share_with_application = 2131296294;
+			// aapt resource value: 0x7f070027
+			public const int abc_shareactionprovider_share_with_application = 2131165223;
 			
-			// aapt resource value: 0x7f090027
-			public const int abc_toolbar_collapse_description = 2131296295;
+			// aapt resource value: 0x7f070028
+			public const int abc_toolbar_collapse_description = 2131165224;
 			
-			// aapt resource value: 0x7f090036
-			public const int appbar_scrolling_view_behavior = 2131296310;
+			// aapt resource value: 0x7f070037
+			public const int appbar_scrolling_view_behavior = 2131165239;
 			
-			// aapt resource value: 0x7f090037
-			public const int bottom_sheet_behavior = 2131296311;
+			// aapt resource value: 0x7f070038
+			public const int bottom_sheet_behavior = 2131165240;
 			
-			// aapt resource value: 0x7f090038
-			public const int character_counter_pattern = 2131296312;
+			// aapt resource value: 0x7f070039
+			public const int character_counter_pattern = 2131165241;
 			
-			// aapt resource value: 0x7f09003e
-			public const int library_name = 2131296318;
+			// aapt resource value: 0x7f070000
+			public const int library_name = 2131165184;
 			
-			// aapt resource value: 0x7f090000
-			public const int mr_button_content_description = 2131296256;
+			// aapt resource value: 0x7f070001
+			public const int mr_button_content_description = 2131165185;
 			
-			// aapt resource value: 0x7f090001
-			public const int mr_cast_button_connected = 2131296257;
+			// aapt resource value: 0x7f070002
+			public const int mr_cast_button_connected = 2131165186;
 			
-			// aapt resource value: 0x7f090002
-			public const int mr_cast_button_connecting = 2131296258;
+			// aapt resource value: 0x7f070003
+			public const int mr_cast_button_connecting = 2131165187;
 			
-			// aapt resource value: 0x7f090003
-			public const int mr_cast_button_disconnected = 2131296259;
+			// aapt resource value: 0x7f070004
+			public const int mr_cast_button_disconnected = 2131165188;
 			
-			// aapt resource value: 0x7f090004
-			public const int mr_chooser_searching = 2131296260;
+			// aapt resource value: 0x7f070005
+			public const int mr_chooser_searching = 2131165189;
 			
-			// aapt resource value: 0x7f090005
-			public const int mr_chooser_title = 2131296261;
+			// aapt resource value: 0x7f070006
+			public const int mr_chooser_title = 2131165190;
 			
-			// aapt resource value: 0x7f090006
-			public const int mr_controller_album_art = 2131296262;
+			// aapt resource value: 0x7f070007
+			public const int mr_controller_album_art = 2131165191;
 			
-			// aapt resource value: 0x7f090007
-			public const int mr_controller_casting_screen = 2131296263;
+			// aapt resource value: 0x7f070008
+			public const int mr_controller_casting_screen = 2131165192;
 			
-			// aapt resource value: 0x7f090008
-			public const int mr_controller_close_description = 2131296264;
+			// aapt resource value: 0x7f070009
+			public const int mr_controller_close_description = 2131165193;
 			
-			// aapt resource value: 0x7f090009
-			public const int mr_controller_collapse_group = 2131296265;
+			// aapt resource value: 0x7f07000a
+			public const int mr_controller_collapse_group = 2131165194;
 			
-			// aapt resource value: 0x7f09000a
-			public const int mr_controller_disconnect = 2131296266;
+			// aapt resource value: 0x7f07000b
+			public const int mr_controller_disconnect = 2131165195;
 			
-			// aapt resource value: 0x7f09000b
-			public const int mr_controller_expand_group = 2131296267;
+			// aapt resource value: 0x7f07000c
+			public const int mr_controller_expand_group = 2131165196;
 			
-			// aapt resource value: 0x7f09000c
-			public const int mr_controller_no_info_available = 2131296268;
+			// aapt resource value: 0x7f07000d
+			public const int mr_controller_no_info_available = 2131165197;
 			
-			// aapt resource value: 0x7f09000d
-			public const int mr_controller_no_media_selected = 2131296269;
+			// aapt resource value: 0x7f07000e
+			public const int mr_controller_no_media_selected = 2131165198;
 			
-			// aapt resource value: 0x7f09000e
-			public const int mr_controller_pause = 2131296270;
+			// aapt resource value: 0x7f07000f
+			public const int mr_controller_pause = 2131165199;
 			
-			// aapt resource value: 0x7f09000f
-			public const int mr_controller_play = 2131296271;
+			// aapt resource value: 0x7f070010
+			public const int mr_controller_play = 2131165200;
 			
-			// aapt resource value: 0x7f090014
-			public const int mr_controller_stop = 2131296276;
+			// aapt resource value: 0x7f070015
+			public const int mr_controller_stop = 2131165205;
 			
-			// aapt resource value: 0x7f090010
-			public const int mr_controller_stop_casting = 2131296272;
+			// aapt resource value: 0x7f070011
+			public const int mr_controller_stop_casting = 2131165201;
 			
-			// aapt resource value: 0x7f090011
-			public const int mr_controller_volume_slider = 2131296273;
+			// aapt resource value: 0x7f070012
+			public const int mr_controller_volume_slider = 2131165202;
 			
-			// aapt resource value: 0x7f090012
-			public const int mr_system_route_name = 2131296274;
+			// aapt resource value: 0x7f070013
+			public const int mr_system_route_name = 2131165203;
 			
-			// aapt resource value: 0x7f090013
-			public const int mr_user_route_category_name = 2131296275;
+			// aapt resource value: 0x7f070014
+			public const int mr_user_route_category_name = 2131165204;
 			
-			// aapt resource value: 0x7f090039
-			public const int password_toggle_content_description = 2131296313;
+			// aapt resource value: 0x7f07003a
+			public const int password_toggle_content_description = 2131165242;
 			
-			// aapt resource value: 0x7f09003a
-			public const int path_password_eye = 2131296314;
+			// aapt resource value: 0x7f07003b
+			public const int path_password_eye = 2131165243;
 			
-			// aapt resource value: 0x7f09003b
-			public const int path_password_eye_mask_strike_through = 2131296315;
+			// aapt resource value: 0x7f07003c
+			public const int path_password_eye_mask_strike_through = 2131165244;
 			
-			// aapt resource value: 0x7f09003c
-			public const int path_password_eye_mask_visible = 2131296316;
+			// aapt resource value: 0x7f07003d
+			public const int path_password_eye_mask_visible = 2131165245;
 			
-			// aapt resource value: 0x7f09003d
-			public const int path_password_strike_through = 2131296317;
+			// aapt resource value: 0x7f07003e
+			public const int path_password_strike_through = 2131165246;
 			
-			// aapt resource value: 0x7f090028
-			public const int search_menu_title = 2131296296;
+			// aapt resource value: 0x7f070029
+			public const int search_menu_title = 2131165225;
 			
-			// aapt resource value: 0x7f090029
-			public const int status_bar_notification_info_overflow = 2131296297;
+			// aapt resource value: 0x7f07002a
+			public const int status_bar_notification_info_overflow = 2131165226;
 			
 			static String()
 			{

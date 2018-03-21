@@ -7,8 +7,8 @@ using System.Text;
 
 namespace PhantasmaMail.ViewModels.Base
 {
-    public class Locator
-    {
+	public class Locator
+	{
 		private IContainer _container;
 		private ContainerBuilder _containerBuilder;
 
@@ -28,6 +28,12 @@ namespace PhantasmaMail.ViewModels.Base
 
 			_containerBuilder.RegisterType<DialogService>().As<IDialogService>();
 			_containerBuilder.RegisterType<NavigationService>().As<INavigationService>();
+
+			_containerBuilder.RegisterType<ExtendedSplashViewModel>();
+			_containerBuilder.RegisterType<LoginViewModel>();
+			_containerBuilder.RegisterType<MainViewModel>();
+			_containerBuilder.RegisterType<MenuViewModel>();
+			_containerBuilder.RegisterType<DashboardViewModel>();
 		}
 
 		public T Resolve<T>()

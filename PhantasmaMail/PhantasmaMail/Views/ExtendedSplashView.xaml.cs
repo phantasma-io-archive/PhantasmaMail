@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace PhantasmaMail.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class MenuView : ContentPage
+	public partial class ExtendedSplashView : ContentPage
 	{
-		public MenuView ()
+		public ExtendedSplashView ()
 		{
 			InitializeComponent ();
 		}
