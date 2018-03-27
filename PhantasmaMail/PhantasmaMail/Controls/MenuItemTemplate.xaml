@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="PhantasmaMail.Controls.MenuItemTemplate"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentView.Resources>
+        <ResourceDictionary>
+
+            <Color x:Key="MenuTextColor">#566572</Color>
+
+            <Style x:Key="MenuTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Green" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Grid Padding="10" ColumnSpacing="12">
+            <Grid.Triggers>
+                <DataTrigger
+                    Binding="{Binding IsEnabled, Mode=TwoWay}"
+                    TargetType="Grid"
+                    Value="False">
+                    <Setter Property="Opacity" Value="0.5" />
+                </DataTrigger>
+            </Grid.Triggers>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Label
+                Grid.Column="0"
+                Style="{StaticResource MenuTextStyle}"
+                Text="{Binding Title}" />
+        </Grid>
+    </ContentView.Content>
+</ContentView>

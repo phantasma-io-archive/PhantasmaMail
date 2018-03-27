@@ -1,4 +1,5 @@
-﻿using PhantasmaMail.ViewModels.Base;
+﻿using PhantasmaMail.Resources;
+using PhantasmaMail.ViewModels.Base;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -6,7 +7,7 @@ using Xamarin.Forms;
 
 namespace PhantasmaMail.ViewModels
 {
-    public class MenuViewModel : ViewModelBase, IHandleViewAppearing, IHandleViewDisappearing
+	public class MenuViewModel : ViewModelBase, IHandleViewAppearing, IHandleViewDisappearing
 	{
 		private ObservableCollection<Models.UI.MenuItem> _menuItems;
 
@@ -30,28 +31,52 @@ namespace PhantasmaMail.ViewModels
 		}
 
 		public ICommand MenuItemSelectedCommand => new Command<Models.UI.MenuItem>(OnSelectMenuItem);
+		public ICommand GoToSettingsCommand => new Command(async () => await GoToSettingsExecute());
+		public ICommand LoggoutCommand => new Command(async () => await LogoutExecute());
 
 		private void InitMenuItems()
 		{
 			MenuItems.Add(new Models.UI.MenuItem
 			{
-				Title = "Dashboard",
+				Title = AppResource.MenuItem_Inbox,
 				MenuItemType = Models.UI.MenuItemType.Inbox,
-				ViewModelType = typeof(DashboardViewModel),
+				ViewModelType = typeof(InboxViewModel),
 				IsEnabled = true
 			});
 
 			MenuItems.Add(new Models.UI.MenuItem
 			{
-				Title = "Login",
-				MenuItemType = Models.UI.MenuItemType.About,
-				ViewModelType = typeof(LoginViewModel),
+				Title = AppResource.MenuItem_Sent,
+				MenuItemType = Models.UI.MenuItemType.Sent,
+				ViewModelType = typeof(SentViewModel),
 				IsEnabled = true
 			});
+			MenuItems.Add(new Models.UI.MenuItem
+			{
+				Title = AppResource.MenuItem_Draft,
+				MenuItemType = Models.UI.MenuItemType.Draft,
+				ViewModelType = typeof(DraftViewModel),
+				IsEnabled = true
+			});
+			//MenuItems.Add(new Models.UI.MenuItem
+			//{
+			//	Title = AppResource.MenuItem_Important,
+			//	MenuItemType = Models.UI.MenuItemType.Sent,
+			//	ViewModelType = typeof(LoginViewModel),
+			//	IsEnabled = true
+			//});
+			//MenuItems.Add(new Models.UI.MenuItem
+			//{
+			//	Title = AppResource.MenuItem_Trash,
+			//	MenuItemType = Models.UI.MenuItemType.Sent,
+			//	ViewModelType = typeof(LoginViewModel),
+			//	IsEnabled = true
+			//});
 		}
 
 		private async void OnSelectMenuItem(Models.UI.MenuItem item)
 		{
+			//TODO
 			if (item.IsEnabled && item.ViewModelType != null)
 			{
 				item.AfterNavigationAction?.Invoke();
@@ -59,8 +84,20 @@ namespace PhantasmaMail.ViewModels
 			}
 		}
 
+		private async Task GoToSettingsExecute()
+		{
+			await NavigationService.NavigateToAsync<SettingsViewModel>();
+		}
+
+		private async Task LogoutExecute()
+		{
+			await RemoveUserCredentials();
+			await NavigationService.NavigateToAsync<ExtendedSplashViewModel>();
+		}
+
 		private Task RemoveUserCredentials()
 		{
+			// todo
 			//return _authenticationService.LogoutAsync();
 			return Task.Delay(1);
 		}

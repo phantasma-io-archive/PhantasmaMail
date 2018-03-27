@@ -1,16 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<views:BaseContentPage
+<ContentPage
     x:Class="PhantasmaMail.Views.DashboardView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:PhantasmaMail.Views;assembly=PhantasmaMail">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Icon="icon.png"
+            Order="Primary"
+            Priority="0"
+            Text="Item 1" />
+        <ToolbarItem
+            Order="Primary"
+            Priority="1"
+            Text="Item 2" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <Label
                 HorizontalOptions="CenterAndExpand"
                 Text="This is the dashboard"
-                TextColor="White"
+                TextColor="Black"
                 VerticalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
-</views:BaseContentPage>
+</ContentPage>

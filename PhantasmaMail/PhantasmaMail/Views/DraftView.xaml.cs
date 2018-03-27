@@ -10,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace PhantasmaMail.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class DashboardView : ContentPage
+	public partial class DraftView : ContentPage
 	{
-		public DashboardView ()
+		public DraftView ()
 		{
 			InitializeComponent ();
-		}
-
-		protected override void OnAppearing()
-		{
-			base.OnAppearing();
 		}
 	}
 }

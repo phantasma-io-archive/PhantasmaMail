@@ -117,7 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="TestLabel" xml:space="preserve">
-    <value>Test</value>
+  <data name="MenuItem_Draft" xml:space="preserve">
+    <value>Draft</value>
+  </data>
+  <data name="MenuItem_Important" xml:space="preserve">
+    <value>Important</value>
+  </data>
+  <data name="MenuItem_Inbox" xml:space="preserve">
+    <value>Inbox</value>
+  </data>
+  <data name="MenuItem_Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="MenuItem_Sent" xml:space="preserve">
+    <value>Sent</value>
+  </data>
+  <data name="MenuItem_Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="MenuItem_Trash" xml:space="preserve">
+    <value>Trash</value>
   </data>
 </root>

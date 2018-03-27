@@ -33,6 +33,9 @@ namespace PhantasmaMail.ViewModels.Base
 			_containerBuilder.RegisterType<LoginViewModel>();
 			_containerBuilder.RegisterType<MainViewModel>();
 			_containerBuilder.RegisterType<MenuViewModel>();
+			_containerBuilder.RegisterType<InboxViewModel>();
+			_containerBuilder.RegisterType<SentViewModel>();
+			_containerBuilder.RegisterType<DraftViewModel>();
 			_containerBuilder.RegisterType<DashboardViewModel>();
 		}
 

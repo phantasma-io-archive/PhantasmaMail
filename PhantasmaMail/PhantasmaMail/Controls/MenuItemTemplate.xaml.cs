@@ -7,19 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace PhantasmaMail.Views
+namespace PhantasmaMail.Controls
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class DashboardView : ContentPage
+	public partial class MenuItemTemplate : ContentView
 	{
-		public DashboardView ()
+		public MenuItemTemplate ()
 		{
 			InitializeComponent ();
-		}
-
-		protected override void OnAppearing()
-		{
-			base.OnAppearing();
 		}
 	}
 }

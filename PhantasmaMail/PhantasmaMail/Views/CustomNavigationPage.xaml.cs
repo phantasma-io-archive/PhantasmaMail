@@ -23,6 +23,7 @@ namespace PhantasmaMail.Views
 			BarTextColor = color == Color.Default
 				? Color.White
 				: color;
+			BarBackgroundColor = Color.Green;
 		}
 	}
 }

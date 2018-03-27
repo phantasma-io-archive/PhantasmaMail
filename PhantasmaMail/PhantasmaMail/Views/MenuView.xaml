@@ -2,16 +2,45 @@
 <ContentPage
     x:Class="PhantasmaMail.Views.MenuView"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:views="clr-namespace:PhantasmaMail.Views;assembly=PhantasmaMail"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title=" ">
+    xmlns:behaviors="clr-namespace:PhantasmaMail.Behaviors"
+    xmlns:extensions="clr-namespace:PhantasmaMail.MarkupExtensions"
+    xmlns:templates="clr-namespace:PhantasmaMail.Controls"
+    xmlns:views="clr-namespace:PhantasmaMail.Views;assembly=PhantasmaMail"
+    Title=" "
+    BackgroundColor="Red">
     <ContentPage.Content>
-        <StackLayout>
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <ListView
+                Grid.Row="0"
+                behaviors:ItemTappedCommandListView.ItemTappedCommand="{Binding MenuItemSelectedCommand}"
+                AutomationId="menu"
+                CachingStrategy="RecycleElement"
+                HasUnevenRows="True"
+                ItemsSource="{Binding MenuItems}"
+                SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <templates:MenuItemTemplate />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             <Label
-                HorizontalOptions="CenterAndExpand"
-                Text="This is the menu"
-                TextColor="White"
-                VerticalOptions="CenterAndExpand" />
-        </StackLayout>
+                Grid.Row="1"
+                HorizontalOptions="Start"
+                Text="{extensions:Translate MenuItem_Settings}"
+                VerticalOptions="End" />
+            <Label
+                Grid.Row="1"
+                HorizontalOptions="End"
+                Text="{extensions:Translate MenuItem_Logout}"
+                VerticalOptions="End" />
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

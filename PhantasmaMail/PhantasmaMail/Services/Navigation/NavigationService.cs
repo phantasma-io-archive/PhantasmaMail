@@ -102,9 +102,13 @@ namespace PhantasmaMail.Services.Navigation
 			else if (CurrentApplication.MainPage is MainView)
 			{
 				var mainPage = CurrentApplication.MainPage as MainView;
+
 				var navigationPage = mainPage.Detail as CustomNavigationPage;
 
-				if (navigationPage != null)
+				if (navigationPage != null &&
+					(viewModelType != typeof(InboxViewModel) &&
+					viewModelType != typeof(SentViewModel) &&
+					viewModelType != typeof(DraftViewModel))) //menu items
 				{
 					var currentPage = navigationPage.CurrentPage;
 
@@ -169,6 +173,10 @@ namespace PhantasmaMail.Services.Navigation
 			_mappings.Add(typeof(ExtendedSplashViewModel), typeof(ExtendedSplashView));
 			_mappings.Add(typeof(MainViewModel), typeof(MainView));
 			_mappings.Add(typeof(DashboardViewModel), typeof(DashboardView));
+			_mappings.Add(typeof(InboxViewModel), typeof(InboxView));
+			_mappings.Add(typeof(DraftViewModel), typeof(DraftView));
+			_mappings.Add(typeof(SentViewModel), typeof(SentView));
+			_mappings.Add(typeof(SettingsViewModel), typeof(SettingsView));
 		}
 	}
 }

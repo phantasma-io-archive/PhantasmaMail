@@ -3,10 +3,9 @@
 	public enum MenuItemType //TODO
     {
 		Inbox,
-		Send,
+		Sent,
 		Draft,
-		About,
-		Settings,
-		Logout
+		Important,
+		Trash,
     }
 }

@@ -31,7 +31,7 @@ namespace PhantasmaMail.ViewModels
 			return Task.WhenAll
 				(
 					_menuViewModel.InitializeAsync(navigationData),
-					NavigationService.NavigateToAsync<DashboardViewModel>()
+					NavigationService.NavigateToAsync<InboxViewModel>()
 				);
 		}
 	}
