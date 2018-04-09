@@ -46,6 +46,14 @@
 		<string>Icon-Small@2x</string>
 		<string>Icon-Small@3x</string>
 	</array>
+  <key>UIAppFonts</key>
+  <array>
+    <string>Fonts/OpenSans-Regular.ttf</string>
+    <string>Fonts/OpenSans-SemiBold.ttf</string>
+    <string>Fonts/Roboto-Medium.ttf</string>
+    <string>Fonts/SF UI Text Regular.ttf</string>
+    <string>Fonts/SF UI Text Semibold.ttf</string>
+  </array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 </dict>

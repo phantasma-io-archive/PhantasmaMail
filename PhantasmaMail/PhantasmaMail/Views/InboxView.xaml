@@ -6,6 +6,9 @@
     xmlns:controls="clr-namespace:PhantasmaMail.Controls"
     xmlns:extensions="clr-namespace:PhantasmaMail.MarkupExtensions"
     Title="{extensions:Translate MenuItem_Inbox}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="icon.png" Command="{Binding NewMessageCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid VerticalOptions="FillAndExpand">
             <Grid.RowDefinitions>
@@ -13,6 +16,7 @@
             </Grid.RowDefinitions>
             <ListView
                 Grid.Row="0"
+                SeparatorVisibility="None"
                 HasUnevenRows="True"
                 ItemsSource="{Binding InboxList}"
                 VerticalOptions="FillAndExpand">

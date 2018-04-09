@@ -3,8 +3,11 @@ using PhantasmaMail.ViewModels.Base;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace PhantasmaMail.ViewModels
 {
@@ -24,8 +27,9 @@ namespace PhantasmaMail.ViewModels
 				OnPropertyChanged();
 			}
 		}
+	    public ICommand NewMessageCommand => new Command(async () => await NewMessageExecute());
 
-		public InboxViewModel()
+	    public InboxViewModel()
 		{
 
 		}
@@ -75,5 +79,24 @@ namespace PhantasmaMail.ViewModels
 				}
 			};
 		}
-	}
+
+	    private async Task NewMessageExecute()
+	    {
+	        if (IsBusy) return;
+	        try
+	        {
+	            IsBusy = true;
+	            await NavigationService.NavigateToAsync<DraftViewModel>();
+	        }
+	        catch (Exception e)
+	        {
+	            Debug.WriteLine(e.Message);
+	            throw;
+	        }
+	        finally
+	        {
+	            IsBusy = false;
+	        }
+        }
+    }
 }

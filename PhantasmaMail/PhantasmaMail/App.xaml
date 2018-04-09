@@ -11,6 +11,12 @@
             <Color x:Key="Primary">#2196F3</Color>
             <Color x:Key="PrimaryDark">#1976D2</Color>
             <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="DarkBlueGreen">#17566B</Color>
+            <Color x:Key="LightBlueGreen">#2B6C81</Color>
+            <Color x:Key="LightGray">#A1ACB3</Color>
+            <Color x:Key="WhiteBackground">#BCC7CF</Color>
+
+
             <Color x:Key="GradientStartColor">#FAFAFA</Color>
             <Color x:Key="GradientEndColor">#C0C0C0</Color>
 
@@ -18,12 +24,186 @@
 
             <!-- FONTS -->
 
+            <OnPlatform x:Key="OpenSansRegular"
+                        x:TypeArguments="x:String">
+                <On Platform="Android">OpenSans-Regular.ttf#OpenSans-Regular</On>
+                <On Platform="iOS">OpenSans-Regular</On>
+            </OnPlatform>
+
+            <OnPlatform x:Key="OpenSansSemiBold"
+                        x:TypeArguments="x:String">
+                <On Platform="Android">OpenSans-SemiBold.ttf#OpenSans-SemiBold</On>
+                <On Platform="iOS">OpenSans-SemiBold</On>
+            </OnPlatform>
+
+            <OnPlatform x:Key="RobotoMedium"
+                        x:TypeArguments="x:String">
+                <On Platform="Android">Roboto-Medium.ttf#Roboto-Medium</On>
+                <On Platform="iOS">Roboto-Medium</On>
+            </OnPlatform>
+
+            <OnPlatform x:Key="SFUITextRegular"
+                        x:TypeArguments="x:String">
+                <On Platform="Android">SF UI Text Regular.ttf#SF UI Text Regular</On>
+                <On Platform="iOS">SF UI Text Regular</On>
+            </OnPlatform>
+
+            <OnPlatform x:Key="SFUITextSemibold"
+                        x:TypeArguments="x:String">
+                <On Platform="Android">SF UI Text Semibold.ttf#SF UI Text Semibold</On>
+                <On Platform="iOS">SF UI Text Semibold</On>
+            </OnPlatform>
+
+            <!--OnPlatform x:Key="OpenSansRegular"
+                        x:TypeArguments="x:String"
+                        iOS="OpenSans-Regular"
+                        Android="OpenSans-Regular.ttf#OpenSans-Regular"/>-->
+
+            <!--<OnPlatform x:Key="OpenSansSemiBold"
+                        x:TypeArguments="x:String"
+                        iOS="OpenSans-SemiBold"
+                        Android="OpenSans-SemiBold.ttf#OpenSans-SemiBold"/>
+
+            <OnPlatform x:Key="RobotoMedium"
+                        x:TypeArguments="x:String"
+                        iOS="Roboto-Medium"
+                        Android="Roboto-Medium.ttf#Roboto-Medium"/>-->
+
+            <!--<OnPlatform x:Key="SFUITextRegular"
+                        x:TypeArguments="x:String"
+                        iOS="SF UI Text Regular"
+                        Android="SF UI Text Regular.ttf#SF UI Text Regular"/>
+
+            <OnPlatform x:Key="SFUITextSemibold"
+                        x:TypeArguments="x:String"
+                        iOS="SF UI Text Semibold"
+                        Android="SF UI Text Semibold.ttf#SF UI Text Semibold"/>-->      
+
+            <OnPlatform x:Key="LittleSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS">11</On>
+                <On Platform="Android, WinPhone">12</On>
+            </OnPlatform>
+
+            <OnPlatform x:Key="MidMediumSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS">12</On>
+                <On Platform="Android, WinPhone">14</On>
+            </OnPlatform>
+
+            <OnPlatform x:Key="MediumSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS">14</On>
+                <On Platform="Android, WinPhone">16</On>
+            </OnPlatform>
+
+            <OnPlatform x:Key="LargeSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS">16</On>
+                <On Platform="Android, WinPhone">18</On>
+            </OnPlatform>
+
+            <OnPlatform x:Key="LargerSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS">18</On>
+                <On Platform="Android, WinPhone">20</On>
+            </OnPlatform>
+
+            <OnPlatform x:Key="BigSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS">20</On>
+                <On Platform="Android, WinPhone">24</On>
+            </OnPlatform>
+
+            <OnPlatform x:Key="ExtraBigSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS">24</On>
+                <On Platform="Android, WinPhone">32</On>
+            </OnPlatform>
+
+            <OnPlatform x:Key="HugeSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS">32</On>
+                <On Platform="Android, WinPhone">48</On>
+            </OnPlatform>
+            
+
+
             <!-- STYLES -->
 
             <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
                 <Setter Property="BarTextColor" Value="White" />
             </Style>
+
+            <Style x:Key="BaseLabelStyle" TargetType="{x:Type Label}">
+            </Style>
+
+            <Style TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource BaseLabelStyle}" />
+
+            <Style x:Key="OpenSansRegularLabelStyle"
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource OpenSansRegular}" />
+            </Style>
+
+            <Style x:Key="OpenSansSemiBoldLabelStyle"
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource OpenSansSemiBold}" />
+            </Style>
+
+            <Style x:Key="RobotoMediumLabelStyle"
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource RobotoMedium}" />
+            </Style>
+
+            <Style x:Key="SFRegularLabelStyle"
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource SFUITextRegular}" />
+            </Style>
+
+            <Style x:Key="SFSemiBoldLabelStyle"
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource SFUITextSemibold}" />
+            </Style>
+
+            <Style x:Key="MessageTitleStyle" 
+                   TargetType="Label"
+                   BasedOn="{StaticResource OpenSansSemiBoldLabelStyle}">
+                <Setter Property="TextColor" 
+                        Value="{StaticResource DarkBlueGreen}" />
+                <Setter Property="FontSize" 
+                        Value="{StaticResource MediumSize}" />
+            </Style>
+
+            <Style x:Key="MessageTextStyle" 
+                   TargetType="Label"
+                   BasedOn="{StaticResource OpenSansRegularLabelStyle}">
+                <Setter Property="TextColor" 
+                        Value="{StaticResource LightGray}" />
+                <Setter Property="FontSize" 
+                        Value="{StaticResource MidMediumSize}" />
+            </Style>
+
+            <Style x:Key="MessageSenderStyle" 
+                   TargetType="Label"
+                   BasedOn="{StaticResource OpenSansRegularLabelStyle}">
+                <Setter Property="TextColor" 
+                        Value="{StaticResource LightBlueGreen}" />
+                <Setter Property="FontSize" 
+                        Value="{StaticResource MidMediumSize}" />
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

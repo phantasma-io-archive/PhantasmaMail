@@ -12,24 +12,23 @@ namespace PhantasmaMail.Services.Navigation
 	public partial class NavigationService : INavigationService
 	{
 		private readonly IAuthenticationService _authenticationService;
-		protected readonly Dictionary<Type, Type> _mappings;
+		protected readonly Dictionary<Type, Type> Mappings;
 
-		protected Application CurrentApplication
-		{
-			get { return Application.Current; }
-		}
+		protected Application CurrentApplication => Application.Current;
 
-		//public NavigationService(IAuthenticationService authenticationService)
+	    //public NavigationService(IAuthenticationService authenticationService)
+
 		public NavigationService()
 		{
 			_authenticationService = null;
-			_mappings = new Dictionary<Type, Type>();
+			Mappings = new Dictionary<Type, Type>();
 
 			CreatePageViewModelMappings();
 		}
 
 		public async Task InitializeAsync()
 		{
+            // TODO
 			//if (await _authenticationService.UserIsAuthenticatedAndValidAsync())
 			//{
 			//	//await NavigateToAsync<MainViewModel>();
@@ -63,10 +62,9 @@ namespace PhantasmaMail.Services.Navigation
 
 		public async Task NavigateBackAsync()
 		{
-			if (CurrentApplication.MainPage is MainView)
+			if (CurrentApplication.MainPage is MainView mainPage)
 			{
-				var mainPage = CurrentApplication.MainPage as MainView;
-				await mainPage.Detail.Navigation.PopAsync();
+			    await mainPage.Detail.Navigation.PopAsync();
 			}
 			else if (CurrentApplication.MainPage != null)
 			{
@@ -76,9 +74,7 @@ namespace PhantasmaMail.Services.Navigation
 
 		public virtual Task RemoveLastFromBackStackAsync()
 		{
-			var mainPage = CurrentApplication.MainPage as MainView;
-
-			if (mainPage != null)
+		    if (CurrentApplication.MainPage is MainView mainPage)
 			{
 				mainPage.Detail.Navigation.RemovePage(
 					mainPage.Detail.Navigation.NavigationStack[mainPage.Detail.Navigation.NavigationStack.Count - 2]);
@@ -91,65 +87,63 @@ namespace PhantasmaMail.Services.Navigation
 		{
 			Page page = CreateAndBindPage(viewModelType, parameter);
 
-			if (page is MainView)
+			switch (page)
 			{
-				CurrentApplication.MainPage = page;
-			}
-			else if (page is LoginView)
-			{
-				CurrentApplication.MainPage = new CustomNavigationPage(page);
-			}
-			else if (CurrentApplication.MainPage is MainView)
-			{
-				var mainPage = CurrentApplication.MainPage as MainView;
+			    case MainView _:
+			        CurrentApplication.MainPage = page;
+			        break;
+			    case LoginView _:
+			        CurrentApplication.MainPage = new CustomNavigationPage(page);
+			        break;
+			    default:
+			        if (CurrentApplication.MainPage is MainView mainPage)
+			        {
+			            if (mainPage.Detail is CustomNavigationPage navigationPage &&
+			                (viewModelType != typeof(InboxViewModel) &&
+			                 viewModelType != typeof(SentViewModel) &&
+			                 viewModelType != typeof(DraftViewModel))) //menu items
+			            {
+			                var currentPage = navigationPage.CurrentPage;
 
-				var navigationPage = mainPage.Detail as CustomNavigationPage;
+			                if (currentPage.GetType() != page.GetType())
+			                {
+			                    await navigationPage.PushAsync(page);
+			                }
+			            }
+			            else
+			            {
+			                navigationPage = new CustomNavigationPage(page);
+			                mainPage.Detail = navigationPage;
+			            }
 
-				if (navigationPage != null &&
-					(viewModelType != typeof(InboxViewModel) &&
-					viewModelType != typeof(SentViewModel) &&
-					viewModelType != typeof(DraftViewModel))) //menu items
-				{
-					var currentPage = navigationPage.CurrentPage;
+			            mainPage.IsPresented = false;
+			        }
+			        else
+			        {
+			            if (CurrentApplication.MainPage is CustomNavigationPage navigationPage)
+			            {
+			                await navigationPage.PushAsync(page);
+			            }
+			            else
+			            {
+			                CurrentApplication.MainPage = new CustomNavigationPage(page);
+			            }
+			        }
 
-					if (currentPage.GetType() != page.GetType())
-					{
-						await navigationPage.PushAsync(page);
-					}
-				}
-				else
-				{
-					navigationPage = new CustomNavigationPage(page);
-					mainPage.Detail = navigationPage;
-				}
-
-				mainPage.IsPresented = false;
-			}
-			else
-			{
-				var navigationPage = CurrentApplication.MainPage as CustomNavigationPage;
-
-				if (navigationPage != null)
-				{
-					await navigationPage.PushAsync(page);
-				}
-				else
-				{
-					CurrentApplication.MainPage = new CustomNavigationPage(page);
-				}
+			        break;
 			}
 
-			await (page.BindingContext as ViewModelBase).InitializeAsync(parameter);
+			await (page.BindingContext as ViewModelBase)?.InitializeAsync(parameter);
 		}
 
 		protected Type GetPageTypeForViewModel(Type viewModelType)
 		{
-			if (!_mappings.ContainsKey(viewModelType))
+			if (!Mappings.ContainsKey(viewModelType))
 			{
 				throw new KeyNotFoundException($"No map for ${viewModelType} was found on navigation mappings");
 			}
 
-			return _mappings[viewModelType];
+			return Mappings[viewModelType];
 		}
 
 		protected Page CreateAndBindPage(Type viewModelType, object parameter)
@@ -170,13 +164,13 @@ namespace PhantasmaMail.Services.Navigation
 
 		private void CreatePageViewModelMappings()
 		{
-			_mappings.Add(typeof(ExtendedSplashViewModel), typeof(ExtendedSplashView));
-			_mappings.Add(typeof(MainViewModel), typeof(MainView));
-			_mappings.Add(typeof(DashboardViewModel), typeof(DashboardView));
-			_mappings.Add(typeof(InboxViewModel), typeof(InboxView));
-			_mappings.Add(typeof(DraftViewModel), typeof(DraftView));
-			_mappings.Add(typeof(SentViewModel), typeof(SentView));
-			_mappings.Add(typeof(SettingsViewModel), typeof(SettingsView));
+			Mappings.Add(typeof(ExtendedSplashViewModel), typeof(ExtendedSplashView));
+			Mappings.Add(typeof(MainViewModel), typeof(MainView));
+			Mappings.Add(typeof(DashboardViewModel), typeof(DashboardView));
+			Mappings.Add(typeof(InboxViewModel), typeof(InboxView));
+			Mappings.Add(typeof(DraftViewModel), typeof(DraftView));
+			Mappings.Add(typeof(SentViewModel), typeof(SentView));
+			Mappings.Add(typeof(SettingsViewModel), typeof(SettingsView));
 		}
 	}
 }

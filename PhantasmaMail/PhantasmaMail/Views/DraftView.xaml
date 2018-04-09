@@ -2,13 +2,83 @@
 <ContentPage
     x:Class="PhantasmaMail.Views.DraftView"
     xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:controls="clr-namespace:PhantasmaMail.Controls"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
-        <StackLayout>
-            <Label
-                HorizontalOptions="CenterAndExpand"
-                Text="Draft View"
-                VerticalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid HorizontalOptions="FillAndExpand"
+              VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+
+            <Frame Grid.Row="0"
+                   Margin="20,10"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand" >
+                <Grid Margin="10,5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                
+
+                <!--TODO LOCALIZATION-->
+                <Label Grid.Row="0" 
+                       Grid.Column="0" 
+                       Text="To"
+                       Style="{StaticResource MessageSenderStyle}"
+                       FontSize="{StaticResource LittleSize}"/>
+
+                <Label Grid.Row="0" 
+                       Grid.Column="1"
+                       Text="test@phantasma.io"
+                       Style="{StaticResource MessageSenderStyle}"
+                       FontSize="{StaticResource LittleSize}"/>
+
+                <BoxView Grid.Row="1" 
+                         Grid.Column="0" 
+                         Grid.ColumnSpan="2" 
+                         BackgroundColor="#D8D8D8"  />
+
+                <Entry Grid.Row="2" 
+                       Grid.Column="0" 
+                       Grid.ColumnSpan="2" 
+                       Text="PhantasmaApp"/>
+
+                <BoxView Grid.Row="3" 
+                         Grid.Column="0" 
+                         WidthRequest="50" 
+                         BackgroundColor="#D8D8D8"  />
+
+                <controls:ExpandableEditor Grid.Row="4" 
+                                           HeightRequest="450"
+                                           Grid.Column="0"
+                                           Grid.ColumnSpan="2"
+                                           Text="TesSDSJADJASDA DASDSS DSAJDSAJD ADAKDDSJADAD AD ADA D"/>
+
+                <BoxView Grid.Row="5" 
+                         Grid.Column="0" 
+                         WidthRequest="50" 
+                         BackgroundColor="#D8D8D8"  />
+
+                <Label Grid.Row="6" 
+                       Grid.Column="1"
+                       Text="Tue 25, Mar, 6:35 PM"
+                       HorizontalOptions="EndAndExpand"
+                       Style="{StaticResource MessageTextStyle}"/>
+                </Grid>
+            </Frame>
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
