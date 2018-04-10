@@ -1,83 +1,138 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage
     x:Class="PhantasmaMail.Views.DraftView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:controls="clr-namespace:PhantasmaMail.Controls"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:extensions="clr-namespace:PhantasmaMail.MarkupExtensions"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    Title="{extensions:Translate MenuItem_Draft}">
     <ContentPage.Content>
         <Grid HorizontalOptions="FillAndExpand"
               VerticalOptions="FillAndExpand">
             <Grid.RowDefinitions>
-                <RowDefinition Height="7*"/>
-                <RowDefinition Height="3*"/>
+                <RowDefinition Height="8*" />
+                <RowDefinition Height="2*" />
             </Grid.RowDefinitions>
 
             <Frame Grid.Row="0"
                    Margin="20,10"
                    HorizontalOptions="FillAndExpand"
-                   VerticalOptions="FillAndExpand" >
+                   VerticalOptions="FillAndExpand">
                 <Grid Margin="10,5">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="1"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="1"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="1"/>
-                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="1" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="1" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="1" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                
 
-                <!--TODO LOCALIZATION-->
-                <Label Grid.Row="0" 
-                       Grid.Column="0" 
-                       Text="To"
-                       Style="{StaticResource MessageSenderStyle}"
-                       FontSize="{StaticResource LittleSize}"/>
 
-                <Label Grid.Row="0" 
-                       Grid.Column="1"
-                       Text="test@phantasma.io"
-                       Style="{StaticResource MessageSenderStyle}"
-                       FontSize="{StaticResource LittleSize}"/>
+                    <!--TODO LOCALIZATION and STYLE-->
+                    <Label Grid.Row="0"
+                           Grid.Column="0"
+                           Text="To: "
+                           Style="{StaticResource MessageSenderStyle}"
+                           FontSize="{StaticResource LittleSize}" />
 
-                <BoxView Grid.Row="1" 
-                         Grid.Column="0" 
-                         Grid.ColumnSpan="2" 
-                         BackgroundColor="#D8D8D8"  />
+                    <Entry Grid.Row="0"
+                           Grid.Column="1"
+                           HorizontalOptions="Start"
+                           Text="test@phantasma.io"
+                           FontSize="{StaticResource LittleSize}" />
 
-                <Entry Grid.Row="2" 
-                       Grid.Column="0" 
-                       Grid.ColumnSpan="2" 
-                       Text="PhantasmaApp"/>
+                    <BoxView Grid.Row="1"
+                             Grid.Column="0"
+                             Grid.ColumnSpan="2"
+                             BackgroundColor="#D8D8D8" />
 
-                <BoxView Grid.Row="3" 
-                         Grid.Column="0" 
-                         WidthRequest="50" 
-                         BackgroundColor="#D8D8D8"  />
+                    <Entry Grid.Row="2"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="2"
+                           Placeholder="Insert Subject Here"
+                           Text="PhantasmaApp" />
 
-                <controls:ExpandableEditor Grid.Row="4" 
-                                           HeightRequest="450"
-                                           Grid.Column="0"
-                                           Grid.ColumnSpan="2"
-                                           Text="TesSDSJADJASDA DASDSS DSAJDSAJD ADAKDDSJADAD AD ADA D"/>
+                    <BoxView Grid.Row="3"
+                             Grid.Column="0"
+                             WidthRequest="50"
+                             BackgroundColor="#D8D8D8" />
 
-                <BoxView Grid.Row="5" 
-                         Grid.Column="0" 
-                         WidthRequest="50" 
-                         BackgroundColor="#D8D8D8"  />
+                    <controls:ExpandableEditor Grid.Row="4"
+                                               HeightRequest="450"
+                                               Grid.Column="0"
+                                               Grid.ColumnSpan="2"
+                                               Text="TesSDSJADJASDA DASDSS DSAJDSAJD ADAKDDSJADAD AD ADA D" />
 
-                <Label Grid.Row="6" 
-                       Grid.Column="1"
-                       Text="Tue 25, Mar, 6:35 PM"
-                       HorizontalOptions="EndAndExpand"
-                       Style="{StaticResource MessageTextStyle}"/>
+                    <BoxView Grid.Row="5"
+                             Grid.Column="0"
+                             WidthRequest="50"
+                             BackgroundColor="#D8D8D8" />
+
+                    <Label Grid.Row="6"
+                           Grid.Column="1"
+                           Text="Tue 25, Mar, 6:35 PM"
+                           HorizontalOptions="EndAndExpand"
+                           Style="{StaticResource MessageTextStyle}" />
                 </Grid>
             </Frame>
+
+            <Grid Grid.Row="1" Margin="20,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Exit -->
+                <ffimageloadingsvg:SvgCachedImage VerticalOptions="Center" HorizontalOptions="Center" Source="send.svg"
+                                                  Grid.Column="0" HeightRequest="30"
+                                                  WidthRequest="30">
+                    <ffimageloadingsvg:SvgCachedImage.Transformations>
+                        <fftransformations:TintTransformation EnableSolidColor="true"
+                                                              HexColor="{StaticResource TintIconColor}" />
+                    </ffimageloadingsvg:SvgCachedImage.Transformations>
+                    <ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NavigateToInboxCommand}" />
+                    </ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
+                </ffimageloadingsvg:SvgCachedImage>
+
+                <!-- Send -->
+                <ffimageloadingsvg:SvgCachedImage VerticalOptions="Center" HorizontalOptions="Center" Source="send.svg"
+                                                  Grid.Column="1" HeightRequest="30"
+                                                  WidthRequest="30">
+                    <ffimageloadingsvg:SvgCachedImage.Transformations>
+                        <fftransformations:TintTransformation EnableSolidColor="true"
+                                                              HexColor="{StaticResource TintIconColor}" />
+                    </ffimageloadingsvg:SvgCachedImage.Transformations>
+                    <ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SendMessageCommand}" />
+                    </ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
+                </ffimageloadingsvg:SvgCachedImage>
+
+                <!-- Attach -->
+                <ffimageloadingsvg:SvgCachedImage VerticalOptions="Center" HorizontalOptions="Center" Source="send.svg"
+                                                  Grid.Column="2" HeightRequest="30"
+                                                  WidthRequest="30">
+                    <ffimageloadingsvg:SvgCachedImage.Transformations>
+                        <fftransformations:TintTransformation EnableSolidColor="true"
+                                                              HexColor="{StaticResource TintIconColor}" />
+                    </ffimageloadingsvg:SvgCachedImage.Transformations>
+                    <ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding AttachFileCommand}" />
+                    </ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
+                </ffimageloadingsvg:SvgCachedImage>
+
+            </Grid>
 
         </Grid>
     </ContentPage.Content>

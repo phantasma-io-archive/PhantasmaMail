@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
+﻿using FFImageLoading.Forms.Touch;
+using FFImageLoading.Svg.Forms;
 using Foundation;
 using UIKit;
 
@@ -26,7 +24,9 @@ namespace PhantasmaMail.iOS
 
 			global::Xamarin.Forms.Forms.Init();
 			XFGloss.iOS.Library.Init();
-			LoadApplication(new App());
+            CachedImageRenderer.Init();
+            var ignore = typeof(SvgCachedImage);
+            LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
         }

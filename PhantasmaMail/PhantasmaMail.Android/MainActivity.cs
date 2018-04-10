@@ -2,6 +2,8 @@
 using Android.Content.PM;
 using Android.OS;
 using Acr.UserDialogs;
+using FFImageLoading.Forms.Droid;
+using FFImageLoading.Svg.Forms;
 
 namespace PhantasmaMail.Droid
 {
@@ -19,8 +21,10 @@ namespace PhantasmaMail.Droid
 			global::Xamarin.Forms.Forms.Init(this, bundle);
 			UserDialogs.Init(this);
 			Rg.Plugins.Popup.Popup.Init(this, bundle);
+            CachedImageRenderer.Init(true);
+            var ignore = typeof(SvgCachedImage);
 
-			LoadApplication(new App());
+            LoadApplication(new App());
 			XFGloss.Droid.Library.Init(this, bundle);
 		}
     }

@@ -2,66 +2,57 @@
 using PhantasmaMail.Services.Dialog;
 using PhantasmaMail.Services.Navigation;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace PhantasmaMail.ViewModels.Base
 {
-	public class Locator
-	{
-		private IContainer _container;
-		private ContainerBuilder _containerBuilder;
+    public class Locator
+    {
+        private IContainer _container;
+        private readonly ContainerBuilder _containerBuilder;
 
-		private static readonly Locator _instance = new Locator();
+        public static Locator Instance { get; } = new Locator();
 
-		public static Locator Instance
-		{
-			get
-			{
-				return _instance;
-			}
-		}
+        public Locator()
+        {
+            _containerBuilder = new ContainerBuilder();
 
-		public Locator()
-		{
-			_containerBuilder = new ContainerBuilder();
+            _containerBuilder.RegisterType<DialogService>().As<IDialogService>();
+            _containerBuilder.RegisterType<NavigationService>().As<INavigationService>();
 
-			_containerBuilder.RegisterType<DialogService>().As<IDialogService>();
-			_containerBuilder.RegisterType<NavigationService>().As<INavigationService>();
+            _containerBuilder.RegisterType<ExtendedSplashViewModel>();
+            _containerBuilder.RegisterType<LoginViewModel>();
+            _containerBuilder.RegisterType<MainViewModel>();
+            _containerBuilder.RegisterType<MenuViewModel>();
+            _containerBuilder.RegisterType<InboxViewModel>();
+            _containerBuilder.RegisterType<SentViewModel>();
+            _containerBuilder.RegisterType<DraftViewModel>();
+            _containerBuilder.RegisterType<DashboardViewModel>();
+        }
 
-			_containerBuilder.RegisterType<ExtendedSplashViewModel>();
-			_containerBuilder.RegisterType<LoginViewModel>();
-			_containerBuilder.RegisterType<MainViewModel>();
-			_containerBuilder.RegisterType<MenuViewModel>();
-			_containerBuilder.RegisterType<InboxViewModel>();
-			_containerBuilder.RegisterType<SentViewModel>();
-			_containerBuilder.RegisterType<DraftViewModel>();
-			_containerBuilder.RegisterType<DashboardViewModel>();
-		}
+        public T Resolve<T>()
+        {
+            return _container.Resolve<T>();
+        }
 
-		public T Resolve<T>()
-		{
-			return _container.Resolve<T>();
-		}
+        public object Resolve(Type type)
+        {
+            return _container.Resolve(type);
+        }
 
-		public object Resolve(Type type)
-		{
-			return _container.Resolve(type);
-		}
+        public void Register<TInterface, TImplementation>() where TImplementation : TInterface
+        {
+            _containerBuilder.RegisterType<TImplementation>().As<TInterface>();
+        }
 
-		public void Register<TInterface, TImplementation>() where TImplementation : TInterface
-		{
-			_containerBuilder.RegisterType<TImplementation>().As<TInterface>();
-		}
+        public void Register<T>() where T : class
+        {
+            _containerBuilder.RegisterType<T>();
+        }
 
-		public void Register<T>() where T : class
-		{
-			_containerBuilder.RegisterType<T>();
-		}
-
-		public void Build()
-		{
-			_container = _containerBuilder.Build();
-		}
-	}
+        public void Build()
+        {
+            if (_container != null) return;
+            _container = _containerBuilder.Build();
+        }
+    }
 }

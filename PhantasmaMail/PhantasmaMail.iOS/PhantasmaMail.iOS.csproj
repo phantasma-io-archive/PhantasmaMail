@@ -142,6 +142,15 @@
     <PackageReference Include="Rg.Plugins.Popup">
       <Version>1.1.4.145-pre</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Forms">
+      <Version>2.3.6</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms">
+      <Version>2.3.6</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations">
+      <Version>2.3.6</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="2.5.1.444934" />
   </ItemGroup>
   <ItemGroup>

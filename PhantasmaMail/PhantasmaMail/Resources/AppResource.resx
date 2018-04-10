@@ -138,4 +138,7 @@
   <data name="MenuItem_Trash" xml:space="preserve">
     <value>Trash</value>
   </data>
+  <data name="MenuItem_Wallet" xml:space="preserve">
+    <value>Wallet</value>
+  </data>
 </root>

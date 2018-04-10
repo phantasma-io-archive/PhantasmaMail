@@ -11,6 +11,7 @@ namespace PhantasmaMail
 {
 	public partial class App : Application
 	{
+        public bool IsLoggedIn { get; set; }
 
 		public App()
 		{

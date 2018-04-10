@@ -4,69 +4,57 @@ using Xamarin.Forms;
 
 namespace PhantasmaMail.Models.UI
 {
-	public class MenuItem : BindableObject
-	{
-		private string _title;
-		private MenuItemType _menuItemType;
-		private Type _viewModelType;
-		private bool _isEnabled;
+    public class MenuItem : BindableObject
+    {
+        private string _title;
+        private MenuItemType _menuItemType;
+        private Type _viewModelType;
+        private bool _isEnabled;
 
-		public string Title
-		{
-			get
-			{
-				return _title;
-			}
+        public string Title
+        {
+            get => _title;
 
-			set
-			{
-				_title = value;
-				OnPropertyChanged();
-			}
-		}
+            set
+            {
+                _title = value;
+                OnPropertyChanged();
+            }
+        }
 
-		public MenuItemType MenuItemType
-		{
-			get
-			{
-				return _menuItemType;
-			}
+        public MenuItemType MenuItemType
+        {
+            get => _menuItemType;
 
-			set
-			{
-				_menuItemType = value;
-				OnPropertyChanged();
-			}
-		}
+            set
+            {
+                _menuItemType = value;
+                OnPropertyChanged();
+            }
+        }
 
-		public Type ViewModelType
-		{
-			get
-			{
-				return _viewModelType;
-			}
+        public Type ViewModelType
+        {
+            get => _viewModelType;
 
-			set
-			{
-				_viewModelType = value;
-				OnPropertyChanged();
-			}
-		}
+            set
+            {
+                _viewModelType = value;
+                OnPropertyChanged();
+            }
+        }
 
-		public bool IsEnabled
-		{
-			get
-			{
-				return _isEnabled;
-			}
+        public bool IsEnabled
+        {
+            get => _isEnabled;
 
-			set
-			{
-				_isEnabled = value;
-				OnPropertyChanged();
-			}
-		}
+            set
+            {
+                _isEnabled = value;
+                OnPropertyChanged();
+            }
+        }
 
-		public Func<Task> AfterNavigationAction { get; set; }
-	}
+        public Func<Task> AfterNavigationAction { get; set; }
+    }
 }

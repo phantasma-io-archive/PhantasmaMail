@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage
     x:Class="PhantasmaMail.Views.InboxView"
     xmlns="http://xamarin.com/schemas/2014/forms"
@@ -7,7 +8,7 @@
     xmlns:extensions="clr-namespace:PhantasmaMail.MarkupExtensions"
     Title="{extensions:Translate MenuItem_Inbox}">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="icon.png" Command="{Binding NewMessageCommand}"></ToolbarItem>
+        <ToolbarItem Icon="icon.png" Command="{Binding NewMessageCommand}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid VerticalOptions="FillAndExpand">

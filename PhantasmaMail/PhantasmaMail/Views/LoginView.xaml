@@ -1,15 +1,53 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage
     x:Class="PhantasmaMail.Views.LoginView"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    BackgroundColor="Coral">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="EntryLabelStyle"
+                   TargetType="Label"
+                   BasedOn="{StaticResource OpenSansSemiBoldLabelStyle}">
+                <Setter Property="TextColor"
+                        Value="{StaticResource DarkBlueGreen}" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource MediumSize}" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <Label
-                HorizontalOptions="CenterAndExpand"
-                Text="This is the login"
-                TextColor="Red"
-                VerticalOptions="CenterAndExpand" />
+        <StackLayout VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand"
+                     BackgroundColor="Aqua"
+                     Margin="30">
+
+            <ffimageloading:CachedImage Source="phantasma_logo_vector.png" WidthRequest="90" HeightRequest="75"
+                                        Margin="0,40,0,10" />
+
+            <Label Text="Phantasma" FontSize="{StaticResource ExtraBigSize}" HorizontalTextAlignment="Center" />
+
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Label
+                    Text="Private Key or WIF"
+                    TextColor="Red"
+                    HorizontalTextAlignment="Start"
+                    Style="{StaticResource EntryLabelStyle}" />
+
+                <Entry HorizontalOptions="FillAndExpand" />
+
+                <Button Text="Login"
+                        VerticalOptions="EndAndExpand" Margin="1,30"
+                        HorizontalOptions="FillAndExpand"
+                        Style="{StaticResource ButtonStyle}"
+                        Command="{Binding LoginCommand}" />
+            </StackLayout>
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

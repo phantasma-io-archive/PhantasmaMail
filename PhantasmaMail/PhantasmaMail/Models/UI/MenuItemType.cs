@@ -7,5 +7,8 @@
 		Draft,
 		Important,
 		Trash,
+        Wallet,
+        Logout,
+        Settings
     }
 }

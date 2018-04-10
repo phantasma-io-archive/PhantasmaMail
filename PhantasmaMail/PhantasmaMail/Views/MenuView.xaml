@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage
     x:Class="PhantasmaMail.Views.MenuView"
     xmlns="http://xamarin.com/schemas/2014/forms"
@@ -6,11 +7,23 @@
     xmlns:behaviors="clr-namespace:PhantasmaMail.Behaviors"
     xmlns:extensions="clr-namespace:PhantasmaMail.MarkupExtensions"
     xmlns:templates="clr-namespace:PhantasmaMail.Controls"
-    xmlns:views="clr-namespace:PhantasmaMail.Views;assembly=PhantasmaMail"
+    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     Title=" "
     BackgroundColor="Red">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="MenuTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#FFFFFF" />
+                <Setter Property="FontSize" Value="{StaticResource MidMediumSize}" />
+                <Setter Property="FontFamily" Value="{StaticResource OpenSansSemiBoldLabelStyle}" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid Margin="20">
+        <Grid Margin="10,60,10,20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
@@ -31,16 +44,56 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Label
-                Grid.Row="1"
-                HorizontalOptions="Start"
-                Text="{extensions:Translate MenuItem_Settings}"
-                VerticalOptions="End" />
-            <Label
-                Grid.Row="1"
-                HorizontalOptions="End"
-                Text="{extensions:Translate MenuItem_Logout}"
-                VerticalOptions="End" />
+
+            <!-- Settings -->
+            <Grid Grid.Row="1" HorizontalOptions="Start" VerticalOptions="End" Margin="10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <ffimageloadingsvg:SvgCachedImage
+                    Grid.Column="0"
+                    VerticalOptions="Center"
+                    Source="settings.svg"
+                    WidthRequest="30">
+                    <ffimageloadingsvg:SvgCachedImage.Transformations>
+                        <fftransformations:TintTransformation EnableSolidColor="True" HexColor="#FFFFFF" />
+                    </ffimageloadingsvg:SvgCachedImage.Transformations>
+                </ffimageloadingsvg:SvgCachedImage>
+
+                <Label
+                    Grid.Column="1"
+                    VerticalOptions="Center"
+                    Text="{extensions:Translate MenuItem_Settings}"
+                    Style="{StaticResource MenuTextStyle}" />
+            </Grid>
+
+            <!-- Logout -->
+            <Grid Grid.Row="1" HorizontalOptions="End" VerticalOptions="End" Margin="10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <ffimageloadingsvg:SvgCachedImage
+                    Grid.Column="0"
+                    Source="logout.svg"
+                    VerticalOptions="Center"
+                    WidthRequest="30">
+                    <ffimageloadingsvg:SvgCachedImage.Transformations>
+                        <fftransformations:TintTransformation EnableSolidColor="True" HexColor="#FFFFFF" />
+                    </ffimageloadingsvg:SvgCachedImage.Transformations>
+                </ffimageloadingsvg:SvgCachedImage>
+
+                <Label
+                    Grid.Column="1"
+                    VerticalOptions="Center"
+                    Text="{extensions:Translate MenuItem_Logout}"
+                    Style="{StaticResource MenuTextStyle}" />
+            </Grid>
+
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>

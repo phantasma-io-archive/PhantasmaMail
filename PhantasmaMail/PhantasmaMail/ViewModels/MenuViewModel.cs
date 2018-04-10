@@ -58,21 +58,21 @@ namespace PhantasmaMail.ViewModels
 				ViewModelType = typeof(DraftViewModel),
 				IsEnabled = true
 			});
-			//MenuItems.Add(new Models.UI.MenuItem
-			//{
-			//	Title = AppResource.MenuItem_Important,
-			//	MenuItemType = Models.UI.MenuItemType.Sent,
-			//	ViewModelType = typeof(LoginViewModel),
-			//	IsEnabled = true
-			//});
-			//MenuItems.Add(new Models.UI.MenuItem
-			//{
-			//	Title = AppResource.MenuItem_Trash,
-			//	MenuItemType = Models.UI.MenuItemType.Sent,
-			//	ViewModelType = typeof(LoginViewModel),
-			//	IsEnabled = true
-			//});
-		}
+            MenuItems.Add(new Models.UI.MenuItem
+            {
+                Title = AppResource.MenuItem_Trash,
+                MenuItemType = Models.UI.MenuItemType.Trash,
+                ViewModelType = typeof(LoginViewModel),
+                IsEnabled = false
+            });
+            MenuItems.Add(new Models.UI.MenuItem
+            {
+                Title = AppResource.MenuItem_Wallet,
+                MenuItemType = Models.UI.MenuItemType.Wallet,
+                ViewModelType = typeof(LoginViewModel),
+                IsEnabled = false
+            });
+        }
 
 		private async void OnSelectMenuItem(Models.UI.MenuItem item)
 		{

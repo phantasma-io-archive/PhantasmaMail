@@ -2,7 +2,8 @@
 <Application
     x:Class="PhantasmaMail.App"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:PhantasmaMail.Converters;assembly=PhantasmaMail">
     <Application.Resources>
         <ResourceDictionary>
 
@@ -15,12 +16,14 @@
             <Color x:Key="LightBlueGreen">#2B6C81</Color>
             <Color x:Key="LightGray">#A1ACB3</Color>
             <Color x:Key="WhiteBackground">#BCC7CF</Color>
+            <x:String x:Key="TintIconColor">#225E72</x:String>
 
 
             <Color x:Key="GradientStartColor">#FAFAFA</Color>
             <Color x:Key="GradientEndColor">#C0C0C0</Color>
 
             <!-- CONVERTERS -->
+            <converters:MenuItemTypeConverter x:Key="MenuItemTypeConverter"/>
 
             <!-- FONTS -->
 
@@ -53,31 +56,6 @@
                 <On Platform="Android">SF UI Text Semibold.ttf#SF UI Text Semibold</On>
                 <On Platform="iOS">SF UI Text Semibold</On>
             </OnPlatform>
-
-            <!--OnPlatform x:Key="OpenSansRegular"
-                        x:TypeArguments="x:String"
-                        iOS="OpenSans-Regular"
-                        Android="OpenSans-Regular.ttf#OpenSans-Regular"/>-->
-
-            <!--<OnPlatform x:Key="OpenSansSemiBold"
-                        x:TypeArguments="x:String"
-                        iOS="OpenSans-SemiBold"
-                        Android="OpenSans-SemiBold.ttf#OpenSans-SemiBold"/>
-
-            <OnPlatform x:Key="RobotoMedium"
-                        x:TypeArguments="x:String"
-                        iOS="Roboto-Medium"
-                        Android="Roboto-Medium.ttf#Roboto-Medium"/>-->
-
-            <!--<OnPlatform x:Key="SFUITextRegular"
-                        x:TypeArguments="x:String"
-                        iOS="SF UI Text Regular"
-                        Android="SF UI Text Regular.ttf#SF UI Text Regular"/>
-
-            <OnPlatform x:Key="SFUITextSemibold"
-                        x:TypeArguments="x:String"
-                        iOS="SF UI Text Semibold"
-                        Android="SF UI Text Semibold.ttf#SF UI Text Semibold"/>-->      
 
             <OnPlatform x:Key="LittleSize"
                         x:TypeArguments="x:Double">
@@ -202,6 +180,14 @@
                         Value="{StaticResource LightBlueGreen}" />
                 <Setter Property="FontSize" 
                         Value="{StaticResource MidMediumSize}" />
+            </Style>
+
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="BorderRadius" Value="8" />
+                <Setter Property="BackgroundColor" Value="#FFFFFF" />
+                <Setter Property="TextColor" Value="{StaticResource LightGray}" />
+                <Setter Property="FontSize" Value="{StaticResource LargeSize}" />
+                <Setter Property="FontFamily" Value="{StaticResource OpenSansSemiBold}" />
             </Style>
 
         </ResourceDictionary>

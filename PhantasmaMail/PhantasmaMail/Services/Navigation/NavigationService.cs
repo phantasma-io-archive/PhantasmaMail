@@ -28,16 +28,18 @@ namespace PhantasmaMail.Services.Navigation
 
 		public async Task InitializeAsync()
 		{
-            // TODO
-			//if (await _authenticationService.UserIsAuthenticatedAndValidAsync())
-			//{
-			//	//await NavigateToAsync<MainViewModel>();
-			//}
-			//else
-			//{
-			//	//await NavigateToAsync<LoginViewModel>();
-			//}
-			await NavigateToAsync<MainViewModel>();
+            //TODO
+
+            //if (await _authenticationService.UserIsAuthenticatedAndValidAsync())
+		    //if ()
+      //      {
+      //          //await NavigateToAsync<MainViewModel>();
+      //      }
+      //      else
+      //      {
+      //          //await NavigateToAsync<LoginViewModel>();
+      //      }
+            await NavigateToAsync<LoginViewModel>();
 		}
 
 		public Task NavigateToAsync<TViewModel>() where TViewModel : ViewModelBase
@@ -165,6 +167,7 @@ namespace PhantasmaMail.Services.Navigation
 		private void CreatePageViewModelMappings()
 		{
 			Mappings.Add(typeof(ExtendedSplashViewModel), typeof(ExtendedSplashView));
+            Mappings.Add(typeof(LoginViewModel), typeof(LoginView));
 			Mappings.Add(typeof(MainViewModel), typeof(MainView));
 			Mappings.Add(typeof(DashboardViewModel), typeof(DashboardView));
 			Mappings.Add(typeof(InboxViewModel), typeof(InboxView));

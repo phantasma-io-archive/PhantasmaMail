@@ -2,22 +2,27 @@
 <ContentView
     x:Class="PhantasmaMail.Controls.MenuItemTemplate"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms">
     <ContentView.Resources>
         <ResourceDictionary>
 
-            <Color x:Key="MenuTextColor">#566572</Color>
+            <Style x:Key="MenuTextStyle" TargetType="Label" BasedOn="{StaticResource OpenSansSemiBoldLabelStyle}">
+                <Setter Property="TextColor" Value="#FFFFFF" />
+                <Setter Property="FontSize" Value="{StaticResource MediumSize}" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
 
-            <Style x:Key="MenuTextStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="Green" />
-                <Setter Property="FontSize" Value="16" />
+            <Style x:Key="MenuIconStyle" TargetType="Image">
+                <Setter Property="WidthRequest" Value="30" />
                 <Setter Property="VerticalOptions" Value="Center" />
             </Style>
 
         </ResourceDictionary>
     </ContentView.Resources>
     <ContentView.Content>
-        <Grid Padding="10" ColumnSpacing="12">
+        <Grid Padding="10" ColumnSpacing="20" Margin="20,5">
             <Grid.Triggers>
                 <DataTrigger
                     Binding="{Binding IsEnabled, Mode=TwoWay}"
@@ -28,9 +33,19 @@
             </Grid.Triggers>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Label
+            <ffimageloadingsvg:SvgCachedImage 
                 Grid.Column="0"
+                Source="{Binding MenuItemType, Converter={StaticResource MenuItemTypeConverter}}"
+                Style="{StaticResource MenuIconStyle}">
+                
+                <ffimageloadingsvg:SvgCachedImage.Transformations>
+                    <fftransformations:TintTransformation EnableSolidColor="True" HexColor="#FFFFFF"/>
+                </ffimageloadingsvg:SvgCachedImage.Transformations>
+            </ffimageloadingsvg:SvgCachedImage>
+            <Label
+                Grid.Column="1"
                 Style="{StaticResource MenuTextStyle}"
                 Text="{Binding Title}" />
         </Grid>

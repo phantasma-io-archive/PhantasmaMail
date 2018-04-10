@@ -122,5 +122,14 @@ namespace PhantasmaMail.Resources {
                 return ResourceManager.GetString("MenuItem_Trash", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wallet.
+        /// </summary>
+        public static string MenuItem_Wallet {
+            get {
+                return ResourceManager.GetString("MenuItem_Wallet", resourceCulture);
+            }
+        }
     }
 }
