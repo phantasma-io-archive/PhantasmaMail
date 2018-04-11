@@ -1,56 +1,54 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
-<ContentView
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<Grid
     x:Class="PhantasmaMail.Controls.MailFrameCell"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:effects="clr-namespace:PhantasmaMail.Effects"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <ContentView.Content>
-        <Grid>
-            <Frame Margin="20,10">
-                <Grid RowSpacing="7" ColumnSpacing="0" Margin="3,3">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="1" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="10"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Key="MailFrameCell">
+    <Frame Margin="20,10">
+        <Grid RowSpacing="7" ColumnSpacing="0" Margin="3,3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="1" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
 
-                    <Label Grid.Row="0" 
-                           Grid.Column="1"
-                           Text="{Binding Subject}" 
-                           Style="{StaticResource MessageTitleStyle}"/>
+            <Label Grid.Row="0"
+                   Grid.Column="1"
+                   Text="{Binding Subject}"
+                   Style="{StaticResource MessageTitleStyle}" />
 
-                    <Label Grid.Row="1" 
-                           Grid.Column="1"
-                           Grid.ColumnSpan="2"
-                           Text="{Binding Content}" 
-                           Style="{StaticResource MessageTextStyle}" >
-                        <Label.Effects>
-                            <effects:MaxLinesEffect MaxLines="2"/>
-                        </Label.Effects>
-                    </Label>
+            <Label Grid.Row="1"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="2"
+                   Text="{Binding Content}"
+                   Style="{StaticResource MessageTextStyle}">
+                <Label.Effects>
+                    <effects:MaxLinesEffect MaxLines="2" />
+                </Label.Effects>
+            </Label>
 
-                    <BoxView Grid.Row="2" 
-                             Grid.Column="1"
-                             Grid.ColumnSpan="2"
-                             BackgroundColor="Black" />
+            <BoxView Grid.Row="2"
+                     Grid.Column="1"
+                     Grid.ColumnSpan="2"
+                     BackgroundColor="Black" />
 
-                    <Label Grid.Row="3" 
-                           Grid.Column="1"
-                           Text="{Binding FromName}" 
-                           Style="{StaticResource MessageSenderStyle}" />
+            <Label Grid.Row="3"
+                   Grid.Column="1"
+                   Text="{Binding FromName}"
+                   Style="{StaticResource MessageSenderStyle}" />
 
-                    <Label Grid.Row="3" 
-                           Grid.Column="2"
-                           Text="{Binding FromEmail}" 
-                           Style="{StaticResource MessageSenderStyle}" />
-                </Grid>
-            </Frame>
+            <Label Grid.Row="3"
+                   Grid.Column="2"
+                   Text="{Binding FromEmail}"
+                   Style="{StaticResource MessageSenderStyle}" />
         </Grid>
-    </ContentView.Content>
-</ContentView>
+    </Frame>
+</Grid>

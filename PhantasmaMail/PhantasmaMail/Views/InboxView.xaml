@@ -5,7 +5,9 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:PhantasmaMail.Controls"
+    xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
     xmlns:extensions="clr-namespace:PhantasmaMail.MarkupExtensions"
+    xmlns:behaviors="clr-namespace:PhantasmaMail.Behaviors;assembly=PhantasmaMail"
     Title="{extensions:Translate MenuItem_Inbox}">
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="icon.png" Command="{Binding NewMessageCommand}" />
@@ -15,20 +17,20 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <ListView
+            <syncfusion:SfListView
                 Grid.Row="0"
-                SeparatorVisibility="None"
-                HasUnevenRows="True"
+                AutoFitMode="Height"
                 ItemsSource="{Binding InboxList}"
+                SelectionBackgroundColor="Red"
+                SelectionMode="Single"
+                behaviors:ItemTappedCommandListView.ItemTappedCommand="{Binding MessageSelectedCommand}"
                 VerticalOptions="FillAndExpand">
-                <ListView.ItemTemplate>
+                <syncfusion:SfListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <controls:MailFrameCell />
-                        </ViewCell>
+                        <controls:MailFrameCell/>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </syncfusion:SfListView.ItemTemplate>
+            </syncfusion:SfListView>
         </Grid>
 
     </ContentPage.Content>

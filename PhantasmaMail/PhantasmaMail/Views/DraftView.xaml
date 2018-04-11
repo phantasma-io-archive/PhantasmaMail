@@ -9,7 +9,20 @@
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
     Title="{extensions:Translate MenuItem_Draft}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="BorderlessEntry" TargetType="xfx:XfxEntry">
+                <Setter Property="FontSize" Value="{StaticResource MediumSize}" />
+                <Setter Property="FontFamily" Value="{StaticResource OpenSansSemiBold}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource LightBlueGreen}" />
+                <Setter Property="ActivePlaceholderColor" Value="{StaticResource LightGray}" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <Grid HorizontalOptions="FillAndExpand"
               VerticalOptions="FillAndExpand">
@@ -39,28 +52,27 @@
 
 
                     <!--TODO LOCALIZATION and STYLE-->
-                    <Label Grid.Row="0"
-                           Grid.Column="0"
-                           Text="To: "
-                           Style="{StaticResource MessageSenderStyle}"
-                           FontSize="{StaticResource LittleSize}" />
-
-                    <Entry Grid.Row="0"
-                           Grid.Column="1"
-                           HorizontalOptions="Start"
-                           Text="test@phantasma.io"
-                           FontSize="{StaticResource LittleSize}" />
+                    <xfx:XfxEntry Grid.Row="0"
+                                  Grid.Column="0"
+                                  Grid.ColumnSpan="2"
+                                  HorizontalOptions="FillAndExpand"
+                                  Placeholder="To:"
+                                  FloatingHintEnabled="True"
+                                  Style="{StaticResource BorderlessEntry}"
+                                  Text="{Binding Message.ToAddress}"/>
 
                     <BoxView Grid.Row="1"
                              Grid.Column="0"
                              Grid.ColumnSpan="2"
                              BackgroundColor="#D8D8D8" />
 
-                    <Entry Grid.Row="2"
-                           Grid.Column="0"
-                           Grid.ColumnSpan="2"
-                           Placeholder="Insert Subject Here"
-                           Text="PhantasmaApp" />
+                    <xfx:XfxEntry Grid.Row="2"
+                                  Style="{StaticResource BorderlessEntry}"
+                                  Grid.Column="0"
+                                  Grid.ColumnSpan="2"
+                                  FloatingHintEnabled="True"
+                                  Placeholder="Subject:"
+                                  Text="{Binding Message.Subject}" />
 
                     <BoxView Grid.Row="3"
                              Grid.Column="0"
@@ -68,10 +80,11 @@
                              BackgroundColor="#D8D8D8" />
 
                     <controls:ExpandableEditor Grid.Row="4"
-                                               HeightRequest="450"
+                                               HeightRequest="350"
                                                Grid.Column="0"
+                                               BackgroundColor="Aqua"
                                                Grid.ColumnSpan="2"
-                                               Text="TesSDSJADJASDA DASDSS DSAJDSAJD ADAKDDSJADAD AD ADA D" />
+                                               Text="{Binding Message.TextContent}" />
 
                     <BoxView Grid.Row="5"
                              Grid.Column="0"

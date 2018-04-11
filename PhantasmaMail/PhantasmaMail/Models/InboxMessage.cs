@@ -1,7 +1,7 @@
 ﻿namespace PhantasmaMail.Models
 {
 	//TODO
-    public class InboxEmail
+    public class InboxMessage
     {
 		public string Subject { get; set; } = string.Empty;
 		public string Content { get; set; } = string.Empty;

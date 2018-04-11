@@ -4,6 +4,7 @@ using Android.OS;
 using Acr.UserDialogs;
 using FFImageLoading.Forms.Droid;
 using FFImageLoading.Svg.Forms;
+using Xfx;
 
 namespace PhantasmaMail.Droid
 {
@@ -16,9 +17,9 @@ namespace PhantasmaMail.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
-			
 
-			global::Xamarin.Forms.Forms.Init(this, bundle);
+            XfxControls.Init();
+            global::Xamarin.Forms.Forms.Init(this, bundle);
 			UserDialogs.Init(this);
 			Rg.Plugins.Popup.Popup.Init(this, bundle);
             CachedImageRenderer.Init(true);

@@ -1,7 +1,9 @@
 ﻿using FFImageLoading.Forms.Touch;
 using FFImageLoading.Svg.Forms;
 using Foundation;
+using Syncfusion.ListView.XForms.iOS;
 using UIKit;
+using Xfx;
 
 namespace PhantasmaMail.iOS
 {
@@ -21,9 +23,10 @@ namespace PhantasmaMail.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
 			Rg.Plugins.Popup.Popup.Init();
-
-			global::Xamarin.Forms.Forms.Init();
-			XFGloss.iOS.Library.Init();
+            XfxControls.Init();
+            global::Xamarin.Forms.Forms.Init();
+            SfListViewRenderer.Init();
+            XFGloss.iOS.Library.Init();
             CachedImageRenderer.Init();
             var ignore = typeof(SvgCachedImage);
             LoadApplication(new App());
