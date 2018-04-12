@@ -6,7 +6,6 @@
     xmlns:controls="clr-namespace:PhantasmaMail.Controls"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:extensions="clr-namespace:PhantasmaMail.MarkupExtensions"
-    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
@@ -14,7 +13,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
 
-            <Style x:Key="BorderlessEntry" TargetType="xfx:XfxEntry">
+            <Style x:Key="CustomEntryStyle" TargetType="xfx:XfxEntry">
                 <Setter Property="FontSize" Value="{StaticResource MediumSize}" />
                 <Setter Property="FontFamily" Value="{StaticResource OpenSansSemiBold}" />
                 <Setter Property="PlaceholderColor" Value="{StaticResource LightBlueGreen}" />
@@ -35,71 +34,53 @@
                    Margin="20,10"
                    HorizontalOptions="FillAndExpand"
                    VerticalOptions="FillAndExpand">
-                <Grid Margin="10,5">
+                <Grid Margin="5">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
-                        <RowDefinition Height="1" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="1" />
-                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
                         <RowDefinition Height="1" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-
 
                     <!--TODO LOCALIZATION and STYLE-->
                     <xfx:XfxEntry Grid.Row="0"
-                                  Grid.Column="0"
-                                  Grid.ColumnSpan="2"
                                   HorizontalOptions="FillAndExpand"
                                   Placeholder="To:"
                                   FloatingHintEnabled="True"
-                                  Style="{StaticResource BorderlessEntry}"
-                                  Text="{Binding Message.ToAddress}"/>
+                                  Style="{StaticResource CustomEntryStyle}"
+                                  Text="{Binding Message.ToAddress}" />
 
-                    <BoxView Grid.Row="1"
-                             Grid.Column="0"
-                             Grid.ColumnSpan="2"
-                             BackgroundColor="#D8D8D8" />
-
-                    <xfx:XfxEntry Grid.Row="2"
-                                  Style="{StaticResource BorderlessEntry}"
-                                  Grid.Column="0"
-                                  Grid.ColumnSpan="2"
+                    <xfx:XfxEntry Grid.Row="1"
+                                  Style="{StaticResource CustomEntryStyle}"
                                   FloatingHintEnabled="True"
                                   Placeholder="Subject:"
                                   Text="{Binding Message.Subject}" />
 
-                    <BoxView Grid.Row="3"
-                             Grid.Column="0"
+                    <BoxView Grid.Row="2"
                              WidthRequest="50"
-                             BackgroundColor="#D8D8D8" />
+                             BackgroundColor="{StaticResource SeparatorGray}" />
 
-                    <controls:ExpandableEditor Grid.Row="4"
-                                               HeightRequest="350"
-                                               Grid.Column="0"
+                    <controls:ExpandableEditor Grid.Row="3"
                                                BackgroundColor="Aqua"
-                                               Grid.ColumnSpan="2"
+                                               FontFamily="{StaticResource OpenSansRegular}"
+                                               TextColor="{StaticResource LightGray}"
+                                               FontSize="{StaticResource MidMediumSize}"
                                                Text="{Binding Message.TextContent}" />
 
-                    <BoxView Grid.Row="5"
-                             Grid.Column="0"
-                             WidthRequest="50"
-                             BackgroundColor="#D8D8D8" />
+                    <BoxView Grid.Row="4"
+                             HorizontalOptions="FillAndExpand"
+                             BackgroundColor="{StaticResource SeparatorGray}" />
 
-                    <Label Grid.Row="6"
-                           Grid.Column="1"
+                    <Label Grid.Row="5"
                            Text="Tue 25, Mar, 6:35 PM"
                            HorizontalOptions="EndAndExpand"
                            Style="{StaticResource MessageTextStyle}" />
                 </Grid>
             </Frame>
 
-            <Grid Grid.Row="1" Margin="20,20">
+            <Grid Grid.Row="1" Margin="10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="1*" />
@@ -133,7 +114,8 @@
                 </ffimageloadingsvg:SvgCachedImage>
 
                 <!-- Attach -->
-                <ffimageloadingsvg:SvgCachedImage VerticalOptions="Center" HorizontalOptions="Center" Source="send.svg"
+                <ffimageloadingsvg:SvgCachedImage VerticalOptions="Center" HorizontalOptions="Center"
+                                                  Source="paperclip.svg"
                                                   Grid.Column="2" HeightRequest="30"
                                                   WidthRequest="30">
                     <ffimageloadingsvg:SvgCachedImage.Transformations>

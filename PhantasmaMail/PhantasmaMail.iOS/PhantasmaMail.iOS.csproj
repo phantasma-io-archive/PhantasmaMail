@@ -104,6 +104,7 @@
     <BundleResource Include="Resources\Fonts\Roboto-Medium.ttf" />
     <BundleResource Include="Resources\Fonts\SF UI Text Regular.otf" />
     <BundleResource Include="Resources\Fonts\SF UI Text Semibold.otf" />
+    <BundleResource Include="Resources\Fonts\Geo.otf" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -191,6 +192,60 @@
       <Project>{447D553C-16D0-4D0C-9B3B-5852454F69DB}</Project>
       <Name>PhantasmaMail</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\archive.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\arrow_up.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\BackgroundHamburguer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\BackgroundLogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\edit.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\file_text.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\inbox.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logout.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mail.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\paperclip.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\phantasma_logo_vector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\search.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\send.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\settings.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\star.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tablet.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\TopBar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\trash.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

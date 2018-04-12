@@ -1,14 +1,136 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PhantasmaMail.Views.MessageDetailView"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              xmlns:extensions="clr-namespace:PhantasmaMail.MarkupExtensions"
              Title="{extensions:Translate MenuItem_Inbox}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="SenderNameTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource LightBlueGreen}" />
+                <Setter Property="FontSize" Value="{StaticResource MediumSize}" />
+                <Setter Property="FontFamily" Value="{StaticResource OpenSansRegularLabelStyle}" />
+            </Style>
+
+            <Style x:Key="SimpleTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource LightGray}" />
+                <Setter Property="FontSize" Value="{StaticResource MediumSize}" />
+                <Setter Property="FontFamily" Value="{StaticResource OpenSansRegularLabelStyle}" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="icon.png"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid HorizontalOptions="FillAndExpand"
+              VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+
+            <Frame Grid.Row="0"
+                   Margin="20,10"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="1" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="1" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" Text="{Binding SelectedMessage.FromName}"
+                           Style="{StaticResource SenderNameTextStyle}" />
+
+                    <Label Grid.Row="1" Text="{Binding SelectedMessage.FromEmail}"
+                           Style="{StaticResource SenderNameTextStyle}" TextColor="{StaticResource LightGray}" />
+
+                    <BoxView Grid.Row="2"
+                             HorizontalOptions="FillAndExpand"
+                             BackgroundColor="{StaticResource SeparatorGray}" />
+
+                    <Label Grid.Row="3" Text="{Binding SelectedMessage.Subject}"
+                           Style="{StaticResource SenderNameTextStyle}" FontSize="{StaticResource LargeSize}"
+                           FontFamily="{StaticResource OpenSansSemiBold}" />
+
+                    <ScrollView Grid.Row="4">
+                        <Label Text="{Binding SelectedMessage.Content}"
+                               Style="{StaticResource SimpleTextStyle}" />
+                    </ScrollView>
+
+
+                    <BoxView Grid.Row="5"
+                             HorizontalOptions="FillAndExpand"
+                             BackgroundColor="{StaticResource SeparatorGray}" />
+
+                    <Label Grid.Row="6" Text="2 days ago" HorizontalOptions="Start" VerticalOptions="End"
+                           Style="{StaticResource SimpleTextStyle}" FontSize="{StaticResource MidMediumSize}" />
+
+                    <Label Grid.Row="6" Text="Tue 9, Mar, 1:35 AM" HorizontalOptions="End" VerticalOptions="End"
+                           Style="{StaticResource SimpleTextStyle}" FontSize="{StaticResource MidMediumSize}" />
+
+                </Grid>
+            </Frame>
+            <Grid Grid.Row="1" Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Star -->
+                <ffimageloadingsvg:SvgCachedImage VerticalOptions="Center" HorizontalOptions="Center"
+                                                  Source="star.svg"
+                                                  Grid.Column="0" HeightRequest="30"
+                                                  WidthRequest="30">
+                    <ffimageloadingsvg:SvgCachedImage.Transformations>
+                        <fftransformations:TintTransformation EnableSolidColor="true"
+                                                              HexColor="{StaticResource TintIconColor}" />
+                    </ffimageloadingsvg:SvgCachedImage.Transformations>
+                    <!--<ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavigateToInboxCommand}" />
+                        </ffimageloadingsvg:SvgCachedImage.GestureRecognizers>-->
+                </ffimageloadingsvg:SvgCachedImage>
+
+                <!-- Arrow -->
+                <ffimageloadingsvg:SvgCachedImage VerticalOptions="Center" HorizontalOptions="Center"
+                                                  Source="arrow_up.svg"
+                                                  Grid.Column="1" HeightRequest="30"
+                                                  WidthRequest="30">
+                    <ffimageloadingsvg:SvgCachedImage.Transformations>
+                        <fftransformations:TintTransformation EnableSolidColor="true"
+                                                              HexColor="{StaticResource TintIconColor}" />
+                    </ffimageloadingsvg:SvgCachedImage.Transformations>
+                    <!--<ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavigateToInboxCommand}" />
+                        </ffimageloadingsvg:SvgCachedImage.GestureRecognizers>-->
+                </ffimageloadingsvg:SvgCachedImage>
+
+                <!-- Edit -->
+                <ffimageloadingsvg:SvgCachedImage VerticalOptions="Center" HorizontalOptions="Center"
+                                                  Source="edit.svg"
+                                                  Grid.Column="2" HeightRequest="30"
+                                                  WidthRequest="30">
+                    <ffimageloadingsvg:SvgCachedImage.Transformations>
+                        <fftransformations:TintTransformation EnableSolidColor="true"
+                                                              HexColor="{StaticResource TintIconColor}" />
+                    </ffimageloadingsvg:SvgCachedImage.Transformations>
+                    <!--<ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavigateToInboxCommand}" />
+                        </ffimageloadingsvg:SvgCachedImage.GestureRecognizers>-->
+                </ffimageloadingsvg:SvgCachedImage>
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

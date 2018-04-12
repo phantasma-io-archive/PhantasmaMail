@@ -15,6 +15,7 @@
             <Color x:Key="DarkBlueGreen">#17566B</Color>
             <Color x:Key="LightBlueGreen">#2B6C81</Color>
             <Color x:Key="LightGray">#A1ACB3</Color>
+            <Color x:Key="SeparatorGray">#D8D8D8</Color>
             <Color x:Key="WhiteBackground">#BCC7CF</Color>
             <x:String x:Key="TintIconColor">#225E72</x:String>
 
@@ -26,6 +27,12 @@
             <converters:MenuItemTypeConverter x:Key="MenuItemTypeConverter"/>
 
             <!-- FONTS -->
+
+            <OnPlatform x:Key="GeoMedium"
+                        x:TypeArguments="x:String">
+                <On Platform="Android">Geo.otf#Geo</On>
+                <On Platform="iOS">Geo</On>
+            </OnPlatform>
 
             <OnPlatform x:Key="OpenSansRegular"
                         x:TypeArguments="x:String">

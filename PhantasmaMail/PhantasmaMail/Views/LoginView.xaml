@@ -5,17 +5,21 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-    BackgroundColor="Coral">
+    xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
+    BackgroundImage="BackgroundLogin.png">
     <ContentPage.Resources>
         <ResourceDictionary>
 
-            <Style x:Key="EntryLabelStyle"
-                   TargetType="Label"
-                   BasedOn="{StaticResource OpenSansSemiBoldLabelStyle}">
+            <Style x:Key="LoginStyle"
+                   TargetType="xfx:XfxEntry">
                 <Setter Property="TextColor"
-                        Value="{StaticResource DarkBlueGreen}" />
+                        Value="White" />
+                <Setter Property="ActivePlaceholderColor"
+                        Value="White" />
+                <Setter Property="PlaceholderColor"
+                        Value="White" />
                 <Setter Property="FontSize"
-                        Value="{StaticResource MediumSize}" />
+                        Value="{StaticResource LargeSize}" />
             </Style>
 
         </ResourceDictionary>
@@ -23,22 +27,22 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand"
                      HorizontalOptions="FillAndExpand"
-                     BackgroundColor="Aqua"
                      Margin="30">
 
             <ffimageloading:CachedImage Source="phantasma_logo_vector.png" WidthRequest="90" HeightRequest="75"
                                         Margin="0,40,0,10" />
 
-            <Label Text="Phantasma" FontSize="{StaticResource ExtraBigSize}" HorizontalTextAlignment="Center" />
+            <Label Text="Phantasma" FontSize="{StaticResource ExtraBigSize}" TextColor="White"
+                   FontFamily="{StaticResource GeoMedium}"
+                   HorizontalTextAlignment="Center" />
 
             <StackLayout VerticalOptions="EndAndExpand">
-                <Label
-                    Text="Private Key or WIF"
-                    TextColor="Red"
-                    HorizontalTextAlignment="Start"
-                    Style="{StaticResource EntryLabelStyle}" />
 
-                <Entry HorizontalOptions="FillAndExpand" />
+                <xfx:XfxEntry Style="{StaticResource LoginStyle}"
+                              FloatingHintEnabled="True"
+                              HorizontalOptions="FillAndExpand"
+                              Placeholder="Encripted private key or WIF"
+                              Text="" />
 
                 <Button Text="Login"
                         VerticalOptions="EndAndExpand" Margin="1,30"

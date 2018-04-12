@@ -4,11 +4,11 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-    iOS:NavigationPage.IsNavigationBarTranslucent="True"
-    BarTextColor="White">
+    iOS:NavigationPage.IsNavigationBarTranslucent="True">
+    <!--BarTextColor="White">
     <NavigationPage.BarBackgroundColor>
         <OnPlatform x:TypeArguments="Color">
             <On Platform="Android, iOS" Value="Transparent" />
         </OnPlatform>
-    </NavigationPage.BarBackgroundColor>
+    </NavigationPage.BarBackgroundColor>-->
 </NavigationPage>

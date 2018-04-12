@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using PhantasmaMail.Models;
 using PhantasmaMail.ViewModels.Base;
 
@@ -9,8 +6,17 @@ namespace PhantasmaMail.ViewModels
 {
     public class MessageDetailViewModel : ViewModelBase
     {
-        public InboxMessage SelectedMessage { get; set; }
+        private InboxMessage _selectedMessage;
 
+        public InboxMessage SelectedMessage
+        {
+            get => _selectedMessage;
+            set
+            {
+                _selectedMessage = value;
+                OnPropertyChanged();
+            }
+        }
 
         public override Task InitializeAsync(object navigationData)
         {

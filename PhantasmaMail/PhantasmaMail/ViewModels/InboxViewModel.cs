@@ -23,6 +23,22 @@ namespace PhantasmaMail.ViewModels
             }
         }
 
+        private InboxMessage _messageSelected;
+
+        public InboxMessage MessageSelected
+        {
+            get => _messageSelected;
+            set
+            {
+                if (_messageSelected != value)
+                {
+                    _messageSelected = value;
+                    OnPropertyChanged();
+                    MessageSelectedCommand.Execute(_messageSelected);
+                }
+            }
+        }
+
         public ICommand NewMessageCommand => new Command(async () => await NewMessageExecute());
 
         public ICommand MessageSelectedCommand =>
@@ -45,7 +61,7 @@ namespace PhantasmaMail.ViewModels
             {
                 new InboxMessage
                 {
-                    Content = "This is a long content dsadasdadsadsadadadsadadas dasdas asdas sa",
+                    Content = "It is a long established fact that a reader will be distracted by the readable content if you want any desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for any desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for any desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for.",
                     FromEmail = "test@phantasma.io",
                     FromName = "John Test",
                     ReceiveDate = "string date",
@@ -53,7 +69,7 @@ namespace PhantasmaMail.ViewModels
                 },
                 new InboxMessage
                 {
-                    Content = "This is a long content dsadasdadsadsadadadsadadas dasdas asdas sa",
+                    Content = "This is a small content",
                     FromEmail = "test@phantasma.io",
                     FromName = "John Test",
                     ReceiveDate = "string date",
@@ -102,8 +118,8 @@ namespace PhantasmaMail.ViewModels
             if (item != null)
             {
                 await NavigationService.NavigateToAsync<MessageDetailViewModel>(item);
+                MessageSelected = null;
             }
         }
-
     }
 }

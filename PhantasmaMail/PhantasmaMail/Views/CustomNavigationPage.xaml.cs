@@ -7,7 +7,7 @@ namespace PhantasmaMail.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CustomNavigationPage : NavigationPage
 	{
-		public CustomNavigationPage() : base()
+		public CustomNavigationPage()
 		{
 			InitializeComponent();
 		}
@@ -23,7 +23,7 @@ namespace PhantasmaMail.Views
 			BarTextColor = color == Color.Default
 				? Color.White
 				: color;
-			BarBackgroundColor = Color.Green;
+			BarBackgroundColor = Color.Transparent;
 		}
 	}
 }

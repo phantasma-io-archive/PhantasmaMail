@@ -7,9 +7,9 @@
     Title="Phantasma Mail"
     MasterBehavior="Popover">
     <MasterDetailPage.Master>
-        <views:MenuView BindingContext="{Binding MenuViewModel}" />
+        <views:MenuView BindingContext="{Binding MenuViewModel}" BackgroundColor="Transparent" BackgroundImage="BackgroundHamburguer"/>
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
-        <ContentPage BackgroundColor="Red" />
+        <ContentPage/>
     </MasterDetailPage.Detail>
 </MasterDetailPage>
