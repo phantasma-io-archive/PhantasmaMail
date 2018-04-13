@@ -21,6 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Controls\InboxMessageCell.xaml.cs">
+      <DependentUpon>InboxMessageCell.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Resources\AppResource.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -33,7 +36,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Controls\MailFrameCell.xaml">
+    <EmbeddedResource Update="Controls\InboxMessageCell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\MenuItemTemplate.xaml">

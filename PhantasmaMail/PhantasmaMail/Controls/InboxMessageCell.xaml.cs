@@ -4,9 +4,9 @@ using Xamarin.Forms.Xaml;
 namespace PhantasmaMail.Controls
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class MailFrameCell : Grid
+	public partial class InboxMessageCell : Grid
 	{
-		public MailFrameCell ()
+		public InboxMessageCell()
 		{
 			InitializeComponent ();
 		}

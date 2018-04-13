@@ -31,10 +31,11 @@
             </Grid.RowDefinitions>
 
             <Frame Grid.Row="0"
-                   Margin="20,10"
+                   Margin="20"
+                   Padding="0"
                    HorizontalOptions="FillAndExpand"
                    VerticalOptions="FillAndExpand">
-                <Grid Margin="5">
+                <Grid Margin="20">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
@@ -63,7 +64,6 @@
                              BackgroundColor="{StaticResource SeparatorGray}" />
 
                     <controls:ExpandableEditor Grid.Row="3"
-                                               BackgroundColor="Aqua"
                                                FontFamily="{StaticResource OpenSansRegular}"
                                                TextColor="{StaticResource LightGray}"
                                                FontSize="{StaticResource MidMediumSize}"
@@ -76,7 +76,8 @@
                     <Label Grid.Row="5"
                            Text="Tue 25, Mar, 6:35 PM"
                            HorizontalOptions="EndAndExpand"
-                           Style="{StaticResource MessageTextStyle}" />
+                           Style="{StaticResource MessageTextStyle}"
+                           FontSize="{StaticResource LittleSize}"/>
                 </Grid>
             </Frame>
 

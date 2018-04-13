@@ -25,7 +25,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="icon.png"/>
+        <ToolbarItem Text="DeleteIcon" Command="{Binding DeleteMessageCommand}"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid HorizontalOptions="FillAndExpand"

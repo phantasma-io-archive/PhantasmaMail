@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <Grid
-    x:Class="PhantasmaMail.Controls.MailFrameCell"
+    x:Class="PhantasmaMail.Controls.InboxMessageCell"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:effects="clr-namespace:PhantasmaMail.Effects"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Key="MailFrameCell">
+    x:Key="InboxMessageCell">
     <Frame Margin="20,10">
         <Grid RowSpacing="7" ColumnSpacing="0" Margin="3,3">
             <Grid.RowDefinitions>
@@ -24,6 +24,13 @@
                    Grid.Column="1"
                    Text="{Binding Subject}"
                    Style="{StaticResource MessageTitleStyle}" />
+
+            <Label Grid.Row="0"
+                   Grid.Column="2"
+                   Text="{Binding ReceiveDate}"
+                   HorizontalOptions="End"
+                   Style="{StaticResource MessageTextStyle}" 
+                   FontSize="{StaticResource LittleSize}"/>
 
             <Label Grid.Row="1"
                    Grid.Column="1"

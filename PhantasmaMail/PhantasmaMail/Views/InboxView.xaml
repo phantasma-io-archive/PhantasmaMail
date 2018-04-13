@@ -26,7 +26,7 @@
                 VerticalOptions="FillAndExpand">
                 <syncfusion:SfListView.ItemTemplate>
                     <DataTemplate>
-                        <controls:MailFrameCell />
+                        <controls:InboxMessageCell />
                     </DataTemplate>
                 </syncfusion:SfListView.ItemTemplate>
             </syncfusion:SfListView>
