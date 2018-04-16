@@ -10,7 +10,8 @@
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="7.0.1" />
     <PackageReference Include="Ansuria.XFGloss" Version="1.1.3" />
-    <PackageReference Include="Autofac" Version="4.6.2" />
+    <PackageReference Include="Autofac" Version="4.7.0" />
+    <PackageReference Include="NeoModules.NEP6" Version="0.0.1" />
     <PackageReference Include="Rg.Plugins.Popup" Version="1.1.4.145-pre" />
     <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="16.1.0.32" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.3.6" />

@@ -41,8 +41,8 @@
                 <xfx:XfxEntry Style="{StaticResource LoginStyle}"
                               FloatingHintEnabled="True"
                               HorizontalOptions="FillAndExpand"
-                              Placeholder="Encripted private key or WIF"
-                              Text="" />
+                              Placeholder="Encripted private key or WIF" IsPassword="True"
+                              Text="{Binding Wif}" />
 
                 <Button Text="Login"
                         VerticalOptions="EndAndExpand" Margin="1,30"

@@ -11,11 +11,9 @@ namespace PhantasmaMail.Services.Authentication
 
 		//User AuthenticatedUser { get; }
 
-		Task<bool> LoginAsync(string email, string password); 
+		Task<bool> LoginAsync(string encryptedKey, string password);
 
-		Task<bool> LoginWithMicrosoftAsync();
-
-		Task<bool> UserIsAuthenticatedAndValidAsync();
+	    Task<bool> LoginAsync(string wif);
 
 		Task LogoutAsync();
 	}
