@@ -25,6 +25,9 @@
 
             <!-- CONVERTERS -->
             <converters:MenuItemTypeConverter x:Key="MenuItemTypeConverter"/>
+            <converters:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
+            <converters:LoginButtonBooleanToColorConverter x:Key="LoginButtonBooleanToColorConverter"/>
+            <converters:LoginTextBooleanToColorConverter x:Key="LoginTextBooleanToColorConverter"/>
 
             <!-- FONTS -->
 

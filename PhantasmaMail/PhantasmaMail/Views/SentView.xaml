@@ -3,10 +3,10 @@
     x:Class="PhantasmaMail.Views.SentView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:extensions="clr-namespace:PhantasmaMail.MarkupExtensions"
+    xmlns:markupExtensions="clr-namespace:PhantasmaMail.MarkupExtensions"
     xmlns:xForms="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
     xmlns:controls="clr-namespace:PhantasmaMail.Controls;assembly=PhantasmaMail"
-    Title="{extensions:Translate MenuItem_Sent}">
+    Title="{markupExtensions:Translate MenuItem_Sent}">
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="icon.png"/>
     </ContentPage.ToolbarItems>

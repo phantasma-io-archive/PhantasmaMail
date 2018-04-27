@@ -4,12 +4,13 @@ using Android.OS;
 using Acr.UserDialogs;
 using FFImageLoading.Forms.Droid;
 using FFImageLoading.Svg.Forms;
+using RoundedBoxView.Forms.Plugin.Droid;
 using Xfx;
 
 namespace PhantasmaMail.Droid
 {
     [Activity(Label = "Phantasma Mail", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    public class MainActivity : Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
@@ -19,8 +20,9 @@ namespace PhantasmaMail.Droid
             base.OnCreate(bundle);
 
             XfxControls.Init();
-            global::Xamarin.Forms.Forms.Init(this, bundle);
-			UserDialogs.Init(this);
+            Xamarin.Forms.Forms.Init(this, bundle);
+            RoundedBoxViewRenderer.Init();
+            UserDialogs.Init(this);
 			Rg.Plugins.Popup.Popup.Init(this, bundle);
             CachedImageRenderer.Init(true);
             var ignore = typeof(SvgCachedImage);

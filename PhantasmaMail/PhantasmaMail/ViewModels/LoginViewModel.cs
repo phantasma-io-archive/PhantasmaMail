@@ -51,16 +51,49 @@ namespace PhantasmaMail.ViewModels
             }
         }
 
+        private bool _isEncryptedKey = true;
+
+        public bool IsEncryptedKey
+        {
+            get => _isEncryptedKey;
+            set
+            {
+                if (_isEncryptedKey == value) return;
+                _isEncryptedKey = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private bool _isWif = false;
+
+        public bool IsWif
+        {
+            get => _isWif;
+            set
+            {
+                if (_isWif == value) return;
+                _isWif = value;
+                OnPropertyChanged();
+            }
+        }
+
         #endregion
 
 
         public ICommand LoginCommand => new Command(async () => await LoginExecute());
+        public ICommand SwitchLoginCommand => new Command(SwithLoginExecute);
 
         private async Task LoginExecute()
         {
             // TODO LOGIN LOGIC
             //await Task.Delay(1);
             await NavigationService.NavigateToAsync<MainViewModel>();
+        }
+
+        private void SwithLoginExecute()
+        {
+            IsEncryptedKey = !IsEncryptedKey;
+            IsWif = !IsWif;
         }
     }
 }

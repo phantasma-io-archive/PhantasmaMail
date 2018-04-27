@@ -61,6 +61,60 @@ namespace PhantasmaMail.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Encrypted Key.
+        /// </summary>
+        public static string Button_EncryptedKey {
+            get {
+                return ResourceManager.GetString("Button_EncryptedKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        public static string Button_Login {
+            get {
+                return ResourceManager.GetString("Button_Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WIF.
+        /// </summary>
+        public static string Button_WIF {
+            get {
+                return ResourceManager.GetString("Button_WIF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Encrypted Key.
+        /// </summary>
+        public static string Entry_EncryptedKey_Text {
+            get {
+                return ResourceManager.GetString("Entry_EncryptedKey_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string Entry_Password_Text {
+            get {
+                return ResourceManager.GetString("Entry_Password_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WIF.
+        /// </summary>
+        public static string Entry_WIF_Text {
+            get {
+                return ResourceManager.GetString("Entry_WIF_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Draft.
         /// </summary>
         public static string MenuItem_Draft {

@@ -6,6 +6,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
+    xmlns:abstractions="clr-namespace:RoundedBoxView.Forms.Plugin.Abstractions;assembly=RoundedBoxView.Forms.Plugin.Abstractions"
+    xmlns:markupExtensions="clr-namespace:PhantasmaMail.MarkupExtensions;assembly=PhantasmaMail"
     BackgroundImage="BackgroundLogin.png">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -22,6 +24,13 @@
                         Value="{StaticResource LargeSize}" />
             </Style>
 
+            <Style x:Key="LoginOptionLabelStyle"
+                   BasedOn="{StaticResource OpenSansSemiBoldLabelStyle}"
+                   TargetType="Label">
+                <Setter Property="FontSize"
+                        Value="{StaticResource MediumSize}" />
+            </Style>
+
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
@@ -36,20 +45,71 @@
                    FontFamily="{StaticResource GeoMedium}"
                    HorizontalTextAlignment="Center" />
 
-            <StackLayout VerticalOptions="EndAndExpand">
+            <Grid VerticalOptions="EndAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
 
-                <xfx:XfxEntry Style="{StaticResource LoginStyle}"
+                <xfx:XfxEntry Style="{StaticResource LoginStyle}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
                               FloatingHintEnabled="True"
+                              IsVisible="{Binding IsEncryptedKey}"
                               HorizontalOptions="FillAndExpand"
-                              Placeholder="Encripted private key or WIF" IsPassword="True"
+                              Placeholder="{markupExtensions:Translate Entry_EncryptedKey_Text}" IsPassword="False"
+                              Text="{Binding EncryptedKey}" />
+
+                <xfx:XfxEntry Style="{StaticResource LoginStyle}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                              FloatingHintEnabled="True"
+                              IsVisible="{Binding IsEncryptedKey, Converter={StaticResource InverseBooleanConverter}}"
+                              HorizontalOptions="FillAndExpand"
+                              Placeholder="{markupExtensions:Translate Entry_WIF_Text}" IsPassword="False"
                               Text="{Binding Wif}" />
 
-                <Button Text="Login"
-                        VerticalOptions="EndAndExpand" Margin="1,30"
+                <xfx:XfxEntry Style="{StaticResource LoginStyle}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                              FloatingHintEnabled="True"
+                              IsVisible="{Binding IsEncryptedKey}"
+                              HorizontalOptions="FillAndExpand"
+                              Placeholder="{markupExtensions:Translate Entry_Password_Text}" IsPassword="True"
+                              Text="{Binding Password}" />
+
+                <Button Text="Login" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0"
+                        VerticalOptions="EndAndExpand" Margin="1,8,1,6"
                         HorizontalOptions="FillAndExpand"
                         Style="{StaticResource ButtonStyle}"
+                        TextColor="#8AA8A3"
                         Command="{Binding LoginCommand}" />
-            </StackLayout>
+
+                <Frame Padding="8" Grid.Row="3" Grid.Column="0" BackgroundColor="{Binding IsEncryptedKey, Converter={StaticResource LoginButtonBooleanToColorConverter}}" 
+                       HorizontalOptions="FillAndExpand" 
+                       HasShadow="False" OutlineColor="Transparent" CornerRadius="6" Margin="5,0">
+                    <Label Text="{markupExtensions:Translate Button_EncryptedKey}" 
+                           Style="{StaticResource LoginOptionLabelStyle}"
+                           TextColor="{Binding IsEncryptedKey, Converter={StaticResource LoginTextBooleanToColorConverter}}" 
+                           HorizontalTextAlignment="Center"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SwitchLoginCommand}"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <Frame Padding="8" Grid.Row="3" Grid.Column="1" BackgroundColor="{Binding IsWif, Converter={StaticResource LoginButtonBooleanToColorConverter}}" 
+                       HorizontalOptions="FillAndExpand"
+                       HasShadow="False" OutlineColor="Transparent" CornerRadius="6" Margin="5,0">
+                    <Label Text="{markupExtensions:Translate Button_WIF}" 
+                           Style="{StaticResource LoginOptionLabelStyle}"
+                           TextColor="{Binding IsWif, Converter={StaticResource LoginTextBooleanToColorConverter}}" 
+                           HorizontalTextAlignment="Center" />
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SwitchLoginCommand}"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+            </Grid>
 
 
         </StackLayout>

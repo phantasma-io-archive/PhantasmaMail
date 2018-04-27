@@ -117,6 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Button_EncryptedKey" xml:space="preserve">
+    <value>Encrypted Key</value>
+  </data>
+  <data name="Button_Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Button_WIF" xml:space="preserve">
+    <value>WIF</value>
+  </data>
+  <data name="Entry_EncryptedKey_Text" xml:space="preserve">
+    <value>Encrypted Key</value>
+  </data>
+  <data name="Entry_Password_Text" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Entry_WIF_Text" xml:space="preserve">
+    <value>WIF</value>
+  </data>
   <data name="MenuItem_Draft" xml:space="preserve">
     <value>Draft</value>
   </data>
