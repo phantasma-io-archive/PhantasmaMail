@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace PhantasmaMail.ViewModels
 {
-    public class DraftViewModel : ViewModelBase
+    public class DraftViewModel : ViewModelBase // todo change draft to "compose" wtv
     {
         private SendMessage _message;
         public SendMessage Message

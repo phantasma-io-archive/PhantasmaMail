@@ -56,7 +56,7 @@ namespace PhantasmaMail.ViewModels
 				Title = AppResource.MenuItem_Draft,
 				MenuItemType = Models.UI.MenuItemType.Draft,
 				ViewModelType = typeof(DraftViewModel),
-				IsEnabled = true
+				IsEnabled = false
 			});
             MenuItems.Add(new Models.UI.MenuItem
             {

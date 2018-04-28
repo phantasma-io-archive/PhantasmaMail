@@ -16,6 +16,14 @@ namespace PhantasmaMail.Services.Navigation
 
         protected Application CurrentApplication => Application.Current;
 
+        public ViewModelBase GetCurrentViewModel()
+        {
+            var currentMainpage = (MasterDetailPage)CurrentApplication.MainPage;
+            var detailPage = currentMainpage.Detail as CustomNavigationPage;
+            var vm = detailPage?.CurrentPage.BindingContext as ViewModelBase;
+            return vm;
+        }
+
         //public NavigationService(IAuthenticationService authenticationService)
 
         public NavigationService()
@@ -169,7 +177,6 @@ namespace PhantasmaMail.Services.Navigation
             Mappings.Add(typeof(ExtendedSplashViewModel), typeof(ExtendedSplashView));
             Mappings.Add(typeof(LoginViewModel), typeof(LoginView));
             Mappings.Add(typeof(MainViewModel), typeof(MainView));
-            Mappings.Add(typeof(DashboardViewModel), typeof(DashboardView));
             Mappings.Add(typeof(InboxViewModel), typeof(InboxView));
             Mappings.Add(typeof(DraftViewModel), typeof(DraftView));
             Mappings.Add(typeof(SentViewModel), typeof(SentView));

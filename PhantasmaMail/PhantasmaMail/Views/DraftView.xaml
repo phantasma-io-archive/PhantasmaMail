@@ -89,7 +89,7 @@
                 </Grid.ColumnDefinitions>
 
                 <!-- Exit -->
-                <ffimageloadingsvg:SvgCachedImage VerticalOptions="Center" HorizontalOptions="Center" Source="send.svg"
+                <ffimageloadingsvg:SvgCachedImage VerticalOptions="Center" HorizontalOptions="Center" Source="X.svg"
                                                   Grid.Column="0" HeightRequest="30"
                                                   WidthRequest="30">
                     <ffimageloadingsvg:SvgCachedImage.Transformations>

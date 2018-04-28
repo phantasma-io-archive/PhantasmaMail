@@ -5,18 +5,45 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:markupExtensions="clr-namespace:PhantasmaMail.MarkupExtensions"
     xmlns:xForms="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:controls="clr-namespace:PhantasmaMail.Controls;assembly=PhantasmaMail"
     Title="{markupExtensions:Translate MenuItem_Sent}">
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="icon.png"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <Grid VerticalOptions="FillAndExpand">
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="20,10" >
+                <Label Text="Inbox" Margin="10,0" Style="{StaticResource SwitchBarLabelStyle}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SwitchToInboxCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Label Text="Sent" Margin="10,0" Style="{StaticResource SwitchBarLabelStyle}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SwitchToSentCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <!-- Search -->
+                <ffimageloadingsvg:SvgCachedImage VerticalOptions="Center" HorizontalOptions="EndAndExpand"
+                                                  Source="search.svg"  HeightRequest="20"
+                                                  WidthRequest="20">
+                    <ffimageloadingsvg:SvgCachedImage.Transformations>
+                        <fftransformations:TintTransformation EnableSolidColor="true"
+                                                              HexColor="#A1ACB3" />
+                    </ffimageloadingsvg:SvgCachedImage.Transformations>
+                </ffimageloadingsvg:SvgCachedImage>
+            </StackLayout>
+
             <xForms:SfListView
-                Grid.Row="0"
+                Grid.Row="1"
                 AutoFitMode="Height"
                 ItemsSource="{Binding SentList, Mode=TwoWay}"
                 SelectedItem="{Binding MessageSelected}"

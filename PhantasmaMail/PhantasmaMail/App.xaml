@@ -192,6 +192,11 @@
                         Value="{StaticResource MidMediumSize}" />
             </Style>
 
+            <Style x:Key="SwitchBarLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="{StaticResource LargeSize}" />
+                <Setter Property="FontFamily" Value="{StaticResource OpenSansSemiBold}" />
+            </Style>
+
             <Style x:Key="ButtonStyle" TargetType="Button">
                 <Setter Property="BorderRadius" Value="8" />
                 <Setter Property="BackgroundColor" Value="#FFFFFF" />
