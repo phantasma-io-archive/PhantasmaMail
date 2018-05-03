@@ -31,45 +31,15 @@ namespace PhantasmaMail.ViewModels
             await Task.Delay(1);
         }
 
+        public SentViewModel()
+        {
+            //InitTestList();
+        }
+
 
         private void InitTestList()
         {
-            SentList = new ObservableCollection<InboxMessage>
-            {
-                new InboxMessage
-                {
-                    Content =
-                        "It is a long established fact that a reader will be distracted by the readable content if you want any desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for any desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for any desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for.",
-                    FromEmail = "test@phantasma.io",
-                    FromName = "John Test",
-                    ReceiveDate = "string date",
-                    Subject = "This is a test"
-                },
-                new InboxMessage
-                {
-                    Content = "This is a small content",
-                    FromEmail = "test@phantasma.io",
-                    FromName = "John Test",
-                    ReceiveDate = "string date",
-                    Subject = "This is a test"
-                },
-                new InboxMessage
-                {
-                    Content = "This is a long content dsadasdadsadsadadadsadadas dasdas asdas sa",
-                    FromEmail = "test@phantasma.io",
-                    FromName = "John Test",
-                    ReceiveDate = "string date",
-                    Subject = "This is a test"
-                },
-                new InboxMessage
-                {
-                    Content = "This is a long content dsadasdadsadsadadadsadadas dasdas asdas sa",
-                    FromEmail = "test@phantasma.io",
-                    FromName = "John Test",
-                    ReceiveDate = "string date",
-                    Subject = "This is a test"
-                }
-            };
+            SentList = AppSettings.SentMessages;
         }
 
         private async Task MessageSelectedExecute(InboxMessage message)

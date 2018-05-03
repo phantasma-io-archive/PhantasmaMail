@@ -2,6 +2,8 @@
 using PhantasmaMail.Services.Dialog;
 using PhantasmaMail.Services.Navigation;
 using System;
+using PhantasmaMail.Services.Authentication;
+using PhantasmaMail.Services.Phantasma;
 
 namespace PhantasmaMail.ViewModels.Base
 {
@@ -18,6 +20,8 @@ namespace PhantasmaMail.ViewModels.Base
 
             _containerBuilder.RegisterType<DialogService>().As<IDialogService>();
             _containerBuilder.RegisterType<NavigationService>().As<INavigationService>();
+            _containerBuilder.RegisterType<AuthenticationService>().As<IAuthenticationService>();
+            _containerBuilder.RegisterType<PhantasmaService>().As<IPhantasmaService>();
 
             _containerBuilder.RegisterType<ExtendedSplashViewModel>();
             _containerBuilder.RegisterType<LoginViewModel>();

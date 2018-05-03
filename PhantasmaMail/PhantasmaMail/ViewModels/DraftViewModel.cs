@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Acr.UserDialogs;
 using PhantasmaMail.Models;
 using PhantasmaMail.ViewModels.Base;
 using Xamarin.Forms;
@@ -57,9 +58,21 @@ namespace PhantasmaMail.ViewModels
 
         private async Task SendMessageExecute()
         {
-            // todo check Message content
+            // todo REDO
             if (string.IsNullOrEmpty(Message.Subject) || string.IsNullOrEmpty(Message.ToAddress)) return;
-            await Task.Delay(1);
+
+            UserDialogs.Instance.ShowLoading();
+            await Task.Delay(200);
+            UserDialogs.Instance.HideLoading();
+            await NavigationService.NavigateToAsync<InboxViewModel>();
+            AppSettings.SentMessages.Insert(0, new InboxMessage
+            {
+                Subject = Message.Subject,
+                Content = Message.TextContent,
+                FromEmail = Message.FromAddress,
+                FromName = "Relfos",
+                ReceiveDate = DateTime.UtcNow.ToString("dd/MM/YYYY")
+            });
         }
 
         private async Task AttachFileExecute()

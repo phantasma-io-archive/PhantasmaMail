@@ -4,6 +4,8 @@ using PhantasmaMail.Services.Dialog;
 using PhantasmaMail.Services.Navigation;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using PhantasmaMail.Services.Authentication;
+using PhantasmaMail.Services.Phantasma;
 using Xamarin.Forms;
 
 namespace PhantasmaMail.ViewModels.Base
@@ -14,14 +16,18 @@ namespace PhantasmaMail.ViewModels.Base
 
         protected readonly IDialogService DialogService;
         protected readonly INavigationService NavigationService;
+        protected readonly IAuthenticationService AuthenticationService;
+        protected readonly IPhantasmaService PhantasmaService;
 
         public ICommand SwitchToInboxCommand => new Command(async () => await SwitchToInboxExecute());
         public ICommand SwitchToSentCommand => new Command(async () => await SwitchToSentExecute());
 
-        public ViewModelBase()
+        protected ViewModelBase()
         {
             DialogService = Locator.Instance.Resolve<IDialogService>();
             NavigationService = Locator.Instance.Resolve<INavigationService>();
+            AuthenticationService = Locator.Instance.Resolve<IAuthenticationService>();
+            PhantasmaService = Locator.Instance.Resolve<IPhantasmaService>();
         }
 
         //public ViewModelBase(IDialogService dialogService, INavigationService navigationService)

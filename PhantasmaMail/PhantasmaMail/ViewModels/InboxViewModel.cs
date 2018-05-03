@@ -44,6 +44,8 @@ namespace PhantasmaMail.ViewModels
         public ICommand MessageSelectedCommand =>
             new Command<InboxMessage>(async message => await MessageSelectedExecute(message));
 
+        public ICommand RefreshCommand => new Command(async () => await RefreshExecute());
+
         public InboxViewModel()
         {
         }
@@ -61,35 +63,35 @@ namespace PhantasmaMail.ViewModels
             {
                 new InboxMessage
                 {
-                    Content = "It is a long established fact that a reader will be distracted by the readable content if you want any desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for any desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for any desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for.",
-                    FromEmail = "test@phantasma.io",
-                    FromName = "John Test",
-                    ReceiveDate = "string date",
-                    Subject = "This is a test"
+                    Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis fermentum quam, eget lacinia augue. In scelerisque, metus laoreet fringilla tincidunt, diam justo maximus dui, a auctor ex velit vitae tortor. Nam euismod malesuada libero, sed tempus magna. Duis at turpis in justo feugiat ornare sed eu metus. Praesent pharetra vulputate est, suscipit euismod odio faucibus quis. Curabitur ac ligula commodo, lacinia ante ut, porttitor odio. Nunc ultrices nisl vitae ligula posuere finibus. Suspendisse ultrices ex lorem, facilisis ullamcorper eros sollicitudin a. Vestibulum quis hendrerit odio.",
+                    FromEmail = "relfos@phantasma.io",
+                    FromName = "Relfos",
+                    ReceiveDate = DateTime.UtcNow.ToString("dd/MM/yyyy"),
+                    Subject = "Test message from Phantasma"
                 },
                 new InboxMessage
                 {
-                    Content = "This is a small content",
-                    FromEmail = "test@phantasma.io",
-                    FromName = "John Test",
-                    ReceiveDate = "string date",
-                    Subject = "This is a test"
+                    Content = "Hello from Phantasma!",
+                    FromEmail = "bruno@phantasma.io",
+                    FromName = "Bruno",
+                    ReceiveDate = DateTime.UtcNow.AddDays(-1).ToString("dd/MM/yyyy"),
+                    Subject = "Hi"
                 },
                 new InboxMessage
                 {
-                    Content = "This is a long content dsadasdadsadsadadadsadadas dasdas asdas sa",
-                    FromEmail = "test@phantasma.io",
-                    FromName = "John Test",
-                    ReceiveDate = "string date",
-                    Subject = "This is a test"
+                    Content = "Duis laoreet eros libero, vitae accumsan sapien dignissim sit amet. Proin lobortis libero lorem, condimentum cursus risus porttitor quis. Nam in suscipit tortor. Aenean ullamcorper erat a lacus lacinia consequat.",
+                    FromEmail = "miguel@phantasma.io",
+                    FromName = "Miguel",
+                    ReceiveDate = DateTime.UtcNow.AddDays(-4).ToString("dd/MM/yyyy"),
+                    Subject = "Results from backend"
                 },
                 new InboxMessage
                 {
-                    Content = "This is a long content dsadasdadsadsadadadsadadas dasdas asdas sa",
-                    FromEmail = "test@phantasma.io",
-                    FromName = "John Test",
-                    ReceiveDate = "string date",
-                    Subject = "This is a test"
+                    Content = "Donec et tincidunt nulla. Fusce id vulputate lectus. Cras lacus ex, congue a velit rhoncus, fermentum condimentum neque.",
+                    FromEmail = "alex@phantasma.io",
+                    FromName = "Alex",
+                    ReceiveDate = DateTime.UtcNow.AddDays(-10).ToString("dd/MM/yyyy"),
+                    Subject = "Lorem ipsorum"
                 }
             };
         }
@@ -120,6 +122,18 @@ namespace PhantasmaMail.ViewModels
                 await NavigationService.NavigateToAsync<MessageDetailViewModel>(item);
                 MessageSelected = null;
             }
+        }
+
+        private Task RefreshExecute()
+        {
+            //try
+            //{
+                throw new NotImplementedException();
+            //}
+            //catch (Exception ex)
+            //{
+
+            //}
         }
     }
 }

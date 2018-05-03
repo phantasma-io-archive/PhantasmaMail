@@ -1,7 +1,6 @@
 ﻿using FFImageLoading.Forms.Touch;
 using FFImageLoading.Svg.Forms;
 using Foundation;
-using RoundedBoxView.Forms.Plugin.iOSUnified;
 using Syncfusion.ListView.XForms.iOS;
 using UIKit;
 using Xfx;
@@ -26,7 +25,6 @@ namespace PhantasmaMail.iOS
 			Rg.Plugins.Popup.Popup.Init();
             XfxControls.Init();
             Xamarin.Forms.Forms.Init();
-            RoundedBoxViewRenderer.Init();
             SfListViewRenderer.Init();
             XFGloss.iOS.Library.Init();
             CachedImageRenderer.Init();

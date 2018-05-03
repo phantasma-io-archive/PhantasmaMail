@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using PhantasmaMail.Services.Phantasma;
 using Xamarin.Forms;
 
 namespace PhantasmaMail.ViewModels
@@ -85,9 +86,47 @@ namespace PhantasmaMail.ViewModels
 
         private async Task LoginExecute()
         {
-            // TODO LOGIN LOGIC
-            //await Task.Delay(1);
-            await NavigationService.NavigateToAsync<MainViewModel>();
+            try
+            {
+                if (IsBusy) return;
+                IsBusy = true;
+
+                // TODO LOGIN LOGIC
+                if (IsWif)
+                {
+                    if (!await AuthenticationService.LoginAsync(Wif))
+                    {
+                        await DialogService.ShowAlertAsync("Invalid WIF", "Error", "Ok");
+                        return;
+                    }
+                    await NavigationService.NavigateToAsync<MainViewModel>();
+                }
+                else
+                {
+                    if (!await AuthenticationService.LoginAsync(EncryptedKey, Password))
+                    {
+                        await DialogService.ShowAlertAsync("Invalid Encrypted Key/Password", "Error", "Ok");
+                        return;
+                    }
+                    await NavigationService.NavigateToAsync<MainViewModel>();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+
+
+        }
+
+        public override Task InitializeAsync(object navigationData)
+        {
+            Wif = "L1mLVqjnuSHNeeGPpPq2aRv74Pm9TXJcXkhCJAz2K9s1Lrrd5fzH";
+            return Task.FromResult(true);
         }
 
         private void SwithLoginExecute()

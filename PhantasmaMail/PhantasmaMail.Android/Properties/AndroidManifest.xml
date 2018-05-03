@@ -3,5 +3,5 @@
 	<uses-sdk android:minSdkVersion="15" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.INTERNET" />
-	<application android:label="Phantasma Mail"></application>
+	<application android:label="Phantasma Mail" android:icon="@drawable/phantasma_logo_vector"></application>
 </manifest>

@@ -36,7 +36,7 @@
                 <!-- Search -->
                 <ffimageloadingsvg:SvgCachedImage VerticalOptions="Center" HorizontalOptions="EndAndExpand"
                                                   Source="search.svg"  HeightRequest="20"
-                                                  WidthRequest="20">
+                                                  WidthRequest="20" IsVisible="false">
                     <ffimageloadingsvg:SvgCachedImage.Transformations>
                         <fftransformations:TintTransformation EnableSolidColor="true"
                                                               HexColor="#A1ACB3" />
@@ -49,7 +49,7 @@
                 AutoFitMode="Height"
                 ItemsSource="{Binding InboxList, Mode=TwoWay}"
                 SelectedItem="{Binding MessageSelected}"
-                SelectionBackgroundColor="Red"
+                SelectionBackgroundColor="{StaticResource DarkBlueGreen}"
                 SelectionMode="Single"
                 VerticalOptions="FillAndExpand">
                 <syncfusion:SfListView.ItemTemplate>

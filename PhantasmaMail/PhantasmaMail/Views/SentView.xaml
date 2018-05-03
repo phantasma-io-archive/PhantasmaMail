@@ -47,7 +47,7 @@
                 AutoFitMode="Height"
                 ItemsSource="{Binding SentList, Mode=TwoWay}"
                 SelectedItem="{Binding MessageSelected}"
-                SelectionBackgroundColor="Red"
+                SelectionBackgroundColor="{StaticResource DarkBlueGreen}"
                 SelectionMode="Single"
                 VerticalOptions="FillAndExpand">
                 <xForms:SfListView.ItemTemplate>

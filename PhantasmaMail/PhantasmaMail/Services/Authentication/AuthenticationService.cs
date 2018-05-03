@@ -9,12 +9,12 @@ namespace PhantasmaMail.Services.Authentication
 
         public Task<bool> LoginAsync(string encryptedKey, string password)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(!string.IsNullOrEmpty(encryptedKey) && !string.IsNullOrEmpty(password));
         }
 
         public Task<bool> LoginAsync(string wif)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(!string.IsNullOrEmpty(wif));
         }
 
         public Task LogoutAsync()

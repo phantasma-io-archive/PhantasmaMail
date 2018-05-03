@@ -19,6 +19,19 @@ namespace PhantasmaMail.Models
             }
         }
 
+        private string _fromAddress;
+
+        public string FromAddress
+        {
+            get => _fromAddress;
+
+            set
+            {
+                _fromAddress = value;
+                OnPropertyChanged();
+            }
+        }
+
         private string _subject;
 
         public string Subject

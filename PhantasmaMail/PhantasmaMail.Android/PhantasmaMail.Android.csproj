@@ -29,6 +29,8 @@
     <AotAssemblies>false</AotAssemblies>
     <EnableLLVM>false</EnableLLVM>
     <BundleAssemblies>false</BundleAssemblies>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -62,9 +64,6 @@
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfListView">
       <Version>16.1.0.37</Version>
-    </PackageReference>
-    <PackageReference Include="Xam.Plugins.Forms.RoundedBoxView">
-      <Version>1.0.0.7</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading.Forms">
       <Version>2.3.6</Version>
