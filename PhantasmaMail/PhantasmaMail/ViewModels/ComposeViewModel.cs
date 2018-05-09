@@ -104,8 +104,13 @@ namespace PhantasmaMail.ViewModels
             if (!string.IsNullOrEmpty(txHash))
             {
                 await DialogService.ShowAlertAsync("Message sent! Use a block explorer to see your transaction: " + txHash, "Success");
+                await NavigationService.NavigateToAsync<InboxViewModel>();
             }
-            await NavigationService.NavigateToAsync<InboxViewModel>();
+            else
+            {
+                await DialogService.ShowAlertAsync("Something went wrong while sending the message", "Error");
+            }
+           
         }
 
         private string SerializeAndHashMessage()

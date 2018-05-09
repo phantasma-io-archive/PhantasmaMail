@@ -4,13 +4,13 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:markupExtensions="clr-namespace:PhantasmaMail.MarkupExtensions"
-    xmlns:xForms="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:controls="clr-namespace:PhantasmaMail.Controls;assembly=PhantasmaMail"
     Title="{markupExtensions:Translate MenuItem_Sent}">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="icon.png"/>
+        <ToolbarItem Icon="WriteEmail.png" Command="{Binding NewMessageCommand}"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
@@ -25,14 +25,14 @@
                     </Label.GestureRecognizers>
                 </Label>
 
-                <Label Text="Sent" Margin="10,0" Style="{StaticResource SwitchBarLabelStyle}">
+                <Label Text="Sent" Margin="10,0" Style="{StaticResource SwitchBarLabelStyle}" TextColor="{StaticResource DarkBlueGreen}">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding SwitchToSentCommand}"/>
                     </Label.GestureRecognizers>
                 </Label>
 
-                <!-- Search -->
-                <ffimageloadingsvg:SvgCachedImage VerticalOptions="Center" HorizontalOptions="EndAndExpand"
+                <!-- Search todo -->
+                <ffimageloadingsvg:SvgCachedImage VerticalOptions="Center" HorizontalOptions="EndAndExpand" IsVisible="False"
                                                   Source="search.svg"  HeightRequest="20"
                                                   WidthRequest="20">
                     <ffimageloadingsvg:SvgCachedImage.Transformations>
@@ -42,7 +42,8 @@
                 </ffimageloadingsvg:SvgCachedImage>
             </StackLayout>
 
-            <xForms:SfListView
+            <syncfusion:SfListView
+                x:Name="SentList"
                 Grid.Row="1"
                 AutoFitMode="Height"
                 ItemsSource="{Binding SentList, Mode=TwoWay}"
@@ -50,12 +51,19 @@
                 SelectionBackgroundColor="{StaticResource DarkBlueGreen}"
                 SelectionMode="Single"
                 VerticalOptions="FillAndExpand">
-                <xForms:SfListView.ItemTemplate>
+                <syncfusion:SfListView.Triggers>
+                    <DataTrigger TargetType="syncfusion:SfListView"
+                                 Binding="{Binding Source={x:Reference SentList}, Path=ItemsSource.Count}"
+                                 Value="0">
+                        <Setter Property="IsVisible" Value="False" />
+                    </DataTrigger>
+                </syncfusion:SfListView.Triggers>
+                <syncfusion:SfListView.ItemTemplate>
                     <DataTemplate>
                         <controls:InboxMessageCell />
                     </DataTemplate>
-                </xForms:SfListView.ItemTemplate>
-            </xForms:SfListView>
+                </syncfusion:SfListView.ItemTemplate>
+            </syncfusion:SfListView>
         </Grid>
 
     </ContentPage.Content>

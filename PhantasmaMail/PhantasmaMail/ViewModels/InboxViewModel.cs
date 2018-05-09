@@ -34,35 +34,27 @@ namespace PhantasmaMail.ViewModels
         private async Task NewMessageExecute()
         {
             if (IsBusy) return;
-            try
-            {
-                IsBusy = true;
-                await NavigationService.NavigateToAsync<ComposeViewModel>();
-            }
-            catch (Exception e)
-            {
-                Debug.WriteLine(e.Message);
-                throw;
-            }
-            finally
-            {
-                IsBusy = false;
-            }
+            IsBusy = true;
+            await NavigationService.NavigateToAsync<ComposeViewModel>();
+            IsBusy = false;
         }
 
-        private async Task MessageSelectedExecute(Message item)
+        private async Task MessageSelectedExecute(Message message)
         {
-            if (item != null)
+            if (message != null)
             {
-                await NavigationService.NavigateToAsync<MessageDetailViewModel>(item);
+                await NavigationService.NavigateToAsync<MessageDetailViewModel>(message);
                 MessageSelected = null;
             }
         }
 
         public async Task RefreshExecute()
         {
+            if (IsBusy) return;
+
             try
             {
+                IsBusy = true;
                 InboxList.Clear();
                 var name = await PhantasmaService.GetUserMailbox();
                 var mailCount = await PhantasmaService.GetMailCount(name);
@@ -74,12 +66,14 @@ namespace PhantasmaMail.ViewModels
                     InboxList.Add(mailObject);
                 }
 
-                InboxList.OrderByDescending(p => p.Date);
+                InboxList.OrderByDescending(p => p.Date).ThenByDescending(p => p.Date.Hour);
             }
             catch (Exception ex)
             {
                 await DialogService.ShowAlertAsync(ex.Message, "Error");
             }
+
+            IsBusy = false;
         }
 
         #region Observable Properties

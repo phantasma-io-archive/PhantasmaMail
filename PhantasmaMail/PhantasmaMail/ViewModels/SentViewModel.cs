@@ -9,7 +9,8 @@ namespace PhantasmaMail.ViewModels
 {
     public class SentViewModel : ViewModelBase
     {
-        // TODO: this list must be of SentMessage type
+        #region Observable Properties
+
         private ObservableCollection<Message> _sentList;
 
         public ObservableCollection<Message> SentList
@@ -22,8 +23,28 @@ namespace PhantasmaMail.ViewModels
             }
         }
 
+        private Message _messageSelected;
+
+        public Message MessageSelected
+        {
+            get => _messageSelected;
+            set
+            {
+                if (_messageSelected != value)
+                {
+                    _messageSelected = value;
+                    OnPropertyChanged();
+                    MessageSelectedCommand.Execute(_messageSelected);
+                }
+            }
+        }
+        #endregion
+
+
         public ICommand MessageSelectedCommand =>
             new Command<Message>(async message => await MessageSelectedExecute(message));
+
+        public ICommand NewMessageCommand => new Command(async () => await NewMessageExecute());
 
         public override async Task InitializeAsync(object navigationData)
         {
@@ -31,11 +52,13 @@ namespace PhantasmaMail.ViewModels
             await Task.Delay(1);
         }
 
-        public SentViewModel()
+        private async Task NewMessageExecute()
         {
-            //InitTestList();
+            if (IsBusy) return;
+            IsBusy = true;
+            await NavigationService.NavigateToAsync<ComposeViewModel>();
+            IsBusy = false;
         }
-
 
         private void InitTestList()
         {
@@ -44,7 +67,15 @@ namespace PhantasmaMail.ViewModels
 
         private async Task MessageSelectedExecute(Message message)
         {
-            await Task.Delay(1);
+            if (IsBusy) return;
+            IsBusy = true;
+            if (message != null)
+            {
+                await NavigationService.NavigateToAsync<MessageDetailViewModel>(message);
+                MessageSelected = null;
+            }
+            await NavigationService.NavigateToAsync<MessageDetailViewModel>(message);
+            IsBusy = false;
         }
     }
 }

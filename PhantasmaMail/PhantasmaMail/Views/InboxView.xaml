@@ -17,26 +17,28 @@
     <ContentPage.Content>
         <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="20,10" >
-                <Label Text="{extensions:Translate MenuItem_Inbox}" Margin="10,0" Style="{StaticResource SwitchBarLabelStyle}">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="20,10"> 
+                <Label Text="{extensions:Translate MenuItem_Inbox}" Margin="10,0"
+                       Style="{StaticResource SwitchBarLabelStyle}" TextColor="{StaticResource DarkBlueGreen}">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding SwitchToInboxCommand}"/>
+                        <TapGestureRecognizer Command="{Binding SwitchToInboxCommand}" />
                     </Label.GestureRecognizers>
                 </Label>
 
-                <Label Text="{extensions:Translate MenuItem_Sent}" Margin="10,0" Style="{StaticResource SwitchBarLabelStyle}">
+                <Label Text="{extensions:Translate MenuItem_Sent}" Margin="10,0"
+                       Style="{StaticResource SwitchBarLabelStyle}">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding SwitchToSentCommand}"/>
+                        <TapGestureRecognizer Command="{Binding SwitchToSentCommand}" />
                     </Label.GestureRecognizers>
                 </Label>
 
                 <!-- Search -->
                 <ffimageloadingsvg:SvgCachedImage VerticalOptions="Center" HorizontalOptions="EndAndExpand"
-                                                  Source="search.svg"  HeightRequest="20"
+                                                  Source="search.svg" HeightRequest="20"
                                                   WidthRequest="20" IsVisible="false">
                     <ffimageloadingsvg:SvgCachedImage.Transformations>
                         <fftransformations:TintTransformation EnableSolidColor="true"
@@ -46,8 +48,9 @@
             </StackLayout>
 
             <pullToRefresh:SfPullToRefresh x:Name="pullToRefresh" Grid.Row="1"
-                                           ProgressBackgroundColor="#428BCA" RefreshContentHeight="50" 
-                                           RefreshContentWidth="50" TransitionMode="Push" IsRefreshing="False"
+                                           ProgressBackgroundColor="{StaticResource Accent}" RefreshContentHeight="30"
+                                           RefreshContentWidth="30" TransitionMode="Push"
+                                           IsRefreshing="{Binding IsBusy}"
                                            Refreshing="PullToRefresh_Refreshing">
                 <pullToRefresh:SfPullToRefresh.PullableContent>
                     <syncfusion:SfListView
@@ -60,7 +63,7 @@
                         VerticalOptions="FillAndExpand">
                         <syncfusion:SfListView.Triggers>
                             <DataTrigger TargetType="syncfusion:SfListView"
-                                         Binding="{Binding Source={x:Reference InboxList}, Path=ItemsSource.Count}" 
+                                         Binding="{Binding Source={x:Reference InboxList}, Path=ItemsSource.Count}"
                                          Value="0">
                                 <Setter Property="IsVisible" Value="False" />
                             </DataTrigger>
@@ -74,12 +77,12 @@
                 </pullToRefresh:SfPullToRefresh.PullableContent>
 
             </pullToRefresh:SfPullToRefresh>
-            
 
-            <Label Grid.Row="1" HorizontalTextAlignment="Center" Text="You have no mails" IsVisible="False">
+
+            <Label Grid.Row="1" HorizontalTextAlignment="Center" Text="You have 0 e-mails" IsVisible="False">
                 <Label.Triggers>
                     <DataTrigger TargetType="Label"
-                                 Binding="{Binding Source={x:Reference InboxList}, Path=ItemsSource.Count}" 
+                                 Binding="{Binding Source={x:Reference InboxList}, Path=ItemsSource.Count}"
                                  Value="0">
                         <Setter Property="IsVisible" Value="True" />
                     </DataTrigger>
