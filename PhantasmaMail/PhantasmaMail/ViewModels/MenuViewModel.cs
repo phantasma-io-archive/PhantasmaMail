@@ -53,10 +53,10 @@ namespace PhantasmaMail.ViewModels
 			});
 			MenuItems.Add(new Models.UI.MenuItem
 			{
-				Title = AppResource.MenuItem_Draft,
-				MenuItemType = Models.UI.MenuItemType.Draft,
-				ViewModelType = typeof(DraftViewModel),
-				IsEnabled = false
+				Title = AppResource.MenuItem_Compose,
+				MenuItemType = Models.UI.MenuItemType.Compose,
+				ViewModelType = typeof(ComposeViewModel),
+				IsEnabled = true
 			});
             MenuItems.Add(new Models.UI.MenuItem
             {

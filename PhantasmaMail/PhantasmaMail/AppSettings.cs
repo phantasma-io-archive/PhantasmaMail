@@ -2,32 +2,37 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using NeoModules.JsonRpc.Client;
+using NeoModules.Rest.Services;
 using PhantasmaMail.Models;
 
 namespace PhantasmaMail
 {
     public static class AppSettings
     {
-		//Endpoints and other stuff
+        //TODO change this to another spot
+        public static INeoRestService RestService = new NeoScanRestService(NeoScanNet.TestNet);
+        public static RpcClient RpcClient = new RpcClient(new Uri("http://seed5.neo.org:20332"));
+
+		// Endpoints and other stuff
         // DEMO
 
-        public static ObservableCollection<InboxMessage> SentMessages = new ObservableCollection<InboxMessage>
+        public static ObservableCollection<Message> SentMessages = new ObservableCollection<Message>
         {
-            new InboxMessage
+            new Message()
             {
-                Content =
+                TextContent = 
                     "It is a long established fact that a reader will be distracted by the readable content if you want any desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for any desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for any desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for.",
-                FromEmail = "test@phantasma.io",
-                FromName = "John Test",
-                ReceiveDate =  DateTime.UtcNow.AddDays(-1).ToString("dd/MM/yyyy"),
+                FromAddress = "test@phantasma.io",
+                ToAddress =  DateTime.UtcNow.AddDays(-1).ToString("dd/MM/yyyy"),
                 Subject = "This is a test"
             },
-            new InboxMessage
+            new Message()
             {
-                Content = "This is a small content",
-                FromEmail = "test@phantasma.io",
-                FromName = "John Test",
-                ReceiveDate = DateTime.UtcNow.AddDays(-1).ToString("dd/MM/yyyy"),
+                TextContent = "This is a small content",
+                FromAddress = "test@phantasma.io",
+                ToAddress = "John Test",
+                Date = DateTime.UtcNow.AddDays(-1),
                 Subject = "This is a test"
             },
         };

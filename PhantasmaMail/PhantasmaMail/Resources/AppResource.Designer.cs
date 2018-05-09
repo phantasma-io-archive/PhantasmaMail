@@ -115,11 +115,11 @@ namespace PhantasmaMail.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Draft.
+        ///   Looks up a localized string similar to Compose.
         /// </summary>
-        public static string MenuItem_Draft {
+        public static string MenuItem_Compose {
             get {
-                return ResourceManager.GetString("MenuItem_Draft", resourceCulture);
+                return ResourceManager.GetString("MenuItem_Compose", resourceCulture);
             }
         }
         

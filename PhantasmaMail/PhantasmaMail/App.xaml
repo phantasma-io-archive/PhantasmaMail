@@ -24,6 +24,8 @@
             <Color x:Key="GradientEndColor">#C0C0C0</Color>
 
             <!-- CONVERTERS -->
+            <converters:NullToBoolConverter x:Key="NullToBoolConverter"/>
+            <converters:InverseNullToBoolConverter x:Key="InverseNullToBoolConverter"/>
             <converters:MenuItemTypeConverter x:Key="MenuItemTypeConverter"/>
             <converters:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
             <converters:LoginButtonBooleanToColorConverter x:Key="LoginButtonBooleanToColorConverter"/>

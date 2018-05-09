@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <ContentPage
-    x:Class="PhantasmaMail.Views.DraftView"
+    x:Class="PhantasmaMail.Views.ComposeView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:controls="clr-namespace:PhantasmaMail.Controls"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -9,7 +9,7 @@
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
-    Title="{extensions:Translate MenuItem_Draft}">
+    Title="{extensions:Translate MenuItem_Compose}">
     <ContentPage.Resources>
         <ResourceDictionary>
 
@@ -74,7 +74,7 @@
                              BackgroundColor="{StaticResource SeparatorGray}" />
 
                     <Label Grid.Row="5"
-                           Text="Tue 25, Mar, 6:35 PM"
+                           Text="{Binding CurrentDateTime, StringFormat='{0:f}'}"
                            HorizontalOptions="EndAndExpand"
                            Style="{StaticResource MessageTextStyle}"
                            FontSize="{StaticResource LittleSize}"/>

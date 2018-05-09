@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace PhantasmaMail.Services.Authentication
 {
-	public interface IAuthenticationService // TODO: change to neo authenticate
+	public interface IAuthenticationService
 	{
 		bool IsAuthenticated { get; }
 
-		//User AuthenticatedUser { get; }
+		User AuthenticatedUser { get; }
 
 		Task<bool> LoginAsync(string encryptedKey, string password);
 

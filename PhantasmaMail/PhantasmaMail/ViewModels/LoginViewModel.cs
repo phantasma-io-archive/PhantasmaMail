@@ -1,16 +1,58 @@
-﻿using PhantasmaMail.ViewModels.Base;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using PhantasmaMail.Services.Phantasma;
+using PhantasmaMail.ViewModels.Base;
 using Xamarin.Forms;
 
 namespace PhantasmaMail.ViewModels
 {
     public class LoginViewModel : ViewModelBase
     {
+        public ICommand LoginCommand => new Command(async () => await LoginExecute());
+        public ICommand SwitchLoginCommand => new Command(SwithLoginExecute);
+
+        private async Task LoginExecute()
+        {
+            //if (isValid) TODO see if input is rigth
+
+            try
+            {
+                if (IsBusy) return;
+                IsBusy = true;
+                DialogService.ShowLoading();
+                // TODO LOGIN LOGIC
+                if (IsWif)
+                {
+                    if (!await AuthenticationService.LoginAsync(Wif))
+                    {
+                        await DialogService.ShowAlertAsync("Invalid WIF", "Error");
+                    }
+                }
+                else
+                {
+                    if (!await AuthenticationService.LoginAsync(EncryptedKey, Password))
+                    {
+                        await DialogService.ShowAlertAsync("Invalid Encrypted Key/Password", "Error");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                await DialogService.ShowAlertAsync(ex.Message, "Error");
+            }
+
+            if (AuthenticationService.IsAuthenticated) await NavigationService.NavigateToAsync<MainViewModel>();
+            IsBusy = false;
+            DialogService.HideLoading();
+
+        }
+
+        private void SwithLoginExecute()
+        {
+            IsEncryptedKey = !IsEncryptedKey;
+            IsWif = !IsWif;
+        }
+
         #region Observable Properties
 
         private string _wif;
@@ -65,7 +107,7 @@ namespace PhantasmaMail.ViewModels
             }
         }
 
-        private bool _isWif = false;
+        private bool _isWif;
 
         public bool IsWif
         {
@@ -79,60 +121,5 @@ namespace PhantasmaMail.ViewModels
         }
 
         #endregion
-
-
-        public ICommand LoginCommand => new Command(async () => await LoginExecute());
-        public ICommand SwitchLoginCommand => new Command(SwithLoginExecute);
-
-        private async Task LoginExecute()
-        {
-            try
-            {
-                if (IsBusy) return;
-                IsBusy = true;
-
-                // TODO LOGIN LOGIC
-                if (IsWif)
-                {
-                    if (!await AuthenticationService.LoginAsync(Wif))
-                    {
-                        await DialogService.ShowAlertAsync("Invalid WIF", "Error", "Ok");
-                        return;
-                    }
-                    await NavigationService.NavigateToAsync<MainViewModel>();
-                }
-                else
-                {
-                    if (!await AuthenticationService.LoginAsync(EncryptedKey, Password))
-                    {
-                        await DialogService.ShowAlertAsync("Invalid Encrypted Key/Password", "Error", "Ok");
-                        return;
-                    }
-                    await NavigationService.NavigateToAsync<MainViewModel>();
-                }
-            }
-            catch (Exception ex)
-            {
-
-            }
-            finally
-            {
-                IsBusy = false;
-            }
-
-
-        }
-
-        public override Task InitializeAsync(object navigationData)
-        {
-            Wif = "L1mLVqjnuSHNeeGPpPq2aRv74Pm9TXJcXkhCJAz2K9s1Lrrd5fzH";
-            return Task.FromResult(true);
-        }
-
-        private void SwithLoginExecute()
-        {
-            IsEncryptedKey = !IsEncryptedKey;
-            IsWif = !IsWif;
-        }
     }
 }

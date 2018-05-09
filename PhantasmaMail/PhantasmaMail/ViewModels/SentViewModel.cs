@@ -10,9 +10,9 @@ namespace PhantasmaMail.ViewModels
     public class SentViewModel : ViewModelBase
     {
         // TODO: this list must be of SentMessage type
-        private ObservableCollection<InboxMessage> _sentList;
+        private ObservableCollection<Message> _sentList;
 
-        public ObservableCollection<InboxMessage> SentList
+        public ObservableCollection<Message> SentList
         {
             get => _sentList;
             set
@@ -23,7 +23,7 @@ namespace PhantasmaMail.ViewModels
         }
 
         public ICommand MessageSelectedCommand =>
-            new Command<InboxMessage>(async message => await MessageSelectedExecute(message));
+            new Command<Message>(async message => await MessageSelectedExecute(message));
 
         public override async Task InitializeAsync(object navigationData)
         {
@@ -42,7 +42,7 @@ namespace PhantasmaMail.ViewModels
             SentList = AppSettings.SentMessages;
         }
 
-        private async Task MessageSelectedExecute(InboxMessage message)
+        private async Task MessageSelectedExecute(Message message)
         {
             await Task.Delay(1);
         }

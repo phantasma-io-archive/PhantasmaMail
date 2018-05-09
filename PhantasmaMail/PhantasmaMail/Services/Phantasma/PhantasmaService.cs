@@ -1,204 +1,160 @@
-﻿using System.Threading.Tasks;
-using Ipfs.Api;
+﻿using System.Collections.Generic;
+using System.Globalization;
+using System.Text;
+using System.Threading.Tasks;
+using NeoModules.Core;
+using NeoModules.NEP6;
+using NeoModules.RPC;
+using NeoModules.RPC.DTOs;
+using PhantasmaMail.Services.Authentication;
+using PhantasmaMail.ViewModels.Base;
+using Helper = NeoModules.RPC.Helpers.Helper;
 
 namespace PhantasmaMail.Services.Phantasma
 {
-    public class PhantasmaService:IPhantasmaService
+    public class PhantasmaService : IPhantasmaService
     {
-        public Task<string> GetMailboxFromAddress()
+        public PhantasmaService()
         {
-            throw new System.NotImplementedException();
+            _neoRpcClient = new NeoApiService(AppSettings.RpcClient);
         }
+
+        public async Task<string> GetUserMailbox()
+        {
+            var compressedByteKey = ActiveUser.GetCompressedPublicKey().ToHexString();
+            var parameterList = new List<InvokeParameter>
+            {
+                new InvokeParameter
+                {
+                    Type = "ByteArray",
+                    Value = compressedByteKey
+                }
+            };
+            var result = await _neoRpcClient.Contracts.InvokeFunction.SendRequestAsync(ContractScriptHash,
+                GetMailboxFromAddressMethod, parameterList);
+
+            var nameBytes = Helper.HexToBytes(result.Stack[0].Value.ToString());
+            var name = Encoding.ASCII.GetString(nameBytes);
+            return name;
+        }
+
+        public async Task<string> RegisterMailbox(string name)
+        {
+            var compressedPublicKey = ActiveUser.GetCompressedPublicKey(); //TODO switch this block to an unified call
+            var account = ActiveUser.GetDefaultAccount();
+            var keypair = ActiveUser.GetKeypair();
+            if (compressedPublicKey == null || account == null || keypair == null) return string.Empty;
+            var scriptBytes = UInt160.Parse(ContractScriptHash).ToArray();
+            if (account.TransactionManager is AccountSignerTransactionManager accountsigner
+            ) //todo refractor NeoModules account signer
+            {
+                var transaction = await accountsigner.CallContract(keypair, scriptBytes, RegisterMailboxMethod,
+                    new object[] {compressedPublicKey, name});
+                return transaction.Hash.ToString();
+            }
+
+            return string.Empty;
+        }
+
+        public async Task<string> SendMessage(string destName, string mailHash)
+        {
+            var compressedPublicKey = ActiveUser.GetCompressedPublicKey(); //TODO switch this block to an unified call
+            var account = ActiveUser.GetDefaultAccount();
+            var keypair = ActiveUser.GetKeypair();
+
+            var scriptBytes = UInt160.Parse(ContractScriptHash).ToArray();
+            if (account.TransactionManager is AccountSignerTransactionManager accountsigner)
+            {
+                var transaction = await accountsigner.CallContract(keypair, scriptBytes, SendMessageMethod,
+                    new object[] {compressedPublicKey, destName, mailHash});
+                return transaction.Hash.ToString();
+            }
+
+            return string.Empty;
+        }
+
+        public async Task<int> GetMailCount(string boxName)
+        {
+            var parameterList = new List<InvokeParameter>
+            {
+                new InvokeParameter
+                {
+                    Type = "String",
+                    Value = boxName
+                }
+            };
+            var result =
+                await _neoRpcClient.Contracts.InvokeFunction.SendRequestAsync(ContractScriptHash, GetMailCountMethod,
+                    parameterList);
+
+            //TODO convert hex string to Int
+            var count = result.Stack[0].Value.ToString();
+            return int.Parse(count, NumberStyles.HexNumber);
+        }
+
+        public async Task<string> GetMailContent(string name, int index)
+        {
+            var parameterList = new List<InvokeParameter>
+            {
+                new InvokeParameter
+                {
+                    Type = "String",
+                    Value = name
+                },
+                new InvokeParameter
+                {
+                    Type = "Integer",
+                    Value = index.ToString()
+                }
+            };
+            var result =
+                await _neoRpcClient.Contracts.InvokeFunction.SendRequestAsync(ContractScriptHash, GetMailContentMethod,
+                    parameterList);
+
+            // TODO: return hash of message
+            var content = Helper.HexToBytes(result.Stack[0].Value.ToString());
+            return Encoding.ASCII.GetString(content);
+        }
+
+        public async Task<List<string>> GetAllMails(string name, int count)
+        {
+            var emailHashList = new List<string>();
+            for (var i = 1; i <= count; i++)
+            {
+                var mailHash = await GetMailContent(name, i);
+                emailHashList.Add(mailHash);
+            }
+
+            return emailHashList;
+        }
+
+        public async Task<List<string>> GetMailsFromRange(string name, int first, int last)
+        {
+            var emailHashList = new List<string>();
+            for (var i = first; i <= last; i++)
+            {
+                var mailHash = await GetMailContent(name, i);
+                emailHashList.Add(mailHash);
+            }
+
+            return emailHashList;
+        }
+
+        #region Private Properties
+
+        private const string GetMailboxFromAddressMethod = "getMailboxFromAddress";
+        private const string RegisterMailboxMethod = "registerMailbox";
+        private const string SendMessageMethod = "sendMessage";
+        private const string GetMailCountMethod = "getMailCount";
+        private const string GetMailContentMethod = "getMailContent";
+
+        private User ActiveUser => Locator.Instance.Resolve<IAuthenticationService>().AuthenticatedUser;
+
+        private const string
+            ContractScriptHash = "de1a53be359e8be9f3d11627bcca40548a2d5bc1"; //TODO: change to main net scripthash
+
+        private readonly NeoApiService _neoRpcClient; // TODO: fix so the app only use one RpcClient
+
+        #endregion
     }
-
-
-    //public abstract class Message
-    //{
-    //    public DataNode content { get; private set; }
-    //    public string fromAddress { get; private set; }
-    //    public string toAddress { get; private set; }
-
-    //    public string hash { get; private set; }
-
-    //    public Message(DataNode root)
-    //    {
-    //        this.content = root;
-    //        this.fromAddress = root.GetString("from");
-    //        this.toAddress = root.GetString("to");
-    //    }
-
-    //    /// <summary>
-    //    /// Returns IPFS hash
-    //    /// </summary>
-    //    public string Store()
-    //    {
-    //        if (this.hash != null)
-    //        {
-    //            return this.hash;
-    //        }
-
-    //        var ipfs = new IpfsClient();
-    //        var text = xmlw.WriteToString(this.content);
-    //        var node = ipfs.FileSystem.AddTextAsync(text).Result;
-    //        this.hash = node.Hash;
-
-    //        return this.hash;
-    //    }
-
-    //    public static Message FromHash(string hash)
-    //    {
-    //        var xml = PhantasmaMail.Store.GetFile(hash);
-
-
-    //        if (xml != null)
-    //        {
-    //            var root = XMLReader.ReadFromString(xml);
-
-    //            root = root.FindNode("mail");
-    //            return new Mail(root);
-    //        }
-
-    //        return null;
-    //    }
-    //}
-
-    //public class Mailbox
-    //{
-    //    public string name { get; private set; }
-
-    //    public string address
-    //    {
-    //        get
-    //        {
-    //            return keys.address;
-    //        }
-    //    }
-
-    //    private KeyPair keys;
-
-    //    private List<Message> _messages = new List<Message>();
-    //    public IEnumerable<Message> messages { get { return _messages; } }
-
-    //    public Action<Message> onMessageReceived = null;
-
-    //    public Mailbox(KeyPair keys)
-    //    {
-    //        this.name = null;
-
-    //        this.keys = keys;
-
-    //        var script = NeoAPI.GenerateScript(Protocol.scriptHash, "getMailboxFromAddress", new object[] { this.keys.CompressedPublicKey });
-    //        var invoke = NeoAPI.TestInvokeScript(Protocol.net, script);
-
-    //        if (invoke.result is byte[])
-    //        {
-    //            this.name = System.Text.Encoding.ASCII.GetString((byte[])invoke.result);
-    //        }
-    //    }
-
-    //    public bool RegisterName(string name)
-    //    {
-    //        if (!string.IsNullOrEmpty(this.name))
-    //        {
-    //            throw new Exception("Name already set");
-    //        }
-
-    //        var result = NeoAPI.CallContract(NeoAPI.Net.Test, keys, Protocol.scriptHash, "registerMailbox", new object[] { this.keys.CompressedPublicKey, name });
-
-    //        if (result)
-    //        {
-    //            this.name = name;
-    //        }
-
-    //        return result;
-    //    }
-
-    //    public bool SendMessage(Message msg)
-    //    {
-    //        if (msg == null)
-    //        {
-    //            return false;
-    //        }
-
-    //        var xml = XMLWriter.WriteToString(msg.content);
-
-    //        var hash = Store.CreateFile(xml);
-
-    //        return SendMessage(msg.toAddress, hash);
-    //    }
-
-    //    public bool SendMessage(string destName, string hash)
-    //    {
-    //        if (string.IsNullOrEmpty(destName))
-    //        {
-    //            return false;
-    //        }
-
-    //        if (string.IsNullOrEmpty(hash))
-    //        {
-    //            return false;
-    //        }
-
-    //        if (destName.Equals(this.name))
-    //        {
-    //            return false;
-    //        }
-
-    //        return NeoAPI.CallContract(NeoAPI.Net.Test, keys, Protocol.scriptHash, "sendMessage", new object[] { this.keys.CompressedPublicKey, destName, hash });
-    //    }
-
-    //    private DateTime lastSync = DateTime.MinValue;
-
-    //    public bool SyncMessages()
-    //    {
-    //        if (!string.IsNullOrEmpty(this.name))
-    //        {
-    //            var curTime = DateTime.Now;
-    //            var diff = curTime - lastSync;
-    //            if (diff.TotalSeconds < 20)
-    //            {
-    //                return false;
-    //            }
-
-    //            var script = NeoAPI.GenerateScript(Protocol.scriptHash, "getMailCount", new object[] { System.Text.Encoding.ASCII.GetBytes(this.name) });
-    //            var invoke = NeoAPI.TestInvokeScript(Protocol.net, script);
-
-    //            if (invoke.result is byte[])
-    //            {
-    //                var count = new BigInteger((byte[])invoke.result);
-
-    //                var oldCount = _messages.Count;
-    //                for (int i = oldCount + 1; i <= count; i++)
-    //                {
-    //                    var msg = FetchMessage(i);
-    //                    if (msg != null)
-    //                    {
-    //                        _messages.Add(msg);
-    //                    }
-    //                }
-
-    //                lastSync = curTime;
-    //                return oldCount != count;
-    //            }
-    //        }
-
-    //        return false;
-    //    }
-
-    //    private Message FetchMessage(int index)
-    //    {
-    //        var script = NeoAPI.GenerateScript(Protocol.scriptHash, "getMailContent", new object[] { this.name, index });
-    //        var invoke = NeoAPI.TestInvokeScript(Protocol.net, script);
-
-    //        if (invoke.result is byte[])
-    //        {
-    //            var hash = System.Text.Encoding.ASCII.GetString((byte[])invoke.result);
-
-    //            var msg = Message.FromHash(hash);
-    //            return msg;
-    //        }
-
-    //        return null;
-    //    }
-    //}
 }

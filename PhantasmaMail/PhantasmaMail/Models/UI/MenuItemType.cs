@@ -4,7 +4,7 @@
     {
 		Inbox,
 		Sent,
-		Draft,
+		Compose,
 		Important,
 		Trash,
         Wallet,

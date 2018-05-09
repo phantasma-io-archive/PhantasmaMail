@@ -10,9 +10,9 @@ namespace PhantasmaMail.ViewModels
 {
     public class MessageDetailViewModel : ViewModelBase
     {
-        private InboxMessage _selectedMessage;
+        private Message _selectedMessage;
 
-        public InboxMessage SelectedMessage
+        public Message SelectedMessage
         {
             get => _selectedMessage;
             set
@@ -22,14 +22,28 @@ namespace PhantasmaMail.ViewModels
             }
         }
 
+        private string _daysAgo;
+
+        public string DaysAgo
+        {
+            get => _daysAgo;
+            set
+            {
+                _daysAgo = value;
+                OnPropertyChanged();
+            }
+        }
+
         public ICommand DeleteMessageCommand => new Command(async () => await DeleteMessageExecute());
 
 
         public override Task InitializeAsync(object navigationData)
         {
-            if (navigationData is InboxMessage message)
+            if (navigationData is Message message)
             {
                 SelectedMessage = message;
+                var d = CalculateDays(message.Date);
+                DaysAgo = d + " days ago";
             }
 
             return base.InitializeAsync(navigationData);
@@ -53,6 +67,15 @@ namespace PhantasmaMail.ViewModels
             {
                 IsBusy = false;
             }
+        }
+
+        //todo move this
+        private int CalculateDays(DateTime date)
+        {
+            TimeSpan difference = DateTime.UtcNow - date;
+            var days= Convert.ToInt32(difference.TotalDays);
+            if (days == 0) return 1;
+            return days;
         }
     }
 }

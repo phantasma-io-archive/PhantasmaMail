@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace PhantasmaMail.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class DraftView : ContentPage
+	public partial class ComposeView : ContentPage
 	{
-		public DraftView ()
+		public ComposeView ()
 		{
 			InitializeComponent ();
 		}

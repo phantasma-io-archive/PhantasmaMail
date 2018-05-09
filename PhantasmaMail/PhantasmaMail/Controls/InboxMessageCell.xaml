@@ -27,7 +27,7 @@
 
             <Label Grid.Row="0"
                    Grid.Column="2"
-                   Text="{Binding ReceiveDate}"
+                   Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}"
                    HorizontalOptions="End"
                    Style="{StaticResource MessageTextStyle}" 
                    FontSize="{StaticResource LittleSize}"/>
@@ -35,7 +35,7 @@
             <Label Grid.Row="1"
                    Grid.Column="1"
                    Grid.ColumnSpan="2"
-                   Text="{Binding Content}"
+                   Text="{Binding TextContent}"
                    Style="{StaticResource MessageTextStyle}">
                 <Label.Effects>
                     <effects:MaxLinesEffect MaxLines="2" />
@@ -49,12 +49,12 @@
 
             <Label Grid.Row="3"
                    Grid.Column="1"
-                   Text="{Binding FromName}"
+                   Text="{Binding FromAddress}"
                    Style="{StaticResource MessageSenderStyle}" />
 
             <Label Grid.Row="3"
                    Grid.Column="2"
-                   Text="{Binding FromEmail}"
+                   Text="{Binding ToAddress}"
                    Style="{StaticResource MessageSenderStyle}" />
         </Grid>
     </Frame>

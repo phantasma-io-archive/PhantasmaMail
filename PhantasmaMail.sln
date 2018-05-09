@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhantasmaMail.Android", "Ph
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhantasmaMail.iOS", "PhantasmaMail\PhantasmaMail.iOS\PhantasmaMail.iOS.csproj", "{7C243EC1-7D6D-4AE2-99CC-B97C2818DF72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhantasmaMail", "PhantasmaMail\PhantasmaMail\PhantasmaMail.csproj", "{447D553C-16D0-4D0C-9B3B-5852454F69DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhantasmaMail", "PhantasmaMail\PhantasmaMail\PhantasmaMail.csproj", "{447D553C-16D0-4D0C-9B3B-5852454F69DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

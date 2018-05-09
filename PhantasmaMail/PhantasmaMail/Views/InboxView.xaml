@@ -9,6 +9,7 @@
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:extensions="clr-namespace:PhantasmaMail.MarkupExtensions"
+    xmlns:pullToRefresh="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms"
     Title="{extensions:Translate MenuItem_Inbox}">
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="WriteEmail.png" Command="{Binding NewMessageCommand}" />
@@ -44,20 +45,46 @@
                 </ffimageloadingsvg:SvgCachedImage>
             </StackLayout>
 
-            <syncfusion:SfListView
-                Grid.Row="1"
-                AutoFitMode="Height"
-                ItemsSource="{Binding InboxList, Mode=TwoWay}"
-                SelectedItem="{Binding MessageSelected}"
-                SelectionBackgroundColor="{StaticResource DarkBlueGreen}"
-                SelectionMode="Single"
-                VerticalOptions="FillAndExpand">
-                <syncfusion:SfListView.ItemTemplate>
-                    <DataTemplate>
-                        <controls:InboxMessageCell />
-                    </DataTemplate>
-                </syncfusion:SfListView.ItemTemplate>
-            </syncfusion:SfListView>
+            <pullToRefresh:SfPullToRefresh x:Name="pullToRefresh" Grid.Row="1"
+                                           ProgressBackgroundColor="#428BCA" RefreshContentHeight="50" 
+                                           RefreshContentWidth="50" TransitionMode="Push" IsRefreshing="False"
+                                           Refreshing="PullToRefresh_Refreshing">
+                <pullToRefresh:SfPullToRefresh.PullableContent>
+                    <syncfusion:SfListView
+                        x:Name="InboxList"
+                        AutoFitMode="Height"
+                        ItemsSource="{Binding InboxList, Mode=TwoWay}"
+                        SelectedItem="{Binding MessageSelected}"
+                        SelectionBackgroundColor="{StaticResource DarkBlueGreen}"
+                        SelectionMode="Single"
+                        VerticalOptions="FillAndExpand">
+                        <syncfusion:SfListView.Triggers>
+                            <DataTrigger TargetType="syncfusion:SfListView"
+                                         Binding="{Binding Source={x:Reference InboxList}, Path=ItemsSource.Count}" 
+                                         Value="0">
+                                <Setter Property="IsVisible" Value="False" />
+                            </DataTrigger>
+                        </syncfusion:SfListView.Triggers>
+                        <syncfusion:SfListView.ItemTemplate>
+                            <DataTemplate>
+                                <controls:InboxMessageCell />
+                            </DataTemplate>
+                        </syncfusion:SfListView.ItemTemplate>
+                    </syncfusion:SfListView>
+                </pullToRefresh:SfPullToRefresh.PullableContent>
+
+            </pullToRefresh:SfPullToRefresh>
+            
+
+            <Label Grid.Row="1" HorizontalTextAlignment="Center" Text="You have no mails" IsVisible="False">
+                <Label.Triggers>
+                    <DataTrigger TargetType="Label"
+                                 Binding="{Binding Source={x:Reference InboxList}, Path=ItemsSource.Count}" 
+                                 Value="0">
+                        <Setter Property="IsVisible" Value="True" />
+                    </DataTrigger>
+                </Label.Triggers>
+            </Label>
         </Grid>
 
     </ContentPage.Content>

@@ -135,8 +135,8 @@
   <data name="Entry_WIF_Text" xml:space="preserve">
     <value>WIF</value>
   </data>
-  <data name="MenuItem_Draft" xml:space="preserve">
-    <value>Draft</value>
+  <data name="MenuItem_Compose" xml:space="preserve">
+    <value>Compose</value>
   </data>
   <data name="MenuItem_Important" xml:space="preserve">
     <value>Important</value>

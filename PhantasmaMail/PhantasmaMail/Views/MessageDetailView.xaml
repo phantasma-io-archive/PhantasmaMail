@@ -50,10 +50,10 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
-                    <Label Grid.Row="0" Text="{Binding SelectedMessage.FromName}"
+                    <Label Grid.Row="0" Text="{Binding SelectedMessage.FromAddress}"
                            Style="{StaticResource SenderNameTextStyle}" />
 
-                    <Label Grid.Row="1" Text="{Binding SelectedMessage.FromEmail}"
+                    <Label Grid.Row="1" Text="{Binding SelectedMessage.ToAddress, StringFormat='Box: {0}'}"
                            Style="{StaticResource SenderNameTextStyle}" TextColor="{StaticResource LightGray}" />
 
                     <BoxView Grid.Row="2"
@@ -61,11 +61,12 @@
                              BackgroundColor="{StaticResource SeparatorGray}" />
 
                     <Label Grid.Row="3" Text="{Binding SelectedMessage.Subject}"
+                           Margin="0,4"
                            Style="{StaticResource SenderNameTextStyle}" FontSize="{StaticResource LargeSize}"
                            FontFamily="{StaticResource OpenSansSemiBold}" />
 
                     <ScrollView Grid.Row="4">
-                        <Label Text="{Binding SelectedMessage.Content}"
+                        <Label Text="{Binding SelectedMessage.TextContent}"
                                Style="{StaticResource SimpleTextStyle}" />
                     </ScrollView>
 
@@ -74,10 +75,10 @@
                              HorizontalOptions="FillAndExpand"
                              BackgroundColor="{StaticResource SeparatorGray}" />
 
-                    <Label Grid.Row="6" Text="2 days ago" HorizontalOptions="Start" VerticalOptions="End"
+                    <Label Grid.Row="6" Text="{Binding DaysAgo}" HorizontalOptions="Start" VerticalOptions="End"
                            Style="{StaticResource SimpleTextStyle}" FontSize="{StaticResource MidMediumSize}" />
 
-                    <Label Grid.Row="6" Text="Tue 9, Mar, 1:35 AM" HorizontalOptions="End" VerticalOptions="End"
+                    <Label Grid.Row="6" Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}" HorizontalOptions="End" VerticalOptions="End"
                            Style="{StaticResource SimpleTextStyle}" FontSize="{StaticResource MidMediumSize}" />
 
                 </Grid>

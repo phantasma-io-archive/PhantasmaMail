@@ -18,10 +18,10 @@ namespace PhantasmaMail.ViewModels.Base
         {
             _containerBuilder = new ContainerBuilder();
 
-            _containerBuilder.RegisterType<DialogService>().As<IDialogService>();
-            _containerBuilder.RegisterType<NavigationService>().As<INavigationService>();
-            _containerBuilder.RegisterType<AuthenticationService>().As<IAuthenticationService>();
-            _containerBuilder.RegisterType<PhantasmaService>().As<IPhantasmaService>();
+            _containerBuilder.RegisterType<DialogService>().SingleInstance().As<IDialogService>();
+            _containerBuilder.RegisterType<NavigationService>().SingleInstance().As<INavigationService>();
+            _containerBuilder.RegisterType<AuthenticationService>().SingleInstance().As<IAuthenticationService>();
+            _containerBuilder.RegisterType<PhantasmaService>().SingleInstance().As<IPhantasmaService>();
 
             _containerBuilder.RegisterType<ExtendedSplashViewModel>();
             _containerBuilder.RegisterType<LoginViewModel>();
@@ -29,7 +29,7 @@ namespace PhantasmaMail.ViewModels.Base
             _containerBuilder.RegisterType<MenuViewModel>();
             _containerBuilder.RegisterType<InboxViewModel>();
             _containerBuilder.RegisterType<SentViewModel>();
-            _containerBuilder.RegisterType<DraftViewModel>();
+            _containerBuilder.RegisterType<ComposeViewModel>();
             _containerBuilder.RegisterType<MessageDetailViewModel>();
         }
 

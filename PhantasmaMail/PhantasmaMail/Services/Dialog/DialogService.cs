@@ -1,9 +1,10 @@
-﻿using Acr.UserDialogs;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Acr.UserDialogs;
 using Xamarin.Forms;
+using Color = System.Drawing.Color;
 
 namespace PhantasmaMail.Services.Dialog
 {
@@ -27,8 +28,8 @@ namespace PhantasmaMail.Services.Dialog
             toastConfig.SetIcon(icon);
             */
 
-            toastConfig.SetMessageTextColor(System.Drawing.Color.White);
-            toastConfig.SetBackgroundColor(System.Drawing.Color.FromArgb(33, 44, 55));
+            toastConfig.SetMessageTextColor(Color.White);
+            toastConfig.SetBackgroundColor(Color.FromArgb(33, 44, 55));
 
             UserDialogs.Instance.Toast(toastConfig);
         }
@@ -48,17 +49,11 @@ namespace PhantasmaMail.Services.Dialog
         {
             try
             {
-                if (options == null)
-                {
-                    throw new ArgumentNullException(nameof(options));
-                }
+                if (options == null) throw new ArgumentNullException(nameof(options));
 
-                if (!options.Any())
-                {
-                    throw new ArgumentException("No options provided", nameof(options));
-                }
+                if (!options.Any()) throw new ArgumentException("No options provided", nameof(options));
 
-                string result =
+                var result =
                     await UserDialogs.Instance.ActionSheetAsync(message, cancelLabel, null, buttons: options.ToArray());
 
                 return options.Contains(result)
@@ -69,6 +64,16 @@ namespace PhantasmaMail.Services.Dialog
             {
                 return string.Empty;
             }
+        }
+
+        public void ShowLoading(string title) //move to localization
+        {
+            UserDialogs.Instance.ShowLoading(title, MaskType.Clear);
+        }
+
+        public void HideLoading()
+        {
+            UserDialogs.Instance.HideLoading();
         }
     }
 }

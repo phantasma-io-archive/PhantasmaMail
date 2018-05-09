@@ -17,7 +17,7 @@ namespace PhantasmaMail.Converters
             {
                 case MenuItemType.Inbox:
                     return platform ? "Assets/inbox.svg" : "inbox.svg";
-                case MenuItemType.Draft:
+                case MenuItemType.Compose:
                     return platform ? "Assets/file_text.svg" : "file_text.svg";
                 case MenuItemType.Sent:
                     return platform ? "Assets/send.svg" : "send.svg";
