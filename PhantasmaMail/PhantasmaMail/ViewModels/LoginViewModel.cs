@@ -41,10 +41,9 @@ namespace PhantasmaMail.ViewModels
                 await DialogService.ShowAlertAsync(ex.Message, "Error");
             }
 
-            if (AuthenticationService.IsAuthenticated) await NavigationService.NavigateToAsync<MainViewModel>();
             IsBusy = false;
             DialogService.HideLoading();
-
+            if (AuthenticationService.IsAuthenticated) await NavigationService.NavigateToAsync<MainViewModel>();
         }
 
         private void SwithLoginExecute()

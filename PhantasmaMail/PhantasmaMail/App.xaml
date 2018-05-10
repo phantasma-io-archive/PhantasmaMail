@@ -16,7 +16,7 @@
             <Color x:Key="LightBlueGreen">#2B6C81</Color>
             <Color x:Key="LightGray">#A1ACB3</Color>
             <Color x:Key="SeparatorGray">#D8D8D8</Color>
-            <Color x:Key="WhiteBackground">#BCC7CF</Color>
+            <Color x:Key="WhiteBackground">#E6E9EE</Color>
             <x:String x:Key="TintIconColor">#225E72</x:String>
 
 
@@ -167,6 +167,15 @@
                         Value="{StaticResource SFUITextSemibold}" />
             </Style>
 
+            <Style x:Key="NoMessagesLabelStyle" 
+                   TargetType="Label"
+                   BasedOn="{StaticResource OpenSansSemiBoldLabelStyle}">
+                <Setter Property="TextColor" 
+                        Value="{StaticResource LightGray}" />
+                <Setter Property="FontSize" 
+                        Value="{StaticResource MediumSize}" />
+            </Style>
+
             <Style x:Key="MessageTitleStyle" 
                    TargetType="Label"
                    BasedOn="{StaticResource OpenSansSemiBoldLabelStyle}">
@@ -189,9 +198,9 @@
                    TargetType="Label"
                    BasedOn="{StaticResource OpenSansRegularLabelStyle}">
                 <Setter Property="TextColor" 
-                        Value="{StaticResource LightBlueGreen}" />
+                        Value="{StaticResource LightGray}" />
                 <Setter Property="FontSize" 
-                        Value="{StaticResource MidMediumSize}" />
+                        Value="{StaticResource LittleSize}" />
             </Style>
 
             <Style x:Key="SwitchBarLabelStyle" TargetType="Label">

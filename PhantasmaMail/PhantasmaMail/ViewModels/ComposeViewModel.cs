@@ -10,9 +10,10 @@ using Xamarin.Forms;
 
 namespace PhantasmaMail.ViewModels
 {
-    public class ComposeViewModel : ViewModelBase // todo change draft to "compose" wtv
+    public class ComposeViewModel : ViewModelBase
     {
         private Message _message;
+
         public Message Message
         {
             get => _message;
@@ -26,9 +27,9 @@ namespace PhantasmaMail.ViewModels
 
         public DateTime CurrentDateTime => DateTime.UtcNow;
 
-        public ComposeViewModel()
-        {
-        }
+        public ICommand NavigateToInboxCommand => new Command(async () => await NavigateToInboxExecute());
+        public ICommand SendMessageCommand => new Command(async () => await SendMessageExecute());
+        public ICommand AttachFileCommand => new Command(async () => await AttachFileExecute());
 
         public override Task InitializeAsync(object navigationData)
         {
@@ -38,10 +39,6 @@ namespace PhantasmaMail.ViewModels
             };
             return base.InitializeAsync(navigationData);
         }
-
-        public ICommand NavigateToInboxCommand => new Command(async () => await NavigateToInboxExecute());
-        public ICommand SendMessageCommand => new Command(async () => await SendMessageExecute());
-        public ICommand AttachFileCommand => new Command(async () => await AttachFileExecute());
 
 
         private async Task NavigateToInboxExecute()
@@ -68,11 +65,11 @@ namespace PhantasmaMail.ViewModels
             if (string.IsNullOrEmpty(Message.Subject) || string.IsNullOrEmpty(Message.ToAddress) ||
                 string.IsNullOrEmpty(Message.TextContent))
             {
-                await DialogService.ShowAlertAsync("message", "title"); //todo localization
+                await DialogService.ShowAlertAsync("All fields are required", "Error");
                 return;
             }
 
-            string txHash = string.Empty;
+            var txHash = string.Empty;
             try
             {
                 IsBusy = true;
@@ -81,15 +78,6 @@ namespace PhantasmaMail.ViewModels
 
                 var hashedMessage = SerializeAndHashMessage();
                 txHash = await PhantasmaService.SendMessage(Message.ToAddress, hashedMessage);
-
-                //AppSettings.SentMessages.Insert(0, new InboxMessage
-                //{
-                //    Subject = Message.Subject,
-                //    Content = Message.TextContent,
-                //    FromEmail = Message.FromAddress,
-                //    FromName = "Relfos",
-                //    ReceiveDate = DateTime.UtcNow.ToString("dd/MM/YYYY")
-                //});
             }
             catch (Exception ex)
             {
@@ -100,24 +88,24 @@ namespace PhantasmaMail.ViewModels
                 IsBusy = false;
                 UserDialogs.Instance.HideLoading();
             }
-            
+
             if (!string.IsNullOrEmpty(txHash))
             {
-                await DialogService.ShowAlertAsync("Message sent! Use a block explorer to see your transaction: " + txHash, "Success");
+                await DialogService.ShowAlertAsync(
+                    "Message sent! Use a block explorer to see your transaction: " + txHash, "Success");
                 await NavigationService.NavigateToAsync<InboxViewModel>();
             }
             else
             {
                 await DialogService.ShowAlertAsync("Something went wrong while sending the message", "Error");
             }
-           
         }
 
         private string SerializeAndHashMessage()
         {
             Message.Date = DateTime.UtcNow;
             Message.FromAddress = AuthenticationService.AuthenticatedUser.GetUserDefaultAddress();
-            var json = JsonConvert.SerializeObject(Message,new JsonSerializerSettings
+            var json = JsonConvert.SerializeObject(Message, new JsonSerializerSettings
             {
                 DateFormatHandling = DateFormatHandling.IsoDateFormat,
                 NullValueHandling = NullValueHandling.Ignore

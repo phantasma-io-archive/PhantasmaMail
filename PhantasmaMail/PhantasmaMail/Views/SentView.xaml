@@ -3,12 +3,12 @@
     x:Class="PhantasmaMail.Views.SentView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:markupExtensions="clr-namespace:PhantasmaMail.MarkupExtensions"
     xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:controls="clr-namespace:PhantasmaMail.Controls;assembly=PhantasmaMail"
-    Title="{markupExtensions:Translate MenuItem_Sent}">
+    Title=""
+    BackgroundColor="{StaticResource WhiteBackground}">
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="WriteEmail.png" Command="{Binding NewMessageCommand}"/>
     </ContentPage.ToolbarItems>
@@ -64,7 +64,34 @@
                     </DataTemplate>
                 </syncfusion:SfListView.ItemTemplate>
             </syncfusion:SfListView>
+
+            <Grid Grid.Row="1" IsVisible="False" Margin="10,20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <ffimageloadingsvg:SvgCachedImage Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"
+                                                  Source="noemails.svg" HeightRequest="175"
+                                                  WidthRequest="175" IsVisible="True">
+                    <ffimageloadingsvg:SvgCachedImage.Transformations>
+                        <fftransformations:TintTransformation EnableSolidColor="true"
+                                                              HexColor="#9DADB5" />
+                    </ffimageloadingsvg:SvgCachedImage.Transformations>
+                </ffimageloadingsvg:SvgCachedImage>
+
+                <Label Grid.Row="1" HorizontalTextAlignment="Center" Text="You don't have any sent messages." Style="{StaticResource NoMessagesLabelStyle}"/>
+                <Grid.Triggers>
+                    <DataTrigger TargetType="Grid"
+                                 Binding="{Binding Source={x:Reference SentList}, Path=ItemsSource.Count}"
+                                 Value="0">
+                        <Setter Property="IsVisible" Value="True" />
+                    </DataTrigger>
+                </Grid.Triggers>
+            </Grid>
         </Grid>
+        
+
 
     </ContentPage.Content>
 </ContentPage>

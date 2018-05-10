@@ -1,115 +1,111 @@
-﻿using PhantasmaMail.Resources;
-using PhantasmaMail.ViewModels.Base;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using PhantasmaMail.Models.UI;
+using PhantasmaMail.Resources;
+using PhantasmaMail.ViewModels.Base;
 using Xamarin.Forms;
+using MenuItem = PhantasmaMail.Models.UI.MenuItem;
 
 namespace PhantasmaMail.ViewModels
 {
-	public class MenuViewModel : ViewModelBase, IHandleViewAppearing, IHandleViewDisappearing
-	{
-		private ObservableCollection<Models.UI.MenuItem> _menuItems;
+    public class MenuViewModel : ViewModelBase, IHandleViewAppearing, IHandleViewDisappearing
+    {
+        private ObservableCollection<MenuItem> _menuItems;
 
-		public ObservableCollection<Models.UI.MenuItem> MenuItems
-		{
-			get
-			{
-				return _menuItems;
-			}
-			set
-			{
-				_menuItems = value;
-				OnPropertyChanged();
-			}
-		}
+        public MenuViewModel()
+        {
+            MenuItems = new ObservableCollection<MenuItem>();
+            InitMenuItems();
+        }
 
-		public MenuViewModel()
-		{
-			MenuItems = new ObservableCollection<Models.UI.MenuItem>();
-			InitMenuItems();
-		}
+        public ObservableCollection<MenuItem> MenuItems
+        {
+            get => _menuItems;
+            set
+            {
+                _menuItems = value;
+                OnPropertyChanged();
+            }
+        }
 
-		public ICommand MenuItemSelectedCommand => new Command<Models.UI.MenuItem>(OnSelectMenuItem);
-		public ICommand GoToSettingsCommand => new Command(async () => await GoToSettingsExecute());
-		public ICommand LoggoutCommand => new Command(async () => await LogoutExecute());
+        public ICommand MenuItemSelectedCommand => new Xamarin.Forms.Command<MenuItem>(OnSelectMenuItem);
+        public ICommand GoToSettingsCommand => new Command(async () => await GoToSettingsExecute());
+        public ICommand LogoutCommand => new Command(async () => await LogoutExecute());
 
-		private void InitMenuItems()
-		{
-			MenuItems.Add(new Models.UI.MenuItem
-			{
-				Title = AppResource.MenuItem_Inbox,
-				MenuItemType = Models.UI.MenuItemType.Inbox,
-				ViewModelType = typeof(InboxViewModel),
-				IsEnabled = true
-			});
+        public Task OnViewAppearingAsync(VisualElement view)
+        {
+            return Task.FromResult(true);
+        }
 
-			MenuItems.Add(new Models.UI.MenuItem
-			{
-				Title = AppResource.MenuItem_Sent,
-				MenuItemType = Models.UI.MenuItemType.Sent,
-				ViewModelType = typeof(SentViewModel),
-				IsEnabled = true
-			});
-			MenuItems.Add(new Models.UI.MenuItem
-			{
-				Title = AppResource.MenuItem_Compose,
-				MenuItemType = Models.UI.MenuItemType.Compose,
-				ViewModelType = typeof(ComposeViewModel),
-				IsEnabled = true
-			});
-            MenuItems.Add(new Models.UI.MenuItem
+        public Task OnViewDisappearingAsync(VisualElement view)
+        {
+            return Task.FromResult(true);
+        }
+
+        private void InitMenuItems()
+        {
+            MenuItems.Add(new MenuItem
+            {
+                Title = AppResource.MenuItem_Inbox,
+                MenuItemType = MenuItemType.Inbox,
+                ViewModelType = typeof(InboxViewModel),
+                IsEnabled = true
+            });
+
+            MenuItems.Add(new MenuItem
+            {
+                Title = AppResource.MenuItem_Sent,
+                MenuItemType = MenuItemType.Sent,
+                ViewModelType = typeof(SentViewModel),
+                IsEnabled = true
+            });
+            MenuItems.Add(new MenuItem
+            {
+                Title = AppResource.MenuItem_Compose,
+                MenuItemType = MenuItemType.Compose,
+                ViewModelType = typeof(ComposeViewModel),
+                IsEnabled = true
+            });
+            MenuItems.Add(new MenuItem
             {
                 Title = AppResource.MenuItem_Trash,
-                MenuItemType = Models.UI.MenuItemType.Trash,
+                MenuItemType = MenuItemType.Trash,
                 ViewModelType = typeof(LoginViewModel),
                 IsEnabled = false
             });
-            MenuItems.Add(new Models.UI.MenuItem
+            MenuItems.Add(new MenuItem
             {
                 Title = AppResource.MenuItem_Wallet,
-                MenuItemType = Models.UI.MenuItemType.Wallet,
+                MenuItemType = MenuItemType.Wallet,
                 ViewModelType = typeof(LoginViewModel),
                 IsEnabled = false
             });
         }
 
-		private async void OnSelectMenuItem(Models.UI.MenuItem item)
-		{
-			//TODO
-			if (item.IsEnabled && item.ViewModelType != null)
-			{
-				item.AfterNavigationAction?.Invoke();
-				await NavigationService.NavigateToAsync(item.ViewModelType, item);
-			}
-		}
+        private async void OnSelectMenuItem(MenuItem item)
+        {
+            if (item.IsEnabled && item.ViewModelType != null)
+            {
+                item.AfterNavigationAction?.Invoke();
+                await NavigationService.NavigateToAsync(item.ViewModelType, item);
+            }
+        }
 
-		private async Task GoToSettingsExecute()
-		{
-			await NavigationService.NavigateToAsync<SettingsViewModel>();
-		}
+        private async Task GoToSettingsExecute()
+        {
+            await NavigationService.NavigateToAsync<SettingsViewModel>();
+        }
 
-		private async Task LogoutExecute()
-		{
-			await RemoveUserCredentials();
-			await NavigationService.NavigateToAsync<ExtendedSplashViewModel>();
-		}
+        private async Task LogoutExecute()
+        {
+            await RemoveUserCredentials();
+            await NavigationService.NavigateToAsync<ExtendedSplashViewModel>();
+        }
 
-		private Task RemoveUserCredentials()
-		{
-			// todo
-			//return _authenticationService.LogoutAsync();
-			return Task.Delay(1);
-		}
-
-		public Task OnViewAppearingAsync(VisualElement view)
-		{
-			return Task.FromResult(true);
-		}
-
-		public Task OnViewDisappearingAsync(VisualElement view)
-		{
-			return Task.FromResult(true);
-		}
-	}
+        private async Task RemoveUserCredentials()
+        {
+            await AuthenticationService.LogoutAsync();
+        }
+    }
 }

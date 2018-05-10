@@ -9,7 +9,8 @@
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
-    Title="{extensions:Translate MenuItem_Compose}">
+    Title="{extensions:Translate MenuItem_Compose}"
+    BackgroundColor="{StaticResource WhiteBackground}">
     <ContentPage.Resources>
         <ResourceDictionary>
 

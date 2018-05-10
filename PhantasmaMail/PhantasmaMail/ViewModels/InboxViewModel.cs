@@ -18,7 +18,6 @@ namespace PhantasmaMail.ViewModels
             InboxList = new ObservableCollection<Message>();
         }
 
-
         public ICommand NewMessageCommand => new Command(async () => await NewMessageExecute());
 
         public ICommand MessageSelectedCommand =>
@@ -28,7 +27,9 @@ namespace PhantasmaMail.ViewModels
 
         public override async Task InitializeAsync(object navigationData)
         {
+            DialogService.ShowLoading();
             await RefreshExecute();
+            DialogService.HideLoading();
         }
 
         private async Task NewMessageExecute()
@@ -50,30 +51,34 @@ namespace PhantasmaMail.ViewModels
 
         public async Task RefreshExecute()
         {
-            if (IsBusy) return;
-
             try
             {
                 IsBusy = true;
+                if (InboxList.Count > 0) return;
                 InboxList.Clear();
                 var name = await PhantasmaService.GetUserMailbox();
-                var mailCount = await PhantasmaService.GetMailCount(name);
-
-                var emails = await PhantasmaService.GetMailsFromRange(name, 14, mailCount); //todo remove hardcoded 14
-                foreach (var email in emails)
+                if (!string.IsNullOrEmpty(name))
                 {
-                    var mailObject = JsonConvert.DeserializeObject<Message>(email);
-                    InboxList.Add(mailObject);
-                }
+                    var mailCount = await PhantasmaService.GetMailCount(name);
 
-                InboxList.OrderByDescending(p => p.Date).ThenByDescending(p => p.Date.Hour);
+                    var emails = await PhantasmaService.GetMailsFromRange(name, 14, mailCount); //todo remove hardcoded 14
+                    foreach (var email in emails)
+                    {
+                        var mailObject = JsonConvert.DeserializeObject<Message>(email);
+                        InboxList.Add(mailObject);
+                    }
+
+                    InboxList =  new ObservableCollection<Message>(InboxList.OrderByDescending(p => p.Date).ThenByDescending(p => p.Date.Hour).ToList());
+                }
             }
             catch (Exception ex)
             {
                 await DialogService.ShowAlertAsync(ex.Message, "Error");
             }
-
-            IsBusy = false;
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
         #region Observable Properties

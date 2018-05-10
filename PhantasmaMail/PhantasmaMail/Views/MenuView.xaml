@@ -9,7 +9,6 @@
     xmlns:templates="clr-namespace:PhantasmaMail.Controls"
     xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
-    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     Title=" ">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -55,6 +54,7 @@
                 <ffimageloadingsvg:SvgCachedImage
                     Grid.Column="0"
                     VerticalOptions="Center"
+                    Opacity="0.5"
                     Source="settings.svg"
                     WidthRequest="30">
                     <ffimageloadingsvg:SvgCachedImage.Transformations>
@@ -70,7 +70,7 @@
             </Grid>
 
             <!-- Logout -->
-            <Grid Grid.Row="1" HorizontalOptions="End" VerticalOptions="End" Margin="10,0" IsVisible="False">
+            <Grid Grid.Row="1" HorizontalOptions="End" VerticalOptions="End" Margin="10,0" IsVisible="True">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
@@ -91,8 +91,10 @@
                     VerticalOptions="Center"
                     Text="{extensions:Translate MenuItem_Logout}"
                     Style="{StaticResource MenuTextStyle}" />
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding LogoutCommand}" />
+                </Grid.GestureRecognizers>
             </Grid>
-
 
         </Grid>
     </ContentPage.Content>

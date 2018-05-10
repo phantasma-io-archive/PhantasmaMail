@@ -10,7 +10,8 @@
     xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:extensions="clr-namespace:PhantasmaMail.MarkupExtensions"
     xmlns:pullToRefresh="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms"
-    Title="{extensions:Translate MenuItem_Inbox}">
+    Title=""
+    BackgroundColor="{StaticResource WhiteBackground}">
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="WriteEmail.png" Command="{Binding NewMessageCommand}" />
     </ContentPage.ToolbarItems>
@@ -79,15 +80,31 @@
             </pullToRefresh:SfPullToRefresh>
 
 
-            <Label Grid.Row="1" HorizontalTextAlignment="Center" Text="You have 0 e-mails" IsVisible="False">
-                <Label.Triggers>
-                    <DataTrigger TargetType="Label"
-                                 Binding="{Binding Source={x:Reference InboxList}, Path=ItemsSource.Count}"
-                                 Value="0">
+            <Grid Grid.Row="1" IsVisible="False" Margin="10,20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <ffimageloadingsvg:SvgCachedImage Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"
+                                                  Source="noemails.svg" HeightRequest="175"
+                                                  WidthRequest="175" IsVisible="True">
+                    <ffimageloadingsvg:SvgCachedImage.Transformations>
+                        <fftransformations:TintTransformation EnableSolidColor="true"
+                                                              HexColor="#9DADB5" />
+                    </ffimageloadingsvg:SvgCachedImage.Transformations>
+                </ffimageloadingsvg:SvgCachedImage>
+
+                <Label Grid.Row="1" HorizontalTextAlignment="Center" Text="You don't have any messages." Style="{StaticResource NoMessagesLabelStyle}"/>
+                    <Grid.Triggers>
+                    <DataTrigger TargetType="Grid"
+                                     Binding="{Binding Source={x:Reference InboxList}, Path=ItemsSource.Count}"
+                                     Value="0">
                         <Setter Property="IsVisible" Value="True" />
                     </DataTrigger>
-                </Label.Triggers>
-            </Label>
+                </Grid.Triggers>
+            </Grid>
+           
         </Grid>
 
     </ContentPage.Content>

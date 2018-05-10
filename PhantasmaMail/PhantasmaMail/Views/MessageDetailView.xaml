@@ -6,7 +6,8 @@
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              xmlns:extensions="clr-namespace:PhantasmaMail.MarkupExtensions"
-             Title="{extensions:Translate MenuItem_Inbox}">
+             Title="{extensions:Translate MenuItem_Inbox}"
+             BackgroundColor="{StaticResource WhiteBackground}">
     <ContentPage.Resources>
         <ResourceDictionary>
 
@@ -50,11 +51,11 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
-                    <Label Grid.Row="0" Text="{Binding SelectedMessage.FromAddress}"
-                           Style="{StaticResource SenderNameTextStyle}" />
-
-                    <Label Grid.Row="1" Text="{Binding SelectedMessage.ToAddress, StringFormat='Box: {0}'}"
+                    <Label Grid.Row="0" Text="From: "
                            Style="{StaticResource SenderNameTextStyle}" TextColor="{StaticResource LightGray}" />
+
+                    <Label Grid.Row="1" Text="{Binding SelectedMessage.FromAddress}"
+                           Style="{StaticResource SenderNameTextStyle}"  />
 
                     <BoxView Grid.Row="2"
                              HorizontalOptions="FillAndExpand"
