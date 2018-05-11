@@ -69,6 +69,13 @@
                 <On Platform="iOS">SF UI Text Semibold</On>
             </OnPlatform>
 
+            <OnPlatform x:Key="ExtraLittleSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS">10</On>
+                <On Platform="Android, WinPhone">11</On>
+            </OnPlatform>
+
+
             <OnPlatform x:Key="LittleSize"
                         x:TypeArguments="x:Double">
                 <On Platform="iOS">11</On>
@@ -200,7 +207,7 @@
                 <Setter Property="TextColor" 
                         Value="{StaticResource LightGray}" />
                 <Setter Property="FontSize" 
-                        Value="{StaticResource LittleSize}" />
+                        Value="{StaticResource ExtraLittleSize}" />
             </Style>
 
             <Style x:Key="SwitchBarLabelStyle" TargetType="Label">

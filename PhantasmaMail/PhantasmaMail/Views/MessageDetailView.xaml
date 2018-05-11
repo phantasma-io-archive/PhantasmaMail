@@ -5,8 +5,7 @@
              x:Class="PhantasmaMail.Views.MessageDetailView"
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
-             xmlns:extensions="clr-namespace:PhantasmaMail.MarkupExtensions"
-             Title="{extensions:Translate MenuItem_Inbox}"
+             Title="Mail"
              BackgroundColor="{StaticResource WhiteBackground}">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -44,6 +43,8 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="1" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
@@ -57,31 +58,39 @@
                     <Label Grid.Row="1" Text="{Binding SelectedMessage.FromAddress}"
                            Style="{StaticResource SenderNameTextStyle}"  />
 
-                    <BoxView Grid.Row="2"
+                    <Label Grid.Row="2" Text="To: "
+                           Style="{StaticResource SenderNameTextStyle}" TextColor="{StaticResource LightGray}" />
+
+                    <Label Grid.Row="3" Text="{Binding SelectedMessage.ToAddress}"
+                           Style="{StaticResource SenderNameTextStyle}"  />
+
+                    <BoxView Grid.Row="4"
                              HorizontalOptions="FillAndExpand"
                              BackgroundColor="{StaticResource SeparatorGray}" />
 
-                    <Label Grid.Row="3" Text="{Binding SelectedMessage.Subject}"
+                    <Label Grid.Row="5" Text="{Binding SelectedMessage.Subject}"
                            Margin="0,4"
                            Style="{StaticResource SenderNameTextStyle}" FontSize="{StaticResource LargeSize}"
                            FontFamily="{StaticResource OpenSansSemiBold}" />
 
-                    <ScrollView Grid.Row="4">
+                    <ScrollView Grid.Row="6">
                         <Label Text="{Binding SelectedMessage.TextContent}"
                                Style="{StaticResource SimpleTextStyle}" />
                     </ScrollView>
 
 
-                    <BoxView Grid.Row="5"
+                    <BoxView Grid.Row="7"
                              HorizontalOptions="FillAndExpand"
                              BackgroundColor="{StaticResource SeparatorGray}" />
 
-                    <Label Grid.Row="6" Text="{Binding DaysAgo}" HorizontalOptions="Start" VerticalOptions="End"
-                           Style="{StaticResource SimpleTextStyle}" FontSize="{StaticResource MidMediumSize}" />
 
-                    <Label Grid.Row="6" Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}" HorizontalOptions="End" VerticalOptions="End"
-                           Style="{StaticResource SimpleTextStyle}" FontSize="{StaticResource MidMediumSize}" />
+                    <Label Grid.Row="8" Text="{Binding Date, StringFormat='{0:f}'}" HorizontalOptions="EndAndExpand" VerticalOptions="Center"
+                           Style="{StaticResource SimpleTextStyle}" FontSize="{StaticResource LittleSize}" />
 
+                    <Label Grid.Row="8" Text="{Binding DaysAgo}" HorizontalOptions="Start" VerticalOptions="Center"
+                           Style="{StaticResource SimpleTextStyle}" FontSize="{StaticResource LittleSize}" />
+
+                  
                 </Grid>
             </Frame>
             <Grid Grid.Row="1" Margin="10">

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:drawable="@drawable/Splash_screen">
+    <!--<shape
+      android:shape="rectangle">
+      <gradient
+        android:angle="44.99999887805831"
+        android:endColor="#FFCB2758"
+        android:startColor="#FF41157D"
+        android:type="linear"/>
+    </shape>
+  </item>
+  <item>
+    <bitmap
+      android:src="@drawable/phantasma_logo_vector"
+      android:tileMode="disabled"
+      android:gravity="center"/>-->
+
+
+  </item>
+</layer-list>

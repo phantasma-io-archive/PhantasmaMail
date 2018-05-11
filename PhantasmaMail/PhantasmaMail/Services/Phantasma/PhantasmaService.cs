@@ -49,7 +49,7 @@ namespace PhantasmaMail.Services.Phantasma
             ) //todo refractor NeoModules account signer
             {
                 var transaction = await accountsigner.CallContract(keypair, scriptBytes, RegisterMailboxMethod,
-                    new object[] {compressedPublicKey, name});
+                    new object[] { compressedPublicKey, name });
                 return transaction.Hash.ToString();
             }
 
@@ -66,8 +66,8 @@ namespace PhantasmaMail.Services.Phantasma
             if (account.TransactionManager is AccountSignerTransactionManager accountsigner)
             {
                 var transaction = await accountsigner.CallContract(keypair, scriptBytes, SendMessageMethod,
-                    new object[] {compressedPublicKey, destName, mailHash});
-                return transaction.Hash.ToString();
+                    new object[] { compressedPublicKey, destName, mailHash });
+                if (transaction != null) return transaction.Hash.ToString();
             }
 
             return string.Empty;

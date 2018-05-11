@@ -8,7 +8,7 @@ using Xfx;
 
 namespace PhantasmaMail.Droid
 {
-    [Activity(Label = "Phantasma Mail", Icon = "@drawable/phantasma_logo_vector", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Phantasma Mail", Icon = "@drawable/phantasma_logo_vector", Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)

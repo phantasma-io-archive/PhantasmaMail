@@ -18,8 +18,8 @@ namespace PhantasmaMail.ViewModels
             try
             {
                 if (IsBusy) return;
-                IsBusy = true;
                 DialogService.ShowLoading();
+                IsBusy = true;
                 // TODO LOGIN LOGIC
                 if (IsWif)
                 {
@@ -40,10 +40,12 @@ namespace PhantasmaMail.ViewModels
             {
                 await DialogService.ShowAlertAsync(ex.Message, "Error");
             }
-
-            IsBusy = false;
-            DialogService.HideLoading();
-            if (AuthenticationService.IsAuthenticated) await NavigationService.NavigateToAsync<MainViewModel>();
+            finally
+            {
+                IsBusy = false;
+                DialogService.HideLoading();
+                if (AuthenticationService.IsAuthenticated) await NavigationService.NavigateToAsync<MainViewModel>();
+            }
         }
 
         private void SwithLoginExecute()

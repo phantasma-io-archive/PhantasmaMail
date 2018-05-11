@@ -1,8 +1,19 @@
-﻿using PhantasmaMail.Services.Navigation;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Newtonsoft.Json;
+using PCLStorage;
+using PhantasmaMail.Services.Db;
+using PhantasmaMail.Services.Navigation;
 using PhantasmaMail.ViewModels;
 using PhantasmaMail.ViewModels.Base;
-using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Application = Xamarin.Forms.Application;
+using FileAccess = PCLStorage.FileAccess;
+using Message = PhantasmaMail.Models.Message;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
@@ -30,9 +41,9 @@ namespace PhantasmaMail
             navigationService.NavigateToAsync<ExtendedSplashViewModel>();
         }
 
-        protected override void OnStart()
+        protected override async void OnStart()
         {
-            // Handle when your app starts
+            await LoadLocalFiles();
         }
 
         protected override void OnSleep()
@@ -43,6 +54,25 @@ namespace PhantasmaMail
         protected override void OnResume()
         {
             // Handle when your app resumes
+        }
+
+        private async Task LoadLocalFiles()
+        {
+            var rootfolder = await FileHelper.PhantasmaFolder.CreateFolder();
+            if (rootfolder == null)
+            {
+                var folder = await FileHelper.PhantasmaFolder.CreateFolder();
+                await FileHelper.DbFile.CreateFile(folder);
+            }
+            else
+            {
+                var json = await FileHelper.DbFile.ReadAllTextAsync(rootfolder);
+                var list = JsonConvert.DeserializeObject<List<Message>>(json, AppSettings.JsonSettings());
+                if (list != null)
+                {
+                    AppSettings.SentMessages = new ObservableCollection<Message>(list);
+                }
+            }
         }
     }
 }

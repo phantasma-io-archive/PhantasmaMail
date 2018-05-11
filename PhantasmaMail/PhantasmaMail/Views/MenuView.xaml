@@ -64,6 +64,7 @@
 
                 <Label
                     Grid.Column="1"
+                    Opacity="0.5"
                     VerticalOptions="Center"
                     Text="{extensions:Translate MenuItem_Settings}"
                     Style="{StaticResource MenuTextStyle}" />

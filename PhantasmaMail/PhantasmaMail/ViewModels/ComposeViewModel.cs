@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Acr.UserDialogs;
 using Newtonsoft.Json;
+using PCLStorage;
 using PhantasmaMail.Models;
+using PhantasmaMail.Services.Db;
 using PhantasmaMail.ViewModels.Base;
 using Xamarin.Forms;
 
@@ -69,6 +72,7 @@ namespace PhantasmaMail.ViewModels
                 return;
             }
 
+            var hashedMessage = string.Empty;
             var txHash = string.Empty;
             try
             {
@@ -76,7 +80,7 @@ namespace PhantasmaMail.ViewModels
 
                 DialogService.ShowLoading();
 
-                var hashedMessage = SerializeAndHashMessage();
+                hashedMessage = SerializeAndHashMessage();
                 txHash = await PhantasmaService.SendMessage(Message.ToAddress, hashedMessage);
             }
             catch (Exception ex)
@@ -91,6 +95,8 @@ namespace PhantasmaMail.ViewModels
 
             if (!string.IsNullOrEmpty(txHash))
             {
+                AppSettings.SentMessages.Add(Message);
+                await FileHelper.UpdateMessages(hashedMessage);
                 await DialogService.ShowAlertAsync(
                     "Message sent! Use a block explorer to see your transaction: " + txHash, "Success");
                 await NavigationService.NavigateToAsync<InboxViewModel>();

@@ -51,7 +51,9 @@
                    Grid.Column="0"
                    Grid.ColumnSpan="2"
                    Text="{Binding FromAddress}"
-                   HorizontalTextAlignment="End"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="StartAndExpand"
+                   HorizontalTextAlignment="Start"
                    Style="{StaticResource MessageSenderStyle}" />
 
             <!--<Label Grid.Row="3"

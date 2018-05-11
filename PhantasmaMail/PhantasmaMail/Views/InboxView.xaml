@@ -9,7 +9,7 @@
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:extensions="clr-namespace:PhantasmaMail.MarkupExtensions"
-    xmlns:pullToRefresh="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms"
+    xmlns:sfpullToRefresh="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms"
     Title=""
     BackgroundColor="{StaticResource WhiteBackground}">
     <ContentPage.ToolbarItems>
@@ -48,14 +48,14 @@
                 </ffimageloadingsvg:SvgCachedImage>
             </StackLayout>
 
-            <pullToRefresh:SfPullToRefresh x:Name="pullToRefresh" Grid.Row="1"
+            <sfpullToRefresh:SfPullToRefresh x:Name="pullToRefreshList" Grid.Row="1"
                                            ProgressBackgroundColor="{StaticResource Accent}" RefreshContentHeight="30"
                                            RefreshContentWidth="30" TransitionMode="Push"
                                            IsRefreshing="{Binding IsBusy}"
                                            Refreshing="PullToRefresh_Refreshing">
-                <pullToRefresh:SfPullToRefresh.PullableContent>
+                <sfpullToRefresh:SfPullToRefresh.PullableContent>
                     <syncfusion:SfListView
-                        x:Name="InboxList"
+                        x:Name="InboxListView"
                         AutoFitMode="Height"
                         ItemsSource="{Binding InboxList, Mode=TwoWay}"
                         SelectedItem="{Binding MessageSelected}"
@@ -64,7 +64,7 @@
                         VerticalOptions="FillAndExpand">
                         <syncfusion:SfListView.Triggers>
                             <DataTrigger TargetType="syncfusion:SfListView"
-                                         Binding="{Binding Source={x:Reference InboxList}, Path=ItemsSource.Count}"
+                                         Binding="{Binding Source={x:Reference InboxListView}, Path=ItemsSource.Count}"
                                          Value="0">
                                 <Setter Property="IsVisible" Value="False" />
                             </DataTrigger>
@@ -75,9 +75,9 @@
                             </DataTemplate>
                         </syncfusion:SfListView.ItemTemplate>
                     </syncfusion:SfListView>
-                </pullToRefresh:SfPullToRefresh.PullableContent>
+                </sfpullToRefresh:SfPullToRefresh.PullableContent>
 
-            </pullToRefresh:SfPullToRefresh>
+            </sfpullToRefresh:SfPullToRefresh>
 
 
             <Grid Grid.Row="1" IsVisible="False" Margin="10,20">
@@ -98,7 +98,7 @@
                 <Label Grid.Row="1" HorizontalTextAlignment="Center" Text="You don't have any messages." Style="{StaticResource NoMessagesLabelStyle}"/>
                     <Grid.Triggers>
                     <DataTrigger TargetType="Grid"
-                                     Binding="{Binding Source={x:Reference InboxList}, Path=ItemsSource.Count}"
+                                     Binding="{Binding Source={x:Reference InboxListView}, Path=ItemsSource.Count}"
                                      Value="0">
                         <Setter Property="IsVisible" Value="True" />
                     </DataTrigger>

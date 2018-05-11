@@ -54,21 +54,24 @@ namespace PhantasmaMail.ViewModels
             try
             {
                 IsBusy = true;
-                if (InboxList.Count > 0) return;
+
                 InboxList.Clear();
                 var name = await PhantasmaService.GetUserMailbox();
                 if (!string.IsNullOrEmpty(name))
                 {
                     var mailCount = await PhantasmaService.GetMailCount(name);
 
-                    var emails = await PhantasmaService.GetMailsFromRange(name, 14, mailCount); //todo remove hardcoded 14
+                    var emails = await PhantasmaService.GetMailsFromRange(name, 1, mailCount); //todo remove hardcoded 14
                     foreach (var email in emails)
                     {
-                        var mailObject = JsonConvert.DeserializeObject<Message>(email);
-                        InboxList.Add(mailObject);
+                        if (email.StartsWith("{") || email.StartsWith("["))
+                        {
+                            var mailObject = JsonConvert.DeserializeObject<Message>(email, AppSettings.JsonSettings());
+                            if (mailObject != null) InboxList.Add(mailObject);
+                        }
                     }
 
-                    InboxList =  new ObservableCollection<Message>(InboxList.OrderByDescending(p => p.Date).ThenByDescending(p => p.Date.Hour).ToList());
+                    InboxList = new ObservableCollection<Message>(InboxList.OrderByDescending(p => p.Date).ThenByDescending(p => p.Date.Hour).ToList());
                 }
             }
             catch (Exception ex)

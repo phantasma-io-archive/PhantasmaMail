@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
 using Xamarin.Forms;
-using Color = System.Drawing.Color;
+
 
 namespace PhantasmaMail.Services.Dialog
 {
@@ -29,7 +29,7 @@ namespace PhantasmaMail.Services.Dialog
             */
 
             toastConfig.SetMessageTextColor(Color.White);
-            toastConfig.SetBackgroundColor(Color.FromArgb(33, 44, 55));
+            toastConfig.SetBackgroundColor(Color.FromRgb(33, 44, 55));
 
             UserDialogs.Instance.Toast(toastConfig);
         }
