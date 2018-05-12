@@ -1,6 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Newtonsoft.Json;
+using PhantasmaMail.Models;
+using PhantasmaMail.Services.Db;
 using PhantasmaMail.ViewModels.Base;
 using Xamarin.Forms;
 
@@ -44,7 +50,51 @@ namespace PhantasmaMail.ViewModels
             {
                 IsBusy = false;
                 DialogService.HideLoading();
-                if (AuthenticationService.IsAuthenticated) await NavigationService.NavigateToAsync<MainViewModel>();
+            }
+
+            if (AuthenticationService.IsAuthenticated)
+            {
+                await LoadLocalFiles();
+                var name = await PhantasmaService.GetUserMailbox();
+                if (string.IsNullOrEmpty(name))
+                {
+                    await NavigationService.NavigateToAsync<RegisterBoxViewModel>();
+                }
+                else
+                {
+                    await NavigationService.NavigateToAsync<MainViewModel>();
+                }
+            }
+
+        }
+
+        private async Task LoadLocalFiles()
+        {
+            var rootfolder = await FileHelper.PhantasmaFolder.CreateFolder();
+            if (rootfolder == null)
+            {
+                var folder = await FileHelper.PhantasmaFolder.CreateFolder();
+                await FileHelper.DbFile.CreateFile(folder);
+            }
+            else
+            {
+                var json = await FileHelper.DbFile.ReadAllTextAsync(rootfolder);
+                var list = JsonConvert.DeserializeObject<List<Message>>(json, AppSettings.JsonSettings());
+                if (list != null)
+                {
+                    var sortedList = list.Where(p =>
+                        p.FromAddress == AuthenticationService.AuthenticatedUser.GetUserDefaultAddress());
+                    var enumerable = sortedList.ToList();
+                    if (enumerable.Any())
+                    {
+                        AppSettings.SentMessages = new ObservableCollection<Message>(enumerable);
+                    }
+                    else
+                    {
+                        AppSettings.SentMessages = new ObservableCollection<Message>();
+                    }
+                }
+               
             }
         }
 

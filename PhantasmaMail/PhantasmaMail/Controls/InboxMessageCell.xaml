@@ -48,11 +48,12 @@
                      BackgroundColor="{StaticResource SeparatorGray}" />
 
             <Label Grid.Row="3"
+                   x:Name="BoxNameLabel"
                    Grid.Column="0"
                    Grid.ColumnSpan="2"
                    Text="{Binding FromAddress}"
                    VerticalTextAlignment="Center"
-                   HorizontalOptions="StartAndExpand"
+                   HorizontalOptions="EndAndExpand"
                    HorizontalTextAlignment="Start"
                    Style="{StaticResource MessageSenderStyle}" />
 

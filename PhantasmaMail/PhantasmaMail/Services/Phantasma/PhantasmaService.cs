@@ -89,6 +89,7 @@ namespace PhantasmaMail.Services.Phantasma
 
             //TODO convert hex string to Int
             var count = result.Stack[0].Value.ToString();
+            if (string.IsNullOrEmpty(count)) return 0;
             return int.Parse(count, NumberStyles.HexNumber);
         }
 
@@ -138,6 +139,35 @@ namespace PhantasmaMail.Services.Phantasma
             }
 
             return emailHashList;
+        }
+
+        public async Task EstimateMessageCost(string message)
+        {
+            var compressedPublicKey = ActiveUser.GetCompressedPublicKey(); //TODO switch this block to an unified call
+            var account = ActiveUser.GetDefaultAccount();
+            var parameterList = new List<InvokeParameter>
+            {
+                new InvokeParameter
+                {
+                    Type = "ByteArray",
+                    Value = compressedPublicKey.ToHexString()
+                },
+                new InvokeParameter
+                {
+                    Type = "String",
+                    Value = "testNeoModules"
+                },
+                new InvokeParameter
+                {
+                    Type = "String",
+                    Value = message
+                }
+            };
+            if (account.TransactionManager is AccountSignerTransactionManager accountsigner)
+            {
+                var estimation = await accountsigner.EstimateGasAsync(ContractScriptHash, "sendMessage", parameterList);
+                var e = estimation;
+            }
         }
 
         #region Private Properties

@@ -5,7 +5,7 @@
              x:Class="PhantasmaMail.Views.MessageDetailView"
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
-             Title="Mail"
+             Title="Message"
              BackgroundColor="{StaticResource WhiteBackground}">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -84,11 +84,16 @@
                              BackgroundColor="{StaticResource SeparatorGray}" />
 
 
-                    <Label Grid.Row="8" Text="{Binding Date, StringFormat='{0:f}'}" HorizontalOptions="EndAndExpand" VerticalOptions="Center"
-                           Style="{StaticResource SimpleTextStyle}" FontSize="{StaticResource LittleSize}" />
+                    <StackLayout Grid.Row="8" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
 
-                    <Label Grid.Row="8" Text="{Binding DaysAgo}" HorizontalOptions="Start" VerticalOptions="Center"
-                           Style="{StaticResource SimpleTextStyle}" FontSize="{StaticResource LittleSize}" />
+                        <Label Text="{Binding DaysAgo}" HorizontalOptions="Start" VerticalOptions="Center"
+                               Style="{StaticResource SimpleTextStyle}" FontSize="{StaticResource LittleSize}" />
+
+                        <Label Text="{Binding FormattedDate}" HorizontalOptions="EndAndExpand" VerticalOptions="Center"
+                               Style="{StaticResource SimpleTextStyle}" FontSize="{StaticResource LittleSize}" />
+
+                    </StackLayout>
+                  
 
                   
                 </Grid>

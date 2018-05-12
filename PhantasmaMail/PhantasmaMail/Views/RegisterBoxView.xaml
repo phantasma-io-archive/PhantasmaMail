@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:markupExtensions="clr-namespace:PhantasmaMail.MarkupExtensions;assembly=PhantasmaMail"
+             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
+             x:Class="PhantasmaMail.Views.RegisterBoxView"
+             BackgroundImage="BackgroundLogin.png">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" Margin="30">
+
+            <Label Text="You don't have an email registered in your address" 
+                   HorizontalTextAlignment="Center"
+
+                   Style="{StaticResource SwitchBarLabelStyle}"/>
+
+            <Label Text="You have to create one to use the Phantasma App" 
+                   HorizontalTextAlignment="Center"
+                   Style="{StaticResource SwitchBarLabelStyle}"/>
+
+            <xfx:XfxEntry Style="{StaticResource LoginStyle}"
+                          FloatingHintEnabled="True"
+                          HorizontalOptions="FillAndExpand"
+                          Placeholder="Email address" IsPassword="False"
+                          Text="{Binding BoxName}" />
+
+            <Button Text="Create" 
+                    VerticalOptions="EndAndExpand" Margin="30"
+                    HorizontalOptions="FillAndExpand"
+                    Style="{StaticResource ButtonStyle}"
+                    TextColor="#8AA8A3"
+                    Command="{Binding CreateBoxCommand}" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

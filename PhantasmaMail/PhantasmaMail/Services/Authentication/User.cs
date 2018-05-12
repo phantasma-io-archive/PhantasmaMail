@@ -12,7 +12,7 @@ namespace PhantasmaMail.Services.Authentication
 
         public User()
         {
-            TransactionInput.SendFromMobile = true;
+            //TransactionInput.SendFromMobile = true;
         }
 
         public async Task<Account> InitializeUserWallet(string encryptedKey, string password)

@@ -18,5 +18,7 @@ namespace PhantasmaMail.Services.Phantasma
         Task<List<string>> GetAllMails(string name, int count);
 
         Task<List<string>> GetMailsFromRange(string name, int first, int last);
+
+        Task EstimateMessageCost(string message);
     }
 }

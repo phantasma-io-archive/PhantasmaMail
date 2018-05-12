@@ -40,5 +40,10 @@ namespace PhantasmaMail.Services.Phantasma
         {
             throw new NotImplementedException();
         }
+
+        public Task EstimateMessageCost(string message)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

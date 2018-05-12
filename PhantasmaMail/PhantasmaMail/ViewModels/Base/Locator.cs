@@ -31,6 +31,7 @@ namespace PhantasmaMail.ViewModels.Base
             _containerBuilder.RegisterType<SentViewModel>();
             _containerBuilder.RegisterType<ComposeViewModel>();
             _containerBuilder.RegisterType<MessageDetailViewModel>();
+            _containerBuilder.RegisterType<RegisterBoxViewModel>();
         }
 
         public T Resolve<T>()

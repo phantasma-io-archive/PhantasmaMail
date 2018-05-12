@@ -49,6 +49,8 @@ namespace PhantasmaMail.ViewModels
             }
         }
 
+        public string BoxName { get; set; }
+
         public async Task RefreshExecute()
         {
             try
@@ -56,12 +58,12 @@ namespace PhantasmaMail.ViewModels
                 IsBusy = true;
 
                 InboxList.Clear();
-                var name = await PhantasmaService.GetUserMailbox();
-                if (!string.IsNullOrEmpty(name))
+                BoxName = await PhantasmaService.GetUserMailbox();
+                if (!string.IsNullOrEmpty(BoxName))
                 {
-                    var mailCount = await PhantasmaService.GetMailCount(name);
+                    var mailCount = await PhantasmaService.GetMailCount(BoxName);
 
-                    var emails = await PhantasmaService.GetMailsFromRange(name, 1, mailCount); //todo remove hardcoded 14
+                    var emails = await PhantasmaService.GetMailsFromRange(BoxName, 1, mailCount);
                     foreach (var email in emails)
                     {
                         if (email.StartsWith("{") || email.StartsWith("["))

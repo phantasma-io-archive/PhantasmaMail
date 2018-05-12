@@ -17,8 +17,8 @@
             <Style x:Key="CustomEntryStyle" TargetType="xfx:XfxEntry">
                 <Setter Property="FontSize" Value="{StaticResource MediumSize}" />
                 <Setter Property="FontFamily" Value="{StaticResource OpenSansSemiBold}" />
-                <Setter Property="PlaceholderColor" Value="{StaticResource LightBlueGreen}" />
-                <Setter Property="ActivePlaceholderColor" Value="{StaticResource LightGray}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource LightGray}" /> 
+                <Setter Property="ActivePlaceholderColor" Value="{StaticResource LightBlueGreen }" />
             </Style>
 
         </ResourceDictionary>
@@ -75,7 +75,7 @@
                              BackgroundColor="{StaticResource SeparatorGray}" />
 
                     <Label Grid.Row="5"
-                           Text="{Binding CurrentDateTime, StringFormat='{0:f}'}"
+                           Text="{Binding FormattedDate}"
                            HorizontalOptions="EndAndExpand"
                            Style="{StaticResource MessageTextStyle}"
                            FontSize="{StaticResource LittleSize}"/>

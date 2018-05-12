@@ -41,9 +41,9 @@ namespace PhantasmaMail
             navigationService.NavigateToAsync<ExtendedSplashViewModel>();
         }
 
-        protected override async void OnStart()
+        protected override void OnStart()
         {
-            await LoadLocalFiles();
+           
         }
 
         protected override void OnSleep()
@@ -56,23 +56,6 @@ namespace PhantasmaMail
             // Handle when your app resumes
         }
 
-        private async Task LoadLocalFiles()
-        {
-            var rootfolder = await FileHelper.PhantasmaFolder.CreateFolder();
-            if (rootfolder == null)
-            {
-                var folder = await FileHelper.PhantasmaFolder.CreateFolder();
-                await FileHelper.DbFile.CreateFile(folder);
-            }
-            else
-            {
-                var json = await FileHelper.DbFile.ReadAllTextAsync(rootfolder);
-                var list = JsonConvert.DeserializeObject<List<Message>>(json, AppSettings.JsonSettings());
-                if (list != null)
-                {
-                    AppSettings.SentMessages = new ObservableCollection<Message>(list);
-                }
-            }
-        }
+        
     }
 }

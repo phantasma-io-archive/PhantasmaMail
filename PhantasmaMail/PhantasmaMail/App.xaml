@@ -3,7 +3,8 @@
     x:Class="PhantasmaMail.App"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:converters="clr-namespace:PhantasmaMail.Converters;assembly=PhantasmaMail">
+    xmlns:converters="clr-namespace:PhantasmaMail.Converters;assembly=PhantasmaMail"
+    xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls">
     <Application.Resources>
         <ResourceDictionary>
 
@@ -11,7 +12,7 @@
             <!-- COLORS -->
             <Color x:Key="Primary">#2196F3</Color>
             <Color x:Key="PrimaryDark">#1976D2</Color>
-            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="Accent">#b4dae8</Color>
             <Color x:Key="DarkBlueGreen">#17566B</Color>
             <Color x:Key="LightBlueGreen">#2B6C81</Color>
             <Color x:Key="LightGray">#A1ACB3</Color>
@@ -214,6 +215,18 @@
                 <Setter Property="TextColor" Value="{StaticResource LightGray}"/>
                 <Setter Property="FontSize" Value="{StaticResource LargeSize}" />
                 <Setter Property="FontFamily" Value="{StaticResource OpenSansSemiBold}" />
+            </Style>
+
+            <Style x:Key="LoginStyle"
+                   TargetType="xfx:XfxEntry">
+                <Setter Property="TextColor"
+                        Value="White" />
+                <Setter Property="ActivePlaceholderColor"
+                        Value="White" />
+                <Setter Property="PlaceholderColor"
+                        Value="White" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource LargeSize}" />
             </Style>
 
             <Style x:Key="ButtonStyle" TargetType="Button">

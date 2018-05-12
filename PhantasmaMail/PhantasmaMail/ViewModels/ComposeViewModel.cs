@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -28,6 +29,19 @@ namespace PhantasmaMail.ViewModels
             }
         }
 
+        //todo remove
+        private string _formattedDate;
+
+        public string FormattedDate
+        {
+            get => _formattedDate;
+            set
+            {
+                _formattedDate = value;
+                OnPropertyChanged();
+            }
+        }
+
         public DateTime CurrentDateTime => DateTime.UtcNow;
 
         public ICommand NavigateToInboxCommand => new Command(async () => await NavigateToInboxExecute());
@@ -38,8 +52,11 @@ namespace PhantasmaMail.ViewModels
         {
             Message = new Message
             {
-                ToAddress = "testNeoModules"
+                TextContent = "Write your message"
             };
+            var culture = new CultureInfo("en-GB");
+            CultureInfo.CurrentCulture = culture;
+            FormattedDate = string.Format("{0:f}", DateTime.UtcNow);
             return base.InitializeAsync(navigationData);
         }
 
@@ -81,6 +98,7 @@ namespace PhantasmaMail.ViewModels
                 DialogService.ShowLoading();
 
                 hashedMessage = SerializeAndHashMessage();
+                //await PhantasmaService.EstimateMessageCost(hashedMessage);
                 txHash = await PhantasmaService.SendMessage(Message.ToAddress, hashedMessage);
             }
             catch (Exception ex)
@@ -95,6 +113,7 @@ namespace PhantasmaMail.ViewModels
 
             if (!string.IsNullOrEmpty(txHash))
             {
+                Message.Hash = txHash;
                 AppSettings.SentMessages.Add(Message);
                 await FileHelper.UpdateMessages(hashedMessage);
                 await DialogService.ShowAlertAsync(
