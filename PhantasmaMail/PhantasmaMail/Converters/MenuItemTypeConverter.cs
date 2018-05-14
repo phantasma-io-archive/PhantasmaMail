@@ -25,6 +25,8 @@ namespace PhantasmaMail.Converters
                     return platform ? "Assets/trash.svg" : "trash.svg";
                 case MenuItemType.Wallet:
                     return platform ? "Assets/tablet.svg" : "tablet.svg";
+                case MenuItemType.Important:
+                    return platform ? "Assets/star.svg" : "star.svg";
                 default:
                     return string.Empty;
             }

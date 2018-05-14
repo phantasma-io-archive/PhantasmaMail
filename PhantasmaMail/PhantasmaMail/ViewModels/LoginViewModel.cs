@@ -24,9 +24,10 @@ namespace PhantasmaMail.ViewModels
             try
             {
                 if (IsBusy) return;
-                DialogService.ShowLoading();
+                //DialogService.ShowLoading();
                 IsBusy = true;
                 // TODO LOGIN LOGIC
+                await Task.Delay(1000);
                 if (IsWif)
                 {
                     if (!await AuthenticationService.LoginAsync(Wif))
@@ -46,12 +47,6 @@ namespace PhantasmaMail.ViewModels
             {
                 await DialogService.ShowAlertAsync(ex.Message, "Error");
             }
-            finally
-            {
-                IsBusy = false;
-                DialogService.HideLoading();
-            }
-
             if (AuthenticationService.IsAuthenticated)
             {
                 await LoadLocalFiles();
@@ -65,6 +60,8 @@ namespace PhantasmaMail.ViewModels
                     await NavigationService.NavigateToAsync<MainViewModel>();
                 }
             }
+
+            IsBusy = false;
 
         }
 

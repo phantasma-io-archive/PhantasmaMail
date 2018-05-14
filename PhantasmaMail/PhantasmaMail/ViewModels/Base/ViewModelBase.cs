@@ -19,8 +19,6 @@ namespace PhantasmaMail.ViewModels.Base
         protected readonly IAuthenticationService AuthenticationService;
         protected readonly IPhantasmaService PhantasmaService;
 
-        public ICommand SwitchToInboxCommand => new Command(async () => await SwitchToInboxExecute());
-        public ICommand SwitchToSentCommand => new Command(async () => await SwitchToSentExecute());
 
         protected ViewModelBase()
         {
@@ -28,52 +26,6 @@ namespace PhantasmaMail.ViewModels.Base
             NavigationService = Locator.Instance.Resolve<INavigationService>();
             AuthenticationService = Locator.Instance.Resolve<IAuthenticationService>();
             PhantasmaService = Locator.Instance.Resolve<IPhantasmaService>();
-        }
-
-        //public ViewModelBase(IDialogService dialogService, INavigationService navigationService)
-        //{
-        //    DialogService = dialogService;
-        //    NavigationService = navigationService;
-        //}
-
-        private async Task SwitchToInboxExecute()
-        {
-            if (IsBusy) return;
-            try
-            {
-                IsBusy = true;
-                if (NavigationService.GetCurrentViewModel() is InboxViewModel) return;
-
-                await NavigationService.NavigateToAsync<InboxViewModel>();
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
-            }
-            finally
-            {
-                IsBusy = false;
-            }
-        }
-
-
-        private async Task SwitchToSentExecute()
-        {
-            if (IsBusy) return;
-            try
-            {
-                IsBusy = true;
-                if (NavigationService.GetCurrentViewModel() is SentViewModel) return;
-                await NavigationService.NavigateToAsync<SentViewModel>();
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
-            }
-            finally
-            {
-                IsBusy = false;
-            }
         }
 
         public bool IsBusy

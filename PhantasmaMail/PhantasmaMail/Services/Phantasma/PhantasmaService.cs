@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 using System.Threading.Tasks;
@@ -168,6 +169,33 @@ namespace PhantasmaMail.Services.Phantasma
                 var estimation = await accountsigner.EstimateGasAsync(ContractScriptHash, "sendMessage", parameterList);
                 var e = estimation;
             }
+        }
+
+        public async Task<string> MintTokens(decimal amount)
+        {
+            var testScriptHash = "e6310d7a45131fc55e60ec9bfc016901184c88ad";
+            var compressedPublicKey = ActiveUser.GetCompressedPublicKey(); //TODO switch this block to an unified call
+            var account = ActiveUser.GetDefaultAccount();
+            var keypair = ActiveUser.GetKeypair();
+
+            if (compressedPublicKey == null || account == null || keypair == null) return string.Empty;
+            var scriptBytes = UInt160.Parse(testScriptHash).ToArray();
+
+            var output = new List<NeoModules.NEP6.Models.TransactionOutput>()
+            {
+                new NeoModules.NEP6.Models.TransactionOutput()
+                {
+                    AddressHash = account.Address.ToArray(),
+                    Amount = 2,
+                }
+            };
+
+            if (account.TransactionManager is AccountSignerTransactionManager accountsigner)
+            {
+                var transaction = await accountsigner.CallContract(keypair, scriptBytes, "mintTokens", null, "NEO", output);
+                if (transaction != null) return transaction.Hash.ToString();
+            }
+            return string.Empty;
         }
 
         #region Private Properties

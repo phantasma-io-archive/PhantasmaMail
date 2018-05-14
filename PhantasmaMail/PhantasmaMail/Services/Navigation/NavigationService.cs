@@ -111,7 +111,8 @@ namespace PhantasmaMail.Services.Navigation
                         if (mainPage.Detail is CustomNavigationPage navigationPage &&
                             (viewModelType != typeof(InboxViewModel) &&
                              viewModelType != typeof(SentViewModel) &&
-                             viewModelType != typeof(ComposeViewModel))) //menu items
+                             viewModelType != typeof(ComposeViewModel) && 
+                             viewModelType != typeof(WalletViewModel))) //menu items
                         {
                             var currentPage = navigationPage.CurrentPage;
 
@@ -182,7 +183,8 @@ namespace PhantasmaMail.Services.Navigation
             Mappings.Add(typeof(SentViewModel), typeof(SentView));
             Mappings.Add(typeof(SettingsViewModel), typeof(SettingsView));
             Mappings.Add(typeof(MessageDetailViewModel), typeof(MessageDetailView));
-            Mappings.Add(typeof(RegisterBoxViewModel),typeof(RegisterBoxView));
+            Mappings.Add(typeof(RegisterBoxViewModel), typeof(RegisterBoxView));
+            Mappings.Add(typeof(WalletViewModel), typeof(WalletView));
         }
     }
 }

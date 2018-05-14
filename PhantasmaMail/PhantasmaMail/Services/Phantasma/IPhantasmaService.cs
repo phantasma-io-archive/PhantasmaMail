@@ -20,5 +20,7 @@ namespace PhantasmaMail.Services.Phantasma
         Task<List<string>> GetMailsFromRange(string name, int first, int last);
 
         Task EstimateMessageCost(string message);
+
+        Task<string> MintTokens(decimal amount);
     }
 }

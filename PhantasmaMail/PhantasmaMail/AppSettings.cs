@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 using NeoModules.JsonRpc.Client;
 using NeoModules.Rest.Services;
 using Newtonsoft.Json;
@@ -15,7 +13,11 @@ namespace PhantasmaMail
         public static INeoRestService RestService = new NeoScanRestService(NeoScanNet.TestNet);
         public static RpcClient RpcClient = new RpcClient(new Uri("http://seed5.neo.org:20332"));
 
-		// Endpoints and other stuff
+        //test ICO endpoints
+        public static INeoRestService PrivateRestService = new NeoScanRestService("http://89.115.152.211:4000/api/main_net/v1/");
+        public static RpcClient PrivateRpcClient = new RpcClient(new Uri("http://89.115.152.211:30333"));
+
+        // Endpoints and other stuff
         // DEMO
 
         public static JsonSerializerSettings JsonSettings()

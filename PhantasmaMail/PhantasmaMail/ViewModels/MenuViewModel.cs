@@ -29,7 +29,7 @@ namespace PhantasmaMail.ViewModels
             }
         }
 
-        public ICommand MenuItemSelectedCommand => new Xamarin.Forms.Command<MenuItem>(OnSelectMenuItem);
+        public ICommand MenuItemSelectedCommand => new Command<MenuItem>(OnSelectMenuItem);
         public ICommand GoToSettingsCommand => new Command(async () => await GoToSettingsExecute());
         public ICommand LogoutCommand => new Command(async () => await LogoutExecute());
 
@@ -52,7 +52,6 @@ namespace PhantasmaMail.ViewModels
                 ViewModelType = typeof(InboxViewModel),
                 IsEnabled = true
             });
-
             MenuItems.Add(new MenuItem
             {
                 Title = AppResource.MenuItem_Sent,
@@ -69,6 +68,13 @@ namespace PhantasmaMail.ViewModels
             });
             MenuItems.Add(new MenuItem
             {
+                Title = AppResource.MenuItem_Important,
+                MenuItemType = MenuItemType.Important,
+                ViewModelType = typeof(LoginViewModel),
+                IsEnabled = false
+            });
+            MenuItems.Add(new MenuItem
+            {
                 Title = AppResource.MenuItem_Trash,
                 MenuItemType = MenuItemType.Trash,
                 ViewModelType = typeof(LoginViewModel),
@@ -78,8 +84,8 @@ namespace PhantasmaMail.ViewModels
             {
                 Title = AppResource.MenuItem_Wallet,
                 MenuItemType = MenuItemType.Wallet,
-                ViewModelType = typeof(LoginViewModel),
-                IsEnabled = false
+                ViewModelType = typeof(WalletViewModel),
+                IsEnabled = true
             });
         }
 

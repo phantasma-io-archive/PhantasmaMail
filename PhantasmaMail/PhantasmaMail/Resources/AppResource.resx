@@ -159,4 +159,16 @@
   <data name="MenuItem_Wallet" xml:space="preserve">
     <value>Wallet</value>
   </data>
+  <data name="PageTitle_Compose" xml:space="preserve">
+    <value>MESSAGE</value>
+  </data>
+  <data name="PageTitle_Inbox" xml:space="preserve">
+    <value>INBOX</value>
+  </data>
+  <data name="PageTitle_Sent" xml:space="preserve">
+    <value>SENT</value>
+  </data>
+  <data name="PageTitle_Wallet" xml:space="preserve">
+    <value>WALLET</value>
+  </data>
 </root>

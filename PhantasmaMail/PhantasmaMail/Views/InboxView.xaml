@@ -10,8 +10,9 @@
     xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:extensions="clr-namespace:PhantasmaMail.MarkupExtensions"
     xmlns:sfpullToRefresh="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms"
-    Title=""
+    Title="{extensions:Translate PageTitle_Inbox}"
     BackgroundColor="{StaticResource WhiteBackground}">
+
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="WriteEmail.png" Command="{Binding NewMessageCommand}" />
     </ContentPage.ToolbarItems>
@@ -22,31 +23,17 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="20,10"> 
-                <Label Text="{extensions:Translate MenuItem_Inbox}" Margin="10,0"
-                       Style="{StaticResource SwitchBarLabelStyle}" TextColor="{StaticResource DarkBlueGreen}">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding SwitchToInboxCommand}" />
-                    </Label.GestureRecognizers>
-                </Label>
-
-                <Label Text="{extensions:Translate MenuItem_Sent}" Margin="10,0"
-                       Style="{StaticResource SwitchBarLabelStyle}">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding SwitchToSentCommand}" />
-                    </Label.GestureRecognizers>
-                </Label>
-
-                <!-- Search -->
-                <ffimageloadingsvg:SvgCachedImage VerticalOptions="Center" HorizontalOptions="EndAndExpand"
+            <!-- Search -->
+            <SearchBar Grid.Row="0"/>
+            <ffimageloadingsvg:SvgCachedImage Grid.Row="0" VerticalOptions="Center" HorizontalOptions="EndAndExpand"
                                                   Source="search.svg" HeightRequest="20"
                                                   WidthRequest="20" IsVisible="false">
-                    <ffimageloadingsvg:SvgCachedImage.Transformations>
-                        <fftransformations:TintTransformation EnableSolidColor="true"
+                <ffimageloadingsvg:SvgCachedImage.Transformations>
+                    <fftransformations:TintTransformation EnableSolidColor="true"
                                                               HexColor="#A1ACB3" />
-                    </ffimageloadingsvg:SvgCachedImage.Transformations>
-                </ffimageloadingsvg:SvgCachedImage>
-            </StackLayout>
+                </ffimageloadingsvg:SvgCachedImage.Transformations>
+            </ffimageloadingsvg:SvgCachedImage>
+
 
             <sfpullToRefresh:SfPullToRefresh x:Name="pullToRefreshList" Grid.Row="1"
                                            ProgressBackgroundColor="{StaticResource Accent}" RefreshContentHeight="30"
@@ -96,7 +83,7 @@
                 </ffimageloadingsvg:SvgCachedImage>
 
                 <Label Grid.Row="1" HorizontalTextAlignment="Center" Text="You don't have any messages." Style="{StaticResource NoMessagesLabelStyle}"/>
-                    <Grid.Triggers>
+                <Grid.Triggers>
                     <DataTrigger TargetType="Grid"
                                      Binding="{Binding Source={x:Reference InboxListView}, Path=ItemsSource.Count}"
                                      Value="0">
@@ -104,7 +91,7 @@
                     </DataTrigger>
                 </Grid.Triggers>
             </Grid>
-           
+
         </Grid>
 
     </ContentPage.Content>

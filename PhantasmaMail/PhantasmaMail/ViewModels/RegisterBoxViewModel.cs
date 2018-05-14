@@ -25,7 +25,8 @@ namespace PhantasmaMail.ViewModels
 
         private async Task CreateBoxExecute()
         {
-            DialogService.ShowLoading();
+            if (IsBusy) return;
+            IsBusy = true;
             try
             {
                 if (!string.IsNullOrEmpty(BoxName))
@@ -38,17 +39,18 @@ namespace PhantasmaMail.ViewModels
                     else
                     {
                         await DialogService.ShowAlertAsync(
-                            "Email created, you need to wait 20/40 seconds minutes before sending any e-mails",
+                            "Box created, you need to wait 20/40 seconds minutes before sending any messages",
                             "Success");
                         await NavigationService.NavigateToAsync<MainViewModel>();
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                await DialogService.ShowAlertAsync(ex.Message, "Error");
+                await DialogService.ShowAlertAsync("Something went wrong. Make sure you have a drop of GAS in this address", "Error");
             }
-            DialogService.HideLoading();
+
+            IsBusy = false;
         }
     }
 }

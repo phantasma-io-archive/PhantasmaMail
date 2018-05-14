@@ -210,12 +210,7 @@
                 <Setter Property="FontSize" 
                         Value="{StaticResource ExtraLittleSize}" />
             </Style>
-
-            <Style x:Key="SwitchBarLabelStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="{StaticResource LightGray}"/>
-                <Setter Property="FontSize" Value="{StaticResource LargeSize}" />
-                <Setter Property="FontFamily" Value="{StaticResource OpenSansSemiBold}" />
-            </Style>
+            
 
             <Style x:Key="LoginStyle"
                    TargetType="xfx:XfxEntry">

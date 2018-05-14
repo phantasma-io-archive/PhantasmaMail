@@ -7,8 +7,10 @@
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:controls="clr-namespace:PhantasmaMail.Controls;assembly=PhantasmaMail"
-    Title=""
+    xmlns:markupExtensions="clr-namespace:PhantasmaMail.MarkupExtensions;assembly=PhantasmaMail"
+    Title="{markupExtensions:Translate PageTitle_Sent}"
     BackgroundColor="{StaticResource WhiteBackground}">
+
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="WriteEmail.png" Command="{Binding NewMessageCommand}"/>
     </ContentPage.ToolbarItems>
@@ -18,29 +20,18 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="20,10" >
-                <Label Text="Inbox" Margin="10,0" Style="{StaticResource SwitchBarLabelStyle}">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding SwitchToInboxCommand}"/>
-                    </Label.GestureRecognizers>
-                </Label>
 
-                <Label Text="Sent" Margin="10,0" Style="{StaticResource SwitchBarLabelStyle}" TextColor="{StaticResource DarkBlueGreen}">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding SwitchToSentCommand}"/>
-                    </Label.GestureRecognizers>
-                </Label>
+            <!-- Search -->
+            <SearchBar Grid.Row="0"/>
+            <ffimageloadingsvg:SvgCachedImage Grid.Row="0" VerticalOptions="Center" HorizontalOptions="EndAndExpand"
+                                              Source="search.svg" HeightRequest="20"
+                                              WidthRequest="20" IsVisible="false">
+                <ffimageloadingsvg:SvgCachedImage.Transformations>
+                    <fftransformations:TintTransformation EnableSolidColor="true"
+                                                          HexColor="#A1ACB3" />
+                </ffimageloadingsvg:SvgCachedImage.Transformations>
+            </ffimageloadingsvg:SvgCachedImage>
 
-                <!-- Search todo -->
-                <ffimageloadingsvg:SvgCachedImage VerticalOptions="Center" HorizontalOptions="EndAndExpand" IsVisible="False"
-                                                  Source="search.svg"  HeightRequest="20"
-                                                  WidthRequest="20">
-                    <ffimageloadingsvg:SvgCachedImage.Transformations>
-                        <fftransformations:TintTransformation EnableSolidColor="true"
-                                                              HexColor="#A1ACB3" />
-                    </ffimageloadingsvg:SvgCachedImage.Transformations>
-                </ffimageloadingsvg:SvgCachedImage>
-            </StackLayout>
 
             <syncfusion:SfListView
                 x:Name="SentList"

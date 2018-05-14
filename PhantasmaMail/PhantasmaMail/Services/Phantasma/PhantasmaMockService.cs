@@ -45,5 +45,10 @@ namespace PhantasmaMail.Services.Phantasma
         {
             throw new NotImplementedException();
         }
+
+        public Task<string> MintTokens(decimal amount)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

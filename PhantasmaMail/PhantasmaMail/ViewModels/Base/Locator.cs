@@ -32,6 +32,7 @@ namespace PhantasmaMail.ViewModels.Base
             _containerBuilder.RegisterType<ComposeViewModel>();
             _containerBuilder.RegisterType<MessageDetailViewModel>();
             _containerBuilder.RegisterType<RegisterBoxViewModel>();
+            _containerBuilder.RegisterType<WalletViewModel>();
         }
 
         public T Resolve<T>()

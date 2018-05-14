@@ -11,8 +11,6 @@
     <ContentPage.Resources>
         <ResourceDictionary>
 
-           
-
             <Style x:Key="LoginOptionLabelStyle"
                    BasedOn="{StaticResource OpenSansSemiBoldLabelStyle}"
                    TargetType="Label">
@@ -23,18 +21,27 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand"
+
+        <Grid VerticalOptions="FillAndExpand"
                      HorizontalOptions="FillAndExpand"
                      Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-            <ffimageloading:CachedImage Source="phantasma_logo_vector.png" WidthRequest="90" HeightRequest="75"
+            <ActivityIndicator Grid.Row="0" Grid.RowSpan="4" IsRunning="{Binding IsBusy}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Color="White"/>
+
+            <ffimageloading:CachedImage Grid.Row="1" Source="phantasma_logo_vector.png" WidthRequest="90" HeightRequest="75"
                                         Margin="0,40,0,10" />
 
-            <Label Text="Phantasma" FontSize="{StaticResource ExtraBigSize}" TextColor="White"
+            <Label Grid.Row="2" Text="Phantasma" FontSize="{StaticResource ExtraBigSize}" TextColor="White"
                    FontFamily="{StaticResource GeoMedium}"
                    HorizontalTextAlignment="Center" />
 
-            <Grid VerticalOptions="EndAndExpand">
+            <Grid Grid.Row="3" VerticalOptions="EndAndExpand" IsVisible="{Binding IsBusy,Converter={StaticResource InverseBooleanConverter}}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
@@ -76,7 +83,7 @@
 
                 <Frame Padding="8" Grid.Row="3" Grid.Column="0" BackgroundColor="{Binding IsEncryptedKey, Converter={StaticResource LoginButtonBooleanToColorConverter}}" 
                        HorizontalOptions="FillAndExpand" 
-                       HasShadow="False" OutlineColor="Transparent" CornerRadius="6" Margin="5,0">
+                       HasShadow="False" BorderColor="Transparent" CornerRadius="6" Margin="5,0">
                     <Label Text="{markupExtensions:Translate Button_EncryptedKey}" 
                            Style="{StaticResource LoginOptionLabelStyle}"
                            TextColor="{Binding IsEncryptedKey, Converter={StaticResource LoginTextBooleanToColorConverter}}" 
@@ -99,8 +106,6 @@
                 </Frame>
 
             </Grid>
-
-
-        </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

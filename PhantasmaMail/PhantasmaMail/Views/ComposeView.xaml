@@ -9,13 +9,13 @@
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
-    Title="{extensions:Translate MenuItem_Compose}"
+    Title="{extensions:Translate PageTitle_Compose}"
     BackgroundColor="{StaticResource WhiteBackground}">
     <ContentPage.Resources>
         <ResourceDictionary>
 
             <Style x:Key="CustomEntryStyle" TargetType="xfx:XfxEntry">
-                <Setter Property="FontSize" Value="{StaticResource MediumSize}" />
+                <Setter Property="FontSize" Value="{StaticResource MidMediumSize}" />
                 <Setter Property="FontFamily" Value="{StaticResource OpenSansSemiBold}" />
                 <Setter Property="PlaceholderColor" Value="{StaticResource LightGray}" /> 
                 <Setter Property="ActivePlaceholderColor" Value="{StaticResource LightBlueGreen }" />
@@ -27,8 +27,8 @@
         <Grid HorizontalOptions="FillAndExpand"
               VerticalOptions="FillAndExpand">
             <Grid.RowDefinitions>
-                <RowDefinition Height="8*" />
-                <RowDefinition Height="2*" />
+                <RowDefinition Height="9*" />
+                <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
 
             <Frame Grid.Row="0"
@@ -40,10 +40,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
-                        <RowDefinition Height="1" />
                         <RowDefinition Height="*" />
-                        <RowDefinition Height="1" />
-                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
                     <!--TODO LOCALIZATION and STYLE-->
@@ -60,25 +57,11 @@
                                   Placeholder="Subject:"
                                   Text="{Binding Message.Subject}" />
 
-                    <BoxView Grid.Row="2"
-                             WidthRequest="50"
-                             BackgroundColor="{StaticResource SeparatorGray}" />
-
-                    <controls:ExpandableEditor Grid.Row="3"
+                    <controls:ExpandableEditor Grid.Row="2"
                                                FontFamily="{StaticResource OpenSansRegular}"
                                                TextColor="{StaticResource LightGray}"
                                                FontSize="{StaticResource MidMediumSize}"
                                                Text="{Binding Message.TextContent}" />
-
-                    <BoxView Grid.Row="4"
-                             HorizontalOptions="FillAndExpand"
-                             BackgroundColor="{StaticResource SeparatorGray}" />
-
-                    <Label Grid.Row="5"
-                           Text="{Binding FormattedDate}"
-                           HorizontalOptions="EndAndExpand"
-                           Style="{StaticResource MessageTextStyle}"
-                           FontSize="{StaticResource LittleSize}"/>
                 </Grid>
             </Frame>
 

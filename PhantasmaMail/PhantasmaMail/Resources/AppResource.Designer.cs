@@ -185,5 +185,41 @@ namespace PhantasmaMail.Resources {
                 return ResourceManager.GetString("MenuItem_Wallet", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MESSAGE.
+        /// </summary>
+        public static string PageTitle_Compose {
+            get {
+                return ResourceManager.GetString("PageTitle_Compose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INBOX.
+        /// </summary>
+        public static string PageTitle_Inbox {
+            get {
+                return ResourceManager.GetString("PageTitle_Inbox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SENT.
+        /// </summary>
+        public static string PageTitle_Sent {
+            get {
+                return ResourceManager.GetString("PageTitle_Sent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WALLET.
+        /// </summary>
+        public static string PageTitle_Wallet {
+            get {
+                return ResourceManager.GetString("PageTitle_Wallet", resourceCulture);
+            }
+        }
     }
 }
