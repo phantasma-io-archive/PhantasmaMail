@@ -1,14 +1,87 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:markupExtensions="clr-namespace:PhantasmaMail.MarkupExtensions;assembly=PhantasmaMail"
              x:Class="PhantasmaMail.Views.WalletView"
-             Title="{markupExtensions:Translate PageTitle_Wallet}">
+             Title="{markupExtensions:Translate PageTitle_Wallet}"
+             BackgroundColor="{StaticResource WhiteBackground}">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="WalletGrayLabelStyle" BasedOn="{StaticResource OpenSansSemiBoldLabelStyle}" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource LightGray}" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource LargeSize}" />
+            </Style>
+
+            <Style x:Key="WalletGreenLabelStyle" BasedOn="{StaticResource OpenSansSemiBoldLabelStyle}" TargetType="Label">
+                <Setter Property="FontSize"
+                        Value="{StaticResource LargerSize}" />
+            </Style>
+
+            <Style x:Key="WalletButtonStyle" BasedOn="{StaticResource ButtonStyle}" TargetType="Button">
+                <Setter Property="TextColor" Value="{StaticResource DarkBlueGreen}" />
+                <Setter Property="CornerRadius" Value="0"/>
+                <Setter Property="BorderRadius" Value="0" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+        <Grid Margin="20" RowSpacing="25" ColumnSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- NEO -->
+            <Frame Grid.Row="0" Grid.Column="0">
+                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Label Text="NEO" HorizontalTextAlignment="Center" Style="{StaticResource WalletGrayLabelStyle}" />
+                    <Label Text="0" HorizontalTextAlignment="Center" Style="{StaticResource WalletGreenLabelStyle}" />
+                    <Label Text="$0.00 USD" HorizontalTextAlignment="Center"
+                           Style="{StaticResource WalletGrayLabelStyle}" FontSize="{StaticResource MediumSize}" />
+                </StackLayout>
+            </Frame>
+
+
+            <!-- GAS -->
+            <Frame Grid.Row="0" Grid.Column="1">
+                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Label Text="GAS" HorizontalTextAlignment="Center" Style="{StaticResource WalletGrayLabelStyle}" />
+                    <Label Text="0" HorizontalTextAlignment="Center" Style="{StaticResource WalletGreenLabelStyle}" />
+                    <Label Text="$0.00 USD" HorizontalTextAlignment="Center"
+                           Style="{StaticResource WalletGrayLabelStyle}" FontSize="{StaticResource MediumSize}" />
+                </StackLayout>
+            </Frame>
+
+            <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource WalletButtonStyle}" Text="Claim 000000 Gas" />
+
+            <Button Grid.Row="2" Grid.Column="0"
+                    Style="{StaticResource WalletButtonStyle}"
+                    Text="Send" />
+
+            <Button Grid.Row="2" Grid.Column="1"
+                    Style="{StaticResource WalletButtonStyle}"
+                    Text="Receive" />
+
+            <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="Participate in Token Sale"
+                    Style="{StaticResource WalletButtonStyle}" FontSize="{StaticResource MediumSize}" />
+
+            <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+                   Text="Transaction History"
+                   HorizontalTextAlignment="Start" />
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>
