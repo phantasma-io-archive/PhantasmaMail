@@ -44,7 +44,7 @@ namespace PhantasmaMail.ViewModels
         {
             if (message != null)
             {
-                await NavigationService.NavigateToAsync<MessageDetailViewModel>(message);
+                await NavigationService.NavigateToAsync<MessageDetailViewModel>(new object[] { message, true });
                 MessageSelected = null;
             }
         }
@@ -58,23 +58,23 @@ namespace PhantasmaMail.ViewModels
                 IsBusy = true;
 
                 InboxList.Clear();
-                //BoxName = await PhantasmaService.GetUserMailbox();
-                //if (!string.IsNullOrEmpty(BoxName))
-                //{
-                //    var mailCount = await PhantasmaService.GetMailCount(BoxName);
+                BoxName = await PhantasmaService.GetUserMailbox();
+                if (!string.IsNullOrEmpty(BoxName))
+                {
+                    var mailCount = await PhantasmaService.GetMailCount(BoxName);
 
-                //    var emails = await PhantasmaService.GetMailsFromRange(BoxName, 1, mailCount);
-                //    foreach (var email in emails)
-                //    {
-                //        if (email.StartsWith("{") || email.StartsWith("["))
-                //        {
-                //            var mailObject = JsonConvert.DeserializeObject<Message>(email, AppSettings.JsonSettings());
-                //            if (mailObject != null) InboxList.Add(mailObject);
-                //        }
-                //    }
+                    var emails = await PhantasmaService.GetMailsFromRange(BoxName, 1, mailCount);
+                    foreach (var email in emails)
+                    {
+                        if (email.StartsWith("{") || email.StartsWith("["))
+                        {
+                            var mailObject = JsonConvert.DeserializeObject<Message>(email, AppSettings.JsonSettings());
+                            if (mailObject != null) InboxList.Add(mailObject);
+                        }
+                    }
 
-                //    InboxList = new ObservableCollection<Message>(InboxList.OrderByDescending(p => p.Date).ThenByDescending(p => p.Date.Hour).ToList());
-                //}
+                    InboxList = new ObservableCollection<Message>(InboxList.OrderByDescending(p => p.Date).ThenByDescending(p => p.Date.Hour).ToList());
+                }
 
                 //var test = await PhantasmaService.MintTokens(50);
             }

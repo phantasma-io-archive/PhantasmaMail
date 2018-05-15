@@ -1,12 +1,17 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using SQLite;
 using Xamarin.Forms;
 
 namespace PhantasmaMail.Models
 {
     public class Message : BindableObject
     {
+        [PrimaryKey, AutoIncrement]
+        [JsonIgnore]
+        public int ID { get; set; }
+
         #region Bindable Properties
 
         private string _toAddress;
@@ -67,6 +72,7 @@ namespace PhantasmaMail.Models
 
         private DateTime _date;
 
+        [Ignore]
         [JsonProperty("date")]
         public DateTime Date
         {
@@ -92,6 +98,12 @@ namespace PhantasmaMail.Models
         }
 
         #endregion
+
+
+        public Message()
+        {
+            
+        }
 
         public static async Task Store()
         {

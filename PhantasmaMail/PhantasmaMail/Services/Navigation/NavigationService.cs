@@ -182,7 +182,7 @@ namespace PhantasmaMail.Services.Navigation
             Mappings.Add(typeof(ComposeViewModel), typeof(ComposeView));
             Mappings.Add(typeof(SentViewModel), typeof(SentView));
             Mappings.Add(typeof(SettingsViewModel), typeof(SettingsView));
-            Mappings.Add(typeof(MessageDetailViewModel), typeof(InboxMessageDetailView));
+            Mappings.Add(typeof(MessageDetailViewModel), typeof(MessageDetailView));
             Mappings.Add(typeof(RegisterBoxViewModel), typeof(RegisterBoxView));
             Mappings.Add(typeof(WalletViewModel), typeof(WalletView));
         }

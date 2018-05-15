@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Globalization;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Acr.UserDialogs;
 using Newtonsoft.Json;
-using PCLStorage;
 using PhantasmaMail.Models;
 using PhantasmaMail.Services.Db;
 using PhantasmaMail.ViewModels.Base;
@@ -16,6 +14,7 @@ namespace PhantasmaMail.ViewModels
 {
     public class ComposeViewModel : ViewModelBase
     {
+        #region Observable Properties
         private Message _message;
 
         public Message Message
@@ -41,6 +40,7 @@ namespace PhantasmaMail.ViewModels
                 OnPropertyChanged();
             }
         }
+        #endregion
 
         public DateTime CurrentDateTime => DateTime.UtcNow;
 
@@ -48,12 +48,16 @@ namespace PhantasmaMail.ViewModels
         public ICommand SendMessageCommand => new Command(async () => await SendMessageExecute());
         public ICommand AttachFileCommand => new Command(async () => await AttachFileExecute());
 
+        private IPhantasmaDb _db;
+
         public override Task InitializeAsync(object navigationData)
         {
             Message = new Message();
             var culture = new CultureInfo("en-GB");
             CultureInfo.CurrentCulture = culture;
             FormattedDate = string.Format("{0:f}", DateTime.UtcNow);
+
+            _db = new PhantasmaDb();
             return base.InitializeAsync(navigationData);
         }
 
@@ -93,6 +97,7 @@ namespace PhantasmaMail.ViewModels
                 IsBusy = true;
 
                 DialogService.ShowLoading();
+                _db.AddMessage(Message);
 
                 hashedMessage = SerializeAndHashMessage();
                 //await PhantasmaService.EstimateMessageCost(hashedMessage);
@@ -138,7 +143,7 @@ namespace PhantasmaMail.ViewModels
 
         private async Task AttachFileExecute()
         {
-            await Task.Delay(1);
+            await DialogService.ShowAlertAsync("This feature is not live yet", "Error");
         }
     }
 }

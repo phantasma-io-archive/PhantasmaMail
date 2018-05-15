@@ -3,6 +3,7 @@ using PhantasmaMail.Services.Dialog;
 using PhantasmaMail.Services.Navigation;
 using System;
 using PhantasmaMail.Services.Authentication;
+using PhantasmaMail.Services.Db;
 using PhantasmaMail.Services.Phantasma;
 
 namespace PhantasmaMail.ViewModels.Base
@@ -33,6 +34,9 @@ namespace PhantasmaMail.ViewModels.Base
             _containerBuilder.RegisterType<MessageDetailViewModel>();
             _containerBuilder.RegisterType<RegisterBoxViewModel>();
             _containerBuilder.RegisterType<WalletViewModel>();
+
+            //db
+            //_containerBuilder.RegisterType<PhantasmaDb>().SingleInstance().As<IPhantasmaDb>();
         }
 
         public T Resolve<T>()

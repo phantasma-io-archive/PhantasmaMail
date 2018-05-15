@@ -24,16 +24,7 @@
             </Grid.RowDefinitions>
 
             <!-- Search -->
-            <SearchBar Grid.Row="0"/>
-            <ffimageloadingsvg:SvgCachedImage Grid.Row="0" VerticalOptions="Center" HorizontalOptions="EndAndExpand"
-                                                  Source="search.svg" HeightRequest="20"
-                                                  WidthRequest="20" IsVisible="false">
-                <ffimageloadingsvg:SvgCachedImage.Transformations>
-                    <fftransformations:TintTransformation EnableSolidColor="true"
-                                                              HexColor="#A1ACB3" />
-                </ffimageloadingsvg:SvgCachedImage.Transformations>
-            </ffimageloadingsvg:SvgCachedImage>
-
+            <SearchBar Grid.Row="0" Margin="20,5" Placeholder="Search"/> <!-- todo localization -->
 
             <sfpullToRefresh:SfPullToRefresh x:Name="pullToRefreshList" Grid.Row="1"
                                            ProgressBackgroundColor="{StaticResource Accent}" RefreshContentHeight="30"

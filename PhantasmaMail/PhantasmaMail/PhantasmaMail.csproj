@@ -14,13 +14,14 @@
     <PackageReference Include="NeoModules.NEP6" Version="0.0.14-beta" />
     <PackageReference Include="PCLStorage" Version="1.0.2" />
     <PackageReference Include="Rg.Plugins.Popup" Version="1.1.4.145-pre" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.4.118" />
     <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="16.1.0.37" />
     <PackageReference Include="Syncfusion.Xamarin.SfPullToRefresh" Version="16.1.0.37" />
     <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.3.6" />
     <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.3.6" />
     <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.3.6" />
-    <PackageReference Include="Xamarin.Forms" Version="3.0.0.446417" />
+    <PackageReference Include="Xamarin.Forms" Version="3.0.0.482510" />
     <PackageReference Include="Xfx.Controls" Version="1.1.3" />
   </ItemGroup>
 
@@ -49,11 +50,8 @@
       <SubType>Code</SubType>
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\InboxMessageDetailView.xaml.cs">
-      <DependentUpon>InboxMessageDetailView.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\SentMessageDetailView.xaml.cs">
-      <DependentUpon>SentMessageDetailView.xaml</DependentUpon>
+    <Compile Update="Views\MessageDetailView.xaml.cs">
+      <DependentUpon>MessageDetailView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -86,13 +84,10 @@
     <EmbeddedResource Update="Views\MenuView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\InboxMessageDetailView.xaml">
+    <EmbeddedResource Update="Views\MessageDetailView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\RegisterBoxView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\SentMessageDetailView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\SentView.xaml">
