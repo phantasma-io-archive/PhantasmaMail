@@ -49,6 +49,12 @@
       <SubType>Code</SubType>
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\InboxMessageDetailView.xaml.cs">
+      <DependentUpon>InboxMessageDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SentMessageDetailView.xaml.cs">
+      <DependentUpon>SentMessageDetailView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -80,10 +86,13 @@
     <EmbeddedResource Update="Views\MenuView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\MessageDetailView.xaml">
+    <EmbeddedResource Update="Views\InboxMessageDetailView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\RegisterBoxView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SentMessageDetailView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\SentView.xaml">

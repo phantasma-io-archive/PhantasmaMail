@@ -50,10 +50,7 @@ namespace PhantasmaMail.ViewModels
 
         public override Task InitializeAsync(object navigationData)
         {
-            Message = new Message
-            {
-                TextContent = "Write your message"
-            };
+            Message = new Message();
             var culture = new CultureInfo("en-GB");
             CultureInfo.CurrentCulture = culture;
             FormattedDate = string.Format("{0:f}", DateTime.UtcNow);

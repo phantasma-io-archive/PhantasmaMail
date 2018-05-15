@@ -18,11 +18,11 @@
             <Color x:Key="LightGray">#A1ACB3</Color>
             <Color x:Key="SeparatorGray">#D8D8D8</Color>
             <Color x:Key="WhiteBackground">#E6E9EE</Color>
-            <x:String x:Key="TintIconColor">#225E72</x:String>
-
 
             <Color x:Key="GradientStartColor">#FAFAFA</Color>
             <Color x:Key="GradientEndColor">#C0C0C0</Color>
+
+            <x:String x:Key="TintIconColor">#A1ACB3</x:String>
 
             <!-- CONVERTERS -->
             <converters:NullToBoolConverter x:Key="NullToBoolConverter"/>
