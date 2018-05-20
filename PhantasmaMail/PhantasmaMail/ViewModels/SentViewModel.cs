@@ -17,6 +17,8 @@ namespace PhantasmaMail.ViewModels
     {
         private readonly IPhantasmaDb _db;
 
+        private List<Message> _fullSentList;
+
         public SentViewModel(IPhantasmaDb phantasmaDb)
         {
             _db = phantasmaDb;
@@ -32,12 +34,10 @@ namespace PhantasmaMail.ViewModels
 
         public ICommand SearchCommand => new Command<string>(SearchExecute);
 
-        private List<Message> _fullSentList;
-
         public override async Task InitializeAsync(object navigationData)
         {
             DialogService.ShowLoading();
-            await InitTestList();
+            await RefreshExecute();
             DialogService.HideLoading();
         }
 
@@ -47,12 +47,6 @@ namespace PhantasmaMail.ViewModels
             IsBusy = true;
             await NavigationService.NavigateToAsync<ComposeViewModel>();
             IsBusy = false;
-        }
-
-        private async Task InitTestList()
-        {
-            var sentMessagesList = await _db.GetSentMessages(AuthenticationService.AuthenticatedUser.UserBox);
-            foreach (var storedMessage in sentMessagesList) SentList.Add(new Message(storedMessage));
         }
 
         public async Task RefreshExecute()
@@ -107,7 +101,7 @@ namespace PhantasmaMail.ViewModels
 
             if (message != null)
             {
-                await NavigationService.NavigateToAsync<MessageDetailViewModel>(new object[] { message, false });
+                await NavigationService.NavigateToAsync<MessageDetailViewModel>(new object[] {message, false});
                 MessageSelected = null;
             }
 
@@ -118,7 +112,7 @@ namespace PhantasmaMail.ViewModels
         {
             //todo equals method
             var messageWithHash = storedMessages.Find(m => m.TextContent == msg.TextContent
-                                                           && m.ToInbox == msg.FromInbox
+                                                           && m.ToInbox == msg.ToInbox
                                                            && m.Date == msg.Date
                                                            && m.FromInbox == msg.FromInbox);
 
@@ -135,9 +129,9 @@ namespace PhantasmaMail.ViewModels
             else
             {
                 var newList = new List<Message>(_fullSentList.Where(msg => msg.TextContent.Contains(text)
-                                                                      || msg.ToInbox.Contains(text)
-                                                                      || msg.Subject.Contains(text)
-                                                                      || msg.FromInbox.Contains(text)));
+                                                                           || msg.ToInbox.Contains(text)
+                                                                           || msg.Subject.Contains(text)
+                                                                           || msg.FromInbox.Contains(text)));
                 SentList = new ObservableCollection<Message>(newList);
             }
         }

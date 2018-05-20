@@ -230,7 +230,7 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     <ffimageloadingsvg:SvgCachedImage VerticalOptions="End" HorizontalOptions="Start"
-                                                      Source="arrow.svg"
+                                                      Source="down_arrow.svg"
                                                       Grid.Column="0" HeightRequest="20"
                                                       WidthRequest="28">
                         <ffimageloadingsvg:SvgCachedImage.Transformations>

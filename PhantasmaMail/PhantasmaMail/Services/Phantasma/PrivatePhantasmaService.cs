@@ -216,7 +216,7 @@ namespace PhantasmaMail.Services.Phantasma
         private byte[] ContractScriptHashBytes => UInt160.Parse(ContractScriptHash).ToArray();
 
         //TODO: change to main net scripthash
-        private const string ContractScriptHash = "";
+        private const string ContractScriptHash = "4b4f63919b9ecfd2483f0c72ff46ed31b5bbb7a4";
         private readonly NeoApiService _neoRpcClient; // TODO: fix so the app only use one RpcClient
 
         #endregion
