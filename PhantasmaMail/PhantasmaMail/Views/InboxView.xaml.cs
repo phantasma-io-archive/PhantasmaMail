@@ -27,5 +27,5 @@ namespace PhantasmaMail.Views
 	        if (BindingContext is InboxViewModel vm) await vm.RefreshExecute();
 	        pullToRefreshList.IsRefreshing = false;
 	    }
-    }
+	}
 }

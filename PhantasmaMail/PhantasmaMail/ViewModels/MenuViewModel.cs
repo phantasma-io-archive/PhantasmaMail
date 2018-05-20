@@ -11,12 +11,18 @@ namespace PhantasmaMail.ViewModels
 {
     public class MenuViewModel : ViewModelBase, IHandleViewAppearing, IHandleViewDisappearing
     {
+        private string _boxName;
+
         private ObservableCollection<MenuItem> _menuItems;
 
-        public MenuViewModel()
+        public string BoxName
         {
-            MenuItems = new ObservableCollection<MenuItem>();
-            InitMenuItems();
+            get => _boxName;
+            set
+            {
+                _boxName = value;
+                OnPropertyChanged();
+            }
         }
 
         public ObservableCollection<MenuItem> MenuItems
@@ -29,7 +35,7 @@ namespace PhantasmaMail.ViewModels
             }
         }
 
-        public ICommand MenuItemSelectedCommand => new Command<MenuItem>(OnSelectMenuItem);
+        public ICommand MenuItemSelectedCommand => new Xamarin.Forms.Command<MenuItem>(OnSelectMenuItem);
         public ICommand GoToSettingsCommand => new Command(async () => await GoToSettingsExecute());
         public ICommand LogoutCommand => new Command(async () => await LogoutExecute());
 
@@ -41,6 +47,14 @@ namespace PhantasmaMail.ViewModels
         public Task OnViewDisappearingAsync(VisualElement view)
         {
             return Task.FromResult(true);
+        }
+
+        public override Task InitializeAsync(object navigationData)
+        {
+            MenuItems = new ObservableCollection<MenuItem>();
+            InitMenuItems();
+            BoxName = AuthenticationService.AuthenticatedUser.UserBox;
+            return base.InitializeAsync(navigationData);
         }
 
         private void InitMenuItems()
@@ -85,7 +99,14 @@ namespace PhantasmaMail.ViewModels
                 Title = AppResource.MenuItem_Wallet,
                 MenuItemType = MenuItemType.Wallet,
                 ViewModelType = typeof(WalletViewModel),
-                IsEnabled = true
+                IsEnabled = false
+            });
+            MenuItems.Add(new MenuItem
+            {
+                Title = AppResource.MenuItem_Settings,
+                MenuItemType = MenuItemType.Settings,
+                ViewModelType = typeof(SettingsViewModel),
+                IsEnabled = false
             });
         }
 

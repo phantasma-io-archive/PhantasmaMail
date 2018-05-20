@@ -61,6 +61,42 @@ namespace PhantasmaMail.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        public static string Alert_Error {
+            get {
+                return ResourceManager.GetString("Alert_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This feature is not live yet!.
+        /// </summary>
+        public static string Alert_FeatureNotLive {
+            get {
+                return ResourceManager.GetString("Alert_FeatureNotLive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Something went wrong.Try again in a new seconds..
+        /// </summary>
+        public static string Alert_SomethingWrong {
+            get {
+                return ResourceManager.GetString("Alert_SomethingWrong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error importing account..
+        /// </summary>
+        public static string Alert_Wallet {
+            get {
+                return ResourceManager.GetString("Alert_Wallet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Encrypted Key.
         /// </summary>
         public static string Button_EncryptedKey {
@@ -187,7 +223,7 @@ namespace PhantasmaMail.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MESSAGE.
+        ///   Looks up a localized string similar to Compose.
         /// </summary>
         public static string PageTitle_Compose {
             get {
@@ -196,7 +232,7 @@ namespace PhantasmaMail.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to INBOX.
+        ///   Looks up a localized string similar to Inbox.
         /// </summary>
         public static string PageTitle_Inbox {
             get {
@@ -205,7 +241,7 @@ namespace PhantasmaMail.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SENT.
+        ///   Looks up a localized string similar to Sent.
         /// </summary>
         public static string PageTitle_Sent {
             get {
@@ -214,7 +250,7 @@ namespace PhantasmaMail.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to WALLET.
+        ///   Looks up a localized string similar to Wallet.
         /// </summary>
         public static string PageTitle_Wallet {
             get {

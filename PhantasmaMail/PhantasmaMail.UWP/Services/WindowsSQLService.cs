@@ -11,12 +11,13 @@ namespace PhantasmaMail.UWP.Services
 {
     public class WindowsSQLService : ISQLite
     {
-        SQLiteConnection ISQLite.GetConnection()
+        public SQLiteAsyncConnection GetConnection()
         {
-            var sqliteFilename = "Phantasma.sqlite";
-            var path = Path.Combine(ApplicationData.Current.LocalFolder.Path, sqliteFilename);
-            var conn = new SQLiteConnection(path);
-            return conn;
+
+            string documentPath = ApplicationData.Current.LocalFolder.Path;
+            string path = Path.Combine(documentPath, "Phantasma.db3");
+
+            return new SQLiteAsyncConnection(path);
         }
     }
 }

@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Globalization;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Acr.UserDialogs;
 using Newtonsoft.Json;
 using PhantasmaMail.Models;
+using PhantasmaMail.Resources;
 using PhantasmaMail.Services.Db;
 using PhantasmaMail.ViewModels.Base;
 using Xamarin.Forms;
@@ -14,41 +16,18 @@ namespace PhantasmaMail.ViewModels
 {
     public class ComposeViewModel : ViewModelBase
     {
-        #region Observable Properties
-        private Message _message;
+        private readonly IPhantasmaDb _db;
 
-        public Message Message
+        public ComposeViewModel(IPhantasmaDb phantasmaDb)
         {
-            get => _message;
-
-            set
-            {
-                _message = value;
-                OnPropertyChanged();
-            }
+            _db = phantasmaDb;
         }
-
-        //todo remove
-        private string _formattedDate;
-
-        public string FormattedDate
-        {
-            get => _formattedDate;
-            set
-            {
-                _formattedDate = value;
-                OnPropertyChanged();
-            }
-        }
-        #endregion
 
         public DateTime CurrentDateTime => DateTime.UtcNow;
 
         public ICommand NavigateToInboxCommand => new Command(async () => await NavigateToInboxExecute());
         public ICommand SendMessageCommand => new Command(async () => await SendMessageExecute());
         public ICommand AttachFileCommand => new Command(async () => await AttachFileExecute());
-
-        private IPhantasmaDb _db;
 
         public override Task InitializeAsync(object navigationData)
         {
@@ -57,7 +36,10 @@ namespace PhantasmaMail.ViewModels
             CultureInfo.CurrentCulture = culture;
             FormattedDate = string.Format("{0:f}", DateTime.UtcNow);
 
-            _db = new PhantasmaDb();
+            if (navigationData is string s)
+            {
+                Message.ToInbox = s;
+            }
             return base.InitializeAsync(navigationData);
         }
 
@@ -83,67 +65,114 @@ namespace PhantasmaMail.ViewModels
         private async Task SendMessageExecute()
         {
             if (IsBusy) return;
-            if (string.IsNullOrEmpty(Message.Subject) || string.IsNullOrEmpty(Message.ToAddress) ||
+            if (string.IsNullOrEmpty(Message.Subject) || string.IsNullOrEmpty(Message.ToInbox) ||
                 string.IsNullOrEmpty(Message.TextContent))
             {
-                await DialogService.ShowAlertAsync("All fields are required", "Error");
+                await DialogService.ShowAlertAsync("All fields are required", AppResource.Alert_Error);
                 return;
             }
 
-            var hashedMessage = string.Empty;
             var txHash = string.Empty;
             try
             {
                 IsBusy = true;
 
                 DialogService.ShowLoading();
-                _db.AddMessage(Message);
 
-                hashedMessage = SerializeAndHashMessage();
-                //await PhantasmaService.EstimateMessageCost(hashedMessage);
-                txHash = await PhantasmaService.SendMessage(Message.ToAddress, hashedMessage);
+                var toAddress = await PhantasmaService.GetAddressFromMailbox(Message.ToInbox);
+
+                if (string.IsNullOrEmpty(toAddress))
+                {
+                    await DialogService.ShowAlertAsync("The specified inbox does not exist", AppResource.Alert_Error);
+                    return;
+                }
+
+                Message.ToAddress = toAddress;
+                var hashedMessage = SerializeAndHashMessage();
+                txHash = await PhantasmaService.SendMessage(Message.ToInbox, hashedMessage);
             }
             catch (Exception ex)
             {
-                await DialogService.ShowAlertAsync(ex.Message, "Error");
+                await DialogService.ShowAlertAsync(ex.Message, AppResource.Alert_Error);
             }
             finally
             {
-                IsBusy = false;
                 UserDialogs.Instance.HideLoading();
+                IsBusy = false;
             }
 
             if (!string.IsNullOrEmpty(txHash))
             {
                 Message.Hash = txHash;
-                AppSettings.SentMessages.Add(Message);
-                await FileHelper.UpdateMessages(hashedMessage);
+
+                //store to db
+                var store = Message.ToStoreMessage();
+                if (store != null)
+                {
+                    await _db.AddMessage(store);
+                }
+
                 await DialogService.ShowAlertAsync(
                     "Message sent! Use a block explorer to see your transaction: " + txHash, "Success");
                 await NavigationService.NavigateToAsync<InboxViewModel>();
             }
             else
             {
-                await DialogService.ShowAlertAsync("Something went wrong while sending the message", "Error");
+                await DialogService.ShowAlertAsync(AppResource.Alert_SomethingWrong, AppResource.Alert_Error);
             }
+
         }
 
         private string SerializeAndHashMessage()
         {
             Message.Date = DateTime.UtcNow;
+            Message.FromInbox = AuthenticationService.AuthenticatedUser.UserBox;
             Message.FromAddress = AuthenticationService.AuthenticatedUser.GetUserDefaultAddress();
             var json = JsonConvert.SerializeObject(Message, new JsonSerializerSettings
             {
                 DateFormatHandling = DateFormatHandling.IsoDateFormat,
                 NullValueHandling = NullValueHandling.Ignore
             });
-            //TODO hash
+
+            var bytes = Encoding.Default.GetBytes(json);
+            json = Encoding.UTF8.GetString(bytes);
+
             return json;
         }
 
         private async Task AttachFileExecute()
         {
-            await DialogService.ShowAlertAsync("This feature is not live yet", "Error");
+            await DialogService.ShowAlertAsync(AppResource.Alert_FeatureNotLive, AppResource.Alert_Error);
         }
+
+        #region Observable Properties
+
+        private Message _message;
+
+        public Message Message
+        {
+            get => _message;
+
+            set
+            {
+                _message = value;
+                OnPropertyChanged();
+            }
+        }
+
+        //todo remove
+        private string _formattedDate;
+
+        public string FormattedDate
+        {
+            get => _formattedDate;
+            set
+            {
+                _formattedDate = value;
+                OnPropertyChanged();
+            }
+        }
+
+        #endregion
     }
 }

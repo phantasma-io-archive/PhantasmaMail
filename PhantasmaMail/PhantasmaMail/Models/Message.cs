@@ -1,22 +1,34 @@
 ﻿using System;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
-using SQLite;
+using PhantasmaMail.Services.Db;
 using Xamarin.Forms;
 
 namespace PhantasmaMail.Models
 {
     public class Message : BindableObject
     {
-        [PrimaryKey, AutoIncrement]
         [JsonIgnore]
         public int ID { get; set; }
 
         #region Bindable Properties
 
+        private string _toInbox;
+
+        [JsonProperty("toInbox")]
+        public string ToInbox
+        {
+            get => _toInbox;
+
+            set
+            {
+                _toInbox = value;
+                OnPropertyChanged();
+            }
+        }
+
         private string _toAddress;
 
-        [JsonProperty("to")]
+        [JsonProperty("toAddress")]
         public string ToAddress
         {
             get => _toAddress;
@@ -28,9 +40,25 @@ namespace PhantasmaMail.Models
             }
         }
 
+
+        private string _fromInbox;
+
+        [JsonProperty("fromInbox")]
+        public string FromInbox
+        {
+            get => _fromInbox;
+
+            set
+            {
+                _fromInbox = value;
+                OnPropertyChanged();
+            }
+        }
+
+
         private string _fromAddress;
 
-        [JsonProperty("from")]
+        [JsonProperty("fromAddress")]
         public string FromAddress
         {
             get => _fromAddress;
@@ -72,7 +100,6 @@ namespace PhantasmaMail.Models
 
         private DateTime _date;
 
-        [Ignore]
         [JsonProperty("date")]
         public DateTime Date
         {
@@ -86,7 +113,7 @@ namespace PhantasmaMail.Models
 
         private string _hash;
 
-        [JsonIgnore]
+        [JsonProperty("txid")]
         public string Hash
         {
             get => _hash;
@@ -100,26 +127,38 @@ namespace PhantasmaMail.Models
         #endregion
 
 
-        public Message()
+        public Message(StoreMessage storeMessage)
         {
-            
+            FromAddress = storeMessage.FromAddress;
+            FromInbox = storeMessage.FromInbox;
+            ToAddress = storeMessage.ToAddress;
+            ToInbox = storeMessage.ToInbox;
+            Date = storeMessage.Date;
+            Hash = storeMessage.Hash;
+            Subject = storeMessage.Subject;
+            TextContent = storeMessage.TextContent;
         }
 
-        public static async Task Store()
+        public Message()
         {
-            //if (this.hash != null)
-            //{
-            //    return this.hash;
-            //}
 
-            //var ipfs = new IpfsClient();
+        }
 
-            //var text = JsonSerializer.WriteToString(this.TextContent);
-            //var node = await ipfs.FileSystem.AddTextAsync(text);
-            //this.hash = node.Hash;
-
-            //return this.hash;
-            await Task.Delay(1);
+        public StoreMessage ToStoreMessage()
+        {
+            var dbMessage = new StoreMessage
+            {
+                Date = Date,
+                FromInbox = FromInbox,
+                FromAddress = FromAddress,
+                ToAddress = ToAddress,
+                ToInbox = ToInbox,
+                Hash = Hash,
+                TextContent = TextContent,
+                Subject = Subject,
+                ID = ID
+            };
+            return dbMessage;
         }
     }
 }

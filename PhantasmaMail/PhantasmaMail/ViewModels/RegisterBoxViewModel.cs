@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using PhantasmaMail.Resources;
 using PhantasmaMail.ViewModels.Base;
 using Xamarin.Forms;
 
@@ -26,31 +27,45 @@ namespace PhantasmaMail.ViewModels
         private async Task CreateBoxExecute()
         {
             if (IsBusy) return;
-            IsBusy = true;
+            var tx = string.Empty;
             try
             {
+                IsBusy = true;
+                await Task.Delay(1000);
                 if (!string.IsNullOrEmpty(BoxName))
                 {
-                    var tx = await PhantasmaService.RegisterMailbox(BoxName);
-                    if (string.IsNullOrEmpty(tx))
-                    {
-                        await DialogService.ShowAlertAsync("Something went wrong", "Error");
-                    }
-                    else
+                    if (BoxName.Length <= 4 || BoxName.Length >= 20)
                     {
                         await DialogService.ShowAlertAsync(
-                            "Box created, you need to wait 20/40 seconds minutes before sending any messages",
-                            "Success");
-                        await NavigationService.NavigateToAsync<MainViewModel>();
+                            "Box name length must be more than 4 characters and less than 20", AppResource.Alert_Error);
+                        return;
                     }
+
+                    tx = await PhantasmaService.RegisterMailbox(BoxName.ToLowerInvariant());
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                await DialogService.ShowAlertAsync("Something went wrong. Make sure you have a drop of GAS in this address", "Error");
+                await DialogService.ShowAlertAsync(
+                    "Something went wrong. Make sure you have at least one drop of GAS in this address", AppResource.Alert_Error);
             }
+            finally
+            {
+                if (string.IsNullOrEmpty(tx))
+                {
+                    await DialogService.ShowAlertAsync(AppResource.Alert_SomethingWrong, AppResource.Alert_Error);
+                }
+                else
+                {
+                    AuthenticationService.AuthenticatedUser.UserBox = BoxName.ToLowerInvariant();
+                    await DialogService.ShowAlertAsync(
+                        "Box created, you need to wait 20/40 seconds minutes before sending any messages",
+                        "Success");
+                    await NavigationService.NavigateToAsync<MainViewModel>();
+                }
 
-            IsBusy = false;
+                IsBusy = false;
+            }
         }
     }
 }

@@ -5,22 +5,32 @@ namespace PhantasmaMail.Services.Phantasma
 {
     public interface IPhantasmaService
     {
-        Task<string> GetUserMailbox();
+        Task<string> GetMailboxFromAddress();
+
+        Task<string> GetAddressFromMailbox(string boxName);
 
         Task<string> RegisterMailbox(string name);
 
-        Task<string> SendMessage(string destName, string hash);
+        Task<string> UnregisterMailbox();
 
-        Task<int> GetMailCount(string boxName);
+        Task<string> SendMessage(string destBoxName, string hash);
 
-        Task<string> GetMailContent(string name, int index);
+        Task<string> RemoveInboxMessage(int index);
 
-        Task<List<string>> GetAllMails(string name, int count);
+        Task<string> RemoveOutboxMessage(int index);
 
-        Task<List<string>> GetMailsFromRange(string name, int first, int last);
+        Task<int> GetInboxCount();
 
-        Task EstimateMessageCost(string message);
+        Task<string> GetInboxContent(int index);
 
-        Task<string> MintTokens(decimal amount);
+        Task<int> GetOutboxCount();
+
+        Task<string> GetOutboxContent(int index);
+
+        Task<List<string>> GetAllInboxMessages(int count);
+
+        Task<List<string>> GetAllOutboxMessages(int count);
+
+        Task<string> EstimateMessageCost(string boxName, string message);
     }
 }

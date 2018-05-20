@@ -1,14 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using PhantasmaMail.Models;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace PhantasmaMail.Services.Db
 {
     public interface IPhantasmaDb
     {
-        IEnumerable<Message> GetMessages();
+        Task<IEnumerable<StoreMessage>> GetInboxMessages(string boxName);
 
-        bool AddMessage(Message message);
+        Task<IEnumerable<StoreMessage>> GetSentMessages(string boxName);
+
+        Task<bool> AddMessage (StoreMessage message);
+
+        Task<bool> DeleteMessage(StoreMessage message);
     }
 }

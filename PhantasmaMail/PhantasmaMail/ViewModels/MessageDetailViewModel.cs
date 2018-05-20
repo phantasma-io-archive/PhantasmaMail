@@ -1,42 +1,50 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Globalization;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using PhantasmaMail.Models;
+using PhantasmaMail.Resources;
+using PhantasmaMail.Services.Db;
+using PhantasmaMail.Utils;
 using PhantasmaMail.ViewModels.Base;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace PhantasmaMail.ViewModels
 {
     public class MessageDetailViewModel : ViewModelBase
     {
+        private readonly IPhantasmaDb _db;
+
+        public MessageDetailViewModel(IPhantasmaDb phantasmaDb)
+        {
+            _db = phantasmaDb;
+        }
+
         public ICommand DeleteMessageCommand => new Command(async () => await DeleteMessageExecute());
 
+        public ICommand ForwardCommand => new Command(async () => await ForwardExecute());
+
+        public ICommand ReplyCommand => new Command(async () => await ReplyExecute());
+
+        public ICommand NewMessageCommand => new Command(async () => await NewMessageExecute());
+
+        public ICommand MoreCommand => new Command(async () => await MoreExecute());
+
+        public ICommand OpenTxCommand => new Command(async () => await OpenTxExecute());
 
         public override Task InitializeAsync(object navigationData)
         {
             if (navigationData is object[] data && data[0] is Message message && data[1] is bool fromInbox)
             {
                 FromInbox = fromInbox;
-                if (FromInbox) //comes from Inbox
-                {
-                    FromOrTo = "From: "; //todo localization
-                    SelectedMessage = message;
-                    var culture = new CultureInfo("en-GB");
-                    CultureInfo.CurrentCulture = culture;
-                    DaysAgo = CalculateDays(message.Date);
-                    FormattedDate = string.Format("{0:f}", message.Date);
-                }
-                else //comes from Sent
-                {
-                    FromOrTo = "To: "; //todo localization
-                    SelectedMessage = message;
-                    var culture = new CultureInfo("en-GB");
-                    CultureInfo.CurrentCulture = culture;
-                    DaysAgo = CalculateDays(message.Date);
-                    FormattedDate = string.Format("{0:f}", message.Date);
-                }
+                FromOrTo = FromInbox ? "From: " : "To: ";
+                SelectedMessage = message;
+                // todo change culture to local 
+                var culture = new CultureInfo("en-GB");
+                CultureInfo.CurrentCulture = culture;
+                DaysAgo = MessageUtils.CalculateDays(message.Date);
+                FormattedDate = string.Format("{0:f}", message.Date);
             }
 
             return base.InitializeAsync(navigationData);
@@ -45,16 +53,55 @@ namespace PhantasmaMail.ViewModels
         private async Task DeleteMessageExecute()
         {
             if (IsBusy) return;
+            string tx = null;
+            try
+            {
+                IsBusy = true;
+
+                if (FromInbox)
+                    tx = await PhantasmaService.RemoveInboxMessage(SelectedMessage.ID);
+                else
+                    tx = await PhantasmaService.RemoveOutboxMessage(SelectedMessage.ID);
+            }
+            catch (Exception ex)
+            {
+                await DialogService.ShowAlertAsync(ex.Message, AppResource.Alert_Error);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+
+            if (!string.IsNullOrEmpty(tx))
+            {
+                await _db.DeleteMessage(SelectedMessage.ToStoreMessage());
+                await DialogService.ShowAlertAsync("Message will be deleted in the next block", "Success");
+                await NavigationService.NavigateBackAsync();
+            }
+            else
+            {
+                await DialogService.ShowAlertAsync(AppResource.Alert_SomethingWrong, AppResource.Alert_Error);
+            }
+        }
+
+       
+        private async Task ForwardExecute()
+        {
+            await DialogService.ShowAlertAsync(AppResource.Alert_FeatureNotLive, AppResource.Alert_Error);
+        }
+
+        private async Task NewMessageExecute()
+        {
+            if (IsBusy) return;
 
             try
             {
                 IsBusy = true;
-                //Execute delete method (local and remote)
-                await NavigationService.NavigateBackAsync();
+                await NavigationService.NavigateToAsync<ComposeViewModel>();
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                await DialogService.ShowAlertAsync(ex.Message, AppResource.Alert_Error);
             }
             finally
             {
@@ -62,61 +109,26 @@ namespace PhantasmaMail.ViewModels
             }
         }
 
-        //todo move this
-        private string CalculateDays(DateTime d)
+        private async Task MoreExecute()
         {
-            // 1.
-            // Get time span elapsed since the date.
-            var s = DateTime.Now.Subtract(d);
-
-            // 2.
-            // Get total number of days elapsed.
-            var dayDiff = (int) s.TotalDays;
-
-            // 3.
-            // Get total number of seconds elapsed.
-            var secDiff = (int) s.TotalSeconds;
-
-            // 4.
-            // Don't allow out of range values.
-            if (dayDiff < 0 || dayDiff >= 31) return null;
-
-            // 5.
-            // Handle same-day times.
-            if (dayDiff == 0)
-            {
-                // A.
-                // Less than one minute ago.
-                if (secDiff < 60) return "just now";
-                // B.
-                // Less than 2 minutes ago.
-                if (secDiff < 120) return "1 minute ago";
-                // C.
-                // Less than one hour ago.
-                if (secDiff < 3600)
-                    return string.Format("{0} minutes ago",
-                        Math.Floor((double) secDiff / 60));
-                // D.
-                // Less than 2 hours ago.
-                if (secDiff < 7200) return "1 hour ago";
-                // E.
-                // Less than one day ago.
-                if (secDiff < 86400)
-                    return string.Format("{0} hours ago",
-                        Math.Floor((double) secDiff / 3600));
-            }
-
-            // 6.
-            // Handle previous days.
-            if (dayDiff == 1) return "yesterday";
-            if (dayDiff < 7)
-                return string.Format("{0} days ago",
-                    dayDiff);
-            if (dayDiff < 31)
-                return string.Format("{0} weeks ago",
-                    Math.Ceiling((double) dayDiff / 7));
-            return null;
+            await DialogService.ShowAlertAsync(AppResource.Alert_FeatureNotLive, AppResource.Alert_Error);
         }
+
+        private async Task OpenTxExecute()
+        {
+            if (!string.IsNullOrEmpty(SelectedMessage.Hash))
+            {
+                var tx = SelectedMessage.Hash.Substring(2);
+                var uri = new Uri(AppSettings.NeoScanUrlTransactions + tx);
+                await Browser.OpenAsync(uri, BrowserLaunchType.SystemPreferred);
+            }
+        }
+
+        private async Task ReplyExecute()
+        {
+            await NavigationService.NavigateToAsync<ComposeViewModel>(SelectedMessage.FromInbox);
+        }
+
 
         #region Observable Properties
 

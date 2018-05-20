@@ -10,14 +10,12 @@ namespace PhantasmaMail.iOS.Services
 {
     public class iOSSQLService : ISQLite
     {
-        public SQLiteConnection GetConnection()
+        public SQLiteAsyncConnection GetConnection()
         {
-            var dbName = "Phantasma.sqlite";
-            var dbPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); // Documents folder
-            var libraryPath = Path.Combine(dbPath, "..", "Library"); // Library folder
-            var path = Path.Combine(libraryPath, dbName);
-            var conn = new SQLiteConnection(path);
-            return conn;
+            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            var path = Path.Combine(documentsPath, "Phantasma.db3");
+
+            return new SQLiteAsyncConnection(path);
         }
     }
 }

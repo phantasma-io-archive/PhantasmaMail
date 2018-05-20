@@ -6,7 +6,7 @@
     xmlns:effects="clr-namespace:PhantasmaMail.Effects"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Key="InboxMessageCell">
-    <Frame Margin="20,10" CornerRadius="8">
+    <Frame Margin="20,10" CornerRadius="0" HasShadow="True">
         <Grid RowSpacing="7" ColumnSpacing="0" Margin="3,3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -51,16 +51,11 @@
                    x:Name="BoxNameLabel"
                    Grid.Column="0"
                    Grid.ColumnSpan="2"
-                   Text="{Binding FromAddress}"
+                   Text="{Binding FromInbox}"
                    VerticalTextAlignment="Center"
                    HorizontalOptions="EndAndExpand"
                    HorizontalTextAlignment="Start"
                    Style="{StaticResource MessageSenderStyle}" />
-
-            <!--<Label Grid.Row="3"
-                   Grid.Column="2"
-                   Text="{Binding ToAddress}"
-                   Style="{StaticResource MessageSenderStyle}" />-->
         </Grid>
     </Frame>
 </Grid>

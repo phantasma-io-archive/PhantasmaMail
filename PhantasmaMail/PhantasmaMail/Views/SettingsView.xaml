@@ -5,10 +5,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
         <StackLayout>
-            <Label
-                HorizontalOptions="CenterAndExpand"
-                Text="Settings View"
-                VerticalOptions="CenterAndExpand" />
+            <Button Text="Refresh" Command="{Binding RefreshCommand}"/>
+            <Button Text="Mint" Command="{Binding MintCommand}"/>
+            <Button Text="Unregister" Command="{Binding UnregisterInboxCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

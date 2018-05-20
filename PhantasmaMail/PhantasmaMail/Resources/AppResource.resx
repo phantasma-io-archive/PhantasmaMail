@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Alert_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Alert_FeatureNotLive" xml:space="preserve">
+    <value>This feature is not live yet!</value>
+  </data>
+  <data name="Alert_SomethingWrong" xml:space="preserve">
+    <value>Something went wrong.Try again in a new seconds.</value>
+  </data>
+  <data name="Alert_Wallet" xml:space="preserve">
+    <value>Error importing account.</value>
+  </data>
   <data name="Button_EncryptedKey" xml:space="preserve">
     <value>Encrypted Key</value>
   </data>
@@ -160,15 +172,15 @@
     <value>Wallet</value>
   </data>
   <data name="PageTitle_Compose" xml:space="preserve">
-    <value>MESSAGE</value>
+    <value>Compose</value>
   </data>
   <data name="PageTitle_Inbox" xml:space="preserve">
-    <value>INBOX</value>
+    <value>Inbox</value>
   </data>
   <data name="PageTitle_Sent" xml:space="preserve">
-    <value>SENT</value>
+    <value>Sent</value>
   </data>
   <data name="PageTitle_Wallet" xml:space="preserve">
-    <value>WALLET</value>
+    <value>Wallet</value>
   </data>
 </root>

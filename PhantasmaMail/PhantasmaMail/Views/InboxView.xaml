@@ -10,6 +10,8 @@
     xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:extensions="clr-namespace:PhantasmaMail.MarkupExtensions"
     xmlns:sfpullToRefresh="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms"
+    xmlns:behaviors="clr-namespace:PhantasmaMail.Behaviors;assembly=PhantasmaMail"
+    x:Name="InboxView"
     Title="{extensions:Translate PageTitle_Inbox}"
     BackgroundColor="{StaticResource WhiteBackground}">
 
@@ -24,21 +26,32 @@
             </Grid.RowDefinitions>
 
             <!-- Search -->
-            <SearchBar Grid.Row="0" Margin="20,5" Placeholder="Search"/> <!-- todo localization -->
+            <SearchBar Grid.Row="0" Margin="0,5,20,5" Placeholder="Search" 
+                       x:Name="SearchBar"
+                       SearchCommand="{Binding SearchCommand}" 
+                       SearchCommandParameter="{Binding Text, Source={x:Reference SearchBar}}">
+                <SearchBar.Behaviors>
+                    <behaviors:TextChangedBehavior />
+                </SearchBar.Behaviors>
+            </SearchBar>
+            <!--todo localization-->
 
             <sfpullToRefresh:SfPullToRefresh x:Name="pullToRefreshList" Grid.Row="1"
-                                           ProgressBackgroundColor="{StaticResource Accent}" RefreshContentHeight="30"
-                                           RefreshContentWidth="30" TransitionMode="Push"
-                                           IsRefreshing="{Binding IsBusy}"
-                                           Refreshing="PullToRefresh_Refreshing">
+                                             ProgressBackgroundColor="{StaticResource Accent}"
+                                             RefreshContentHeight="40"
+                                             RefreshContentWidth="40"
+                                             TransitionMode="Push"
+                                             IsRefreshing="{Binding IsBusy}"
+                                             Refreshing="PullToRefresh_Refreshing">
                 <sfpullToRefresh:SfPullToRefresh.PullableContent>
                     <syncfusion:SfListView
                         x:Name="InboxListView"
                         AutoFitMode="Height"
                         ItemsSource="{Binding InboxList, Mode=TwoWay}"
                         SelectedItem="{Binding MessageSelected}"
-                        SelectionBackgroundColor="{StaticResource DarkBlueGreen}"
+                        SelectionBackgroundColor="{StaticResource GradientEndColor}"
                         SelectionMode="Single"
+                        AllowSwiping="True"
                         VerticalOptions="FillAndExpand">
                         <syncfusion:SfListView.Triggers>
                             <DataTrigger TargetType="syncfusion:SfListView"
@@ -52,16 +65,45 @@
                                 <controls:InboxMessageCell />
                             </DataTemplate>
                         </syncfusion:SfListView.ItemTemplate>
+
+                        <!--<syncfusion:SfListView.RightSwipeTemplate>
+                            <DataTemplate x:Name="RightSwipeTemplate">
+                                <Grid Margin="-20,10" BackgroundColor="#FFFFFF" HorizontalOptions="Fill"
+                                      VerticalOptions="Fill" Grid.Column="0">
+                                    <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                        <ffimageloadingsvg:SvgCachedImage Grid.Row="0" VerticalOptions="Center"
+                                                                          HorizontalOptions="Center"
+                                                                          Source="trash.svg"
+                                                                          HeightRequest="25"
+                                                                          WidthRequest="23"
+                                                                          IsVisible="True">
+                                            <ffimageloadingsvg:SvgCachedImage.Transformations>
+                                                <fftransformations:TintTransformation EnableSolidColor="true"
+                                                                                      HexColor="#17566B" />
+                                            </ffimageloadingsvg:SvgCachedImage.Transformations>
+                                        </ffimageloadingsvg:SvgCachedImage>
+                                    </Grid>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding Source={x:Reference InboxView}, Path=BindingContext.DeleteMessageCommand}"
+                                            CommandParameter="{Binding .}" />
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+                            </DataTemplate>
+                        </syncfusion:SfListView.RightSwipeTemplate>-->
                     </syncfusion:SfListView>
                 </sfpullToRefresh:SfPullToRefresh.PullableContent>
 
             </sfpullToRefresh:SfPullToRefresh>
 
 
-            <Grid Grid.Row="1" VerticalOptions="CenterAndExpand" IsVisible="False" Margin="10,5">
+            <Grid Grid.Row="0" Grid.RowSpan="2"
+                  VerticalOptions="FillAndExpand"
+                  IsVisible="False" Margin="0,100"
+                  RowSpacing="35">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
                 <ffimageloadingsvg:SvgCachedImage Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"
@@ -73,11 +115,13 @@
                     </ffimageloadingsvg:SvgCachedImage.Transformations>
                 </ffimageloadingsvg:SvgCachedImage>
 
-                <Label Grid.Row="1" HorizontalTextAlignment="Center" Text="You don't have any messages." Style="{StaticResource NoMessagesLabelStyle}"/>
+                <Label Grid.Row="1" HorizontalTextAlignment="Center"
+                       Text="You don't have any messages."
+                       Style="{StaticResource NoMessagesLabelStyle}" />
                 <Grid.Triggers>
                     <DataTrigger TargetType="Grid"
-                                     Binding="{Binding Source={x:Reference InboxListView}, Path=ItemsSource.Count}"
-                                     Value="0">
+                                 Binding="{Binding Source={x:Reference InboxListView}, Path=ItemsSource.Count}"
+                                 Value="0">
                         <Setter Property="IsVisible" Value="True" />
                     </DataTrigger>
                 </Grid.Triggers>

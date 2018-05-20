@@ -1,9 +1,10 @@
 ﻿using System.Threading.Tasks;
 using NeoModules.NEP6;
+using PhantasmaMail.Resources;
 
 namespace PhantasmaMail.Services.Authentication
 {
-    public class AuthenticationService : IAuthenticationService //TODO
+    public class AuthenticationService : IAuthenticationService
     {
         public bool IsAuthenticated { get; set; }
         public User AuthenticatedUser { get; set; }
@@ -14,7 +15,7 @@ namespace PhantasmaMail.Services.Authentication
             {
                 AuthenticatedUser = new User();
                 var account = await AuthenticatedUser.InitializeUserWallet(encryptedKey, password);
-                if (account == null) throw new WalletException("Error importing account"); //todo move to localization
+                if (account == null) throw new WalletException(AppResource.Alert_Wallet);
 
                 IsAuthenticated = true;
                 return true;
@@ -30,7 +31,7 @@ namespace PhantasmaMail.Services.Authentication
             {
                 AuthenticatedUser = new User();
                 var account = AuthenticatedUser.InitializeUserWallet(wif);
-                if (account == null) throw new WalletException("Error importing account");
+                if (account == null) throw new WalletException(AppResource.Alert_Wallet);
 
                 IsAuthenticated = true;
                 return Task.FromResult(true);

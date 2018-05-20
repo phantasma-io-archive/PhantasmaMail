@@ -66,16 +66,5 @@ namespace PhantasmaMail.Services.Db
 
             return content;
         }
-
-        public static async Task UpdateMessages(string text)
-        {
-            var rootFolder = FileSystem.Current.LocalStorage;
-            var folder = await rootFolder.GetFolderAsync(PhantasmaFolder);
-            var list = JsonConvert.SerializeObject(AppSettings.SentMessages.ToList(), AppSettings.JsonSettings());
-            if (!string.IsNullOrEmpty(list))
-            {
-                await DbFile.WriteTextAllAsync(list, folder);
-            }
-        }
     }
 }

@@ -25,18 +25,24 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <Grid HorizontalOptions="FillAndExpand"
-              VerticalOptions="FillAndExpand">
+              VerticalOptions="FillAndExpand"
+              Margin="20,20,20,10">
             <Grid.RowDefinitions>
-                <RowDefinition Height="9*" />
-                <RowDefinition Height="1*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
+            <ActivityIndicator Grid.Row="0" Grid.RowSpan="2" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"
+                               HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                               Color="White" />
+
             <Frame Grid.Row="0"
-                   Margin="20,20,20,0"
-                   Padding="0"
+                   Padding="15"
+                   CornerRadius="0"
+                   HasShadow="True"
                    HorizontalOptions="FillAndExpand"
                    VerticalOptions="FillAndExpand">
-                <Grid Margin="20" RowSpacing="5">
+                <Grid Margin="5" RowSpacing="5">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
@@ -49,7 +55,7 @@
                                   Placeholder="To:"
                                   FloatingHintEnabled="True"
                                   Style="{StaticResource CustomEntryStyle}"
-                                  Text="{Binding Message.ToAddress}" />
+                                  Text="{Binding Message.ToInbox}" />
 
                     <xfx:XfxEntry Grid.Row="1"
                                   Style="{StaticResource CustomEntryStyle}"
@@ -57,7 +63,7 @@
                                   Placeholder="Subject:"
                                   Text="{Binding Message.Subject}" />
 
-                    <controls:ExpandableEditor Grid.Row="2" 
+                    <controls:ExpandableEditor Grid.Row="2"
                                                FontFamily="{StaticResource OpenSansRegular}"
                                                TextColor="{StaticResource LightGray}"
                                                FontSize="{StaticResource MidMediumSize}"
@@ -65,7 +71,7 @@
                 </Grid>
             </Frame>
 
-            <Grid Grid.Row="1" Margin="20,5,20,10" ColumnSpacing="25">
+            <Grid Grid.Row="1" Margin="0,10" ColumnSpacing="35">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
@@ -74,10 +80,10 @@
 
                 <Grid Grid.Column="0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                    <ffimageloadingsvg:SvgCachedImage VerticalOptions="Center" HorizontalOptions="Start"
+                    <ffimageloadingsvg:SvgCachedImage VerticalOptions="End" HorizontalOptions="Start"
                                                       Source="arrow.svg"
                                                       Grid.Column="0" HeightRequest="20"
                                                       WidthRequest="28">
@@ -86,20 +92,20 @@
                                                                   HexColor="{StaticResource TintIconColor}" />
                         </ffimageloadingsvg:SvgCachedImage.Transformations>
                     </ffimageloadingsvg:SvgCachedImage>
-                    <Label Grid.Column="1" VerticalTextAlignment="Center" Style="{StaticResource NoMessagesLabelStyle}"
+                    <Label Grid.Column="1" VerticalTextAlignment="End" Style="{StaticResource NoMessagesLabelStyle}"
                            HorizontalTextAlignment="Start"
                            Text="Send" />
                     <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding SendMessageCommand}"/>
+                        <TapGestureRecognizer Command="{Binding SendMessageCommand}" />
                     </Grid.GestureRecognizers>
                 </Grid>
 
                 <Grid Grid.Column="1">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                    <ffimageloadingsvg:SvgCachedImage VerticalOptions="Center" HorizontalOptions="Start"
+                    <ffimageloadingsvg:SvgCachedImage VerticalOptions="End" HorizontalOptions="Start"
                                                       Source="paperclip.svg"
                                                       Grid.Column="0" HeightRequest="20"
                                                       WidthRequest="28">
@@ -108,11 +114,11 @@
                                                                   HexColor="{StaticResource TintIconColor}" />
                         </ffimageloadingsvg:SvgCachedImage.Transformations>
                     </ffimageloadingsvg:SvgCachedImage>
-                    <Label Grid.Column="1"  Style="{StaticResource NoMessagesLabelStyle}"
-                           HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
+                    <Label Grid.Column="1" Style="{StaticResource NoMessagesLabelStyle}"
+                           HorizontalTextAlignment="Start" VerticalTextAlignment="End"
                            Text="Attachments" />
                     <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding AttachFileCommand}"/>
+                        <TapGestureRecognizer Command="{Binding AttachFileCommand}" />
                     </Grid.GestureRecognizers>
                 </Grid>
             </Grid>

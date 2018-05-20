@@ -22,7 +22,8 @@ namespace PhantasmaMail.ViewModels.Base
             _containerBuilder.RegisterType<DialogService>().SingleInstance().As<IDialogService>();
             _containerBuilder.RegisterType<NavigationService>().SingleInstance().As<INavigationService>();
             _containerBuilder.RegisterType<AuthenticationService>().SingleInstance().As<IAuthenticationService>();
-            _containerBuilder.RegisterType<PhantasmaService>().SingleInstance().As<IPhantasmaService>();
+            //_containerBuilder.RegisterType<TestPhantasmaService>().SingleInstance().As<IPhantasmaService>();
+            _containerBuilder.RegisterType<PrivatePhantasmaService>().SingleInstance().As<IPhantasmaService>();
 
             _containerBuilder.RegisterType<ExtendedSplashViewModel>();
             _containerBuilder.RegisterType<LoginViewModel>();
@@ -34,9 +35,10 @@ namespace PhantasmaMail.ViewModels.Base
             _containerBuilder.RegisterType<MessageDetailViewModel>();
             _containerBuilder.RegisterType<RegisterBoxViewModel>();
             _containerBuilder.RegisterType<WalletViewModel>();
+            _containerBuilder.RegisterType<SettingsViewModel>();
 
             //db
-            //_containerBuilder.RegisterType<PhantasmaDb>().SingleInstance().As<IPhantasmaDb>();
+            _containerBuilder.RegisterType<PhantasmaDb>().SingleInstance().As<IPhantasmaDb>();
         }
 
         public T Resolve<T>()

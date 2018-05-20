@@ -1,7 +1,13 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Newtonsoft.Json;
 using PhantasmaMail.Models;
+using PhantasmaMail.Resources;
+using PhantasmaMail.Services.Db;
 using PhantasmaMail.ViewModels.Base;
 using Xamarin.Forms;
 
@@ -9,6 +15,133 @@ namespace PhantasmaMail.ViewModels
 {
     public class SentViewModel : ViewModelBase
     {
+        private readonly IPhantasmaDb _db;
+
+        public SentViewModel(IPhantasmaDb phantasmaDb)
+        {
+            _db = phantasmaDb;
+            SentList = new ObservableCollection<Message>();
+        }
+
+        public ICommand MessageSelectedCommand =>
+            new Command<Message>(async message => await MessageSelectedExecute(message));
+
+        public ICommand RefreshCommand => new Command(async () => await RefreshExecute());
+
+        public ICommand NewMessageCommand => new Command(async () => await NewMessageExecute());
+
+        public ICommand SearchCommand => new Command<string>(SearchExecute);
+
+        private List<Message> _fullSentList;
+
+        public override async Task InitializeAsync(object navigationData)
+        {
+            DialogService.ShowLoading();
+            await InitTestList();
+            DialogService.HideLoading();
+        }
+
+        private async Task NewMessageExecute()
+        {
+            if (IsBusy) return;
+            IsBusy = true;
+            await NavigationService.NavigateToAsync<ComposeViewModel>();
+            IsBusy = false;
+        }
+
+        private async Task InitTestList()
+        {
+            var sentMessagesList = await _db.GetSentMessages(AuthenticationService.AuthenticatedUser.UserBox);
+            foreach (var storedMessage in sentMessagesList) SentList.Add(new Message(storedMessage));
+        }
+
+        public async Task RefreshExecute()
+        {
+            try
+            {
+                IsBusy = true;
+
+                SentList = new ObservableCollection<Message>();
+                if (!string.IsNullOrEmpty(AuthenticationService.AuthenticatedUser.UserBox))
+                {
+                    var mailCount = await PhantasmaService.GetInboxCount();
+                    if (mailCount > 0)
+                    {
+                        var index = 1;
+                        var emails = await PhantasmaService.GetAllOutboxMessages(mailCount);
+                        var storedEmails = await _db.GetSentMessages(AuthenticationService.AuthenticatedUser.UserBox);
+
+                        //deserialization
+                        foreach (var email in emails)
+                            if (email.StartsWith("{") || email.StartsWith("["))
+                            {
+                                var mailObject =
+                                    JsonConvert.DeserializeObject<Message>(email, AppSettings.JsonSettings());
+                                mailObject.ID = index;
+                                var hash = GetHashFromStoredMessage(storedEmails.ToList(), mailObject);
+                                if (!string.IsNullOrEmpty(hash)) mailObject.Hash = hash;
+                                SentList.Add(mailObject);
+                                index++;
+                            }
+
+                        SentList = new ObservableCollection<Message>(SentList.OrderByDescending(p => p.Date)
+                            .ThenByDescending(p => p.Date.Hour).ToList());
+                        _fullSentList = SentList.ToList();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                await DialogService.ShowAlertAsync(ex.Message, AppResource.Alert_Error);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        private async Task MessageSelectedExecute(Message message)
+        {
+            if (IsBusy) return;
+            IsBusy = true;
+
+            if (message != null)
+            {
+                await NavigationService.NavigateToAsync<MessageDetailViewModel>(new object[] { message, false });
+                MessageSelected = null;
+            }
+
+            IsBusy = false;
+        }
+
+        private string GetHashFromStoredMessage(List<StoreMessage> storedMessages, Message msg)
+        {
+            //todo equals method
+            var messageWithHash = storedMessages.Find(m => m.TextContent == msg.TextContent
+                                                           && m.ToInbox == msg.FromInbox
+                                                           && m.Date == msg.Date
+                                                           && m.FromInbox == msg.FromInbox);
+
+            return messageWithHash?.Hash;
+        }
+
+        private void SearchExecute(string text)
+        {
+            if (SentList.Count == 0) return;
+            if (string.IsNullOrEmpty(text))
+            {
+                SentList = new ObservableCollection<Message>(_fullSentList);
+            }
+            else
+            {
+                var newList = new List<Message>(_fullSentList.Where(msg => msg.TextContent.Contains(text)
+                                                                      || msg.ToInbox.Contains(text)
+                                                                      || msg.Subject.Contains(text)
+                                                                      || msg.FromInbox.Contains(text)));
+                SentList = new ObservableCollection<Message>(newList);
+            }
+        }
+
         #region Observable Properties
 
         private ObservableCollection<Message> _sentList;
@@ -38,44 +171,7 @@ namespace PhantasmaMail.ViewModels
                 }
             }
         }
+
         #endregion
-
-
-        public ICommand MessageSelectedCommand =>
-            new Command<Message>(async message => await MessageSelectedExecute(message));
-
-        public ICommand NewMessageCommand => new Command(async () => await NewMessageExecute());
-
-        public override async Task InitializeAsync(object navigationData)
-        {
-            InitTestList();
-            await Task.Delay(1);
-        }
-
-        private async Task NewMessageExecute()
-        {
-            if (IsBusy) return;
-            IsBusy = true;
-            await NavigationService.NavigateToAsync<ComposeViewModel>();
-            IsBusy = false;
-        }
-
-        private void InitTestList()
-        {
-            SentList = AppSettings.SentMessages;
-        }
-
-        private async Task MessageSelectedExecute(Message message)
-        {
-            if (IsBusy) return;
-            IsBusy = true;
-            if (message != null)
-            {
-                await NavigationService.NavigateToAsync<MessageDetailViewModel>(message);
-                MessageSelected = null;
-            }
-            await NavigationService.NavigateToAsync<MessageDetailViewModel>(message);
-            IsBusy = false;
-        }
     }
 }

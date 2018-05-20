@@ -40,14 +40,14 @@
                    HorizontalTextAlignment="Center" />
 
 
-            <Grid Grid.Row="3" VerticalOptions="EndAndExpand" IsVisible="{Binding IsBusy,Converter={StaticResource InverseBooleanConverter}}" RowSpacing="10">
+            <Grid Grid.Row="3" VerticalOptions="EndAndExpand" IsVisible="{Binding IsBusy,Converter={StaticResource InverseBooleanConverter}}" RowSpacing="20">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <Label Grid.Row="0" Text="Unfortunately you don't have a registred box. Create one to use Phantasma."
+                <Label Grid.Row="0" Text="Unfortunately you don't have a registered box. Create one to use Phantasma."
                        HorizontalTextAlignment="Center"
                        Style="{StaticResource RegisterBoxLabelStyle}" />
 

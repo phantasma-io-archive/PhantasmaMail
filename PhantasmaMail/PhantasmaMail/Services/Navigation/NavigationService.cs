@@ -36,7 +36,7 @@ namespace PhantasmaMail.Services.Navigation
 
         public async Task InitializeAsync()
         {
-            //TODO
+            //TODO "app goes to background" event
 
             //if (await _authenticationService.UserIsAuthenticatedAndValidAsync())
             //if ()

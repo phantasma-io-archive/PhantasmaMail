@@ -21,6 +21,7 @@
             <Style x:Key="WalletGreenLabelStyle" BasedOn="{StaticResource OpenSansSemiBoldLabelStyle}" TargetType="Label">
                 <Setter Property="FontSize"
                         Value="{StaticResource LargerSize}" />
+                <Setter Property="TextColor" Value="{StaticResource DarkBlueGreen}" />
             </Style>
 
             <Style x:Key="WalletButtonStyle" BasedOn="{StaticResource ButtonStyle}" TargetType="Button">

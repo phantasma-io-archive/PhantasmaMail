@@ -9,6 +9,7 @@
     xmlns:templates="clr-namespace:PhantasmaMail.Controls"
     xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    x:Name="Menu"
     Title=" ">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -22,10 +23,10 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid Margin="10,60,10,20">
+        <Grid Margin="10,20">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <ListView
                 Grid.Row="0"
@@ -33,6 +34,7 @@
                 AutomationId="menu"
                 CachingStrategy="RecycleElement"
                 HasUnevenRows="True"
+                Header="{Binding BoxName}"
                 ItemsSource="{Binding MenuItems}"
                 SeparatorVisibility="None">
                 <ListView.ItemTemplate>
@@ -42,33 +44,28 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
+                <ListView.HeaderTemplate>
+                    <DataTemplate >
+                        <Grid Margin="30,15">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Frame Padding="0"
+                                   HasShadow="False"
+                                   BackgroundColor="White"
+                                   Opacity="0.25"
+                                   CornerRadius="4"/>
+                            <Label Text="{Binding .}"
+                                   Margin="20,5"
+                                   FontFamily="{StaticResource OpenSansSemiBold}"
+                                   FontSize="{StaticResource LittleSize}"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"
+                                   TextColor="White" />
+                        </Grid>
+                    </DataTemplate>
+                </ListView.HeaderTemplate>
             </ListView>
-
-            <!-- Settings -->
-            <Grid Grid.Row="1" HorizontalOptions="Start" VerticalOptions="End" Margin="10,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-
-                <ffimageloadingsvg:SvgCachedImage
-                    Grid.Column="0"
-                    VerticalOptions="Center"
-                    Opacity="0.5"
-                    Source="settings.svg"
-                    WidthRequest="30">
-                    <ffimageloadingsvg:SvgCachedImage.Transformations>
-                        <fftransformations:TintTransformation EnableSolidColor="True" HexColor="#FFFFFF" />
-                    </ffimageloadingsvg:SvgCachedImage.Transformations>
-                </ffimageloadingsvg:SvgCachedImage>
-
-                <Label
-                    Grid.Column="1"
-                    Opacity="0.5"
-                    VerticalOptions="Center"
-                    Text="{extensions:Translate MenuItem_Settings}"
-                    Style="{StaticResource MenuTextStyle}" />
-            </Grid>
 
             <!-- Logout -->
             <Grid Grid.Row="1" HorizontalOptions="End" VerticalOptions="End" Margin="10,0" IsVisible="True">

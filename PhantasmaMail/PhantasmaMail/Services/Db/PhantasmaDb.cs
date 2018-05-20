@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using PhantasmaMail.Models;
+using System.Threading.Tasks;
 using SQLite;
 using Xamarin.Forms;
 
@@ -8,33 +7,39 @@ namespace PhantasmaMail.Services.Db
 {
     public class PhantasmaDb : IPhantasmaDb
     {
-        private readonly SQLiteConnection _connection;
+        private readonly SQLiteAsyncConnection _connection;
 
         //CREATE
         public PhantasmaDb()
         {
             _connection = DependencyService.Get<ISQLite>().GetConnection();
-            _connection.CreateTable<Message>();
+            _connection.CreateTableAsync<StoreMessage>();
         }
 
         //READ
-        public IEnumerable<Message> GetMessages()
+        public async Task<IEnumerable<StoreMessage>> GetInboxMessages(string boxName)
         {
-            var messages = from msg in _connection.Table<Message>() select msg;
-            return messages.ToList();
+            var messages = await _connection.Table<StoreMessage>().Where(msg => msg.ToInbox == boxName).ToListAsync();
+            return messages;
+        }
+
+        public async Task<IEnumerable<StoreMessage>> GetSentMessages(string boxName)
+        {
+            var messages = await _connection.Table<StoreMessage>().Where(msg => msg.FromInbox == boxName).ToListAsync();
+            return messages;
         }
 
         //INSERT
-        public bool AddMessage(Message message)
+        public async Task<bool> AddMessage(StoreMessage message)
         {
-            if (_connection.Insert(message) > 0) return true;
+            if (await _connection.InsertAsync(message) > 0) return true;
             return false;
         }
 
         //DELETE
-        public bool DeleteMessage(int id)
+        public async Task<bool> DeleteMessage(StoreMessage message)
         {
-            if (_connection.Delete<Message>(id) > 0) return true;
+            if (await _connection.DeleteAsync(message) > 0) return true;
             return false;
         }
     }

@@ -4,6 +4,6 @@ namespace PhantasmaMail.Services.Db
 {
     public interface ISQLite
     {
-        SQLiteConnection GetConnection();
+        SQLiteAsyncConnection GetConnection();
     }
 }

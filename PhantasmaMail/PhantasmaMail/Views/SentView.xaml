@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage
     x:Class="PhantasmaMail.Views.SentView"
     xmlns="http://xamarin.com/schemas/2014/forms"
@@ -7,59 +8,72 @@
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:controls="clr-namespace:PhantasmaMail.Controls;assembly=PhantasmaMail"
+    xmlns:sfpullToRefresh="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms"
     xmlns:markupExtensions="clr-namespace:PhantasmaMail.MarkupExtensions;assembly=PhantasmaMail"
+    xmlns:behaviors="clr-namespace:PhantasmaMail.Behaviors;assembly=PhantasmaMail"
     Title="{markupExtensions:Translate PageTitle_Sent}"
     BackgroundColor="{StaticResource WhiteBackground}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="WriteEmail.png" Command="{Binding NewMessageCommand}"/>
+        <ToolbarItem Icon="WriteEmail.png" Command="{Binding NewMessageCommand}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
             <!-- Search -->
-            <SearchBar Grid.Row="0"/>
-            <ffimageloadingsvg:SvgCachedImage Grid.Row="0" VerticalOptions="Center" HorizontalOptions="EndAndExpand"
-                                              Source="search.svg" HeightRequest="20"
-                                              WidthRequest="20" IsVisible="false">
-                <ffimageloadingsvg:SvgCachedImage.Transformations>
-                    <fftransformations:TintTransformation EnableSolidColor="true"
-                                                          HexColor="#A1ACB3" />
-                </ffimageloadingsvg:SvgCachedImage.Transformations>
-            </ffimageloadingsvg:SvgCachedImage>
+            <SearchBar Grid.Row="0" Margin="0,5,20,5" Placeholder="Search"
+                       x:Name="SearchBar"
+                       SearchCommand="{Binding SearchCommand}"
+                       SearchCommandParameter="{Binding Text, Source={x:Reference SearchBar}}">
+                <SearchBar.Behaviors>
+                    <behaviors:TextChangedBehavior />
+                </SearchBar.Behaviors>
+            </SearchBar>
+
+            <sfpullToRefresh:SfPullToRefresh x:Name="pullToRefreshList" Grid.Row="1"
+                                             ProgressBackgroundColor="{StaticResource Accent}"
+                                             RefreshContentHeight="40"
+                                             RefreshContentWidth="40"
+                                             TransitionMode="Push"
+                                             IsRefreshing="{Binding IsBusy}"
+                                             Refreshing="PullToRefresh_Refreshing">
+                <sfpullToRefresh:SfPullToRefresh.PullableContent>
+                    <syncfusion:SfListView
+                        x:Name="SentList"
+                        AutoFitMode="Height"
+                        ItemsSource="{Binding SentList, Mode=TwoWay}"
+                        SelectedItem="{Binding MessageSelected}"
+                        SelectionBackgroundColor="{StaticResource GradientEndColor}"
+                        SelectionMode="Single"
+                        VerticalOptions="FillAndExpand">
+                        <syncfusion:SfListView.Triggers>
+                            <DataTrigger TargetType="syncfusion:SfListView"
+                                         Binding="{Binding Source={x:Reference SentList}, Path=ItemsSource.Count}"
+                                         Value="0">
+                                <Setter Property="IsVisible" Value="False" />
+                            </DataTrigger>
+                        </syncfusion:SfListView.Triggers>
+                        <syncfusion:SfListView.ItemTemplate>
+                            <DataTemplate>
+                                <controls:InboxMessageCell />
+                            </DataTemplate>
+                        </syncfusion:SfListView.ItemTemplate>
+                    </syncfusion:SfListView>
+                </sfpullToRefresh:SfPullToRefresh.PullableContent>
+            </sfpullToRefresh:SfPullToRefresh>
 
 
-            <syncfusion:SfListView
-                x:Name="SentList"
-                Grid.Row="1"
-                AutoFitMode="Height"
-                ItemsSource="{Binding SentList, Mode=TwoWay}"
-                SelectedItem="{Binding MessageSelected}"
-                SelectionBackgroundColor="{StaticResource DarkBlueGreen}"
-                SelectionMode="Single"
-                VerticalOptions="FillAndExpand">
-                <syncfusion:SfListView.Triggers>
-                    <DataTrigger TargetType="syncfusion:SfListView"
-                                 Binding="{Binding Source={x:Reference SentList}, Path=ItemsSource.Count}"
-                                 Value="0">
-                        <Setter Property="IsVisible" Value="False" />
-                    </DataTrigger>
-                </syncfusion:SfListView.Triggers>
-                <syncfusion:SfListView.ItemTemplate>
-                    <DataTemplate>
-                        <controls:InboxMessageCell />
-                    </DataTemplate>
-                </syncfusion:SfListView.ItemTemplate>
-            </syncfusion:SfListView>
-
-            <Grid Grid.Row="1" VerticalOptions="CenterAndExpand" IsVisible="False" Margin="10,5">
+            <Grid Grid.Row="0" Grid.RowSpan="2"
+                  VerticalOptions="FillAndExpand"
+                  IsVisible="False" Margin="0,100"
+                  RowSpacing="35">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
                 <ffimageloadingsvg:SvgCachedImage Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"
@@ -71,7 +85,9 @@
                     </ffimageloadingsvg:SvgCachedImage.Transformations>
                 </ffimageloadingsvg:SvgCachedImage>
 
-                <Label Grid.Row="1" HorizontalTextAlignment="Center" Text="You don't have any sent messages." Style="{StaticResource NoMessagesLabelStyle}"/>
+                <Label Grid.Row="1" HorizontalTextAlignment="Center"
+                       Text="You don't have any sent messages."
+                       Style="{StaticResource NoMessagesLabelStyle}" />
                 <Grid.Triggers>
                     <DataTrigger TargetType="Grid"
                                  Binding="{Binding Source={x:Reference SentList}, Path=ItemsSource.Count}"
@@ -81,7 +97,6 @@
                 </Grid.Triggers>
             </Grid>
         </Grid>
-        
 
 
     </ContentPage.Content>

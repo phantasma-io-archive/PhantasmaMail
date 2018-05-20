@@ -10,18 +10,12 @@ namespace PhantasmaMail.Droid.Services
 {
     public class AndroidSQLService : ISQLite
     {
-        public SQLiteConnection GetConnection()
+        public SQLiteAsyncConnection GetConnection()
         {
-            var dbName = "Phantasma.sqlite";
-            var dbPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var path = Path.Combine(dbPath, dbName);
-            var conn = new SQLiteConnection(path);
-            return conn;
-        }
+            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            var path = Path.Combine(documentsPath, "Phantasma.db3");
 
-        public AndroidSQLService()
-        {
-            
+            return new SQLiteAsyncConnection(path);
         }
     }
 }

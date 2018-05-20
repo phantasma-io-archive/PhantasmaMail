@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Newtonsoft.Json;
 using PhantasmaMail.Models;
+using PhantasmaMail.Resources;
+using PhantasmaMail.Services.Db;
 using PhantasmaMail.ViewModels.Base;
 using Xamarin.Forms;
 
@@ -13,8 +15,18 @@ namespace PhantasmaMail.ViewModels
 {
     public class InboxViewModel : ViewModelBase
     {
+        private readonly IPhantasmaDb _db;
+
+        private List<Message> _fullInboxList;
+
         public InboxViewModel()
         {
+            InboxList = new ObservableCollection<Message>();
+        }
+
+        public InboxViewModel(IPhantasmaDb phantasmaDb)
+        {
+            _db = phantasmaDb;
             InboxList = new ObservableCollection<Message>();
         }
 
@@ -24,6 +36,10 @@ namespace PhantasmaMail.ViewModels
             new Command<Message>(async message => await MessageSelectedExecute(message));
 
         public ICommand RefreshCommand => new Command(async () => await RefreshExecute());
+
+        public ICommand DeleteMessageCommand => new Command<Message>(async msg => await DeleteMessageExecute(msg));
+
+        public ICommand SearchCommand => new Command<string>(SearchExecute);
 
         public override async Task InitializeAsync(object navigationData)
         {
@@ -49,7 +65,6 @@ namespace PhantasmaMail.ViewModels
             }
         }
 
-        public string BoxName { get; set; }
 
         public async Task RefreshExecute()
         {
@@ -57,34 +72,82 @@ namespace PhantasmaMail.ViewModels
             {
                 IsBusy = true;
 
-                InboxList.Clear();
-                BoxName = await PhantasmaService.GetUserMailbox();
-                if (!string.IsNullOrEmpty(BoxName))
+                InboxList = new ObservableCollection<Message>();
+                if (!string.IsNullOrEmpty(AuthenticationService.AuthenticatedUser.UserBox))
                 {
-                    var mailCount = await PhantasmaService.GetMailCount(BoxName);
-
-                    var emails = await PhantasmaService.GetMailsFromRange(BoxName, 1, mailCount);
-                    foreach (var email in emails)
+                    var mailCount = await PhantasmaService.GetOutboxCount();
+                    if (mailCount > 0)
                     {
-                        if (email.StartsWith("{") || email.StartsWith("["))
-                        {
-                            var mailObject = JsonConvert.DeserializeObject<Message>(email, AppSettings.JsonSettings());
-                            if (mailObject != null) InboxList.Add(mailObject);
-                        }
+                        var index = 1;
+                        var emails = await PhantasmaService.GetAllInboxMessages(mailCount);
+                        //deserialization
+                        foreach (var email in emails)
+                            if (email.StartsWith("{") || email.StartsWith("["))
+                            {
+                                var mailObject =
+                                    JsonConvert.DeserializeObject<Message>(email, AppSettings.JsonSettings());
+                                mailObject.ID = index;
+                                InboxList.Add(mailObject);
+                                index++;
+                            }
+
+                        InboxList = new ObservableCollection<Message>(InboxList.OrderByDescending(p => p.Date)
+                            .ThenByDescending(p => p.Date.Hour).ToList());
+                        _fullInboxList = InboxList.ToList();
                     }
-
-                    InboxList = new ObservableCollection<Message>(InboxList.OrderByDescending(p => p.Date).ThenByDescending(p => p.Date.Hour).ToList());
                 }
-
-                //var test = await PhantasmaService.MintTokens(50);
             }
             catch (Exception ex)
             {
-                await DialogService.ShowAlertAsync(ex.Message, "Error");
+                await DialogService.ShowAlertAsync(ex.Message, AppResource.Alert_Error);
             }
             finally
             {
                 IsBusy = false;
+            }
+        }
+
+        private async Task DeleteMessageExecute(Message msg)
+        {
+            if (msg == null) return;
+            if (IsBusy) return;
+            try
+            {
+                IsBusy = true;
+                var tx = await PhantasmaService.RemoveInboxMessage(msg.ID);
+                if (string.IsNullOrEmpty(tx))
+                    await DialogService.ShowAlertAsync(AppResource.Alert_SomethingWrong, AppResource.Alert_Error);
+                else
+                {
+                    _fullInboxList.Remove(msg);
+                    InboxList = new ObservableCollection<Message>(_fullInboxList);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                await DialogService.ShowAlertAsync(ex.Message, AppResource.Alert_Error);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        private void SearchExecute(string text)
+        {
+            if (InboxList.Count == 0) return;
+            if (string.IsNullOrEmpty(text))
+            {
+                InboxList = new ObservableCollection<Message>(_fullInboxList);
+            }
+            else
+            {
+                var newList = new List<Message>(_fullInboxList.Where(msg => msg.TextContent.Contains(text)
+                                                                       || msg.ToInbox.Contains(text)
+                                                                       || msg.Subject.Contains(text)
+                                                                       || msg.FromInbox.Contains(text)));
+                InboxList = new ObservableCollection<Message>(newList);
             }
         }
 

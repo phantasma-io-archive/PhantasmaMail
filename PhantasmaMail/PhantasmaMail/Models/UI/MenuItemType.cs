@@ -1,6 +1,6 @@
 ﻿namespace PhantasmaMail.Models.UI
 {
-	public enum MenuItemType //TODO
+	public enum MenuItemType
     {
 		Inbox,
 		Sent,
