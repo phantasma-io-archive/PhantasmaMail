@@ -39,6 +39,9 @@
     <Compile Update="Controls\InboxMessageCell.xaml.cs">
       <DependentUpon>InboxMessageCell.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Controls\SentMessageCell.xaml.cs">
+      <DependentUpon>SentMessageCell.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Resources\AppResource.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -61,6 +64,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\MenuItemTemplate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\SentMessageCell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResource.resx">

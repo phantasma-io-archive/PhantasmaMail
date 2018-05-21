@@ -59,7 +59,7 @@
                         </syncfusion:SfListView.Triggers>
                         <syncfusion:SfListView.ItemTemplate>
                             <DataTemplate>
-                                <controls:InboxMessageCell />
+                                <controls:SentMessageCell />
                             </DataTemplate>
                         </syncfusion:SfListView.ItemTemplate>
                     </syncfusion:SfListView>

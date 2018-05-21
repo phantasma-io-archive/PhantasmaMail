@@ -79,7 +79,7 @@ namespace PhantasmaMail.ViewModels
 
                 DialogService.ShowLoading();
 
-                var toAddress = await PhantasmaService.GetAddressFromMailbox(Message.ToInbox);
+                var toAddress = await PhantasmaService.GetAddressFromMailbox(Message.ToInbox.ToLowerInvariant());
 
                 if (string.IsNullOrEmpty(toAddress))
                 {
@@ -89,7 +89,7 @@ namespace PhantasmaMail.ViewModels
 
                 Message.ToAddress = toAddress;
                 var hashedMessage = SerializeAndHashMessage();
-                txHash = await PhantasmaService.SendMessage(Message.ToInbox, hashedMessage);
+                txHash = await PhantasmaService.SendMessage(Message.ToInbox.ToLowerInvariant(), hashedMessage);
             }
             catch (Exception ex)
             {
