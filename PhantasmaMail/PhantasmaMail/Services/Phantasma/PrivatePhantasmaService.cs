@@ -9,7 +9,6 @@ using NeoModules.NEP6.Models;
 using NeoModules.RPC;
 using PhantasmaMail.Services.Authentication;
 using PhantasmaMail.ViewModels.Base;
-using Helper = NeoModules.RPC.Helpers.Helper;
 
 namespace PhantasmaMail.Services.Phantasma
 {
@@ -41,7 +40,7 @@ namespace PhantasmaMail.Services.Phantasma
 
             if (string.IsNullOrEmpty(content)) return string.Empty;
 
-            var nameBytes = Helper.HexToBytes(content);
+            var nameBytes = content.HexToBytes();
             var name = Encoding.UTF8.GetString(nameBytes);
 
             return name;
@@ -56,7 +55,7 @@ namespace PhantasmaMail.Services.Phantasma
             var content = result.Stack[0].Value.ToString();
             if (string.IsNullOrEmpty(content)) return string.Empty;
 
-            var addressScriptHash = Helper.HexToBytes(result.Stack[0].Value.ToString());
+            var addressScriptHash = result.Stack[0].Value.ToString().HexToBytes();
             var address = Wallet.ToAddress(new UInt160(addressScriptHash));
 
             return address;
@@ -80,7 +79,7 @@ namespace PhantasmaMail.Services.Phantasma
                 new object[] {UserBoxName, index});
             var result = await _neoRpcClient.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
 
-            var content = Helper.HexToBytes(result.Stack[0].Value.ToString());
+            var content = result.Stack[0].Value.ToString().HexToBytes();
             return Encoding.UTF8.GetString(content);
         }
 
@@ -102,7 +101,7 @@ namespace PhantasmaMail.Services.Phantasma
                 new object[] {UserBoxName, index});
             var result = await _neoRpcClient.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
 
-            var content = Helper.HexToBytes(result.Stack[0].Value.ToString());
+            var content = result.Stack[0].Value.ToString().HexToBytes();
             return Encoding.UTF8.GetString(content);
         }
 
@@ -185,7 +184,7 @@ namespace PhantasmaMail.Services.Phantasma
 
             var transaction = await accountsigner.CallContract(UserKeypair, ContractScriptHashBytes,
                 RemoveOutboxMessageOperation,
-                new object[] {UserAddress, index, ""});
+                new object[] {UserAddress, index});
             if (transaction != null) return transaction.Hash.ToString();
 
             return string.Empty;
@@ -216,7 +215,7 @@ namespace PhantasmaMail.Services.Phantasma
         private byte[] ContractScriptHashBytes => UInt160.Parse(ContractScriptHash).ToArray();
 
         //TODO: change to main net scripthash
-        private const string ContractScriptHash = "4b4f63919b9ecfd2483f0c72ff46ed31b5bbb7a4";
+        private const string ContractScriptHash = "e1aa953bf7f1b92760df28772d84941cac711ed1";
         private readonly NeoApiService _neoRpcClient; // TODO: fix so the app only use one RpcClient
 
         #endregion

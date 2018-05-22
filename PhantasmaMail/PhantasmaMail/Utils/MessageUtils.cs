@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace PhantasmaMail.Utils
 {
@@ -57,6 +58,25 @@ namespace PhantasmaMail.Utils
                 return string.Format("{0} weeks ago",
                     Math.Ceiling((double)dayDiff / 7));
             return null;
+        }
+
+        public static bool ValidateBoxName(string boxName)
+        {
+            int index = 0;
+            var boxNameBytes = Encoding.ASCII.GetBytes(boxName);
+            while (index < boxNameBytes.Length)
+            {
+                var c = boxNameBytes[index];
+                index++;
+
+                if (c >= 97 && c <= 122) continue; // lowercase allowed
+                if (c == 95) continue; // underscore allowed
+                if (c >= 48 && c <= 57) continue; // numbers allowed
+
+                return false;
+            }
+
+            return true;
         }
 
     }

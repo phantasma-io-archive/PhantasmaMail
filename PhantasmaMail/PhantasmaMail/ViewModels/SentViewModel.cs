@@ -58,7 +58,7 @@ namespace PhantasmaMail.ViewModels
                 SentList = new ObservableCollection<Message>();
                 if (!string.IsNullOrEmpty(AuthenticationService.AuthenticatedUser.UserBox))
                 {
-                    var mailCount = await PhantasmaService.GetInboxCount();
+                    var mailCount = await PhantasmaService.GetOutboxCount();
                     if (mailCount > 0)
                     {
                         var index = 1;
