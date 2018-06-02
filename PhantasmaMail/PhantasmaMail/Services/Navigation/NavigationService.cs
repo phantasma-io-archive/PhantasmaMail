@@ -24,11 +24,9 @@ namespace PhantasmaMail.Services.Navigation
             return vm;
         }
 
-        //public NavigationService(IAuthenticationService authenticationService)
-
-        public NavigationService()
+        public NavigationService(IAuthenticationService authenticationService)
         {
-            _authenticationService = null;
+            _authenticationService = authenticationService;
             Mappings = new Dictionary<Type, Type>();
 
             CreatePageViewModelMappings();
@@ -36,18 +34,14 @@ namespace PhantasmaMail.Services.Navigation
 
         public async Task InitializeAsync()
         {
-            //TODO "app goes to background" event
-
-            //if (await _authenticationService.UserIsAuthenticatedAndValidAsync())
-            //if ()
-            //      {
-            //          //await NavigateToAsync<MainViewModel>();
-            //      }
-            //      else
-            //      {
-            //          //await NavigateToAsync<LoginViewModel>();
-            //      }
-            await NavigateToAsync<LoginViewModel>();
+            if (_authenticationService.IsAuthenticated)
+            {
+                await NavigateToAsync<MainViewModel>();
+            }
+            else
+            {
+                await NavigateToAsync<LoginViewModel>();
+            }
         }
 
         public Task NavigateToAsync<TViewModel>() where TViewModel : ViewModelBase
@@ -109,10 +103,10 @@ namespace PhantasmaMail.Services.Navigation
                     if (CurrentApplication.MainPage is MainView mainPage)
                     {
                         if (mainPage.Detail is CustomNavigationPage navigationPage &&
-                            (viewModelType != typeof(InboxViewModel) &&
+                             viewModelType != typeof(InboxViewModel) &&
                              viewModelType != typeof(SentViewModel) &&
-                             viewModelType != typeof(ComposeViewModel) && 
-                             viewModelType != typeof(WalletViewModel))) //menu items
+                             viewModelType != typeof(ComposeViewModel) &&
+                             viewModelType != typeof(WalletTabViewModel)) //menu items
                         {
                             var currentPage = navigationPage.CurrentPage;
 
@@ -184,7 +178,7 @@ namespace PhantasmaMail.Services.Navigation
             Mappings.Add(typeof(SettingsViewModel), typeof(SettingsView));
             Mappings.Add(typeof(MessageDetailViewModel), typeof(MessageDetailView));
             Mappings.Add(typeof(RegisterBoxViewModel), typeof(RegisterBoxView));
-            Mappings.Add(typeof(WalletViewModel), typeof(WalletView));
+            Mappings.Add(typeof(WalletTabViewModel), typeof(WalletTabView));
         }
     }
 }

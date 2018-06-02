@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using NeoModules.JsonRpc.Client;
 using PhantasmaMail.Resources;
 using PhantasmaMail.ViewModels.Base;
 using Xamarin.Forms;
@@ -31,29 +32,37 @@ namespace PhantasmaMail.ViewModels
                     if (!await AuthenticationService.LoginAsync(EncryptedKey, Password))
                         await DialogService.ShowAlertAsync("Invalid Encrypted Key/Password", AppResource.Alert_Error);
                 }
+
+                if (AuthenticationService.IsAuthenticated)
+                {
+                    var boxName = await PhantasmaService.GetMailboxFromAddress();
+                    AuthenticationService.AuthenticatedUser.UserBox = boxName;
+
+                    if (string.IsNullOrEmpty(boxName))
+                    {
+                        await NavigationService.NavigateToAsync<RegisterBoxViewModel>();
+                    }
+                    else
+                    {
+                        await NavigationService.NavigateToAsync<MainViewModel>();
+                    }
+                }
             }
             catch (Exception ex)
             {
-                await DialogService.ShowAlertAsync(ex.Message, AppResource.Alert_Error);
-            }
-
-            if (AuthenticationService.IsAuthenticated)
-            {
-                var boxName = await PhantasmaService.GetMailboxFromAddress();
-                AuthenticationService.AuthenticatedUser.UserBox = boxName;
-
-                if (string.IsNullOrEmpty(boxName))
+                if (ex is RpcClientUnknownException || ex is RpcClientTimeoutException) //todo switch error message
                 {
-                    await NavigationService.NavigateToAsync<RegisterBoxViewModel>();
+                    await DialogService.ShowAlertAsync(ex.Message, AppResource.Alert_Error);
                 }
                 else
                 {
-                    await NavigationService.NavigateToAsync<MainViewModel>();
+                    await DialogService.ShowAlertAsync(ex.Message, AppResource.Alert_Error);
                 }
-
             }
-
-            IsBusy = false;
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
         private void SwithLoginExecute()

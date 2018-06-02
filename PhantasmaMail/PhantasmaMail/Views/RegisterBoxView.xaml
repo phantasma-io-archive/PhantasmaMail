@@ -24,20 +24,19 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <ffimageloading:CachedImage Grid.Row="1" Source="phantasma_logo_vector.png" WidthRequest="90"
+            <ffimageloading:CachedImage Grid.Row="0" Source="phantasma_logo_vector.png" WidthRequest="90"
                                         HeightRequest="75"
                                         Margin="0,40,0,10" />
 
-            <Label Grid.Row="2" Text="Phantasma" FontSize="{StaticResource ExtraBigSize}" TextColor="White"
+            <Label Grid.Row="1" Text="Phantasma" FontSize="{StaticResource ExtraBigSize}" TextColor="White"
                    FontFamily="{StaticResource GeoMedium}"
                    HorizontalTextAlignment="Center" />
 
 
-            <Grid Grid.Row="3" VerticalOptions="EndAndExpand"
+            <Grid Grid.Row="2" VerticalOptions="EndAndExpand"
                   IsVisible="{Binding IsBusy,Converter={StaticResource InverseBooleanConverter}}" RowSpacing="20">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />

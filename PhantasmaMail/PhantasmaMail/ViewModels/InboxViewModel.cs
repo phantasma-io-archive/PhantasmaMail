@@ -65,7 +65,6 @@ namespace PhantasmaMail.ViewModels
             }
         }
 
-
         public async Task RefreshExecute()
         {
             try
@@ -75,7 +74,7 @@ namespace PhantasmaMail.ViewModels
                 InboxList = new ObservableCollection<Message>();
                 if (!string.IsNullOrEmpty(AuthenticationService.AuthenticatedUser.UserBox))
                 {
-                    var mailCount = await PhantasmaService.GetOutboxCount();
+                    var mailCount = await PhantasmaService.GetInboxCount();
                     if (mailCount > 0)
                     {
                         var index = 1;
@@ -134,6 +133,9 @@ namespace PhantasmaMail.ViewModels
             }
         }
 
+
+
+        //TODO lista vazia
         private void SearchExecute(string text)
         {
             if (InboxList.Count == 0) return;

@@ -98,8 +98,8 @@ namespace PhantasmaMail.ViewModels
             {
                 Title = AppResource.MenuItem_Wallet,
                 MenuItemType = MenuItemType.Wallet,
-                ViewModelType = typeof(WalletViewModel),
-                IsEnabled = false
+                ViewModelType = typeof(WalletTabViewModel),
+                IsEnabled = true
             });
             MenuItems.Add(new MenuItem
             {

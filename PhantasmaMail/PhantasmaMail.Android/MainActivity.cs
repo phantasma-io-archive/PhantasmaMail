@@ -2,7 +2,8 @@
 using Android.Content.PM;
 using Android.OS;
 using Acr.UserDialogs;
-using FFImageLoading.Forms.Droid;
+using CarouselView.FormsPlugin.Android;
+using FFImageLoading.Forms.Platform;
 using FFImageLoading.Svg.Forms;
 using Xfx;
 
@@ -20,14 +21,23 @@ namespace PhantasmaMail.Droid
 
             XfxControls.Init();
             Xamarin.Forms.Forms.Init(this, bundle);
+            CarouselViewRenderer.Init();
             UserDialogs.Init(this);
-			Rg.Plugins.Popup.Popup.Init(this, bundle);
+            Xamarin.Essentials.Platform.Init(this, bundle);
+            Rg.Plugins.Popup.Popup.Init(this, bundle);
             CachedImageRenderer.Init(true);
             var ignore = typeof(SvgCachedImage);
 
             LoadApplication(new App());
 			XFGloss.Droid.Library.Init(this, bundle);
 		}
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        {
+            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
     }
 }
 

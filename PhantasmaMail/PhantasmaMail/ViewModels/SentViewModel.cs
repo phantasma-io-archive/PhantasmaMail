@@ -83,6 +83,7 @@ namespace PhantasmaMail.ViewModels
                         _fullSentList = SentList.ToList();
                     }
                 }
+                //var test = await PhantasmaService.RemoveOutboxMessages(new[] { 1, 2, 3, 4, 5 });
             }
             catch (Exception ex)
             {
@@ -101,7 +102,7 @@ namespace PhantasmaMail.ViewModels
 
             if (message != null)
             {
-                await NavigationService.NavigateToAsync<MessageDetailViewModel>(new object[] {message, false});
+                await NavigationService.NavigateToAsync<MessageDetailViewModel>(new object[] { message, false });
                 MessageSelected = null;
             }
 

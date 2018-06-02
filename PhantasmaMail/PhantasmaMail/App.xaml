@@ -52,6 +52,12 @@
                 <On Platform="iOS">OpenSans-SemiBold</On>
             </OnPlatform>
 
+            <OnPlatform x:Key="OpenSansLightItalic"
+                        x:TypeArguments="x:String">
+                <On Platform="Android">OpenSans-LightItalic.ttf#OpenSans-LightItalic</On>
+                <On Platform="iOS">OpenSans-LightItalic</On>
+            </OnPlatform>
+
             <OnPlatform x:Key="RobotoMedium"
                         x:TypeArguments="x:String">
                 <On Platform="Android">Roboto-Medium.ttf#Roboto-Medium</On>

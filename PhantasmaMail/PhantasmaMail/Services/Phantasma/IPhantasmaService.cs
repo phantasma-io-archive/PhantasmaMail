@@ -31,6 +31,10 @@ namespace PhantasmaMail.Services.Phantasma
 
         Task<List<string>> GetAllOutboxMessages(int count);
 
+        Task<string> RemoveInboxMessages(int[] indexes);
+
+        Task<string> RemoveOutboxMessages(int[] indexes);
+
         Task<string> EstimateMessageCost(string boxName, string message);
     }
 }

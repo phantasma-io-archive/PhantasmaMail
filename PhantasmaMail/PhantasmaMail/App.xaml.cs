@@ -1,19 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.IO;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Newtonsoft.Json;
-using PCLStorage;
-using PhantasmaMail.Services.Db;
+﻿using NeoModules.Rest.Services;
 using PhantasmaMail.Services.Navigation;
 using PhantasmaMail.ViewModels;
 using PhantasmaMail.ViewModels.Base;
+using Xamarin.Essentials;
 using Xamarin.Forms.Xaml;
 using Application = Xamarin.Forms.Application;
-using FileAccess = PCLStorage.FileAccess;
-using Message = PhantasmaMail.Models.Message;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
@@ -41,9 +32,15 @@ namespace PhantasmaMail
             navigationService.NavigateToAsync<ExtendedSplashViewModel>();
         }
 
-        protected override void OnStart()
+        protected override async void OnStart()
         {
-           
+            var current = Connectivity.NetworkAccess;
+
+            if (current == NetworkAccess.Internet)
+            {
+                // Connection to internet is available
+                
+            }
         }
 
         protected override void OnSleep()
@@ -53,7 +50,16 @@ namespace PhantasmaMail
 
         protected override void OnResume()
         {
-            // Handle when your app resumes
+        //    var navigationService = Locator.Instance.Resolve<INavigationService>();
+        //    var auth  = Locator.Instance.Resolve<IAuthenticationService>();
+        //    if (auth.IsAuthenticated)
+        //    {
+        //        navigationService.NavigateToAsync<MainViewModel>();
+        //    }
+        //    else
+        //    {
+        //        navigationService.NavigateToAsync<ExtendedSplashViewModel>();
+        //    }
         }
 
         

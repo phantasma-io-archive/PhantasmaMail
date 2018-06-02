@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Reflection;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using CarouselView.FormsPlugin.UWP;
 
 namespace PhantasmaMail.UWP
 {
@@ -40,8 +43,9 @@ namespace PhantasmaMail.UWP
                 rootFrame = new Frame();
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
-
-                Xamarin.Forms.Forms.Init(e);
+                List<Assembly> assembliesToInclude =
+                    new List<Assembly> { typeof(CarouselViewRenderer).GetTypeInfo().Assembly };
+                Xamarin.Forms.Forms.Init(e, assembliesToInclude);
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {

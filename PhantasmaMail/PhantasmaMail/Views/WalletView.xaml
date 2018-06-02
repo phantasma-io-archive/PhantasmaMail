@@ -4,7 +4,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:markupExtensions="clr-namespace:PhantasmaMail.MarkupExtensions;assembly=PhantasmaMail"
              xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:xForms="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms"
+             xmlns:sfpullToRefresh="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms"
+             xmlns:behaviors="clr-namespace:PhantasmaMail.Behaviors;assembly=PhantasmaMail"
+             xmlns:controls="clr-namespace:PhantasmaMail.Controls"
              x:Class="PhantasmaMail.Views.WalletView"
              Title="{markupExtensions:Translate PageTitle_Wallet}"
              BackgroundColor="{StaticResource WhiteBackground}">
@@ -12,13 +17,15 @@
     <ContentPage.Resources>
         <ResourceDictionary>
 
-            <Style x:Key="WalletGrayLabelStyle" BasedOn="{StaticResource OpenSansSemiBoldLabelStyle}" TargetType="Label">
+            <Style x:Key="WalletGrayLabelStyle" BasedOn="{StaticResource OpenSansSemiBoldLabelStyle}"
+                   TargetType="Label">
                 <Setter Property="TextColor" Value="{StaticResource LightGray}" />
                 <Setter Property="FontSize"
                         Value="{StaticResource LargeSize}" />
             </Style>
 
-            <Style x:Key="WalletGreenLabelStyle" BasedOn="{StaticResource OpenSansSemiBoldLabelStyle}" TargetType="Label">
+            <Style x:Key="WalletGreenLabelStyle" BasedOn="{StaticResource OpenSansSemiBoldLabelStyle}"
+                   TargetType="Label">
                 <Setter Property="FontSize"
                         Value="{StaticResource LargerSize}" />
                 <Setter Property="TextColor" Value="{StaticResource DarkBlueGreen}" />
@@ -26,7 +33,7 @@
 
             <Style x:Key="WalletButtonStyle" BasedOn="{StaticResource ButtonStyle}" TargetType="Button">
                 <Setter Property="TextColor" Value="{StaticResource DarkBlueGreen}" />
-                <Setter Property="CornerRadius" Value="0"/>
+                <Setter Property="CornerRadius" Value="0" />
                 <Setter Property="BorderRadius" Value="0" />
             </Style>
 
@@ -34,7 +41,81 @@
     </ContentPage.Resources>
     <ContentPage.Content>
 
-        <Grid Margin="20" RowSpacing="25" ColumnSpacing="10">
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+
+            <Frame Grid.Row="0" IsClippedToBounds="True"
+                   Margin="30,15,30,1" Opacity="0.8"
+                   HasShadow="True"
+                   CornerRadius="0" Padding="0" />
+
+
+            <Frame Grid.Row="0"
+                   Margin="20,30,20,0">
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Label Text="Current balance" HorizontalTextAlignment="Center" HorizontalOptions="Center" />
+                    <Label Text="{Binding CurrentBalanceFiat}" HorizontalTextAlignment="Center"
+                           HorizontalOptions="Center" />
+                </StackLayout>
+            </Frame>
+
+            <Button Grid.Row="1" Margin="20" IsVisible="False"
+                    Style="{StaticResource WalletButtonStyle}"
+                    Text="Claim 0.00000000 Gas" />
+
+            <xForms:SfPullToRefresh x:Name="assetList" Grid.Row="2"
+                                    ProgressBackgroundColor="{StaticResource Accent}"
+                                    RefreshContentHeight="40"
+                                    RefreshContentWidth="40"
+                                    TransitionMode="Push"
+                                    IsRefreshing="{Binding IsBusy}"
+                                    Refreshing="PullToRefresh_Refreshing">
+
+                <sfpullToRefresh:SfPullToRefresh.PullableContent>
+                    <syncfusion:SfListView
+                        x:Name="AssetListView"
+                        AutoFitMode="Height"
+                        ItemsSource="{Binding AssetsList, Mode=TwoWay}"
+                        SelectionBackgroundColor="{StaticResource GradientEndColor}"
+                        SelectionMode="None"
+                        AllowSwiping="False"
+                        IsStickyHeader="True"
+                        ItemSpacing="15"
+                        VerticalOptions="FillAndExpand">
+                        <!--<syncfusion:SfListView.Triggers>
+                            <DataTrigger TargetType="syncfusion:SfListView"
+                                         Binding="{Binding Source={x:Reference AssetListView}, Path=ItemsSource.Count}"
+                                         Value="0">
+                                <Setter Property="IsVisible" Value="False" />
+                            </DataTrigger>
+                        </syncfusion:SfListView.Triggers>-->
+                        <syncfusion:SfListView.ItemTemplate>
+                            <DataTemplate>
+                                <controls:WalletAssetCell />
+                            </DataTemplate>
+                        </syncfusion:SfListView.ItemTemplate>
+                        <syncfusion:SfListView.HeaderTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Label Text="Your Neo tokens" />
+                                </Grid>
+                            </DataTemplate>
+                        </syncfusion:SfListView.HeaderTemplate>
+                    </syncfusion:SfListView>
+                </sfpullToRefresh:SfPullToRefresh.PullableContent>
+
+            </xForms:SfPullToRefresh>
+
+        </Grid>
+
+
+        <!--<Grid Margin="20" RowSpacing="25" ColumnSpacing="10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -47,12 +128,14 @@
                 <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
 
-            <!-- NEO -->
+            -->
+        <!-- NEO -->
+        <!--
             <Grid  Grid.Row="0" Grid.Column="0">
                 <Frame>
                     <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                         <Label Text="NEO" HorizontalTextAlignment="Center" Style="{StaticResource WalletGrayLabelStyle}" />
-                        <Label Text="0" HorizontalTextAlignment="Center" Style="{StaticResource WalletGreenLabelStyle}" />
+                        <Label Text="{Binding NeoBalance}" HorizontalTextAlignment="Center" Style="{StaticResource WalletGreenLabelStyle}" />
                         <Label Text="$0.00 USD" HorizontalTextAlignment="Center"
                                Style="{StaticResource WalletGrayLabelStyle}" FontSize="{StaticResource MediumSize}" />
                     </StackLayout>
@@ -60,12 +143,14 @@
 
             </Grid>
 
-            <!-- GAS -->
+            -->
+        <!-- GAS -->
+        <!--
             <Grid Grid.Row="0" Grid.Column="1">
                 <Frame >
                     <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                         <Label Text="GAS" HorizontalTextAlignment="Center" Style="{StaticResource WalletGrayLabelStyle}" />
-                        <Label Text="0" HorizontalTextAlignment="Center" Style="{StaticResource WalletGreenLabelStyle}" />
+                        <Label Text="{Binding GasBalance}" HorizontalTextAlignment="Center" Style="{StaticResource WalletGreenLabelStyle}" />
                         <Label Text="$0.00 USD" HorizontalTextAlignment="Center"
                                Style="{StaticResource WalletGrayLabelStyle}" FontSize="{StaticResource MediumSize}" />
                     </StackLayout>
@@ -78,10 +163,12 @@
 
             <Button Grid.Row="2" Grid.Column="0"
                     Style="{StaticResource WalletButtonStyle}"
+                    Command="{Binding SendCommand}"
                     Text="Send" />
 
             <Button Grid.Row="2" Grid.Column="1"
                     Style="{StaticResource WalletButtonStyle}" 
+                    Command="{Binding ReceiveCommand}"
                     Text="Receive" />
 
             <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="Participate in Token Sale"
@@ -101,6 +188,6 @@
                 </ffimageloadingsvg:SvgCachedImage.Transformations>
             </ffimageloadingsvg:SvgCachedImage>
 
-        </Grid>
+        </Grid>-->
     </ContentPage.Content>
 </ContentPage>

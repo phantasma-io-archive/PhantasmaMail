@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using NeoModules.KeyPairs;
 using NeoModules.NEP6;
 using NeoModules.NEP6.Models;
 
@@ -10,7 +9,6 @@ namespace PhantasmaMail.Services.Authentication
         private const string WalletLabel = "Phantasma wallet";
         private const string AddressLabel = "Phantasma address";
         public WalletManager WalletManager { get; set; }
-
         public string UserBox { get; set; }
 
         public async Task<Account> InitializeUserWallet(string encryptedKey, string password)
@@ -39,12 +37,6 @@ namespace PhantasmaMail.Services.Authentication
             var account = WalletManager.GetDefaultAccount();
             var address = Wallet.ToAddress(account.Address);
             return address;
-        }
-
-        public KeyPair GetKeypair()
-        {
-            var account = WalletManager?.GetDefaultAccount();
-            return account?.Key;
         }
     }
 }

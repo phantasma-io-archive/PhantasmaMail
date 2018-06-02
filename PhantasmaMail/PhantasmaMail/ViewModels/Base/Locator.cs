@@ -2,6 +2,8 @@
 using PhantasmaMail.Services.Dialog;
 using PhantasmaMail.Services.Navigation;
 using System;
+using NeoModules.Rest.Services;
+using PhantasmaMail.Services;
 using PhantasmaMail.Services.Authentication;
 using PhantasmaMail.Services.Db;
 using PhantasmaMail.Services.Phantasma;
@@ -22,8 +24,9 @@ namespace PhantasmaMail.ViewModels.Base
             _containerBuilder.RegisterType<DialogService>().SingleInstance().As<IDialogService>();
             _containerBuilder.RegisterType<NavigationService>().SingleInstance().As<INavigationService>();
             _containerBuilder.RegisterType<AuthenticationService>().SingleInstance().As<IAuthenticationService>();
-            //_containerBuilder.RegisterType<TestPhantasmaService>().SingleInstance().As<IPhantasmaService>();
+            _containerBuilder.RegisterType<WalletService>().SingleInstance();
             _containerBuilder.RegisterType<PrivatePhantasmaService>().SingleInstance().As<IPhantasmaService>();
+            //_containerBuilder.RegisterType<NeoScanRestService>().SingleInstance().As<INeoRestService>();
 
             _containerBuilder.RegisterType<ExtendedSplashViewModel>();
             _containerBuilder.RegisterType<LoginViewModel>();
@@ -34,7 +37,7 @@ namespace PhantasmaMail.ViewModels.Base
             _containerBuilder.RegisterType<ComposeViewModel>();
             _containerBuilder.RegisterType<MessageDetailViewModel>();
             _containerBuilder.RegisterType<RegisterBoxViewModel>();
-            _containerBuilder.RegisterType<WalletViewModel>();
+            _containerBuilder.RegisterType<WalletTabViewModel>();
             _containerBuilder.RegisterType<SettingsViewModel>();
 
             //db

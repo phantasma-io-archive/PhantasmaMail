@@ -44,7 +44,7 @@ namespace PhantasmaMail.ViewModels
                 var culture = new CultureInfo("en-GB");
                 CultureInfo.CurrentCulture = culture;
                 DaysAgo = MessageUtils.CalculateDays(message.Date);
-                FormattedDate = string.Format("{0:f}", message.Date);
+                FormattedDate = $"{message.Date:f}";
             }
 
             return base.InitializeAsync(navigationData);

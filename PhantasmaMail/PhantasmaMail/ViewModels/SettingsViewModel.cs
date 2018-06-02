@@ -38,13 +38,13 @@ namespace PhantasmaMail.ViewModels
 
         public override async Task InitializeAsync(object navigationData)
         {
-            var nep5Service = SetupNep5Service();
-            var symbol = await nep5Service.GetSymbol();
-            var name = await nep5Service.GetName();
-            var decimals = await nep5Service.GetDecimals();
-            var totalSupply = await nep5Service.GetTotalSupply(decimals);
-            var balance = await nep5Service.GetBalance("0xbfe77ff8de50fb9db2525f7ffb73b72ec32d32ec", decimals);
-            var balance2 = await nep5Service.GetBalance("ec322dc32eb773fb7f5f52b29dfb50def87fe7bf", decimals);
+            //var nep5Service = SetupNep5Service();
+            //var symbol = await nep5Service.GetSymbol();
+            //var name = await nep5Service.GetName();
+            //var decimals = await nep5Service.GetDecimals();
+            //var totalSupply = await nep5Service.GetTotalSupply(decimals);
+            //var balance = await nep5Service.GetBalance("0xbfe77ff8de50fb9db2525f7ffb73b72ec32d32ec", decimals);
+            //var balance2 = await nep5Service.GetBalance("ec322dc32eb773fb7f5f52b29dfb50def87fe7bf", decimals);
         }
 
         private async Task UnregisterInboxExecute()

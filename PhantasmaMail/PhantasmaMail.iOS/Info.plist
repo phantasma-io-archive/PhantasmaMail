@@ -48,6 +48,7 @@
 	</array>
   <key>UIAppFonts</key>
   <array>
+    <string>Fonts/OpenSans-LightItalic.tff</string>
     <string>Fonts/OpenSans-Regular.ttf</string>
     <string>Fonts/OpenSans-SemiBold.ttf</string>
     <string>Fonts/Roboto-Medium.ttf</string>

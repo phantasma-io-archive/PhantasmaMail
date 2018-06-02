@@ -40,9 +40,14 @@
                                HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
                                Color="White" />
 
+            <Frame Grid.Row="0" IsClippedToBounds="True" 
+                   Margin="10,-5,10,1" Opacity="0.8" 
+                   HasShadow="True"
+                   CornerRadius="0" Padding="0" />
 
             <Frame Grid.Row="0"
                    Padding="15"
+                   Margin="0,10,0,0"
                    CornerRadius="0"
                    HasShadow="True"
                    HorizontalOptions="FillAndExpand"
@@ -87,7 +92,8 @@
 
 
                     <StackLayout Grid.Row="5"
-                                 IsVisible="{Binding FromInbox, Converter={StaticResource InverseBooleanConverter}}">
+                                 IsVisible="{Binding FromInbox, Converter={StaticResource InverseBooleanConverter}}"
+                                 Margin="0,0,0,5">
                         <!-- TODO underline label -->
                         <Label Text="TxHash"
                                TextColor="{StaticResource DarkBlueGreen}"
@@ -96,8 +102,7 @@
 
                         <Label Text="{Binding SelectedMessage.Hash}"
                                TextColor="{StaticResource LightGray}"
-                               FontAttributes="Italic"
-                               FontFamily="{StaticResource OpenSansSemiBold}"
+                               FontFamily="{StaticResource OpenSansLightItalic}"
                                FontSize="{StaticResource MediumSize}" />
 
                         <StackLayout.GestureRecognizers>
@@ -141,10 +146,11 @@
                     <ffimageloadingsvg:SvgCachedImage VerticalOptions="End" HorizontalOptions="Start"
                                                       Source="arrow.svg"
                                                       Grid.Column="0" HeightRequest="20"
-                                                      WidthRequest="28">
+                                                      WidthRequest="17">
                         <ffimageloadingsvg:SvgCachedImage.Transformations>
                             <fftransformations:TintTransformation EnableSolidColor="true"
                                                                   HexColor="{StaticResource TintIconColor}" />
+                            <fftransformations:FlipTransformation FlipType="Horizontal" />
                         </ffimageloadingsvg:SvgCachedImage.Transformations>
                     </ffimageloadingsvg:SvgCachedImage>
                     <Label Grid.Column="1" VerticalTextAlignment="End" Style="{StaticResource NoMessagesLabelStyle}"
@@ -163,7 +169,7 @@
                     <ffimageloadingsvg:SvgCachedImage VerticalOptions="End" HorizontalOptions="Start"
                                                       Source="down_arrow.svg"
                                                       Grid.Column="0" HeightRequest="20"
-                                                      WidthRequest="28">
+                                                      WidthRequest="17">
                         <ffimageloadingsvg:SvgCachedImage.Transformations>
                             <fftransformations:TintTransformation EnableSolidColor="true"
                                                                   HexColor="{StaticResource TintIconColor}" />
@@ -181,7 +187,7 @@
                     <ffimageloadingsvg:SvgCachedImage VerticalOptions="End" HorizontalOptions="Start"
                                                       Source="more.svg"
                                                       Grid.Column="0" HeightRequest="20"
-                                                      WidthRequest="28">
+                                                      WidthRequest="17">
                         <ffimageloadingsvg:SvgCachedImage.Transformations>
                             <fftransformations:TintTransformation EnableSolidColor="true"
                                                                   HexColor="{StaticResource TintIconColor}" />
@@ -208,12 +214,15 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     <ffimageloadingsvg:SvgCachedImage VerticalOptions="End" HorizontalOptions="Start"
+                                                      Aspect="AspectFit"
                                                       Source="arrow.svg"
                                                       Grid.Column="0" HeightRequest="20"
-                                                      WidthRequest="28">
+                                                      WidthRequest="17">
                         <ffimageloadingsvg:SvgCachedImage.Transformations>
                             <fftransformations:TintTransformation EnableSolidColor="true"
                                                                   HexColor="{StaticResource TintIconColor}" />
+                            <fftransformations:RotateTransformation Degrees="90" Resize="True" CCW="True" />
+                            <fftransformations:FlipTransformation FlipType="Horizontal" />
                         </ffimageloadingsvg:SvgCachedImage.Transformations>
                     </ffimageloadingsvg:SvgCachedImage>
                     <Label Grid.Column="1" VerticalTextAlignment="End" Style="{StaticResource NoMessagesLabelStyle}"
@@ -232,7 +241,7 @@
                     <ffimageloadingsvg:SvgCachedImage VerticalOptions="End" HorizontalOptions="Start"
                                                       Source="down_arrow.svg"
                                                       Grid.Column="0" HeightRequest="20"
-                                                      WidthRequest="28">
+                                                      WidthRequest="17">
                         <ffimageloadingsvg:SvgCachedImage.Transformations>
                             <fftransformations:TintTransformation EnableSolidColor="true"
                                                                   HexColor="{StaticResource TintIconColor}" />
@@ -250,7 +259,7 @@
                     <ffimageloadingsvg:SvgCachedImage VerticalOptions="End" HorizontalOptions="Start"
                                                       Source="more.svg"
                                                       Grid.Column="0" HeightRequest="20"
-                                                      WidthRequest="28">
+                                                      WidthRequest="17">
                         <ffimageloadingsvg:SvgCachedImage.Transformations>
                             <fftransformations:TintTransformation EnableSolidColor="true"
                                                                   HexColor="{StaticResource TintIconColor}" />

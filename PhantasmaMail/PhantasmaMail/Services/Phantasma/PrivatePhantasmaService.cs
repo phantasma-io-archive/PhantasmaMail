@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NeoModules.Core;
-using NeoModules.KeyPairs;
 using NeoModules.NEP6;
 using NeoModules.NEP6.Models;
 using NeoModules.RPC;
@@ -22,10 +22,24 @@ namespace PhantasmaMail.Services.Phantasma
         public async Task<string> EstimateMessageCost(string boxName, string message)
         {
             var script = NeoModules.NEP6.Utils.GenerateScript(ContractScriptHashBytes, SendMessageOperation,
-                new object[] {boxName, message});
+                new object[] { boxName, message });
 
             var result = await _neoRpcClient.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
             return result?.GasConsumed;
+        }
+
+        private async Task<string> SendContractTransaction(string operation, object[] args)
+        {
+            if (AccountManager != null)
+            {
+                var transaction = await AccountManager?.CallContract(ContractScriptHashBytes,
+                    operation,
+                    args);
+
+                if (transaction != null) return transaction.Hash.ToString();
+            }
+
+            return string.Empty;
         }
 
         #region READ Protocol Methods
@@ -33,8 +47,10 @@ namespace PhantasmaMail.Services.Phantasma
         public async Task<string> GetMailboxFromAddress()
         {
             var script = NeoModules.NEP6.Utils.GenerateScript(ContractScriptHashBytes, GetInboxFromAddressOperation,
-                new object[] {UserAddress});
+                new object[] { UserAddress });
             var result = await _neoRpcClient.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
+
+            if (result.Stack.Count > 1) return string.Empty;
 
             var content = result.Stack[0].Value.ToString();
 
@@ -49,7 +65,7 @@ namespace PhantasmaMail.Services.Phantasma
         public async Task<string> GetAddressFromMailbox(string boxName)
         {
             var script = NeoModules.NEP6.Utils.GenerateScript(ContractScriptHashBytes, GetAddressFromInboxOperation,
-                new object[] {boxName});
+                new object[] { boxName });
             var result = await _neoRpcClient.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
 
             var content = result.Stack[0].Value.ToString();
@@ -65,7 +81,7 @@ namespace PhantasmaMail.Services.Phantasma
         public async Task<int> GetInboxCount()
         {
             var script = NeoModules.NEP6.Utils.GenerateScript(ContractScriptHashBytes, GetInboxCountOperation,
-                new object[] {UserBoxName});
+                new object[] { UserBoxName });
             var result = await _neoRpcClient.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
 
             var count = result.Stack[0].Value.ToString();
@@ -76,7 +92,7 @@ namespace PhantasmaMail.Services.Phantasma
         public async Task<string> GetInboxContent(int index)
         {
             var script = NeoModules.NEP6.Utils.GenerateScript(ContractScriptHashBytes, GetInboxContentOperation,
-                new object[] {UserBoxName, index});
+                new object[] { UserBoxName, index });
             var result = await _neoRpcClient.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
 
             var content = result.Stack[0].Value.ToString().HexToBytes();
@@ -86,7 +102,7 @@ namespace PhantasmaMail.Services.Phantasma
         public async Task<int> GetOutboxCount()
         {
             var script = NeoModules.NEP6.Utils.GenerateScript(ContractScriptHashBytes, GetOutboxCountOperation,
-                new object[] {UserBoxName});
+                new object[] { UserBoxName });
             var result = await _neoRpcClient.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
 
             var count = result.Stack[0].Value.ToString();
@@ -98,7 +114,7 @@ namespace PhantasmaMail.Services.Phantasma
         public async Task<string> GetOutboxContent(int index)
         {
             var script = NeoModules.NEP6.Utils.GenerateScript(ContractScriptHashBytes, GetOutboxContentOperation,
-                new object[] {UserBoxName, index});
+                new object[] { UserBoxName, index });
             var result = await _neoRpcClient.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
 
             var content = result.Stack[0].Value.ToString().HexToBytes();
@@ -136,62 +152,49 @@ namespace PhantasmaMail.Services.Phantasma
 
         public async Task<string> RegisterMailbox(string name)
         {
-            if (!(UserAccount.TransactionManager is AccountSignerTransactionManager accountsigner)) return string.Empty;
-            var transaction = await accountsigner.CallContract(UserKeypair, ContractScriptHashBytes,
-                RegisterInboxOperation,
-                new object[] {UserAddress, name});
-            if (transaction == null) return string.Empty;
-            return transaction.Hash.ToString();
+            return await SendContractTransaction(RegisterInboxOperation, new object[] { UserAddress, name });
         }
 
         public async Task<string> UnregisterMailbox()
         {
-            if (!(UserAccount.TransactionManager is AccountSignerTransactionManager accountsigner)) return string.Empty;
-            var transaction = await accountsigner.CallContract(UserKeypair, ContractScriptHashBytes,
-                UnregisterInboxOperation,
-                new object[] {UserAddress});
-            if (transaction == null) return string.Empty;
-            return transaction.Hash.ToString();
+            return await SendContractTransaction(UnregisterInboxOperation, new object[] { UserAddress });
         }
 
 
         public async Task<string> SendMessage(string destName, string mailHash)
         {
-            if (!(UserAccount.TransactionManager is AccountSignerTransactionManager accountsigner)) return string.Empty;
-            var transaction = await accountsigner.CallContract(UserKeypair, ContractScriptHashBytes,
-                SendMessageOperation,
-                new object[] {UserAddress, destName, mailHash});
-            if (transaction == null) return string.Empty;
-            return transaction.Hash.ToString();
+            return await SendContractTransaction(SendMessageOperation, new object[] { UserAddress, destName, mailHash });
         }
 
         public async Task<string> RemoveInboxMessage(int index)
         {
-            if (!(UserAccount.TransactionManager is AccountSignerTransactionManager accountsigner)) return string.Empty;
-
-            var transaction = await accountsigner.CallContract(UserKeypair, ContractScriptHashBytes,
-                RemoveInboxMessageOperation,
-                new object[] {UserAddress, index});
-            if (transaction != null) return transaction.Hash.ToString();
-
-
-            return string.Empty;
+            return await SendContractTransaction(RemoveInboxMessageOperation, new object[] { UserAddress, index });
         }
 
         public async Task<string> RemoveOutboxMessage(int index)
         {
-            if (!(UserAccount.TransactionManager is AccountSignerTransactionManager accountsigner)) return string.Empty;
+            return await SendContractTransaction(RemoveOutboxMessageOperation, new object[] { UserAddress, index });
+        }
 
-            var transaction = await accountsigner.CallContract(UserKeypair, ContractScriptHashBytes,
-                RemoveOutboxMessageOperation,
-                new object[] {UserAddress, index});
-            if (transaction != null) return transaction.Hash.ToString();
+        public async Task<string> RemoveInboxMessages(int[] indexes)
+        {
+            var args = new List<object> { UserAddress };
+            var orderedIndex = indexes.OrderBy(ind => ind).ToArray();
+            args.AddRange(orderedIndex.Cast<object>());
 
-            return string.Empty;
+            return await SendContractTransaction(RemoveInboxMessagesOperation, args.ToArray());
+        }
+
+        public async Task<string> RemoveOutboxMessages(int[] indexes)
+        {
+            var args = new List<object> { UserAddress };
+            var orderedIndex = indexes.OrderBy(ind => ind).ToArray();
+            args.AddRange(orderedIndex.Cast<object>());
+
+            return await SendContractTransaction(RemoveOutboxMessagesOperation, args.ToArray());
         }
 
         #endregion
-
 
         #region Private Properties
 
@@ -201,21 +204,23 @@ namespace PhantasmaMail.Services.Phantasma
         private const string UnregisterInboxOperation = "unregisterMailbox";
         private const string SendMessageOperation = "sendMessage";
         private const string RemoveInboxMessageOperation = "removeInboxMessage";
+        private const string RemoveInboxMessagesOperation = "removeInboxMessages";
         private const string RemoveOutboxMessageOperation = "removeOutboxMessage";
+        private const string RemoveOutboxMessagesOperation = "removeOutboxMessages";
         private const string GetInboxCountOperation = "getInboxCount";
         private const string GetInboxContentOperation = "getInboxContent";
         private const string GetOutboxCountOperation = "getOutboxCount";
         private const string GetOutboxContentOperation = "getOutboxContent";
 
         private User ActiveUser => Locator.Instance.Resolve<IAuthenticationService>().AuthenticatedUser;
-        private Account UserAccount => ActiveUser.GetDefaultAccount();
-        private KeyPair UserKeypair => ActiveUser.GetKeypair();
+        public AccountSignerTransactionManager AccountManager => (AccountSignerTransactionManager)ActiveUser.GetDefaultAccount().TransactionManager;
         private string UserBoxName => ActiveUser.UserBox;
         private byte[] UserAddress => ActiveUser.GetDefaultAccount().Address.ToArray();
         private byte[] ContractScriptHashBytes => UInt160.Parse(ContractScriptHash).ToArray();
 
         //TODO: change to main net scripthash
-        private const string ContractScriptHash = "e1aa953bf7f1b92760df28772d84941cac711ed1";
+        private string ContractScriptHash => AppSettings.ContractScriptHash;
+
         private readonly NeoApiService _neoRpcClient; // TODO: fix so the app only use one RpcClient
 
         #endregion
