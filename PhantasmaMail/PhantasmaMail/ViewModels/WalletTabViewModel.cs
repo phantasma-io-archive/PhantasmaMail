@@ -10,6 +10,7 @@ using PhantasmaMail.Models;
 using PhantasmaMail.Resources;
 using PhantasmaMail.Services;
 using PhantasmaMail.ViewModels.Base;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace PhantasmaMail.ViewModels
@@ -34,6 +35,8 @@ namespace PhantasmaMail.ViewModels
 
         public ICommand SendCommand => new Command(async () => await SendExecute());
         public ICommand ClaimGasCommand => new Command(async () => await ClaimGasExecute());
+        public ICommand OpenTxCommand => new Command(async () => await OpenTxExecute());
+
 
 
 
@@ -205,6 +208,29 @@ namespace PhantasmaMail.ViewModels
         private async Task ClaimGasExecute()
         {
             await DialogService.ShowAlertAsync(AppResource.Alert_FeatureNotLive, AppResource.Alert_Error);
+        }
+
+        private async Task OpenTxExecute()
+        {
+            if (SelectedTransaction != null)
+            {
+                var uri = new Uri(AppSettings.NeoScanUrlTransactions + SelectedTransaction.TxHash);
+                await Browser.OpenAsync(uri, BrowserLaunchType.SystemPreferred);
+                SelectedTransaction = null;
+            }
+        }
+
+        private TransactionModel _selectedTransaction;
+
+        public TransactionModel SelectedTransaction
+        {
+            get => _selectedTransaction;
+            set
+            {
+                _selectedTransaction = value;
+                OnPropertyChanged();
+                OpenTxCommand.Execute(_selectedTransaction);
+            }
         }
 
         #region Observable Properties

@@ -4,7 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:PhantasmaMail.Views"
-    xmlns:xf="clr-namespace:BottomBar.XamarinForms;assembly=BottomBar.XamarinForms">
+    xmlns:xf="clr-namespace:BottomBar.XamarinForms;assembly=BottomBar.XamarinForms" Title="Wallet">
 
     <local:WalletView Icon="ic_wallet_balance.png" />
     <local:SendView  Icon="ic_wallet_send.png"/>

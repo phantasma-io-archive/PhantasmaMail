@@ -4,7 +4,8 @@
              xmlns:xForms="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms"
              xmlns:xForms1="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              xmlns:controls="clr-namespace:PhantasmaMail.Controls;assembly=PhantasmaMail"
-             x:Class="PhantasmaMail.Views.TransactionHistoryView">
+             x:Class="PhantasmaMail.Views.TransactionHistoryView"
+             BackgroundColor="{StaticResource WhiteBackground}">
     <ContentPage.Content>
         <Grid>
             <xForms:SfPullToRefresh x:Name="transactionsList"
@@ -22,6 +23,7 @@
                         ItemsSource="{Binding TransactionsList, Mode=TwoWay}"
                         SelectionBackgroundColor="{StaticResource GradientEndColor}"
                         SelectionMode="Single"
+                        SelectedItem="{Binding SelectedTransaction}"
                         AllowSwiping="False"
                         IsStickyHeader="True"
                         ItemSpacing="15"

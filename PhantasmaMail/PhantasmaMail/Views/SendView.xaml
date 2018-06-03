@@ -4,7 +4,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
              xmlns:xForms="clr-namespace:Syncfusion.SfPicker.XForms;assembly=Syncfusion.SfPicker.XForms"
-             x:Class="PhantasmaMail.Views.SendView">
+             x:Class="PhantasmaMail.Views.SendView"
+             BackgroundColor="{StaticResource WhiteBackground}">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -50,7 +51,7 @@
                             Style="{StaticResource CustomEntryStyle}"
                             Text="{Binding ToAddress}" />
 
-                        <Picker TextColor="Black" Grid.Row="1" Margin="0,-8,0,0" 
+                        <Picker TextColor="Black" Grid.Row="1" Margin="0,-12,0,0" 
                                 FontFamily="{StaticResource OpenSansSemiBold}"
                                 FontSize="{StaticResource MidMediumSize}"
                                 ItemsSource="{Binding PickerItemList}"
