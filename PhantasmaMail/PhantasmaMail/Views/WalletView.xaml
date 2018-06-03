@@ -59,14 +59,30 @@
             <Frame Grid.Row="0"
                    Margin="20,30,20,0">
                 <StackLayout HorizontalOptions="FillAndExpand">
-                    <Label Text="Current Balance" HorizontalTextAlignment="Center" HorizontalOptions="Center" />
-                    <Label Text="{Binding CurrentBalanceFiat,StringFormat='$ {0}'}" HorizontalTextAlignment="Center"
-                           HorizontalOptions="Center" />
+                    <Label Text="Current Balance" 
+                           HorizontalTextAlignment="Center" HorizontalOptions="Center" 
+                           FontFamily="{StaticResource OpenSansSemiBold}"
+                           FontSize="{StaticResource MediumSize}"
+                           TextColor="{StaticResource LightGray}"/>
+
+                    <Label Text="{Binding CurrentBalanceFiat,StringFormat='$ {0}'}" 
+                           HorizontalTextAlignment="Center" HorizontalOptions="Center"
+                           FontFamily="{StaticResource OpenSansSemiBold}"
+                           FontSize="{StaticResource LargerSize}"
+                           TextColor="{StaticResource DarkBlueGreen}"/>
+
+                    <Label Text ="{Binding UserAddress}" 
+                           HorizontalTextAlignment="Center" HorizontalOptions="Center"
+                           FontFamily="{StaticResource OpenSansSemiBold}"
+                           FontSize="{StaticResource LittleSize}"
+                           TextColor="{StaticResource LightGray}"/>
+
                 </StackLayout>
             </Frame>
 
-            <Button Grid.Row="1" Margin="20" IsVisible="False"
-                    Style="{StaticResource WalletButtonStyle}"
+            <Button Grid.Row="1" Margin="20" IsVisible="True"
+                    Style="{StaticResource WalletButtonStyle}" CornerRadius="2"
+                    Command="{Binding ClaimGasCommand}"
                     Text="Claim 0.00000000 Gas" />
 
             <xForms:SfPullToRefresh x:Name="assetList" Grid.Row="2"
@@ -85,7 +101,7 @@
                         SelectionBackgroundColor="{StaticResource GradientEndColor}"
                         SelectionMode="None"
                         AllowSwiping="False"
-                        IsStickyHeader="True"
+                        IsStickyHeader="false"
                         ItemSpacing="15"
                         VerticalOptions="FillAndExpand">
                         <!--<syncfusion:SfListView.Triggers>

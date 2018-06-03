@@ -60,11 +60,16 @@ namespace PhantasmaMail.Services
             return JsonConvert.DeserializeObject<TokenList>(token);
         }
 
-        public async Task<List<Transaction>> GetTransactionHistory()
+        public async Task<List<AbstractEntry>> GetTransactionHistory()
         {
-            var transactionHistoryJson = await AppSettings.RestService.GetLastTransactionsByAddress(ActiveUser.GetUserDefaultAddress(), 0);
-            var list = Transactions.FromJson(transactionHistoryJson).ToList();
-            return list;
+            var transactionHistoryJson = await AppSettings.RestService.GetAddressAbstracts(ActiveUser.GetUserDefaultAddress(), 0);
+            var list = AbstractAddress.FromJson(transactionHistoryJson);
+            return list.Entries.ToList();
+        }
+
+        public string GetUserAddress()
+        {
+            return ActiveUser.GetUserDefaultAddress();
         }
     }
 }

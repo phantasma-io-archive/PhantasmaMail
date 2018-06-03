@@ -35,27 +35,28 @@
 
                 <Frame Grid.Row="0"
                        Margin="20,30,20,0">
-                    <StackLayout>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
                         <xfx:XfxEntry
+                            Grid.Row="0"
                             HorizontalOptions="FillAndExpand"
                             Placeholder="Neo Address:"
                             FloatingHintEnabled="True"
                             Style="{StaticResource CustomEntryStyle}"
                             Text="{Binding ToAddress}" />
 
-                        <xForms:SfPicker
-                            x:Name="picker"
-                            BorderColor="Aqua"
-                            HeaderBackgroundColor="Transparent"
-                            ShowColumnHeader="False"
-                            HeaderTextColor="Red"
-                            HeaderText="Select an Asset"
-                            ItemsSource="{Binding PickerItemList}"
-                            SelectedItem="{Binding SelectedItem}"
-                            PickerHeight="200">
-                        </xForms:SfPicker>
+                        <Picker TextColor="Black" Grid.Row="1" Margin="0,-8,0,0" 
+                                FontFamily="{StaticResource OpenSansSemiBold}"
+                                FontSize="{StaticResource MidMediumSize}"
+                                ItemsSource="{Binding PickerItemList}"
+                                SelectedItem="{Binding SelectedItem}"/>
 
-                        <xfx:XfxEntry
+                        <xfx:XfxEntry Grid.Row="2"
                             HorizontalOptions="FillAndExpand"
                             Placeholder="Quantity:"
                             FloatingHintEnabled="True"
@@ -63,9 +64,13 @@
                             Style="{StaticResource CustomEntryStyle}"
                             Text="{Binding Quantity}" />
 
-                        <Button Text="Send" Command="{Binding SendCommand}"/>
+                        <Button Text="Send"  Grid.Row="3"
+                                Command="{Binding SendCommand}" 
+                                Style="{StaticResource ButtonStyle}" 
+                                BackgroundColor="{StaticResource LightGray}" 
+                                TextColor="White"/>
 
-                    </StackLayout>
+                    </Grid>
                 </Frame>
             </Grid>
         </ScrollView>

@@ -19,8 +19,8 @@ namespace PhantasmaMail.Views
             assetList.IsRefreshing = true;
             await Task.Delay(2000);
 
-            if (BindingContext is WalletTabViewModel vm) //todo await vm.RefreshExecute();
-                assetList.IsRefreshing = false;
+            if (BindingContext is WalletTabViewModel vm) await vm.GetBalance();
+            assetList.IsRefreshing = false;
         }
     }
 }

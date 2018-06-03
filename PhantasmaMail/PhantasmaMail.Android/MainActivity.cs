@@ -27,7 +27,6 @@ namespace PhantasmaMail.Droid
             Rg.Plugins.Popup.Popup.Init(this, bundle);
             CachedImageRenderer.Init(true);
             var ignore = typeof(SvgCachedImage);
-
             LoadApplication(new App());
 			XFGloss.Droid.Library.Init(this, bundle);
 		}

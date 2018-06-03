@@ -10,7 +10,7 @@
 
 
             <!-- COLORS -->
-            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Primary">#17566B</Color>
             <Color x:Key="PrimaryDark">#1976D2</Color>
             <Color x:Key="Accent">#b4dae8</Color>
             <Color x:Key="DarkBlueGreen">#17566B</Color>
@@ -31,6 +31,7 @@
             <converters:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
             <converters:LoginButtonBooleanToColorConverter x:Key="LoginButtonBooleanToColorConverter"/>
             <converters:LoginTextBooleanToColorConverter x:Key="LoginTextBooleanToColorConverter"/>
+            <converters:TransactionToAmountSymbolConverter x:Key="TransactionToAmountSymbolConverter"/>
 
             <!-- FONTS -->
 

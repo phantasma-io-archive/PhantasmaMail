@@ -1,14 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<forms:BottomTabbedPage
+<xf:BottomBarPage 
     x:Class="PhantasmaMail.Views.WalletTabView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:PhantasmaMail.Views"
-    xmlns:forms="clr-namespace:Naxam.Controls.Forms;assembly=Naxam.BottomTabbedPage.Forms"
-    Title="Wallet">
+    xmlns:xf="clr-namespace:BottomBar.XamarinForms;assembly=BottomBar.XamarinForms">
 
-    <local:WalletView Title="Wallet" />
-    <local:SendView Title="Send"/>
-    <local:TransactionHistoryView Title="Transaction History"/>
+    <local:WalletView Icon="ic_wallet_balance.png" />
+    <local:SendView  Icon="ic_wallet_send.png"/>
+    <local:TransactionHistoryView  Icon="ic_wallet_transactions.png" />
 
-</forms:BottomTabbedPage>
+</xf:BottomBarPage>

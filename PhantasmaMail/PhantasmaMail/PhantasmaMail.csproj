@@ -20,7 +20,6 @@
     <PackageReference Include="Ansuria.XFGloss" Version="1.1.3" />
     <PackageReference Include="Autofac" Version="4.8.1" />
     <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
-    <PackageReference Include="Naxam.BottomTabbedPage" Version="0.2.0.3" />
     <PackageReference Include="NeoModules.NEP6" Version="0.0.19-beta" />
     <PackageReference Include="PCLStorage" Version="1.0.2" />
     <PackageReference Include="Rg.Plugins.Popup" Version="1.1.4.145-pre" />
@@ -29,6 +28,7 @@
     <PackageReference Include="Syncfusion.Xamarin.SfPicker" Version="16.1.0.37" />
     <PackageReference Include="Syncfusion.Xamarin.SfPullToRefresh" Version="16.1.0.37" />
     <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
+    <PackageReference Include="ThriveGmbH.BottomNavigationBar.XF" Version="1.0.2" />
     <PackageReference Include="Xamarin.Essentials" Version="0.6.0-preview" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.1.823" />
     <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.1.823" />

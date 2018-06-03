@@ -1,10 +1,10 @@
-﻿using Naxam.Controls.Forms;
+﻿using BottomBar.XamarinForms;
 using Xamarin.Forms.Xaml;
 
 namespace PhantasmaMail.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Skip)]
-    public partial class WalletTabView : BottomTabbedPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class WalletTabView : BottomBarPage
     {
         public WalletTabView()
         {
