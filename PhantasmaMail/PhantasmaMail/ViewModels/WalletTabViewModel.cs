@@ -66,6 +66,8 @@ namespace PhantasmaMail.ViewModels
                 if (!string.IsNullOrEmpty(tx))
                 {
                     await DialogService.ShowAlertAsync("Asset sent. It might take a few minutes for update balance.", "Success"); //todo localization
+                    ToAddress = string.Empty;
+                    Quantity = 0;
                 }
                 else
                 {
