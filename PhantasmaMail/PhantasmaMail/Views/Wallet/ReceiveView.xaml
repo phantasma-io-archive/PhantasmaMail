@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PhantasmaMail.Views"
+             x:Class="PhantasmaMail.Views.ReceiveView"
+             BackgroundColor="{StaticResource WhiteBackground}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="ReceiveLabelStyle"
+                   BasedOn="{StaticResource OpenSansSemiBoldLabelStyle}"
+                   TargetType="Label">
+                <Setter Property="FontSize" Value="{StaticResource MediumSize}" />
+                <Setter Property="TextColor" Value="{StaticResource LightGray}" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+            <Frame Grid.Row="0" IsClippedToBounds="True"
+                   Margin="30,15,30,40" Opacity="0.8"
+                   HasShadow="True" 
+                   CornerRadius="0" Padding="0" />
+
+            <Frame Grid.Row="0"
+                   CornerRadius="0"
+                   Margin="20,30,20,20">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="1" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0"
+                           Text="You can use this address to receive NEO, GAS, or any NEP5 Token from an exchange or another wallet."
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="CenterAndExpand"
+                           Style="{StaticResource ReceiveLabelStyle}" />
+
+                    <BoxView Grid.Row="1"
+                             Margin="5,0,5,0"
+                             BackgroundColor="{StaticResource SeparatorGray}" />
+
+                    <local:QRCodeView x:Name="QRView" Grid.Row="2" />
+
+
+                    <Label Grid.Row="3"
+                           Text="{Binding UserAddress}"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="CenterAndExpand"
+                           Style="{StaticResource ReceiveLabelStyle}" FontSize="{StaticResource MidMediumSize}" />
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,13 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<xf:BottomBarPage 
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xf:BottomBarPage
     x:Class="PhantasmaMail.Views.WalletTabView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:PhantasmaMail.Views"
-    xmlns:xf="clr-namespace:BottomBar.XamarinForms;assembly=BottomBar.XamarinForms" Title="Wallet">
+    xmlns:xf="clr-namespace:BottomBar.XamarinForms;assembly=BottomBar.XamarinForms"
+    Title="Wallet"
+    BarTextColor="{StaticResource DarkBlueGreen}"
+    FixedMode="True">
 
     <local:WalletView Icon="ic_wallet_balance.png" />
-    <local:SendView  Icon="ic_wallet_send.png"/>
-    <local:TransactionHistoryView  Icon="ic_wallet_transactions.png" />
+    <local:SendView Icon="ic_wallet_send.png" />
+    <local:ReceiveView Icon="ic_wallet_receive.png" />
+    <local:TransactionHistoryView Icon="ic_wallet_transactions.png" />
 
 </xf:BottomBarPage>

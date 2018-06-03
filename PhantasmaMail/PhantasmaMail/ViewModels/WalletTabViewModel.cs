@@ -5,6 +5,8 @@ using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using NeoModules.KeyPairs;
+using NeoModules.NEP6.Models;
 using NeoModules.Rest.DTOs;
 using PhantasmaMail.Models;
 using PhantasmaMail.Resources;
@@ -36,10 +38,6 @@ namespace PhantasmaMail.ViewModels
         public ICommand SendCommand => new Command(async () => await SendExecute());
         public ICommand ClaimGasCommand => new Command(async () => await ClaimGasExecute());
         public ICommand OpenTxCommand => new Command(async () => await OpenTxExecute());
-
-
-
-
         public ICommand RefreshCommand => new Command(async () => await GetBalance());
 
         private async Task SendExecute()
@@ -52,6 +50,7 @@ namespace PhantasmaMail.ViewModels
                 DialogService.ShowLoading();
                 if (!string.IsNullOrEmpty(ToAddress) && Quantity > 0 && SelectedItem != null) //todo address validation
                 {
+                    var scriptHash = ToAddress.ToScriptHash();// throws exception if address is not valid
                     if (_assetsPicker.TryGetValue(SelectedItem, out var contractHash))
                     {
                         tx = await _walletService.TransferNep5(ToAddress, Quantity, contractHash);
@@ -72,10 +71,10 @@ namespace PhantasmaMail.ViewModels
                     ToAddress = string.Empty;
                     Quantity = 0;
                 }
-                else
-                {
-                    await DialogService.ShowAlertAsync(AppResource.Alert_SomethingWrong, AppResource.Alert_Error); //todo localization
-                }
+                //else
+                //{
+                //    await DialogService.ShowAlertAsync(AppResource.Alert_SomethingWrong, AppResource.Alert_Error); //todo localization
+                //}
             }
         }
 
@@ -133,7 +132,7 @@ namespace PhantasmaMail.ViewModels
                 }
                 SelectedItem = PickerItemList[0];
             }
-            CurrentBalanceFiat = 100; //todo
+            CurrentBalanceFiat = 0; //todo
         }
 
         public async Task GetNativeAssetsBalance()

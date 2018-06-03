@@ -18,13 +18,10 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-
         <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
 
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
@@ -51,7 +48,7 @@
                             Style="{StaticResource CustomEntryStyle}"
                             Text="{Binding ToAddress}" />
 
-                        <Picker TextColor="Black" Grid.Row="1" Margin="0,-12,0,0" 
+                        <Picker TextColor="Black" Grid.Row="1" Margin="0,-15,0,0" 
                                 FontFamily="{StaticResource OpenSansSemiBold}"
                                 FontSize="{StaticResource MidMediumSize}"
                                 ItemsSource="{Binding PickerItemList}"
