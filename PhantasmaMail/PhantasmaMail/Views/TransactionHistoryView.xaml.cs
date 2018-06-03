@@ -17,13 +17,13 @@ namespace PhantasmaMail.Views
 			InitializeComponent ();
 		}
 
-	    private async void PullToRefresh_Refreshing(object sender, EventArgs e)
-	    {
-	        transactionsList.IsRefreshing = true;
-	        await Task.Delay(2000);
+	    //private async void PullToRefresh_Refreshing(object sender, EventArgs e)
+	    //{
+	    //    transactionsList.IsRefreshing = true;
+	    //    await Task.Delay(2000);
 
-	        if (BindingContext is WalletTabViewModel vm) //todo await vm.RefreshExecute();
-	            transactionsList.IsRefreshing = false;
-        }
+	    //    if (BindingContext is WalletTabViewModel vm) //todo await vm.RefreshExecute();
+	    //        transactionsList.IsRefreshing = false;
+     //   }
 	}
 }

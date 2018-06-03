@@ -25,6 +25,7 @@ namespace PhantasmaMail.ViewModels
         public override async Task InitializeAsync(object navigationData)
         {
             await GetBalance();
+            await GetTransactionHistory();
         }
 
         public ICommand SendCommand => new Command(async () => await SendExecute());
@@ -56,19 +57,6 @@ namespace PhantasmaMail.ViewModels
                 {
                     await DialogService.ShowAlertAsync("Asset send", "Success"); //todo localization
                 }
-            }
-        }
-
-        private async Task GetNep5()
-        {
-            var test = await _walletService.GetAllNep5Tokens();
-            foreach (var result in test.Results)
-            {
-                AssetsList.Add(new AssetModel
-                {
-                    TokenDetails = result.Token
-                }
-                );
             }
         }
 
@@ -117,12 +105,14 @@ namespace PhantasmaMail.ViewModels
                     AssetsList.Add(model);
                 }
 
-                if (AssetsPicker.ContainsKey(item.Asset)) // add to send picker
+                if (AssetsPicker.ContainsKey(item.Asset)) // todo add to send picker
                 {
                     PickerItemList.Add(item.Asset);
                 }
+
+                SelectedItem = PickerItemList[0];
             }
-            CurrentBalanceFiat = 100;
+            CurrentBalanceFiat = 100; //todo
         }
 
         public async Task GetNativeAssetsBalance()
@@ -147,23 +137,46 @@ namespace PhantasmaMail.ViewModels
             try
             {
                 var transactionHistory = await _walletService.GetTransactionHistory();
+                TransactionsList = new ObservableCollection<TransactionModel>();
                 foreach (var transaction in transactionHistory)
                 {
-                    if (transaction.Type != "InvocationTransaction" ||
-                        transaction.Type != "ContractTransaction") return;
-                    var type = transaction.Type;
-                    string toAddress;
-                    string fromAddress;
-                    decimal amount;
-
-                    if (transaction.Transfers != null)
+                    if (transaction.Type == "InvocationTransaction" || transaction.Type == "ContractTransaction")
                     {
+                        var type = transaction.Type;
+                        string toAddress = null;
+                        string fromAddress = null;
+                        string symbol = null;
+                        string txhash = null;
+                        decimal amount = 0;
 
-                    }
-                    else
-                    {
+                        if (transaction.Transfers.Count > 0)
+                        {
+                            toAddress = transaction.Transfers[0].AddressTo;
+                            fromAddress = transaction.Transfers[0].AddressFrom;
+                            if (toAddress == fromAddress) continue;//dont show this tx's
+                            amount = (decimal)transaction.Transfers[0].Amount / 100000000; //todo decimals
+                            symbol = AppSettings.TokenList.Results
+                                .SingleOrDefault(result => result.Token.ScriptHash.Substring(2) == transaction.Transfers[0].Contract)
+                                ?.Token.Symbol;
+                            txhash = transaction.Transfers[0].Txid;
+                        }
+                        else //native assets
+                        {
 
+                        }
+
+                        var txModel = new TransactionModel
+                        {
+                            ToAddress = toAddress,
+                            FromAddress = fromAddress,
+                            Symbol = symbol,
+                            Amount = amount,
+                            Type = type,
+                            TxHash = txhash
+                        };
+                        TransactionsList.Add(txModel);
                     }
+
                 }
             }
             catch (Exception e)

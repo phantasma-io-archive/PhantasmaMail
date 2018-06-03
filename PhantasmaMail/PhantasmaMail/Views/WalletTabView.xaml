@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:PhantasmaMail.Views"
     xmlns:forms="clr-namespace:Naxam.Controls.Forms;assembly=Naxam.BottomTabbedPage.Forms"
-    Title="">
+    Title="Wallet">
 
     <local:WalletView Title="Wallet" />
     <local:SendView Title="Send"/>

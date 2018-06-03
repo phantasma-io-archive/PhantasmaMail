@@ -7,8 +7,8 @@
              x:Class="PhantasmaMail.Views.TransactionHistoryView">
     <ContentPage.Content>
         <StackLayout>
-
-            <xForms:SfPullToRefresh x:Name="transactionsList" Grid.Row="2"
+            <Label Text="Coming soon..." HorizontalOptions="Center"/>
+            <!--<xForms:SfPullToRefresh x:Name="transactionsList" Grid.Row="2"
                                     ProgressBackgroundColor="{StaticResource Accent}"
                                     RefreshContentHeight="40"
                                     RefreshContentWidth="40"
@@ -27,13 +27,15 @@
                         IsStickyHeader="True"
                         ItemSpacing="15"
                         VerticalOptions="FillAndExpand">
-                        <!--<syncfusion:SfListView.Triggers>
+                        -->
+            <!--<syncfusion:SfListView.Triggers>
                             <DataTrigger TargetType="syncfusion:SfListView"
                                          Binding="{Binding Source={x:Reference TransactionsListView}, Path=ItemsSource.Count}"
                                          Value="0">
                                 <Setter Property="IsVisible" Value="False" />
                             </DataTrigger>
                         </syncfusion:SfListView.Triggers>-->
+            <!--
                         <xForms1:SfListView.ItemTemplate>
                             <DataTemplate>
                                 <controls:WalletAssetCell />
@@ -49,7 +51,7 @@
                     </xForms1:SfListView>
                 </xForms:SfPullToRefresh.PullableContent>
 
-            </xForms:SfPullToRefresh>
+            </xForms:SfPullToRefresh>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
