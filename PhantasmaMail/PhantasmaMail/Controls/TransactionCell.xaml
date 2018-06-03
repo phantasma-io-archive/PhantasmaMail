@@ -40,7 +40,7 @@
             </ffimageloading:CachedImage>
 
             <Label Grid.Row="0" Grid.Column="1" 
-                   Text="{Binding FromAddress}" 
+                   Text="{Binding ., Converter={StaticResource TransactionToSenderReceiverConverter}}" 
                    FontFamily="{StaticResource OpenSansSemiBold}"
                    TextColor="Black"
                    FontSize="{StaticResource LittleSize}"/>

@@ -82,50 +82,52 @@ namespace PhantasmaMail.ViewModels
             var balanceList = await _walletService.GetAccountBalance();
             foreach (var item in balanceList.Balance)
             {
-                if (item.Asset == "NEO")
+                if (item.Amount > 0)
                 {
-                    NeoBalance = (decimal)item.Amount;
-                    AssetsList.Add(new AssetModel
+                    if (item.Asset == "NEO")
                     {
-                        Amount = (decimal)item.Amount,
-                        TokenDetails = new Token
+                        NeoBalance = (decimal)item.Amount;
+                        AssetsList.Add(new AssetModel
                         {
-                            Name = item.Asset,
-                        },
-                        ImagePath = item.Asset + ".png"
-                    });
+                            Amount = (decimal)item.Amount,
+                            TokenDetails = new Token
+                            {
+                                Name = item.Asset,
+                            },
+                            ImagePath = item.Asset + ".png"
+                        });
 
-                }
-                if (item.Asset == "GAS")
-                {
-                    GasBalance = (decimal)item.Amount;
-                    AssetsList.Add(new AssetModel
+                    }
+                    if (item.Asset == "GAS")
                     {
-                        Amount = (decimal)item.Amount,
-                        TokenDetails = new Token
+                        GasBalance = (decimal)item.Amount;
+                        AssetsList.Add(new AssetModel
                         {
-                            Name = item.Asset
-                        },
-                        ImagePath = item.Asset + ".png"
-                    });
-                }
-                else
-                {
-                    var model = new AssetModel
+                            Amount = (decimal)item.Amount,
+                            TokenDetails = new Token
+                            {
+                                Name = item.Asset
+                            },
+                            ImagePath = item.Asset + ".png"
+                        });
+                    }
+                    else
                     {
-                        Amount = (decimal)item.Amount / 100000000, //todo decimals
-                        TokenDetails = AppSettings.TokenList.Results
-                            .SingleOrDefault(result => result.Token.Name == item.Asset)?.Token,
-                    };
-                    model.ImagePath = model.TokenDetails.Symbol + ".png";
-                    AssetsList.Add(model);
-                }
+                        var model = new AssetModel
+                        {
+                            Amount = (decimal)item.Amount / 100000000, //todo decimals
+                            TokenDetails = AppSettings.TokenList.Results
+                                .SingleOrDefault(result => result.Token.Name == item.Asset)?.Token,
+                        };
+                        model.ImagePath = model.TokenDetails.Symbol + ".png";
+                        AssetsList.Add(model);
+                    }
 
-                if (_assetsPicker.ContainsKey(item.Asset)) // todo add to send picker
-                {
-                    PickerItemList.Add(item.Asset);
+                    if (_assetsPicker.ContainsKey(item.Asset)) // todo add to send picker
+                    {
+                        PickerItemList.Add(item.Asset);
+                    }
                 }
-
                 SelectedItem = PickerItemList[0];
             }
             CurrentBalanceFiat = 100; //todo

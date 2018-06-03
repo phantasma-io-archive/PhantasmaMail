@@ -11,7 +11,6 @@
              xmlns:behaviors="clr-namespace:PhantasmaMail.Behaviors;assembly=PhantasmaMail"
              xmlns:controls="clr-namespace:PhantasmaMail.Controls"
              x:Class="PhantasmaMail.Views.WalletView"
-             Title="{markupExtensions:Translate PageTitle_Wallet}"
              BackgroundColor="{StaticResource WhiteBackground}">
 
     <ContentPage.Resources>
