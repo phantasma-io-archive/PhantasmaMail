@@ -1,4 +1,9 @@
-﻿using NeoModules.Rest.Services;
+﻿using System;
+using System.IO;
+using System.Reflection;
+using NeoModules.Rest.DTOs;
+using NeoModules.Rest.Services;
+using Newtonsoft.Json;
 using PhantasmaMail.Services.Navigation;
 using PhantasmaMail.ViewModels;
 using PhantasmaMail.ViewModels.Base;
@@ -32,14 +37,18 @@ namespace PhantasmaMail
             navigationService.NavigateToAsync<ExtendedSplashViewModel>();
         }
 
-        protected override async void OnStart()
+        protected override void OnStart()
         {
-            var current = Connectivity.NetworkAccess;
+            //TODO
+            var assembly = typeof(App).GetTypeInfo().Assembly;
 
-            if (current == NetworkAccess.Internet)
+            Stream stream = assembly.GetManifestResourceStream("PhantasmaMail.tokens.json");
+            using (var reader = new StreamReader(stream ?? throw new InvalidOperationException()))
             {
-                // Connection to internet is available
-                
+                var json = reader.ReadToEnd();
+                var rootobject = JsonConvert.DeserializeObject<TokenList>(json);
+
+                AppSettings.TokenList = rootobject;
             }
         }
 
@@ -50,18 +59,18 @@ namespace PhantasmaMail
 
         protected override void OnResume()
         {
-        //    var navigationService = Locator.Instance.Resolve<INavigationService>();
-        //    var auth  = Locator.Instance.Resolve<IAuthenticationService>();
-        //    if (auth.IsAuthenticated)
-        //    {
-        //        navigationService.NavigateToAsync<MainViewModel>();
-        //    }
-        //    else
-        //    {
-        //        navigationService.NavigateToAsync<ExtendedSplashViewModel>();
-        //    }
+            //    var navigationService = Locator.Instance.Resolve<INavigationService>();
+            //    var auth  = Locator.Instance.Resolve<IAuthenticationService>();
+            //    if (auth.IsAuthenticated)
+            //    {
+            //        navigationService.NavigateToAsync<MainViewModel>();
+            //    }
+            //    else
+            //    {
+            //        navigationService.NavigateToAsync<ExtendedSplashViewModel>();
+            //    }
         }
 
-        
+
     }
 }

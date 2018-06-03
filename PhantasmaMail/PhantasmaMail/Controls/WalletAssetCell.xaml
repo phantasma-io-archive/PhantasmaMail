@@ -3,17 +3,31 @@
 <Grid xmlns="http://xamarin.com/schemas/2014/forms"
       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
       xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+      xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
       x:Class="PhantasmaMail.Controls.WalletAssetCell"
-      x:Key="WalletAssetCell">
-    <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="Auto"/>
-        <ColumnDefinition Width="*"/>
-    </Grid.ColumnDefinitions>
+      x:Key="WalletAssetCell"
+      BackgroundColor="Transparent">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <ffimageloading:CachedImage Grid.Row="0"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Center"
+                                Source="{Binding ImagePath}"
+                                WidthRequest="35"
+                                HeightRequest="35"
+                                Aspect="AspectFill">
+        <ffimageloading:CachedImage.Transformations>
+            <transformations:CircleTransformation />
+        </ffimageloading:CachedImage.Transformations>
+    </ffimageloading:CachedImage>
+    <Frame Grid.Row="0" 
+           Margin="30,0,0,0" 
+           Padding="0"
+           CornerRadius="0" 
+           HasShadow="True" 
+           BackgroundColor="White">
 
-    <ffimageloading:CachedImage Grid.Column="0"/>
-
-    <Frame Grid.Column="1" CornerRadius="0" HasShadow="True" >
-        
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -23,20 +37,24 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            
-            <Label Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Start"
+
+            <Label Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Start" Margin="10,5,5,0"
                    Text="{Binding TokenDetails.Name}"/>
 
-            <Label Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="End"
+            <Label Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="End"  Margin="5,5,10,0"
                    Text="{Binding FiatValue}"/>
 
 
-            <Label Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Start"
+            <Label Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Start" Margin="10,5,5,5"
                    Text="{Binding Amount}"/>
 
-            <Label Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="End"
+            <Label Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="End" Margin="5,5,10,5"
                    Text="{Binding FiatChange}"/>
 
         </Grid>
     </Frame>
+
+    
+
+
 </Grid>

@@ -2,6 +2,7 @@
 using FFImageLoading.Svg.Forms;
 using Foundation;
 using Syncfusion.ListView.XForms.iOS;
+using Syncfusion.SfPicker.XForms.iOS;
 using UIKit;
 using Xfx;
 
@@ -25,6 +26,7 @@ namespace PhantasmaMail.iOS
 			Rg.Plugins.Popup.Popup.Init();
             XfxControls.Init();
             Xamarin.Forms.Forms.Init();
+            SfPickerRenderer.Init();
             SfListViewRenderer.Init();
             XFGloss.iOS.Library.Init();
             CachedImageRenderer.Init();

@@ -22,6 +22,8 @@ namespace PhantasmaMail
 
         public static string ContractScriptHash = "ed07cffad18f1308db51920d99a2af60ac66a7b3";
 
+        public static TokenList TokenList { get; set; }
+
         //test ICO endpoints
         public static string NeoScanUrlTransactions = "https://neoscan.io/transaction/";
 

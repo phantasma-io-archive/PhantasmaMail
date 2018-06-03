@@ -1,10 +1,75 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
+             xmlns:xForms="clr-namespace:Syncfusion.SfPicker.XForms;assembly=Syncfusion.SfPicker.XForms"
              x:Class="PhantasmaMail.Views.SendView">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="CustomEntryStyle" TargetType="xfx:XfxEntry">
+                <Setter Property="FontSize" Value="{StaticResource MidMediumSize}" />
+                <Setter Property="FontFamily" Value="{StaticResource OpenSansSemiBold}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource LightGray}" />
+                <Setter Property="ActivePlaceholderColor" Value="{StaticResource LightBlueGreen }" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-      <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
-      </StackLayout>
-  </ContentPage.Content>
+
+        <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+
+                <Frame Grid.Row="0" IsClippedToBounds="True"
+                       Margin="30,15,30,1" Opacity="0.8"
+                       HasShadow="True"
+                       CornerRadius="0" Padding="0" />
+
+                <Frame Grid.Row="0"
+                       Margin="20,30,20,0">
+                    <StackLayout>
+                        <xfx:XfxEntry
+                            HorizontalOptions="FillAndExpand"
+                            Placeholder="Neo Address:"
+                            FloatingHintEnabled="True"
+                            Style="{StaticResource CustomEntryStyle}"
+                            Text="{Binding ToAddress}" />
+
+                        <xForms:SfPicker
+                            x:Name="picker"
+                            BorderColor="Aqua"
+                            HeaderBackgroundColor="Transparent"
+                            ShowColumnHeader="False"
+                            HeaderTextColor="Red"
+                            HeaderText="Select an Asset"
+                            ItemsSource="{Binding PickerItemList}"
+                            SelectedItem="{Binding SelectedItem}"
+                            PickerHeight="200">
+                        </xForms:SfPicker>
+
+                        <xfx:XfxEntry
+                            HorizontalOptions="FillAndExpand"
+                            Placeholder="Quantity:"
+                            FloatingHintEnabled="True"
+                            Keyboard="Numeric"
+                            Style="{StaticResource CustomEntryStyle}"
+                            Text="{Binding Quantity}" />
+
+                        <Button Text="Send" Command="{Binding SendCommand}"/>
+
+                    </StackLayout>
+                </Frame>
+            </Grid>
+        </ScrollView>
+
+
+    </ContentPage.Content>
 </ContentPage>

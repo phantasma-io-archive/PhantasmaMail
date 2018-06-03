@@ -1,9 +1,12 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Java.Lang;
 using NeoModules.Rest.DTOs;
 using PhantasmaMail.Models;
+using PhantasmaMail.Resources;
 using PhantasmaMail.Services;
 using PhantasmaMail.ViewModels.Base;
 using Xamarin.Forms;
@@ -21,16 +24,39 @@ namespace PhantasmaMail.ViewModels
 
         public override async Task InitializeAsync(object navigationData)
         {
-            //todo get assets and nep5 balances
             await GetBalance();
-            await SendExecute();
         }
 
         public ICommand SendCommand => new Command(async () => await SendExecute());
 
         private async Task SendExecute()
         {
-            
+            string tx = string.Empty;
+            try
+            {
+                IsBusy = true;
+                DialogService.ShowLoading();
+                if (!string.IsNullOrEmpty(ToAddress) && Quantity > 0 && SelectedItem != null) //todo address validation
+                {
+                    if (AssetsPicker.TryGetValue(SelectedItem, out var contractHash))
+                    {
+                        tx = await _walletService.TransferNep5(ToAddress, Quantity, contractHash);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                await DialogService.ShowAlertAsync(e.Message, AppResource.Alert_Error);
+            }
+            finally
+            {
+                IsBusy = false;
+                DialogService.HideLoading();
+                if (!string.IsNullOrEmpty(tx))
+                {
+                    await DialogService.ShowAlertAsync("Asset send", "Success"); //todo localization
+                }
+            }
         }
 
         private async Task GetNep5()
@@ -60,8 +86,9 @@ namespace PhantasmaMail.ViewModels
                         Amount = (decimal)item.Amount,
                         TokenDetails = new Token
                         {
-                            Name = item.Asset
-                        }
+                            Name = item.Asset,
+                        },
+                        ImagePath = item.Asset + ".png"
                     });
 
                 }
@@ -74,19 +101,25 @@ namespace PhantasmaMail.ViewModels
                         TokenDetails = new Token
                         {
                             Name = item.Asset
-                        }
+                        },
+                        ImagePath = item.Asset + ".png"
                     });
                 }
                 else
                 {
-                    AssetsList.Add(new AssetModel
+                    var model = new AssetModel
                     {
-                        Amount = (decimal)item.Amount / 100000000,
-                        TokenDetails = new Token
-                        {
-                            Name = item.Asset
-                        }
-                    });
+                        Amount = (decimal)item.Amount / 100000000, //todo decimals
+                        TokenDetails = AppSettings.TokenList.Results
+                            .SingleOrDefault(result => result.Token.Name == item.Asset)?.Token,
+                    };
+                    model.ImagePath = model.TokenDetails.Symbol + ".png";
+                    AssetsList.Add(model);
+                }
+
+                if (AssetsPicker.ContainsKey(item.Asset)) // add to send picker
+                {
+                    PickerItemList.Add(item.Asset);
                 }
             }
             CurrentBalanceFiat = 100;
@@ -109,6 +142,37 @@ namespace PhantasmaMail.ViewModels
             }
         }
 
+        public async Task GetTransactionHistory()
+        { //TODO
+            try
+            {
+                var transactionHistory = await _walletService.GetTransactionHistory();
+                foreach (var transaction in transactionHistory)
+                {
+                    if (transaction.Type != "InvocationTransaction" ||
+                        transaction.Type != "ContractTransaction") return;
+                    var type = transaction.Type;
+                    string toAddress;
+                    string fromAddress;
+                    decimal amount;
+
+                    if (transaction.Transfers != null)
+                    {
+
+                    }
+                    else
+                    {
+
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
         #region Observable Properties
 
         private ObservableCollection<AssetModel> _assetsList;
@@ -119,6 +183,18 @@ namespace PhantasmaMail.ViewModels
             set
             {
                 _assetsList = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private ObservableCollection<TransactionModel> _transactionsList;
+
+        public ObservableCollection<TransactionModel> TransactionsList
+        {
+            get => _transactionsList;
+            set
+            {
+                _transactionsList = value;
                 OnPropertyChanged();
             }
         }
@@ -156,6 +232,113 @@ namespace PhantasmaMail.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        private Dictionary<string, string> AssetsPicker = new Dictionary<string, string>
+        {
+            { "NEO", "c56f33fc6ecfcd0c225c4ab356fee59390af8560be0e930faebe74a6daff7c9b" },
+            { "GAS", "602c79718b16e442de58778e148d0b1084e3b2dffd5de6b7b16cee7969282de" },
+            { "DeepBrain Coin", "b951ecbbc5fe37a9c280a76cb0ce0014827294cf" },
+            { "Red Pulse Token", "ecc6b20d3ccac1ee9ef109af5a7cdb85706b1df9" },
+            { "Redeemable HashPuppy Token", "2328008e6f6c7bd157a342e789389eb034d9cbc4" },
+            { "Qlink Token", "0d821bd7b6d53f5c2b40e217c6defc8bbe896cf5" },
+            { "Narrative Token", "a721d5893480260bd28ca1f395f2c465d0b5b1c2" },
+            { "Bridge Token", "891daf0e1750a1031ebe23030828ad7781d874d6" },
+            { "Ontology Token", "ceab719b8baa2310f232ee0d277c061704541cfb" },
+            { "Thor Token", "67a5086bac196b67d5fd20745b0dc9db4d2930ed" },
+            { "Travala,", "de2ed49b691e76754c20fe619d891b78ef58e537" },
+            { "Switcheo", "ab38352559b8b203bde5fddfa0b07d8b2525e132" },
+            { "Effect.AI Token", "acbc532904b6b51b5ea6d19b803d78af70e7e6f9" },
+            { "Master Contract Token", "a87cc2a513f5d8b4a42432343687c2127c60bc3f" },
+            { "Guardium", "d1e37547d88bc9607ff9d73116ebd9381c156f79" },
+            { "Pikcio Token", "af7c7328eee5a275a3bcaee2bf0cf662b5e739be" },
+            { "Phantasma", "ed07cffad18f1308db51920d99a2af60ac66a7b3" },
+            { "Asura World Coin", "a58b56b30425d3d1f8902034996fcac4168ef71d" },
+            { "Loopring Neo Token", "06fa8be9b6609d963e8fc63977b9f8dc5f10895f" },
+            { "Trinity Network Credit", "08e8c4400f1af2c20c28e0018f29535eb85d15b6" },
+            { "Orbis", "0e86a40588f715fcaf7acd1812d50af478e6e917" },
+            { "THEKEY Token", "132947096727c84c7f9e076c90f08fec3bc17f18" },
+            { "Aphelion", "a0777c3ce2b169d4a23bcba4565e3225a0122d95" },
+            { "NKN", "c36aee199dbba6c3f439983657558cfb67629599" },
+            { "ACAT Token,ACAT", "7f86d61ff377f1b12e589a5907152b57e2ad9a7a" },
+            { "Quarteria Token", "6eca2c4bd2b3ed97b2aa41b26128a40ce2bd8d1a" },
+            { "Endorsit Shares", "81c089ab996fc89c468a26c0a88d23ae2f34b5c0" },
+            { "Zeepin Token", "ac116d4b8d4ca55e6b6d4ecce2192039b51cccc5" },
+            { "CPX Token", "45d493a6f73fa5f404244a5fb8472fc014ca5885" },
+        };
+
+
+        //private Dictionary<string, string> AssetsPicker = new Dictionary<string, string>
+        //{
+        //    { "DBC", "b951ecbbc5fe37a9c280a76cb0ce0014827294cf" },
+        //    { "RPX", "ecc6b20d3ccac1ee9ef109af5a7cdb85706b1df9" },
+        //    { "RHT", "2328008e6f6c7bd157a342e789389eb034d9cbc4" },
+        //    { "QLC", "0d821bd7b6d53f5c2b40e217c6defc8bbe896cf5" },
+        //    { "NRVE", "a721d5893480260bd28ca1f395f2c465d0b5b1c2" },
+        //    { "IAM", "891daf0e1750a1031ebe23030828ad7781d874d6" },
+        //    { "ONT", "ceab719b8baa2310f232ee0d277c061704541cfb" },
+        //    { "THOR", "67a5086bac196b67d5fd20745b0dc9db4d2930ed" },
+        //    { "AVA", "de2ed49b691e76754c20fe619d891b78ef58e537" },
+        //    { "SWTH", "ab38352559b8b203bde5fddfa0b07d8b2525e132" },
+        //    { "EFX", "acbc532904b6b51b5ea6d19b803d78af70e7e6f9" },
+        //    { "MCT", "a87cc2a513f5d8b4a42432343687c2127c60bc3f" },
+        //    { "GDM", "d1e37547d88bc9607ff9d73116ebd9381c156f79" },
+        //    { "PKC", "af7c7328eee5a275a3bcaee2bf0cf662b5e739be" },
+        //    { "SOUL", "ed07cffad18f1308db51920d99a2af60ac66a7b3" },
+        //    { "ASA", "a58b56b30425d3d1f8902034996fcac4168ef71d" },
+        //    { "LRN", "06fa8be9b6609d963e8fc63977b9f8dc5f10895f" },
+        //    { "TNC", "08e8c4400f1af2c20c28e0018f29535eb85d15b6" },
+        //    { "OBT", "0e86a40588f715fcaf7acd1812d50af478e6e917" },
+        //    { "TKY", "132947096727c84c7f9e076c90f08fec3bc17f18" },
+        //    { "APH", "a0777c3ce2b169d4a23bcba4565e3225a0122d95" },
+        //    { "NKN", "c36aee199dbba6c3f439983657558cfb67629599" },
+        //    { "ACAT", "7f86d61ff377f1b12e589a5907152b57e2ad9a7a" },
+        //    { "XQT", "6eca2c4bd2b3ed97b2aa41b26128a40ce2bd8d1a" },
+        //    { "EDS", "81c089ab996fc89c468a26c0a88d23ae2f34b5c0" },
+        //    { "ZPT", "ac116d4b8d4ca55e6b6d4ecce2192039b51cccc5" },
+        //    { "CPX", "45d493a6f73fa5f404244a5fb8472fc014ca5885" },
+        //};
+
+        public ObservableCollection<string> PickerItemList { get; set; } = new ObservableCollection<string>();
+
+        private string _selectedItem;
+        public string SelectedItem
+        {
+            get => _selectedItem;
+            set
+            {
+                _selectedItem = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+        #endregion
+
+        #region Send
+
+        private string _toAddress;
+        public string ToAddress
+        {
+            get => _toAddress;
+            set
+            {
+                _toAddress = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private decimal _quantity;
+        public decimal Quantity
+        {
+            get => _quantity;
+            set
+            {
+                _quantity = value;
+                OnPropertyChanged();
+            }
+        }
+
+
         #endregion
     }
 }

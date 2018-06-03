@@ -59,8 +59,8 @@
             <Frame Grid.Row="0"
                    Margin="20,30,20,0">
                 <StackLayout HorizontalOptions="FillAndExpand">
-                    <Label Text="Current balance" HorizontalTextAlignment="Center" HorizontalOptions="Center" />
-                    <Label Text="{Binding CurrentBalanceFiat}" HorizontalTextAlignment="Center"
+                    <Label Text="Current Balance" HorizontalTextAlignment="Center" HorizontalOptions="Center" />
+                    <Label Text="{Binding CurrentBalanceFiat,StringFormat='$ {0}'}" HorizontalTextAlignment="Center"
                            HorizontalOptions="Center" />
                 </StackLayout>
             </Frame>

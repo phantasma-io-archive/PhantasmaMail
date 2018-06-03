@@ -164,6 +164,9 @@
     <PackageReference Include="Syncfusion.Xamarin.SfListView">
       <Version>16.1.0.37</Version>
     </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfPicker">
+      <Version>16.1.0.37</Version>
+    </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfPullToRefresh">
       <Version>16.1.0.37</Version>
     </PackageReference>

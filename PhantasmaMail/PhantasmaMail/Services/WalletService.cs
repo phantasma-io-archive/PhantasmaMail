@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Numerics;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
-using Android.Icu.Util;
 using NeoModules.Core;
 using NeoModules.KeyPairs;
 using NeoModules.NEP6;
-using NeoModules.NEP6.Models;
 using NeoModules.Rest.DTOs;
-using NeoModules.Rest.Services;
-using NeoModules.RPC;
 using NeoModules.RPC.DTOs;
 using NeoModules.RPC.Services;
 using Newtonsoft.Json;
 using PhantasmaMail.Services.Authentication;
 using PhantasmaMail.ViewModels.Base;
+using Transaction = NeoModules.Rest.DTOs.Transaction;
 
 namespace PhantasmaMail.Services
 {
@@ -63,6 +58,13 @@ namespace PhantasmaMail.Services
         {
             var token = await AppSettings.RestService.GetAllTokens();
             return JsonConvert.DeserializeObject<TokenList>(token);
+        }
+
+        public async Task<List<Transaction>> GetTransactionHistory()
+        {
+            var transactionHistoryJson = await AppSettings.RestService.GetLastTransactionsByAddress(ActiveUser.GetUserDefaultAddress(), 0);
+            var list = Transactions.FromJson(transactionHistoryJson).ToList();
+            return list;
         }
     }
 }

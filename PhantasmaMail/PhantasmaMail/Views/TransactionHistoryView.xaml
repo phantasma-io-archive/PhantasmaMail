@@ -1,12 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xForms="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms"
+             xmlns:xForms1="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:controls="clr-namespace:PhantasmaMail.Controls;assembly=PhantasmaMail"
              x:Class="PhantasmaMail.Views.TransactionHistoryView">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <xForms:SfPullToRefresh x:Name="transactionsList" Grid.Row="2"
+                                    ProgressBackgroundColor="{StaticResource Accent}"
+                                    RefreshContentHeight="40"
+                                    RefreshContentWidth="40"
+                                    TransitionMode="Push"
+                                    IsRefreshing="{Binding IsBusy}"
+                                    Refreshing="PullToRefresh_Refreshing">
+
+                <xForms:SfPullToRefresh.PullableContent>
+                    <xForms1:SfListView
+                        x:Name="TransactionsListView"
+                        AutoFitMode="Height"
+                        ItemsSource="{Binding AssetsList, Mode=TwoWay}"
+                        SelectionBackgroundColor="{StaticResource GradientEndColor}"
+                        SelectionMode="None"
+                        AllowSwiping="False"
+                        IsStickyHeader="True"
+                        ItemSpacing="15"
+                        VerticalOptions="FillAndExpand">
+                        <!--<syncfusion:SfListView.Triggers>
+                            <DataTrigger TargetType="syncfusion:SfListView"
+                                         Binding="{Binding Source={x:Reference TransactionsListView}, Path=ItemsSource.Count}"
+                                         Value="0">
+                                <Setter Property="IsVisible" Value="False" />
+                            </DataTrigger>
+                        </syncfusion:SfListView.Triggers>-->
+                        <xForms1:SfListView.ItemTemplate>
+                            <DataTemplate>
+                                <controls:WalletAssetCell />
+                            </DataTemplate>
+                        </xForms1:SfListView.ItemTemplate>
+                        <xForms1:SfListView.HeaderTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Label Text="Your transactions" />
+                                </Grid>
+                            </DataTemplate>
+                        </xForms1:SfListView.HeaderTemplate>
+                    </xForms1:SfListView>
+                </xForms:SfPullToRefresh.PullableContent>
+
+            </xForms:SfPullToRefresh>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
