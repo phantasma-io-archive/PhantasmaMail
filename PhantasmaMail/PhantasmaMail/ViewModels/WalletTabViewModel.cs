@@ -184,15 +184,7 @@ namespace PhantasmaMail.ViewModels
                             ?.Token.Symbol;
                         txModel.Amount = decimal.Parse(transaction.Amount) / 100000000; //todo decimals
                     }
-
-                    if (txModel.ToAddress == _walletService.GetUserAddress()) //received
-                    {
-                        txModel.ImagePath = "ic_receive.png";
-                    }
-                    else //send
-                    {
-                        txModel.ImagePath = "ic_send.png";
-                    }
+                    txModel.ImagePath = txModel.ToAddress == _walletService.GetUserAddress() ? "ic_receive.png" : "ic_send.png";
 
                     TransactionsList.Add(txModel);
                 }
@@ -219,6 +211,10 @@ namespace PhantasmaMail.ViewModels
             }
         }
 
+        #region Observable Properties
+
+        public string UserAddress => _walletService.GetUserAddress();
+
         private TransactionModel _selectedTransaction;
 
         public TransactionModel SelectedTransaction
@@ -231,11 +227,6 @@ namespace PhantasmaMail.ViewModels
                 OpenTxCommand.Execute(_selectedTransaction);
             }
         }
-
-        #region Observable Properties
-
-        public string UserAddress => _walletService.GetUserAddress();
-
         private ObservableCollection<AssetModel> _assetsList;
 
         public ObservableCollection<AssetModel> AssetsList
