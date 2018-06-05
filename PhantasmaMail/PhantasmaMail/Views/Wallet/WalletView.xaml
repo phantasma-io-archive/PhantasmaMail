@@ -65,7 +65,7 @@
                            FontSize="{StaticResource MediumSize}"
                            TextColor="{StaticResource LightGray}"/>
 
-                    <Label Text="{Binding CurrentBalanceFiat,StringFormat='$ {0}'}" 
+                    <Label Text="{Binding CurrentBalanceFiat,StringFormat='$ {0:#.##}'}" 
                            HorizontalTextAlignment="Center" HorizontalOptions="Center"
                            FontFamily="{StaticResource OpenSansSemiBold}"
                            FontSize="{StaticResource LargerSize}"
@@ -80,7 +80,7 @@
                 </StackLayout>
             </Frame>
 
-            <Button Grid.Row="1" Margin="20" IsVisible="True"
+            <Button Grid.Row="1" Margin="20" IsVisible="False" IsEnabled="False"
                     Style="{StaticResource WalletButtonStyle}" CornerRadius="2"
                     Command="{Binding ClaimGasCommand}"
                     Text="Claim 0.00000000 Gas" />

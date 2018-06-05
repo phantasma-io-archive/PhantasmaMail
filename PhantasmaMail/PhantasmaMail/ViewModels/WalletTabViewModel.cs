@@ -113,6 +113,7 @@ namespace PhantasmaMail.ViewModels
                             TokenDetails = new Token
                             {
                                 Name = item.Asset,
+                                Symbol = item.Asset
                             },
                             ImagePath = item.Asset + ".png"
                         });
@@ -135,7 +136,8 @@ namespace PhantasmaMail.ViewModels
                             FiatChange = fiatChange,
                             TokenDetails = new Token
                             {
-                                Name = item.Asset
+                                Name = item.Asset,
+                                Symbol = item.Asset
                             },
                             ImagePath = item.Asset + ".png"
                         });

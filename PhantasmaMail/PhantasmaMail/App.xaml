@@ -33,6 +33,9 @@
             <converters:LoginTextBooleanToColorConverter x:Key="LoginTextBooleanToColorConverter"/>
             <converters:TransactionToAmountSymbolConverter x:Key="TransactionToAmountSymbolConverter"/>
             <converters:TransactionToSenderReceiverConverter x:Key="TransactionToSenderReceiverConverter"/>
+            <converters:FiatValueToStringConverter x:Key="FiatValueToStringConverter"/>
+            <converters:AssetAmountSymbolToStringConverter x:Key="AssetAmountSymbolToStringConverter"/>
+            <converters:ValueToColorConverter x:Key="ValueToColorConverter"/>
 
             <!-- FONTS -->
 
