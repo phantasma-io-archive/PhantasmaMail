@@ -84,6 +84,8 @@ namespace PhantasmaMail.ViewModels
             AssetsList = new ObservableCollection<AssetModel>();
             SelectedItem = null;
 
+            CurrentBalanceFiat = 0; 
+
             var balanceList = await _walletService.GetAccountBalance();
             foreach (var item in balanceList.Balance)
             {
@@ -98,6 +100,8 @@ namespace PhantasmaMail.ViewModels
 
                     NeoBalance = (decimal)item.Amount;
                     var fiatChange = CoinInfoUtils.CalculateChange(NeoBalance, priceInfo);
+
+                    CurrentBalanceFiat += NeoBalance * priceInfo.price;
 
                     AssetsList.Add(new AssetModel
                     {
@@ -120,6 +124,8 @@ namespace PhantasmaMail.ViewModels
 
                     GasBalance = (decimal)item.Amount;
                     var fiatChange = CoinInfoUtils.CalculateChange(GasBalance, priceInfo);
+
+                    CurrentBalanceFiat += GasBalance * priceInfo.price;
 
                     AssetsList.Add(new AssetModel
                     {
@@ -153,6 +159,7 @@ namespace PhantasmaMail.ViewModels
 
                     if (isListed)
                     {
+                        CurrentBalanceFiat += TokenBalance * priceInfo.price;
                         model.FiatValue = priceInfo.price;
                         model.FiatChangePercentage = priceInfo.change;
                         model.FiatChange = fiatChange;
@@ -172,7 +179,7 @@ namespace PhantasmaMail.ViewModels
                     SelectedItem = PickerItemList[0];
                 }
             }
-            CurrentBalanceFiat = 0; //todo
+            
         }
 
         public async Task GetNativeAssetsBalance()
