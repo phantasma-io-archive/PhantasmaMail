@@ -148,11 +148,16 @@ namespace PhantasmaMail.ViewModels
                     var model = new AssetModel
                     {
                         Amount = TokenBalance,
-                        FiatValue = priceInfo.price,
-                        FiatChangePercentage = priceInfo.change,
-                        FiatChange = fiatChange,
                         TokenDetails = Details,
                     };
+
+                    if (isListed)
+                    {
+                        model.FiatValue = priceInfo.price;
+                        model.FiatChangePercentage = priceInfo.change;
+                        model.FiatChange = fiatChange;
+                    }
+
                     model.ImagePath = model.TokenDetails.Symbol + ".png";
                     AssetsList.Add(model);
                 }
