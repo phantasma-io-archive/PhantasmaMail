@@ -113,6 +113,7 @@ namespace PhantasmaMail.ViewModels
                     });
 
                 }
+                else
                 if (item.Asset == "GAS")
                 {
                     var priceInfo = await CoinInfoUtils.GetMarketPrice(CoinInfoUtils.GAS_ID);
@@ -141,7 +142,8 @@ namespace PhantasmaMail.ViewModels
 
                     var TokenID = CoinInfoUtils.GetIDForSymbol(Details.Symbol);
                     var priceInfo = await CoinInfoUtils.GetMarketPrice(TokenID);
-                    var fiatChange = CoinInfoUtils.CalculateChange(TokenBalance, priceInfo);
+                    var isListed = priceInfo != null;
+                    var fiatChange = isListed ? CoinInfoUtils.CalculateChange(TokenBalance, priceInfo) : 0;
 
                     var model = new AssetModel
                     {

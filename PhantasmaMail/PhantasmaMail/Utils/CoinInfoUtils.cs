@@ -27,7 +27,6 @@ namespace PhantasmaMail.Utils
                 return null;
             }
 
-
             string json;
 
             bool isCached = cache.ContainsKey(coinID) && (DateTime.UtcNow - cache[coinID].time).TotalMinutes<5;
@@ -44,24 +43,21 @@ namespace PhantasmaMail.Utils
                     var response = await httpClient.GetAsync(new Uri(url), HttpCompletionOption.ResponseContentRead);
                     json = await response.Content.ReadAsStringAsync();
                 }
+
+                var cacheEntry = new CacheInfo() { json = json, time = DateTime.UtcNow };
+                cache[coinID] = cacheEntry;
             }
 
-            var content = JObject.Parse(json);
+            var content = JObject.Parse(json)["data"];
 
             var info = new PriceInfo();
             info.name = content["name"].Value<string>();
             info.symbol = content["symbol"].Value<string>();
             info.rank = content["rank"].Value<int>();
 
-            var quotes = content["data"]["quotes"]["USD"];
+            var quotes = content["quotes"]["USD"];
             info.price = quotes["price"].Value<decimal>();
             info.change = quotes["percent_change_24h"].Value<decimal>();
-
-            if (!isCached)
-            {
-                var cacheEntry = new CacheInfo() { json = json, time = DateTime.UtcNow };
-                cache[coinID] = cacheEntry;
-            }
 
             return info;
         }
