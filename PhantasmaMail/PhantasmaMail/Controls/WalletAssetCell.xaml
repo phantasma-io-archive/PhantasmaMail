@@ -55,8 +55,8 @@
                                 WidthRequest="35"
                                 HeightRequest="35"
                                 Aspect="AspectFill">
-        <!--<ffimageloading:CachedImage.Transformations>
-            <transformations:CircleTransformation  BorderHexColor="#17566B" BorderSize="4"/>
-        </ffimageloading:CachedImage.Transformations>-->
+        <ffimageloading:CachedImage.Transformations>
+            <transformations:CircleTransformation  BorderHexColor="#17566B" BorderSize="8"/>
+        </ffimageloading:CachedImage.Transformations>
     </ffimageloading:CachedImage>
 </Grid>

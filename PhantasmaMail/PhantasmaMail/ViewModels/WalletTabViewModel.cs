@@ -6,7 +6,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using NeoModules.KeyPairs;
-using NeoModules.NEP6.Models;
 using NeoModules.Rest.DTOs;
 using PhantasmaMail.Models;
 using PhantasmaMail.Resources;
@@ -94,79 +93,83 @@ namespace PhantasmaMail.ViewModels
                     continue;
                 }
 
-                if (item.Asset == "NEO")
+                switch (item.Asset)
                 {
-                    var priceInfo = await CoinInfoUtils.GetMarketPrice(CoinInfoUtils.NEO_ID);
-
-                    NeoBalance = (decimal)item.Amount;
-                    var fiatChange = CoinInfoUtils.CalculateChange(NeoBalance, priceInfo);
-
-                    CurrentBalanceFiat += NeoBalance * priceInfo.price;
-
-                    AssetsList.Add(new AssetModel
+                    case "NEO":
                     {
-                        Amount = NeoBalance,
-                        FiatValue = priceInfo.price,
-                        FiatChangePercentage = priceInfo.change,
-                        FiatChange = fiatChange,
-                        TokenDetails = new Token
+                        var priceInfo = await CoinInfoUtils.GetMarketPrice(CoinInfoUtils.NEO_ID);
+
+                        NeoBalance = (decimal)item.Amount;
+                        var fiatChange = CoinInfoUtils.CalculateChange(NeoBalance, priceInfo);
+
+                        CurrentBalanceFiat += NeoBalance * priceInfo.price;
+
+                        AssetsList.Add(new AssetModel
                         {
-                            Name = item.Asset,
-                        },
-                        ImagePath = item.Asset + ".png"
-                    });
-
-                }
-                else
-                if (item.Asset == "GAS")
-                {
-                    var priceInfo = await CoinInfoUtils.GetMarketPrice(CoinInfoUtils.GAS_ID);
-
-                    GasBalance = (decimal)item.Amount;
-                    var fiatChange = CoinInfoUtils.CalculateChange(GasBalance, priceInfo);
-
-                    CurrentBalanceFiat += GasBalance * priceInfo.price;
-
-                    AssetsList.Add(new AssetModel
+                            Amount = NeoBalance,
+                            FiatValue = priceInfo.price,
+                            FiatChangePercentage = priceInfo.change,
+                            FiatChange = fiatChange,
+                            TokenDetails = new Token
+                            {
+                                Name = item.Asset,
+                            },
+                            ImagePath = item.Asset + ".png"
+                        });
+                        break;
+                    }
+                    case "GAS":
                     {
-                        Amount = GasBalance,
-                        FiatValue = priceInfo.price,
-                        FiatChangePercentage = priceInfo.change,
-                        FiatChange = fiatChange,
-                        TokenDetails = new Token
+                        var priceInfo = await CoinInfoUtils.GetMarketPrice(CoinInfoUtils.GAS_ID);
+
+                        GasBalance = (decimal)item.Amount;
+                        var fiatChange = CoinInfoUtils.CalculateChange(GasBalance, priceInfo);
+
+                        CurrentBalanceFiat += GasBalance * priceInfo.price;
+
+                        AssetsList.Add(new AssetModel
                         {
-                            Name = item.Asset
-                        },
-                        ImagePath = item.Asset + ".png"
-                    });
-                }
-                else
-                {
-                    var TokenBalance = (decimal)item.Amount / 100000000; //todo decimals
-                    var Details = AppSettings.TokenList.Results
+                            Amount = GasBalance,
+                            FiatValue = priceInfo.price,
+                            FiatChangePercentage = priceInfo.change,
+                            FiatChange = fiatChange,
+                            TokenDetails = new Token
+                            {
+                                Name = item.Asset
+                            },
+                            ImagePath = item.Asset + ".png"
+                        });
+                        break;
+                    }
+                    default:
+                    {
+                        var tokenBalance = (decimal)item.Amount / 100000000; //todo decimals
+                        var details = AppSettings.TokenList.Results
                             .SingleOrDefault(result => result.Token.Name == item.Asset)?.Token;
 
-                    var TokenID = CoinInfoUtils.GetIDForSymbol(Details.Symbol);
-                    var priceInfo = await CoinInfoUtils.GetMarketPrice(TokenID);
-                    var isListed = priceInfo != null;
-                    var fiatChange = isListed ? CoinInfoUtils.CalculateChange(TokenBalance, priceInfo) : 0;
+                        var tokenId = CoinInfoUtils.GetIDForSymbol(details.Symbol);
+                        var priceInfo = await CoinInfoUtils.GetMarketPrice(tokenId);
+                        var isListed = priceInfo != null;
+                        var fiatChange = isListed ? CoinInfoUtils.CalculateChange(tokenBalance, priceInfo) : 0;
 
-                    var model = new AssetModel
-                    {
-                        Amount = TokenBalance,
-                        TokenDetails = Details,
-                    };
+                        var model = new AssetModel
+                        {
+                            Amount = tokenBalance,
+                            TokenDetails = details,
+                        };
 
-                    if (isListed)
-                    {
-                        CurrentBalanceFiat += TokenBalance * priceInfo.price;
-                        model.FiatValue = priceInfo.price;
-                        model.FiatChangePercentage = priceInfo.change;
-                        model.FiatChange = fiatChange;
+                        if (isListed)
+                        {
+                            CurrentBalanceFiat += tokenBalance * priceInfo.price;
+                            model.FiatValue = priceInfo.price;
+                            model.FiatChangePercentage = priceInfo.change;
+                            model.FiatChange = fiatChange;
+                        }
+
+                        model.ImagePath = model.TokenDetails.Symbol + ".png";
+                        AssetsList.Add(model);
+                        break;
                     }
-
-                    model.ImagePath = model.TokenDetails.Symbol + ".png";
-                    AssetsList.Add(model);
                 }
 
                 if (_assetsPicker.ContainsKey(item.Asset)) // todo add to send picker
@@ -179,7 +182,6 @@ namespace PhantasmaMail.ViewModels
                     SelectedItem = PickerItemList[0];
                 }
             }
-            
         }
 
         public async Task GetNativeAssetsBalance()
