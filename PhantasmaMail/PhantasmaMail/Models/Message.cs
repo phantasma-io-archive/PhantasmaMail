@@ -14,7 +14,7 @@ namespace PhantasmaMail.Models
 
         private string _toInbox;
 
-        [JsonProperty("toInbox")]
+        [JsonProperty("toBox")]
         public string ToInbox
         {
             get => _toInbox;
@@ -28,7 +28,7 @@ namespace PhantasmaMail.Models
 
         private string _toAddress;
 
-        [JsonProperty("toAddress")]
+        [JsonProperty("toAddr")]
         public string ToAddress
         {
             get => _toAddress;
@@ -43,7 +43,7 @@ namespace PhantasmaMail.Models
 
         private string _fromInbox;
 
-        [JsonProperty("fromInbox")]
+        [JsonProperty("fromBox")]
         public string FromInbox
         {
             get => _fromInbox;
@@ -58,7 +58,7 @@ namespace PhantasmaMail.Models
 
         private string _fromAddress;
 
-        [JsonProperty("fromAddress")]
+        [JsonProperty("fromAddr")]
         public string FromAddress
         {
             get => _fromAddress;
@@ -72,7 +72,7 @@ namespace PhantasmaMail.Models
 
         private string _subject;
 
-        [JsonProperty("subject")]
+        [JsonProperty("subj")]
         public string Subject
         {
             get => _subject;
@@ -86,7 +86,7 @@ namespace PhantasmaMail.Models
 
         private string _textContent;
 
-        [JsonProperty("content")]
+        [JsonProperty("body")]
         public string TextContent
         {
             get => _textContent;
@@ -124,11 +124,26 @@ namespace PhantasmaMail.Models
             }
         }
 
+        private string _key;
+        [JsonProperty("key")]
+        public string Key
+        {
+            get => _key;
+            set
+            {
+                _key = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+
         #endregion
 
 
         public Message(StoreMessage storeMessage)
         {
+            Key = storeMessage.Key;
             FromAddress = storeMessage.FromAddress;
             FromInbox = storeMessage.FromInbox;
             ToAddress = storeMessage.ToAddress;
@@ -148,6 +163,7 @@ namespace PhantasmaMail.Models
         {
             var dbMessage = new StoreMessage
             {
+                Key = Key,
                 Date = Date,
                 FromInbox = FromInbox,
                 FromAddress = FromAddress,

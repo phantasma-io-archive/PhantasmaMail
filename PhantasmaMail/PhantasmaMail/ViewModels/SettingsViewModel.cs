@@ -63,11 +63,5 @@ namespace PhantasmaMail.ViewModels
                 await DialogService.ShowAlertAsync(ex.Message, AppResource.Alert_Error);
             }
         }
-
-        private static NeoNep5Service SetupNep5Service()
-        {
-            return new NeoNep5Service(AppSettings.RpcClient, "insertaddress");
-        }
-
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using NeoModules.RPC;
 
 namespace PhantasmaMail.Services.Phantasma
 {
@@ -36,5 +37,7 @@ namespace PhantasmaMail.Services.Phantasma
         Task<string> RemoveOutboxMessages(int[] indexes);
 
         Task<string> EstimateMessageCost(string boxName, string message);
+
+        NeoApiService ApiService { get; set; }
     }
 }

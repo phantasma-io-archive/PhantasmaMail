@@ -14,9 +14,11 @@ namespace PhantasmaMail.Services.Phantasma
 {
     public class PrivatePhantasmaService : IPhantasmaService
     {
+        public NeoApiService ApiService { get; set; }
+
         public PrivatePhantasmaService()
         {
-            _neoRpcClient = new NeoApiService(AppSettings.RpcClient);
+            ApiService = new NeoApiService(AppSettings.RpcClient);
         }
 
         public async Task<string> EstimateMessageCost(string boxName, string message)
@@ -24,7 +26,7 @@ namespace PhantasmaMail.Services.Phantasma
             var script = NeoModules.NEP6.Utils.GenerateScript(ContractScriptHashBytes, SendMessageOperation,
                 new object[] { boxName, message });
 
-            var result = await _neoRpcClient.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
+            var result = await ApiService.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
             return result?.GasConsumed;
         }
 
@@ -48,7 +50,7 @@ namespace PhantasmaMail.Services.Phantasma
         {
             var script = NeoModules.NEP6.Utils.GenerateScript(ContractScriptHashBytes, GetInboxFromAddressOperation,
                 new object[] { UserAddress });
-            var result = await _neoRpcClient.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
+            var result = await ApiService.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
 
             if (result.Stack.Count > 1) return string.Empty;
 
@@ -66,7 +68,7 @@ namespace PhantasmaMail.Services.Phantasma
         {
             var script = NeoModules.NEP6.Utils.GenerateScript(ContractScriptHashBytes, GetAddressFromInboxOperation,
                 new object[] { boxName });
-            var result = await _neoRpcClient.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
+            var result = await ApiService.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
 
             var content = result.Stack[0].Value.ToString();
             if (string.IsNullOrEmpty(content)) return string.Empty;
@@ -82,7 +84,7 @@ namespace PhantasmaMail.Services.Phantasma
         {
             var script = NeoModules.NEP6.Utils.GenerateScript(ContractScriptHashBytes, GetInboxCountOperation,
                 new object[] { UserBoxName });
-            var result = await _neoRpcClient.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
+            var result = await ApiService.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
 
             var count = result.Stack[0].Value.ToString();
             if (string.IsNullOrEmpty(count)) return 0;
@@ -93,7 +95,7 @@ namespace PhantasmaMail.Services.Phantasma
         {
             var script = NeoModules.NEP6.Utils.GenerateScript(ContractScriptHashBytes, GetInboxContentOperation,
                 new object[] { UserBoxName, index });
-            var result = await _neoRpcClient.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
+            var result = await ApiService.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
 
             var content = result.Stack[0].Value.ToString().HexToBytes();
             return Encoding.UTF8.GetString(content);
@@ -103,7 +105,7 @@ namespace PhantasmaMail.Services.Phantasma
         {
             var script = NeoModules.NEP6.Utils.GenerateScript(ContractScriptHashBytes, GetOutboxCountOperation,
                 new object[] { UserBoxName });
-            var result = await _neoRpcClient.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
+            var result = await ApiService.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
 
             var count = result.Stack[0].Value.ToString();
             if (string.IsNullOrEmpty(count)) return 0;
@@ -115,7 +117,7 @@ namespace PhantasmaMail.Services.Phantasma
         {
             var script = NeoModules.NEP6.Utils.GenerateScript(ContractScriptHashBytes, GetOutboxContentOperation,
                 new object[] { UserBoxName, index });
-            var result = await _neoRpcClient.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
+            var result = await ApiService.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
 
             var content = result.Stack[0].Value.ToString().HexToBytes();
             return Encoding.UTF8.GetString(content);
@@ -220,8 +222,6 @@ namespace PhantasmaMail.Services.Phantasma
 
         //TODO: change to main net scripthash
         private string ContractScriptHash => AppSettings.ContractScriptHash;
-
-        private readonly NeoApiService _neoRpcClient; // TODO: fix so the app only use one RpcClient
 
         #endregion
     }

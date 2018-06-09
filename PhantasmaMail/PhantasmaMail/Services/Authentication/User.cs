@@ -1,6 +1,9 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using NeoModules.KeyPairs;
 using NeoModules.NEP6;
 using NeoModules.NEP6.Models;
+using NeoModules.RPC.Infrastructure;
 
 namespace PhantasmaMail.Services.Authentication
 {
@@ -37,6 +40,19 @@ namespace PhantasmaMail.Services.Authentication
             var account = WalletManager.GetDefaultAccount();
             var address = Wallet.ToAddress(account.Address);
             return address;
+        }
+
+        public byte[] GetPrivateKey()
+        {
+            var account = (IAccount) WalletManager?.GetDefaultAccount();
+            return account?.PrivateKey;
+        }
+
+        public byte[] GetPublicKey()
+        {
+            var account = (IAccount)WalletManager?.GetDefaultAccount();
+            var keyPair = new KeyPair(account?.PrivateKey);
+            return keyPair.PublicKey.EncodePoint(false).Skip(1).ToArray();
         }
     }
 }

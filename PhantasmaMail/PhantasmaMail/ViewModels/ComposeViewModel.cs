@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using PhantasmaMail.Models;
 using PhantasmaMail.Resources;
 using PhantasmaMail.Services.Db;
+using PhantasmaMail.Utils;
 using PhantasmaMail.ViewModels.Base;
 using Xamarin.Forms;
 
@@ -32,9 +33,9 @@ namespace PhantasmaMail.ViewModels
         public override Task InitializeAsync(object navigationData)
         {
             Message = new Message();
-            var culture = new CultureInfo("en-GB");
+            var culture = new CultureInfo("en-GB"); // todo change to local
             CultureInfo.CurrentCulture = culture;
-            FormattedDate = string.Format("{0:f}", DateTime.UtcNow);
+            FormattedDate = $"{DateTime.UtcNow:f}";
 
             if (navigationData is string s)
             {
@@ -128,11 +129,16 @@ namespace PhantasmaMail.ViewModels
             Message.Date = DateTime.UtcNow;
             Message.FromInbox = AuthenticationService.AuthenticatedUser.UserBox;
             Message.FromAddress = AuthenticationService.AuthenticatedUser.GetUserDefaultAddress();
-            var json = JsonConvert.SerializeObject(Message, new JsonSerializerSettings
-            {
-                DateFormatHandling = DateFormatHandling.IsoDateFormat,
-                NullValueHandling = NullValueHandling.Ignore
-            });
+
+            // todo
+            //if (AppSettings.UseEncryption)
+            //{
+            //    var encryptedText = EncryptionUtils.Encrypt(Message.TextContent,
+            //        AuthenticationService.AuthenticatedUser.GetPrivateKey(), new Byte[] { });
+            //    Message.Key;
+            //}
+
+            var json = JsonConvert.SerializeObject(Message, AppSettings.JsonSettings());
 
             var bytes = Encoding.Default.GetBytes(json);
             json = Encoding.UTF8.GetString(bytes);

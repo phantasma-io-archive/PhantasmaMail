@@ -19,20 +19,12 @@ namespace PhantasmaMail.Services
         public AccountSignerTransactionManager AccountManager => (AccountSignerTransactionManager)ActiveUser.GetDefaultAccount().TransactionManager;
         private User ActiveUser => Locator.Instance.Resolve<IAuthenticationService>().AuthenticatedUser;
 
-
-        public WalletService()
-        {
-            //AccountManager.InitializeNep5Service("0xed07cffad18f1308db51920d99a2af60ac66a7b3"); //mainnet
-            AccountManager.InitializeNep5Service(AppSettings.ContractScriptHash); //mainnet
-
-        }
-
         public async Task<string> TransferNep5(string toAddress, decimal amount, string tokenScriptHash)
         {
             var tokenScriptHashBytes = UInt160.Parse(tokenScriptHash).ToArray();
             var toAddressBytes = toAddress.ToScriptHash().ToArray();
             var tx = await AccountManager.TransferNep5(toAddressBytes, amount, tokenScriptHashBytes);
-            return tx;
+            return tx.Hash.ToString();
         }
 
         public async Task<string> SendAsset(string toAddress, string symbol, decimal amount)
