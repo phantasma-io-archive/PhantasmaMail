@@ -10,7 +10,7 @@ namespace PhantasmaMail
     {
         // Endpoints and other stuff
         public static INeoRestService RestService = new NeoScanRestService(NeoScanNet.MainNet);
-        public static RpcClient RpcClient = new RpcClient(new Uri("http://seed2.neo.org:10332"));
+        public static RpcClient RpcClient = new RpcClient(new Uri("http://seed2.aphelion-neo.com:10332"));
         public static string ContractScriptHash = "ed07cffad18f1308db51920d99a2af60ac66a7b3";
 
         public static TokenList TokenList { get; set; }
