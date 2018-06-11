@@ -29,7 +29,7 @@ namespace PhantasmaMail.Utils
 
             string json;
 
-            bool isCached = cache.ContainsKey(coinID) && (DateTime.UtcNow - cache[coinID].time).TotalMinutes<5;
+            bool isCached = cache.ContainsKey(coinID) && (DateTime.UtcNow - cache[coinID].time).TotalMinutes < 5;
 
             if (isCached)
             {
@@ -64,8 +64,8 @@ namespace PhantasmaMail.Utils
 
         internal static decimal CalculateChange(decimal balance, PriceInfo info)
         {
-            decimal oldPrice = info.price + (info.price * (info.change/100m));
-            return info.price - oldPrice;
+            decimal oldPrice = info.price + (info.price * (info.change / 100m));
+            return Math.Abs((balance * info.price) - (oldPrice * balance));
         }
 
         // hardcoded until better solution

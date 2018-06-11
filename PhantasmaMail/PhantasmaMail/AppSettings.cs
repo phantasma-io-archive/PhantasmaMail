@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using NeoModules.JsonRpc.Client;
 using NeoModules.Rest.DTOs;
 using NeoModules.Rest.Services;
@@ -17,7 +18,8 @@ namespace PhantasmaMail
         public static INeoRestService RestService = new NeoScanRestService(NeoScanNet.MainNet);
 
         //public static RpcClient RpcClient = new RpcClient(new Uri("http://seed2.aphelion-neo.com:10332"));
-        public static RpcClient RpcClient = new RpcClient(new Uri("https://seed1.redpulse.com:10331"));
+        public static RpcClient RpcClient = new RpcClient(new Uri("http://seed4.aphelion-neo.com:10332"));
+        public static NeoNodesListService NodesService = new NeoNodesListService();
         public static string ContractScriptHash = "ed07cffad18f1308db51920d99a2af60ac66a7b3";
 
         //Transactions
@@ -82,11 +84,14 @@ namespace PhantasmaMail
 
         private static readonly Random Rnd = new Random();
 
-        public static void ChangeRpcServer()
+        public static async Task ChangeRpcServer()
         {
             //todo test net urls
             if (UseMainNet)
             {
+                //var result = await NodesService.GetNodesList(MonitorNet.MainNet);
+                //var nodes = JsonConvert.DeserializeObject<NodeList>(result);
+
                 var index = Rnd.Next(RpcUrlList.Count);
                 var rpcUrl = RpcUrlList[index];
                 RpcClient = new RpcClient(new Uri(rpcUrl));

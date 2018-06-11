@@ -65,7 +65,7 @@
                            FontSize="{StaticResource MediumSize}"
                            TextColor="{StaticResource LightGray}"/>
 
-                    <Label Text="{Binding CurrentBalanceFiat,StringFormat='$ {0:#.##}'}" 
+                    <Label Text="{Binding CurrentBalanceFiat,StringFormat='$ {0:0.##}'}" 
                            HorizontalTextAlignment="Center" HorizontalOptions="Center"
                            FontFamily="{StaticResource OpenSansSemiBold}"
                            FontSize="{StaticResource LargerSize}"
@@ -119,7 +119,11 @@
                         <syncfusion:SfListView.HeaderTemplate>
                             <DataTemplate>
                                 <Grid>
-                                    <Label Text="Your Neo tokens" />
+                                    <Label Text="Your Neo tokens" 
+                                           HorizontalTextAlignment="Start"
+                                           FontFamily="{StaticResource OpenSansSemiBold}" 
+                                           FontSize="{StaticResource LargeSize}" 
+                                           TextColor="{StaticResource LightGray}"/>
                                 </Grid>
                             </DataTemplate>
                         </syncfusion:SfListView.HeaderTemplate>

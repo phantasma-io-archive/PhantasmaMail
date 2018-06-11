@@ -5,8 +5,9 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:effects="clr-namespace:PhantasmaMail.Effects"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PhantasmaMail.Controls;assembly=PhantasmaMail"
     x:Key="InboxMessageCell">
-    <Frame Margin="20,10" CornerRadius="0" HasShadow="True">
+    <controls:CustomFrame Margin="20,10" CornerRadius="0" HasShadow="True">
         <Grid RowSpacing="7" ColumnSpacing="0" Margin="3,3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -57,5 +58,5 @@
                    HorizontalTextAlignment="Start"
                    Style="{StaticResource MessageSenderStyle}" />
         </Grid>
-    </Frame>
+    </controls:CustomFrame>
 </Grid>

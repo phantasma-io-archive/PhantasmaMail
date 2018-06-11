@@ -23,6 +23,8 @@
             <Color x:Key="GradientEndColor">#C0C0C0</Color>
 
             <x:String x:Key="TintIconColor">#A1ACB3</x:String>
+            <x:String x:Key="TintUpArrowColor">#7ED321</x:String>
+            <x:String x:Key="TintDownArrowColor">#D0021B</x:String>
 
             <!-- CONVERTERS -->
             <converters:NullToBoolConverter x:Key="NullToBoolConverter"/>
@@ -36,6 +38,7 @@
             <converters:FiatValueToStringConverter x:Key="FiatValueToStringConverter"/>
             <converters:AssetAmountSymbolToStringConverter x:Key="AssetAmountSymbolToStringConverter"/>
             <converters:ValueToColorConverter x:Key="ValueToColorConverter"/>
+            <converters:AssetValueChangeToIconConverter x:Key="AssetValueChangeToIconConverter"/>
 
             <!-- FONTS -->
 

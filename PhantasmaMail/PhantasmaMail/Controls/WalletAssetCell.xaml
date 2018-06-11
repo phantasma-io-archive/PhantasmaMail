@@ -4,79 +4,121 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
       xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
       xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+      xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
       x:Class="PhantasmaMail.Controls.WalletAssetCell"
       x:Key="WalletAssetCell"
       BackgroundColor="Transparent">
+
     <Grid.Resources>
         <ResourceDictionary>
 
-            <Style x:Key="WalletAssetLabelStyle" BasedOn="{StaticResource OpenSansSemiBoldLabelStyle}"
+            <Style x:Key="WalletAssetLabelStyle"
+                   BasedOn="{StaticResource OpenSansSemiBoldLabelStyle}"
                    TargetType="Label">
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="FontSize"
                         Value="{StaticResource MediumSize}" />
             </Style>
 
+            <Style x:Key="WalletAssetDetailLabelStyle"
+                   BasedOn="{StaticResource OpenSansSemiBoldLabelStyle}"
+                   TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource LightGray}" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource MidMediumSize}" />
+            </Style>
+
         </ResourceDictionary>
     </Grid.Resources>
-    <Grid HorizontalOptions="FillAndExpand">
+    <Grid>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="40"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-        <Frame Grid.Column="1" 
-           Margin="-25,0,0,0" 
-           Padding="0"
-               HorizontalOptions="FillAndExpand"
-           CornerRadius="1"         
-           HasShadow="True" 
-           BackgroundColor="White">
-            <Grid>
+        <Frame Grid.Column="0"
+               Margin="0"
+               Padding="5"
+               CornerRadius="0"
+               HasShadow="True"
+               BackgroundColor="White">
+            <Grid Margin="15,5">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Start" Margin="30,5,5,0"
+                <ffimageloading:CachedImage Grid.Column="0"
+                                            Grid.RowSpan="2"
+                                            Margin="0,0,15,0"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            Source="{Binding ImagePath}"
+                                            WidthRequest="35"
+                                            HeightRequest="35"
+                                            Aspect="AspectFill">
+                    <ffimageloading:CachedImage.Transformations>
+                        <transformations:CircleTransformation BorderHexColor="#17566B" BorderSize="7" />
+                    </ffimageloading:CachedImage.Transformations>
+                </ffimageloading:CachedImage>
+
+                <!-- Asset name -->
+                <Label Grid.Row="0"
+                       Grid.Column="1"
+                       HorizontalTextAlignment="Start"
+                       Margin="0"
                        Text="{Binding TokenDetails.Name}"
-                       Style="{StaticResource WalletAssetLabelStyle}"/>
+                       Style="{StaticResource WalletAssetLabelStyle}" />
 
-                <Label Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="End"  Margin="5,5,10,0"
-                       Text="{Binding FiatValue, Converter={StaticResource FiatValueToStringConverter}}"
-                       Style="{StaticResource WalletAssetLabelStyle}"/>
+                <!-- Total price -->
+                <Grid Grid.Row="0" Grid.Column="2" HorizontalOptions="End">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <ffimageloadingsvg:SvgCachedImage x:Name="arrow" 
+                                                      Grid.Column="0"
+                                                      Margin="0"
+                                                      HorizontalOptions="Center"
+                                                      VerticalOptions="Center"
+                                                      Source="{Binding FiatChangePercentage, Converter={StaticResource AssetValueChangeToIconConverter }}"
+                                                      WidthRequest="8"
+                                                      HeightRequest="4"
+                                                      Aspect="AspectFill">
+                    </ffimageloadingsvg:SvgCachedImage>
 
-                <Label Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Start" Margin="30,0,5,5"
+
+                    <Label Grid.Row="0"
+                           Grid.Column="1"
+                           HorizontalTextAlignment="End"
+                           Margin="0"
+                           Text="{Binding FiatChange, Converter={StaticResource FiatValueToStringConverter}}"
+                           Style="{StaticResource WalletAssetDetailLabelStyle}"
+                           TextColor="{Binding FiatChangePercentage, Converter={StaticResource ValueToColorConverter}}" />
+                </Grid>
+
+
+                <!-- Asset amount (value per asset) -->
+                <Label Grid.Row="1"
+                       Grid.Column="1"
+                       HorizontalTextAlignment="Start"
+                       Margin="0"
                        Text="{Binding ., Converter={StaticResource AssetAmountSymbolToStringConverter}}"
                        Style="{StaticResource WalletAssetLabelStyle}"
-                       TextColor="{StaticResource LightGray}"/>
+                       TextColor="{StaticResource LightGray}" />
 
-                <Label Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="End" Margin="5,0,10,5"
-                       Text="{Binding FiatChangePercentage, StringFormat='{0}%'}"
-                       x:Name="FiatChangePercentageLabel"
-                       FontFamily="{StaticResource OpenSansSemiBold}"
-                       FontSize="{StaticResource MidMediumSize}"
-                       TextColor="{Binding Source={x:Reference FiatChangePercentageLabel}, Path=Text, Converter={StaticResource ValueToColorConverter}}"/>
+                <!-- Total asset value -->
+                <Label Grid.Row="1"
+                       Grid.Column="2"
+                       HorizontalTextAlignment="End"
+                       Margin="0"
+                       Text="{Binding TotalFiatValue, StringFormat='${0:0.##}'}"
+                       Style="{StaticResource WalletAssetDetailLabelStyle}" />
 
             </Grid>
         </Frame>
 
     </Grid>
-    <ffimageloading:CachedImage Grid.Column="0"
-                                Margin="5"
-                                HorizontalOptions="Start"
-                                VerticalOptions="Center"
-                                Source="{Binding ImagePath}"
-                                WidthRequest="35"
-                                HeightRequest="35"
-                                Aspect="AspectFill">
-        <ffimageloading:CachedImage.Transformations>
-            <transformations:CircleTransformation  BorderHexColor="#17566B" BorderSize="8"/>
-        </ffimageloading:CachedImage.Transformations>
-    </ffimageloading:CachedImage>
+
 </Grid>
