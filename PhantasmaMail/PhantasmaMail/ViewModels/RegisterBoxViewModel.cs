@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using NeoModules.JsonRpc.Client;
 using PhantasmaMail.Resources;
 using PhantasmaMail.Utils;
 using PhantasmaMail.ViewModels.Base;
@@ -54,6 +55,10 @@ namespace PhantasmaMail.ViewModels
             }
             catch (Exception ex)
             {
+                if (ex is RpcClientUnknownException || ex is RpcClientTimeoutException) //todo switch error message
+                {
+                    AppSettings.ChangeRpcServer();
+                }
                 await DialogService.ShowAlertAsync(
                     "Something went wrong. Make sure you have at least one drop of GAS in this address.",
                     AppResource.Alert_Error);

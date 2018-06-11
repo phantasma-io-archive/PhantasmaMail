@@ -28,7 +28,7 @@
 
             <Label Grid.Row="0"
                    Grid.Column="1"
-                   Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}"
+                   Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}', Converter={StaticResource UtcToLocalTimeConverter}}"
                    HorizontalOptions="End"
                    Style="{StaticResource MessageTextStyle}" 
                    FontSize="{StaticResource LittleSize}"/>

@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Globalization;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using NeoModules.JsonRpc.Client;
 using PhantasmaMail.Models;
 using PhantasmaMail.Resources;
 using PhantasmaMail.Services.Db;
@@ -40,13 +40,9 @@ namespace PhantasmaMail.ViewModels
                 FromInbox = fromInbox;
                 FromOrTo = FromInbox ? "From: " : "To: ";
                 SelectedMessage = message;
-                // todo change culture to local 
-                var culture = new CultureInfo("en-GB");
-                CultureInfo.CurrentCulture = culture;
-                DaysAgo = MessageUtils.CalculateDays(message.Date);
-                FormattedDate = $"{message.Date:f}";
+                
+                DaysAgo = MessageUtils.CalculateDays(message.Date.ToLocalTime());
             }
-
             return base.InitializeAsync(navigationData);
         }
 
@@ -65,6 +61,10 @@ namespace PhantasmaMail.ViewModels
             }
             catch (Exception ex)
             {
+                if (ex is RpcClientUnknownException || ex is RpcClientTimeoutException) //todo switch error message
+                {
+                    AppSettings.ChangeRpcServer();
+                }
                 await DialogService.ShowAlertAsync(ex.Message, AppResource.Alert_Error);
             }
             finally
@@ -101,6 +101,10 @@ namespace PhantasmaMail.ViewModels
             }
             catch (Exception ex)
             {
+                if (ex is RpcClientUnknownException || ex is RpcClientTimeoutException) //todo switch error message
+                {
+                    AppSettings.ChangeRpcServer();
+                }
                 await DialogService.ShowAlertAsync(ex.Message, AppResource.Alert_Error);
             }
             finally
@@ -129,7 +133,6 @@ namespace PhantasmaMail.ViewModels
             await NavigationService.NavigateToAsync<ComposeViewModel>(SelectedMessage.FromInbox);
         }
 
-
         #region Observable Properties
 
         private Message _selectedMessage;
@@ -152,18 +155,6 @@ namespace PhantasmaMail.ViewModels
             set
             {
                 _daysAgo = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private string _formattedDate;
-
-        public string FormattedDate
-        {
-            get => _formattedDate;
-            set
-            {
-                _formattedDate = value;
                 OnPropertyChanged();
             }
         }

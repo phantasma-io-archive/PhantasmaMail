@@ -39,6 +39,7 @@
             <converters:AssetAmountSymbolToStringConverter x:Key="AssetAmountSymbolToStringConverter"/>
             <converters:ValueToColorConverter x:Key="ValueToColorConverter"/>
             <converters:AssetValueChangeToIconConverter x:Key="AssetValueChangeToIconConverter"/>
+            <converters:UtcToLocalTimeConverter x:Key="UtcToLocalTimeConverter"/>
 
             <!-- FONTS -->
 

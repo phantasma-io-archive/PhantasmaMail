@@ -52,13 +52,9 @@ namespace PhantasmaMail.ViewModels
             {
                 if (ex is RpcClientUnknownException || ex is RpcClientTimeoutException) //todo switch error message
                 {
-                    AppSettings.ChangeRpcServer(); //todo add this as a global strategy
-                    await DialogService.ShowAlertAsync(ex.Message, AppResource.Alert_Error);
+                    AppSettings.ChangeRpcServer();
                 }
-                else
-                {
-                    await DialogService.ShowAlertAsync(ex.Message, AppResource.Alert_Error);
-                }
+                await DialogService.ShowAlertAsync(ex.Message, AppResource.Alert_Error);
             }
             finally
             {

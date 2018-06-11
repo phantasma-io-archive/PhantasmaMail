@@ -121,7 +121,8 @@
                         <Label Text="{Binding DaysAgo}" HorizontalOptions="Start" VerticalOptions="Center"
                                Style="{StaticResource SimpleTextStyle}" FontSize="{StaticResource LittleSize}" />
 
-                        <Label Text="{Binding FormattedDate}" HorizontalOptions="EndAndExpand" VerticalOptions="Center"
+                        <Label Text="{Binding SelectedMessage.Date, StringFormat='{0:f}', Converter={StaticResource UtcToLocalTimeConverter}}" 
+                               HorizontalOptions="EndAndExpand" VerticalOptions="Center"
                                Style="{StaticResource SimpleTextStyle}" FontSize="{StaticResource LittleSize}" />
 
                     </StackLayout>

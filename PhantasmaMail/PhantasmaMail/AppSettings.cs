@@ -84,7 +84,7 @@ namespace PhantasmaMail
 
         private static readonly Random Rnd = new Random();
 
-        public static async Task ChangeRpcServer()
+        public static void ChangeRpcServer()
         {
             //todo test net urls
             if (UseMainNet)

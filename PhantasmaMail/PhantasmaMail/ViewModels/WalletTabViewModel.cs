@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using NeoModules.JsonRpc.Client;
 using NeoModules.KeyPairs;
 using NeoModules.Rest.DTOs;
 using PhantasmaMail.Models;
@@ -57,9 +58,13 @@ namespace PhantasmaMail.ViewModels
                     }
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                await DialogService.ShowAlertAsync(e.Message, AppResource.Alert_Error);
+                if (ex is RpcClientUnknownException || ex is RpcClientTimeoutException) //todo switch error message
+                {
+                    AppSettings.ChangeRpcServer();
+                }
+                await DialogService.ShowAlertAsync(ex.Message, AppResource.Alert_Error);
             }
             finally
             {
@@ -71,10 +76,10 @@ namespace PhantasmaMail.ViewModels
                     ToAddress = string.Empty;
                     Quantity = 0;
                 }
-                //else
-                //{
-                //    await DialogService.ShowAlertAsync(AppResource.Alert_SomethingWrong, AppResource.Alert_Error); //todo localization
-                //}
+                else
+                {
+                    await DialogService.ShowAlertAsync(AppResource.Alert_SomethingWrong, AppResource.Alert_Error); //todo localization
+                }
             }
         }
 
@@ -207,7 +212,7 @@ namespace PhantasmaMail.ViewModels
         }
 
         public async Task GetTransactionHistory()
-        { //TODO
+        {
             try
             {
                 var transactionHistory = await _walletService.GetTransactionHistory();

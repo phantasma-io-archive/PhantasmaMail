@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using NeoModules.JsonRpc.Client;
 using Newtonsoft.Json;
 using PhantasmaMail.Models;
 using PhantasmaMail.Resources;
@@ -87,6 +88,10 @@ namespace PhantasmaMail.ViewModels
             }
             catch (Exception ex)
             {
+                if (ex is RpcClientUnknownException || ex is RpcClientTimeoutException) //todo switch error message
+                {
+                    AppSettings.ChangeRpcServer();
+                }
                 await DialogService.ShowAlertAsync(ex.Message, AppResource.Alert_Error);
             }
             finally
