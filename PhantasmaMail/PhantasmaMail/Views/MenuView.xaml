@@ -23,7 +23,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid Margin="10,20">
+        <Grid Margin="10,20" BackgroundColor="Transparent">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
@@ -35,6 +35,7 @@
                 CachingStrategy="RecycleElement"
                 HasUnevenRows="True"
                 Header="{Binding BoxName}"
+                BackgroundColor="Transparent"
                 ItemsSource="{Binding MenuItems}"
                 SeparatorVisibility="None">
                 <ListView.ItemTemplate>
@@ -68,7 +69,7 @@
             </ListView>
 
             <!-- Logout -->
-            <Grid Grid.Row="1" HorizontalOptions="End" VerticalOptions="End" Margin="10,0" IsVisible="True">
+            <Grid Grid.Row="1" HorizontalOptions="End" VerticalOptions="End" Margin="10,0" IsVisible="True" BackgroundColor="Transparent">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />

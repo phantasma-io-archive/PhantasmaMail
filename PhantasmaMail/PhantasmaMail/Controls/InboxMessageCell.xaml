@@ -7,7 +7,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:PhantasmaMail.Controls;assembly=PhantasmaMail"
     x:Key="InboxMessageCell">
-    <controls:CustomFrame Margin="20,10" CornerRadius="0" HasShadow="True">
+    <controls:CustomFrame Margin="20,10" CornerRadius="0" HasShadow="True" x:Name="customFrame">
         <Grid RowSpacing="7" ColumnSpacing="0" Margin="3,3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />

@@ -1,4 +1,5 @@
-﻿using FFImageLoading.Forms.Platform;
+﻿using Acr.UserDialogs;
+using FFImageLoading.Forms.Platform;
 using FFImageLoading.Svg.Forms;
 using Foundation;
 using Syncfusion.ListView.XForms.iOS;
@@ -27,10 +28,13 @@ namespace PhantasmaMail.iOS
             XfxControls.Init();
             Xamarin.Forms.Forms.Init();
             SfPickerRenderer.Init();
+
             SfListViewRenderer.Init();
             XFGloss.iOS.Library.Init();
             CachedImageRenderer.Init();
             var ignore = typeof(SvgCachedImage);
+            XFGloss.iOS.Library.Init();
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
