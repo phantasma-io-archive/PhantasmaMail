@@ -33,9 +33,7 @@ namespace PhantasmaMail.ViewModels
         public override Task InitializeAsync(object navigationData)
         {
             Message = new Message();
-            var culture = new CultureInfo("en-GB"); // todo change to local
-            CultureInfo.CurrentCulture = culture;
-            FormattedDate = $"{DateTime.UtcNow:f}";
+            FormattedDate = $"{DateTime.Now:f}";
 
             if (navigationData is string s)
             {
