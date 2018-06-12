@@ -136,10 +136,25 @@ namespace PhantasmaMail.Models
             }
         }
 
-
-
         #endregion
 
+        [JsonIgnore]
+        public string GroupDate
+        { //todo localization
+            get
+            {
+                var messageLocal = Date.ToLocalTime();
+                var nowLocal = DateTime.Now;
+                if (messageLocal.DayOfYear == nowLocal.DayOfYear)
+                    return "Today";
+                if (messageLocal.DayOfYear + 1 == nowLocal.DayOfYear)
+                {
+                    return "Yesterday";
+                }
+
+                return "Last Week";
+            }
+        }
 
         public Message(StoreMessage storeMessage)
         {

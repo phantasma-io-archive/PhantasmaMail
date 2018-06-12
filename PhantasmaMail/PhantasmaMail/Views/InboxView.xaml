@@ -27,9 +27,9 @@
 
             <!-- Search -->
             <SearchBar Grid.Row="0" Margin="0,5,20,5" Placeholder="Search" 
-                       x:Name="SearchBar"
+                       x:Name="searchBar"
                        SearchCommand="{Binding SearchCommand}" 
-                       SearchCommandParameter="{Binding Text, Source={x:Reference SearchBar}}">
+                       SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}">
                 <SearchBar.Behaviors>
                     <behaviors:TextChangedBehavior />
                 </SearchBar.Behaviors>
@@ -38,14 +38,14 @@
 
             <sfpullToRefresh:SfPullToRefresh x:Name="pullToRefreshList" Grid.Row="1"
                                              ProgressBackgroundColor="{StaticResource Accent}"
-                                             RefreshContentHeight="40"
-                                             RefreshContentWidth="40"
+                                             RefreshContentHeight="35"
+                                             RefreshContentWidth="35"
                                              TransitionMode="Push"
                                              IsRefreshing="{Binding IsBusy}"
                                              Refreshing="PullToRefresh_Refreshing">
                 <sfpullToRefresh:SfPullToRefresh.PullableContent>
                     <syncfusion:SfListView
-                        x:Name="InboxListView"
+                        x:Name="inboxListView"
                         AutoFitMode="Height"
                         ItemsSource="{Binding InboxList, Mode=TwoWay}"
                         SelectedItem="{Binding MessageSelected}"
@@ -55,7 +55,7 @@
                         VerticalOptions="FillAndExpand">
                         <syncfusion:SfListView.Triggers>
                             <DataTrigger TargetType="syncfusion:SfListView"
-                                         Binding="{Binding Source={x:Reference InboxListView}, Path=ItemsSource.Count}"
+                                         Binding="{Binding Source={x:Reference inboxListView}, Path=ItemsSource.Count}"
                                          Value="0">
                                 <Setter Property="IsVisible" Value="False" />
                             </DataTrigger>
@@ -65,6 +65,11 @@
                                 <controls:InboxMessageCell />
                             </DataTemplate>
                         </syncfusion:SfListView.ItemTemplate>
+                        <!--<syncfusion:SfListView.GroupHeaderTemplate>
+                            <DataTemplate>
+                                <Label Text="{Binding Key}" BackgroundColor="Teal" FontAttributes="Bold" TextColor="White"/>
+                            </DataTemplate>
+                        </syncfusion:SfListView.GroupHeaderTemplate>-->
 
                         <!--<syncfusion:SfListView.RightSwipeTemplate>
                             <DataTemplate x:Name="RightSwipeTemplate">
@@ -120,7 +125,7 @@
                        Style="{StaticResource NoMessagesLabelStyle}" />
                 <Grid.Triggers>
                     <DataTrigger TargetType="Grid"
-                                 Binding="{Binding Source={x:Reference InboxListView}, Path=ItemsSource.Count}"
+                                 Binding="{Binding Source={x:Reference inboxListView}, Path=ItemsSource.Count}"
                                  Value="0">
                         <Setter Property="IsVisible" Value="True" />
                     </DataTrigger>

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
+using PhantasmaMail.Models;
 using PhantasmaMail.ViewModels;
+using Syncfusion.DataSource;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,8 +13,17 @@ namespace PhantasmaMail.Views
 	{
 		public InboxView ()
 		{
-			InitializeComponent ();
-		}
+			InitializeComponent();
+            //inboxListView.DataSource.GroupDescriptors.Add(new GroupDescriptor()
+            //{
+            //    PropertyName = "Date",
+            //    KeySelector = (obj1) =>
+            //    {
+            //        var item = (obj1 as Message);
+            //        return item.GroupDate;
+            //    },
+            //});
+        }
 
 	    protected override void OnAppearing()
 	    {
