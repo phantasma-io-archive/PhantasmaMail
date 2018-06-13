@@ -148,11 +148,10 @@ namespace PhantasmaMail.Models
                 if (messageLocal.DayOfYear == nowLocal.DayOfYear)
                     return "Today";
                 if (messageLocal.DayOfYear + 1 == nowLocal.DayOfYear)
-                {
                     return "Yesterday";
-                }
-
-                return "Last Week";
+                if (messageLocal.Month == nowLocal.Month)
+                    return "This month";
+                return "This year";
             }
         }
 

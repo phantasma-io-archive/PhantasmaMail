@@ -26,9 +26,9 @@
 
             <!-- Search -->
             <SearchBar Grid.Row="0" Margin="0,5,20,5" Placeholder="Search"
-                       x:Name="SearchBar"
+                       x:Name="searchBar"
                        SearchCommand="{Binding SearchCommand}"
-                       SearchCommandParameter="{Binding Text, Source={x:Reference SearchBar}}">
+                       SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}">
                 <SearchBar.Behaviors>
                     <behaviors:TextChangedBehavior />
                 </SearchBar.Behaviors>
@@ -43,7 +43,7 @@
                                              Refreshing="PullToRefresh_Refreshing">
                 <sfpullToRefresh:SfPullToRefresh.PullableContent>
                     <syncfusion:SfListView
-                        x:Name="SentList"
+                        x:Name="sentList"
                         AutoFitMode="Height"
                         ItemsSource="{Binding SentList, Mode=TwoWay}"
                         SelectedItem="{Binding MessageSelected}"
@@ -52,7 +52,7 @@
                         VerticalOptions="FillAndExpand">
                         <syncfusion:SfListView.Triggers>
                             <DataTrigger TargetType="syncfusion:SfListView"
-                                         Binding="{Binding Source={x:Reference SentList}, Path=ItemsSource.Count}"
+                                         Binding="{Binding Source={x:Reference sentList}, Path=ItemsSource.Count}"
                                          Value="0">
                                 <Setter Property="IsVisible" Value="False" />
                             </DataTrigger>
@@ -62,6 +62,12 @@
                                 <controls:SentMessageCell />
                             </DataTemplate>
                         </syncfusion:SfListView.ItemTemplate>
+                        <syncfusion:SfListView.GroupHeaderTemplate>
+                            <DataTemplate>
+                                <controls:MessageDateGroupCell/>
+                            </DataTemplate>
+                        </syncfusion:SfListView.GroupHeaderTemplate>
+
                     </syncfusion:SfListView>
                 </sfpullToRefresh:SfPullToRefresh.PullableContent>
             </sfpullToRefresh:SfPullToRefresh>
@@ -90,7 +96,7 @@
                        Style="{StaticResource NoMessagesLabelStyle}" />
                 <Grid.Triggers>
                     <DataTrigger TargetType="Grid"
-                                 Binding="{Binding Source={x:Reference SentList}, Path=ItemsSource.Count}"
+                                 Binding="{Binding Source={x:Reference sentList}, Path=ItemsSource.Count}"
                                  Value="0">
                         <Setter Property="IsVisible" Value="True" />
                     </DataTrigger>

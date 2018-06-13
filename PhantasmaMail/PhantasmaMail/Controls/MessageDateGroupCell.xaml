@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      x:Class="PhantasmaMail.Controls.MessageDateGroupCell"
+      xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+      x:Key="MessageDateGroupCell">
+
+    <Grid HorizontalOptions="FillAndExpand" Margin="20,5">
+        <ffimageloading:CachedImage Source="resource://PhantasmaMail.Resources.Images.bars.png" />
+
+        <Label Text="{Binding Key}"
+               HorizontalTextAlignment="Center"
+               FontFamily="{StaticResource OpenSansRegular}"
+               TextColor="{StaticResource LightGray}"
+               FontSize="{StaticResource LittleSize}" />
+    </Grid>
+</Grid>

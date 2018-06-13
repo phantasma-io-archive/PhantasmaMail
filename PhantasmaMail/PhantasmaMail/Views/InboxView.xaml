@@ -65,11 +65,11 @@
                                 <controls:InboxMessageCell />
                             </DataTemplate>
                         </syncfusion:SfListView.ItemTemplate>
-                        <!--<syncfusion:SfListView.GroupHeaderTemplate>
+                        <syncfusion:SfListView.GroupHeaderTemplate>
                             <DataTemplate>
-                                <Label Text="{Binding Key}" BackgroundColor="Teal" FontAttributes="Bold" TextColor="White"/>
+                               <controls:MessageDateGroupCell/>
                             </DataTemplate>
-                        </syncfusion:SfListView.GroupHeaderTemplate>-->
+                        </syncfusion:SfListView.GroupHeaderTemplate>
 
                         <!--<syncfusion:SfListView.RightSwipeTemplate>
                             <DataTemplate x:Name="RightSwipeTemplate">

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Globalization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -9,7 +8,6 @@ using Newtonsoft.Json;
 using PhantasmaMail.Models;
 using PhantasmaMail.Resources;
 using PhantasmaMail.Services.Db;
-using PhantasmaMail.Utils;
 using PhantasmaMail.ViewModels.Base;
 using Xamarin.Forms;
 
