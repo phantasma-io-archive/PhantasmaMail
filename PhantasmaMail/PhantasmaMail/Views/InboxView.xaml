@@ -67,7 +67,7 @@
                         </syncfusion:SfListView.ItemTemplate>
                         <syncfusion:SfListView.GroupHeaderTemplate>
                             <DataTemplate>
-                               <controls:MessageDateGroupCell/>
+                               <controls:MessageDateGroupCell/>                                
                             </DataTemplate>
                         </syncfusion:SfListView.GroupHeaderTemplate>
 

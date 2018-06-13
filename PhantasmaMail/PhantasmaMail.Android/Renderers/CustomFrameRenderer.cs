@@ -4,24 +4,28 @@ using PhantasmaMail.Droid.Renderers;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-//[assembly: ExportRenderer(typeof(CustomFrame), typeof(CustomFrameRenderer))]
+[assembly: ExportRenderer(typeof(CustomFrame), typeof(CustomFrameRenderer))]
 namespace PhantasmaMail.Droid.Renderers
 {
-    public class CustomFrameRenderer : Xamarin.Forms.Platform.Android.AppCompat.FrameRenderer
+    public class CustomFrameRenderer : FrameRenderer
     {
         public CustomFrameRenderer(Context ctx) : base(ctx)
         {
-            
+
         }
+
 
         protected override void OnElementChanged(ElementChangedEventArgs<Frame> e)
         {
             base.OnElementChanged(e);
             if (e.NewElement != null)
             {
-                Control.CardElevation = 10;
-                
-                //ViewGroup.SetBackgroundResource(Resource.Drawable.CustomFrameShadow);
+                int pL = ViewGroup.PaddingLeft;
+                int pT = ViewGroup.PaddingTop;
+                int pR = ViewGroup.PaddingRight;
+                int pB = ViewGroup.PaddingBottom;
+                ViewGroup.SetBackgroundResource(Resource.Drawable.shadow_frame);
+                ViewGroup.SetPadding(pL, pT, pR, pB);
             }
         }
     }

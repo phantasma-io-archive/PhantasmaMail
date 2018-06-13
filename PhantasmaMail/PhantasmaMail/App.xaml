@@ -20,7 +20,7 @@
             <Color x:Key="WhiteBackground">#E6E9EE</Color>
 
             <Color x:Key="GradientStartColor">#FAFAFA</Color>
-            <Color x:Key="GradientEndColor">#C0C0C0</Color>
+            <Color x:Key="GradientEndColor">#3FC0C0C0</Color>
 
             <x:String x:Key="TintIconColor">#A1ACB3</x:String>
             <x:String x:Key="TintUpArrowColor">#7ED321</x:String>

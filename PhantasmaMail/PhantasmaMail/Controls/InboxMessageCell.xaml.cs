@@ -13,7 +13,7 @@ namespace PhantasmaMail.Controls
         {
             InitializeComponent();
             //customFrame.On<iOS>().UseBlurEffect(BlurEffectStyle.Dark);
-            customFrame.On<Xamarin.Forms.PlatformConfiguration.Android>().SetElevation(20);
+            //customFrame.On<Xamarin.Forms.PlatformConfiguration.Android>().SetElevation(10);
         }
     }
 }
