@@ -4,6 +4,7 @@
     {
 		Inbox,
 		Sent,
+        Drafts,
 		Compose,
 		Important,
 		Trash,

@@ -9,6 +9,7 @@ using PhantasmaMail.Models;
 using PhantasmaMail.Resources;
 using PhantasmaMail.Services.Db;
 using PhantasmaMail.ViewModels.Base;
+using Rg.Plugins.Popup.Services;
 using Xamarin.Forms;
 
 namespace PhantasmaMail.ViewModels
@@ -22,11 +23,11 @@ namespace PhantasmaMail.ViewModels
             _db = phantasmaDb;
         }
 
-        public DateTime CurrentDateTime => DateTime.UtcNow;
-
-        public ICommand NavigateToInboxCommand => new Command(async () => await NavigateToInboxExecute());
+        public ICommand CloseComposeCommand => new Command(async () => await CloseComposeExecute());
         public ICommand SendMessageCommand => new Command(async () => await SendMessageExecute());
         public ICommand AttachFileCommand => new Command(async () => await AttachFileExecute());
+        public ICommand SaveDraftCommand => new Command(async () => await SaveDraftExecute());
+
 
         public override Task InitializeAsync(object navigationData)
         {
@@ -40,14 +41,13 @@ namespace PhantasmaMail.ViewModels
             return base.InitializeAsync(navigationData);
         }
 
-
-        private async Task NavigateToInboxExecute()
+        private async Task CloseComposeExecute()
         {
             if (IsBusy) return;
             try
             {
                 IsBusy = true;
-                await NavigationService.NavigateToAsync<InboxViewModel>();
+                await NavigationService.PopAllAsync(true);
             }
             catch (Exception ex)
             {
@@ -118,6 +118,34 @@ namespace PhantasmaMail.ViewModels
                 await DialogService.ShowAlertAsync(AppResource.Alert_SomethingWrong, AppResource.Alert_Error);
             }
 
+        }
+
+        private async Task SaveDraftExecute()
+        {
+            if (IsBusy) return;
+            try
+            {
+                IsBusy = true;
+                var draft = new DraftMessage
+                {
+                    Subject = Message.Subject,
+                    TextContent = Message.TextContent,
+                    ToInbox = Message.ToInbox
+                };
+                if (!await _db.AddMessage(draft)) // not saved
+                {
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                await DialogService.ShowAlertAsync(ex.Message, AppResource.Alert_Error);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
         private string SerializeAndHashMessage()

@@ -53,7 +53,7 @@ namespace PhantasmaMail.ViewModels
         {
             if (IsBusy) return;
             IsBusy = true;
-            await NavigationService.NavigateToAsync<ComposeViewModel>();
+            await NavigationService.NavigateToPopupAsync<ComposeViewModel>(true);
             IsBusy = false;
         }
 

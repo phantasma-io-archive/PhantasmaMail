@@ -8,7 +8,7 @@ namespace PhantasmaMail.Utils
     {
         public MessageDateGroupComparer()
         {
-            SortDirection = ListSortDirection.Descending;
+            SortDirection = ListSortDirection.Ascending;
         }
 
         public int Compare(GroupResult x, GroupResult y)

@@ -160,6 +160,15 @@ namespace PhantasmaMail.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Drafts.
+        /// </summary>
+        public static string MenuItem_Drafts {
+            get {
+                return ResourceManager.GetString("MenuItem_Drafts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Important.
         /// </summary>
         public static string MenuItem_Important {
@@ -237,6 +246,15 @@ namespace PhantasmaMail.Resources {
         public static string PageTitle_Inbox {
             get {
                 return ResourceManager.GetString("PageTitle_Inbox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Message.
+        /// </summary>
+        public static string PageTitle_Message {
+            get {
+                return ResourceManager.GetString("PageTitle_Message", resourceCulture);
             }
         }
         

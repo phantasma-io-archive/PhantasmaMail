@@ -28,5 +28,10 @@ namespace PhantasmaMail.Services.Navigation
 				throw new ArgumentException($"The type ${typeof(TViewModel)} its not a PopupPage type");
 			}
 		}
+
+	    public async Task PopAllAsync(bool animate)
+	    {
+	        await PopupNavigation.PopAllAsync(animate);
+	    }
 	}
 }

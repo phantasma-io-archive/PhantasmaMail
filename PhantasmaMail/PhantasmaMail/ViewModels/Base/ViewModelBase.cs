@@ -1,9 +1,6 @@
-﻿using System;
-using System.Diagnostics;
-using PhantasmaMail.Services.Dialog;
+﻿using PhantasmaMail.Services.Dialog;
 using PhantasmaMail.Services.Navigation;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using PhantasmaMail.Services.Authentication;
 using PhantasmaMail.Services.Phantasma;
 using Xamarin.Forms;

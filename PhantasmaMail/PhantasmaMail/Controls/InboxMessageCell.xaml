@@ -1,54 +1,54 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<Grid
+<controls:CustomFrame
     x:Class="PhantasmaMail.Controls.InboxMessageCell"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:effects="clr-namespace:PhantasmaMail.Effects"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:PhantasmaMail.Controls;assembly=PhantasmaMail"
-    x:Key="InboxMessageCell">
-    <controls:CustomFrame x:Name="customFrame">
-        <Grid RowSpacing="7" ColumnSpacing="0" Margin="20,10">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="1" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <!--<ColumnDefinition Width="10" />-->
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
+    x:Key="InboxMessageCell"
+    x:Name="customFrame">
+    <Grid RowSpacing="7" ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="1" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <!--<ColumnDefinition Width="10" />-->
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
 
-            <Label Grid.Row="0"
+        <Label Grid.Row="0"
                    Grid.Column="0"
                    Text="{Binding Subject}"
                    Style="{StaticResource MessageTitleStyle}" />
 
-            <Label Grid.Row="0"
+        <Label Grid.Row="0"
                    Grid.Column="1"
                    Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}', Converter={StaticResource UtcToLocalTimeConverter}}"
                    HorizontalOptions="End"
                    Style="{StaticResource MessageTextStyle}" 
                    FontSize="{StaticResource LittleSize}"/>
 
-            <Label Grid.Row="1"
+        <Label Grid.Row="1"
                    Grid.Column="0"
                    Grid.ColumnSpan="2"
                    Text="{Binding TextContent}"
                    Style="{StaticResource MessageTextStyle}">
-                <Label.Effects>
-                    <effects:MaxLinesEffect MaxLines="2" />
-                </Label.Effects>
-            </Label>
+            <Label.Effects>
+                <effects:MaxLinesEffect MaxLines="2" />
+            </Label.Effects>
+        </Label>
 
-            <BoxView Grid.Row="2"
+        <BoxView Grid.Row="2"
                      Grid.Column="0"
                      Grid.ColumnSpan="2"
                      BackgroundColor="{StaticResource SeparatorGray}" />
 
-            <Label Grid.Row="3"
+        <Label Grid.Row="3"
                    x:Name="BoxNameLabel"
                    Grid.Column="0"
                    Grid.ColumnSpan="2"
@@ -57,6 +57,5 @@
                    HorizontalOptions="EndAndExpand"
                    HorizontalTextAlignment="Start"
                    Style="{StaticResource MessageSenderStyle}" />
-        </Grid>
-    </controls:CustomFrame>
-</Grid>
+    </Grid>
+</controls:CustomFrame>

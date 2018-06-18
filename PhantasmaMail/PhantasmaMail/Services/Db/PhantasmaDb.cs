@@ -14,6 +14,7 @@ namespace PhantasmaMail.Services.Db
         {
             _connection = DependencyService.Get<ISQLite>().GetConnection();
             _connection.CreateTableAsync<StoreMessage>();
+            _connection.CreateTableAsync<DraftMessage>();
         }
 
         //READ
@@ -29,6 +30,12 @@ namespace PhantasmaMail.Services.Db
             return messages;
         }
 
+        public async Task<IEnumerable<DraftMessage>> GetDraftMessages()
+        {
+            var messages = await _connection.Table<DraftMessage>().ToListAsync();
+            return messages;
+        }
+
         //INSERT
         public async Task<bool> AddMessage(StoreMessage message)
         {
@@ -36,8 +43,20 @@ namespace PhantasmaMail.Services.Db
             return false;
         }
 
+        public async Task<bool> AddMessage(DraftMessage message)
+        {
+            if (await _connection.InsertAsync(message) > 0) return true;
+            return false;
+        }
+
         //DELETE
         public async Task<bool> DeleteMessage(StoreMessage message)
+        {
+            if (await _connection.DeleteAsync(message) > 0) return true;
+            return false;
+        }
+
+        public async Task<bool> DeleteMessage(DraftMessage message)
         {
             if (await _connection.DeleteAsync(message) > 0) return true;
             return false;

@@ -150,6 +150,9 @@
   <data name="MenuItem_Compose" xml:space="preserve">
     <value>Compose</value>
   </data>
+  <data name="MenuItem_Drafts" xml:space="preserve">
+    <value>Drafts</value>
+  </data>
   <data name="MenuItem_Important" xml:space="preserve">
     <value>Important</value>
   </data>
@@ -176,6 +179,9 @@
   </data>
   <data name="PageTitle_Inbox" xml:space="preserve">
     <value>Inbox</value>
+  </data>
+  <data name="PageTitle_Message" xml:space="preserve">
+    <value>Message</value>
   </data>
   <data name="PageTitle_Sent" xml:space="preserve">
     <value>Sent</value>

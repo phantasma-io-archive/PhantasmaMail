@@ -40,7 +40,7 @@ namespace PhantasmaMail.ViewModels
                 FromInbox = fromInbox;
                 FromOrTo = FromInbox ? "From: " : "To: ";
                 SelectedMessage = message;
-                
+
                 DaysAgo = MessageUtils.CalculateDays(message.Date.ToLocalTime());
             }
             return base.InitializeAsync(navigationData);
@@ -84,7 +84,7 @@ namespace PhantasmaMail.ViewModels
             }
         }
 
-       
+
         private async Task ForwardExecute()
         {
             await DialogService.ShowAlertAsync(AppResource.Alert_FeatureNotLive, AppResource.Alert_Error);
@@ -97,7 +97,7 @@ namespace PhantasmaMail.ViewModels
             try
             {
                 IsBusy = true;
-                await NavigationService.NavigateToAsync<ComposeViewModel>();
+                await NavigationService.NavigateToPopupAsync<ComposeViewModel>(true);
             }
             catch (Exception ex)
             {
@@ -130,7 +130,7 @@ namespace PhantasmaMail.ViewModels
 
         private async Task ReplyExecute()
         {
-            await NavigationService.NavigateToAsync<ComposeViewModel>(SelectedMessage.FromInbox);
+            await NavigationService.NavigateToPopupAsync<ComposeViewModel>(SelectedMessage.FromInbox,true);
         }
 
         #region Observable Properties

@@ -75,9 +75,9 @@ namespace PhantasmaMail.ViewModels
             });
             MenuItems.Add(new MenuItem
             {
-                Title = AppResource.MenuItem_Compose,
-                MenuItemType = MenuItemType.Compose,
-                ViewModelType = typeof(ComposeViewModel),
+                Title = AppResource.MenuItem_Drafts,
+                MenuItemType = MenuItemType.Drafts,
+                ViewModelType = typeof(DraftsViewModel),
                 IsEnabled = true
             });
             MenuItems.Add(new MenuItem

@@ -1,17 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<ContentPage
+<pages:PopupPage
     x:Class="PhantasmaMail.Views.ComposeView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:controls="clr-namespace:PhantasmaMail.Controls"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:extensions="clr-namespace:PhantasmaMail.MarkupExtensions"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
-    Title="{extensions:Translate PageTitle_Compose}"
-    BackgroundColor="{StaticResource WhiteBackground}">
-    <ContentPage.Resources>
+    BackgroundColor="{StaticResource WhiteBackground}"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    CloseWhenBackgroundIsClicked="False">
+    <pages:PopupPage.Resources>
         <ResourceDictionary>
 
             <Style x:Key="CustomEntryStyle" TargetType="xfx:XfxEntry">
@@ -22,11 +25,23 @@
             </Style>
 
         </ResourceDictionary>
-    </ContentPage.Resources>
-    <ContentPage.Content>
-        <Grid HorizontalOptions="FillAndExpand"
-              VerticalOptions="FillAndExpand"
-              Margin="20,20,20,10">
+    </pages:PopupPage.Resources>
+
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="1"
+            DurationIn="1000"
+            DurationOut="100"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True" />
+    </pages:PopupPage.Animation>
+
+    <pages:PopupPage.Content>
+        <Grid Margin="30">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
@@ -36,13 +51,13 @@
                                HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
                                Color="White" />
 
-            <Frame Grid.Row="0" IsClippedToBounds="True" 
-                   Margin="10,-5,10,1" Opacity="0.8" 
+            <Frame Grid.Row="0" IsClippedToBounds="True"
+                   Margin="10,-5,10,1" Opacity="0.8"
                    HasShadow="True"
                    CornerRadius="0" Padding="0" />
 
             <Frame Grid.Row="0"
-                   Padding="15"
+                   Padding="0"
                    Margin="0,10,0,0"
                    CornerRadius="0"
                    HasShadow="True"
@@ -52,28 +67,87 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
 
+                    <Grid Grid.Row="0" Margin="-5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+
+                        <ffimageloading:CachedImage Grid.Column="0"
+                                                    Grid.ColumnSpan="3"
+                                                    Source="TopBar.png"
+                                                    Aspect="AspectFill" />
+
+                        <ffimageloadingsvg:SvgCachedImage Grid.Column="0"
+                                                          Margin="15"
+                                                          VerticalOptions="Center"
+                                                          HorizontalOptions="Start"
+                                                          Source="X.svg"
+                                                          HeightRequest="22"
+                                                          WidthRequest="22">
+                            <ffimageloadingsvg:SvgCachedImage.Transformations>
+                                <fftransformations:TintTransformation EnableSolidColor="true"
+                                                                      HexColor="{StaticResource TintWhiteIconColor}" />
+                            </ffimageloadingsvg:SvgCachedImage.Transformations>
+                            <ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CloseComposeCommand}" />
+                            </ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
+                        </ffimageloadingsvg:SvgCachedImage>
+
+                        <Label Grid.Column="1"
+                               Text="{extensions:Translate PageTitle_Message}"
+                               VerticalTextAlignment="Center"
+                               HorizontalTextAlignment="Center"
+                               TextColor="White"
+                               FontFamily="{StaticResource OpenSansSemiBold}"
+                               FontSize="{StaticResource LargeSize}" />
+
+                        <ffimageloadingsvg:SvgCachedImage Grid.Column="2"
+                                                          Margin="15"
+                                                          VerticalOptions="Center"
+                                                          HorizontalOptions="End"
+                                                          Source="send.svg"
+                                                          HeightRequest="22"
+                                                          WidthRequest="22">
+                            <ffimageloadingsvg:SvgCachedImage.Transformations>
+                                <fftransformations:TintTransformation EnableSolidColor="true"
+                                                                      HexColor="{StaticResource TintWhiteIconColor}" />
+                            </ffimageloadingsvg:SvgCachedImage.Transformations>
+                            <ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SendMessageCommand}" />
+                            </ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
+                        </ffimageloadingsvg:SvgCachedImage>
+
+                    </Grid>
+
                     <!--TODO LOCALIZATION and STYLE-->
-                    <xfx:XfxEntry Grid.Row="0"
+                    <xfx:XfxEntry Grid.Row="1"
+                                  Margin="15,5"
                                   HorizontalOptions="FillAndExpand"
                                   Placeholder="To:"
                                   FloatingHintEnabled="True"
                                   Style="{StaticResource CustomEntryStyle}"
                                   Text="{Binding Message.ToInbox}" />
 
-                    <xfx:XfxEntry Grid.Row="1"
+                    <xfx:XfxEntry Grid.Row="2"
+                                  Margin="15,5"
                                   Style="{StaticResource CustomEntryStyle}"
                                   FloatingHintEnabled="True"
                                   Placeholder="Subject:"
                                   Text="{Binding Message.Subject}" />
 
-                    <controls:ExpandableEditor Grid.Row="2"
-                                               FontFamily="{StaticResource OpenSansRegular}"
-                                               TextColor="{StaticResource LightGray}"
-                                               FontSize="{StaticResource MidMediumSize}"
-                                               Text="{Binding Message.TextContent}" />
+                    <ScrollView Grid.Row="3" Margin="15,5">
+                        <controls:ExpandableEditor FontFamily="{StaticResource OpenSansRegular}"
+                                                   TextColor="{StaticResource LightGray}"
+                                                   FontSize="{StaticResource MidMediumSize}"
+                                                   Text="{Binding Message.TextContent}" />
+                    </ScrollView>
+
                 </Grid>
             </Frame>
 
@@ -130,5 +204,5 @@
             </Grid>
 
         </Grid>
-    </ContentPage.Content>
-</ContentPage>
+    </pages:PopupPage.Content>
+</pages:PopupPage>

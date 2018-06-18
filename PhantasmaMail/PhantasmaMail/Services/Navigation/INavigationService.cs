@@ -24,6 +24,8 @@ namespace PhantasmaMail.Services.Navigation
 
 		Task NavigateToPopupAsync<TViewModel>(object parameter, bool animate) where TViewModel : ViewModelBase;
 
-	    ViewModelBase GetCurrentViewModel();
+	    Task PopAllAsync(bool animate);
+
+        ViewModelBase GetCurrentViewModel();
 	}
 }

@@ -4,7 +4,7 @@ using PhantasmaMail.Droid.Renderers;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(CustomFrame), typeof(CustomFrameRenderer))]
+//[assembly: ExportRenderer(typeof(CustomFrame), typeof(CustomFrameRenderer))]
 namespace PhantasmaMail.Droid.Renderers
 {
     public class CustomFrameRenderer : FrameRenderer
@@ -25,6 +25,7 @@ namespace PhantasmaMail.Droid.Renderers
                 int pR = ViewGroup.PaddingRight;
                 int pB = ViewGroup.PaddingBottom;
                 ViewGroup.SetBackgroundResource(Resource.Drawable.shadow_frame);
+                //e.NewElement.Margin = new Thickness(20, 10);
                 ViewGroup.SetPadding(pL, pT, pR, pB);
             }
         }
