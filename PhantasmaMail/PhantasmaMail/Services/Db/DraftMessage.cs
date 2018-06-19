@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using System;
+using SQLite;
 
 namespace PhantasmaMail.Services.Db
 {
@@ -13,5 +14,7 @@ namespace PhantasmaMail.Services.Db
         public string Subject { get; set; }
 
         public string TextContent { get; set; }
+
+        public DateTime Date { get; set; }
     }
 }

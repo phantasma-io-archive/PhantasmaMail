@@ -177,6 +177,9 @@
   <data name="PageTitle_Compose" xml:space="preserve">
     <value>Compose</value>
   </data>
+  <data name="PageTitle_Drafts" xml:space="preserve">
+    <value>Drafts</value>
+  </data>
   <data name="PageTitle_Inbox" xml:space="preserve">
     <value>Inbox</value>
   </data>

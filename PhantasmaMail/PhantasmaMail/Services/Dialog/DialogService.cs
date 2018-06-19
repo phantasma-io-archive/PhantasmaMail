@@ -52,10 +52,29 @@ namespace PhantasmaMail.Services.Dialog
                 if (options == null) throw new ArgumentNullException(nameof(options));
 
                 if (!options.Any()) throw new ArgumentException("No options provided", nameof(options));
-
                 var result =
                     await UserDialogs.Instance.ActionSheetAsync(message, cancelLabel, null, buttons: options.ToArray());
 
+                return options.Contains(result)
+                    ? result
+                    : cancelLabel;
+            }
+            catch
+            {
+                return string.Empty;
+            }
+        }
+
+        public async Task<string> SelectActionAsync(string message, string title, string destructive, string cancelLabel,
+            IEnumerable<string> options)
+        {
+            try
+            {
+                if (options == null) throw new ArgumentNullException(nameof(options));
+
+                if (!options.Any()) throw new ArgumentException("No options provided", nameof(options));
+                var result =
+                    await UserDialogs.Instance.ActionSheetAsync(message, cancelLabel, destructive, buttons: options.ToArray());
                 return options.Contains(result)
                     ? result
                     : cancelLabel;

@@ -241,6 +241,15 @@ namespace PhantasmaMail.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Drafts.
+        /// </summary>
+        public static string PageTitle_Drafts {
+            get {
+                return ResourceManager.GetString("PageTitle_Drafts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Inbox.
         /// </summary>
         public static string PageTitle_Inbox {

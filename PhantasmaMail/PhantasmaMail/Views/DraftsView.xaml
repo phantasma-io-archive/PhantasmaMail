@@ -1,10 +1,85 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PhantasmaMail.Views.DraftsView">
+             xmlns:controls="clr-namespace:PhantasmaMail.Controls"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:extensions="clr-namespace:PhantasmaMail.MarkupExtensions"
+             xmlns:sfpullToRefresh="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms"
+             xmlns:behaviors="clr-namespace:PhantasmaMail.Behaviors;assembly=PhantasmaMail"
+             x:Class="PhantasmaMail.Views.DraftsView"
+             Title="{extensions:Translate PageTitle_Drafts}"
+             BackgroundColor="{StaticResource WhiteBackground}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="WriteEmail.png" Command="{Binding NewMessageCommand}" />
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
-      <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
-      </StackLayout>
-  </ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!--todo localization-->
+
+            <syncfusion:SfListView Margin="0,5"
+                        Grid.Row="0"
+                        IsBusy="{Binding IsBusy}"
+                        x:Name="draftsListView"
+                        AutoFitMode="Height"
+                        ItemsSource="{Binding DraftsList, Mode=TwoWay}"
+                        SelectedItem="{Binding MessageSelected}"
+                        SelectionBackgroundColor="{StaticResource GradientEndColor}"
+                        SelectionMode="Single"
+                        AllowSwiping="True"
+                        VerticalOptions="FillAndExpand">
+                <syncfusion:SfListView.Triggers>
+                    <DataTrigger TargetType="syncfusion:SfListView"
+                                         Binding="{Binding Source={x:Reference draftsListView}, Path=ItemsSource.Count}"
+                                         Value="0">
+                        <Setter Property="IsVisible" Value="False" />
+                    </DataTrigger>
+                </syncfusion:SfListView.Triggers>
+                <syncfusion:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <controls:DraftMessageCell />
+                    </DataTemplate>
+                </syncfusion:SfListView.ItemTemplate>
+            </syncfusion:SfListView>
+
+
+            <Grid Grid.Row="0"
+                  VerticalOptions="FillAndExpand"
+                  IsVisible="False" Margin="0,100"
+                  RowSpacing="35">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <ffimageloadingsvg:SvgCachedImage Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"
+                                                  Source="noemails.svg" HeightRequest="175"
+                                                  WidthRequest="175" IsVisible="True">
+                    <ffimageloadingsvg:SvgCachedImage.Transformations>
+                        <fftransformations:TintTransformation EnableSolidColor="true"
+                                                              HexColor="#9DADB5" />
+                    </ffimageloadingsvg:SvgCachedImage.Transformations>
+                </ffimageloadingsvg:SvgCachedImage>
+
+                <Label Grid.Row="1" HorizontalTextAlignment="Center"
+                       Text="You don't have any saved drafts."
+                       Style="{StaticResource NoMessagesLabelStyle}" />
+                <Grid.Triggers>
+                    <DataTrigger TargetType="Grid"
+                                 Binding="{Binding Source={x:Reference draftsListView}, Path=ItemsSource.Count}"
+                                 Value="0">
+                        <Setter Property="IsVisible" Value="True" />
+                    </DataTrigger>
+                </Grid.Triggers>
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>

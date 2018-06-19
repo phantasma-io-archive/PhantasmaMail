@@ -51,10 +51,21 @@ namespace PhantasmaMail.ViewModels
 
         private async Task NewMessageExecute()
         {
-            if (IsBusy) return;
-            IsBusy = true;
-            await NavigationService.NavigateToPopupAsync<ComposeViewModel>(true);
-            IsBusy = false;
+            try
+            {
+                if (IsBusy) return;
+                IsBusy = true;
+                await NavigationService.NavigateToPopupAsync<ComposeViewModel>(true);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
         private async Task MessageSelectedExecute(Message message)
@@ -141,8 +152,6 @@ namespace PhantasmaMail.ViewModels
                 IsBusy = false;
             }
         }
-
-
 
         //TODO lista vazia
         private void SearchExecute(string text)

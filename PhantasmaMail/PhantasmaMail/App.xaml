@@ -41,6 +41,7 @@
             <converters:ValueToColorConverter x:Key="ValueToColorConverter"/>
             <converters:AssetValueChangeToIconConverter x:Key="AssetValueChangeToIconConverter"/>
             <converters:UtcToLocalTimeConverter x:Key="UtcToLocalTimeConverter"/>
+            <converters:DraftMissingFieldsConverter x:Key="DraftMissingFieldsConverter"/>
 
             <!-- FONTS -->
 

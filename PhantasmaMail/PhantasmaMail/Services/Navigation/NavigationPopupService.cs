@@ -21,7 +21,7 @@ namespace PhantasmaMail.Services.Navigation
 
 			if (page is PopupPage)
 			{
-				await PopupNavigation.PushAsync(page as PopupPage, animate);
+				await PopupNavigation.Instance.PushAsync(page as PopupPage, animate);
 			}
 			else
 			{
@@ -31,7 +31,7 @@ namespace PhantasmaMail.Services.Navigation
 
 	    public async Task PopAllAsync(bool animate)
 	    {
-	        await PopupNavigation.PopAllAsync(animate);
+	        await PopupNavigation.Instance.PopAllAsync(animate);
 	    }
 	}
 }

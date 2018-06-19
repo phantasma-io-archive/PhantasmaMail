@@ -13,7 +13,6 @@ namespace PhantasmaMail.Services.Navigation
     {
         private readonly IAuthenticationService _authenticationService;
         protected readonly Dictionary<Type, Type> Mappings;
-
         protected Application CurrentApplication => Application.Current;
 
         public ViewModelBase GetCurrentViewModel()
@@ -134,7 +133,6 @@ namespace PhantasmaMail.Services.Navigation
                             CurrentApplication.MainPage = new CustomNavigationPage(page);
                         }
                     }
-
                     break;
             }
 

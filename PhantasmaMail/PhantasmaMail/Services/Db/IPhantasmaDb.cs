@@ -12,6 +12,8 @@ namespace PhantasmaMail.Services.Db
         Task<bool> AddMessage(StoreMessage message);
         Task<bool> AddMessage(DraftMessage message);
 
+        Task<bool> UpdateMessage(DraftMessage message);
+
         Task<bool> DeleteMessage(StoreMessage message);
         Task<bool> DeleteMessage(DraftMessage message);
     }

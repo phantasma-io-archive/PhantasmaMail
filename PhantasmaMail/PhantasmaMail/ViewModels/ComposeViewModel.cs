@@ -9,7 +9,6 @@ using PhantasmaMail.Models;
 using PhantasmaMail.Resources;
 using PhantasmaMail.Services.Db;
 using PhantasmaMail.ViewModels.Base;
-using Rg.Plugins.Popup.Services;
 using Xamarin.Forms;
 
 namespace PhantasmaMail.ViewModels
@@ -17,6 +16,7 @@ namespace PhantasmaMail.ViewModels
     public class ComposeViewModel : ViewModelBase
     {
         private readonly IPhantasmaDb _db;
+        private DraftMessage _draftMessage;
 
         public ComposeViewModel(IPhantasmaDb phantasmaDb)
         {
@@ -26,8 +26,6 @@ namespace PhantasmaMail.ViewModels
         public ICommand CloseComposeCommand => new Command(async () => await CloseComposeExecute());
         public ICommand SendMessageCommand => new Command(async () => await SendMessageExecute());
         public ICommand AttachFileCommand => new Command(async () => await AttachFileExecute());
-        public ICommand SaveDraftCommand => new Command(async () => await SaveDraftExecute());
-
 
         public override Task InitializeAsync(object navigationData)
         {
@@ -38,6 +36,19 @@ namespace PhantasmaMail.ViewModels
             {
                 Message.ToInbox = s;
             }
+            else if (navigationData is DraftMessage msg)
+            {
+                _draftMessage = msg;
+                var messageToCompose = new Message
+                {
+                    Subject = msg.Subject,
+                    ID = msg.ID,
+                    TextContent = msg.TextContent,
+                    ToInbox = msg.ToInbox
+                };
+                Message = messageToCompose;
+            }
+
             return base.InitializeAsync(navigationData);
         }
 
@@ -47,6 +58,57 @@ namespace PhantasmaMail.ViewModels
             try
             {
                 IsBusy = true;
+                if (!string.IsNullOrEmpty(Message.TextContent)
+                    || !string.IsNullOrEmpty(Message.Subject)
+                    || !string.IsNullOrEmpty(Message.ToInbox))
+                {
+                    //todo localization
+                    const string cancel = "Cancel";
+                    const string saveDraft = "Save Draft";
+                    const string deleteDraft = "Delete Draft";
+                    var options = new[] { saveDraft, deleteDraft };
+
+                    var choice = await DialogService.SelectActionAsync("Message", "", cancel, options);
+
+                    if (choice.Equals(cancel)) return;
+                    var draftsVm = Locator.Instance.Resolve<DraftsViewModel>();
+                    if (choice.Equals(saveDraft))
+                    {
+                        //todo save to drafts
+                        if (_draftMessage != null)
+                        {
+                            _draftMessage.Subject = Message.Subject;
+                            _draftMessage.TextContent = Message.TextContent;
+                            _draftMessage.ToInbox = Message.ToInbox;
+                            _draftMessage.Date = DateTime.UtcNow;
+                            await _db.UpdateMessage(_draftMessage);
+                            await draftsVm.RefreshList();
+                        }
+                        else
+                        {
+                            var newDraft = new DraftMessage
+                            {
+                                ID = Message.ID,
+                                Subject = Message.Subject,
+                                TextContent = Message.TextContent,
+                                ToInbox = Message.ToInbox,
+                                Date = DateTime.UtcNow
+                            };
+                            await _db.AddMessage(newDraft);
+                            await draftsVm.RefreshList();
+                        }
+                    }
+                    else
+                    {
+                        if (_draftMessage != null)
+                        {
+                            await _db.DeleteMessage(_draftMessage);
+
+                            draftsVm.DraftsList?.Remove(_draftMessage);
+                        }
+                    }
+                }
+
                 await NavigationService.PopAllAsync(true);
             }
             catch (Exception ex)
@@ -104,47 +166,15 @@ namespace PhantasmaMail.ViewModels
 
                 //store to db
                 var store = Message.ToStoreMessage();
-                if (store != null)
-                {
-                    await _db.AddMessage(store);
-                }
+                if (store != null) await _db.AddMessage(store);
 
                 await DialogService.ShowAlertAsync(
                     "Message sent! Use a block explorer to see your transaction: " + txHash, "Success");
-                await NavigationService.NavigateToAsync<InboxViewModel>();
+                await NavigationService.PopAllAsync(true);
             }
             else
             {
                 await DialogService.ShowAlertAsync(AppResource.Alert_SomethingWrong, AppResource.Alert_Error);
-            }
-
-        }
-
-        private async Task SaveDraftExecute()
-        {
-            if (IsBusy) return;
-            try
-            {
-                IsBusy = true;
-                var draft = new DraftMessage
-                {
-                    Subject = Message.Subject,
-                    TextContent = Message.TextContent,
-                    ToInbox = Message.ToInbox
-                };
-                if (!await _db.AddMessage(draft)) // not saved
-                {
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-                await DialogService.ShowAlertAsync(ex.Message, AppResource.Alert_Error);
-            }
-            finally
-            {
-                IsBusy = false;
             }
         }
 

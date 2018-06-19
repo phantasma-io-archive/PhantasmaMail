@@ -49,6 +49,12 @@ namespace PhantasmaMail.Services.Db
             return false;
         }
 
+        public async Task<bool> UpdateMessage(DraftMessage message)
+        {
+            if (await _connection.UpdateAsync(message) > 0) return true;
+            return false;
+        }
+
         //DELETE
         public async Task<bool> DeleteMessage(StoreMessage message)
         {
