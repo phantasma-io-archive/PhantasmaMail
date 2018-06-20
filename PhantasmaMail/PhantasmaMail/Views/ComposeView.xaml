@@ -33,8 +33,8 @@
             PositionOut="Center"
             ScaleIn="1.2"
             ScaleOut="1"
-            DurationIn="1000"
-            DurationOut="100"
+            DurationIn="500"
+            DurationOut="500"
             EasingIn="SinOut"
             EasingOut="SinIn"
             HasBackgroundAnimation="True" />
@@ -63,12 +63,11 @@
                    HasShadow="True"
                    HorizontalOptions="FillAndExpand"
                    VerticalOptions="FillAndExpand">
-                <Grid Margin="5" RowSpacing="5">
+                <Grid Margin="5">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
+
                     </Grid.RowDefinitions>
 
                     <Grid Grid.Row="0" Margin="-5">
@@ -126,32 +125,49 @@
                     </Grid>
 
                     <!--TODO LOCALIZATION and STYLE-->
-                    <xfx:XfxEntry Grid.Row="1"
-                                  Margin="15,5"
-                                  HorizontalOptions="FillAndExpand"
-                                  Placeholder="To:"
-                                  FloatingHintEnabled="True"
-                                  Style="{StaticResource CustomEntryStyle}"
-                                  Text="{Binding Message.ToInbox}" />
 
-                    <xfx:XfxEntry Grid.Row="2"
-                                  Margin="15,5"
-                                  Style="{StaticResource CustomEntryStyle}"
-                                  FloatingHintEnabled="True"
-                                  Placeholder="Subject:"
-                                  Text="{Binding Message.Subject}" />
+                    <ScrollView Grid.Row="1" 
+                                Margin="15,5">
+                        <StackLayout>
 
-                    <ScrollView Grid.Row="3" Margin="15,5">
-                        <controls:ExpandableEditor FontFamily="{StaticResource OpenSansRegular}"
-                                                   TextColor="{StaticResource LightGray}"
-                                                   FontSize="{StaticResource MidMediumSize}"
-                                                   Text="{Binding Message.TextContent}" />
+                            <xfx:XfxEntry Grid.Row="1"
+                                          x:Name="ToEntry"
+                                          Margin="0"
+                                          HorizontalOptions="FillAndExpand"
+                                          Placeholder="To:"
+                                          FloatingHintEnabled="True"
+                                          Style="{StaticResource CustomEntryStyle}"
+                                          Text="{Binding Message.ToInbox}" />
+
+                            <xfx:XfxEntry Grid.Row="2"
+                                          x:Name ="SubjectEntry"
+                                          Margin="0"
+                                          Style="{StaticResource CustomEntryStyle}"
+                                          FloatingHintEnabled="True"
+                                          Placeholder="Subject:"
+                                          Text="{Binding Message.Subject}" />
+
+                            <controls:ExpandableEditor VerticalOptions="FillAndExpand"
+                                                       Placeholder="Write your email here"
+                                                       x:Name="ContentEditor" 
+                                                       Focused="ContentEditor_OnFocused"
+                                                       Unfocused="ContentEditor_OnUnfocused"
+                                                       FontFamily="{StaticResource OpenSansRegular}"
+                                                       TextColor="{StaticResource LightGray}"
+                                                       FontSize="{StaticResource MidMediumSize}"
+                                                       BackgroundColor="Transparent" 
+                                                       HasRoundedCorner="False"
+                                                       PlaceholderColor ="{StaticResource LightGray}"
+                                                       Text="{Binding Message.TextContent}" />
+                        </StackLayout>
+
+
                     </ScrollView>
 
                 </Grid>
             </Frame>
 
-            <Grid Grid.Row="1" Margin="0,10" ColumnSpacing="35">
+            <Grid Grid.Row="1" Margin="0,10" ColumnSpacing="35" x:Name="IconGrid">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />

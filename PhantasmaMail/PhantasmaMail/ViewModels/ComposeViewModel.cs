@@ -30,7 +30,6 @@ namespace PhantasmaMail.ViewModels
         public override Task InitializeAsync(object navigationData)
         {
             Message = new Message();
-            FormattedDate = $"{DateTime.Now:f}";
 
             if (navigationData is string s)
             {
@@ -42,7 +41,6 @@ namespace PhantasmaMail.ViewModels
                 var messageToCompose = new Message
                 {
                     Subject = msg.Subject,
-                    ID = msg.ID,
                     TextContent = msg.TextContent,
                     ToInbox = msg.ToInbox
                 };
@@ -81,8 +79,7 @@ namespace PhantasmaMail.ViewModels
                             _draftMessage.TextContent = Message.TextContent;
                             _draftMessage.ToInbox = Message.ToInbox;
                             _draftMessage.Date = DateTime.UtcNow;
-                            await _db.UpdateMessage(_draftMessage);
-                            await draftsVm.RefreshList();
+                            await _db.UpdateMessage(_draftMessage);   
                         }
                         else
                         {
@@ -95,7 +92,6 @@ namespace PhantasmaMail.ViewModels
                                 Date = DateTime.UtcNow
                             };
                             await _db.AddMessage(newDraft);
-                            await draftsVm.RefreshList();
                         }
                     }
                     else
@@ -103,12 +99,10 @@ namespace PhantasmaMail.ViewModels
                         if (_draftMessage != null)
                         {
                             await _db.DeleteMessage(_draftMessage);
-
-                            draftsVm.DraftsList?.Remove(_draftMessage);
                         }
                     }
+                    await draftsVm.RefreshList();
                 }
-
                 await NavigationService.PopAllAsync(true);
             }
             catch (Exception ex)
@@ -219,20 +213,6 @@ namespace PhantasmaMail.ViewModels
                 OnPropertyChanged();
             }
         }
-
-        //todo remove
-        private string _formattedDate;
-
-        public string FormattedDate
-        {
-            get => _formattedDate;
-            set
-            {
-                _formattedDate = value;
-                OnPropertyChanged();
-            }
-        }
-
         #endregion
     }
 }

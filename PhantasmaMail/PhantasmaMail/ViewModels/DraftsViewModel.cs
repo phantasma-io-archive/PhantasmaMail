@@ -38,7 +38,7 @@ namespace PhantasmaMail.ViewModels
                 IsBusy = true;
                 var drafts = await _db.GetDraftMessages();
                 var draftMessages = drafts.OrderByDescending(msg => msg.Date).ToList();
-                DraftsList = draftMessages.Any() ? new ObservableCollection<DraftMessage>(draftMessages) : null;
+                DraftsList = draftMessages.Any() ? new ObservableCollection<DraftMessage>(draftMessages) : new ObservableCollection<DraftMessage>();
             }
             catch (Exception e)
             {
