@@ -8,10 +8,24 @@ using Xamarin.Forms;
 
 namespace PhantasmaMail.ViewModels
 {
+    public enum LoginEnum
+    {
+        Wif,
+        EncryptedKey,
+        Username
+    }
+
     public class LoginViewModel : ViewModelBase
     {
         public ICommand LoginCommand => new Command(async () => await LoginExecute());
-        public ICommand SwitchLoginCommand => new Command(SwithLoginExecute);
+        public ICommand SwitchLoginCommand => new Command<LoginEnum>(SwitchLoginExecute);
+
+
+        public override Task InitializeAsync(object navigationData)
+        {
+            LoginOption = LoginEnum.EncryptedKey;
+            return base.InitializeAsync(navigationData);
+        }
 
         private async Task LoginExecute()
         {
@@ -22,15 +36,21 @@ namespace PhantasmaMail.ViewModels
                 IsBusy = true;
                 // TODO LOGIN LOGIC
                 await Task.Delay(1000);
-                if (IsWif)
+                switch (LoginOption)
                 {
-                    if (!await AuthenticationService.LoginAsync(Wif))
-                        await DialogService.ShowAlertAsync("Invalid WIF", AppResource.Alert_Error);
-                }
-                else
-                {
-                    if (!await AuthenticationService.LoginAsync(EncryptedKey, Password))
-                        await DialogService.ShowAlertAsync("Invalid Encrypted Key/Password", AppResource.Alert_Error);
+                    case LoginEnum.Wif:
+                        if (!await AuthenticationService.LoginAsync(Wif))
+                            await DialogService.ShowAlertAsync("Invalid WIF", AppResource.Alert_Error);
+                        break;
+                    case LoginEnum.EncryptedKey:
+                        if (!await AuthenticationService.LoginAsync(EncryptedKey, Password))
+                            await DialogService.ShowAlertAsync("Invalid Encrypted Key/Password", AppResource.Alert_Error);
+                        break;
+                    case LoginEnum.Username: //TODO
+                        await DialogService.ShowAlertAsync("This is the least secure method to login. Use this option just to experiment the app, we do not advise to secure your funds here", "Info");
+                        if (!await AuthenticationService.LoginWithUsername(Username, UsernamePassword))
+                            await DialogService.ShowAlertAsync("Invalid Username/Password", AppResource.Alert_Error);
+                        break;
                 }
 
                 if (AuthenticationService.IsAuthenticated)
@@ -62,13 +82,24 @@ namespace PhantasmaMail.ViewModels
             }
         }
 
-        private void SwithLoginExecute()
+        private void SwitchLoginExecute(LoginEnum option)
         {
-            IsEncryptedKey = !IsEncryptedKey;
-            IsWif = !IsWif;
+            LoginOption = option;
         }
 
         #region Observable Properties
+
+        private LoginEnum _login;
+
+        public LoginEnum LoginOption
+        {
+            get => _login;
+            set
+            {
+                _login = value;
+                OnPropertyChanged();
+            }
+        }
 
         private string _wif;
 
@@ -109,31 +140,33 @@ namespace PhantasmaMail.ViewModels
             }
         }
 
-        private bool _isEncryptedKey = true;
+        private string _username;
 
-        public bool IsEncryptedKey
+        public string Username
         {
-            get => _isEncryptedKey;
+            get => _username;
             set
             {
-                if (_isEncryptedKey == value) return;
-                _isEncryptedKey = value;
+                if (_username == value) return;
+                _username = value;
                 OnPropertyChanged();
             }
         }
 
-        private bool _isWif;
+        private string _usernamePassword;
 
-        public bool IsWif
+        public string UsernamePassword
         {
-            get => _isWif;
+            get => _usernamePassword;
             set
             {
-                if (_isWif == value) return;
-                _isWif = value;
+                if (_usernamePassword == value) return;
+                _usernamePassword = value;
                 OnPropertyChanged();
             }
         }
+
+
 
         #endregion
     }

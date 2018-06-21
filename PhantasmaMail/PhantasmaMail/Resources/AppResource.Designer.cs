@@ -142,6 +142,15 @@ namespace PhantasmaMail.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Username.
+        /// </summary>
+        public static string Entry_Username_Text {
+            get {
+                return ResourceManager.GetString("Entry_Username_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to WIF.
         /// </summary>
         public static string Entry_WIF_Text {

@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using NeoModules.NEP6;
 using PhantasmaMail.Resources;
+using PhantasmaMail.Utils;
 
 namespace PhantasmaMail.Services.Authentication
 {
@@ -8,6 +9,17 @@ namespace PhantasmaMail.Services.Authentication
     {
         public bool IsAuthenticated { get; set; }
         public User AuthenticatedUser { get; set; }
+
+        public Task<bool> LoginWithUsername(string username, string password)
+        {
+            AuthenticatedUser = new User();
+            var pk = PasswordUtils.DeriveKey(username, password);
+            var account = AuthenticatedUser.InitializeUserWallet(pk);
+            if (account == null) throw new WalletException(AppResource.Alert_Wallet);
+
+            IsAuthenticated = true;
+            return Task.FromResult(true);
+        }
 
         public async Task<bool> LoginAsync(string encryptedKey, string password)
         {

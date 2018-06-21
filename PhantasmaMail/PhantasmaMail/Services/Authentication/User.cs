@@ -17,7 +17,7 @@ namespace PhantasmaMail.Services.Authentication
         public async Task<Account> InitializeUserWallet(string encryptedKey, string password)
         {
             var localWallet = new Wallet(WalletLabel); //todo make this persistent
-            WalletManager = new WalletManager(localWallet, AppSettings.RestService, AppSettings.RpcClient);
+            WalletManager = new WalletManager(AppSettings.RestService, AppSettings.RpcClient, localWallet);
             return
                 await WalletManager.ImportAccount(encryptedKey, password, AddressLabel);
         }
@@ -25,8 +25,15 @@ namespace PhantasmaMail.Services.Authentication
         public Account InitializeUserWallet(string wif)
         {
             var localWallet = new Wallet(WalletLabel); //todo make this persistent
-            WalletManager = new WalletManager(localWallet, AppSettings.RestService, AppSettings.RpcClient);
+            WalletManager = new WalletManager(AppSettings.RestService, AppSettings.RpcClient, localWallet);
             return WalletManager.ImportAccount(wif, AddressLabel);
+        }
+
+        public Account InitializeUserWallet(byte[] privKey)
+        {
+            var localWallet = new Wallet(WalletLabel); //todo make this persistent
+            WalletManager = new WalletManager(AppSettings.RestService, AppSettings.RpcClient,localWallet);
+            return WalletManager.ImportAccount(privKey, AddressLabel);
         }
 
         public Account GetDefaultAccount()

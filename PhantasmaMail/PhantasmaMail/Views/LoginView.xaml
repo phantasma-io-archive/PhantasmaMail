@@ -7,6 +7,7 @@
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
     xmlns:markupExtensions="clr-namespace:PhantasmaMail.MarkupExtensions;assembly=PhantasmaMail"
+    xmlns:viewModels="clr-namespace:PhantasmaMail.ViewModels;assembly=PhantasmaMail"
     BackgroundImage="BackgroundLogin.png">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -15,7 +16,7 @@
                    BasedOn="{StaticResource OpenSansSemiBoldLabelStyle}"
                    TargetType="Label">
                 <Setter Property="FontSize"
-                        Value="{StaticResource MediumSize}" />
+                        Value="{StaticResource MidMediumSize}" />
             </Style>
 
         </ResourceDictionary>
@@ -41,7 +42,9 @@
                    FontFamily="{StaticResource GeoMedium}"
                    HorizontalTextAlignment="Center" />
 
-            <Grid Grid.Row="3" VerticalOptions="EndAndExpand" IsVisible="{Binding IsBusy,Converter={StaticResource InverseBooleanConverter}}">
+            <Grid Grid.Row="3" 
+                  VerticalOptions="EndAndExpand" 
+                  IsVisible="{Binding IsBusy,Converter={StaticResource InverseBooleanConverter}}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
@@ -51,57 +54,203 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
 
-                <xfx:XfxEntry Style="{StaticResource LoginStyle}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                <!-- Encrypted Key-->
+                <xfx:XfxEntry Style="{StaticResource LoginStyle}" 
+                              Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
                               FloatingHintEnabled="True"
-                              IsVisible="{Binding IsEncryptedKey}"
+                              IsVisible="False"
                               HorizontalOptions="FillAndExpand"
                               Placeholder="{markupExtensions:Translate Entry_EncryptedKey_Text}" IsPassword="False"
-                              Text="{Binding EncryptedKey}" />
+                              Text="{Binding EncryptedKey}" >
+                    <xfx:XfxEntry.Triggers>
+                        <DataTrigger TargetType="xfx:XfxEntry" 
+                                     Binding="{Binding LoginOption}" 
+                                     Value="{x:Static viewModels:LoginEnum.EncryptedKey}">
+                            <Setter Property="IsVisible" Value="True" />
+                        </DataTrigger>
+                    </xfx:XfxEntry.Triggers>
+                </xfx:XfxEntry>
 
-                <xfx:XfxEntry Style="{StaticResource LoginStyle}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                <xfx:XfxEntry Style="{StaticResource LoginStyle}" 
+                              Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
                               FloatingHintEnabled="True"
-                              IsVisible="{Binding IsEncryptedKey, Converter={StaticResource InverseBooleanConverter}}"
-                              HorizontalOptions="FillAndExpand"
-                              Placeholder="{markupExtensions:Translate Entry_WIF_Text}" IsPassword="False"
-                              Text="{Binding Wif}" />
-
-                <xfx:XfxEntry Style="{StaticResource LoginStyle}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
-                              FloatingHintEnabled="True"
-                              IsVisible="{Binding IsEncryptedKey}"
+                              IsVisible="False"
                               HorizontalOptions="FillAndExpand"
                               Placeholder="{markupExtensions:Translate Entry_Password_Text}" IsPassword="True"
-                              Text="{Binding Password}" />
+                              Text="{Binding Password}" >
+                    <xfx:XfxEntry.Triggers>
+                        <DataTrigger TargetType="xfx:XfxEntry" 
+                                     Binding="{Binding LoginOption}" 
+                                     Value="{x:Static viewModels:LoginEnum.EncryptedKey}">
+                            <Setter Property="IsVisible" Value="True" />
+                        </DataTrigger>
+                    </xfx:XfxEntry.Triggers>
+                </xfx:XfxEntry>
 
-                <Button Text="Login" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0"
+                <!-- WIF -->
+                <xfx:XfxEntry Style="{StaticResource LoginStyle}" 
+                              Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                              FloatingHintEnabled="True"
+                              IsVisible="False"
+                              HorizontalOptions="FillAndExpand"
+                              Placeholder="{markupExtensions:Translate Entry_WIF_Text}" IsPassword="False"
+                              Text="{Binding Wif}" >
+                    <xfx:XfxEntry.Triggers>
+                        <DataTrigger TargetType="xfx:XfxEntry" 
+                                     Binding="{Binding LoginOption}" 
+                                     Value="{x:Static viewModels:LoginEnum.Wif}">
+                            <Setter Property="IsVisible" Value="True" />
+                        </DataTrigger>
+                    </xfx:XfxEntry.Triggers>
+                </xfx:XfxEntry>
+                
+                <!-- Username -->
+                <xfx:XfxEntry Style="{StaticResource LoginStyle}" 
+                              Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                              FloatingHintEnabled="True"
+                              IsVisible="False"
+                              HorizontalOptions="FillAndExpand"
+                              Placeholder="{markupExtensions:Translate Entry_Username_Text}" IsPassword="False"
+                              Text="{Binding Username}" >
+                    <xfx:XfxEntry.Triggers>
+                        <DataTrigger TargetType="xfx:XfxEntry" 
+                                     Binding="{Binding LoginOption}" 
+                                     Value="{x:Static viewModels:LoginEnum.Username}">
+                            <Setter Property="IsVisible" Value="True" />
+                        </DataTrigger>
+                    </xfx:XfxEntry.Triggers>
+                </xfx:XfxEntry>
+
+                <xfx:XfxEntry Style="{StaticResource LoginStyle}" 
+                              Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
+                              FloatingHintEnabled="True"
+                              IsVisible="False"
+                              HorizontalOptions="FillAndExpand"
+                              Placeholder="{markupExtensions:Translate Entry_Password_Text}" IsPassword="True"
+                              Text="{Binding UsernamePassword}" >
+                    <xfx:XfxEntry.Triggers>
+                        <DataTrigger TargetType="xfx:XfxEntry" 
+                                     Binding="{Binding LoginOption}" 
+                                     Value="{x:Static viewModels:LoginEnum.Username}">
+                            <Setter Property="IsVisible" Value="True" />
+                        </DataTrigger>
+                    </xfx:XfxEntry.Triggers>
+                </xfx:XfxEntry>
+
+             
+
+                <Button Text="Login" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="0"
                         VerticalOptions="EndAndExpand" Margin="1,8,1,6"
-                        HorizontalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand" 
+                        CornerRadius="6"
                         Style="{StaticResource ButtonStyle}"
-                        TextColor="#8AA8A3"
+                        TextColor="#2270B6"
                         Command="{Binding LoginCommand}" />
 
-                <Frame Padding="8" Grid.Row="3" Grid.Column="0" BackgroundColor="{Binding IsEncryptedKey, Converter={StaticResource LoginButtonBooleanToColorConverter}}" 
+                <Frame Padding="8" 
+                       Grid.Row="3" Grid.Column="0" 
+                       BackgroundColor="Transparent" 
                        HorizontalOptions="FillAndExpand" 
-                       HasShadow="False" BorderColor="Transparent" CornerRadius="6" Margin="5,0">
+                       HasShadow="False" 
+                       BorderColor="Transparent" 
+                       CornerRadius="6"
+                       Margin="5,0">
                     <Label Text="{markupExtensions:Translate Button_EncryptedKey}" 
                            Style="{StaticResource LoginOptionLabelStyle}"
-                           TextColor="{Binding IsEncryptedKey, Converter={StaticResource LoginTextBooleanToColorConverter}}" 
-                           HorizontalTextAlignment="Center"/>
+                           TextColor="White" 
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" 
+                                         Binding="{Binding LoginOption}" 
+                                         Value="{x:Static viewModels:LoginEnum.EncryptedKey}">
+                                <Setter Property="TextColor" Value="#2270B6" />
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+                    <Frame.Triggers>
+                        <DataTrigger TargetType="Frame" 
+                                     Binding="{Binding LoginOption}" 
+                                     Value="{x:Static viewModels:LoginEnum.EncryptedKey}">
+                            <Setter Property="BackgroundColor" Value="#FFFFFF" />
+                        </DataTrigger>
+                    </Frame.Triggers>
                     <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding SwitchLoginCommand}"/>
+                        <TapGestureRecognizer Command="{Binding SwitchLoginCommand}" 
+                                              CommandParameter="{x:Static viewModels:LoginEnum.EncryptedKey}"/>
                     </Frame.GestureRecognizers>
                 </Frame>
 
-                <Frame Padding="8" Grid.Row="3" Grid.Column="1" BackgroundColor="{Binding IsWif, Converter={StaticResource LoginButtonBooleanToColorConverter}}" 
+                <Frame Padding="8" 
+                       Grid.Row="3" Grid.Column="1" 
+                       BackgroundColor="Transparent" 
                        HorizontalOptions="FillAndExpand"
-                       HasShadow="False" OutlineColor="Transparent" CornerRadius="6" Margin="5,0">
+                       HasShadow="False" 
+                       BorderColor="Transparent" 
+                       CornerRadius="6"
+                       Margin="5,0">
                     <Label Text="{markupExtensions:Translate Button_WIF}" 
                            Style="{StaticResource LoginOptionLabelStyle}"
-                           TextColor="{Binding IsWif, Converter={StaticResource LoginTextBooleanToColorConverter}}" 
-                           HorizontalTextAlignment="Center" />
+                           TextColor="White" 
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" 
+                                         Binding="{Binding LoginOption}" 
+                                         Value="{x:Static viewModels:LoginEnum.Wif}">
+                                <Setter Property="TextColor" Value="#2270B6" />
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+                    <Frame.Triggers>
+                        <DataTrigger TargetType="Frame" 
+                                     Binding="{Binding LoginOption}" 
+                                     Value="{x:Static viewModels:LoginEnum.Wif}">
+                            <Setter Property="BackgroundColor" Value="#FFFFFF" />
+                        </DataTrigger>
+                    </Frame.Triggers>
                     <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding SwitchLoginCommand}"/>
+                        <TapGestureRecognizer Command="{Binding SwitchLoginCommand}" 
+                                              CommandParameter="{x:Static viewModels:LoginEnum.Wif}"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+
+                <Frame Padding="8" 
+                       Grid.Row="3" Grid.Column="2" 
+                       BackgroundColor="Transparent" 
+                       HorizontalOptions="FillAndExpand"
+                       HasShadow="False" 
+                       BorderColor="Transparent" 
+                       CornerRadius="6"
+                       Margin="5,0">
+                    <Label x:Name="wifLabel"
+                           Text="Username" 
+                           Style="{StaticResource LoginOptionLabelStyle}"
+                           TextColor="White" 
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" 
+                                         Binding="{Binding LoginOption}" 
+                                         Value="{x:Static viewModels:LoginEnum.Username}">
+                                <Setter Property="TextColor" Value="#2270B6" />
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+                    <Frame.Triggers>
+                        <DataTrigger TargetType="Frame" 
+                                     Binding="{Binding LoginOption}" 
+                                     Value="{x:Static viewModels:LoginEnum.Username}">
+                            <Setter Property="BackgroundColor" Value="#FFFFFF" />
+                        </DataTrigger>
+                    </Frame.Triggers>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SwitchLoginCommand}" 
+                                              CommandParameter="{x:Static viewModels:LoginEnum.Username}"/>
                     </Frame.GestureRecognizers>
                 </Frame>
 

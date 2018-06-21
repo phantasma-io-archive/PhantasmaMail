@@ -33,7 +33,7 @@ namespace PhantasmaMail.Utils
                 }
             }
 
-            if (hasSpecial)
+            if (!hasSpecial)
             {
                 throw new ArgumentException("Password must contain at least a number or other special character");
             }

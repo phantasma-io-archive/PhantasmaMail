@@ -11,7 +11,6 @@
     xmlns:extensions="clr-namespace:PhantasmaMail.MarkupExtensions"
     xmlns:sfpullToRefresh="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms"
     xmlns:behaviors="clr-namespace:PhantasmaMail.Behaviors;assembly=PhantasmaMail"
-    x:Name="InboxView"
     Title="{extensions:Translate PageTitle_Inbox}"
     BackgroundColor="{StaticResource WhiteBackground}">
 
