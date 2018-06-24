@@ -27,6 +27,8 @@ namespace PhantasmaMail.ViewModels
         public ICommand SendMessageCommand => new Command(async () => await SendMessageExecute());
         public ICommand AttachFileCommand => new Command(async () => await AttachFileExecute());
 
+        private DraftsViewModel DraftsVm => Locator.Instance.Resolve<DraftsViewModel>();
+
         public override Task InitializeAsync(object navigationData)
         {
             Message = new Message();
@@ -69,7 +71,6 @@ namespace PhantasmaMail.ViewModels
                     var choice = await DialogService.SelectActionAsync("Message", "", cancel, options);
 
                     if (choice.Equals(cancel)) return;
-                    var draftsVm = Locator.Instance.Resolve<DraftsViewModel>();
                     if (choice.Equals(saveDraft))
                     {
                         //todo save to drafts
@@ -101,7 +102,7 @@ namespace PhantasmaMail.ViewModels
                             await _db.DeleteMessage(_draftMessage);
                         }
                     }
-                    await draftsVm.RefreshList();
+                    await DraftsVm.RefreshList();
                 }
                 await NavigationService.PopAllAsync(true);
             }
@@ -161,6 +162,12 @@ namespace PhantasmaMail.ViewModels
                 //store to db
                 var store = Message.ToStoreMessage();
                 if (store != null) await _db.AddMessage(store);
+
+                if (_draftMessage != null)
+                {
+                    await _db.DeleteMessage(_draftMessage);
+                    await DraftsVm.RefreshList();
+                }
 
                 await DialogService.ShowAlertAsync(
                     "Message sent! Use a block explorer to see your transaction: " + txHash, "Success");

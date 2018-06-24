@@ -24,7 +24,7 @@
     <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
     <PackageReference Include="MaterialFormControls" Version="2018.2.22-pre1" />
     <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
-    <PackageReference Include="NeoModules.NEP6" Version="0.0.22-beta" />
+    <PackageReference Include="NeoModules.NEP6" Version="0.0.23-beta" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="PCLStorage" Version="1.0.2" />
     <PackageReference Include="Rg.Plugins.Popup" Version="1.1.4.145-pre" />
