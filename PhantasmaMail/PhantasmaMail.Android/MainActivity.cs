@@ -29,7 +29,6 @@ namespace PhantasmaMail.Droid
             CachedImageRenderer.Init(true);
             var ignore = typeof(SvgCachedImage);
             LoadApplication(new App());
-            XFGloss.Droid.Library.Init(this, bundle);
 		}
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)

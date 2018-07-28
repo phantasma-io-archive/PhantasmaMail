@@ -8,7 +8,9 @@
     xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
     xmlns:markupExtensions="clr-namespace:PhantasmaMail.MarkupExtensions;assembly=PhantasmaMail"
     xmlns:viewModels="clr-namespace:PhantasmaMail.ViewModels;assembly=PhantasmaMail"
-    BackgroundImage="BackgroundLogin.png">
+
+    BackgroundColor="Red">
+    
     <ContentPage.Resources>
         <ResourceDictionary>
 

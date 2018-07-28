@@ -7,6 +7,9 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using CarouselView.FormsPlugin.UWP;
+using Syncfusion.ListView.XForms.UWP;
+using Syncfusion.SfPicker.XForms.UWP;
+using Syncfusion.SfPullToRefresh.XForms.UWP;
 
 namespace PhantasmaMail.UWP
 {
@@ -44,7 +47,14 @@ namespace PhantasmaMail.UWP
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
                 List<Assembly> assembliesToInclude =
-                    new List<Assembly> { typeof(CarouselViewRenderer).GetTypeInfo().Assembly };
+                    new List<Assembly>
+                    {
+                        typeof(CarouselViewRenderer).GetTypeInfo().Assembly,
+                        typeof(SfPullToRefreshRenderer).GetTypeInfo().Assembly,
+                        typeof(SfListViewRenderer).GetTypeInfo().Assembly,
+                        typeof(SfPickerRenderer).GetTypeInfo().Assembly
+                    };
+
                 Xamarin.Forms.Forms.Init(e, assembliesToInclude);
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)

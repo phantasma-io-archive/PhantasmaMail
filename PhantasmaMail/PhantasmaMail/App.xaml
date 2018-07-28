@@ -46,98 +46,105 @@
             <OnPlatform x:Key="GeoMedium"
                         x:TypeArguments="x:String">
                 <On Platform="Android">Geo.otf#Geo</On>
+                <On Platform="UWP" Value="/Assets/Geo.otf#Geo" />
                 <On Platform="iOS">Geo</On>
             </OnPlatform>
 
             <OnPlatform x:Key="OpenSansRegular"
                         x:TypeArguments="x:String">
                 <On Platform="Android">OpenSans-Regular.ttf#OpenSans-Regular</On>
+                <On Platform="UWP" Value="/Assets/OpenSans-Regular.ttf#OpenSans-Regular" />
                 <On Platform="iOS">OpenSans-Regular</On>
             </OnPlatform>
 
             <OnPlatform x:Key="OpenSansSemiBold"
                         x:TypeArguments="x:String">
                 <On Platform="Android">OpenSans-SemiBold.ttf#OpenSans-SemiBold</On>
+                <On Platform="UWP" Value="/Assets/OpenSans-SemiBold.ttf#OpenSans-SemiBold" />
                 <On Platform="iOS">OpenSans-SemiBold</On>
             </OnPlatform>
 
             <OnPlatform x:Key="OpenSansLightItalic"
                         x:TypeArguments="x:String">
                 <On Platform="Android">OpenSans-LightItalic.ttf#OpenSans-LightItalic</On>
+                <On Platform="UWP" Value="/Assets/OpenSans-LightItalic.ttf#OpenSans-LightItalic" />
                 <On Platform="iOS">OpenSans-LightItalic</On>
             </OnPlatform>
 
             <OnPlatform x:Key="RobotoMedium"
                         x:TypeArguments="x:String">
                 <On Platform="Android">Roboto-Medium.ttf#Roboto-Medium</On>
+                <On Platform="UWP" Value="/Assets/Roboto-Medium.ttf#Roboto-Medium" />
                 <On Platform="iOS">Roboto-Medium</On>
             </OnPlatform>
 
             <OnPlatform x:Key="SFUITextRegular"
                         x:TypeArguments="x:String">
                 <On Platform="Android">SF UI Text Regular.ttf#SF UI Text Regular</On>
+                <On Platform="UWP" Value="/Assets/SF UI Text Regular.ttf#SF UI Text Regular" />
                 <On Platform="iOS">SF UI Text Regular</On>
             </OnPlatform>
 
             <OnPlatform x:Key="SFUITextSemibold"
                         x:TypeArguments="x:String">
                 <On Platform="Android">SF UI Text Semibold.ttf#SF UI Text Semibold</On>
+                <On Platform="UWP" Value="/Assets/SF UI Text Semibold.ttf#SF UI Text Semibold" />
                 <On Platform="iOS">SF UI Text Semibold</On>
             </OnPlatform>
 
             <OnPlatform x:Key="ExtraLittleSize"
                         x:TypeArguments="x:Double">
                 <On Platform="iOS">10</On>
-                <On Platform="Android, WinPhone">11</On>
+                <On Platform="Android, UWP">11</On>
             </OnPlatform>
 
 
             <OnPlatform x:Key="LittleSize"
                         x:TypeArguments="x:Double">
                 <On Platform="iOS">11</On>
-                <On Platform="Android, WinPhone">12</On>
+                <On Platform="Android, UWP">12</On>
             </OnPlatform>
 
             <OnPlatform x:Key="MidMediumSize"
                         x:TypeArguments="x:Double">
                 <On Platform="iOS">12</On>
-                <On Platform="Android, WinPhone">14</On>
+                <On Platform="Android, UWP">14</On>
             </OnPlatform>
 
             <OnPlatform x:Key="MediumSize"
                         x:TypeArguments="x:Double">
                 <On Platform="iOS">14</On>
-                <On Platform="Android, WinPhone">16</On>
+                <On Platform="Android, UWP">16</On>
             </OnPlatform>
 
             <OnPlatform x:Key="LargeSize"
                         x:TypeArguments="x:Double">
                 <On Platform="iOS">16</On>
-                <On Platform="Android, WinPhone">18</On>
+                <On Platform="Android, UWP">18</On>
             </OnPlatform>
 
             <OnPlatform x:Key="LargerSize"
                         x:TypeArguments="x:Double">
                 <On Platform="iOS">18</On>
-                <On Platform="Android, WinPhone">20</On>
+                <On Platform="Android, UWP">20</On>
             </OnPlatform>
 
             <OnPlatform x:Key="BigSize"
                         x:TypeArguments="x:Double">
                 <On Platform="iOS">20</On>
-                <On Platform="Android, WinPhone">24</On>
+                <On Platform="Android, UWP">24</On>
             </OnPlatform>
 
             <OnPlatform x:Key="ExtraBigSize"
                         x:TypeArguments="x:Double">
                 <On Platform="iOS">24</On>
-                <On Platform="Android, WinPhone">32</On>
+                <On Platform="Android, UWP">32</On>
             </OnPlatform>
 
             <OnPlatform x:Key="HugeSize"
                         x:TypeArguments="x:Double">
                 <On Platform="iOS">32</On>
-                <On Platform="Android, WinPhone">48</On>
+                <On Platform="Android, UWP">48</On>
             </OnPlatform>
             
 

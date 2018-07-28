@@ -2,7 +2,6 @@
 using System.IO;
 using System.Reflection;
 using NeoModules.Rest.DTOs;
-using NeoModules.Rest.Services;
 using Newtonsoft.Json;
 using PhantasmaMail.Services.Navigation;
 using PhantasmaMail.ViewModels;

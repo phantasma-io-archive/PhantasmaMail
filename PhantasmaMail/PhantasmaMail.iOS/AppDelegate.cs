@@ -30,10 +30,8 @@ namespace PhantasmaMail.iOS
             SfPickerRenderer.Init();
 
             SfListViewRenderer.Init();
-            XFGloss.iOS.Library.Init();
             CachedImageRenderer.Init();
             var ignore = typeof(SvgCachedImage);
-            XFGloss.iOS.Library.Init();
 
             LoadApplication(new App());
 
