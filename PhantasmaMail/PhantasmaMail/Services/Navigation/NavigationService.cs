@@ -120,7 +120,8 @@ namespace PhantasmaMail.Services.Navigation
                             mainPage.Detail = navigationPage;
                         }
 
-                        mainPage.IsPresented = false;
+                        var platform = Device.RuntimePlatform == Device.UWP;
+                        if (!platform) mainPage.IsPresented = false;
                     }
                     else
                     {

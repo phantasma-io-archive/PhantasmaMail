@@ -79,16 +79,27 @@
 
                         <ffimageloading:CachedImage Grid.Column="0"
                                                     Grid.ColumnSpan="3"
-                                                    Source="TopBar.png"
-                                                    Aspect="AspectFill" />
+                                                    Aspect="AspectFill" >
+                            <ffimageloading:CachedImage.Source>
+                                <OnPlatform x:TypeArguments="ImageSource">
+                                    <On Platform="Android, iOS" Value="TopBar.png" />
+                                    <On Platform="UWP" Value="Assets/TopBar.png" />
+                                </OnPlatform>
+                            </ffimageloading:CachedImage.Source>
+                        </ffimageloading:CachedImage>
 
                         <ffimageloadingsvg:SvgCachedImage Grid.Column="0"
                                                           Margin="15"
                                                           VerticalOptions="Center"
                                                           HorizontalOptions="Start"
-                                                          Source="X.svg"
                                                           HeightRequest="22"
                                                           WidthRequest="22">
+                            <ffimageloadingsvg:SvgCachedImage.Source>
+                                <OnPlatform x:TypeArguments="ImageSource">
+                                    <On Platform="Android, iOS" Value="X.svg" />
+                                    <On Platform="UWP" Value="Assets/X.svg" />
+                                </OnPlatform>
+                            </ffimageloadingsvg:SvgCachedImage.Source>
                             <ffimageloadingsvg:SvgCachedImage.Transformations>
                                 <fftransformations:TintTransformation EnableSolidColor="true"
                                                                       HexColor="{StaticResource TintWhiteIconColor}" />
@@ -110,9 +121,14 @@
                                                           Margin="15"
                                                           VerticalOptions="Center"
                                                           HorizontalOptions="End"
-                                                          Source="send.svg"
                                                           HeightRequest="22"
                                                           WidthRequest="22">
+                            <ffimageloadingsvg:SvgCachedImage.Source>
+                                <OnPlatform x:TypeArguments="ImageSource">
+                                    <On Platform="Android, iOS" Value="send.svg" />
+                                    <On Platform="UWP" Value="Assets/send.svg" />
+                                </OnPlatform>
+                            </ffimageloadingsvg:SvgCachedImage.Source>
                             <ffimageloadingsvg:SvgCachedImage.Transformations>
                                 <fftransformations:TintTransformation EnableSolidColor="true"
                                                                       HexColor="{StaticResource TintWhiteIconColor}" />
@@ -161,7 +177,7 @@
                                                        Text="{Binding Message.TextContent}" />
                         </StackLayout>
 
-     
+
                     </ScrollView>
 
                 </Grid>
@@ -180,9 +196,14 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     <ffimageloadingsvg:SvgCachedImage VerticalOptions="End" HorizontalOptions="Start"
-                                                      Source="arrow.svg"
                                                       Grid.Column="0" HeightRequest="20"
                                                       WidthRequest="28">
+                        <ffimageloadingsvg:SvgCachedImage.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android, iOS" Value="arrow.svg" />
+                                <On Platform="UWP" Value="Assets/arrow.svg" />
+                            </OnPlatform>
+                        </ffimageloadingsvg:SvgCachedImage.Source>
                         <ffimageloadingsvg:SvgCachedImage.Transformations>
                             <fftransformations:TintTransformation EnableSolidColor="true"
                                                                   HexColor="{StaticResource TintIconColor}" />
@@ -202,9 +223,14 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     <ffimageloadingsvg:SvgCachedImage VerticalOptions="End" HorizontalOptions="Start"
-                                                      Source="paperclip.svg"
                                                       Grid.Column="0" HeightRequest="20"
                                                       WidthRequest="28">
+                        <ffimageloadingsvg:SvgCachedImage.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android, iOS" Value="paperclip.svg" />
+                                <On Platform="UWP" Value="Assets/paperclip.svg" />
+                            </OnPlatform>
+                        </ffimageloadingsvg:SvgCachedImage.Source>
                         <ffimageloadingsvg:SvgCachedImage.Transformations>
                             <fftransformations:TintTransformation EnableSolidColor="true"
                                                                   HexColor="{StaticResource TintIconColor}" />

@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Extensions\ColorExtension.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -202,6 +203,12 @@
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Assets\ic_receive.png" />
+    <Content Include="Assets\ic_send.png" />
+    <Content Include="Assets\ic_wallet_balance.png" />
+    <Content Include="Assets\ic_wallet_receive.png" />
+    <Content Include="Assets\ic_wallet_send.png" />
+    <Content Include="Assets\ic_wallet_transactions.png" />
     <Content Include="Assets\inbox.svg">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>

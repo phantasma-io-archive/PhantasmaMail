@@ -6,6 +6,7 @@ using CarouselView.FormsPlugin.UWP;
 using PhantasmaMail;
 using FFImageLoading.Forms.Platform;
 using FFImageLoading.Svg.Forms;
+using PhantasmaMail.UWP.Extensions;
 using Syncfusion.ListView.XForms.UWP;
 using Syncfusion.SfPicker.XForms.UWP;
 using Syncfusion.SfPullToRefresh.XForms.UWP;
@@ -41,10 +42,10 @@ namespace PhantasmaMail.UWP
             if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.ApplicationView"))
             {
                 var titleBar = ApplicationView.GetForCurrentView().TitleBar;
+                
                 if (titleBar != null)
                 {
-                    titleBar.BackgroundColor = (Color)App.Current.Resources["NativeAccentColor"];
-                    titleBar.ButtonBackgroundColor = (Color)App.Current.Resources["NativeAccentColor"];
+                    titleBar.BackgroundColor = Xamarin.Forms.Color.FromHex("#1976D2").ToUwp();
                 }
             }
 

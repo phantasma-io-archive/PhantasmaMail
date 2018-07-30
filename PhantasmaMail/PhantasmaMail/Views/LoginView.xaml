@@ -8,9 +8,14 @@
     xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
     xmlns:markupExtensions="clr-namespace:PhantasmaMail.MarkupExtensions;assembly=PhantasmaMail"
     xmlns:viewModels="clr-namespace:PhantasmaMail.ViewModels;assembly=PhantasmaMail"
+    xmlns:system="clr-namespace:System;assembly=netstandard">
+    <ContentPage.BackgroundImage>
+        <OnPlatform x:TypeArguments="system:String">
+            <On Platform="Android, iOS" Value="BackgroundLogin.png" />
+            <On Platform="UWP" Value="Assets/BackgroundLogin.png" />
+        </OnPlatform>
+    </ContentPage.BackgroundImage>
 
-    BackgroundColor="Red">
-    
     <ContentPage.Resources>
         <ResourceDictionary>
 

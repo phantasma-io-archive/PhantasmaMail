@@ -40,6 +40,7 @@
             <converters:AssetValueChangeToIconConverter x:Key="AssetValueChangeToIconConverter"/>
             <converters:UtcToLocalTimeConverter x:Key="UtcToLocalTimeConverter"/>
             <converters:DraftMissingFieldsConverter x:Key="DraftMissingFieldsConverter"/>
+            <converters:ImageSourceUwpConverter x:Key="ImageSourceUwpConverter"/>
 
             <!-- FONTS -->
 

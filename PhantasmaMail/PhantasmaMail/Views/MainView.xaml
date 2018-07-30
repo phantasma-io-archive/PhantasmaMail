@@ -4,12 +4,20 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:PhantasmaMail.Views;assembly=PhantasmaMail"
+    xmlns:system="clr-namespace:System;assembly=netstandard"
     Title="Phantasma Mail"
-    MasterBehavior="Popover">
+    MasterBehavior="Popover" >
     <MasterDetailPage.Master>
-        <views:MenuView BindingContext="{Binding MenuViewModel}" BackgroundColor="Transparent" BackgroundImage="BackgroundHamburguer"/>
+        <views:MenuView BindingContext="{Binding MenuViewModel}" BackgroundColor="Transparent"/>
     </MasterDetailPage.Master>
+    <MasterDetailPage.BackgroundImage>
+        <OnPlatform x:TypeArguments="system:String">
+            <On Platform="Android, iOS" Value="BackgroundHamburguer.png" />
+            <On Platform="UWP" Value="//Assets/BackgroundHamburguer.png" />
+        </OnPlatform>
+    </MasterDetailPage.BackgroundImage>
     <MasterDetailPage.Detail>
-        <ContentPage/>
+        <ContentPage 
+            BackgroundColor="Transparent" />
     </MasterDetailPage.Detail>
 </MasterDetailPage>

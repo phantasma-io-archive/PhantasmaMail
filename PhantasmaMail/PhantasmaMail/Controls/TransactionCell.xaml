@@ -30,7 +30,7 @@
                                         Grid.RowSpan="3"
                                         HorizontalOptions="Center"
                                         VerticalOptions="Center"
-                                        Source="{Binding ImagePath}"
+                                        Source="{Binding ImagePath, Converter={StaticResource ImageSourceUwpConverter}}"
                                         WidthRequest="35"
                                         HeightRequest="35"
                                         Aspect="AspectFill">

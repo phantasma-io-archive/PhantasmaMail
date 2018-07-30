@@ -54,7 +54,7 @@
                                             Margin="0,0,15,0"
                                             HorizontalOptions="Center"
                                             VerticalOptions="Center"
-                                            Source="{Binding ImagePath}"
+                                            Source="{Binding ImagePath, Converter={StaticResource ImageSourceUwpConverter}}"
                                             WidthRequest="35"
                                             HeightRequest="35"
                                             Aspect="AspectFill">
