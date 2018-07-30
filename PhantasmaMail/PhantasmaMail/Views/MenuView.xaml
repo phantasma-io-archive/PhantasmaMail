@@ -9,6 +9,7 @@
     xmlns:templates="clr-namespace:PhantasmaMail.Controls"
     xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    xmlns:system="clr-namespace:System;assembly=netstandard"
     x:Name="Menu"
     Title=" ">
     <ContentPage.Resources>
@@ -22,6 +23,11 @@
 
         </ResourceDictionary>
     </ContentPage.Resources>
+    <ContentPage.BackgroundImage>
+        <OnPlatform x:TypeArguments="system:String">
+            <On Platform="UWP" Value="Assets/BackgroundHamburguer.png" />
+        </OnPlatform>
+    </ContentPage.BackgroundImage>
     <ContentPage.Content>
         <Grid Margin="10,20" BackgroundColor="Transparent">
             <Grid.RowDefinitions>

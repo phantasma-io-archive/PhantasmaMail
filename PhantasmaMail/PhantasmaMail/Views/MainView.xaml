@@ -13,7 +13,6 @@
     <MasterDetailPage.BackgroundImage>
         <OnPlatform x:TypeArguments="system:String">
             <On Platform="Android, iOS" Value="BackgroundHamburguer.png" />
-            <On Platform="UWP" Value="//Assets/BackgroundHamburguer.png" />
         </OnPlatform>
     </MasterDetailPage.BackgroundImage>
     <MasterDetailPage.Detail>

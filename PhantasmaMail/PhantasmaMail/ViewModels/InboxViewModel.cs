@@ -44,9 +44,9 @@ namespace PhantasmaMail.ViewModels
 
         public override async Task InitializeAsync(object navigationData)
         {
-            //DialogService.ShowLoading();
+            DialogService.ShowLoading();
             await RefreshExecute();
-            //DialogService.HideLoading();
+            DialogService.HideLoading();
         }
 
         private async Task NewMessageExecute()
