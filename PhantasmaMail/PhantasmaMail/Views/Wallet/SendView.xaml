@@ -54,9 +54,14 @@
                         <ffimageloadingsvg:SvgCachedImage Grid.Row="0"
                                                           VerticalOptions="Start" 
                                                           HorizontalOptions="End"
-                                                          Source="camera.svg"
                                                           Grid.Column="0" HeightRequest="20"
                                                           WidthRequest="20">
+                            <ffimageloadingsvg:SvgCachedImage.Source>
+                                <OnPlatform x:TypeArguments="ImageSource">
+                                    <On Platform="Android, iOS" Value="camera.svg" />
+                                    <On Platform="UWP" Value="Assets/camera.svg" />
+                                </OnPlatform>
+                            </ffimageloadingsvg:SvgCachedImage.Source>
                             <ffimageloadingsvg:SvgCachedImage.Transformations>
                                 <fftransformations:TintTransformation EnableSolidColor="true"
                                                                       HexColor="{StaticResource TintIconColor}" />

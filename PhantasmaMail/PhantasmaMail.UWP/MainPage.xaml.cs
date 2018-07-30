@@ -2,8 +2,10 @@
 using Windows.Foundation.Metadata;
 using Windows.UI;
 using Windows.UI.ViewManagement;
+using CarouselView.FormsPlugin.UWP;
 using PhantasmaMail;
 using FFImageLoading.Forms.Platform;
+using FFImageLoading.Svg.Forms;
 using Syncfusion.ListView.XForms.UWP;
 using Syncfusion.SfPicker.XForms.UWP;
 using Syncfusion.SfPullToRefresh.XForms.UWP;
@@ -22,7 +24,11 @@ namespace PhantasmaMail.UWP
             CachedImageRenderer.Init();
             SfPullToRefreshRenderer.Init();
             SfListViewRenderer.Init();
+            CarouselViewRenderer.Init();
+            CachedImageRenderer.Init();
+            var ignore = typeof(SvgCachedImage);
             SfPickerRenderer.Init();
+            Rg.Plugins.Popup.Popup.Init();
             LoadApplication(new PhantasmaMail.App());
             NativeCustomize();
         }

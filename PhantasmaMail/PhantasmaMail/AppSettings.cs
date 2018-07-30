@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using NeoModules.JsonRpc.Client;
-using NeoModules.Rest.DTOs;
+using NeoModules.Rest.DTOs.NeoNotifications;
 using NeoModules.Rest.Services;
 using NeoModules.RPC;
 using Newtonsoft.Json;
@@ -16,6 +15,7 @@ namespace PhantasmaMail
     public static class AppSettings
     {
         public static INeoRestService RestService = new NeoScanRestService(NeoScanNet.MainNet);
+        public static NotificationsService NotificationsService = new NotificationsService();
 
         //public static RpcClient RpcClient = new RpcClient(new Uri("http://seed2.aphelion-neo.com:10332"));
         public static RpcClient RpcClient = new RpcClient(new Uri("http://seed4.aphelion-neo.com:10332"));
@@ -25,7 +25,7 @@ namespace PhantasmaMail
         //Transactions
         public static string NeoScanUrlTransactions = "https://neoscan.io/transaction/";
 
-        public static TokenList TokenList { get; set; }
+        public static TokenResult TokenList { get; set; }
 
         public static bool UseEncryption { get; set; } = false; //todo
 

@@ -4,13 +4,12 @@ using System.Threading.Tasks;
 using NeoModules.Core;
 using NeoModules.KeyPairs;
 using NeoModules.NEP6;
-using NeoModules.Rest.DTOs;
+using NeoModules.Rest.DTOs.NeoNotifications;
+using NeoModules.Rest.DTOs.NeoScan;
 using NeoModules.RPC.DTOs;
 using NeoModules.RPC.Services;
-using Newtonsoft.Json;
 using PhantasmaMail.Services.Authentication;
 using PhantasmaMail.ViewModels.Base;
-using Transaction = NeoModules.Rest.DTOs.Transaction;
 
 namespace PhantasmaMail.Services
 {
@@ -46,10 +45,10 @@ namespace PhantasmaMail.Services
             return AddressBalance.FromJson(balance);
         }
 
-        public async Task<TokenList> GetAllNep5Tokens()
+        public async Task<TokenResult> GetAllNep5Tokens()
         {
-            var token = await AppSettings.RestService.GetAllTokens();
-            return JsonConvert.DeserializeObject<TokenList>(token);
+            var result = await AppSettings.NotificationsService.GetTokens();
+            return result;
         }
 
         public async Task<List<AbstractEntry>> GetTransactionHistory()

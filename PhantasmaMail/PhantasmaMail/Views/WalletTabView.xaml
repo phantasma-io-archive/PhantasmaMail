@@ -10,9 +10,9 @@
     BarTextColor="{StaticResource DarkBlueGreen}"
     FixedMode="True">
 
-    <local:WalletView Icon="ic_wallet_balance.png" />
-    <local:SendView Icon="ic_wallet_send.png" />
-    <local:ReceiveView Icon="ic_wallet_receive.png" />
-    <local:TransactionHistoryView Icon="ic_wallet_transactions.png" />
+    <local:WalletView Icon="ic_wallet_balance.png" Title="Balance"/>
+    <local:SendView Icon="ic_wallet_send.png" Title ="Send"/>
+    <local:ReceiveView Icon="ic_wallet_receive.png" Title="Receive"/>
+    <local:TransactionHistoryView Icon="ic_wallet_transactions.png" Title="Transactions" />
 
 </xf:BottomBarPage>

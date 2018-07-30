@@ -52,6 +52,7 @@ namespace PhantasmaMail.ViewModels
                             await DialogService.ShowAlertAsync("Invalid Username/Password", AppResource.Alert_Error);
                         break;
                 }
+                await Task.Delay(500);
 
                 if (AuthenticationService.IsAuthenticated)
                 {

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
-using NeoModules.Rest.DTOs;
+using NeoModules.Rest.DTOs.NeoNotifications;
 using Newtonsoft.Json;
 using PhantasmaMail.Services.Navigation;
 using PhantasmaMail.ViewModels;
 using PhantasmaMail.ViewModels.Base;
-using Xamarin.Essentials;
+using Syncfusion.Licensing;
 using Xamarin.Forms.Xaml;
 using Application = Xamarin.Forms.Application;
 
@@ -18,6 +18,9 @@ namespace PhantasmaMail
     {
         public App()
         {
+            //Register Syncfusion license
+            SyncfusionLicenseProvider.RegisterLicense("MTEyMThAMzEzNjJlMzIyZTMwS2FEWitRbksreDlYUFlrcnNtT0pUSnQrY0pBcE1oUDRMUjBuWXZ1R1dJaz0=");
+
             InitializeComponent();
             BuildDependencies();
             InitNavigation();
@@ -45,7 +48,7 @@ namespace PhantasmaMail
             using (var reader = new StreamReader(stream ?? throw new InvalidOperationException()))
             {
                 var json = reader.ReadToEnd();
-                var rootobject = JsonConvert.DeserializeObject<TokenList>(json);
+                var rootobject = JsonConvert.DeserializeObject<TokenResult>(json);
 
                 AppSettings.TokenList = rootobject;
             }

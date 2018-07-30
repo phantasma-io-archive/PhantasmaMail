@@ -8,6 +8,7 @@ using System.Windows.Input;
 using NeoModules.JsonRpc.Client;
 using NeoModules.KeyPairs;
 using NeoModules.Rest.DTOs;
+using NeoModules.Rest.DTOs.NeoNotifications;
 using PhantasmaMail.Models;
 using PhantasmaMail.Resources;
 using PhantasmaMail.Services;
@@ -153,8 +154,7 @@ namespace PhantasmaMail.ViewModels
                     default: //NEP5 tokens
                         {
                             var tokenBalance = (decimal)item.Amount / 100000000; //todo decimals
-                            var details = AppSettings.TokenList.Results
-                                .SingleOrDefault(result => result.Token.Name == item.Asset)?.Token;
+                            var details = AppSettings.TokenList.Results.SingleOrDefault(result => result.Token.Name == item.Asset)?.Token;
 
                             var tokenId = CoinInfoUtils.GetIDForSymbol(details?.Symbol);
                             var priceInfo = await CoinInfoUtils.GetMarketPrice(tokenId);

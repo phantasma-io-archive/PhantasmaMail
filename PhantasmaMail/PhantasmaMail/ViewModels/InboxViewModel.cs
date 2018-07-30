@@ -44,9 +44,9 @@ namespace PhantasmaMail.ViewModels
 
         public override async Task InitializeAsync(object navigationData)
         {
-            DialogService.ShowLoading();
+            //DialogService.ShowLoading();
             await RefreshExecute();
-            DialogService.HideLoading();
+            //DialogService.HideLoading();
         }
 
         private async Task NewMessageExecute()
@@ -163,10 +163,11 @@ namespace PhantasmaMail.ViewModels
             }
             else
             {
-                var newList = new List<Message>(_fullInboxList.Where(msg => msg.TextContent.Contains(text)
-                                                                       || msg.ToInbox.Contains(text)
-                                                                       || msg.Subject.Contains(text)
-                                                                       || msg.FromInbox.Contains(text)));
+                var newList = new List<Message>(_fullInboxList.Where(msg => msg.TextContent != null
+                                                                            && (msg.TextContent.Contains(text)
+                                                                            || msg.ToInbox.Contains(text)
+                                                                            || msg.Subject.Contains(text)
+                                                                            || msg.FromInbox.Contains(text))));
                 InboxList = new ObservableCollection<Message>(newList);
             }
         }

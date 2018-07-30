@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NeoModules.Core;
+using NeoModules.KeyPairs;
 using NeoModules.NEP6;
 using NeoModules.NEP6.Models;
 using NeoModules.RPC;
@@ -74,7 +75,7 @@ namespace PhantasmaMail.Services.Phantasma
             if (string.IsNullOrEmpty(content)) return string.Empty;
 
             var addressScriptHash = result.Stack[0].Value.ToString().HexToBytes();
-            var address = Wallet.ToAddress(new UInt160(addressScriptHash));
+            var address = new UInt160(addressScriptHash).ToAddress();
 
             return address;
         }

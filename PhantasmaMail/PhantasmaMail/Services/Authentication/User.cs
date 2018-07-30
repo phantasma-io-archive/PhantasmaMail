@@ -45,7 +45,7 @@ namespace PhantasmaMail.Services.Authentication
         {
             if (WalletManager == null) return string.Empty;
             var account = WalletManager.GetDefaultAccount();
-            var address = Wallet.ToAddress(account.Address);
+            var address = account.Address.ToAddress();
             return address;
         }
 

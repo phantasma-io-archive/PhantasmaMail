@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using NeoModules.Core;
-using NeoModules.NEP6.Models;
+using NeoModules.KeyPairs;
 using Xamarin.Forms;
 
 namespace PhantasmaMail.Converters
@@ -12,7 +12,7 @@ namespace PhantasmaMail.Converters
         {
             if (value == null) return "";
             var scriptHash = value as UInt160;
-            return Wallet.ToAddress(scriptHash);
+            return scriptHash.ToAddress();
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

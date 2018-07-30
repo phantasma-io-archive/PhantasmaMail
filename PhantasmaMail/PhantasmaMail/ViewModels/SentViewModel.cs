@@ -134,10 +134,11 @@ namespace PhantasmaMail.ViewModels
             }
             else
             {
-                var newList = new List<Message>(_fullSentList.Where(msg => msg.TextContent.Contains(text)
+                var newList = new List<Message>(_fullSentList.Where(msg => msg.TextContent != null
+                                                                           && (msg.TextContent.Contains(text)
                                                                            || msg.ToInbox.Contains(text)
                                                                            || msg.Subject.Contains(text)
-                                                                           || msg.FromInbox.Contains(text)));
+                                                                           || msg.FromInbox.Contains(text))));
                 SentList = new ObservableCollection<Message>(newList);
             }
         }

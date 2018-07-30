@@ -1,4 +1,4 @@
-﻿using NeoModules.Rest.DTOs;
+﻿using NeoModules.Rest.DTOs.NeoNotifications;
 
 namespace PhantasmaMail.Models
 {
