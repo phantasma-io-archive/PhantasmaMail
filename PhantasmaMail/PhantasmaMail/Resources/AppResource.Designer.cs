@@ -79,7 +79,7 @@ namespace PhantasmaMail.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Something went wrong.Try again in a new seconds..
+        ///   Looks up a localized string similar to Something went wrong. Try again in a few seconds..
         /// </summary>
         public static string Alert_SomethingWrong {
             get {

@@ -124,7 +124,7 @@
     <value>This feature is not live yet!</value>
   </data>
   <data name="Alert_SomethingWrong" xml:space="preserve">
-    <value>Something went wrong.Try again in a new seconds.</value>
+    <value>Something went wrong. Try again in a few seconds.</value>
   </data>
   <data name="Alert_Wallet" xml:space="preserve">
     <value>Error importing account.</value>

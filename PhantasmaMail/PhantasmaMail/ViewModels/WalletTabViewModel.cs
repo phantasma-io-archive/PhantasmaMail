@@ -176,12 +176,18 @@ namespace PhantasmaMail.ViewModels
                                 model.FiatChange = fiatChange;
                             }
 
-                            model.ImagePath = model.TokenDetails.Symbol + ".png";
+                            if (model.TokenDetails != null)
+                            {
+                                model.ImagePath = model.TokenDetails?.Symbol + ".png";
+                            }
+                            else
+                            {
+                                model.ImagePath = "";
+                            }
                             AssetsList.Add(model);
                             break;
                         }
                 }
-
                 if (_assetsPicker.ContainsKey(item.Asset)) // todo add to send picker
                 {
                     PickerItemList.Add(item.Asset);
