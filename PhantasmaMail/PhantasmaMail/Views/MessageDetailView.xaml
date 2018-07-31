@@ -25,7 +25,14 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="trash_bar.png" Command="{Binding DeleteMessageCommand}" />
+        <ToolbarItem Command="{Binding DeleteMessageCommand}" >
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android, iOS" Value="trash_bar.png" />
+                    <On Platform="UWP" Value="Assets/trash_bar.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid HorizontalOptions="FillAndExpand"

@@ -15,7 +15,14 @@
     BackgroundColor="{StaticResource WhiteBackground}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="WriteEmail.png" Command="{Binding NewMessageCommand}" />
+        <ToolbarItem Command="{Binding NewMessageCommand}" >
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android, iOS" Value="WriteEmail.png" />
+                    <On Platform="UWP" Value="Assets/WriteEmail.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
@@ -25,13 +32,19 @@
             </Grid.RowDefinitions>
 
             <!-- Search -->
-            <SearchBar Grid.Row="0" Margin="0,5,20,5" Placeholder="Search" 
+            <SearchBar Grid.Row="0" Placeholder="Search" 
                        x:Name="searchBar"
                        SearchCommand="{Binding SearchCommand}" 
                        SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}">
                 <SearchBar.Behaviors>
                     <behaviors:TextChangedBehavior />
                 </SearchBar.Behaviors>
+                <SearchBar.Margin>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="Android, iOS" Value="0,5,20,5" />
+                        <On Platform="UWP" Value="5,20" />
+                    </OnPlatform>
+                </SearchBar.Margin>
             </SearchBar>
             <!--todo localization-->
 
@@ -66,7 +79,7 @@
                         </syncfusion:SfListView.ItemTemplate>
                         <syncfusion:SfListView.GroupHeaderTemplate>
                             <DataTemplate>
-                               <controls:MessageDateGroupCell/>                                
+                                <controls:MessageDateGroupCell/>
                             </DataTemplate>
                         </syncfusion:SfListView.GroupHeaderTemplate>
 

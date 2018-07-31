@@ -103,7 +103,7 @@
                               FloatingHintEnabled="True"
                               IsVisible="False"
                               HorizontalOptions="FillAndExpand"
-                              Placeholder="{markupExtensions:Translate Entry_WIF_Text}" IsPassword="False"
+                              Placeholder="{markupExtensions:Translate Entry_WIF_Text}" IsPassword="True"
                               Text="{Binding Wif}" >
                     <xfx:XfxEntry.Triggers>
                         <DataTrigger TargetType="xfx:XfxEntry" 

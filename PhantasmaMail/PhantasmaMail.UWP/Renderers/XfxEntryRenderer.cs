@@ -23,7 +23,7 @@ namespace PhantasmaMail.UWP.Renderers
                 Control.BorderBrush = new SolidColorBrush(Colors.White);
 
                 Control.Background = new SolidColorBrush(e.NewElement.BackgroundColor.ToUwp());
-                Control.BackgroundFocusBrush = new SolidColorBrush(Colors.Transparent);
+                Control.BackgroundFocusBrush = new SolidColorBrush(Xamarin.Forms.Color.FromHex("#b4dae8").ToUwp()); //inside color when focused
             }
         }
     }

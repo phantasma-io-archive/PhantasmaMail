@@ -4,10 +4,18 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
       x:Class="PhantasmaMail.Controls.MessageDateGroupCell"
       xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+      xmlns:system="clr-namespace:System;assembly=netstandard"
       x:Key="MessageDateGroupCell">
 
     <Grid HorizontalOptions="FillAndExpand" Margin="20,5">
-        <ffimageloading:CachedImage Source="resource://PhantasmaMail.Resources.Images.bars.png" />
+        <ffimageloading:CachedImage Source="resource://PhantasmaMail.Resources.Images.bars.png" >
+            <ffimageloading:CachedImage.HeightRequest>
+                <OnPlatform x:TypeArguments="system:Double">
+                    <On Platform="Android, iOS" Value="5" />
+                    <On Platform="UWP" Value="2" />
+                </OnPlatform>
+            </ffimageloading:CachedImage.HeightRequest>
+        </ffimageloading:CachedImage>
 
         <Label Text="{Binding Key}"
                HorizontalTextAlignment="Center"
