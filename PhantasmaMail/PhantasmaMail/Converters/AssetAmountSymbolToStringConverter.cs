@@ -14,7 +14,7 @@ namespace PhantasmaMail.Converters
                 case null:
                     return "-";
                 case AssetModel asset:
-                    var result = asset.Amount.ToString("0.########") + " " + asset.TokenDetails.Symbol;
+                    var result = asset.Amount.ToString("0.########") + " " + asset.TokenDetails?.Symbol; //todo placeholder
                     return result;
                 default:
                     return "-";
