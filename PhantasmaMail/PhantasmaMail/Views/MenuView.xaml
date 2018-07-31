@@ -26,6 +26,7 @@
     <ContentPage.BackgroundImage>
         <OnPlatform x:TypeArguments="system:String">
             <On Platform="UWP" Value="Assets/BackgroundHamburguer.png" />
+            <On Platform="iOS,Android" Value="BackgroundHamburguer.png" />
         </OnPlatform>
     </ContentPage.BackgroundImage>
     <ContentPage.Content>
@@ -53,7 +54,18 @@
                 </ListView.ItemTemplate>
                 <ListView.HeaderTemplate>
                     <DataTemplate >
-                        <Grid Margin="30,15">
+                        <Grid>
+                            <Grid.HorizontalOptions>
+                                <OnPlatform x:TypeArguments="LayoutOptions">
+                                    <On Platform="UWP" Value="Center"/>
+                                </OnPlatform>
+                            </Grid.HorizontalOptions>
+                            <Grid.Margin>
+                                <OnPlatform x:TypeArguments="Thickness">
+                                    <On Platform="Android, iOS" Value="30,15"/>
+                                    <On Platform="UWP" Value="30,0"/>
+                                </OnPlatform>
+                            </Grid.Margin>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>

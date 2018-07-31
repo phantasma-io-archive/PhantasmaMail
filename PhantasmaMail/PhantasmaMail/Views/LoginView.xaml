@@ -30,9 +30,19 @@
     </ContentPage.Resources>
     <ContentPage.Content>
 
-        <Grid VerticalOptions="FillAndExpand"
-                     HorizontalOptions="FillAndExpand"
-                     Margin="30">
+        <Grid Margin="30">
+            <Grid.VerticalOptions>
+                <OnPlatform x:TypeArguments="LayoutOptions">
+                    <On Platform ="Android,iOS" Value="FillAndExpand"></On>
+                    <On Platform="UWP" Value="FillAndExpand"/>
+                </OnPlatform>
+            </Grid.VerticalOptions>
+            <Grid.HorizontalOptions>
+                <OnPlatform x:TypeArguments="LayoutOptions">
+                    <On Platform ="Android,iOS" Value="FillAndExpand"></On>
+                    <On Platform="UWP" Value="Center"/>
+                </OnPlatform>
+            </Grid.HorizontalOptions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -43,7 +53,8 @@
             <ActivityIndicator Grid.Row="0" Grid.RowSpan="4" IsRunning="{Binding IsBusy}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Color="White"/>
 
             <ffimageloading:CachedImage Grid.Row="1" Source="phantasma_logo_vector.png" WidthRequest="90" HeightRequest="75"
-                                        Margin="0,40,0,10" />
+                                        Margin="0,40,0,10">
+            </ffimageloading:CachedImage>
 
             <Label Grid.Row="2" Text="Phantasma" FontSize="{StaticResource ExtraBigSize}" TextColor="White"
                    FontFamily="{StaticResource GeoMedium}"
@@ -113,7 +124,7 @@
                         </DataTrigger>
                     </xfx:XfxEntry.Triggers>
                 </xfx:XfxEntry>
-                
+
                 <!-- Username -->
                 <xfx:XfxEntry Style="{StaticResource LoginStyle}" 
                               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
@@ -147,7 +158,7 @@
                     </xfx:XfxEntry.Triggers>
                 </xfx:XfxEntry>
 
-             
+
 
                 <Button Text="Login" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="0"
                         VerticalOptions="EndAndExpand" Margin="1,8,1,6"
@@ -265,3 +276,4 @@
         </Grid>
     </ContentPage.Content>
 </ContentPage>
+ 
