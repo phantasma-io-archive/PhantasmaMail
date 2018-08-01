@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using NeoModules.Core;
 using NeoModules.JsonRpc.Client;
 using PhantasmaMail.Resources;
 using PhantasmaMail.ViewModels.Base;
@@ -66,6 +67,11 @@ namespace PhantasmaMail.ViewModels
                     else
                     {
                         await NavigationService.NavigateToAsync<MainViewModel>();
+                        if (string.IsNullOrEmpty(await PhantasmaService.GetMailboxPublicKey(boxName)))
+                        {
+                            var registerPubKeyTx = await PhantasmaService.RegisterPublicKey(boxName,
+                                AuthenticationService.AuthenticatedUser.GetPublicKey().ToHexString());
+                        }
                     }
                 }
             }

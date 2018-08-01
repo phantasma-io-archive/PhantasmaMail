@@ -4,10 +4,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Acr.UserDialogs;
+using NeoModules.Core;
 using Newtonsoft.Json;
 using PhantasmaMail.Models;
 using PhantasmaMail.Resources;
 using PhantasmaMail.Services.Db;
+using PhantasmaMail.Utils;
 using PhantasmaMail.ViewModels.Base;
 using Xamarin.Forms;
 
@@ -80,7 +82,7 @@ namespace PhantasmaMail.ViewModels
                             _draftMessage.TextContent = Message.TextContent;
                             _draftMessage.ToInbox = Message.ToInbox;
                             _draftMessage.Date = DateTime.UtcNow;
-                            await _db.UpdateMessage(_draftMessage);   
+                            await _db.UpdateMessage(_draftMessage);
                         }
                         else
                         {
@@ -142,7 +144,7 @@ namespace PhantasmaMail.ViewModels
                 }
 
                 Message.ToAddress = toAddress;
-                var hashedMessage = SerializeAndHashMessage();
+                var hashedMessage = await SerializeAndHashMessage();
                 txHash = await PhantasmaService.SendMessage(Message.ToInbox.ToLowerInvariant(), hashedMessage);
             }
             catch (Exception ex)
@@ -179,19 +181,22 @@ namespace PhantasmaMail.ViewModels
             }
         }
 
-        private string SerializeAndHashMessage()
+        private async Task<string> SerializeAndHashMessage()
         {
             Message.Date = DateTime.UtcNow;
             Message.FromInbox = AuthenticationService.AuthenticatedUser.UserBox;
             Message.FromAddress = AuthenticationService.AuthenticatedUser.GetUserDefaultAddress();
 
+            var remotePubkey = await PhantasmaService.GetMailboxPublicKey(Message.ToInbox);
+
+
             // todo
-            //if (AppSettings.UseEncryption)
-            //{
-            //    var encryptedText = EncryptionUtils.Encrypt(Message.TextContent,
-            //        AuthenticationService.AuthenticatedUser.GetPrivateKey(), new Byte[] { });
-            //    Message.Key;
-            //}
+            if (!string.IsNullOrEmpty(remotePubkey))
+            {
+                var encryptedText = EncryptionUtils.Encrypt(Message.TextContent,
+                    AuthenticationService.AuthenticatedUser.GetPrivateKey(), remotePubkey.HexToBytes());
+                Message.TextContent = encryptedText.ToHexString();
+            }
 
             var json = JsonConvert.SerializeObject(Message, AppSettings.JsonSettings());
 

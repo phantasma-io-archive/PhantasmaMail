@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using NeoModules.Core;
 using NeoModules.JsonRpc.Client;
 using PhantasmaMail.Resources;
 using PhantasmaMail.Utils;
@@ -51,6 +52,9 @@ namespace PhantasmaMail.ViewModels
                         "Box created, you need to wait 30/40 seconds before sending any messages.",
                         "Success");
                     await NavigationService.NavigateToAsync<MainViewModel>();
+
+                    var registerPubKeyTx = await PhantasmaService.RegisterPublicKey(BoxName,
+                        AuthenticationService.AuthenticatedUser.GetPublicKey().ToHexString());
                 }
             }
             catch (Exception ex)

@@ -25,7 +25,7 @@ namespace PhantasmaMail.ViewModels.Base
             _containerBuilder.RegisterType<NavigationService>().SingleInstance().As<INavigationService>();
             _containerBuilder.RegisterType<AuthenticationService>().SingleInstance().As<IAuthenticationService>();
             _containerBuilder.RegisterType<WalletService>().SingleInstance();
-            _containerBuilder.RegisterType<PrivatePhantasmaService>().SingleInstance().As<IPhantasmaService>();
+            _containerBuilder.RegisterType<PhantasmaService>().SingleInstance().As<IPhantasmaService>();
             //_containerBuilder.RegisterType<NeoScanRestService>().SingleInstance().As<INeoRestService>();
 
             _containerBuilder.RegisterType<ExtendedSplashViewModel>();

@@ -124,18 +124,6 @@ namespace PhantasmaMail.Models
             }
         }
 
-        private string _key;
-        [JsonProperty("key")]
-        public string Key
-        {
-            get => _key;
-            set
-            {
-                _key = value;
-                OnPropertyChanged();
-            }
-        }
-
         #endregion
 
         [JsonIgnore]
@@ -157,7 +145,6 @@ namespace PhantasmaMail.Models
 
         public Message(StoreMessage storeMessage)
         {
-            Key = storeMessage.Key;
             FromAddress = storeMessage.FromAddress;
             FromInbox = storeMessage.FromInbox;
             ToAddress = storeMessage.ToAddress;
@@ -177,7 +164,6 @@ namespace PhantasmaMail.Models
         {
             var dbMessage = new StoreMessage
             {
-                Key = Key,
                 Date = Date,
                 FromInbox = FromInbox,
                 FromAddress = FromAddress,

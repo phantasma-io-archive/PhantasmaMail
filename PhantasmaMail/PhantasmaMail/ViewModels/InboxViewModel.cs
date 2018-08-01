@@ -4,11 +4,13 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using NeoModules.Core;
 using NeoModules.JsonRpc.Client;
 using Newtonsoft.Json;
 using PhantasmaMail.Models;
 using PhantasmaMail.Resources;
 using PhantasmaMail.Services.Db;
+using PhantasmaMail.Utils;
 using PhantasmaMail.ViewModels.Base;
 using Xamarin.Forms;
 
@@ -86,25 +88,11 @@ namespace PhantasmaMail.ViewModels
                 InboxList = new ObservableCollection<Message>();
                 if (!string.IsNullOrEmpty(AuthenticationService.AuthenticatedUser.UserBox))
                 {
+                    var publicKey = AuthenticationService.AuthenticatedUser.GetPublicKey();
                     var mailCount = await PhantasmaService.GetInboxCount();
                     if (mailCount > 0)
                     {
-                        var index = 1;
-                        var emails = await PhantasmaService.GetAllInboxMessages(mailCount);
-                        //deserialization
-                        foreach (var email in emails)
-                            if (email.StartsWith("{") || email.StartsWith("["))
-                            {
-                                var mailObject =
-                                    JsonConvert.DeserializeObject<Message>(email, AppSettings.JsonSettings());
-                                mailObject.ID = index;
-                                InboxList.Add(mailObject);
-                                index++;
-                            }
-
-                        InboxList = new ObservableCollection<Message>(InboxList.OrderByDescending(p => p.Date)
-                            .ThenByDescending(p => p.Date.Hour).ToList());
-                        _fullInboxList = InboxList.ToList();
+                        await DeserializeInboxMails(mailCount);
                     }
                 }
             }
@@ -120,6 +108,36 @@ namespace PhantasmaMail.ViewModels
             {
                 IsBusy = false;
             }
+        }
+
+        private async Task DeserializeInboxMails(int mailCount)
+        {
+            var index = 1;
+            var emails = await PhantasmaService.GetAllInboxMessages(mailCount);
+            //deserialization
+            foreach (var email in emails)
+            {
+                if (email.StartsWith("{") || email.StartsWith("["))
+                {
+                    var mailObject =
+                        JsonConvert.DeserializeObject<Message>(email, AppSettings.JsonSettings());
+                    if (MessageUtils.IsHex(mailObject.TextContent.ToCharArray()))
+                    {
+                        var encryptedText = mailObject.TextContent.HexToBytes();
+                        var remotePub = await PhantasmaService.GetMailboxPublicKey(mailObject.FromInbox);
+                        var decryptedText = EncryptionUtils.Decrypt(encryptedText,
+                            AuthenticationService.AuthenticatedUser.GetPrivateKey(), remotePub.HexToBytes());
+                        mailObject.TextContent = decryptedText;
+                    }
+                    mailObject.ID = index;
+                    InboxList.Add(mailObject);
+                    index++;
+                }
+            }
+
+            InboxList = new ObservableCollection<Message>(InboxList.OrderByDescending(p => p.Date)
+                .ThenByDescending(p => p.Date.Hour).ToList());
+            _fullInboxList = InboxList.ToList();
         }
 
         private async Task DeleteMessageExecute(Message msg)

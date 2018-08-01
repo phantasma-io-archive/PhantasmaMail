@@ -5,8 +5,14 @@
              xmlns:markupExtensions="clr-namespace:PhantasmaMail.MarkupExtensions;assembly=PhantasmaMail"
              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-             x:Class="PhantasmaMail.Views.RegisterBoxView"
-             BackgroundImage="BackgroundLogin.png">
+             xmlns:system="clr-namespace:System;assembly=netstandard"
+             x:Class="PhantasmaMail.Views.RegisterBoxView">
+    <ContentPage.BackgroundImage>
+        <OnPlatform x:TypeArguments="system:String">
+            <On Platform="Android, iOS" Value="BackgroundLogin.png" />
+            <On Platform="UWP" Value="Assets/BackgroundLogin.png" />
+        </OnPlatform>
+    </ContentPage.BackgroundImage>
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="RegisterBoxLabelStyle" TargetType="Label">

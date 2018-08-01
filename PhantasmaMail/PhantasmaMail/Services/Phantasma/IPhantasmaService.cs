@@ -38,6 +38,10 @@ namespace PhantasmaMail.Services.Phantasma
 
         Task<string> EstimateMessageCost(string boxName, string message);
 
+        Task<string> RegisterPublicKey(string boxName, string publicKeyHex);
+
+        Task<string> GetMailboxPublicKey(string boxname);
+
         NeoApiService ApiService { get; set; }
     }
 }

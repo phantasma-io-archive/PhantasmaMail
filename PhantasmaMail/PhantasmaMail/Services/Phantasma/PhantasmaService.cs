@@ -6,18 +6,17 @@ using System.Threading.Tasks;
 using NeoModules.Core;
 using NeoModules.KeyPairs;
 using NeoModules.NEP6;
-using NeoModules.NEP6.Models;
 using NeoModules.RPC;
 using PhantasmaMail.Services.Authentication;
 using PhantasmaMail.ViewModels.Base;
 
 namespace PhantasmaMail.Services.Phantasma
 {
-    public class PrivatePhantasmaService : IPhantasmaService
+    public class PhantasmaService : IPhantasmaService
     {
         public NeoApiService ApiService { get; set; }
 
-        public PrivatePhantasmaService()
+        public PhantasmaService()
         {
             ApiService = new NeoApiService(AppSettings.RpcClient);
         }
@@ -96,6 +95,7 @@ namespace PhantasmaMail.Services.Phantasma
         {
             var script = NeoModules.NEP6.Utils.GenerateScript(ContractScriptHashBytes, GetInboxContentOperation,
                 new object[] { UserBoxName, index });
+
             var result = await ApiService.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
 
             var content = result.Stack[0].Value.ToString().HexToBytes();
@@ -197,6 +197,42 @@ namespace PhantasmaMail.Services.Phantasma
             return await SendContractTransaction(RemoveOutboxMessagesOperation, args.ToArray());
         }
 
+        public async Task<string> RegisterPublicKey(string boxName, string publicKeyHex)
+        {
+            return await SendContractTransaction(SendMessageOperation, new object[] { UserAddress, PhantasmaPublicBox,
+                $"{boxName}:{publicKeyHex}"
+            });
+        }
+
+        public async Task<string> GetMailboxPublicKey(string boxName)
+        {
+            var countScript = NeoModules.NEP6.Utils.GenerateScript(ContractScriptHashBytes, GetInboxCountOperation,
+                new object[] { PhantasmaPublicBox });
+            var countResult = await ApiService.Contracts.InvokeScript.SendRequestAsync(countScript.ToHexString());
+
+            var count = countResult.Stack[0].Value.ToString();
+            int countInt = 0;
+            if (!string.IsNullOrEmpty(count))
+            {
+                countInt = int.Parse(count, NumberStyles.HexNumber);
+            }
+
+            var emailHashList = new List<string>();
+            for (var i = 1; i <= countInt; i++)
+            {
+                var script = NeoModules.NEP6.Utils.GenerateScript(ContractScriptHashBytes, GetInboxContentOperation,
+                    new object[] { PhantasmaPublicBox, i });
+
+                var result = await ApiService.Contracts.InvokeScript.SendRequestAsync(script.ToHexString());
+
+                var content = result.Stack[0].Value.ToString().HexToBytes();
+                var mailHash = Encoding.UTF8.GetString(content);
+                emailHashList.Add(mailHash);
+            }
+
+            var pubKey = emailHashList.SingleOrDefault(x => x.Contains(boxName));
+            return !string.IsNullOrEmpty(pubKey) ? pubKey.Split(':')[1] : pubKey;
+        }
         #endregion
 
         #region Private Properties
@@ -214,6 +250,8 @@ namespace PhantasmaMail.Services.Phantasma
         private const string GetInboxContentOperation = "getInboxContent";
         private const string GetOutboxCountOperation = "getOutboxCount";
         private const string GetOutboxContentOperation = "getOutboxContent";
+
+        private const string PhantasmaPublicBox = "publicphantasma";
 
         private User ActiveUser => Locator.Instance.Resolve<IAuthenticationService>().AuthenticatedUser;
         public AccountSignerTransactionManager AccountManager => (AccountSignerTransactionManager)ActiveUser.GetDefaultAccount().TransactionManager;

@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+using NeoModules.Core;
 using NeoModules.KeyPairs;
+using NeoModules.KeyPairs.Cryptography.ECC;
 using NeoModules.NEP6;
 using NeoModules.NEP6.Models;
 using NeoModules.RPC.Infrastructure;
@@ -32,7 +34,7 @@ namespace PhantasmaMail.Services.Authentication
         public Account InitializeUserWallet(byte[] privKey)
         {
             var localWallet = new Wallet(WalletLabel); //todo make this persistent
-            WalletManager = new WalletManager(AppSettings.RestService, AppSettings.RpcClient,localWallet);
+            WalletManager = new WalletManager(AppSettings.RestService, AppSettings.RpcClient, localWallet);
             return WalletManager.ImportAccount(privKey, AddressLabel);
         }
 
@@ -51,7 +53,7 @@ namespace PhantasmaMail.Services.Authentication
 
         public byte[] GetPrivateKey()
         {
-            var account = (IAccount) WalletManager?.GetDefaultAccount();
+            var account = (IAccount)WalletManager?.GetDefaultAccount();
             return account?.PrivateKey;
         }
 
@@ -60,6 +62,10 @@ namespace PhantasmaMail.Services.Authentication
             var account = (IAccount)WalletManager?.GetDefaultAccount();
             var keyPair = new KeyPair(account?.PrivateKey);
             return keyPair.PublicKey.EncodePoint(false).Skip(1).ToArray();
+            //var ecpoint = ECPoint.FromBytes(keyPair.PublicKey.ToString().HexToBytes(), ECCurve.Secp256r1);
+            //var sc = NeoModules.KeyPairs.Helper.CreateSignatureRedeemScript(ecpoint).ToScriptHash();
+            //var address = sc.ToAddress();
+            //return keyPair.PublicKey.ToString().HexToBytes();
         }
     }
 }

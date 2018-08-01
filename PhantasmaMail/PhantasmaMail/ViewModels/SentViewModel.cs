@@ -4,11 +4,13 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using NeoModules.Core;
 using NeoModules.JsonRpc.Client;
 using Newtonsoft.Json;
 using PhantasmaMail.Models;
 using PhantasmaMail.Resources;
 using PhantasmaMail.Services.Db;
+using PhantasmaMail.Utils;
 using PhantasmaMail.ViewModels.Base;
 using Xamarin.Forms;
 
@@ -62,26 +64,7 @@ namespace PhantasmaMail.ViewModels
                     var mailCount = await PhantasmaService.GetOutboxCount();
                     if (mailCount > 0)
                     {
-                        var index = 1;
-                        var emails = await PhantasmaService.GetAllOutboxMessages(mailCount);
-                        var storedEmails = await _db.GetSentMessages(AuthenticationService.AuthenticatedUser.UserBox);
-
-                        //deserialization
-                        foreach (var email in emails)
-                            if (email.StartsWith("{") || email.StartsWith("["))
-                            {
-                                var mailObject =
-                                    JsonConvert.DeserializeObject<Message>(email, AppSettings.JsonSettings());
-                                mailObject.ID = index;
-                                var hash = GetHashFromStoredMessage(storedEmails.ToList(), mailObject);
-                                if (!string.IsNullOrEmpty(hash)) mailObject.Hash = hash;
-                                SentList.Add(mailObject);
-                                index++;
-                            }
-
-                        SentList = new ObservableCollection<Message>(SentList.OrderByDescending(p => p.Date)
-                            .ThenByDescending(p => p.Date.Hour).ToList());
-                        _fullSentList = SentList.ToList();
+                        await DeserializeOutboxMails(mailCount);
                     }
                 }
                 //var test = await PhantasmaService.RemoveOutboxMessages(new[] { 1, 2, 3, 4, 5 });
@@ -99,6 +82,49 @@ namespace PhantasmaMail.ViewModels
                 IsBusy = false;
             }
         }
+
+        private async Task DeserializeOutboxMails(int mailCount)
+        {
+            var index = 1;
+            var emails = await PhantasmaService.GetAllOutboxMessages(mailCount);
+            var storedEmails = await _db.GetSentMessages(AuthenticationService.AuthenticatedUser.UserBox);
+            try
+            {
+                //deserialization
+                foreach (var email in emails)
+                {
+                    if (email.StartsWith("{") || email.StartsWith("["))
+                    {
+                        var mailObject =
+                            JsonConvert.DeserializeObject<Message>(email, AppSettings.JsonSettings());
+                        if (MessageUtils.IsHex(mailObject.TextContent.ToCharArray()))
+                        {
+                            var encryptedText = mailObject.TextContent.HexToBytes();
+                            var remotePub = await PhantasmaService.GetMailboxPublicKey(mailObject.ToInbox);
+                            var decryptedText = EncryptionUtils.Decrypt(encryptedText,
+                                AuthenticationService.AuthenticatedUser.GetPrivateKey(), remotePub.HexToBytes());
+                            mailObject.TextContent = decryptedText;
+                        }
+                        mailObject.ID = index;
+                        var hash = GetHashFromStoredMessage(storedEmails.ToList(), mailObject);
+                        if (!string.IsNullOrEmpty(hash)) mailObject.Hash = hash;
+                        SentList.Add(mailObject);
+                        index++;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+
+
+
+            SentList = new ObservableCollection<Message>(SentList.OrderByDescending(p => p.Date)
+                .ThenByDescending(p => p.Date.Hour).ToList());
+            _fullSentList = SentList.ToList();
+        }
+
 
         private async Task MessageSelectedExecute(Message message)
         {
