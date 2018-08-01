@@ -25,6 +25,5 @@ namespace PhantasmaMail.Services.Db
 
         public string Hash { get; set; }
 
-        public string Key { get; set; }
     }
 }

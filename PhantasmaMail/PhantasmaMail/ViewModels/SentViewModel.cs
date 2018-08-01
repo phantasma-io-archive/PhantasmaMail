@@ -95,19 +95,23 @@ namespace PhantasmaMail.ViewModels
                 {
                     if (email.StartsWith("{") || email.StartsWith("["))
                     {
+                        string decryptedText = string.Empty;
                         var mailObject =
                             JsonConvert.DeserializeObject<Message>(email, AppSettings.JsonSettings());
                         if (MessageUtils.IsHex(mailObject.TextContent.ToCharArray()))
                         {
                             var encryptedText = mailObject.TextContent.HexToBytes();
                             var remotePub = await PhantasmaService.GetMailboxPublicKey(mailObject.ToInbox);
-                            var decryptedText = EncryptionUtils.Decrypt(encryptedText,
+                            decryptedText = EncryptionUtils.Decrypt(encryptedText,
                                 AuthenticationService.AuthenticatedUser.GetPrivateKey(), remotePub.HexToBytes());
-                            mailObject.TextContent = decryptedText;
                         }
                         mailObject.ID = index;
                         var hash = GetHashFromStoredMessage(storedEmails.ToList(), mailObject);
                         if (!string.IsNullOrEmpty(hash)) mailObject.Hash = hash;
+                        if (!string.IsNullOrEmpty(decryptedText))
+                        {
+                            mailObject.TextContent = decryptedText;
+                        }
                         SentList.Add(mailObject);
                         index++;
                     }
