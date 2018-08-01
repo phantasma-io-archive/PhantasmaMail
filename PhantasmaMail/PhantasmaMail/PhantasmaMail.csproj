@@ -13,11 +13,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="new_tokens.json" />
     <None Remove="Resources\Images\bars.png" />
     <None Remove="tokens.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="new_tokens.json" />
     <EmbeddedResource Include="Resources\Images\bars.png" />
     <EmbeddedResource Include="tokens.json" />
   </ItemGroup>

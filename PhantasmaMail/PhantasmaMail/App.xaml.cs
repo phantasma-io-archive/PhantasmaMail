@@ -44,7 +44,7 @@ namespace PhantasmaMail
             //TODO
             var assembly = typeof(App).GetTypeInfo().Assembly;
 
-            Stream stream = assembly.GetManifestResourceStream("PhantasmaMail.tokens.json");
+            Stream stream = assembly.GetManifestResourceStream("PhantasmaMail.new_tokens.json");
             using (var reader = new StreamReader(stream ?? throw new InvalidOperationException()))
             {
                 var json = reader.ReadToEnd();

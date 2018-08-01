@@ -2,6 +2,7 @@
 using PhantasmaMail.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -56,8 +57,8 @@ namespace PhantasmaMail.Utils
             info.rank = content["rank"].Value<int>();
 
             var quotes = content["quotes"]["USD"];
-            info.price = quotes["price"].Value<decimal>();
-            info.change = quotes["percent_change_24h"].Value<decimal>();
+            info.price = quotes.Value<decimal?>("price") ?? 0;
+            info.change = quotes.Value<decimal?>("percent_change_24h") ?? 0;
 
             return info;
         }
@@ -89,6 +90,7 @@ namespace PhantasmaMail.Utils
                 case "ACAT": return 2525;
                 case "ZPT": return 2481;
                 case "CPX": return 2641;
+                case "MCT": return 3002;
                 default: return -1;
             }
         }

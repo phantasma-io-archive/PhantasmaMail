@@ -45,7 +45,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
 
@@ -104,13 +104,13 @@
                         IsStickyHeader="false"
                         ItemSpacing="15"
                         VerticalOptions="FillAndExpand">
-                        <!--<syncfusion:SfListView.Triggers>
+                        <syncfusion:SfListView.Triggers>
                             <DataTrigger TargetType="syncfusion:SfListView"
                                          Binding="{Binding Source={x:Reference AssetListView}, Path=ItemsSource.Count}"
                                          Value="0">
                                 <Setter Property="IsVisible" Value="False" />
                             </DataTrigger>
-                        </syncfusion:SfListView.Triggers>-->
+                        </syncfusion:SfListView.Triggers>
                         <syncfusion:SfListView.ItemTemplate>
                             <DataTemplate>
                                 <controls:WalletAssetCell />
