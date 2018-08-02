@@ -32,13 +32,19 @@
             </Grid.RowDefinitions>
 
             <!-- Search -->
-            <SearchBar Grid.Row="0" Margin="0,5,20,5" Placeholder="Search"
+            <SearchBar Grid.Row="0" Placeholder="Search"
                        x:Name="searchBar"
                        SearchCommand="{Binding SearchCommand}"
                        SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}">
                 <SearchBar.Behaviors>
                     <behaviors:TextChangedBehavior />
                 </SearchBar.Behaviors>
+                <SearchBar.Margin>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="Android, iOS" Value="0,5,20,5" />
+                        <On Platform="UWP" Value="5,20" />
+                    </OnPlatform>
+                </SearchBar.Margin>
             </SearchBar>
 
             <sfpullToRefresh:SfPullToRefresh x:Name="pullToRefreshList" Grid.Row="1"

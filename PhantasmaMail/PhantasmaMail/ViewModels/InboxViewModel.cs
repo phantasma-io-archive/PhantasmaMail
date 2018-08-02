@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -114,26 +115,34 @@ namespace PhantasmaMail.ViewModels
         {
             var index = 1;
             var emails = await PhantasmaService.GetAllInboxMessages(mailCount);
-            //deserialization
-            foreach (var email in emails)
+            try
             {
-                if (email.StartsWith("{") || email.StartsWith("["))
+                //deserialization
+                foreach (var email in emails)
                 {
-                    var mailObject =
-                        JsonConvert.DeserializeObject<Message>(email, AppSettings.JsonSettings());
-                    if (MessageUtils.IsHex(mailObject.TextContent.ToCharArray()))
+                    if (email.StartsWith("{") || email.StartsWith("["))
                     {
-                        var encryptedText = mailObject.TextContent.HexToBytes();
-                        var remotePub = await PhantasmaService.GetMailboxPublicKey(mailObject.FromInbox);
-                        var decryptedText = EncryptionUtils.Decrypt(encryptedText,
-                            AuthenticationService.AuthenticatedUser.GetPrivateKey(), remotePub.HexToBytes());
-                        mailObject.TextContent = decryptedText;
+                        var mailObject =
+                            JsonConvert.DeserializeObject<Message>(email, AppSettings.JsonSettings());
+                        if (MessageUtils.IsHex(mailObject.TextContent.ToCharArray()))
+                        {
+                            var encryptedText = mailObject.TextContent.HexToBytes();
+                            var remotePub = await PhantasmaService.GetMailboxPublicKey(mailObject.FromInbox);
+                            var decryptedText = EncryptionUtils.Decrypt(encryptedText,
+                                AuthenticationService.AuthenticatedUser.GetPrivateKey(), remotePub.HexToBytes());
+                            mailObject.TextContent = decryptedText;
+                        }
+                        mailObject.ID = index;
+                        InboxList.Add(mailObject);
+                        index++;
                     }
-                    mailObject.ID = index;
-                    InboxList.Add(mailObject);
-                    index++;
                 }
             }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+            }
+
 
             InboxList = new ObservableCollection<Message>(InboxList.OrderByDescending(p => p.Date)
                 .ThenByDescending(p => p.Date.Hour).ToList());

@@ -62,7 +62,7 @@
                         ItemsSource="{Binding InboxList, Mode=TwoWay}"
                         SelectedItem="{Binding MessageSelected}"
                         SelectionBackgroundColor="{StaticResource GradientEndColor}"
-                        SelectionMode="Single"
+                        SelectionMode="Single"                       
                         AllowSwiping="True"
                         VerticalOptions="FillAndExpand">
                         <syncfusion:SfListView.Triggers>
