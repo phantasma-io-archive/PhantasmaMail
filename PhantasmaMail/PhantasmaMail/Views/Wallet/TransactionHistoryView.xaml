@@ -4,6 +4,8 @@
              xmlns:xForms="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms"
              xmlns:xForms1="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              xmlns:controls="clr-namespace:PhantasmaMail.Controls;assembly=PhantasmaMail"
+             xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              x:Class="PhantasmaMail.Views.TransactionHistoryView"
              BackgroundColor="{StaticResource WhiteBackground}">
     <ContentPage.Content>
@@ -53,6 +55,36 @@
                 </xForms:SfPullToRefresh.PullableContent>
 
             </xForms:SfPullToRefresh>
+
+            <Grid Grid.Row="0"
+                  VerticalOptions="FillAndExpand"
+                  IsVisible="False" Margin="0,100"
+                  RowSpacing="35">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <forms:SvgCachedImage Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"
+                                                  Source="noemails.svg" HeightRequest="175"
+                                                  WidthRequest="175" IsVisible="True">
+                    <forms:SvgCachedImage.Transformations>
+                        <transformations:TintTransformation EnableSolidColor="true"
+                                                              HexColor="#9DADB5" />
+                    </forms:SvgCachedImage.Transformations>
+                </forms:SvgCachedImage>
+
+                <Label Grid.Row="1" HorizontalTextAlignment="Center"
+                       Text="You don't have any transactions."
+                       Style="{StaticResource NoMessagesLabelStyle}" />
+                <Grid.Triggers>
+                    <DataTrigger TargetType="Grid"
+                                 Binding="{Binding Source={x:Reference TransactionsListView}, Path=ItemsSource.Count}"
+                                 Value="0">
+                        <Setter Property="IsVisible" Value="True" />
+                    </DataTrigger>
+                </Grid.Triggers>
+            </Grid>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
