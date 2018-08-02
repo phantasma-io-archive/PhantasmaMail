@@ -99,22 +99,26 @@ namespace PhantasmaMail.ViewModels
                         string decryptedText = string.Empty;
                         var mailObject =
                             JsonConvert.DeserializeObject<Message>(email, AppSettings.JsonSettings());
-                        if (MessageUtils.IsHex(mailObject.TextContent.ToCharArray()))
+                        if (mailObject?.TextContent != null)
                         {
-                            var encryptedText = mailObject.TextContent.HexToBytes();
-                            var remotePub = await PhantasmaService.GetMailboxPublicKey(mailObject.ToInbox);
-                            decryptedText = EncryptionUtils.Decrypt(encryptedText,
-                                AuthenticationService.AuthenticatedUser.GetPrivateKey(), remotePub.HexToBytes());
+                            if (MessageUtils.IsHex(mailObject.TextContent.ToCharArray()))
+                            {
+                                var encryptedText = mailObject.TextContent.HexToBytes();
+                                var remotePub = await PhantasmaService.GetMailboxPublicKey(mailObject.ToInbox);
+                                decryptedText = EncryptionUtils.Decrypt(encryptedText,
+                                    AuthenticationService.AuthenticatedUser.GetPrivateKey(), remotePub.HexToBytes());
+                            }
+
+                            mailObject.ID = index;
+                            var hash = GetHashFromStoredMessage(storedEmails.ToList(), mailObject);
+                            if (!string.IsNullOrEmpty(hash)) mailObject.Hash = hash;
+                            if (!string.IsNullOrEmpty(decryptedText))
+                            {
+                                mailObject.TextContent = decryptedText;
+                            }
+                            SentList.Add(mailObject);
+                            index++;
                         }
-                        mailObject.ID = index;
-                        var hash = GetHashFromStoredMessage(storedEmails.ToList(), mailObject);
-                        if (!string.IsNullOrEmpty(hash)) mailObject.Hash = hash;
-                        if (!string.IsNullOrEmpty(decryptedText))
-                        {
-                            mailObject.TextContent = decryptedText;
-                        }
-                        SentList.Add(mailObject);
-                        index++;
                     }
                 }
             }
@@ -122,7 +126,7 @@ namespace PhantasmaMail.ViewModels
             {
                 Debug.WriteLine(e);
             }
-            
+
             SentList = new ObservableCollection<Message>(SentList.OrderByDescending(p => p.Date)
                 .ThenByDescending(p => p.Date.Hour).ToList());
             _fullSentList = SentList.ToList();
