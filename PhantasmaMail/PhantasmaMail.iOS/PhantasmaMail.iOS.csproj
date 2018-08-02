@@ -95,6 +95,8 @@
     <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Effects\MaxLinesEffect .cs" />
+    <Compile Include="Effects\UnderlineEffect.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renderers\CustomNavigationRenderer.cs" />

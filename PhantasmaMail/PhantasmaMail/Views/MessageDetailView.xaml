@@ -5,6 +5,7 @@
              x:Class="PhantasmaMail.Views.MessageDetailView"
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:effects="clr-namespace:PhantasmaMail.Effects;assembly=PhantasmaMail"
              Title="Message Detail"
              BackgroundColor="{StaticResource WhiteBackground}">
     <ContentPage.Resources>
@@ -112,7 +113,11 @@
                         <Label Text="{Binding SelectedMessage.Hash}"
                                TextColor="{StaticResource LightGray}"
                                FontFamily="{StaticResource OpenSansLightItalic}"
-                               FontSize="{StaticResource MediumSize}" />
+                               FontSize="{StaticResource MediumSize}" >
+                            <Label.Effects>
+                                <effects:UnderlineEffect />
+                            </Label.Effects>
+                        </Label>
 
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding OpenTxCommand}" />

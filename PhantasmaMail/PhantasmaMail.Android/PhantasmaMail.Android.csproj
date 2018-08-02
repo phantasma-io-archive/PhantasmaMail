@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Effects\MaxLinesEffect.cs" />
+    <Compile Include="Effects\UnderlineEffect.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="Renderers\CustomFrameRenderer.cs" />
