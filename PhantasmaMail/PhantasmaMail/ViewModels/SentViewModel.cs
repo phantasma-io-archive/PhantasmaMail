@@ -55,6 +55,7 @@ namespace PhantasmaMail.ViewModels
 
         public async Task RefreshExecute()
         {
+            if (IsBusy) return;
             try
             {
                 IsBusy = true;

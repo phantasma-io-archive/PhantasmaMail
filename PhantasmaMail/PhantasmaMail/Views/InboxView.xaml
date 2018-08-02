@@ -83,7 +83,7 @@
                             </DataTemplate>
                         </syncfusion:SfListView.GroupHeaderTemplate>
 
-                        <!--<syncfusion:SfListView.RightSwipeTemplate>
+                        <syncfusion:SfListView.RightSwipeTemplate>
                             <DataTemplate x:Name="RightSwipeTemplate">
                                 <Grid Margin="-20,10" BackgroundColor="#FFFFFF" HorizontalOptions="Fill"
                                       VerticalOptions="Fill" Grid.Column="0">
@@ -102,12 +102,12 @@
                                     </Grid>
                                     <Grid.GestureRecognizers>
                                         <TapGestureRecognizer
-                                            Command="{Binding Source={x:Reference InboxView}, Path=BindingContext.DeleteMessageCommand}"
+                                            Command="{Binding Source={x:Reference inboxListView}, Path=BindingContext.DeleteMessageCommand}"
                                             CommandParameter="{Binding .}" />
                                     </Grid.GestureRecognizers>
                                 </Grid>
                             </DataTemplate>
-                        </syncfusion:SfListView.RightSwipeTemplate>-->
+                        </syncfusion:SfListView.RightSwipeTemplate>
                     </syncfusion:SfListView>
                 </sfpullToRefresh:SfPullToRefresh.PullableContent>
 
