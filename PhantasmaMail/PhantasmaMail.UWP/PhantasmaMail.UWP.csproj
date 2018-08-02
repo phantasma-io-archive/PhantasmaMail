@@ -427,7 +427,7 @@
       <Version>2018.2.22-pre1</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.1.5</Version>
+      <Version>6.1.7</Version>
     </PackageReference>
     <PackageReference Include="PCLStorage">
       <Version>1.0.2</Version>
@@ -463,7 +463,7 @@
       <Version>2.4.3.840</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>3.1.0.637273</Version>
+      <Version>3.1.0.697729</Version>
     </PackageReference>
     <PackageReference Include="Xfx.Controls">
       <Version>1.1.3</Version>

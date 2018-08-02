@@ -96,58 +96,94 @@
             <OnPlatform x:Key="ExtraLittleSize"
                         x:TypeArguments="x:Double">
                 <On Platform="iOS">10</On>
-                <On Platform="Android, UWP">11</On>
+                <On Platform="Android, UWP">
+                    <OnIdiom x:TypeArguments="x:Double"  
+                             Phone="11"  
+                             Desktop="14" />
+                </On>
             </OnPlatform>
 
 
             <OnPlatform x:Key="LittleSize"
                         x:TypeArguments="x:Double">
                 <On Platform="iOS">11</On>
-                <On Platform="Android, UWP">12</On>
+                <On Platform="Android, UWP">
+                    <OnIdiom x:TypeArguments="x:Double"  
+                             Phone="12"  
+                             Desktop="15" />
+                </On>
             </OnPlatform>
 
             <OnPlatform x:Key="MidMediumSize"
                         x:TypeArguments="x:Double">
                 <On Platform="iOS">12</On>
-                <On Platform="Android, UWP">14</On>
+                <On Platform="Android, UWP">
+                    <OnIdiom x:TypeArguments="x:Double"  
+                             Phone="14"  
+                             Desktop="17" />
+                </On>
             </OnPlatform>
 
             <OnPlatform x:Key="MediumSize"
                         x:TypeArguments="x:Double">
                 <On Platform="iOS">14</On>
-                <On Platform="Android, UWP">16</On>
+                <On Platform="Android, UWP">
+                    <OnIdiom x:TypeArguments="x:Double"  
+                             Phone="16"  
+                             Desktop="19" />
+                </On>
             </OnPlatform>
 
             <OnPlatform x:Key="LargeSize"
                         x:TypeArguments="x:Double">
                 <On Platform="iOS">16</On>
-                <On Platform="Android, UWP">18</On>
+                <On Platform="Android, UWP">
+                    <OnIdiom x:TypeArguments="x:Double"  
+                             Phone="18"  
+                             Desktop="21" />
+                </On>
             </OnPlatform>
 
             <OnPlatform x:Key="LargerSize"
                         x:TypeArguments="x:Double">
                 <On Platform="iOS">18</On>
-                <On Platform="Android, UWP">20</On>
+                <On Platform="Android, UWP">
+                    <OnIdiom x:TypeArguments="x:Double"  
+                             Phone="20"  
+                             Desktop="23" />
+                </On>
             </OnPlatform>
 
             <OnPlatform x:Key="BigSize"
                         x:TypeArguments="x:Double">
                 <On Platform="iOS">20</On>
-                <On Platform="Android, UWP">24</On>
+                <On Platform="Android, UWP">
+                    <OnIdiom x:TypeArguments="x:Double"  
+                             Phone="24"  
+                             Desktop="27" />
+                </On>
             </OnPlatform>
 
             <OnPlatform x:Key="ExtraBigSize"
                         x:TypeArguments="x:Double">
                 <On Platform="iOS">24</On>
-                <On Platform="Android, UWP">32</On>
+                <On Platform="Android, UWP">
+                    <OnIdiom x:TypeArguments="x:Double"  
+                             Phone="32"  
+                             Desktop="39" />
+                </On>
             </OnPlatform>
 
             <OnPlatform x:Key="HugeSize"
                         x:TypeArguments="x:Double">
                 <On Platform="iOS">32</On>
-                <On Platform="Android, UWP">48</On>
+                <On Platform="Android, UWP">
+                    <OnIdiom x:TypeArguments="x:Double"  
+                             Phone="48"  
+                             Desktop="60" />
+                </On>
             </OnPlatform>
-            
+
 
 
             <!-- STYLES -->
@@ -233,7 +269,7 @@
                 <Setter Property="FontSize" 
                         Value="{StaticResource ExtraLittleSize}" />
             </Style>
-            
+
 
             <Style x:Key="LoginStyle"
                    TargetType="xfx:XfxEntry">

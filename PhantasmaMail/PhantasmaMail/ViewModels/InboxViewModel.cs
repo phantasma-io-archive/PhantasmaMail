@@ -144,7 +144,6 @@ namespace PhantasmaMail.ViewModels
                 Debug.WriteLine(e);
             }
 
-
             InboxList = new ObservableCollection<Message>(InboxList.OrderByDescending(p => p.Date)
                 .ThenByDescending(p => p.Date.Hour).ToList());
             _fullInboxList = InboxList.ToList();
@@ -181,7 +180,6 @@ namespace PhantasmaMail.ViewModels
             }
         }
 
-        //TODO lista vazia
         private void SearchExecute(string text)
         {
             if (InboxList.Count == 0) return;

@@ -23,10 +23,12 @@
             <Frame Grid.Row="0" IsClippedToBounds="True"
                    Margin="30,15,30,40" Opacity="0.8"
                    HasShadow="True" 
+                   BackgroundColor="White"
                    CornerRadius="0" Padding="0" />
 
             <Frame Grid.Row="0"
                    CornerRadius="0"
+                   BackgroundColor="White"
                    Margin="20,30,20,20">
                 <Grid>
                     <Grid.RowDefinitions>

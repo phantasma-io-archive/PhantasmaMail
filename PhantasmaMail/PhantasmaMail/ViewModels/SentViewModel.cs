@@ -69,7 +69,6 @@ namespace PhantasmaMail.ViewModels
                         await DeserializeOutboxMails(mailCount);
                     }
                 }
-                //var test = await PhantasmaService.RemoveOutboxMessages(new[] { 1, 2, 3, 4, 5 });
             }
             catch (Exception ex)
             {
@@ -123,14 +122,11 @@ namespace PhantasmaMail.ViewModels
             {
                 Debug.WriteLine(e);
             }
-
-
-
+            
             SentList = new ObservableCollection<Message>(SentList.OrderByDescending(p => p.Date)
                 .ThenByDescending(p => p.Date.Hour).ToList());
             _fullSentList = SentList.ToList();
         }
-
 
         private async Task MessageSelectedExecute(Message message)
         {
