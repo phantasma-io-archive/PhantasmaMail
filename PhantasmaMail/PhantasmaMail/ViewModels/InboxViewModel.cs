@@ -45,11 +45,25 @@ namespace PhantasmaMail.ViewModels
 
         public ICommand SearchCommand => new Command<string>(SearchExecute);
 
+        public ICommand ActivateMultipleSelectionCommand => new Command(ActivateMultipleSelectionExecute);
+
+        public ICommand DeleteSelectedMessages => new Command(async => DeleteSelectedMessagesExecute());
+
         public override async Task InitializeAsync(object navigationData)
         {
             DialogService.ShowLoading();
             await RefreshExecute();
             DialogService.HideLoading();
+        }
+
+        private void ActivateMultipleSelectionExecute()
+        {
+            IsMultipleSelectionActive = !IsMultipleSelectionActive;
+            if (IsMultipleSelectionActive) return;
+            foreach (var message in InboxList)
+            {
+                message.IsSelected = false;
+            }
         }
 
         private async Task NewMessageExecute()
@@ -75,7 +89,14 @@ namespace PhantasmaMail.ViewModels
         {
             if (message != null)
             {
-                await NavigationService.NavigateToAsync<MessageDetailViewModel>(new object[] { message, true });
+                if (!IsMultipleSelectionActive)
+                {
+                    message.IsSelected = !message.IsSelected;
+                }
+                else
+                {
+                    await NavigationService.NavigateToAsync<MessageDetailViewModel>(new object[] { message, true });
+                }
                 MessageSelected = null;
             }
         }
@@ -90,7 +111,6 @@ namespace PhantasmaMail.ViewModels
                 InboxList = new ObservableCollection<Message>();
                 if (!string.IsNullOrEmpty(AuthenticationService.AuthenticatedUser.UserBox))
                 {
-                    var publicKey = AuthenticationService.AuthenticatedUser.GetPublicKey();
                     var mailCount = await PhantasmaService.GetInboxCount();
                     if (mailCount > 0)
                     {
@@ -150,6 +170,17 @@ namespace PhantasmaMail.ViewModels
             InboxList = new ObservableCollection<Message>(InboxList.OrderByDescending(p => p.Date)
                 .ThenByDescending(p => p.Date.Hour).ToList());
             _fullInboxList = InboxList.ToList();
+        }
+
+        private async Task DeleteSelectedMessagesExecute()
+        {
+            foreach (var message in InboxList)
+            {
+                if (message.IsSelected)
+                {
+                    await DeleteMessageExecute(message);
+                }
+            }
         }
 
         private async Task DeleteMessageExecute(Message msg)
@@ -228,6 +259,18 @@ namespace PhantasmaMail.ViewModels
                     OnPropertyChanged();
                     MessageSelectedCommand.Execute(_messageSelected);
                 }
+            }
+        }
+
+        private bool _isMultipleSelectionActive;
+
+        public bool IsMultipleSelectionActive
+        {
+            get => _isMultipleSelectionActive;
+            set
+            {
+                _isMultipleSelectionActive = value;
+                OnPropertyChanged();
             }
         }
 

@@ -37,27 +37,23 @@ namespace PhantasmaMail.Utils
                 // C.
                 // Less than one hour ago.
                 if (secDiff < 3600)
-                    return string.Format("{0} minutes ago",
-                        Math.Floor((double)secDiff / 60));
+                    return $"{Math.Floor((double) secDiff / 60)} minutes ago";
                 // D.
                 // Less than 2 hours ago.
                 if (secDiff < 7200) return "1 hour ago";
                 // E.
                 // Less than one day ago.
                 if (secDiff < 86400)
-                    return string.Format("{0} hours ago",
-                        Math.Floor((double)secDiff / 3600));
+                    return $"{Math.Floor((double) secDiff / 3600)} hours ago";
             }
 
             // 6.
             // Handle previous days.
             if (dayDiff == 1) return "yesterday";
             if (dayDiff < 7)
-                return string.Format("{0} days ago",
-                    dayDiff);
+                return $"{dayDiff} days ago";
             if (dayDiff < 31)
-                return string.Format("{0} weeks ago",
-                    Math.Ceiling((double)dayDiff / 7));
+                return $"{Math.Ceiling((double) dayDiff / 7)} weeks ago";
             return null;
         }
 

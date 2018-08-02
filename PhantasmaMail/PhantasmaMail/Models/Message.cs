@@ -124,6 +124,18 @@ namespace PhantasmaMail.Models
             }
         }
 
+        [JsonIgnore]
+        private bool _isSelected;
+        public bool IsSelected
+        {
+            get => _isSelected;
+            set
+            {
+                _isSelected = value;
+                OnPropertyChanged();
+            }
+        }
+
         #endregion
 
         [JsonIgnore]

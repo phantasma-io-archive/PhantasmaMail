@@ -15,11 +15,19 @@
     BackgroundColor="{StaticResource WhiteBackground}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Command="{Binding NewMessageCommand}" >
+        <ToolbarItem Command="{Binding NewMessageCommand}" IsEnabled="{Binding IsMultipleSelectionActive, Converter={StaticResource InverseBooleanConverter}}" >
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="Android, iOS" Value="WriteEmail.png" />
                     <On Platform="UWP" Value="Assets/WriteEmail.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem Command="{Binding DeleteSelectedMessages}" IsEnabled="{Binding IsMultipleSelectionActive}" >
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android, iOS" Value="trash_bar.png" />
+                    <On Platform="UWP" Value="Assets/trash_bar.png" />
                 </OnPlatform>
             </ToolbarItem.Icon>
         </ToolbarItem>
@@ -62,7 +70,8 @@
                         ItemsSource="{Binding InboxList, Mode=TwoWay}"
                         SelectedItem="{Binding MessageSelected}"
                         SelectionBackgroundColor="{StaticResource GradientEndColor}"
-                        SelectionMode="Single"                       
+                        SelectionMode="Single" 
+                        HoldCommand="{Binding ActivateMultipleSelectionCommand}"
                         AllowSwiping="True"
                         VerticalOptions="FillAndExpand">
                         <syncfusion:SfListView.Triggers>
@@ -74,7 +83,16 @@
                         </syncfusion:SfListView.Triggers>
                         <syncfusion:SfListView.ItemTemplate>
                             <DataTemplate>
-                                <controls:InboxMessageCell />
+                                <Grid HorizontalOptions="FillAndExpand">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" 
+                                           Text="TESTE"
+                                           IsVisible="{Binding Source={x:Reference inboxListView}, Path=BindingContext.IsMultipleSelectionActive}"/>
+                                    <controls:InboxMessageCell Grid.Column="1" />
+                                </Grid>
                             </DataTemplate>
                         </syncfusion:SfListView.ItemTemplate>
                         <syncfusion:SfListView.GroupHeaderTemplate>
