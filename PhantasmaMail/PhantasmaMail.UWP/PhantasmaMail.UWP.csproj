@@ -373,6 +373,7 @@
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Assets\unchecked.svg" />
     <Content Include="Assets\uppricearrow.svg">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>

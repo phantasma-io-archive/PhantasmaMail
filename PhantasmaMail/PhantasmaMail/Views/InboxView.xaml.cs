@@ -12,7 +12,6 @@ namespace PhantasmaMail.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class InboxView : ContentPage
     {
-        private readonly InboxViewModel _vm;
         public InboxView()
         {
             InitializeComponent();
@@ -26,7 +25,6 @@ namespace PhantasmaMail.Views
                 },
                 Comparer = new MessageDateGroupComparer()
             });
-            _vm = BindingContext as InboxViewModel;
         }
 
         protected override void OnAppearing()
@@ -38,8 +36,10 @@ namespace PhantasmaMail.Views
         {
             pullToRefreshList.IsRefreshing = true;
             await Task.Delay(2000);
-
-            await _vm.RefreshExecute();
+            if (BindingContext is InboxViewModel vm)
+            {
+                await vm.RefreshExecute();
+            }
             pullToRefreshList.IsRefreshing = false;
         }
     }

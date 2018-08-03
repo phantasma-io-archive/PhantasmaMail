@@ -88,9 +88,34 @@
                                         <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Label Grid.Column="0" 
-                                           Text="TESTE"
-                                           IsVisible="{Binding Source={x:Reference inboxListView}, Path=BindingContext.IsMultipleSelectionActive}"/>
+                                    <Grid Grid.Column="0" 
+                                          Margin="5,0" 
+                                          IsVisible="{Binding Source={x:Reference inboxListView}, Path=BindingContext.IsMultipleSelectionActive}">
+                                        <ffimageloadingsvg:SvgCachedImage IsVisible="{Binding IsSelected, Converter={StaticResource InverseBooleanConverter}}"
+                                                                          HorizontalOptions="Center"
+                                                                          VerticalOptions="Center"
+                                                                          HeightRequest="21"
+                                                                          WidthRequest="21">
+                                            <ffimageloadingsvg:SvgCachedImage.Source>
+                                                <OnPlatform x:TypeArguments="ImageSource">
+                                                    <On Platform="Android, iOS" Value="unchecked.svg" />
+                                                    <On Platform="UWP" Value="Assets/unchecked.svg" />
+                                                </OnPlatform>
+                                            </ffimageloadingsvg:SvgCachedImage.Source>
+                                        </ffimageloadingsvg:SvgCachedImage>
+                                        <ffimageloadingsvg:SvgCachedImage IsVisible="{Binding IsSelected}"
+                                                                          HorizontalOptions="Center"
+                                                                          VerticalOptions="Center"
+                                                                          HeightRequest="21"
+                                                                          WidthRequest="21">
+                                            <ffimageloadingsvg:SvgCachedImage.Source>
+                                                <OnPlatform x:TypeArguments="ImageSource">
+                                                    <On Platform="Android, iOS" Value="settings.svg" />
+                                                    <On Platform="UWP" Value="Assets/settings.svg" />
+                                                </OnPlatform>
+                                            </ffimageloadingsvg:SvgCachedImage.Source>
+                                        </ffimageloadingsvg:SvgCachedImage>
+                                    </Grid>
                                     <controls:InboxMessageCell Grid.Column="1" />
                                 </Grid>
                             </DataTemplate>

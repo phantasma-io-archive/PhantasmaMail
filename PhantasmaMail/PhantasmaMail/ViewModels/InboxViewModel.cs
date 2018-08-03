@@ -47,7 +47,7 @@ namespace PhantasmaMail.ViewModels
 
         public ICommand ActivateMultipleSelectionCommand => new Command(ActivateMultipleSelectionExecute);
 
-        public ICommand DeleteSelectedMessages => new Command(async => DeleteSelectedMessagesExecute());
+        public ICommand DeleteSelectedMessages => new Command(async () => await DeleteSelectedMessagesExecute());
 
         public override async Task InitializeAsync(object navigationData)
         {
@@ -60,10 +60,12 @@ namespace PhantasmaMail.ViewModels
         {
             IsMultipleSelectionActive = !IsMultipleSelectionActive;
             if (IsMultipleSelectionActive) return;
-            foreach (var message in InboxList)
-            {
-                message.IsSelected = false;
-            }
+            DeselectAllMessages();
+        }
+
+        private void DeselectAllMessages()
+        {
+            foreach (var message in InboxList) message.IsSelected = false;
         }
 
         private async Task NewMessageExecute()
@@ -89,14 +91,10 @@ namespace PhantasmaMail.ViewModels
         {
             if (message != null)
             {
-                if (!IsMultipleSelectionActive)
-                {
+                if (IsMultipleSelectionActive)
                     message.IsSelected = !message.IsSelected;
-                }
                 else
-                {
                     await NavigationService.NavigateToAsync<MessageDetailViewModel>(new object[] { message, true });
-                }
                 MessageSelected = null;
             }
         }
@@ -112,18 +110,13 @@ namespace PhantasmaMail.ViewModels
                 if (!string.IsNullOrEmpty(AuthenticationService.AuthenticatedUser.UserBox))
                 {
                     var mailCount = await PhantasmaService.GetInboxCount();
-                    if (mailCount > 0)
-                    {
-                        await DeserializeInboxMails(mailCount);
-                    }
+                    if (mailCount > 0) await DeserializeInboxMails(mailCount);
                 }
             }
             catch (Exception ex)
             {
                 if (ex is RpcClientUnknownException || ex is RpcClientTimeoutException) //todo switch error message
-                {
                     AppSettings.ChangeRpcServer();
-                }
                 await DialogService.ShowAlertAsync(ex.Message, AppResource.Alert_Error);
             }
             finally
@@ -140,7 +133,6 @@ namespace PhantasmaMail.ViewModels
             {
                 //deserialization
                 foreach (var email in emails)
-                {
                     if (email.StartsWith("{") || email.StartsWith("["))
                     {
                         var mailObject =
@@ -155,12 +147,12 @@ namespace PhantasmaMail.ViewModels
                                     AuthenticationService.AuthenticatedUser.GetPrivateKey(), remotePub.HexToBytes());
                                 mailObject.TextContent = decryptedText;
                             }
+
                             mailObject.ID = index;
                             InboxList.Add(mailObject);
                             index++;
                         }
                     }
-                }
             }
             catch (Exception e)
             {
@@ -174,12 +166,40 @@ namespace PhantasmaMail.ViewModels
 
         private async Task DeleteSelectedMessagesExecute()
         {
-            foreach (var message in InboxList)
+            if (IsBusy) return;
+            try
             {
-                if (message.IsSelected)
+                IsBusy = true;
+                var indexes = new List<int>();
+                foreach (var message in InboxList)
                 {
-                    await DeleteMessageExecute(message);
+                    if (message.IsSelected)
+                    {
+                        indexes.Add(message.ID);
+                    }
                 }
+                var tx = await PhantasmaService.RemoveInboxMessages(indexes.ToArray());
+                if (string.IsNullOrEmpty(tx))
+                {
+                    await DialogService.ShowAlertAsync(AppResource.Alert_SomethingWrong, AppResource.Alert_Error);
+                }
+                else
+                {
+                    _fullInboxList.RemoveAll(msg => indexes.Contains(msg.ID));
+                    InboxList = new ObservableCollection<Message>(_fullInboxList);
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex is RpcClientUnknownException || ex is RpcClientTimeoutException) //todo switch error message
+                    AppSettings.ChangeRpcServer();
+                await DialogService.ShowAlertAsync(ex.Message, AppResource.Alert_Error);
+            }
+            finally
+            {
+                IsBusy = false;
+                IsMultipleSelectionActive = false;
+                DeselectAllMessages();
             }
         }
 
@@ -192,20 +212,19 @@ namespace PhantasmaMail.ViewModels
                 IsBusy = true;
                 var tx = await PhantasmaService.RemoveInboxMessage(msg.ID);
                 if (string.IsNullOrEmpty(tx))
+                {
                     await DialogService.ShowAlertAsync(AppResource.Alert_SomethingWrong, AppResource.Alert_Error);
+                }
                 else
                 {
                     _fullInboxList.Remove(msg);
                     InboxList = new ObservableCollection<Message>(_fullInboxList);
                 }
-
             }
             catch (Exception ex)
             {
                 if (ex is RpcClientUnknownException || ex is RpcClientTimeoutException) //todo switch error message
-                {
                     AppSettings.ChangeRpcServer();
-                }
                 await DialogService.ShowAlertAsync(ex.Message, AppResource.Alert_Error);
             }
             finally
@@ -225,9 +244,9 @@ namespace PhantasmaMail.ViewModels
             {
                 var newList = new List<Message>(_fullInboxList.Where(msg => msg.TextContent != null
                                                                             && (msg.TextContent.Contains(text)
-                                                                            || msg.ToInbox.Contains(text)
-                                                                            || msg.Subject.Contains(text)
-                                                                            || msg.FromInbox.Contains(text))));
+                                                                                || msg.ToInbox.Contains(text)
+                                                                                || msg.Subject.Contains(text)
+                                                                                || msg.FromInbox.Contains(text))));
                 InboxList = new ObservableCollection<Message>(newList);
             }
         }
