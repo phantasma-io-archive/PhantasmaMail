@@ -101,8 +101,8 @@
                                                                           WidthRequest="21">
                                             <ffimageloadingsvg:SvgCachedImage.Source>
                                                 <OnPlatform x:TypeArguments="ImageSource">
-                                                    <On Platform="Android, iOS" Value="settings.svg" />
-                                                    <On Platform="UWP" Value="Assets/settings.svg" />
+                                                    <On Platform="Android, iOS" Value="SelectionCheck.svg" />
+                                                    <On Platform="UWP" Value="Assets/SelectionCheck.svg" />
                                                 </OnPlatform>
                                             </ffimageloadingsvg:SvgCachedImage.Source>
                                         </ffimageloadingsvg:SvgCachedImage>

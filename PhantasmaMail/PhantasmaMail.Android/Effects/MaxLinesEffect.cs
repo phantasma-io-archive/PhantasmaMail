@@ -12,7 +12,7 @@ namespace PhantasmaMail.Droid.Effects
     {
         protected override void OnAttached()
         {
-            var maxLinesEffect = Element.Effects.OfType<PhantasmaMail.Effects.MaxLinesEffect>().First();
+            var maxLinesEffect = Element.Effects?.OfType<PhantasmaMail.Effects.MaxLinesEffect>().First();
             if (maxLinesEffect == null)
             {
                 return;

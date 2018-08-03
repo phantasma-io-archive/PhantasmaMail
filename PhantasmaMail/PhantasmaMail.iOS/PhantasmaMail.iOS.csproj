@@ -599,5 +599,8 @@
   <ItemGroup>
     <BundleResource Include="Resources\unchecked.svg" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SelectionCheck.svg" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
