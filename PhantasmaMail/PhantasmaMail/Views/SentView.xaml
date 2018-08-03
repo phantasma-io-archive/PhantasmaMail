@@ -62,6 +62,8 @@
                         SelectedItem="{Binding MessageSelected}"
                         SelectionBackgroundColor="{StaticResource GradientEndColor}"
                         SelectionMode="Single"
+                        HoldCommand="{Binding ActivateMultipleSelectionCommand}"
+                        AllowSwiping="True"
                         VerticalOptions="FillAndExpand">
                         <syncfusion:SfListView.Triggers>
                             <DataTrigger TargetType="syncfusion:SfListView"
@@ -72,7 +74,41 @@
                         </syncfusion:SfListView.Triggers>
                         <syncfusion:SfListView.ItemTemplate>
                             <DataTemplate>
-                                <controls:SentMessageCell />
+                                <Grid HorizontalOptions="FillAndExpand">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0" 
+                                          Margin="20,0,0,0" 
+                                          IsVisible="{Binding Source={x:Reference sentList}, Path=BindingContext.IsMultipleSelectionActive}">
+                                        <ffimageloadingsvg:SvgCachedImage IsVisible="{Binding IsSelected, Converter={StaticResource InverseBooleanConverter}}"
+                                                                          HorizontalOptions="Center"
+                                                                          VerticalOptions="Center"
+                                                                          HeightRequest="21"
+                                                                          WidthRequest="21">
+                                            <ffimageloadingsvg:SvgCachedImage.Source>
+                                                <OnPlatform x:TypeArguments="ImageSource">
+                                                    <On Platform="Android, iOS" Value="unchecked.svg" />
+                                                    <On Platform="UWP" Value="Assets/unchecked.svg" />
+                                                </OnPlatform>
+                                            </ffimageloadingsvg:SvgCachedImage.Source>
+                                        </ffimageloadingsvg:SvgCachedImage>
+                                        <ffimageloadingsvg:SvgCachedImage IsVisible="{Binding IsSelected}"
+                                                                          HorizontalOptions="Center"
+                                                                          VerticalOptions="Center"
+                                                                          HeightRequest="21"
+                                                                          WidthRequest="21">
+                                            <ffimageloadingsvg:SvgCachedImage.Source>
+                                                <OnPlatform x:TypeArguments="ImageSource">
+                                                    <On Platform="Android, iOS" Value="settings.svg" />
+                                                    <On Platform="UWP" Value="Assets/settings.svg" />
+                                                </OnPlatform>
+                                            </ffimageloadingsvg:SvgCachedImage.Source>
+                                        </ffimageloadingsvg:SvgCachedImage>
+                                    </Grid>
+                                    <controls:SentMessageCell Grid.Column="1"/>
+                                </Grid>
                             </DataTemplate>
                         </syncfusion:SfListView.ItemTemplate>
                         <syncfusion:SfListView.GroupHeaderTemplate>

@@ -38,11 +38,27 @@ namespace PhantasmaMail.ViewModels
 
         public ICommand SearchCommand => new Command<string>(SearchExecute);
 
+        public ICommand ActivateMultipleSelectionCommand => new Command(ActivateMultipleSelectionExecute);
+
+        public ICommand DeleteSelectedMessages => new Command(async () => await DeleteSelectedMessagesExecute());
+
         public override async Task InitializeAsync(object navigationData)
         {
             DialogService.ShowLoading();
             await RefreshExecute();
             DialogService.HideLoading();
+        }
+
+        private void ActivateMultipleSelectionExecute()
+        {
+            IsMultipleSelectionActive = !IsMultipleSelectionActive;
+            if (IsMultipleSelectionActive) return;
+            DeselectAllMessages();
+        }
+
+        private void DeselectAllMessages()
+        {
+            foreach (var message in SentList) message.IsSelected = false;
         }
 
         private async Task NewMessageExecute()
@@ -139,11 +155,53 @@ namespace PhantasmaMail.ViewModels
 
             if (message != null)
             {
-                await NavigationService.NavigateToAsync<MessageDetailViewModel>(new object[] { message, false });
+                if (IsMultipleSelectionActive)
+                    message.IsSelected = !message.IsSelected;
+                else
+                    await NavigationService.NavigateToAsync<MessageDetailViewModel>(new object[] { message, false });
                 MessageSelected = null;
             }
 
             IsBusy = false;
+        }
+
+        private async Task DeleteSelectedMessagesExecute()
+        {
+            if (IsBusy) return;
+            try
+            {
+                IsBusy = true;
+                var indexes = new List<int>();
+                foreach (var message in SentList)
+                {
+                    if (message.IsSelected)
+                    {
+                        indexes.Add(message.ID);
+                    }
+                }
+                var tx = await PhantasmaService.RemoveInboxMessages(indexes.ToArray());
+                if (string.IsNullOrEmpty(tx))
+                {
+                    await DialogService.ShowAlertAsync(AppResource.Alert_SomethingWrong, AppResource.Alert_Error);
+                }
+                else
+                {
+                    _fullSentList.RemoveAll(msg => indexes.Contains(msg.ID));
+                    SentList = new ObservableCollection<Message>(_fullSentList);
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex is RpcClientUnknownException || ex is RpcClientTimeoutException) //todo switch error message
+                    AppSettings.ChangeRpcServer();
+                await DialogService.ShowAlertAsync(ex.Message, AppResource.Alert_Error);
+            }
+            finally
+            {
+                IsBusy = false;
+                IsMultipleSelectionActive = false;
+                DeselectAllMessages();
+            }
         }
 
         private string GetHashFromStoredMessage(List<StoreMessage> storedMessages, Message msg)
@@ -202,6 +260,18 @@ namespace PhantasmaMail.ViewModels
                     OnPropertyChanged();
                     MessageSelectedCommand.Execute(_messageSelected);
                 }
+            }
+        }
+
+        private bool _isMultipleSelectionActive;
+
+        public bool IsMultipleSelectionActive
+        {
+            get => _isMultipleSelectionActive;
+            set
+            {
+                _isMultipleSelectionActive = value;
+                OnPropertyChanged();
             }
         }
 

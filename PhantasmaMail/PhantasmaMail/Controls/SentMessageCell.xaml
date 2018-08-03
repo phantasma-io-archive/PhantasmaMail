@@ -3,8 +3,9 @@
 <Grid xmlns="http://xamarin.com/schemas/2014/forms"
       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
       xmlns:effects="clr-namespace:PhantasmaMail.Effects;assembly=PhantasmaMail"
+      xmlns:controls="clr-namespace:PhantasmaMail.Controls;assembly=PhantasmaMail"
       x:Class="PhantasmaMail.Controls.SentMessageCell">
-    <Frame Margin="20,10" CornerRadius="0" HasShadow="True" BackgroundColor="White">
+    <controls:CustomFrame Margin="20,10" CornerRadius="0" HasShadow="True" BackgroundColor="White">
         <Grid RowSpacing="7" ColumnSpacing="0" Margin="3,3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -13,7 +14,6 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <!--<ColumnDefinition Width="10" />-->
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
@@ -55,5 +55,5 @@
                    HorizontalTextAlignment="Start"
                    Style="{StaticResource MessageSenderStyle}" />
         </Grid>
-    </Frame>
+    </controls:CustomFrame>
 </Grid>

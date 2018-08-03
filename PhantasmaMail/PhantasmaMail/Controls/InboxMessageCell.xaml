@@ -22,41 +22,41 @@
             </Grid.ColumnDefinitions>
 
             <Label Grid.Row="0"
-               Grid.Column="0"
-               Text="{Binding Subject}"
-               Style="{StaticResource MessageTitleStyle}" />
+                   Grid.Column="0"
+                   Text="{Binding Subject}"
+                   Style="{StaticResource MessageTitleStyle}" />
 
             <Label Grid.Row="0"
-               Grid.Column="1"
-               Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}', Converter={StaticResource UtcToLocalTimeConverter}}"
-               HorizontalOptions="End"
-               Style="{StaticResource MessageTextStyle}"
-               FontSize="{StaticResource LittleSize}" />
+                   Grid.Column="1"
+                   Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}', Converter={StaticResource UtcToLocalTimeConverter}}"
+                   HorizontalOptions="End"
+                   Style="{StaticResource MessageTextStyle}"
+                   FontSize="{StaticResource LittleSize}" />
 
             <Label Grid.Row="1"
-               Grid.Column="0"
-               Grid.ColumnSpan="2"
-               Text="{Binding TextContent}"
-               Style="{StaticResource MessageTextStyle}">
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Text="{Binding TextContent}"
+                   Style="{StaticResource MessageTextStyle}">
                 <Label.Effects>
                     <effects:MaxLinesEffect MaxLines="2" />
                 </Label.Effects>
             </Label>
 
             <BoxView Grid.Row="2"
-                 Grid.Column="0"
-                 Grid.ColumnSpan="2"
-                 BackgroundColor="{StaticResource SeparatorGray}" />
+                     Grid.Column="0"
+                     Grid.ColumnSpan="2"
+                     BackgroundColor="{StaticResource SeparatorGray}" />
 
             <Label Grid.Row="3"
-               x:Name="BoxNameLabel"
-               Grid.Column="0"
-               Grid.ColumnSpan="2"
-               Text="{Binding FromInbox}"
-               VerticalTextAlignment="Center"
-               HorizontalOptions="EndAndExpand"
-               HorizontalTextAlignment="Start"
-               Style="{StaticResource MessageSenderStyle}" />
+                   x:Name="BoxNameLabel"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Text="{Binding FromInbox}"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="EndAndExpand"
+                   HorizontalTextAlignment="Start"
+                   Style="{StaticResource MessageSenderStyle}" />
         </Grid>
     </controls:CustomFrame>
 </Grid>

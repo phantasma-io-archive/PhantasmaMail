@@ -89,7 +89,7 @@
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid Grid.Column="0" 
-                                          Margin="5,0" 
+                                          Margin="20,0,0,0" 
                                           IsVisible="{Binding Source={x:Reference inboxListView}, Path=BindingContext.IsMultipleSelectionActive}">
                                         <ffimageloadingsvg:SvgCachedImage IsVisible="{Binding IsSelected, Converter={StaticResource InverseBooleanConverter}}"
                                                                           HorizontalOptions="Center"

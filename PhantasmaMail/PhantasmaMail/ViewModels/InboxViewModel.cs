@@ -89,6 +89,8 @@ namespace PhantasmaMail.ViewModels
 
         private async Task MessageSelectedExecute(Message message)
         {
+            if (IsBusy) return;
+            IsBusy = true;
             if (message != null)
             {
                 if (IsMultipleSelectionActive)
@@ -97,6 +99,8 @@ namespace PhantasmaMail.ViewModels
                     await NavigationService.NavigateToAsync<MessageDetailViewModel>(new object[] { message, true });
                 MessageSelected = null;
             }
+
+            IsBusy = false;
         }
 
         public async Task RefreshExecute()
