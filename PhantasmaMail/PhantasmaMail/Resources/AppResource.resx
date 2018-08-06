@@ -177,6 +177,9 @@
   <data name="MenuItem_Wallet" xml:space="preserve">
     <value>Wallet</value>
   </data>
+  <data name="PageTitle_ChangeServer" xml:space="preserve">
+    <value>Change Server</value>
+  </data>
   <data name="PageTitle_Compose" xml:space="preserve">
     <value>Compose</value>
   </data>
@@ -191,6 +194,9 @@
   </data>
   <data name="PageTitle_Sent" xml:space="preserve">
     <value>Sent</value>
+  </data>
+  <data name="PageTitle_Settings" xml:space="preserve">
+    <value>Settings</value>
   </data>
   <data name="PageTitle_Wallet" xml:space="preserve">
     <value>Wallet</value>

@@ -123,7 +123,7 @@ namespace PhantasmaMail.ViewModels
             if (!string.IsNullOrEmpty(SelectedMessage.Hash))
             {
                 var tx = SelectedMessage.Hash.Substring(2);
-                var uri = new Uri(AppSettings.NeoScanUrlTransactions + tx);
+                var uri = new Uri(AppSettings.NeoScanTransactionsUrlEndPoint + tx);
                 await Browser.OpenAsync(uri, BrowserLaunchType.SystemPreferred);
             }
         }

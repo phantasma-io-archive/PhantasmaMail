@@ -270,7 +270,7 @@ namespace PhantasmaMail.ViewModels
         {
             if (SelectedTransaction != null)
             {
-                var uri = new Uri(AppSettings.NeoScanUrlTransactions + SelectedTransaction.TxHash);
+                var uri = new Uri(AppSettings.NeoScanTransactionsUrlEndPoint + SelectedTransaction.TxHash);
                 await Browser.OpenAsync(uri, BrowserLaunchType.SystemPreferred);
                 SelectedTransaction = null;
             }

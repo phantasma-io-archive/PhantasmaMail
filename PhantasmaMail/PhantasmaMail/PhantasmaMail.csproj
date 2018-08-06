@@ -30,16 +30,17 @@
     <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
     <PackageReference Include="MaterialFormControls" Version="2018.2.22-pre1" />
     <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
-    <PackageReference Include="NeoModules.NEP6" Version="0.0.26" />
+    <PackageReference Include="NeoModules.NEP6" Version="0.0.27" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="PCLStorage" Version="1.0.2" />
     <PackageReference Include="Rg.Plugins.Popup" Version="1.1.4.168" />
     <PackageReference Include="sqlite-net-pcl" Version="1.4.118" />
-    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="16.2.0.42" />
-    <PackageReference Include="Syncfusion.Xamarin.SfPicker" Version="16.2.0.42" />
-    <PackageReference Include="Syncfusion.Xamarin.SfPullToRefresh" Version="16.2.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="16.2.0.46" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPicker" Version="16.2.0.46" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPullToRefresh" Version="16.2.0.46" />
     <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
     <PackageReference Include="ThriveGmbH.BottomNavigationBar.XF" Version="1.0.2" />
+    <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
     <PackageReference Include="Xamarin.Essentials" Version="0.6.0-preview" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.3.840" />
     <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.3.840" />
@@ -111,6 +112,9 @@
     <EmbeddedResource Update="Resources\AppResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ChangeServerView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\CustomNavigationPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

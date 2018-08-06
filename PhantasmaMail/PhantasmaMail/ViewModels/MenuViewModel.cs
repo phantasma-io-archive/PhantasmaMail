@@ -106,7 +106,7 @@ namespace PhantasmaMail.ViewModels
                 Title = AppResource.MenuItem_Settings,
                 MenuItemType = MenuItemType.Settings,
                 ViewModelType = typeof(SettingsViewModel),
-                IsEnabled = false
+                IsEnabled = true
             });
         }
 

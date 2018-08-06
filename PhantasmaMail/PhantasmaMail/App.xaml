@@ -234,6 +234,15 @@
                         Value="{StaticResource SFUITextSemibold}" />
             </Style>
 
+            <Style x:Key="SettingsLabelStyle"
+                TargetType="{x:Type Label}"
+                BasedOn="{StaticResource OpenSansSemiBoldLabelStyle}">
+                <Setter Property="TextColor"
+                        Value="{StaticResource LightGray}"/>
+                <Setter Property="FontSize" 
+                        Value="{StaticResource MediumSize}" />
+            </Style>
+
             <Style x:Key="NoMessagesLabelStyle" 
                    TargetType="Label"
                    BasedOn="{StaticResource OpenSansSemiBoldLabelStyle}">

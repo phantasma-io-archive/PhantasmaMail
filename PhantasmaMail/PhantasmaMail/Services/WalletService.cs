@@ -42,7 +42,7 @@ namespace PhantasmaMail.Services
         public async Task<AddressBalance> GetAccountBalance()
         {
             var balance = await AppSettings.RestService.GetBalanceAsync(ActiveUser.GetUserDefaultAddress());
-            return AddressBalance.FromJson(balance);
+            return balance;
         }
 
         public async Task<TokenResult> GetAllNep5Tokens()
@@ -53,9 +53,8 @@ namespace PhantasmaMail.Services
 
         public async Task<List<AbstractEntry>> GetTransactionHistory()
         {
-            var transactionHistoryJson = await AppSettings.RestService.GetAddressAbstracts(ActiveUser.GetUserDefaultAddress(), 0);
-            var list = AbstractAddress.FromJson(transactionHistoryJson);
-            return list.Entries.ToList();
+            var transactionHistory = await AppSettings.RestService.GetAddressAbstracts(ActiveUser.GetUserDefaultAddress(), 0);
+            return transactionHistory.Entries.ToList();
         }
 
         public string GetUserAddress()

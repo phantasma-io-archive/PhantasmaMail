@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:markupExtensions="clr-namespace:PhantasmaMail.MarkupExtensions;assembly=PhantasmaMail"
+             x:Class="PhantasmaMail.Views.ChangeServerView"
+             BackgroundColor="{StaticResource WhiteBackground}"
+             Title="{markupExtensions:Translate PageTitle_ChangeServer}">
+    <ContentPage.Content>
+        <ListView VerticalOptions="FillAndExpand"
+                  HorizontalOptions="FillAndExpand"
+                  SeparatorColor="{StaticResource LightGray}"
+                  ItemTapped="ListView_OnItemTapped"
+                  ItemsSource="{Binding ServerList}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="8*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding}"  
+                                   Margin="10"
+                                   Style="{StaticResource SettingsLabelStyle}"></Label>
+
+                            <forms:SvgCachedImage Grid.Column="1"
+                                                  Margin="10"
+                                                  VerticalOptions="Center"
+                                                  HorizontalOptions="Center"
+                                                  HeightRequest="14"
+                                                  WidthRequest="14">
+                                <forms:SvgCachedImage.Source>
+                                    <OnPlatform x:TypeArguments="ImageSource">
+                                        <On Platform="Android, iOS" Value="right_arrow.svg" />
+                                        <On Platform="UWP" Value="Assets/right_arrow.svg" />
+                                    </OnPlatform>
+                                </forms:SvgCachedImage.Source>
+                                <!--<forms:SvgCachedImage.Transformations>
+                    <transformations:TintTransformation EnableSolidColor="true"
+                                                          HexColor="{StaticResource TintWhiteIconColor}" />
+                </forms:SvgCachedImage.Transformations>-->
+                            </forms:SvgCachedImage>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

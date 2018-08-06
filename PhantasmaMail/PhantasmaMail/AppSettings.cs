@@ -8,26 +8,30 @@ using Newtonsoft.Json;
 using PhantasmaMail.Services.Authentication;
 using PhantasmaMail.Services.Phantasma;
 using PhantasmaMail.ViewModels.Base;
+using Plugin.Settings;
+using Plugin.Settings.Abstractions;
 
 namespace PhantasmaMail
 {
     // Endpoints and other stuff
     public static class AppSettings
     {
-        public static INeoRestService RestService = new NeoScanRestService(NeoScanNet.MainNet);
+
+        // endpoints
+        private const string DefaultRpcUrl = "http://seed4.aphelion-neo.com:10332";
+        private const string DefaultNeoScanTransactionsUrl = "https://neoscan.io/transaction/";
+
+        // services
+        public static INeoscanService RestService = new NeoScanRestService(NeoScanNet.MainNet);
         public static NotificationsService NotificationsService = new NotificationsService();
-
-        //public static RpcClient RpcClient = new RpcClient(new Uri("http://seed2.aphelion-neo.com:10332"));
-        public static RpcClient RpcClient = new RpcClient(new Uri("http://seed4.aphelion-neo.com:10332"));
+        public static RpcClient RpcClient = new RpcClient(new Uri(DefaultRpcUrl));
         public static NeoNodesListService NodesService = new NeoNodesListService();
-        public static string ContractScriptHash = "ed07cffad18f1308db51920d99a2af60ac66a7b3";
 
-        //Transactions
-        public static string NeoScanUrlTransactions = "https://neoscan.io/transaction/";
+        // contract 
+        public const string ContractScriptHash = "ed07cffad18f1308db51920d99a2af60ac66a7b3";
+
 
         public static TokenResult TokenList { get; set; }
-
-        public static bool UseEncryption { get; set; } = false; //todo
 
         public static bool UseMainNet { get; set; } = true;
 
@@ -84,27 +88,69 @@ namespace PhantasmaMail
 
         private static readonly Random Rnd = new Random();
 
-        public static void ChangeRpcServer()
+        public static void ChangeRpcServer(string url = "")
         {
-            //todo test net urls
-            if (UseMainNet)
+            if (string.IsNullOrEmpty(url))
             {
-                //var result = await NodesService.GetNodesList(MonitorNet.MainNet);
-                //var nodes = JsonConvert.DeserializeObject<NodeList>(result);
+                if (UseMainNet)
+                {
+                    //var result = await NodesService.GetNodesList(MonitorNet.MainNet);
+                    //var nodes = JsonConvert.DeserializeObject<NodeList>(result);
 
-                var index = Rnd.Next(RpcUrlList.Count);
-                var rpcUrl = RpcUrlList[index];
-                RpcClient = new RpcClient(new Uri(rpcUrl));
-                Locator.Instance.Resolve<IPhantasmaService>().ApiService = new NeoApiService(RpcClient);
-                Locator.Instance.Resolve<IAuthenticationService>().AuthenticatedUser?.WalletManager.ChangeApiEndPoints(RpcClient, new NeoScanRestService(NeoScanNet.MainNet));
+                    var index = Rnd.Next(RpcUrlList.Count);
+                    RpcUrlEndpoint = RpcUrlList[index];
+                    RpcClient = new RpcClient(new Uri(RpcUrlEndpoint));
+                    Locator.Instance.Resolve<IPhantasmaService>().ApiService = new NeoApiService(RpcClient);
+                    Locator.Instance.Resolve<IAuthenticationService>().AuthenticatedUser?.WalletManager.ChangeApiEndPoints(RpcClient, new NeoScanRestService(NeoScanNet.MainNet));
+                }
+                else
+                {
+                    var index = Rnd.Next(RpcUrlList.Count);
+                    RpcUrlEndpoint = RpcUrlList[index];
+                    RpcClient = new RpcClient(new Uri(RpcUrlEndpoint));
+                    Locator.Instance.Resolve<AuthenticationService>().AuthenticatedUser?.WalletManager.ChangeApiEndPoints(RpcClient, new NeoScanRestService(NeoScanNet.TestNet));
+                }
             }
             else
             {
-                var index = Rnd.Next(RpcUrlList.Count);
-                var rpcUrl = RpcUrlList[index];
-                RpcClient = new RpcClient(new Uri(rpcUrl));
-                Locator.Instance.Resolve<AuthenticationService>().AuthenticatedUser?.WalletManager.ChangeApiEndPoints(RpcClient, new NeoScanRestService(NeoScanNet.TestNet));
+                RpcUrlEndpoint = url;
+                RpcClient = new RpcClient(new Uri(RpcUrlEndpoint));
+                Locator.Instance.Resolve<IPhantasmaService>().ApiService = new NeoApiService(RpcClient);
+                Locator.Instance.Resolve<IAuthenticationService>().AuthenticatedUser?.WalletManager.ChangeApiEndPoints(RpcClient, new NeoScanRestService(NeoScanNet.MainNet));
             }
         }
+
+        private static ISettings Settings => CrossSettings.Current;
+
+        #region Setting Constants
+
+        private const string SettingsKey = "settings_key";
+        private static readonly string SettingsDefault = string.Empty;
+
+        #endregion
+
+
+        public static string GeneralSettings
+        {
+            get => Settings.GetValueOrDefault(SettingsKey, SettingsDefault);
+            set => Settings.AddOrUpdateValue(SettingsKey, value);
+        }
+
+        public static string NeoScanTransactionsUrlEndPoint
+        {
+
+            get => Settings.GetValueOrDefault(nameof(NeoScanTransactionsUrlEndPoint), DefaultNeoScanTransactionsUrl);
+
+            set => Settings.AddOrUpdateValue(nameof(NeoScanTransactionsUrlEndPoint), value);
+        }
+
+        public static string RpcUrlEndpoint
+        {
+
+            get => Settings.GetValueOrDefault(nameof(RpcUrlEndpoint), DefaultRpcUrl);
+
+            set => Settings.AddOrUpdateValue(nameof(RpcUrlEndpoint), value);
+        }
+
     }
 }

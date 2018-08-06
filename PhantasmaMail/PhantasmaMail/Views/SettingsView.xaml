@@ -2,12 +2,89 @@
 <ContentPage
     x:Class="PhantasmaMail.Views.SettingsView"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:markupExtensions="clr-namespace:PhantasmaMail.MarkupExtensions;assembly=PhantasmaMail"
+    Title="{markupExtensions:Translate PageTitle_Settings}">
     <ContentPage.Content>
-        <StackLayout>
-            <Button Text="Refresh" Command="{Binding RefreshCommand}"/>
-            <Button Text="Mint" Command="{Binding MintCommand}"/>
-            <Button Text="Unregister" Command="{Binding UnregisterInboxCommand}"/>
-        </StackLayout>
+        <Grid Margin="10" BackgroundColor="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+
+
+            <Label Grid.Row="0" Grid.Column="0"
+                   Margin="10"
+                   Text="Change RPC server"
+                   Style="{StaticResource SettingsLabelStyle}"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="StartAndExpand" />
+
+            <forms:SvgCachedImage Grid.Row="0" Grid.Column="1"
+                                  Margin="10"
+                                  VerticalOptions="Center"
+                                  HorizontalOptions="Center"
+                                  HeightRequest="14"
+                                  WidthRequest="14">
+                <forms:SvgCachedImage.Source>
+                    <OnPlatform x:TypeArguments="ImageSource">
+                        <On Platform="Android, iOS" Value="right_arrow.svg" />
+                        <On Platform="UWP" Value="Assets/right_arrow.svg" />
+                    </OnPlatform>
+                </forms:SvgCachedImage.Source>
+                <!--<forms:SvgCachedImage.Transformations>
+                    <transformations:TintTransformation EnableSolidColor="true"
+                                                          HexColor="{StaticResource TintWhiteIconColor}" />
+                </forms:SvgCachedImage.Transformations>-->
+            </forms:SvgCachedImage>
+            <ContentView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoToChangeServerCommand}"/>
+                </ContentView.GestureRecognizers>
+            </ContentView>
+
+
+
+
+            <Label Grid.Row="1" Grid.Column="0"
+                   Margin="10"
+                   Text="Unregister box"
+                   Style="{StaticResource SettingsLabelStyle}"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="StartAndExpand" />
+
+            <forms:SvgCachedImage Grid.Row="1" Grid.Column="1"
+                                  Margin="10"
+                                  VerticalOptions="Center"
+                                  HorizontalOptions="Center"
+                                  HeightRequest="14"
+                                  WidthRequest="14">
+                <forms:SvgCachedImage.Source>
+                    <OnPlatform x:TypeArguments="ImageSource">
+                        <On Platform="Android, iOS" Value="right_arrow.svg" />
+                        <On Platform="UWP" Value="Assets/right_arrow.svg" />
+                    </OnPlatform>
+                </forms:SvgCachedImage.Source>
+                <!--<forms:SvgCachedImage.Transformations>
+                    <transformations:TintTransformation EnableSolidColor="true"
+                                                          HexColor="{StaticResource TintWhiteIconColor}" />
+                </forms:SvgCachedImage.Transformations>-->
+            </forms:SvgCachedImage>
+            <ContentView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding UnregisterCommand}"/>
+                </ContentView.GestureRecognizers>
+            </ContentView>
+
+
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

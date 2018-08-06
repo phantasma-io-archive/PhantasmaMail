@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Diagnostics;
+using System.Linq;
 using Android.Text;
 using Android.Widget;
 using Xamarin.Forms;
@@ -12,28 +14,35 @@ namespace PhantasmaMail.Droid.Effects
     {
         protected override void OnAttached()
         {
-            var maxLinesEffect = Element.Effects?.OfType<PhantasmaMail.Effects.MaxLinesEffect>().First();
-            if (maxLinesEffect == null)
+            try
             {
-                return;
-            }
+                var maxLinesEffect = Element.Effects?.OfType<PhantasmaMail.Effects.MaxLinesEffect>().First();
+                if (maxLinesEffect == null)
+                {
+                    return;
+                }
 
-            if (Control is TextView nativeTextView)
+                if (Control is TextView nativeTextView)
+                {
+                    if (maxLinesEffect.MaxLines <= 0)
+                    {
+                        nativeTextView.SetMaxLines(99999);
+                    }
+                    else if (maxLinesEffect.MaxLines == 1)
+                    {
+                        nativeTextView.SetSingleLine(true);
+                        nativeTextView.Ellipsize = TextUtils.TruncateAt.End;
+                    }
+                    else if (maxLinesEffect.MaxLines > 1)
+                    {
+                        nativeTextView.SetMaxLines(maxLinesEffect.MaxLines);
+                        nativeTextView.Ellipsize = TextUtils.TruncateAt.End;
+                    }
+                }
+            }
+            catch (Exception e)
             {
-                if (maxLinesEffect.MaxLines <= 0)
-                {
-                    nativeTextView.SetMaxLines(99999);
-                }
-                else if (maxLinesEffect.MaxLines == 1)
-                {
-                    nativeTextView.SetSingleLine(true);
-                    nativeTextView.Ellipsize = TextUtils.TruncateAt.End;
-                }
-                else if (maxLinesEffect.MaxLines > 1)
-                {
-                    nativeTextView.SetMaxLines(maxLinesEffect.MaxLines);
-                    nativeTextView.Ellipsize = TextUtils.TruncateAt.End;
-                }
+                Debug.WriteLine(e);
             }
         }
 

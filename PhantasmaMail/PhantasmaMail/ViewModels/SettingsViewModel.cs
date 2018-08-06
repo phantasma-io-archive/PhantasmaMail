@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using NeoModules.RPC.Services;
 using PhantasmaMail.Resources;
 using PhantasmaMail.ViewModels.Base;
 using Xamarin.Forms;
@@ -17,9 +16,9 @@ namespace PhantasmaMail.ViewModels
 
         public ICommand TransferCommand => new Command(async () => await TransferExecute());
 
-        public ICommand UnregisterInboxCommand => new Command(async () => await UnregisterInboxExecute());
+        public ICommand UnregisterCommand => new Command(async () => await UnregisterExecute());
 
-
+        public ICommand GoToChangeServerCommand => new Command(async () => await GoToChangeServerExecute());
 
         #region nep5 test
 
@@ -47,21 +46,38 @@ namespace PhantasmaMail.ViewModels
             //var balance2 = await nep5Service.GetBalance("ec322dc32eb773fb7f5f52b29dfb50def87fe7bf", decimals);
         }
 
-        private async Task UnregisterInboxExecute()
+        private async Task UnregisterExecute()
         {
+            if (IsBusy) return;
             try
             {
-                var tx = await PhantasmaService.UnregisterMailbox();
-                if (!string.IsNullOrEmpty(tx))
+                IsBusy = true;
+                var confirmation = await DialogService.ShowConfirmAsync(
+                    "Are you sure you want to unregister? You won't be able to use your box again.",
+                    "Unregister", "Confirm", "Cancel");
+                if (confirmation)
                 {
-                    await NavigationService.NavigateToAsync<LoginViewModel>();
+                    var tx = await PhantasmaService.UnregisterMailbox();
+                    if (!string.IsNullOrEmpty(tx))
+                    {
+                        await NavigationService.NavigateToAsync<LoginViewModel>();
+                    }
                 }
-                await DialogService.ShowAlertAsync(tx, "TODO");
             }
             catch (Exception ex)
             {
                 await DialogService.ShowAlertAsync(ex.Message, AppResource.Alert_Error);
             }
+            finally
+            {
+                IsBusy = false;
+            }
         }
+
+        private async Task GoToChangeServerExecute()
+        {
+            await NavigationService.NavigateToAsync<ChangeServerViewModel>();
+        }
+
     }
 }

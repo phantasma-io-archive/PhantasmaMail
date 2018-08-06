@@ -241,6 +241,15 @@ namespace PhantasmaMail.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change Server.
+        /// </summary>
+        public static string PageTitle_ChangeServer {
+            get {
+                return ResourceManager.GetString("PageTitle_ChangeServer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Compose.
         /// </summary>
         public static string PageTitle_Compose {
@@ -282,6 +291,15 @@ namespace PhantasmaMail.Resources {
         public static string PageTitle_Sent {
             get {
                 return ResourceManager.GetString("PageTitle_Sent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string PageTitle_Settings {
+            get {
+                return ResourceManager.GetString("PageTitle_Settings", resourceCulture);
             }
         }
         
