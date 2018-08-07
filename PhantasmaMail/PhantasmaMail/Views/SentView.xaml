@@ -13,17 +13,6 @@
     xmlns:behaviors="clr-namespace:PhantasmaMail.Behaviors;assembly=PhantasmaMail"
     Title="{markupExtensions:Translate PageTitle_Sent}"
     BackgroundColor="{StaticResource WhiteBackground}">
-
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Command="{Binding NewMessageCommand}" >
-            <ToolbarItem.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="Android, iOS" Value="WriteEmail.png" />
-                    <On Platform="UWP" Value="Assets/WriteEmail.png" />
-                </OnPlatform>
-            </ToolbarItem.Icon>
-        </ToolbarItem>
-    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <Grid.RowDefinitions>
@@ -62,7 +51,7 @@
                         SelectedItem="{Binding MessageSelected}"
                         SelectionBackgroundColor="{StaticResource GradientEndColor}"
                         SelectionMode="Single"
-                        HoldCommand="{Binding ActivateMultipleSelectionCommand}"
+                        ItemHolding="SentList_OnItemHolding"
                         AllowSwiping="True"
                         VerticalOptions="FillAndExpand">
                         <syncfusion:SfListView.Triggers>

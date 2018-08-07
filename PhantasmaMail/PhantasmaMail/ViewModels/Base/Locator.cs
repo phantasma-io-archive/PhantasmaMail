@@ -39,7 +39,7 @@ namespace PhantasmaMail.ViewModels.Base
             _containerBuilder.RegisterType<MessageDetailViewModel>();
             _containerBuilder.RegisterType<RegisterBoxViewModel>();
             _containerBuilder.RegisterType<WalletTabViewModel>();
-            _containerBuilder.RegisterType<SettingsViewModel>().SingleInstance();
+            _containerBuilder.RegisterType<SettingsViewModel>();
             _containerBuilder.RegisterType<ChangeServerViewModel>();
 
             //db
