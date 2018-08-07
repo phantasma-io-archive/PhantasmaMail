@@ -1,4 +1,5 @@
 ﻿using UIKit;
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
@@ -9,7 +10,7 @@ namespace PhantasmaMail.iOS.Effects
     {
         protected override void OnAttached()
         {
-            var maxLinesEffect = Element.Effects.FirstOfType<MaxLinesEffect>();
+            var maxLinesEffect = Element.Effects?.OfType<PhantasmaMail.Effects.MaxLinesEffect>().First();
             if (maxLinesEffect == null)
             {
                 return;

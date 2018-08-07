@@ -3,7 +3,6 @@
 <pages:PopupPage
     x:Class="PhantasmaMail.Views.ComposeView"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:controls="clr-namespace:PhantasmaMail.Controls"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:extensions="clr-namespace:PhantasmaMail.MarkupExtensions"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"

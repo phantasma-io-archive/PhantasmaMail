@@ -46,17 +46,25 @@
 		<string>Icon-Small@2x</string>
 		<string>Icon-Small@3x</string>
 	</array>
-  <key>UIAppFonts</key>
-  <array>
-    <string>Fonts/OpenSans-LightItalic.tff</string>
-    <string>Fonts/OpenSans-Regular.ttf</string>
-    <string>Fonts/OpenSans-SemiBold.ttf</string>
-    <string>Fonts/Roboto-Medium.ttf</string>
-    <string>Fonts/SF UI Text Regular.ttf</string>
-    <string>Fonts/SF UI Text Semibold.ttf</string>
-    <string>Fonts/Geo.otf</string>
-  </array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Fonts/OpenSans-LightItalic.tff</string>
+		<string>Fonts/OpenSans-Regular.ttf</string>
+		<string>Fonts/OpenSans-SemiBold.ttf</string>
+		<string>Fonts/Roboto-Medium.ttf</string>
+		<string>Fonts/SF UI Text Regular.ttf</string>
+		<string>Fonts/SF UI Text Semibold.ttf</string>
+		<string>Fonts/Geo.otf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>UIMainStoryboardFile</key>
+	<string>LaunchScreen</string>
+	<key>XSLaunchImageAssets</key>
+	<string>Resources/Media.xcassets/LaunchImages.launchimage</string>
+	<key>XSAppIconAssets</key>
+	<string>Resources/Media.xcassets/AppIcons.appiconset</string>
 </dict>
 </plist>

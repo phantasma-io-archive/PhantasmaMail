@@ -3,7 +3,6 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
-             xmlns:xForms="clr-namespace:Syncfusion.SfPicker.XForms;assembly=Syncfusion.SfPicker.XForms"
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              x:Class="PhantasmaMail.Views.SendView"
@@ -36,6 +35,7 @@
 
                 <Frame Grid.Row="0"
                        BackgroundColor="White"
+                       CornerRadius="0"
                        Margin="20,30,20,0">
                     <Grid>
                         <Grid.RowDefinitions>

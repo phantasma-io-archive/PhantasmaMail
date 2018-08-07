@@ -1,7 +1,7 @@
-﻿using Acr.UserDialogs;
-using FFImageLoading.Forms.Platform;
+﻿using FFImageLoading.Forms.Platform;
 using FFImageLoading.Svg.Forms;
 using Foundation;
+using KeyboardOverlap.Forms.Plugin.iOSUnified;
 using Syncfusion.ListView.XForms.iOS;
 using Syncfusion.SfPicker.XForms.iOS;
 using UIKit;
@@ -27,6 +27,7 @@ namespace PhantasmaMail.iOS
 			Rg.Plugins.Popup.Popup.Init();
             XfxControls.Init();
             Xamarin.Forms.Forms.Init();
+            KeyboardOverlapRenderer.Init();
             SfPickerRenderer.Init();
 
             SfListViewRenderer.Init();

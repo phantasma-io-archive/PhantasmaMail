@@ -18,46 +18,48 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
 
-            <Frame Grid.Row="0" IsClippedToBounds="True"
+                <Frame Grid.Row="0" IsClippedToBounds="True"
                    Margin="30,15,30,40" Opacity="0.8"
                    HasShadow="True" 
                    BackgroundColor="White"
                    CornerRadius="0" Padding="0" />
 
-            <Frame Grid.Row="0"
+                <Frame Grid.Row="0"
                    CornerRadius="0"
                    BackgroundColor="White"
                    Margin="20,30,20,20">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="1" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="1" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
 
-                    <Label Grid.Row="0"
+                        <Label Grid.Row="0"
                            Text="You can use this address to receive NEO, GAS, or any NEP5 Token from an exchange or another wallet."
                            VerticalOptions="CenterAndExpand"
                            HorizontalOptions="CenterAndExpand"
                            Style="{StaticResource ReceiveLabelStyle}" />
 
-                    <BoxView Grid.Row="1"
+                        <BoxView Grid.Row="1"
                              Margin="5,0,5,0"
                              BackgroundColor="{StaticResource SeparatorGray}" />
 
-                    <local:QRCodeView x:Name="QRView" Grid.Row="2" />
+                        <local:QRCodeView x:Name="QRView" Grid.Row="2" />
 
 
-                    <Label Grid.Row="3"
+                        <Label Grid.Row="3"
                            Text="{Binding UserAddress}"
                            VerticalOptions="CenterAndExpand"
                            HorizontalOptions="CenterAndExpand"
                            Style="{StaticResource ReceiveLabelStyle}" FontSize="{StaticResource MidMediumSize}" />
-                </Grid>
-            </Frame>
-        </Grid>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

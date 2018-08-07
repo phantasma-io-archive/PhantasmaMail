@@ -106,32 +106,6 @@
                                 <controls:MessageDateGroupCell/>
                             </DataTemplate>
                         </syncfusion:SfListView.GroupHeaderTemplate>
-
-                        <syncfusion:SfListView.RightSwipeTemplate>
-                            <DataTemplate x:Name="RightSwipeTemplate">
-                                <Grid Margin="-20,10" BackgroundColor="#FFFFFF" HorizontalOptions="Fill"
-                                      VerticalOptions="Fill" Grid.Column="0">
-                                    <Grid VerticalOptions="Center" HorizontalOptions="Center">
-                                        <ffimageloadingsvg:SvgCachedImage Grid.Row="0" VerticalOptions="Center"
-                                                                          HorizontalOptions="Center"
-                                                                          Source="trash.svg"
-                                                                          HeightRequest="25"
-                                                                          WidthRequest="23"
-                                                                          IsVisible="True">
-                                            <ffimageloadingsvg:SvgCachedImage.Transformations>
-                                                <fftransformations:TintTransformation EnableSolidColor="true"
-                                                                                      HexColor="#17566B" />
-                                            </ffimageloadingsvg:SvgCachedImage.Transformations>
-                                        </ffimageloadingsvg:SvgCachedImage>
-                                    </Grid>
-                                    <Grid.GestureRecognizers>
-                                        <TapGestureRecognizer
-                                            Command="{Binding Source={x:Reference inboxListView}, Path=BindingContext.DeleteMessageCommand}"
-                                            CommandParameter="{Binding .}" />
-                                    </Grid.GestureRecognizers>
-                                </Grid>
-                            </DataTemplate>
-                        </syncfusion:SfListView.RightSwipeTemplate>
                     </syncfusion:SfListView>
                 </sfpullToRefresh:SfPullToRefresh.PullableContent>
 

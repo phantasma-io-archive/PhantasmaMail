@@ -46,6 +46,7 @@ namespace PhantasmaMail.Views
 
         private void AddNewMessageToolbar()
         {
+            if (ToolbarItems.Count == 1) return;
             var item = new ToolbarItem
             {
                 Command = Vm?.NewMessageCommand,
@@ -56,6 +57,7 @@ namespace PhantasmaMail.Views
 
         private void AddDeleteMessageToolbar()
         {
+            if (ToolbarItems.Count == 1) return;
             var item = new ToolbarItem
             {
                 Command = Vm?.DeleteSelectedMessages,

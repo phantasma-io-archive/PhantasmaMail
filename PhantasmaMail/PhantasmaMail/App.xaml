@@ -13,7 +13,7 @@
             <Color x:Key="Primary">#17566B</Color>
             <Color x:Key="PrimaryDark">#1976D2</Color>
             <Color x:Key="Accent">#b4dae8</Color>
-            <Color x:Key="DarkBlueGreen">#17566B</Color>
+            <Color x:Key="DarkBlueGreen">#2270B6</Color>
             <Color x:Key="LightBlueGreen">#2B6C81</Color>
             <Color x:Key="LightGray">#A1ACB3</Color>
             <Color x:Key="SeparatorGray">#D8D8D8</Color>

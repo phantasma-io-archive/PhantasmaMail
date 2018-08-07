@@ -28,7 +28,6 @@ namespace PhantasmaMail.Views
 		        },
 		        Comparer = new MessageDateGroupComparer()
 		    });
-		    AddNewMessageToolbar();
         }
 
 	    protected override void OnAppearing()
@@ -47,7 +46,8 @@ namespace PhantasmaMail.Views
 
 	    private void AddNewMessageToolbar()
 	    {
-	        var item = new ToolbarItem
+	        if (ToolbarItems.Count == 1) return;
+            var item = new ToolbarItem
 	        {
 	            Command = Vm?.NewMessageCommand,
 	            Icon = Device.RuntimePlatform == Device.UWP ? "Assets/WriteEmail.png" : "WriteEmail.png",
@@ -57,7 +57,8 @@ namespace PhantasmaMail.Views
 
 	    private void AddDeleteMessageToolbar()
 	    {
-	        var item = new ToolbarItem
+	        if (ToolbarItems.Count == 1) return;
+            var item = new ToolbarItem
 	        {
 	            Command = Vm?.DeleteSelectedMessages,
 	            Icon = Device.RuntimePlatform == Device.UWP ? "Assets/trash_bar.png" : "trash_bar.png",
