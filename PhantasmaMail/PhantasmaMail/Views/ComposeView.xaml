@@ -163,8 +163,8 @@
                                           Placeholder="Subject:"
                                           Text="{Binding Message.Subject}" />
 
-                            <controls:ExpandableEditor VerticalOptions="FillAndExpand"
-                                                       Placeholder="Write your email here"
+                            <Editor VerticalOptions="FillAndExpand" 
+                                    AutoSize="TextChanges"
                                                        x:Name="ContentEditor" 
                                                        Focused="ContentEditor_OnFocused"
                                                        Unfocused="ContentEditor_OnUnfocused"
@@ -172,8 +172,6 @@
                                                        TextColor="{StaticResource LightGray}"
                                                        FontSize="{StaticResource MidMediumSize}"
                                                        BackgroundColor="Transparent" 
-                                                       HasRoundedCorner="False"
-                                                       PlaceholderColor ="{StaticResource LightGray}"
                                                        Text="{Binding Message.TextContent}" />
                         </StackLayout>
 

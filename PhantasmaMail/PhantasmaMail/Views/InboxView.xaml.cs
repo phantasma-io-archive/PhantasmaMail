@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using PhantasmaMail.Models;
 using PhantasmaMail.Utils;
 using PhantasmaMail.ViewModels;
-using PhantasmaMail.ViewModels.Base;
 using Syncfusion.DataSource;
 using Syncfusion.ListView.XForms;
 using Xamarin.Forms;
@@ -29,12 +28,12 @@ namespace PhantasmaMail.Views
                 },
                 Comparer = new MessageDateGroupComparer()
             });
-            AddNewMessageToolbar();
         }
 
         protected override void OnAppearing()
         {
             pullToRefreshList.ForceLayout();
+            AddNewMessageToolbar();
         }
 
         private async void PullToRefresh_Refreshing(object sender, EventArgs args)
@@ -50,7 +49,7 @@ namespace PhantasmaMail.Views
             var item = new ToolbarItem
             {
                 Command = Vm?.NewMessageCommand,
-                Icon = Device.RuntimePlatform == Device.UWP ? "WriteEmail.png" : "Assets/WriteEmail.png",
+                Icon = Device.RuntimePlatform == Device.UWP ? "Assets/WriteEmail.png" : "WriteEmail.png",
             };
             ToolbarItems.Add(item);
         }
@@ -60,7 +59,7 @@ namespace PhantasmaMail.Views
             var item = new ToolbarItem
             {
                 Command = Vm?.DeleteSelectedMessages,
-                Icon = Device.RuntimePlatform == Device.UWP ? "trash_bar.png" : "Assets/trash_bar.png",
+                Icon = Device.RuntimePlatform == Device.UWP ? "Assets/trash_bar.png" : "trash_bar.png",
             };
             ToolbarItems.Add(item);
         }

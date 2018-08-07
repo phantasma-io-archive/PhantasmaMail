@@ -15,17 +15,17 @@ namespace PhantasmaMail.Views
 
         private void ContentEditor_OnFocused(object sender, FocusEventArgs e)
         {
-            IconGrid.IsVisible = false;
-            ToEntry.IsVisible = false;
-            SubjectEntry.IsVisible = false;
+            //IconGrid.IsVisible = false;
+            //ToEntry.IsVisible = false;
+            //SubjectEntry.IsVisible = false;
         }
 
 
         private void ContentEditor_OnUnfocused(object sender, FocusEventArgs e)
         {
-            IconGrid.IsVisible = true;
-            ToEntry.IsVisible = true;
-            SubjectEntry.IsVisible = true;
+            //IconGrid.IsVisible = true;
+            //ToEntry.IsVisible = true;
+            //SubjectEntry.IsVisible = true;
         }
 
         protected override bool OnBackButtonPressed()

@@ -7,8 +7,8 @@
     xmlns:effects="clr-namespace:PhantasmaMail.Effects;assembly=PhantasmaMail"
     x:Key="DraftMessageCell"
     x:Class="PhantasmaMail.Controls.DraftMessageCell">
-    <controls:CustomFrame Margin="20,10" CornerRadius="0" HasShadow="True">
-        <Grid RowSpacing="7" ColumnSpacing="0">
+    <controls:CustomFrame Margin="20,10" CornerRadius="0" HasShadow="True" BackgroundColor="White">
+        <Grid RowSpacing="7" ColumnSpacing="0" Margin="3,3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />

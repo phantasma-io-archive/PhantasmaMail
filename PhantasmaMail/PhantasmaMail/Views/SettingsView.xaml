@@ -15,8 +15,8 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="8*" />
-                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
 
@@ -30,7 +30,7 @@
             <forms:SvgCachedImage Grid.Row="0" Grid.Column="1"
                                   Margin="10"
                                   VerticalOptions="Center"
-                                  HorizontalOptions="Center"
+                                  HorizontalOptions="End"
                                   HeightRequest="14"
                                   WidthRequest="14">
                 <forms:SvgCachedImage.Source>
@@ -39,19 +39,12 @@
                         <On Platform="UWP" Value="Assets/right_arrow.svg" />
                     </OnPlatform>
                 </forms:SvgCachedImage.Source>
-                <!--<forms:SvgCachedImage.Transformations>
-                    <transformations:TintTransformation EnableSolidColor="true"
-                                                          HexColor="{StaticResource TintWhiteIconColor}" />
-                </forms:SvgCachedImage.Transformations>-->
             </forms:SvgCachedImage>
             <ContentView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
                 <ContentView.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding GoToChangeServerCommand}"/>
                 </ContentView.GestureRecognizers>
             </ContentView>
-
-
-
 
             <Label Grid.Row="1" Grid.Column="0"
                    Margin="10"
@@ -63,7 +56,7 @@
             <forms:SvgCachedImage Grid.Row="1" Grid.Column="1"
                                   Margin="10"
                                   VerticalOptions="Center"
-                                  HorizontalOptions="Center"
+                                  HorizontalOptions="End"
                                   HeightRequest="14"
                                   WidthRequest="14">
                 <forms:SvgCachedImage.Source>
@@ -72,18 +65,12 @@
                         <On Platform="UWP" Value="Assets/right_arrow.svg" />
                     </OnPlatform>
                 </forms:SvgCachedImage.Source>
-                <!--<forms:SvgCachedImage.Transformations>
-                    <transformations:TintTransformation EnableSolidColor="true"
-                                                          HexColor="{StaticResource TintWhiteIconColor}" />
-                </forms:SvgCachedImage.Transformations>-->
             </forms:SvgCachedImage>
             <ContentView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
                 <ContentView.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding UnregisterCommand}"/>
                 </ContentView.GestureRecognizers>
             </ContentView>
-
-
 
         </Grid>
     </ContentPage.Content>
