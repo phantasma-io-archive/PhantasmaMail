@@ -54,7 +54,8 @@
             <Frame Grid.Row="0" IsClippedToBounds="True"
                    Margin="10,-5,10,1" Opacity="0.8"
                    HasShadow="True"
-                   CornerRadius="0" Padding="0" />
+                   CornerRadius="0" Padding="0" 
+                   BackgroundColor="White"/>
 
             <Frame Grid.Row="0"
                    Padding="0"
@@ -62,7 +63,8 @@
                    CornerRadius="0"
                    HasShadow="True"
                    HorizontalOptions="FillAndExpand"
-                   VerticalOptions="FillAndExpand">
+                   VerticalOptions="FillAndExpand"
+                   BackgroundColor="White">
                 <Grid Margin="5">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />

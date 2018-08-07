@@ -18,8 +18,8 @@
                     <ViewCell>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="8*" />
-                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="9*" />
+                                <ColumnDefinition Width="1*" />
                             </Grid.ColumnDefinitions>
 
                             <Label Text="{Binding}"  
@@ -29,7 +29,7 @@
                             <forms:SvgCachedImage Grid.Column="1"
                                                   Margin="10"
                                                   VerticalOptions="Center"
-                                                  HorizontalOptions="Center"
+                                                  HorizontalOptions="End"
                                                   HeightRequest="14"
                                                   WidthRequest="14">
                                 <forms:SvgCachedImage.Source>

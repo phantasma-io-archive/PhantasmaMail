@@ -3,7 +3,6 @@ using Windows.Foundation.Metadata;
 using Windows.UI;
 using Windows.UI.ViewManagement;
 using CarouselView.FormsPlugin.UWP;
-using PhantasmaMail;
 using FFImageLoading.Forms.Platform;
 using FFImageLoading.Svg.Forms;
 using PhantasmaMail.UWP.Extensions;
@@ -45,7 +44,10 @@ namespace PhantasmaMail.UWP
                 
                 if (titleBar != null)
                 {
-                    titleBar.BackgroundColor = Xamarin.Forms.Color.FromHex("#1976D2").ToUwp();
+                    titleBar.BackgroundColor = Xamarin.Forms.Color.FromHex("#3B82BB").ToUwp();
+                    titleBar.ButtonBackgroundColor = Xamarin.Forms.Color.FromHex("#3B82BB").ToUwp();
+                    titleBar.ButtonForegroundColor = Colors.White;
+                    titleBar.ForegroundColor = Colors.White;
                 }
             }
 
@@ -56,7 +58,7 @@ namespace PhantasmaMail.UWP
                 if (statusBar != null)
                 {
                     statusBar.BackgroundOpacity = 1;
-                    statusBar.BackgroundColor = (Color)App.Current.Resources["NativeAccentColor"];
+                    statusBar.BackgroundColor = (Color)Windows.UI.Xaml.Application.Current.Resources["NativeAccentColor"];
                 }
             }
 
