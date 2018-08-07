@@ -87,7 +87,6 @@
                                                                           HorizontalOptions="Center"
                                                                           VerticalOptions="Center"
                                                                           HeightRequest="21"
-                                                                          BackgroundColor="Red"
                                                                           WidthRequest="21">
                                             <ffimageloadingsvg:SvgCachedImage.Source>
                                                 <OnPlatform x:TypeArguments="ImageSource">
