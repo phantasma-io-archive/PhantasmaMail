@@ -1,4 +1,6 @@
-﻿using UIKit;
+﻿using System;
+using System.Diagnostics;
+using UIKit;
 using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -10,16 +12,24 @@ namespace PhantasmaMail.iOS.Effects
     {
         protected override void OnAttached()
         {
-            var maxLinesEffect = Element.Effects?.OfType<PhantasmaMail.Effects.MaxLinesEffect>().First();
-            if (maxLinesEffect == null)
+            try
             {
-                return;
+                var maxLinesEffect = Element.Effects?.OfType<PhantasmaMail.Effects.MaxLinesEffect>().First();
+                if (maxLinesEffect == null)
+                {
+                    return;
+                }
+                if (Control is UILabel nativeLabel)
+                {
+                    nativeLabel.Lines = maxLinesEffect.MaxLines;
+                    nativeLabel.LineBreakMode = UILineBreakMode.TailTruncation;
+                }
             }
-            if (Control is UILabel nativeLabel)
+            catch (Exception e)
             {
-                nativeLabel.Lines = maxLinesEffect.MaxLines;
-                nativeLabel.LineBreakMode = UILineBreakMode.TailTruncation;
+                Debug.WriteLine(e);
             }
+          
         }
 
         protected override void OnDetached() { }

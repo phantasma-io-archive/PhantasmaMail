@@ -102,6 +102,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renderers\CustomNavigationRenderer.cs" />
+    <Compile Include="Renderers\CustomPageRenderer.cs" />
     <Compile Include="Renderers\ExpandableEditorRenderer.cs" />
     <Compile Include="Services\iOSSQLService.cs" />
     <None Include="Entitlements.plist" />

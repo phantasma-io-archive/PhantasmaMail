@@ -11,6 +11,7 @@ namespace PhantasmaMail.Droid
         Label = "Phantasma Mail",
         Icon = "@drawable/phantasma_logo_vector",
         Theme = "@style/MyTheme.Splash",
+        NoHistory = true,
         MainLauncher = true,
         ScreenOrientation = ScreenOrientation.Portrait)]
     public class SplashActivity : AppCompatActivity

@@ -20,6 +20,8 @@ namespace PhantasmaMail.Views
                 BarBackgroundColor = (Color)Color.FromHex("#417DC1");// Application.Current.Resources["PrimaryDark"];
                 BarTextColor = Color.White;
             }
+
+            Icon = "IAM.png";
         }
 
         internal void ApplyNavigationTextColor(Page targetPage)

@@ -62,7 +62,7 @@
                             </Grid.HorizontalOptions>
                             <Grid.Margin>
                                 <OnPlatform x:TypeArguments="Thickness">
-                                    <On Platform="Android, iOS" Value="30,15"/>
+                                    <On Platform="Android, iOS" Value="30"/>
                                     <On Platform="UWP" Value="30,0"/>
                                 </OnPlatform>
                             </Grid.Margin>

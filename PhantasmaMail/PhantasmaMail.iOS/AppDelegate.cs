@@ -36,7 +36,19 @@ namespace PhantasmaMail.iOS
 
             LoadApplication(new App());
 
-            return base.FinishedLaunching(app, options);
+            base.FinishedLaunching(app, options);
+
+
+            // test
+            //UINavigationBar.Appearance.SetBackgroundImage(new UIImage(), UIBarMetrics.Default);
+            //UINavigationBar.Appearance.ShadowImage = new UIImage();
+            //UINavigationBar.Appearance.BackgroundColor = UIColor.Clear;
+            UINavigationBar.Appearance.TintColor = UIColor.White;
+            UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes { TextColor = UIColor.White });
+            //UINavigationBar.Appearance.BarTintColor = UIColor.FromPatternImage(UIImage.FromFile("TopBar.png"));
+            //UINavigationBar.Appearance.Translucent = true;
+
+            return true;
         }
     }
 }

@@ -15,14 +15,16 @@ namespace PhantasmaMail.ViewModels.Base
         private IContainer _container;
         private readonly ContainerBuilder _containerBuilder;
 
-        public static Locator Instance { get; } = new Locator();
+        private static readonly Locator _instance = new Locator();
+
+        public static Locator Instance => _instance;
 
         public Locator()
         {
             _containerBuilder = new ContainerBuilder();
 
-            _containerBuilder.RegisterType<DialogService>().SingleInstance().As<IDialogService>();
             _containerBuilder.RegisterType<NavigationService>().SingleInstance().As<INavigationService>();
+            _containerBuilder.RegisterType<DialogService>().SingleInstance().As<IDialogService>();
             _containerBuilder.RegisterType<AuthenticationService>().SingleInstance().As<IAuthenticationService>();
             _containerBuilder.RegisterType<WalletService>().SingleInstance();
             _containerBuilder.RegisterType<PhantasmaService>().SingleInstance().As<IPhantasmaService>();

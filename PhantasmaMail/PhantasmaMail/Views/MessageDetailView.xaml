@@ -36,25 +36,27 @@
         </ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <Grid HorizontalOptions="FillAndExpand"
+        <ScrollView HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+            <Grid HorizontalOptions="FillAndExpand"
               VerticalOptions="FillAndExpand"
               Margin="20,20,20,10">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
-            <ActivityIndicator Grid.Row="0" Grid.RowSpan="2" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"
+                <ActivityIndicator Grid.Row="0" Grid.RowSpan="2" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"
                                HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
                                Color="White" />
 
-            <Frame Grid.Row="0" IsClippedToBounds="True" 
+                <Frame Grid.Row="0" IsClippedToBounds="True" 
                    Margin="10,-5,10,1" Opacity="0.8" 
                    HasShadow="True"
                    BackgroundColor="White"
                    CornerRadius="0" Padding="0" />
 
-            <Frame Grid.Row="0"
+                <Frame Grid.Row="0"
                    Padding="15"
                    Margin="0,10,0,0"
                    CornerRadius="0"
@@ -62,229 +64,230 @@
                    BackgroundColor="White"
                    HorizontalOptions="FillAndExpand"
                    VerticalOptions="FillAndExpand">
-                <Grid Margin="5" RowSpacing="5">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="1" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="1" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
+                    <Grid Margin="5" RowSpacing="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="1" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="1" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
 
-                    <Label Grid.Row="0" Text="{Binding FromOrTo}"
+                        <Label Grid.Row="0" Text="{Binding FromOrTo}"
                            Style="{StaticResource SenderNameTextStyle}" TextColor="{StaticResource LightGray}"
                            FontFamily="{StaticResource OpenSansSemiBold}" />
 
-                    <Label Grid.Row="1" Text="{Binding SelectedMessage.FromInbox}"
+                        <Label Grid.Row="1" Text="{Binding SelectedMessage.FromInbox}"
                            Style="{StaticResource SenderNameTextStyle}" IsVisible="{Binding FromInbox}" />
 
-                    <Label Grid.Row="1" Text="{Binding SelectedMessage.ToInbox}"
+                        <Label Grid.Row="1" Text="{Binding SelectedMessage.ToInbox}"
                            Style="{StaticResource SenderNameTextStyle}"
                            IsVisible="{Binding FromInbox,Converter={StaticResource InverseBooleanConverter}}" />
 
-                    <BoxView Grid.Row="2"
+                        <BoxView Grid.Row="2"
                              HorizontalOptions="FillAndExpand"
                              BackgroundColor="{StaticResource SeparatorGray}" />
 
-                    <Label Grid.Row="3" Text="{Binding SelectedMessage.Subject}"
+                        <Label Grid.Row="3" Text="{Binding SelectedMessage.Subject}"
                            Margin="0,4"
                            Style="{StaticResource SenderNameTextStyle}" FontSize="{StaticResource LargeSize}"
                            TextColor="{StaticResource DarkBlueGreen}"
                            FontFamily="{StaticResource OpenSansSemiBold}" />
 
-                    <ScrollView Grid.Row="4">
-                        <Label Text="{Binding SelectedMessage.TextContent}"
+                        <ScrollView Grid.Row="4">
+                            <Label Text="{Binding SelectedMessage.TextContent}"
                                Style="{StaticResource SimpleTextStyle}" />
-                    </ScrollView>
+                        </ScrollView>
 
 
-                    <StackLayout Grid.Row="5"
+                        <StackLayout Grid.Row="5"
                                  IsVisible="{Binding FromInbox, Converter={StaticResource InverseBooleanConverter}}"
                                  Margin="0,0,0,5">
-                        <!-- TODO underline label -->
-                        <Label Text="TxHash"
+                            <!-- TODO underline label -->
+                            <Label Text="TxHash"
                                TextColor="{StaticResource DarkBlueGreen}"
                                FontFamily="{StaticResource OpenSansSemiBold}"
                                FontSize="{StaticResource MidMediumSize}" />
 
-                        <Label Text="{Binding SelectedMessage.Hash}"
+                            <Label Text="{Binding SelectedMessage.Hash}"
                                TextColor="{StaticResource LightGray}"
                                FontFamily="{StaticResource OpenSansLightItalic}"
                                FontSize="{StaticResource MediumSize}" >
-                            <Label.Effects>
-                                <effects:UnderlineEffect />
-                            </Label.Effects>
-                        </Label>
+                                <Label.Effects>
+                                    <effects:UnderlineEffect />
+                                </Label.Effects>
+                            </Label>
 
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding OpenTxCommand}" />
-                        </StackLayout.GestureRecognizers>
-                    </StackLayout>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OpenTxCommand}" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
 
-                    <BoxView Grid.Row="6"
+                        <BoxView Grid.Row="6"
                              HorizontalOptions="FillAndExpand"
                              BackgroundColor="{StaticResource SeparatorGray}" />
 
 
-                    <StackLayout Grid.Row="7" Margin="0,5,0,0" Orientation="Horizontal"
+                        <StackLayout Grid.Row="7" Margin="0,5,0,0" Orientation="Horizontal"
                                  HorizontalOptions="FillAndExpand">
 
-                        <Label Text="{Binding DaysAgo}" HorizontalOptions="Start" VerticalOptions="Center"
+                            <Label Text="{Binding DaysAgo}" HorizontalOptions="Start" VerticalOptions="Center"
                                Style="{StaticResource SimpleTextStyle}" FontSize="{StaticResource LittleSize}" />
 
-                        <Label Text="{Binding SelectedMessage.Date, StringFormat='{0:f}', Converter={StaticResource UtcToLocalTimeConverter}}" 
+                            <Label Text="{Binding SelectedMessage.Date, StringFormat='{0:f}', Converter={StaticResource UtcToLocalTimeConverter}}" 
                                HorizontalOptions="EndAndExpand" VerticalOptions="Center"
                                Style="{StaticResource SimpleTextStyle}" FontSize="{StaticResource LittleSize}" />
 
-                    </StackLayout>
+                        </StackLayout>
 
 
-                </Grid>
-            </Frame>
+                    </Grid>
+                </Frame>
 
-            <!-- INBOX -->
-            <Grid Grid.Row="1" Margin="0,10" ColumnSpacing="35" IsVisible="{Binding FromInbox}">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-
-                <Grid Grid.Column="0">
+                <!-- INBOX -->
+                <Grid Grid.Row="1" Margin="0,10" ColumnSpacing="35" IsVisible="{Binding FromInbox}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <ffimageloadingsvg:SvgCachedImage VerticalOptions="End" HorizontalOptions="Start"
+
+                    <Grid Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <ffimageloadingsvg:SvgCachedImage VerticalOptions="End" HorizontalOptions="Start"
                                                       Source="arrow.svg"
                                                       Grid.Column="0" HeightRequest="20"
                                                       WidthRequest="17">
-                        <ffimageloadingsvg:SvgCachedImage.Transformations>
-                            <fftransformations:TintTransformation EnableSolidColor="true"
+                            <ffimageloadingsvg:SvgCachedImage.Transformations>
+                                <fftransformations:TintTransformation EnableSolidColor="true"
                                                                   HexColor="{StaticResource TintIconColor}" />
-                            <fftransformations:FlipTransformation FlipType="Horizontal" />
-                        </ffimageloadingsvg:SvgCachedImage.Transformations>
-                    </ffimageloadingsvg:SvgCachedImage>
-                    <Label Grid.Column="1" VerticalTextAlignment="End" Style="{StaticResource NoMessagesLabelStyle}"
+                                <fftransformations:FlipTransformation FlipType="Horizontal" />
+                            </ffimageloadingsvg:SvgCachedImage.Transformations>
+                        </ffimageloadingsvg:SvgCachedImage>
+                        <Label Grid.Column="1" VerticalTextAlignment="End" Style="{StaticResource NoMessagesLabelStyle}"
                            HorizontalTextAlignment="Start"
                            Text="Reply" />
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding ReplyCommand}" />
-                    </Grid.GestureRecognizers>
-                </Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ReplyCommand}" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
 
-                <Grid Grid.Column="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
-                    <ffimageloadingsvg:SvgCachedImage VerticalOptions="End" HorizontalOptions="Start"
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <ffimageloadingsvg:SvgCachedImage VerticalOptions="End" HorizontalOptions="Start"
                                                       Source="down_arrow.svg"
                                                       Grid.Column="0" HeightRequest="20"
                                                       WidthRequest="17">
-                        <ffimageloadingsvg:SvgCachedImage.Transformations>
-                            <fftransformations:TintTransformation EnableSolidColor="true"
+                            <ffimageloadingsvg:SvgCachedImage.Transformations>
+                                <fftransformations:TintTransformation EnableSolidColor="true"
                                                                   HexColor="{StaticResource TintIconColor}" />
-                        </ffimageloadingsvg:SvgCachedImage.Transformations>
-                    </ffimageloadingsvg:SvgCachedImage>
-                    <Label Grid.Column="1" Style="{StaticResource NoMessagesLabelStyle}"
+                            </ffimageloadingsvg:SvgCachedImage.Transformations>
+                        </ffimageloadingsvg:SvgCachedImage>
+                        <Label Grid.Column="1" Style="{StaticResource NoMessagesLabelStyle}"
                            HorizontalTextAlignment="Start" VerticalTextAlignment="End"
                            Text="Forward" />
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding ForwardCommand}" />
-                    </Grid.GestureRecognizers>
-                </Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ForwardCommand}" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
 
-                <Grid Grid.Column="2" HorizontalOptions="End">
-                    <ffimageloadingsvg:SvgCachedImage VerticalOptions="End" HorizontalOptions="Start"
+                    <Grid Grid.Column="2" HorizontalOptions="End">
+                        <ffimageloadingsvg:SvgCachedImage VerticalOptions="End" HorizontalOptions="Start"
                                                       Source="more.svg"
                                                       Grid.Column="0" HeightRequest="20"
                                                       WidthRequest="17">
-                        <ffimageloadingsvg:SvgCachedImage.Transformations>
-                            <fftransformations:TintTransformation EnableSolidColor="true"
+                            <ffimageloadingsvg:SvgCachedImage.Transformations>
+                                <fftransformations:TintTransformation EnableSolidColor="true"
                                                                   HexColor="{StaticResource TintIconColor}" />
-                        </ffimageloadingsvg:SvgCachedImage.Transformations>
-                    </ffimageloadingsvg:SvgCachedImage>
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding MoreCommand}" />
-                    </Grid.GestureRecognizers>
+                            </ffimageloadingsvg:SvgCachedImage.Transformations>
+                        </ffimageloadingsvg:SvgCachedImage>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding MoreCommand}" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
                 </Grid>
-            </Grid>
 
-            <!-- SENT -->
-            <Grid Grid.Row="1" Margin="0,10" ColumnSpacing="35"
+                <!-- SENT -->
+                <Grid Grid.Row="1" Margin="0,10" ColumnSpacing="35"
                   IsVisible="{Binding FromInbox, Converter={StaticResource InverseBooleanConverter}}">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-
-                <Grid Grid.Column="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <ffimageloadingsvg:SvgCachedImage VerticalOptions="End" HorizontalOptions="Start"
+
+                    <Grid Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <ffimageloadingsvg:SvgCachedImage VerticalOptions="End" HorizontalOptions="Start"
                                                       Aspect="AspectFit"
                                                       Source="arrow.svg"
                                                       Grid.Column="0" HeightRequest="20"
                                                       WidthRequest="17">
-                        <ffimageloadingsvg:SvgCachedImage.Transformations>
-                            <fftransformations:TintTransformation EnableSolidColor="true"
+                            <ffimageloadingsvg:SvgCachedImage.Transformations>
+                                <fftransformations:TintTransformation EnableSolidColor="true"
                                                                   HexColor="{StaticResource TintIconColor}" />
-                            <fftransformations:RotateTransformation Degrees="90" Resize="True" CCW="True" />
-                            <fftransformations:FlipTransformation FlipType="Horizontal" />
-                        </ffimageloadingsvg:SvgCachedImage.Transformations>
-                    </ffimageloadingsvg:SvgCachedImage>
-                    <Label Grid.Column="1" VerticalTextAlignment="End" Style="{StaticResource NoMessagesLabelStyle}"
+                                <fftransformations:RotateTransformation Degrees="90" Resize="True" CCW="True" />
+                                <fftransformations:FlipTransformation FlipType="Horizontal" />
+                            </ffimageloadingsvg:SvgCachedImage.Transformations>
+                        </ffimageloadingsvg:SvgCachedImage>
+                        <Label Grid.Column="1" VerticalTextAlignment="End" Style="{StaticResource NoMessagesLabelStyle}"
                            HorizontalTextAlignment="Start"
                            Text="New" />
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding NewMessageCommand}" />
-                    </Grid.GestureRecognizers>
-                </Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NewMessageCommand}" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
 
-                <Grid Grid.Column="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
-                    <ffimageloadingsvg:SvgCachedImage VerticalOptions="End" HorizontalOptions="Start"
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <ffimageloadingsvg:SvgCachedImage VerticalOptions="End" HorizontalOptions="Start"
                                                       Source="down_arrow.svg"
                                                       Grid.Column="0" HeightRequest="20"
                                                       WidthRequest="17">
-                        <ffimageloadingsvg:SvgCachedImage.Transformations>
-                            <fftransformations:TintTransformation EnableSolidColor="true"
+                            <ffimageloadingsvg:SvgCachedImage.Transformations>
+                                <fftransformations:TintTransformation EnableSolidColor="true"
                                                                   HexColor="{StaticResource TintIconColor}" />
-                        </ffimageloadingsvg:SvgCachedImage.Transformations>
-                    </ffimageloadingsvg:SvgCachedImage>
-                    <Label Grid.Column="1" Style="{StaticResource NoMessagesLabelStyle}"
+                            </ffimageloadingsvg:SvgCachedImage.Transformations>
+                        </ffimageloadingsvg:SvgCachedImage>
+                        <Label Grid.Column="1" Style="{StaticResource NoMessagesLabelStyle}"
                            HorizontalTextAlignment="Start" VerticalTextAlignment="End"
                            Text="Forward" />
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding ForwardCommand}" />
-                    </Grid.GestureRecognizers>
-                </Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ForwardCommand}" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
 
-                <Grid Grid.Column="2" HorizontalOptions="End">
-                    <ffimageloadingsvg:SvgCachedImage VerticalOptions="End" HorizontalOptions="Start"
+                    <Grid Grid.Column="2" HorizontalOptions="End">
+                        <ffimageloadingsvg:SvgCachedImage VerticalOptions="End" HorizontalOptions="Start"
                                                       Source="more.svg"
                                                       Grid.Column="0" HeightRequest="20"
                                                       WidthRequest="17">
-                        <ffimageloadingsvg:SvgCachedImage.Transformations>
-                            <fftransformations:TintTransformation EnableSolidColor="true"
+                            <ffimageloadingsvg:SvgCachedImage.Transformations>
+                                <fftransformations:TintTransformation EnableSolidColor="true"
                                                                   HexColor="{StaticResource TintIconColor}" />
-                        </ffimageloadingsvg:SvgCachedImage.Transformations>
-                    </ffimageloadingsvg:SvgCachedImage>
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding MoreCommand}" />
-                    </Grid.GestureRecognizers>
+                            </ffimageloadingsvg:SvgCachedImage.Transformations>
+                        </ffimageloadingsvg:SvgCachedImage>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding MoreCommand}" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
                 </Grid>
             </Grid>
-        </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

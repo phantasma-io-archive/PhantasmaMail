@@ -6,9 +6,16 @@
     xmlns:views="clr-namespace:PhantasmaMail.Views;assembly=PhantasmaMail"
     xmlns:system="clr-namespace:System;assembly=netstandard"
     Title="Phantasma Mail"
-    MasterBehavior="Popover" >
+    MasterBehavior="Popover">
     <MasterDetailPage.Master>
-        <views:MenuView BindingContext="{Binding MenuViewModel}" BackgroundColor="Transparent"/>
+        <views:MenuView BindingContext="{Binding MenuViewModel}" BackgroundColor="Transparent">
+            <views:MenuView.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="IAM.png"/>
+                </OnPlatform>
+            </views:MenuView.Icon>
+        </views:MenuView>
+
     </MasterDetailPage.Master>
     <MasterDetailPage.BackgroundImage>
         <OnPlatform x:TypeArguments="system:String">

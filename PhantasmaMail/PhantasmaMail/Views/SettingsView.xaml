@@ -7,71 +7,71 @@
     xmlns:markupExtensions="clr-namespace:PhantasmaMail.MarkupExtensions;assembly=PhantasmaMail"
     Title="{markupExtensions:Translate PageTitle_Settings}">
     <ContentPage.Content>
-        <Grid Margin="10" BackgroundColor="Transparent">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+        <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid Margin="10" BackgroundColor="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
 
-            <Label Grid.Row="0" Grid.Column="0"
+                <Label Grid.Row="0" Grid.Column="0"
                    Margin="10"
                    Text="Change RPC server"
                    Style="{StaticResource SettingsLabelStyle}"
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="StartAndExpand" />
 
-            <forms:SvgCachedImage Grid.Row="0" Grid.Column="1"
+                <forms:SvgCachedImage Grid.Row="0" Grid.Column="1"
                                   Margin="10"
                                   VerticalOptions="Center"
                                   HorizontalOptions="End"
                                   HeightRequest="14"
                                   WidthRequest="14">
-                <forms:SvgCachedImage.Source>
-                    <OnPlatform x:TypeArguments="ImageSource">
-                        <On Platform="Android, iOS" Value="right_arrow.svg" />
-                        <On Platform="UWP" Value="Assets/right_arrow.svg" />
-                    </OnPlatform>
-                </forms:SvgCachedImage.Source>
-            </forms:SvgCachedImage>
-            <ContentView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
-                <ContentView.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding GoToChangeServerCommand}"/>
-                </ContentView.GestureRecognizers>
-            </ContentView>
+                    <forms:SvgCachedImage.Source>
+                        <OnPlatform x:TypeArguments="ImageSource">
+                            <On Platform="Android, iOS" Value="right_arrow.svg" />
+                            <On Platform="UWP" Value="Assets/right_arrow.svg" />
+                        </OnPlatform>
+                    </forms:SvgCachedImage.Source>
+                </forms:SvgCachedImage>
+                <ContentView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                    <ContentView.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToChangeServerCommand}"/>
+                    </ContentView.GestureRecognizers>
+                </ContentView>
 
-            <Label Grid.Row="1" Grid.Column="0"
+                <Label Grid.Row="1" Grid.Column="0"
                    Margin="10"
                    Text="Unregister box"
                    Style="{StaticResource SettingsLabelStyle}"
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="StartAndExpand" />
 
-            <forms:SvgCachedImage Grid.Row="1" Grid.Column="1"
+                <forms:SvgCachedImage Grid.Row="1" Grid.Column="1"
                                   Margin="10"
                                   VerticalOptions="Center"
                                   HorizontalOptions="End"
                                   HeightRequest="14"
                                   WidthRequest="14">
-                <forms:SvgCachedImage.Source>
-                    <OnPlatform x:TypeArguments="ImageSource">
-                        <On Platform="Android, iOS" Value="right_arrow.svg" />
-                        <On Platform="UWP" Value="Assets/right_arrow.svg" />
-                    </OnPlatform>
-                </forms:SvgCachedImage.Source>
-            </forms:SvgCachedImage>
-            <ContentView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
-                <ContentView.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding UnregisterCommand}"/>
-                </ContentView.GestureRecognizers>
-            </ContentView>
+                    <forms:SvgCachedImage.Source>
+                        <OnPlatform x:TypeArguments="ImageSource">
+                            <On Platform="Android, iOS" Value="right_arrow.svg" />
+                            <On Platform="UWP" Value="Assets/right_arrow.svg" />
+                        </OnPlatform>
+                    </forms:SvgCachedImage.Source>
+                </forms:SvgCachedImage>
+                <ContentView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                    <ContentView.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding UnregisterCommand}"/>
+                    </ContentView.GestureRecognizers>
+                </ContentView>
 
-        </Grid>
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
