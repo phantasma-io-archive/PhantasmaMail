@@ -21,7 +21,7 @@ namespace PhantasmaMail.ViewModels
     {
         private readonly IPhantasmaDb _db;
 
-        private List<Message> _fullSentList;
+        private List<Message> _fullSentList = new List<Message>();
 
         public SentViewModel(IPhantasmaDb phantasmaDb)
         {

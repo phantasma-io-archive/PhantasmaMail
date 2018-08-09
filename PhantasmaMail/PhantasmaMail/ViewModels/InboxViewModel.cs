@@ -13,7 +13,6 @@ using PhantasmaMail.Resources;
 using PhantasmaMail.Services.Db;
 using PhantasmaMail.Utils;
 using PhantasmaMail.ViewModels.Base;
-using PhantasmaMail.Views;
 using Xamarin.Forms;
 
 namespace PhantasmaMail.ViewModels
@@ -22,7 +21,7 @@ namespace PhantasmaMail.ViewModels
     {
         private readonly IPhantasmaDb _db;
 
-        private List<Message> _fullInboxList;
+        private List<Message> _fullInboxList = new List<Message>();
 
         public InboxViewModel()
         {
