@@ -38,7 +38,7 @@ namespace PhantasmaMail.ViewModels
             if (navigationData is object[] data && data[0] is Message message && data[1] is bool fromInbox)
             {
                 FromInbox = fromInbox;
-                FromOrTo = FromInbox ? "From: " : "To: ";
+                FromOrTo = FromInbox ? "From: " : "To: "; //todo move to resources
                 SelectedMessage = message;
 
                 DaysAgo = MessageUtils.CalculateDays(message.Date.ToLocalTime());
@@ -75,7 +75,7 @@ namespace PhantasmaMail.ViewModels
             if (!string.IsNullOrEmpty(tx))
             {
                 await _db.DeleteMessage(SelectedMessage.ToStoreMessage());
-                await DialogService.ShowAlertAsync("Message will be deleted in the next block", "Success");
+                await DialogService.ShowAlertAsync("Message will be deleted in the next block", "Success"); //todo move to resources
                 await NavigationService.NavigateBackAsync();
             }
             else

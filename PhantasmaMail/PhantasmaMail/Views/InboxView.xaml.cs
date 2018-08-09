@@ -28,6 +28,10 @@ namespace PhantasmaMail.Views
                 },
                 Comparer = new MessageDateGroupComparer()
             });
+            MessagingCenter.Subscribe<InboxViewModel>(this, "resetToolbar", (sender) =>
+            {
+                SetupToolbar();
+            });
         }
 
         protected override void OnAppearing()
@@ -69,6 +73,11 @@ namespace PhantasmaMail.Views
         private void InboxListView_OnItemHolding(object sender, ItemHoldingEventArgs e)
         {
             Vm?.ActivateMultipleSelectionCommand.Execute(null);
+            SetupToolbar();
+        }
+
+        private void SetupToolbar()
+        {
             ToolbarItems.Clear();
             if (Vm != null && Vm.IsMultipleSelectionActive)
             {

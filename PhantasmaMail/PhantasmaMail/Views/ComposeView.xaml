@@ -28,12 +28,12 @@
 
     <pages:PopupPage.Animation>
         <animations:ScaleAnimation
-            PositionIn="Center"
-            PositionOut="Center"
+            PositionIn="Bottom"
+            PositionOut="Bottom"
             ScaleIn="1.2"
             ScaleOut="1"
-            DurationIn="500"
-            DurationOut="500"
+            DurationIn="300"
+            DurationOut="300"
             EasingIn="SinOut"
             EasingOut="SinIn"
             HasBackgroundAnimation="True" />

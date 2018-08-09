@@ -13,6 +13,7 @@ using PhantasmaMail.Resources;
 using PhantasmaMail.Services.Db;
 using PhantasmaMail.Utils;
 using PhantasmaMail.ViewModels.Base;
+using PhantasmaMail.Views;
 using Xamarin.Forms;
 
 namespace PhantasmaMail.ViewModels
@@ -105,7 +106,6 @@ namespace PhantasmaMail.ViewModels
 
         public async Task RefreshExecute()
         {
-            if (IsBusy) return;
             try
             {
                 IsBusy = true;
@@ -137,6 +137,7 @@ namespace PhantasmaMail.ViewModels
             {
                 //deserialization
                 foreach (var email in emails)
+                {
                     if (email.StartsWith("{") || email.StartsWith("["))
                     {
                         var mailObject =
@@ -154,9 +155,11 @@ namespace PhantasmaMail.ViewModels
 
                             mailObject.ID = index;
                             InboxList.Add(mailObject);
-                            index++;
+
                         }
                     }
+                    index++;
+                }
             }
             catch (Exception e)
             {
@@ -204,6 +207,7 @@ namespace PhantasmaMail.ViewModels
                 IsBusy = false;
                 IsMultipleSelectionActive = false;
                 DeselectAllMessages();
+                MessagingCenter.Send(this, "resetToolbar");
             }
         }
 

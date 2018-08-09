@@ -11,6 +11,7 @@
             <Grid Margin="10" BackgroundColor="Transparent">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="1" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
@@ -45,7 +46,9 @@
                     </ContentView.GestureRecognizers>
                 </ContentView>
 
-                <Label Grid.Row="1" Grid.Column="0"
+                <BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="{StaticResource LightGray}"/>
+
+                <Label Grid.Row="2" Grid.Column="0"
                    Margin="10"
                    Text="Unregister box"
                    Style="{StaticResource SettingsLabelStyle}"

@@ -53,7 +53,7 @@
                         SelectedItem="{Binding MessageSelected}"
                         SelectionBackgroundColor="{StaticResource GradientEndColor}"
                         SelectionMode="Single" 
-                        ItemHolding="InboxListView_OnItemHolding"
+                        ItemHolding="InboxListView_OnItemHolding"                        
                         AllowSwiping="True"
                         VerticalOptions="FillAndExpand">
                         <syncfusion:SfListView.Triggers>

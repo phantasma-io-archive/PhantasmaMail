@@ -71,7 +71,6 @@ namespace PhantasmaMail.ViewModels
 
         public async Task RefreshExecute()
         {
-            if (IsBusy) return;
             try
             {
                 IsBusy = true;
@@ -201,6 +200,7 @@ namespace PhantasmaMail.ViewModels
                 IsBusy = false;
                 IsMultipleSelectionActive = false;
                 DeselectAllMessages();
+                MessagingCenter.Send(this, "resetToolbar");
             }
         }
 
