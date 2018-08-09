@@ -46,7 +46,8 @@
                 <sfpullToRefresh:SfPullToRefresh.PullableContent>
                     <syncfusion:SfListView
                         x:Name="sentList"
-                        AutoFitMode="Height"
+                        ItemSize="160"
+                        AutoFitMode="None"
                         ItemsSource="{Binding SentList, Mode=TwoWay}"
                         SelectedItem="{Binding MessageSelected}"
                         SelectionBackgroundColor="{StaticResource GradientEndColor}"
@@ -74,8 +75,8 @@
                                         <ffimageloadingsvg:SvgCachedImage IsVisible="{Binding IsSelected, Converter={StaticResource InverseBooleanConverter}}"
                                                                           HorizontalOptions="Center"
                                                                           VerticalOptions="Center"
-                                                                          HeightRequest="21"
-                                                                          WidthRequest="21">
+                                                                          HeightRequest="22"
+                                                                          WidthRequest="22">
                                             <ffimageloadingsvg:SvgCachedImage.Source>
                                                 <OnPlatform x:TypeArguments="ImageSource">
                                                     <On Platform="Android, iOS" Value="unchecked.svg" />
@@ -86,14 +87,18 @@
                                         <ffimageloadingsvg:SvgCachedImage IsVisible="{Binding IsSelected}"
                                                                           HorizontalOptions="Center"
                                                                           VerticalOptions="Center"
-                                                                          HeightRequest="21"
-                                                                          WidthRequest="21">
+                                                                          HeightRequest="22"
+                                                                          WidthRequest="22">
                                             <ffimageloadingsvg:SvgCachedImage.Source>
                                                 <OnPlatform x:TypeArguments="ImageSource">
                                                     <On Platform="Android, iOS" Value="SelectionCheck.svg" />
                                                     <On Platform="UWP" Value="Assets/SelectionCheck.svg" />
                                                 </OnPlatform>
                                             </ffimageloadingsvg:SvgCachedImage.Source>
+                                            <ffimageloadingsvg:SvgCachedImage.Transformations>
+                                                <fftransformations:TintTransformation EnableSolidColor="true"
+                                                                                      HexColor="#2270B6" />
+                                            </ffimageloadingsvg:SvgCachedImage.Transformations>
                                         </ffimageloadingsvg:SvgCachedImage>
                                     </Grid>
                                     <controls:SentMessageCell Grid.Column="1"/>

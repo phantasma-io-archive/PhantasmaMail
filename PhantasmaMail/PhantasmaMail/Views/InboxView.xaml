@@ -47,7 +47,8 @@
                 <sfpullToRefresh:SfPullToRefresh.PullableContent>
                     <syncfusion:SfListView
                         x:Name="inboxListView"
-                        AutoFitMode="Height"
+                        ItemSize="160"
+                        AutoFitMode="None"
                         ItemsSource="{Binding InboxList, Mode=TwoWay}"
                         SelectedItem="{Binding MessageSelected}"
                         SelectionBackgroundColor="{StaticResource GradientEndColor}"
@@ -69,14 +70,14 @@
                                         <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Grid Grid.Column="0" 
+                                    <Grid Grid.Column="0"
                                           Margin="20,0,0,0" 
                                           IsVisible="{Binding Source={x:Reference inboxListView}, Path=BindingContext.IsMultipleSelectionActive}">
                                         <ffimageloadingsvg:SvgCachedImage IsVisible="{Binding IsSelected, Converter={StaticResource InverseBooleanConverter}}"
                                                                           HorizontalOptions="Center"
                                                                           VerticalOptions="Center"
-                                                                          HeightRequest="21"
-                                                                          WidthRequest="21">
+                                                                          HeightRequest="22"
+                                                                          WidthRequest="22">
                                             <ffimageloadingsvg:SvgCachedImage.Source>
                                                 <OnPlatform x:TypeArguments="ImageSource">
                                                     <On Platform="Android, iOS" Value="unchecked.svg" />
@@ -87,14 +88,18 @@
                                         <ffimageloadingsvg:SvgCachedImage IsVisible="{Binding IsSelected}"
                                                                           HorizontalOptions="Center"
                                                                           VerticalOptions="Center"
-                                                                          HeightRequest="21"
-                                                                          WidthRequest="21">
+                                                                          HeightRequest="22"
+                                                                          WidthRequest="22">
                                             <ffimageloadingsvg:SvgCachedImage.Source>
                                                 <OnPlatform x:TypeArguments="ImageSource">
                                                     <On Platform="Android, iOS" Value="SelectionCheck.svg" />
                                                     <On Platform="UWP" Value="Assets/SelectionCheck.svg" />
                                                 </OnPlatform>
                                             </ffimageloadingsvg:SvgCachedImage.Source>
+                                            <ffimageloadingsvg:SvgCachedImage.Transformations>
+                                                <fftransformations:TintTransformation EnableSolidColor="true"
+                                                                                      HexColor="#2270B6" />
+                                            </ffimageloadingsvg:SvgCachedImage.Transformations>
                                         </ffimageloadingsvg:SvgCachedImage>
                                     </Grid>
                                     <controls:InboxMessageCell Grid.Column="1" />

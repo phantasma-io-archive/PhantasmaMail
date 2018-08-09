@@ -132,10 +132,10 @@ namespace PhantasmaMail.ViewModels
                             {
                                 mailObject.TextContent = decryptedText;
                             }
-                            SentList.Add(mailObject);
-                            index++;
+                            SentList.Add(mailObject);                        
                         }
                     }
+                    index++;
                 }
             }
             catch (Exception e)
@@ -217,7 +217,7 @@ namespace PhantasmaMail.ViewModels
 
         private void SearchExecute(string text)
         {
-            if (SentList.Count == 0) return;
+            if (_fullSentList.Count == 0) return;
             if (string.IsNullOrEmpty(text))
             {
                 SentList = new ObservableCollection<Message>(_fullSentList);

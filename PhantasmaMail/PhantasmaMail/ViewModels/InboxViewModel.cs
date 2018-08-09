@@ -239,7 +239,7 @@ namespace PhantasmaMail.ViewModels
 
         private void SearchExecute(string text)
         {
-            if (InboxList.Count == 0) return;
+            if (_fullInboxList.Count == 0) return;
             if (string.IsNullOrEmpty(text))
             {
                 InboxList = new ObservableCollection<Message>(_fullInboxList);
