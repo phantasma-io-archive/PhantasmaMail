@@ -68,7 +68,7 @@
                         </OnPlatform>
                     </forms:SvgCachedImage.Source>
                 </forms:SvgCachedImage>
-                <ContentView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                <ContentView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
                     <ContentView.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding UnregisterCommand}"/>
                     </ContentView.GestureRecognizers>

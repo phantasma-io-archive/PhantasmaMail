@@ -143,6 +143,7 @@
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Assets\trash_bar.png" />
     <Content Include="Assets\camera.svg">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
@@ -266,6 +267,7 @@
     <Content Include="Assets\OpenSans-LightItalic.ttf" />
     <Content Include="Assets\OpenSans-Regular.ttf" />
     <Content Include="Assets\OpenSans-SemiBold.ttf" />
+    <Content Include="Assets\WriteEmail.png" />
     <Content Include="Assets\paperclip.svg">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
@@ -381,13 +383,8 @@
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Assets\trash_bar.png" />
     <Content Include="Assets\unchecked.svg" />
     <Content Include="Assets\uppricearrow.svg">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Assets\WriteEmail.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </Content>
