@@ -29,8 +29,8 @@
         <ToolbarItem Command="{Binding DeleteMessageCommand}" >
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="Android, iOS" Value="trash_bar.png" />
-                    <On Platform="UWP" Value="Assets/trash_bar.png" />
+                    <On Platform="Android, iOS" Value="trash_bar" />
+                    <On Platform="UWP" Value="Assets/trash_bar" />
                 </OnPlatform>
             </ToolbarItem.Icon>
         </ToolbarItem>

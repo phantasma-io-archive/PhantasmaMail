@@ -230,6 +230,11 @@
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Assets\MediumTile.scale-100.png" />
+    <Content Include="Assets\MediumTile.scale-125.png" />
+    <Content Include="Assets\MediumTile.scale-150.png" />
+    <Content Include="Assets\MediumTile.scale-200.png" />
+    <Content Include="Assets\MediumTile.scale-400.png" />
     <Content Include="Assets\more.svg">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
@@ -313,6 +318,11 @@
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Assets\SmallTile.scale-100.png" />
+    <Content Include="Assets\SmallTile.scale-125.png" />
+    <Content Include="Assets\SmallTile.scale-150.png" />
+    <Content Include="Assets\SmallTile.scale-200.png" />
+    <Content Include="Assets\SmallTile.scale-400.png" />
     <Content Include="Assets\SOUL.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
@@ -371,10 +381,7 @@
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Assets\trash_bar.png">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Assets\trash_bar.png" />
     <Content Include="Assets\unchecked.svg" />
     <Content Include="Assets\uppricearrow.svg">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
@@ -385,10 +392,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Assets\X.svg">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Assets\xamarin_logo.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </Content>
